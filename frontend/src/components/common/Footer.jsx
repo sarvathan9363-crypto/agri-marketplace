@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Leaf, Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
+import agriLogo from '../../assets/image copy.png';
 import PageContainer from '../ui/PageContainer';
 
 export default function Footer() {
@@ -10,10 +11,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-2.5 mb-4 group">
-              <div className="w-10 h-10 bg-[#00E676] text-[#002B36] rounded-full flex items-center justify-center font-bold">
-                <Leaf className="w-6 h-6" />
-              </div>
-              <span className="text-2xl font-black text-white font-display">Agri<span className="text-[#00E676]">Bazaar</span></span>
+              <img
+                src={agriLogo}
+                alt="AgriBazaar Logo"
+                className="h-10 w-auto object-contain bg-white/95 rounded-lg p-1 transition-transform group-hover:scale-105"
+              />
             </Link>
             <p className="text-sm text-gray-400 leading-relaxed font-sans max-w-sm mb-6">
               Connecting farmers to better markets. Buy fresh agricultural produce directly from trusted farmers and FPOs with full transparency.

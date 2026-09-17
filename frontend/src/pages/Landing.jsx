@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import heroFarmerImage from '../assets/image.png';
 import {
   ArrowRight,
   BadgeCheck,
@@ -364,7 +365,7 @@ export default function Landing() {
                   "
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?w=900&h=1100&fit=crop"
+                    src={heroFarmerImage}
                     alt="Indian Farmer in Farm Field"
                     className="h-full w-full object-cover"
                   />

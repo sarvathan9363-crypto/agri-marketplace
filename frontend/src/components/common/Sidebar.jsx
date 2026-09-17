@@ -1,6 +1,7 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Leaf, LogOut } from 'lucide-react';
+import { X, LogOut } from 'lucide-react';
+import agriLogo from '../../assets/image copy.png';
 import { useAuth } from '../../context/AuthContext';
 
 export default function Sidebar({ links, isOpen, onClose }) {
@@ -78,12 +79,11 @@ export default function Sidebar({ links, isOpen, onClose }) {
             >
               <div>
                 <div className="flex items-center justify-between px-5 py-4 border-b border-[#E2E8E5]/20 bg-[#003947]">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-9 h-9 bg-[#00E676] text-[#002B36] rounded-full flex items-center justify-center font-bold">
-                      <Leaf className="w-5 h-5" />
-                    </div>
-                    <span className="text-xl font-bold text-white">Agri<span className="text-[#00E676]">Bazaar</span></span>
-                  </div>
+                  <img
+                    src={agriLogo}
+                    alt="AgriBazaar Logo"
+                    className="h-8 w-auto object-contain bg-white/95 rounded-md p-1"
+                  />
                   <button onClick={onClose} className="p-1.5 hover:bg-[#002B36] text-slate-300 rounded-lg">
                     <X className="w-5 h-5" />
                   </button>

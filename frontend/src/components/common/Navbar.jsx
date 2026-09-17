@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, ShoppingCart, Bell, User, LogOut, ChevronDown, Leaf, Search } from 'lucide-react';
+import { Menu, X, ShoppingCart, Bell, User, LogOut, ChevronDown, Search } from 'lucide-react';
+import agriLogo from '../../assets/image copy.png';
 import { useAuth } from '../../context/AuthContext';
 import { useCart } from '../../context/CartContext';
 import notificationService from '../../services/notificationService';
@@ -89,13 +90,12 @@ export default function Navbar() {
       <div className="bg-[#F7F9F3] text-[#082B36] py-3.5 shadow-sm">
         <PageContainer className="flex items-center justify-between">
           {/* Brand Logo */}
-          <Link to="/" className="flex items-center gap-2.5 group">
-            <div className="w-10 h-10 bg-[#00E676] rounded-full flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
-              <Leaf className="w-6 h-6 text-[#002B36]" />
-            </div>
-            <span className="text-2xl font-black tracking-tight text-[#082B36] font-display">
-              Agri<span className="text-[#00C853]">Bazaar</span>
-            </span>
+          <Link to="/" className="flex items-center gap-2 group">
+            <img
+              src={agriLogo}
+              alt="AgriBazaar Logo"
+              className="h-10 w-auto object-contain transition-transform group-hover:scale-105"
+            />
           </Link>
 
           {/* Desktop Navigation Links */}
