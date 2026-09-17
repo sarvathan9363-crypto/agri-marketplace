@@ -37,8 +37,8 @@ export default function Register() {
     setLoading(true);
     try {
       await registerFarmer(f);
-      toast.success('Farmer account created! Verification pending.');
-      navigate('/farmer/dashboard');
+      toast.success('Farmer account created! Please complete your verification.');
+      navigate('/farmer/verification');
     } catch (err) {
       toast.error(err.response?.data?.message || 'Registration failed.');
     } finally {
