@@ -10,12 +10,23 @@ exports.registerFarmer = async (req, res, next) => {
   try {
     const { fullName, email, mobileNumber, password, farmName, farmerType, location, address } = req.body;
 
+    const cleanEmail = String(email || '').toLowerCase().trim();
+    const cleanMobile = String(mobileNumber || '').trim();
+
     // Check existing user
-    const existingUser = await User.findOne({ $or: [{ email }, { mobileNumber }] });
+    const existingUser = await User.findOne({ $or: [{ email: cleanEmail }, { mobileNumber: cleanMobile }] });
     if (existingUser) {
+      const isEmailMatch = existingUser.email === cleanEmail;
+      const isMobileMatch = existingUser.mobileNumber === cleanMobile;
+      const msg = isEmailMatch && isMobileMatch
+        ? `Both email (${cleanEmail}) and mobile (${cleanMobile}) are already registered.`
+        : isEmailMatch
+        ? `Email (${cleanEmail}) is already registered.`
+        : `Mobile number (${cleanMobile}) is already registered.`;
+
       return res.status(400).json({
         success: false,
-        message: 'An account with this email or mobile number already exists.',
+        message: msg,
       });
     }
 
@@ -80,11 +91,22 @@ exports.registerBuyer = async (req, res, next) => {
   try {
     const { fullName, email, mobileNumber, password, buyerType, address, city, state, pincode } = req.body;
 
-    const existingUser = await User.findOne({ $or: [{ email }, { mobileNumber }] });
+    const cleanEmail = String(email || '').toLowerCase().trim();
+    const cleanMobile = String(mobileNumber || '').trim();
+
+    const existingUser = await User.findOne({ $or: [{ email: cleanEmail }, { mobileNumber: cleanMobile }] });
     if (existingUser) {
+      const isEmailMatch = existingUser.email === cleanEmail;
+      const isMobileMatch = existingUser.mobileNumber === cleanMobile;
+      const msg = isEmailMatch && isMobileMatch
+        ? `Both email (${cleanEmail}) and mobile (${cleanMobile}) are already registered.`
+        : isEmailMatch
+        ? `Email (${cleanEmail}) is already registered.`
+        : `Mobile number (${cleanMobile}) is already registered.`;
+
       return res.status(400).json({
         success: false,
-        message: 'An account with this email or mobile number already exists.',
+        message: msg,
       });
     }
 
