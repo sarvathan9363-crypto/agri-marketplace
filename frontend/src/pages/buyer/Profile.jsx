@@ -1,0 +1,107 @@
+import { useState, useEffect } from 'react';
+import buyerService from '../../services/buyerService';
+import Button from '../../components/ui/Button';
+import { Input, TextArea } from '../../components/ui/Input';
+import { Card, LoadingState } from '../../components/ui/Components';
+import toast from 'react-hot-toast';
+
+export default function BuyerProfile() {
+  const [buyer, setBuyer] = useState(null);
+  const [editing, setEditing] = useState(false);
+  const [form, setForm] = useState({});
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    buyerService.getProfile().then(r => { setBuyer(r.buyer); setForm(r.buyer); }).catch(() => {}).finally(() => setLoading(false));
+  }, []);
+
+  const handleSave = async () => {
+    try {
+      const res = await buyerService.updateProfile(form);
+      setBuyer(res.buyer);
+      setEditing(false);
+      toast.success('Buyer profile updated!');
+    } catch { toast.error('Failed to update.'); }
+  };
+
+  if (loading) return <LoadingState />;
+
+  return (
+    <div className="space-y-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <span className="text-[#00684a] font-extrabold text-xs tracking-widest uppercase font-display bg-[#00ed64]/20 px-3 py-1 rounded-full">Buyer Account</span>
+          <h1 className="text-3xl font-black text-[#001e2b] font-display mt-2">Buyer Profile</h1>
+          <p className="text-sm text-gray-600 mt-1 font-sans">Manage your personal details and default shipping address.</p>
+        </div>
+        {!editing ? (
+          <Button variant="primary" size="md" onClick={() => setEditing(true)}>
+            Edit Profile
+          </Button>
+        ) : (
+          <div className="flex gap-2">
+            <Button variant="ghost" size="md" onClick={() => { setEditing(false); setForm(buyer); }}>
+              Cancel
+            </Button>
+            <Button variant="primary" size="md" onClick={handleSave}>
+              Save Changes
+            </Button>
+          </div>
+        )}
+      </div>
+
+      <Card className="max-w-2xl">
+        <div className="space-y-6">
+          <div>
+            <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">Full Name</label>
+            {editing ? (
+              <Input value={form.fullName || ''} onChange={e => setForm({ ...form, fullName: e.target.value })} />
+            ) : (
+              <p className="text-base font-bold text-[#001e2b] font-display">{buyer?.fullName}</p>
+            )}
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2 border-t border-[#f0f4e8]">
+            <div>
+              <label className="block text-xs font-extrabold uppercase tracking-wider text-gray-500 mb-1 font-display">Email Address</label>
+              <p className="text-sm font-semibold text-[#001e2b] font-sans">{buyer?.email}</p>
+            </div>
+            <div>
+              <label className="block text-xs font-extrabold uppercase tracking-wider text-gray-500 mb-1 font-display">Mobile Number</label>
+              <p className="text-sm font-semibold text-[#001e2b] font-sans">{buyer?.mobileNumber}</p>
+            </div>
+          </div>
+
+          <div className="pt-2 border-t border-[#f0f4e8]">
+            <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">Delivery Address</label>
+            {editing ? (
+              <TextArea rows={2} value={form.address || ''} onChange={e => setForm({ ...form, address: e.target.value })} />
+            ) : (
+              <p className="text-sm text-gray-700 font-sans">{buyer?.address || '—'}</p>
+            )}
+          </div>
+
+          <div className="grid grid-cols-3 gap-4">
+            <div>
+              <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">City</label>
+              {editing ? <Input value={form.city || ''} onChange={e => setForm({ ...form, city: e.target.value })} /> : <p className="text-sm font-bold text-[#001e2b] font-display">{buyer?.city || '—'}</p>}
+            </div>
+            <div>
+              <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">State</label>
+              {editing ? <Input value={form.state || ''} onChange={e => setForm({ ...form, state: e.target.value })} /> : <p className="text-sm font-bold text-[#001e2b] font-display">{buyer?.state || '—'}</p>}
+            </div>
+            <div>
+              <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">Pincode</label>
+              {editing ? <Input value={form.pincode || ''} onChange={e => setForm({ ...form, pincode: e.target.value })} /> : <p className="text-sm font-bold text-[#001e2b] font-display">{buyer?.pincode || '—'}</p>}
+            </div>
+          </div>
+
+          <div className="pt-4 border-t border-[#f0f4e8]">
+            <label className="block text-xs font-extrabold uppercase tracking-wider text-gray-500 mb-1 font-display">Buyer Account Type</label>
+            <p className="text-sm font-bold text-[#001e2b] font-display">{buyer?.buyerType}</p>
+          </div>
+        </div>
+      </Card>
+    </div>
+  );
+}

@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-agri-green: #00E676;
+  --color-agri-green-dark: #00C853;
+  --color-agri-navy: #002B36;
+  --color-agri-bg: #F7F9F3;
+  --color-agri-text: #082B36;
+  --color-agri-muted: #64748B;
+  --color-agri-border: #E2E8E5;
+  
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+:root {
+  --app-header-height: 6rem;
+  --page-gutter: 1rem;
+}
+
+/* Tailwind v4 includes its own preflight — only keep box-sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: #F7F9F3;
+  color: #082B36;
+  min-width: 320px;
+  min-height: 100%;
+}
+
+#root { min-height: 100vh; }
+
+body { line-height: 1.5; }
+
+.app-header { height: var(--app-header-height); }
+.app-dashboard-sidebar { height: 100vh; top: 0; }
+.app-auth-page { min-height: calc(100vh - var(--app-header-height)); }
+
+@media (min-width: 640px) {
+  :root { --page-gutter: 1.5rem; }
+}
+
+@media (min-width: 1024px) {
+  :root { --page-gutter: 2rem; }
+}
+
+/* Heading base font — line-height & letter-spacing are left to Tailwind utilities */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+/* AgriBazaar Reference Button Styles */
+.btn-agri-primary, .btn-mongo-primary {
+  background-color: #00E676;
+  color: #002B36;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  font-size: 0.9375rem;
+}
+
+.btn-agri-primary:hover, .btn-mongo-primary:hover {
+  background-color: #00C853;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 230, 118, 0.35);
+}
+
+.btn-agri-secondary, .btn-mongo-secondary {
+  background-color: #FFFFFF;
+  color: #002B36;
+  border: 1.5px solid #E2E8E5;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.9375rem;
+}
+
+.btn-agri-secondary:hover, .btn-mongo-secondary:hover {
+  border-color: #002B36;
+  background-color: #F7F9F3;
+}
+
+.btn-agri-outline, .btn-mongo-outline {
+  background-color: transparent;
+  color: #FFFFFF;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.9375rem;
+}
+
+.btn-agri-outline:hover, .btn-mongo-outline:hover {
+  border-color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Input Fields */
+.input-mongo, .input-agri {
+  width: 100%;
+  display: block;
+  padding: 0.875rem 1rem 0.875rem 2.75rem;
+  background-color: #ffffff;
+  border: 1.5px solid #E2E8E5;
+  border-radius: 0.75rem;
+  font-size: 0.95rem;
+  color: #082B36;
+  transition: all 0.15s ease;
+  line-height: 1.4;
+}
+
+.input-mongo:focus, .input-agri:focus {
+  outline: none;
+  border-color: #00E676;
+  box-shadow: 0 0 0 4px rgba(0, 230, 118, 0.15);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F9F3;
+}
+::-webkit-scrollbar-thumb {
+  background: #002B36;
+  border-radius: 3px;
+}
+
+
