@@ -5,6 +5,7 @@ import Button from '../../components/ui/Button';
 import { Input, TextArea } from '../../components/ui/Input';
 import { Card, StatusBadge, LoadingState } from '../../components/ui/Components';
 import toast from 'react-hot-toast';
+import SecureFileUpload from '../../components/common/SecureFileUpload';
 
 export default function FarmerProfile() {
   const { user } = useAuth();
@@ -60,6 +61,20 @@ export default function FarmerProfile() {
 
       <Card className="max-w-2xl">
         <div className="space-y-6">
+          <div className="pb-4 border-b border-[#f0f4e8]">
+            <SecureFileUpload
+              documentType="AVATAR_IMAGE"
+              category="PROFILE"
+              subCategory="AVATAR"
+              entityType="USER"
+              label="Profile Avatar Photo"
+              description="Upload avatar photo (JPG, PNG, WEBP)"
+              existingFile={farmer?.profileImage}
+              onUploadSuccess={(fileData) => {
+                setFarmer((prev) => ({ ...prev, profileImage: fileData.secureUrl }));
+              }}
+            />
+          </div>
           <div>
             <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">Full Name</label>
             {editing ? (

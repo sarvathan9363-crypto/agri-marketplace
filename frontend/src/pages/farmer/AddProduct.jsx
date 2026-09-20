@@ -7,6 +7,7 @@ import { Input, Select, TextArea } from '../../components/ui/Input';
 import { Card } from '../../components/ui/Components';
 import productService from '../../services/productService';
 import toast from 'react-hot-toast';
+import SecureFileUpload from '../../components/common/SecureFileUpload';
 
 const categories = [
   { value: 'FRUITS', label: 'Fruits' },
@@ -194,12 +195,22 @@ export default function AddProduct() {
             />
           </div>
 
-          <Input
-            label="Image URL"
-            placeholder="https://images.unsplash.com/photo-..."
-            value={form.images[0]}
-            onChange={(e) => setForm({ ...form, images: [e.target.value] })}
-          />
+          <div className="pt-2 border-t border-gray-100">
+            <SecureFileUpload
+              documentType="PRODUCT_IMAGE"
+              category="PRODUCT"
+              subCategory="IMAGES"
+              entityType="PRODUCT"
+              label="Upload Crop Product Image *"
+              description="High quality JPG, PNG, or WEBP image of agricultural produce"
+              onUploadSuccess={(fileData) => {
+                setForm((prev) => ({
+                  ...prev,
+                  images: [fileData.secureUrl, ...prev.images.filter(Boolean)],
+                }));
+              }}
+            />
+          </div>
 
           <div className="mt-8 pt-4 border-t border-[#f0f4e8] flex flex-wrap gap-3">
             <Button variant="outline" size="md" icon={Save} loading={loading} onClick={() => handleSubmit('DRAFT')}>

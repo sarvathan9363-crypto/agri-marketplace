@@ -38,6 +38,7 @@ app.use('/api/admin', require('./routes/admin'));
 app.use('/api/notifications', require('./routes/notifications'));
 app.use('/api/disputes', require('./routes/disputes'));
 app.use('/api/payments', require('./routes/payments'));
+app.use('/api/files', require('./routes/files'));
 
 // 404 handler
 app.use((req, res) => {

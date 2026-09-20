@@ -26,6 +26,7 @@ import {
 import farmerService from '../../services/farmerService';
 import { useAuth } from '../../context/AuthContext';
 import { verificationConfigs } from '../../config/verificationConfigs';
+import SecureFileUpload from '../../components/common/SecureFileUpload';
 
 const INDIAN_STATES = [
   'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh',
@@ -763,6 +764,17 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                         <label htmlFor="isTenant" className="text-xs font-bold text-gray-700 cursor-pointer">I am a registered Cultivator / Tenant Farmer on this land</label>
                       </div>
 
+                      <div className="pt-2 border-t border-gray-100">
+                        <SecureFileUpload
+                          documentType="PATTA"
+                          category="VERIFICATION"
+                          subCategory="LAND"
+                          entityType="VERIFICATION"
+                          label="Upload Patta / Land Record Document *"
+                          description="Upload PDF, JPG, or PNG copy of 7/12, Patta, or Chitta (Max 5MB)"
+                        />
+                      </div>
+
                       <button type="submit" disabled={submitting} className="btn-agri-primary w-full py-3 text-sm font-bold flex items-center justify-center gap-2 mt-2">{submitting ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Verify & Continue'}</button>
                     </form>
                   )}
@@ -833,6 +845,18 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                         <label className="block text-xs font-extrabold uppercase tracking-wider text-[#082B36] mb-1">IFSC Code *</label>
                         <input type="text" required maxLength={11} placeholder="e.g. SBIN0001234" value={bankForm.ifsc} onChange={(e) => setBankForm({ ...bankForm, ifsc: e.target.value.toUpperCase() })} className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-[#00C853] text-sm font-mono uppercase" />
                       </div>
+
+                      <div className="pt-2 border-t border-gray-100">
+                        <SecureFileUpload
+                          documentType="BANK_PROOF"
+                          category="VERIFICATION"
+                          subCategory="BANK"
+                          entityType="VERIFICATION"
+                          label="Upload Bank Passbook / Cancelled Cheque *"
+                          description="Upload front page of passbook or cancelled cheque (Max 5MB)"
+                        />
+                      </div>
+
                       <button type="submit" disabled={submitting} className="btn-agri-primary w-full py-3 text-sm font-bold flex items-center justify-center gap-2 mt-2">{submitting ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Verify & Continue'}</button>
                     </form>
                   )}
@@ -882,6 +906,18 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                         <label className="block text-xs font-extrabold uppercase tracking-wider text-[#082B36] mb-1">Name as per PAN (Optional)</label>
                         <input type="text" placeholder="Full name as printed on PAN card" value={panForm.nameAsPerPan} onChange={(e) => setPanForm({ ...panForm, nameAsPerPan: e.target.value })} className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-[#00C853] text-sm" />
                       </div>
+
+                      <div className="pt-2 border-t border-gray-100">
+                        <SecureFileUpload
+                          documentType="PAN_DOC"
+                          category="VERIFICATION"
+                          subCategory="PAN"
+                          entityType="VERIFICATION"
+                          label="Upload PAN Card Copy *"
+                          description="Clear front scan or photo of your PAN card (Max 5MB)"
+                        />
+                      </div>
+
                       <button type="submit" disabled={submitting} className="btn-agri-primary w-full py-3 text-sm font-bold flex items-center justify-center gap-2 mt-2">{submitting ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Verify & Continue'}</button>
                     </form>
                   )}
@@ -1263,31 +1299,51 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                       <div className="flex items-center gap-2 text-[#00C853] font-bold text-base"><CheckCircle2 className="w-5 h-5" /> ✓ Organization Documents Verified</div>
                     </div>
                   ) : (
-                    <form onSubmit={handleVerifyOrgDocuments} className="space-y-4 max-w-lg">
-                      {[
-                        { key: 'regCert', label: 'Organization Registration Certificate *' },
-                        { key: 'panDoc', label: 'Organization PAN Card Copy *' },
-                        { key: 'bankProof', label: 'Bank Proof / Cancelled Cheque *' },
-                        { key: 'authDoc', label: 'Authorization Letter / Board Resolution' },
-                        { key: 'gstCert', label: 'GST Certificate (If Applicable)' },
-                      ].map((doc) => (
-                        <div key={doc.key} className="p-4 rounded-xl border border-gray-200 flex items-center justify-between">
-                          <div>
-                            <p className="text-xs font-bold text-[#082B36]">{doc.label}</p>
-                            <span className="text-[10px] text-gray-400">
-                              {docsForm[doc.key] ? 'Uploaded & Validated' : 'Not Uploaded'}
-                            </span>
-                          </div>
+                    <form onSubmit={handleVerifyOrgDocuments} className="space-y-6 max-w-[#600px]">
+                      <SecureFileUpload
+                        documentType="REGISTRATION_CERT"
+                        category="VERIFICATION"
+                        subCategory="REGISTRATION"
+                        entityType="VERIFICATION"
+                        label="1. Organization Registration Certificate *"
+                        onUploadSuccess={() => setDocsForm((prev) => ({ ...prev, regCert: true }))}
+                      />
 
-                          <label className={`cursor-pointer text-xs font-bold px-3 py-1.5 rounded-lg border flex items-center gap-1.5 ${
-                            docsForm[doc.key] ? 'bg-emerald-50 text-[#00C853] border-emerald-300' : 'bg-gray-50 text-gray-700 border-gray-300 hover:bg-gray-100'
-                          }`}>
-                            <Upload className="w-3.5 h-3.5" />
-                            {docsForm[doc.key] ? 'Uploaded ✓' : 'Upload'}
-                            <input type="checkbox" checked={docsForm[doc.key]} onChange={(e) => setDocsForm({ ...docsForm, [doc.key]: e.target.checked })} className="hidden" />
-                          </label>
-                        </div>
-                      ))}
+                      <SecureFileUpload
+                        documentType="PAN_DOC"
+                        category="VERIFICATION"
+                        subCategory="PAN"
+                        entityType="VERIFICATION"
+                        label="2. Organization PAN Card Copy *"
+                        onUploadSuccess={() => setDocsForm((prev) => ({ ...prev, panDoc: true }))}
+                      />
+
+                      <SecureFileUpload
+                        documentType="BANK_PROOF"
+                        category="VERIFICATION"
+                        subCategory="BANK"
+                        entityType="VERIFICATION"
+                        label="3. Bank Passbook / Cancelled Cheque *"
+                        onUploadSuccess={() => setDocsForm((prev) => ({ ...prev, bankProof: true }))}
+                      />
+
+                      <SecureFileUpload
+                        documentType="AUTHORIZATION_LETTER"
+                        category="VERIFICATION"
+                        subCategory="AUTHORIZATION"
+                        entityType="VERIFICATION"
+                        label="4. Authorization Letter / Board Resolution"
+                        onUploadSuccess={() => setDocsForm((prev) => ({ ...prev, authDoc: true }))}
+                      />
+
+                      <SecureFileUpload
+                        documentType="GST_CERT"
+                        category="VERIFICATION"
+                        subCategory="GST"
+                        entityType="VERIFICATION"
+                        label="5. GST Certificate (If Applicable)"
+                        onUploadSuccess={() => setDocsForm((prev) => ({ ...prev, gstCert: true }))}
+                      />
 
                       <button type="submit" disabled={submitting} className="btn-agri-primary w-full py-3.5 text-sm font-bold flex items-center justify-center gap-2 mt-2">{submitting ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Submit Documents for Verification'}</button>
                     </form>
