@@ -63,13 +63,13 @@ const farmerSchema = new mongoose.Schema({
   },
   verification: {
     aadhaar: {
-      status: { type: String, enum: ['pending', 'verified', 'failed'], default: 'pending' },
+      status: { type: String, enum: ['pending', 'verified', 'skipped', 'failed'], default: 'pending' },
       referenceId: { type: String, default: null },
       verifiedName: { type: String, default: null },
       verifiedAt: { type: Date, default: null },
     },
     farmerRegistry: {
-      status: { type: String, enum: ['pending', 'verified', 'failed'], default: 'pending' },
+      status: { type: String, enum: ['pending', 'verified', 'skipped', 'failed'], default: 'pending' },
       farmerIdMasked: { type: String, default: null },
       state: { type: String, default: null },
       district: { type: String, default: null },
@@ -77,7 +77,7 @@ const farmerSchema = new mongoose.Schema({
       verifiedAt: { type: Date, default: null },
     },
     landRecord: {
-      status: { type: String, enum: ['pending', 'verified', 'failed'], default: 'pending' },
+      status: { type: String, enum: ['pending', 'verified', 'skipped', 'failed'], default: 'pending' },
       state: { type: String, default: null },
       district: { type: String, default: null },
       taluk: { type: String, default: null },
@@ -92,7 +92,7 @@ const farmerSchema = new mongoose.Schema({
       verifiedAt: { type: Date, default: null },
     },
     bankAccount: {
-      status: { type: String, enum: ['pending', 'verified', 'failed'], default: 'pending' },
+      status: { type: String, enum: ['pending', 'verified', 'skipped', 'failed'], default: 'pending' },
       accountHolderName: { type: String, default: null },
       accountNumberMasked: { type: String, default: null },
       bankName: { type: String, default: null },
@@ -103,7 +103,7 @@ const farmerSchema = new mongoose.Schema({
       verifiedAt: { type: Date, default: null },
     },
     pan: {
-      status: { type: String, enum: ['pending', 'verified', 'failed'], default: 'pending' },
+      status: { type: String, enum: ['pending', 'verified', 'skipped', 'failed'], default: 'pending' },
       panMasked: { type: String, default: null },
       nameMatch: { type: Boolean, default: null },
       referenceId: { type: String, default: null },
@@ -112,6 +112,57 @@ const farmerSchema = new mongoose.Schema({
     pmKisan: {
       status: { type: String, enum: ['pending', 'verified', 'skipped', 'failed'], default: 'pending' },
       referenceId: { type: String, default: null },
+      verifiedAt: { type: Date, default: null },
+    },
+    // FPO / FPC Specific Verification Fields
+    orgIdentity: {
+      status: { type: String, enum: ['pending', 'verified', 'skipped', 'failed'], default: 'pending' },
+      orgName: { type: String, default: null },
+      orgType: { type: String, default: null },
+      registrationNumber: { type: String, default: null },
+      cin: { type: String, default: null },
+      state: { type: String, default: null },
+      district: { type: String, default: null },
+      address: { type: String, default: null },
+      pincode: { type: String, default: null },
+      verifiedAt: { type: Date, default: null },
+    },
+    orgPan: {
+      status: { type: String, enum: ['pending', 'verified', 'skipped', 'failed'], default: 'pending' },
+      panMasked: { type: String, default: null },
+      nameMatch: { type: Boolean, default: null },
+      verifiedAt: { type: Date, default: null },
+    },
+    gstin: {
+      status: { type: String, enum: ['pending', 'verified', 'skipped', 'failed', 'not_applicable'], default: 'pending' },
+      gstinNumber: { type: String, default: null },
+      verifiedAt: { type: Date, default: null },
+    },
+    representative: {
+      status: { type: String, enum: ['pending', 'verified', 'skipped', 'failed'], default: 'pending' },
+      repName: { type: String, default: null },
+      designation: { type: String, default: null },
+      mobileNumber: { type: String, default: null },
+      referenceId: { type: String, default: null },
+      verifiedAt: { type: Date, default: null },
+    },
+    orgBank: {
+      status: { type: String, enum: ['pending', 'verified', 'skipped', 'failed'], default: 'pending' },
+      accountHolderName: { type: String, default: null },
+      accountNumberMasked: { type: String, default: null },
+      bankName: { type: String, default: null },
+      branchName: { type: String, default: null },
+      ifsc: { type: String, default: null },
+      nameMatch: { type: Boolean, default: null },
+      verifiedAt: { type: Date, default: null },
+    },
+    orgDocuments: {
+      status: { type: String, enum: ['pending', 'verified', 'skipped', 'failed', 'under_review'], default: 'pending' },
+      regCertUploaded: { type: Boolean, default: false },
+      panDocUploaded: { type: Boolean, default: false },
+      bankProofUploaded: { type: Boolean, default: false },
+      authDocUploaded: { type: Boolean, default: false },
+      gstCertUploaded: { type: Boolean, default: false },
       verifiedAt: { type: Date, default: null },
     },
     overallStatus: {

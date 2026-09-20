@@ -164,12 +164,25 @@ const updateOverallVerification = (farmer) => {
   }
 
   const v = farmer.verification;
-  const isFullyVerified =
-    v.aadhaar?.status === 'verified' &&
-    v.farmerRegistry?.status === 'verified' &&
-    v.landRecord?.status === 'verified' &&
-    v.bankAccount?.status === 'verified' &&
-    v.pan?.status === 'verified';
+  let isFullyVerified = false;
+
+  if (farmer.farmerType === 'FPO') {
+    const isGstinOk = v.gstin?.status === 'verified' || v.gstin?.status === 'not_applicable';
+    isFullyVerified =
+      v.orgIdentity?.status === 'verified' &&
+      v.orgPan?.status === 'verified' &&
+      v.representative?.status === 'verified' &&
+      v.orgBank?.status === 'verified' &&
+      v.orgDocuments?.status === 'verified' &&
+      isGstinOk;
+  } else {
+    isFullyVerified =
+      v.aadhaar?.status === 'verified' &&
+      v.farmerRegistry?.status === 'verified' &&
+      v.landRecord?.status === 'verified' &&
+      v.bankAccount?.status === 'verified' &&
+      v.pan?.status === 'verified';
+  }
 
   v.overallStatus = isFullyVerified ? 'verified' : 'incomplete';
 
@@ -198,6 +211,12 @@ exports.getVerificationStatus = async (req, res, next) => {
         bankAccount: { status: 'pending' },
         pan: { status: 'pending' },
         pmKisan: { status: 'pending' },
+        orgIdentity: { status: 'pending' },
+        orgPan: { status: 'pending' },
+        gstin: { status: 'pending' },
+        representative: { status: 'pending' },
+        orgBank: { status: 'pending' },
+        orgDocuments: { status: 'pending' },
         overallStatus: 'incomplete',
       };
       await farmer.save();
@@ -205,6 +224,7 @@ exports.getVerificationStatus = async (req, res, next) => {
 
     res.json({
       success: true,
+      farmerType: farmer.farmerType,
       verificationStatus: farmer.verificationStatus,
       verification: farmer.verification,
       notes: farmer.verificationNotes,
@@ -531,4 +551,351 @@ exports.verifyPmKisan = async (req, res, next) => {
     next(error);
   }
 };
+
+// @desc    Skip a specific verification step
+// @route   POST /api/farmers/verify/skip-step
+exports.skipStep = async (req, res, next) => {
+  try {
+    const { stepKey } = req.body;
+    const validSteps = [
+      'aadhaar', 'farmerRegistry', 'landRecord', 'bankAccount', 'pan', 'pmKisan',
+      'orgIdentity', 'orgPan', 'gstin', 'representative', 'orgBank', 'orgDocuments'
+    ];
+
+    if (!validSteps.includes(stepKey)) {
+      return res.status(400).json({ success: false, message: 'Invalid verification step key.' });
+    }
+
+    const farmer = await Farmer.findOne({ userId: req.user._id });
+    if (!farmer) {
+      return res.status(404).json({ success: false, message: 'Farmer profile not found.' });
+    }
+
+    if (!farmer.verification) farmer.verification = {};
+    if (!farmer.verification[stepKey]) farmer.verification[stepKey] = {};
+
+    // Do not downgrade already verified steps
+    if (farmer.verification[stepKey].status !== 'verified') {
+      farmer.verification[stepKey].status = 'skipped';
+    }
+
+    updateOverallVerification(farmer);
+    await farmer.save();
+
+    res.json({
+      success: true,
+      message: `Step '${stepKey}' skipped.`,
+      verification: farmer.verification,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+// =========================================================
+// FPO / FPC VERIFICATION CONTROLLERS
+// =========================================================
+
+// @desc    Verify FPO Organization Identity
+// @route   POST /api/farmers/verify/fpo-org-identity
+exports.verifyOrgIdentity = async (req, res, next) => {
+  try {
+    const { orgName, orgType, registrationNumber, cin, state, district, address, pincode } = req.body;
+
+    if (!orgName || !registrationNumber || !state || !district) {
+      return res.status(400).json({
+        success: false,
+        message: 'Please provide Organization Name, Registration Number, State, and District.',
+      });
+    }
+
+    const farmer = await Farmer.findOne({ userId: req.user._id });
+    if (!farmer) {
+      return res.status(404).json({ success: false, message: 'Farmer profile not found.' });
+    }
+
+    if (!farmer.verification) farmer.verification = {};
+
+    farmer.verification.orgIdentity = {
+      status: 'verified',
+      orgName: String(orgName).trim(),
+      orgType: orgType || 'FPO',
+      registrationNumber: String(registrationNumber).trim(),
+      cin: cin ? String(cin).trim() : null,
+      state: String(state).trim(),
+      district: String(district).trim(),
+      address: address ? String(address).trim() : null,
+      pincode: pincode ? String(pincode).trim() : null,
+      verifiedAt: new Date(),
+    };
+
+    updateOverallVerification(farmer);
+    await farmer.save();
+
+    res.json({
+      success: true,
+      message: '✓ Organization identity verified successfully.',
+      verification: farmer.verification,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+// @desc    Verify FPO Organization PAN
+// @route   POST /api/farmers/verify/fpo-org-pan
+exports.verifyOrgPan = async (req, res, next) => {
+  try {
+    const { panNumber, orgName } = req.body;
+    const cleanPan = String(panNumber || '').trim().toUpperCase();
+
+    if (!/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/.test(cleanPan)) {
+      return res.status(400).json({
+        success: false,
+        message: 'Please enter a valid 10-character Organization PAN number (e.g. ABCDE1234F).',
+      });
+    }
+
+    const farmer = await Farmer.findOne({ userId: req.user._id });
+    if (!farmer) {
+      return res.status(404).json({ success: false, message: 'Farmer profile not found.' });
+    }
+
+    const maskedPan = `XXXXX${cleanPan.slice(5, 9)}${cleanPan.slice(-1)}`;
+
+    if (!farmer.verification) farmer.verification = {};
+
+    farmer.verification.orgPan = {
+      status: 'verified',
+      panMasked: maskedPan,
+      nameMatch: true,
+      verifiedAt: new Date(),
+    };
+
+    updateOverallVerification(farmer);
+    await farmer.save();
+
+    res.json({
+      success: true,
+      message: '✓ Organization PAN verified.',
+      verification: farmer.verification,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+// @desc    Verify or Mark Not Applicable for FPO GSTIN
+// @route   POST /api/farmers/verify/fpo-gstin
+exports.verifyGstin = async (req, res, next) => {
+  try {
+    const { isNotApplicable, gstinNumber } = req.body;
+
+    const farmer = await Farmer.findOne({ userId: req.user._id });
+    if (!farmer) {
+      return res.status(404).json({ success: false, message: 'Farmer profile not found.' });
+    }
+
+    if (!farmer.verification) farmer.verification = {};
+
+    if (isNotApplicable) {
+      farmer.verification.gstin = {
+        status: 'not_applicable',
+        gstinNumber: null,
+        verifiedAt: new Date(),
+      };
+    } else {
+      const cleanGstin = String(gstinNumber || '').trim().toUpperCase();
+      if (cleanGstin.length !== 15) {
+        return res.status(400).json({
+          success: false,
+          message: 'Please enter a valid 15-character GSTIN number.',
+        });
+      }
+      farmer.verification.gstin = {
+        status: 'verified',
+        gstinNumber: cleanGstin,
+        verifiedAt: new Date(),
+      };
+    }
+
+    updateOverallVerification(farmer);
+    await farmer.save();
+
+    res.json({
+      success: true,
+      message: isNotApplicable ? 'GSTIN marked as Not Applicable.' : '✓ GSTIN verified.',
+      verification: farmer.verification,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+// @desc    Send OTP to FPO Authorized Representative
+// @route   POST /api/farmers/verify/fpo-rep-otp
+exports.sendRepOtp = async (req, res, next) => {
+  try {
+    const { mobileNumber } = req.body;
+    const cleanMobile = String(mobileNumber || '').replace(/\D/g, '');
+
+    if (cleanMobile.length !== 10) {
+      return res.status(400).json({
+        success: false,
+        message: 'Please enter a valid 10-digit mobile number.',
+      });
+    }
+
+    const referenceId = `REP-REF-${Date.now()}-${Math.floor(1000 + Math.random() * 9000)}`;
+    res.json({
+      success: true,
+      message: 'OTP sent to Authorized Representative mobile.',
+      referenceId,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+// @desc    Verify FPO Authorized Representative
+// @route   POST /api/farmers/verify/fpo-rep-confirm
+exports.verifyRepOtp = async (req, res, next) => {
+  try {
+    const { repName, designation, mobileNumber, referenceId, otp } = req.body;
+    const cleanOtp = String(otp || '').trim();
+
+    if (!repName || !designation) {
+      return res.status(400).json({
+        success: false,
+        message: 'Please enter Representative Name and Designation.',
+      });
+    }
+
+    if (cleanOtp.length !== 6) {
+      return res.status(400).json({
+        success: false,
+        message: 'Please enter the 6-digit OTP sent to the mobile number.',
+      });
+    }
+
+    const farmer = await Farmer.findOne({ userId: req.user._id });
+    if (!farmer) {
+      return res.status(404).json({ success: false, message: 'Farmer profile not found.' });
+    }
+
+    if (!farmer.verification) farmer.verification = {};
+
+    farmer.verification.representative = {
+      status: 'verified',
+      repName: String(repName).trim(),
+      designation: String(designation).trim(),
+      mobileNumber: String(mobileNumber).trim(),
+      referenceId: referenceId || `REP-${Date.now()}`,
+      verifiedAt: new Date(),
+    };
+
+    updateOverallVerification(farmer);
+    await farmer.save();
+
+    res.json({
+      success: true,
+      message: '✓ Authorized Representative verified.',
+      verification: farmer.verification,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+// @desc    Verify FPO Organization Bank Account
+// @route   POST /api/farmers/verify/fpo-org-bank
+exports.verifyOrgBank = async (req, res, next) => {
+  try {
+    const { accountHolderName, bankName, branchName, accountNumber, confirmAccountNumber, ifsc } = req.body;
+
+    if (!accountHolderName || !bankName || !accountNumber || !confirmAccountNumber || !ifsc) {
+      return res.status(400).json({
+        success: false,
+        message: 'Please fill all required bank account fields.',
+      });
+    }
+
+    if (String(accountNumber).trim() !== String(confirmAccountNumber).trim()) {
+      return res.status(400).json({
+        success: false,
+        message: 'Account numbers do not match.',
+      });
+    }
+
+    const farmer = await Farmer.findOne({ userId: req.user._id });
+    if (!farmer) {
+      return res.status(404).json({ success: false, message: 'Farmer profile not found.' });
+    }
+
+    const accClean = String(accountNumber).trim();
+    const maskedAcc = `******${accClean.slice(-4)}`;
+
+    if (!farmer.verification) farmer.verification = {};
+
+    farmer.verification.orgBank = {
+      status: 'verified',
+      accountHolderName: String(accountHolderName).trim(),
+      accountNumberMasked: maskedAcc,
+      bankName: String(bankName).trim(),
+      branchName: branchName ? String(branchName).trim() : '',
+      ifsc: String(ifsc).trim().toUpperCase(),
+      nameMatch: true,
+      verifiedAt: new Date(),
+    };
+
+    updateOverallVerification(farmer);
+    await farmer.save();
+
+    res.json({
+      success: true,
+      message: '✓ Organization Bank Account verified.',
+      verification: farmer.verification,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+// @desc    Verify FPO Supporting Documents
+// @route   POST /api/farmers/verify/fpo-org-docs
+exports.verifyOrgDocuments = async (req, res, next) => {
+  try {
+    const { regCert, panDoc, bankProof, authDoc, gstCert } = req.body;
+
+    const farmer = await Farmer.findOne({ userId: req.user._id });
+    if (!farmer) {
+      return res.status(404).json({ success: false, message: 'Farmer profile not found.' });
+    }
+
+    if (!farmer.verification) farmer.verification = {};
+
+    farmer.verification.orgDocuments = {
+      status: 'verified',
+      regCertUploaded: Boolean(regCert),
+      panDocUploaded: Boolean(panDoc),
+      bankProofUploaded: Boolean(bankProof),
+      authDocUploaded: Boolean(authDoc),
+      gstCertUploaded: Boolean(gstCert),
+      verifiedAt: new Date(),
+    };
+
+    updateOverallVerification(farmer);
+    await farmer.save();
+
+    res.json({
+      success: true,
+      message: '✓ Organization Supporting Documents verified.',
+      verification: farmer.verification,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+
 

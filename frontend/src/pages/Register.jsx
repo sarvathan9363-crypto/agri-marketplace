@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Leaf, Tractor, ShoppingBag, Mail, Lock, Phone, User, MapPin, Eye, EyeOff, Building } from 'lucide-react';
+import { Leaf, Tractor, ShoppingBag, Mail, Lock, Phone, User, MapPin, Eye, EyeOff, Building, ShieldCheck, Play } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import toast from 'react-hot-toast';
 
 export default function Register() {
-  const [step, setStep] = useState('select'); // select, farmer, buyer
+  const [step, setStep] = useState('select'); // select, farmer, buyer, farmer_verification_prompt
   const [showPass, setShowPass] = useState(false);
   const [loading, setLoading] = useState(false);
   const { registerFarmer, registerBuyer } = useAuth();
@@ -37,8 +37,8 @@ export default function Register() {
     setLoading(true);
     try {
       await registerFarmer(f);
-      toast.success('Farmer account created! Please complete your verification.');
-      navigate('/farmer/verification');
+      toast.success('Farmer account created successfully!');
+      setStep('farmer_verification_prompt');
     } catch (err) {
       toast.error(err.response?.data?.message || 'Registration failed.');
     } finally {
@@ -61,14 +61,120 @@ export default function Register() {
     setLoading(true);
     try {
       await registerBuyer(b);
-      toast.success('Account created successfully!');
-      navigate('/buyer/dashboard');
+      toast.success('Account Created Successfully!');
+      setStep('buyer_verification_prompt');
     } catch (err) {
       toast.error(err.response?.data?.message || 'Registration failed.');
     } finally {
       setLoading(false);
     }
   };
+
+  // Post-registration Farmer Verification prompt
+  if (step === 'farmer_verification_prompt') {
+    const isFpoReg = farmerForm.farmerType === 'FPO';
+    const onboardingPath = isFpoReg ? '/fpo/verification/onboarding' : '/farmer/verification/wizard';
+    const badgeText = isFpoReg ? '✓ VERIFIED FPO' : '✓ VERIFIED FARMER';
+    const regTitle = isFpoReg ? 'Complete Your FPO Verification' : 'Complete Your Farmer Verification';
+
+    return (
+      <div className="app-auth-page bg-[#fafcf8] flex items-center justify-center p-4 py-12">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-lg text-center">
+          <div className="bg-white rounded-3xl border-2 border-[#e8eddb] p-8 shadow-xl space-y-6">
+            <div className="w-16 h-16 bg-[#e8f5e9] text-[#00684a] rounded-full flex items-center justify-center mx-auto shadow-md">
+              <ShieldCheck className="w-8 h-8" />
+            </div>
+
+            <div>
+              <span className="text-[11px] font-black uppercase tracking-widest text-[#00684a] bg-[#f0fdf4] px-3 py-1 rounded-full border border-[#bbf7d0]">
+                Registration Successful
+              </span>
+              <h1 className="text-2xl sm:text-3xl font-black text-[#001e2b] font-display mt-3">
+                {regTitle}
+              </h1>
+              <p className="text-xs sm:text-sm text-gray-600 mt-2 font-sans leading-relaxed">
+                Verify your credentials and bank account to unlock your <strong className="text-[#001e2b]">{badgeText}</strong> badge and sell produce on AgriBazaar.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+              <button
+                type="button"
+                onClick={() => navigate(onboardingPath)}
+                className="btn-mongo-primary w-full sm:w-auto px-6 py-3.5 text-sm font-bold flex items-center justify-center gap-2"
+              >
+                <Play className="w-4 h-4 fill-current" /> Start Verification
+              </button>
+
+              <button
+                type="button"
+                onClick={() => navigate('/farmer/dashboard')}
+                className="w-full sm:w-auto px-6 py-3.5 border-2 border-[#d0d7de] rounded-xl text-sm font-bold text-gray-700 hover:bg-gray-50 flex items-center justify-center gap-2"
+              >
+                Skip for Now
+              </button>
+            </div>
+
+            <p className="text-[11px] text-gray-400">
+              You can complete verification anytime later from your Seller Dashboard.
+            </p>
+          </div>
+        </motion.div>
+      </div>
+    );
+  }
+
+  // Post-registration Buyer Verification prompt
+  if (step === 'buyer_verification_prompt') {
+    const rawType = buyerForm.buyerType || 'INDIVIDUAL';
+    const badgeText = rawType === 'BULK_BUYER' ? '✓ VERIFIED WHOLESALE BUYER' : rawType === 'BUSINESS' ? '✓ VERIFIED BUSINESS BUYER' : '✓ VERIFIED BUYER';
+
+    return (
+      <div className="app-auth-page bg-[#fafcf8] flex items-center justify-center p-4 py-12">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-lg text-center">
+          <div className="bg-white rounded-3xl border-2 border-[#e8eddb] p-8 shadow-xl space-y-6">
+            <div className="w-16 h-16 bg-[#e8f5e9] text-[#00684a] rounded-full flex items-center justify-center mx-auto shadow-md">
+              <ShieldCheck className="w-8 h-8" />
+            </div>
+
+            <div>
+              <span className="text-[11px] font-black uppercase tracking-widest text-[#00684a] bg-[#f0fdf4] px-3 py-1 rounded-full border border-[#bbf7d0]">
+                Account Created Successfully
+              </span>
+              <h1 className="text-2xl sm:text-3xl font-black text-[#001e2b] font-display mt-3">
+                Complete Buyer Verification
+              </h1>
+              <p className="text-xs sm:text-sm text-gray-600 mt-2 font-sans leading-relaxed">
+                Verify your details to unlock verified buyer features, build trust on AgriBazaar, and earn your <strong className="text-[#001e2b]">{badgeText}</strong> badge.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+              <button
+                type="button"
+                onClick={() => navigate('/buyer/verification/wizard')}
+                className="btn-mongo-primary w-full sm:w-auto px-6 py-3.5 text-sm font-bold flex items-center justify-center gap-2"
+              >
+                <Play className="w-4 h-4 fill-current" /> Start Verification
+              </button>
+
+              <button
+                type="button"
+                onClick={() => navigate('/buyer/dashboard')}
+                className="w-full sm:w-auto px-6 py-3.5 border-2 border-[#d0d7de] rounded-xl text-sm font-bold text-gray-700 hover:bg-gray-50 flex items-center justify-center gap-2"
+              >
+                Skip for Now
+              </button>
+            </div>
+
+            <p className="text-[11px] text-gray-400">
+              Skipping verification does NOT mean verified. Status will remain PENDING_VERIFICATION until completed.
+            </p>
+          </div>
+        </motion.div>
+      </div>
+    );
+  }
 
   // Role selection step
   if (step === 'select') {

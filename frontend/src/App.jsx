@@ -25,6 +25,7 @@ import FarmerOrders from './pages/farmer/Orders';
 import FarmerSales from './pages/farmer/Sales';
 import FarmerProfile from './pages/farmer/Profile';
 import FarmerVerification from './pages/farmer/Verification';
+import VerificationWizard from './pages/farmer/VerificationWizard';
 
 // Buyer Pages
 import BuyerDashboard from './pages/buyer/Dashboard';
@@ -32,6 +33,8 @@ import BuyerOrders from './pages/buyer/Orders';
 import Cart from './pages/buyer/Cart';
 import Checkout from './pages/buyer/Checkout';
 import BuyerProfile from './pages/buyer/Profile';
+import BuyerVerification from './pages/buyer/Verification';
+import BuyerVerificationWizard from './pages/buyer/BuyerVerificationWizard';
 
 // Admin Pages
 import AdminDashboard from './pages/admin/Dashboard';
@@ -75,13 +78,24 @@ export default function App() {
             <Route path="sales" element={<FarmerSales />} />
             <Route path="profile" element={<FarmerProfile />} />
             <Route path="verification" element={<FarmerVerification />} />
+            <Route path="verification/wizard" element={<VerificationWizard />} />
+            <Route path="verification/onboarding" element={<VerificationWizard />} />
             <Route path="settings" element={<Settings />} />
+          </Route>
+
+          {/* FPO Protected Onboarding Routes */}
+          <Route path="/fpo" element={<FarmerLayout />}>
+            <Route path="verification/onboarding" element={<VerificationWizard accountType="fpo" />} />
+            <Route path="verification/wizard" element={<VerificationWizard accountType="fpo" />} />
           </Route>
 
           {/* Buyer Protected Routes */}
           <Route path="/buyer" element={<BuyerLayout />}>
             <Route index element={<Navigate to="/buyer/dashboard" replace />} />
             <Route path="dashboard" element={<BuyerDashboard />} />
+            <Route path="verification" element={<BuyerVerification />} />
+            <Route path="verification/wizard" element={<BuyerVerificationWizard />} />
+            <Route path="verification/onboarding" element={<BuyerVerificationWizard />} />
             <Route path="orders" element={<BuyerOrders />} />
             <Route path="cart" element={<Cart />} />
             <Route path="checkout" element={<Checkout />} />

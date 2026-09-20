@@ -1,24 +1,30 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Package, ShoppingBag, TrendingUp, AlertCircle, DollarSign, PlusCircle } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Package, ShoppingBag, AlertCircle, DollarSign, PlusCircle, ShieldCheck, CheckCircle2, ArrowRight } from 'lucide-react';
 import { StatsCard, StatusBadge, LoadingState } from '../../components/ui/Components';
 import farmerService from '../../services/farmerService';
 import toast from 'react-hot-toast';
 
 export default function FarmerDashboard() {
+  const navigate = useNavigate();
   const [data, setData] = useState(null);
+  const [verification, setVerification] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchDashboard();
+    fetchDashboardData();
   }, []);
 
-  const fetchDashboard = async () => {
+  const fetchDashboardData = async () => {
     try {
-      const res = await farmerService.getDashboard();
-      setData(res.dashboard);
+      const [dashRes, verifRes] = await Promise.all([
+        farmerService.getDashboard(),
+        farmerService.getVerification(),
+      ]);
+      setData(dashRes.dashboard);
+      setVerification(verifRes.verification);
     } catch {
-      toast.error('Failed to load dashboard.');
+      toast.error('Failed to load dashboard data.');
     } finally {
       setLoading(false);
     }
@@ -27,13 +33,27 @@ export default function FarmerDashboard() {
   if (loading) return <LoadingState />;
   if (!data) return null;
 
+  const isFpo = data?.farmerType === 'FPO' || verification?.farmerType === 'FPO';
+  const requiredKeys = isFpo
+    ? ['orgIdentity', 'orgPan', 'representative', 'orgBank', 'orgDocuments']
+    : ['aadhaar', 'farmerRegistry', 'landRecord', 'bankAccount', 'pan'];
+
+  const completedCount = requiredKeys.filter((k) => verification?.[k]?.status === 'verified').length;
+  const isFullyVerified = completedCount === 5;
+  const wizardPath = isFpo ? '/fpo/verification/onboarding' : '/farmer/verification/wizard';
+  const badgeTitle = isFpo ? '✓ VERIFIED FPO' : '✓ VERIFIED FARMER';
+
   return (
     <div className="space-y-8">
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <span className="text-[#00684a] font-extrabold text-xs tracking-widest uppercase font-display bg-[#00ed64]/20 px-3 py-1 rounded-full">Seller Dashboard</span>
-          <h1 className="text-3xl font-black text-[#001e2b] font-display mt-2">Farmer Overview</h1>
+          <span className="text-[#00684a] font-extrabold text-xs tracking-widest uppercase font-display bg-[#00ed64]/20 px-3 py-1 rounded-full">
+            {isFpo ? 'FPO / FPC Seller Dashboard' : 'Seller Dashboard'}
+          </span>
+          <h1 className="text-3xl font-black text-[#001e2b] font-display mt-2">
+            {isFpo ? 'FPO Overview' : 'Farmer Overview'}
+          </h1>
           <p className="text-sm text-gray-600 mt-1 font-sans">Manage your agricultural products, incoming orders, and revenue.</p>
         </div>
         <Link to="/farmer/products/add" className="btn-mongo-primary text-sm px-6 py-3">
@@ -41,15 +61,51 @@ export default function FarmerDashboard() {
         </Link>
       </div>
 
-      {data.verificationStatus === 'PENDING_VERIFICATION' && (
-        <div className="p-5 bg-[#fffbeb] border border-amber-300 rounded-2xl flex items-start gap-3 shadow-sm">
-          <AlertCircle className="w-5 h-5 text-amber-700 shrink-0 mt-0.5" />
-          <div>
-            <p className="text-sm font-bold text-amber-900 font-display">Verification Pending</p>
-            <p className="text-xs text-amber-700 mt-0.5 font-sans">Your farm profile is currently under review by AgriBazaar admin. You can save products as DRAFT.</p>
+      {/* DASHBOARD VERIFICATION SECTION CARD */}
+      <div className="bg-white rounded-3xl border-2 border-[#e8eddb] p-6 shadow-sm hover:border-[#00684a] transition-all">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="space-y-2">
+            <div className="flex items-center gap-2">
+              <ShieldCheck className={`w-6 h-6 ${isFullyVerified ? 'text-[#00C853]' : 'text-amber-600'}`} />
+              <h2 className="text-xl font-black text-[#001e2b] font-display">
+                {isFullyVerified ? badgeTitle : 'Complete Your Verification'}
+              </h2>
+              {isFullyVerified && (
+                <span className="px-3 py-0.5 rounded-full text-xs font-black bg-emerald-100 text-emerald-800">
+                  Active Badge
+                </span>
+              )}
+            </div>
+
+            <p className="text-sm font-bold text-gray-700 font-sans">
+              {completedCount} of 5 required checks completed
+            </p>
+
+            {/* Status indicator pill */}
+            <div className="flex items-center gap-2 pt-1">
+              {isFullyVerified ? (
+                <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#00C853] bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">
+                  <CheckCircle2 className="w-4 h-4" /> All Required Verification Active
+                </span>
+              ) : (
+                <span className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-800 bg-amber-50 border border-amber-200 px-3 py-1 rounded-full">
+                  <AlertCircle className="w-4 h-4 text-amber-600" /> Verification Incomplete
+                </span>
+              )}
+            </div>
+          </div>
+
+          <div className="shrink-0">
+            <button
+              type="button"
+              onClick={() => navigate(wizardPath)}
+              className="btn-mongo-primary px-6 py-3.5 text-sm font-bold flex items-center justify-center gap-2"
+            >
+              {isFullyVerified ? 'Update Verification' : 'Continue Verification'} <ArrowRight className="w-4 h-4" />
+            </button>
           </div>
         </div>
-      )}
+      </div>
 
       {/* Metrics Row */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
