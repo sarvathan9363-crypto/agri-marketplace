@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Package, ShoppingBag, AlertCircle, DollarSign, PlusCircle, ShieldCheck, CheckCircle2, ArrowRight } from 'lucide-react';
 import { StatsCard, StatusBadge, LoadingState } from '../../components/ui/Components';
+import PaymentSettlementCard from '../../components/farmer/PaymentSettlementCard';
 import farmerService from '../../services/farmerService';
 import toast from 'react-hot-toast';
 
@@ -106,6 +107,9 @@ export default function FarmerDashboard() {
           </div>
         </div>
       </div>
+
+      {/* RAZORPAY PAYMENT & SETTLEMENT SECTION CARD */}
+      <PaymentSettlementCard />
 
       {/* Metrics Row */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

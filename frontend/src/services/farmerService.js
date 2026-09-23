@@ -86,6 +86,23 @@ const farmerService = {
     const res = await api.post('/farmers/verify/fpo-org-docs', data);
     return res.data;
   },
+  // Razorpay Route / Payment Settlement Account Methods
+  getPaymentAccountStatus: async () => {
+    const res = await api.get('/farmers/payment-account/status');
+    return res.data;
+  },
+  initiatePaymentAccountOnboarding: async () => {
+    const res = await api.post('/farmers/payment-account/onboarding');
+    return res.data;
+  },
+  refreshPaymentAccountStatus: async () => {
+    const res = await api.post('/farmers/payment-account/refresh');
+    return res.data;
+  },
+  continuePaymentAccountSetup: async () => {
+    const res = await api.post('/farmers/payment-account/continue');
+    return res.data;
+  },
 };
 
 export default farmerService;

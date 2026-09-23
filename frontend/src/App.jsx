@@ -40,6 +40,7 @@ import BuyerVerificationWizard from './pages/buyer/BuyerVerificationWizard';
 import AdminDashboard from './pages/admin/Dashboard';
 import AdminUsers from './pages/admin/Users';
 import AdminFarmers from './pages/admin/Farmers';
+import AdminSettlements from './pages/admin/Settlements';
 import AdminProducts from './pages/admin/Products';
 import AdminOrders from './pages/admin/Orders';
 import AdminPayments from './pages/admin/Payments';
@@ -109,6 +110,7 @@ export default function App() {
             <Route path="dashboard" element={<AdminDashboard />} />
             <Route path="users" element={<AdminUsers />} />
             <Route path="farmers" element={<AdminFarmers />} />
+            <Route path="settlements" element={<AdminSettlements />} />
             <Route path="products" element={<AdminProducts />} />
             <Route path="orders" element={<AdminOrders />} />
             <Route path="payments" element={<AdminPayments />} />

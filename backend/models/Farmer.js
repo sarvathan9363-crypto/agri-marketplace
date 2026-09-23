@@ -49,6 +49,10 @@ const farmerSchema = new mongoose.Schema({
     type: String,
     default: '',
   },
+  walletAddress: {
+    type: String,
+    default: null,
+  },
   verificationStatus: {
     type: String,
     enum: ['PENDING_VERIFICATION', 'VERIFIED', 'REJECTED'],
@@ -182,6 +186,44 @@ const farmerSchema = new mongoose.Schema({
   totalSales: {
     type: Number,
     default: 0,
+  },
+  // Razorpay Route / Marketplace Seller Settlement Fields
+  razorpaySellerStatus: {
+    type: String,
+    enum: ['NOT_STARTED', 'ONBOARDING', 'PENDING', 'ACTIVE', 'REJECTED', 'SUSPENDED'],
+    default: 'NOT_STARTED',
+  },
+  razorpayLinkedAccountId: {
+    type: String,
+    default: null,
+  },
+  razorpayAccountReference: {
+    type: String,
+    default: null,
+  },
+  razorpayOnboardingStatus: {
+    type: String,
+    default: null,
+  },
+  razorpayActivationStatus: {
+    type: String,
+    default: null,
+  },
+  razorpayLastSyncedAt: {
+    type: Date,
+    default: null,
+  },
+  razorpayOnboardingUrl: {
+    type: String,
+    default: null,
+  },
+  razorpayRejectionReason: {
+    type: String,
+    default: null,
+  },
+  razorpaySettlementEnabled: {
+    type: Boolean,
+    default: false,
   },
 }, {
   timestamps: true,

@@ -1691,11 +1691,20 @@ export default function BuyerVerificationWizard() {
 
                         <label className="cursor-pointer inline-flex items-center space-x-1.5 px-3 py-1.5 border rounded bg-slate-50 hover:bg-slate-100 font-semibold text-slate-700">
                           <Upload className="w-3.5 h-3.5 text-slate-600" />
-                          <span>{isUploaded ? '✓ Uploaded' : 'Upload File'}</span>
+                          <span>{isUploaded ? '✓ Uploaded' : 'Upload Document'}</span>
                           <input
                             type="file"
+                            accept=".pdf,.jpg,.jpeg,.png,.webp"
                             className="hidden"
-                            onChange={() => {
+                            onChange={(e) => {
+                              const file = e.target.files?.[0];
+                              if (!file) return;
+                              const allowedExts = ['.pdf', '.jpg', '.jpeg', '.png', '.webp'];
+                              const ext = '.' + file.name.split('.').pop().toLowerCase();
+                              if (!allowedExts.includes(ext)) {
+                                toast.error(`Invalid document file format (${ext}). Allowed formats: PDF, JPG, PNG, WEBP.`);
+                                return;
+                              }
                               setDocForm({ ...docForm, [doc.id]: true });
                               toast.success(`Uploaded ${doc.title}`);
                             }}

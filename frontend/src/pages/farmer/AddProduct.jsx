@@ -201,8 +201,9 @@ export default function AddProduct() {
               category="PRODUCT"
               subCategory="IMAGES"
               entityType="PRODUCT"
+              acceptedFileTypes=".jpg,.jpeg,.png,.webp"
               label="Upload Crop Product Image *"
-              description="High quality JPG, PNG, or WEBP image of agricultural produce"
+              description="High quality JPG, PNG, or WEBP image of agricultural produce (PDF not allowed)"
               onUploadSuccess={(fileData) => {
                 setForm((prev) => ({
                   ...prev,

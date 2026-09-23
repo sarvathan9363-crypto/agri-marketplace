@@ -1,0 +1,80 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "C:\\Volume D\\projects\\temp\\agri\\contracts\\contracts\\AgriBazaarMarketplace.sol": {
+      "lastModificationDate": 1790060881217,
+      "contentHash": "097db730f045d1f702aeb215e0180e13",
+      "sourceName": "contracts/AgriBazaarMarketplace.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "AgriBazaarMarketplace",
+        "Context",
+        "Ownable",
+        "Pausable"
+      ]
+    },
+    "C:\\Volume D\\projects\\temp\\agri\\contracts\\contracts\\AgriBazaarPaymentAudit.sol": {
+      "lastModificationDate": 1790097409070,
+      "contentHash": "a9b2880e53c989fa19607ad17b93fbf2",
+      "sourceName": "contracts/AgriBazaarPaymentAudit.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "AgriBazaarPaymentAudit"
+      ]
+    }
+  }
+}

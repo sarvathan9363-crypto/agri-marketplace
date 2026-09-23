@@ -10,6 +10,7 @@ router.get('/dashboard', adminController.getDashboard);
 router.get('/users', adminController.getUsers);
 router.put('/users/:id/status', adminController.toggleUserStatus);
 router.get('/farmers', adminController.getFarmers);
+router.get('/farmers/settlements', adminController.getFarmerSettlements);
 router.put('/farmers/:id/verify', adminController.verifyFarmer);
 router.get('/products', adminController.getProducts);
 router.put('/products/:id/status', adminController.updateProductStatus);

@@ -3,6 +3,7 @@ import DataTable from '../../components/ui/DataTable';
 import Button from '../../components/ui/Button';
 import { TextArea } from '../../components/ui/Input';
 import { StatusBadge } from '../../components/ui/Components';
+import BlockchainAuditBadge from '../../components/common/BlockchainAuditBadge';
 import adminService from '../../services/adminService';
 import toast from 'react-hot-toast';
 
@@ -61,6 +62,11 @@ export default function AdminFarmers() {
     },
     { header: 'Location', key: 'location' },
     { header: 'Verification', key: 'verificationStatus', type: 'status' },
+    {
+      header: 'Audit Provenance',
+      key: 'audit',
+      render: (f) => <BlockchainAuditBadge entityType="FARMER" entityId={f._id} compact={true} />
+    },
     {
       header: 'Actions',
       key: 'actions',

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import DataTable from '../../components/ui/DataTable';
 import Button from '../../components/ui/Button';
 import { StatusBadge } from '../../components/ui/Components';
+import BlockchainAuditBadge from '../../components/common/BlockchainAuditBadge';
 import orderService from '../../services/orderService';
 import toast from 'react-hot-toast';
 
@@ -69,6 +70,11 @@ export default function FarmerOrders() {
           <StatusBadge status={o.orderStatus} />
         </div>
       )
+    },
+    {
+      header: 'Audit Provenance',
+      key: 'audit',
+      render: (o) => <BlockchainAuditBadge entityType="ORDER" entityId={o._id} compact={true} />
     },
     {
       header: 'Actions',

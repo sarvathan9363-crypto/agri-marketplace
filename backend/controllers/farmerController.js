@@ -87,7 +87,7 @@ exports.getSalesStats = async (req, res, next) => {
 
     // Monthly sales aggregation
     const monthlySales = await Order.aggregate([
-      { $match: { farmerId: req.user._id, paymentStatus: 'SUCCESSFUL' } },
+      { $match: { farmerId: req.user._id, paymentStatus: 'CAPTURED' } },
       {
         $group: {
           _id: { $dateToString: { format: '%Y-%m', date: '$createdAt' } },
@@ -157,6 +157,37 @@ exports.getDashboard = async (req, res, next) => {
   }
 };
 
+// Helper to trigger blockchain audit logging for verified farmer
+const triggerFarmerBlockchainAudit = async (farmer) => {
+  if (!farmer || farmer.verificationStatus !== 'VERIFIED') return;
+  const farmerWallet = farmer.walletAddress || null;
+  const farmerId = farmer._id.toString();
+
+  await blockchainQueue.enqueue({
+    entityType: 'FARMER',
+    entityId: farmerId,
+    action: 'REGISTER_FARMER',
+    idempotencyKey: `register_farmer_${farmerId}`,
+    payload: { farmerId, farmerWallet },
+  });
+
+  await blockchainQueue.enqueue({
+    entityType: 'FARMER',
+    entityId: farmerId,
+    action: 'UPDATE_FARMER_VERIFICATION',
+    idempotencyKey: `verify_farmer_${farmerId}`,
+    payload: {
+      farmerWallet,
+      isVerified: true,
+      verificationData: {
+        farmerId,
+        verificationStatus: 'VERIFIED',
+        verifiedAt: farmer.verifiedAt || new Date(),
+      },
+    },
+  });
+};
+
 // Helper to check and update overall verification status
 const updateOverallVerification = (farmer) => {
   if (!farmer.verification) {
@@ -189,6 +220,9 @@ const updateOverallVerification = (farmer) => {
   if (isFullyVerified) {
     farmer.verificationStatus = 'VERIFIED';
     if (!farmer.verifiedAt) farmer.verifiedAt = new Date();
+    triggerFarmerBlockchainAudit(farmer).catch((err) => {
+      console.error('[FarmerController] Blockchain audit queueing error:', err.message);
+    });
   } else {
     farmer.verificationStatus = 'PENDING_VERIFICATION';
   }
@@ -896,6 +930,5 @@ exports.verifyOrgDocuments = async (req, res, next) => {
     next(error);
   }
 };
-
 
 

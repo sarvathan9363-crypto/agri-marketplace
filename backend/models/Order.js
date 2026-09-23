@@ -51,13 +51,14 @@ const orderSchema = new mongoose.Schema({
   },
   paymentStatus: {
     type: String,
-    enum: ['PENDING', 'SUCCESSFUL', 'FAILED', 'REFUNDED'],
+    // SUCCESSFUL remains readable for legacy records; new Razorpay captures use CAPTURED.
+    enum: ['PENDING', 'CREATED', 'AUTHORIZED', 'CAPTURED', 'SUCCESSFUL', 'FAILED', 'CANCELLED', 'REFUNDED'],
     default: 'PENDING',
   },
   orderStatus: {
     type: String,
-    enum: ['CREATED', 'CONFIRMED', 'DISPATCHED', 'DELIVERED', 'CANCELLED'],
-    default: 'CREATED',
+    enum: ['PENDING_PAYMENT', 'CREATED', 'CONFIRMED', 'DISPATCHED', 'DELIVERED', 'CANCELLED'],
+    default: 'PENDING_PAYMENT',
   },
   deliveryAddress: {
     type: String,

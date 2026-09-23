@@ -156,6 +156,23 @@ exports.uploadFile = async (req, res, next) => {
       });
     }
 
+    // Reject PDF files for Image-Only uploads (Product images and Avatar profile images)
+    const IMAGE_ONLY_DOC_TYPES = ['PRODUCT_IMAGE', 'AVATAR_IMAGE'];
+    if (
+      IMAGE_ONLY_DOC_TYPES.includes(documentType) ||
+      category === 'PRODUCT' ||
+      category === 'PROFILE' ||
+      subCategory === 'IMAGES' ||
+      subCategory === 'AVATAR'
+    ) {
+      if (req.file.mimetype === 'application/pdf' || !req.file.mimetype.startsWith('image/')) {
+        return res.status(400).json({
+          success: false,
+          message: 'PDF files are not allowed for product or profile images. Please upload a JPG, PNG, or WEBP image file.',
+        });
+      }
+    }
+
     // Determine target Cloudinary folder
     const targetFolder = getCloudinaryFolder({
       userId,

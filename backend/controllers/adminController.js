@@ -6,6 +6,7 @@ const Order = require('../models/Order');
 const Payment = require('../models/Payment');
 const Dispute = require('../models/Dispute');
 const Notification = require('../models/Notification');
+const MarketplaceSettlement = require('../models/MarketplaceSettlement');
 
 // @desc    Admin dashboard stats
 // @route   GET /api/admin/dashboard
@@ -19,7 +20,7 @@ exports.getDashboard = async (req, res, next) => {
     const totalOrders = await Order.countDocuments();
     const completedOrders = await Order.countDocuments({ orderStatus: 'DELIVERED' });
     const totalRevenue = await Order.aggregate([
-      { $match: { paymentStatus: 'SUCCESSFUL' } },
+      { $match: { paymentStatus: 'CAPTURED' } },
       { $group: { _id: null, total: { $sum: '$totalAmount' } } },
     ]);
 
@@ -340,3 +341,75 @@ exports.getAnalytics = async (req, res, next) => {
     next(error);
   }
 };
+
+// @desc    Get farmer settlement statuses (Admin)
+// @route   GET /api/admin/farmers/settlements
+exports.getFarmerSettlements = async (req, res, next) => {
+  try {
+    const { status, search, page = 1, limit = 20 } = req.query;
+    const query = {};
+    if (status) query.razorpaySellerStatus = status;
+    if (search) {
+      query.$or = [
+        { fullName: { $regex: search, $options: 'i' } },
+        { farmName: { $regex: search, $options: 'i' } },
+      ];
+    }
+
+    const skip = (Number(page) - 1) * Number(limit);
+    const total = await Farmer.countDocuments(query);
+    const farmers = await Farmer.find(query)
+      .sort({ createdAt: -1 })
+      .skip(skip)
+      .limit(Number(limit));
+
+    // Aggregate settlement amounts per farmer
+    const settlementsSummary = await MarketplaceSettlement.aggregate([
+      {
+        $group: {
+          _id: '$farmerId',
+          totalSettled: { $sum: { $cond: [{ $eq: ['$status', 'TRANSFERRED'] }, '$sellerAmount', 0] } },
+          pendingAmount: { $sum: { $cond: [{ $eq: ['$status', 'PENDING'] }, '$sellerAmount', 0] } },
+          failedAmount: { $sum: { $cond: [{ $eq: ['$status', 'FAILED'] }, '$sellerAmount', 0] } },
+        },
+      },
+    ]);
+
+    const summaryMap = {};
+    for (const s of settlementsSummary) {
+      summaryMap[s._id.toString()] = s;
+    }
+
+    const items = farmers.map(f => {
+      const sum = summaryMap[f.userId?.toString()] || {};
+      return {
+        _id: f._id,
+        userId: f.userId,
+        fullName: f.fullName,
+        farmName: f.farmName,
+        email: f.email,
+        mobileNumber: f.mobileNumber,
+        verificationStatus: f.verificationStatus,
+        razorpaySellerStatus: f.razorpaySellerStatus || 'NOT_STARTED',
+        linkedAccountIdMasked: f.razorpayLinkedAccountId ? `${f.razorpayLinkedAccountId.slice(0, 5)}••••` : null,
+        settlementEnabled: f.razorpaySettlementEnabled || false,
+        lastSyncedAt: f.razorpayLastSyncedAt || null,
+        bankAccountMasked: f.verification?.bankAccount?.accountNumberMasked || 'Not set',
+        ifsc: f.verification?.bankAccount?.ifsc || '••••',
+        totalSettled: sum.totalSettled || 0,
+        pendingAmount: sum.pendingAmount || 0,
+        failedAmount: sum.failedAmount || 0,
+      };
+    });
+
+    res.json({
+      success: true,
+      items,
+      routeEnabled: process.env.RAZORPAY_ROUTE_ENABLED === 'true',
+      pagination: { page: Number(page), limit: Number(limit), total, pages: Math.ceil(total / Number(limit)) },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+

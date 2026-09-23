@@ -4,6 +4,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const connectDB = require('./config/db');
 const errorHandler = require('./middleware/errorHandler');
+const { handleWebhook } = require('./controllers/paymentController');
 
 // Connect to MongoDB
 connectDB();
@@ -15,6 +16,9 @@ app.use(cors({
   origin: process.env.CORS_ORIGIN || 'http://localhost:5173',
   credentials: true,
 }));
+// Razorpay requires the exact raw request body for HMAC verification. This
+// route must be registered before express.json().
+app.post('/api/payments/webhook', express.raw({ type: 'application/json' }), handleWebhook);
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
@@ -39,6 +43,7 @@ app.use('/api/notifications', require('./routes/notifications'));
 app.use('/api/disputes', require('./routes/disputes'));
 app.use('/api/payments', require('./routes/payments'));
 app.use('/api/files', require('./routes/files'));
+app.use('/api/blockchain', require('./routes/blockchain'));
 
 // 404 handler
 app.use((req, res) => {

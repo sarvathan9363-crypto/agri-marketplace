@@ -53,7 +53,7 @@ exports.createOrder = async (req, res, next) => {
         deliveryState: deliveryState || '',
         deliveryPincode: deliveryPincode || '',
         paymentStatus: 'PENDING',
-        orderStatus: 'CREATED',
+        orderStatus: 'PENDING_PAYMENT',
       });
 
       // Update product quantity
@@ -62,33 +62,7 @@ exports.createOrder = async (req, res, next) => {
       if (product.quantity <= 0) product.status = 'OUT_OF_STOCK';
       await product.save();
 
-      // Update farmer stats
-      if (farmer) {
-        farmer.totalOrders += 1;
-        farmer.totalSales += order.totalAmount;
-        await farmer.save();
-      }
-
-      // Notify farmer
-      await Notification.create({
-        userId: product.farmerUserId,
-        title: 'New Order Received',
-        message: `You received a new order for ${product.productName} (${item.quantity} ${product.unit}).`,
-        type: 'ORDER',
-      });
-
-      // Create payment record
-      await paymentService.createPaymentOrder(order._id, order.totalAmount, 'INR', req.user._id);
-
       orders.push(order);
-    }
-
-    // Update buyer stats
-    if (buyer) {
-      const totalSpent = orders.reduce((sum, o) => sum + o.totalAmount, 0);
-      buyer.totalOrders += orders.length;
-      buyer.totalSpent += totalSpent;
-      await buyer.save();
     }
 
     // Clear cart
@@ -97,8 +71,8 @@ exports.createOrder = async (req, res, next) => {
     // Notify buyer
     await Notification.create({
       userId: req.user._id,
-      title: 'Order Placed Successfully',
-      message: `Your order${orders.length > 1 ? 's have' : ' has'} been placed successfully.`,
+      title: 'Payment Pending',
+      message: `Your order${orders.length > 1 ? 's are' : ' is'} awaiting payment confirmation.`,
       type: 'ORDER',
     });
 
@@ -142,7 +116,7 @@ exports.getOrder = async (req, res, next) => {
 // @route   PUT /api/orders/:id/status
 exports.updateOrderStatus = async (req, res, next) => {
   try {
-    const { orderStatus, paymentStatus, cancellationReason } = req.body;
+    const { orderStatus, cancellationReason } = req.body;
     const order = await Order.findById(req.params.id);
 
     if (!order) {
@@ -163,11 +137,16 @@ exports.updateOrderStatus = async (req, res, next) => {
       return res.status(403).json({ success: false, message: 'Buyers can only cancel orders.' });
     }
 
+    if (isFarmer && order.paymentStatus !== 'CAPTURED') {
+      return res.status(409).json({ success: false, message: 'An order cannot be processed before payment capture.' });
+    }
+
     if (orderStatus) order.orderStatus = orderStatus;
-    if (paymentStatus) order.paymentStatus = paymentStatus;
     if (cancellationReason) order.cancellationReason = cancellationReason;
 
     await order.save();
+
+
 
     // Status notification messages
     const statusMessages = {

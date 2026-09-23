@@ -67,6 +67,7 @@ export default function FarmerProfile() {
               category="PROFILE"
               subCategory="AVATAR"
               entityType="USER"
+              acceptedFileTypes=".jpg,.jpeg,.png,.webp"
               label="Profile Avatar Photo"
               description="Upload avatar photo (JPG, PNG, WEBP)"
               existingFile={farmer?.profileImage}

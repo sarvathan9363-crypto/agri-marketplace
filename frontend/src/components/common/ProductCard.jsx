@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ShoppingCart, MapPin, BadgeCheck } from 'lucide-react';
+import BlockchainAuditBadge from './BlockchainAuditBadge';
 
 export default function ProductCard({ product, onAddToCart }) {
   const imgSrc = product.images?.[0] || 'https://images.unsplash.com/photo-1560493676-04071c5f467b?w=400';
@@ -40,7 +41,10 @@ export default function ProductCard({ product, onAddToCart }) {
               {product.productName}
             </h3>
           </Link>
-          <p className="text-xs font-semibold text-gray-500 mt-1 font-sans">{product.farmerName}</p>
+          <div className="flex items-center justify-between mt-1">
+            <p className="text-xs font-semibold text-gray-500 font-sans">{product.farmerName}</p>
+            <BlockchainAuditBadge entityType="LISTING" entityId={product._id} compact={true} />
+          </div>
           <div className="flex items-center gap-1.5 text-xs text-gray-400 mt-1 font-medium">
             <MapPin className="w-3.5 h-3.5 text-[#00C853]" />
             {product.location}

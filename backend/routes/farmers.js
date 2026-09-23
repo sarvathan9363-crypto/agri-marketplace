@@ -24,6 +24,12 @@ const {
   verifyOrgDocuments,
 } = require('../controllers/farmerController');
 const { getFarmerOrders } = require('../controllers/orderController');
+const {
+  getPaymentAccountStatus,
+  initiateOnboarding,
+  refreshStatus,
+  continueSetup,
+} = require('../controllers/farmerPaymentController');
 const { protect, authorize } = require('../middleware/auth');
 
 router.use(protect, authorize('FARMER'));
@@ -35,6 +41,13 @@ router.get('/orders', getFarmerOrders);
 router.get('/sales', getSalesStats);
 router.get('/dashboard', getDashboard);
 router.get('/verification', getVerificationStatus);
+
+// Razorpay Route / Payment Account Settlement endpoints
+router.get('/payment-account/status', getPaymentAccountStatus);
+router.post('/payment-account/onboarding', initiateOnboarding);
+router.post('/payment-account/refresh', refreshStatus);
+router.post('/payment-account/continue', continueSetup);
+
 
 // Verification wizard endpoints (Farmer & FPO)
 router.post('/verify/aadhaar-otp', sendAadhaarOtp);

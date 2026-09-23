@@ -49,6 +49,10 @@ const adminService = {
     const res = await api.put(`/admin/disputes/${id}`, data);
     return res.data;
   },
+  getFarmerSettlements: async (params = {}) => {
+    const res = await api.get('/admin/farmers/settlements', { params });
+    return res.data;
+  },
 };
 
 export default adminService;

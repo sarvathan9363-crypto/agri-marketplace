@@ -7,6 +7,7 @@ const adminLinks = [
   { to: '/admin/dashboard', label: 'Dashboard', icon: LayoutDashboard, end: true },
   { to: '/admin/users', label: 'Users', icon: Users },
   { to: '/admin/farmers', label: 'Farmers / FPOs', icon: Tractor },
+  { to: '/admin/settlements', label: 'Settlements', icon: CreditCard },
   { to: '/admin/products', label: 'Products', icon: Package },
   { to: '/admin/orders', label: 'Orders', icon: ShoppingBag },
   { to: '/admin/payments', label: 'Payments', icon: CreditCard },

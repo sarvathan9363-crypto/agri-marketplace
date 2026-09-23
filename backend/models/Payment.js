@@ -21,27 +21,34 @@ const paymentSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    enum: ['PENDING', 'SUCCESSFUL', 'FAILED', 'REFUNDED'],
-    default: 'PENDING',
+    enum: ['CREATED', 'PENDING', 'AUTHORIZED', 'CAPTURED', 'FAILED', 'CANCELLED', 'REFUNDED'],
+    default: 'CREATED',
   },
   paymentMethod: {
     type: String,
     default: '',
   },
-  gatewayOrderId: {
+  razorpayOrderId: {
     type: String,
     default: '',
   },
-  gatewayPaymentId: {
+  razorpayPaymentId: {
     type: String,
     default: '',
   },
-  gatewaySignature: {
+  verifiedAt: {
+    type: Date,
+  },
+  failureReason: {
     type: String,
     default: '',
   },
+  method: { type: String, default: '' },
+  sideEffectsApplied: { type: Boolean, default: false },
 }, {
   timestamps: true,
 });
+
+paymentSchema.index({ orderId: 1, status: 1 });
 
 module.exports = mongoose.model('Payment', paymentSchema);

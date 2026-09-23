@@ -20,15 +20,33 @@ export default function SecureFileUpload({
   subCategory = 'OTHER',
   entityType = 'VERIFICATION',
   entityId = '',
-  acceptedFileTypes = '.pdf,.jpg,.jpeg,.png,.webp',
+  acceptedFileTypes,
   maxFileSizeMb = 5,
   label = 'Upload Document',
-  description = 'PDF, JPG, JPEG, PNG or WEBP up to 5MB',
+  description,
   existingFile = null,
   onUploadSuccess = () => {},
   onUploadError = () => {},
   onFileRemove = () => {},
 }) {
+  const isImageOnly =
+    documentType === 'PRODUCT_IMAGE' ||
+    documentType === 'AVATAR_IMAGE' ||
+    category === 'PRODUCT' ||
+    category === 'PROFILE' ||
+    subCategory === 'IMAGES' ||
+    subCategory === 'AVATAR';
+
+  const effectiveAcceptedTypes =
+    acceptedFileTypes ||
+    (isImageOnly ? '.jpg,.jpeg,.png,.webp' : '.pdf,.jpg,.jpeg,.png,.webp');
+
+  const effectiveDescription =
+    description ||
+    (isImageOnly
+      ? 'High quality JPG, PNG, or WEBP image up to 5MB'
+      : 'PDF, JPG, JPEG, PNG or WEBP up to 5MB');
+
   const fileInputRef = useRef(null);
   const [dragActive, setDragActive] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
@@ -75,15 +93,26 @@ export default function SecureFileUpload({
     }
 
     // Check file extension
-    const allowedExts = acceptedFileTypes
+    const allowedExts = effectiveAcceptedTypes
       .split(',')
       .map((ext) => ext.trim().toLowerCase());
     const fileExt = '.' + file.name.split('.').pop().toLowerCase();
+
     if (!allowedExts.includes(fileExt)) {
-      const err = `Unsupported file type (${fileExt}). Allowed formats: ${acceptedFileTypes}`;
+      const err = `Unsupported file type (${fileExt}). Allowed formats: ${effectiveAcceptedTypes}`;
       setErrorMessage(err);
       toast.error(err);
       return false;
+    }
+
+    // Strict check for image-only fields (reject PDF)
+    if (isImageOnly || (!allowedExts.includes('.pdf') && (file.type === 'application/pdf' || fileExt === '.pdf'))) {
+      if (file.type === 'application/pdf' || fileExt === '.pdf') {
+        const err = 'PDF files are not allowed for image uploads. Please select a JPG, PNG, or WEBP image.';
+        setErrorMessage(err);
+        toast.error(err);
+        return false;
+      }
     }
 
     return true;
@@ -116,7 +145,7 @@ export default function SecureFileUpload({
       if (response.success && response.file) {
         setUploadProgress(100);
         setFileAsset(response.file);
-        toast.success('Document uploaded securely to Cloudinary!');
+        toast.success('File uploaded securely to Cloudinary!');
         onUploadSuccess(response.file);
       } else {
         throw new Error(response.message || 'Upload failed');
@@ -195,7 +224,7 @@ export default function SecureFileUpload({
               <div className="min-w-0">
                 <div className="flex items-center space-x-2">
                   <p className="truncate text-sm font-medium text-slate-900 dark:text-slate-100">
-                    {fileAsset.fileName || 'Uploaded Document'}
+                    {fileAsset.fileName || 'Uploaded Asset'}
                   </p>
                   <span className="inline-flex items-center rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-medium text-emerald-800 dark:bg-emerald-900/80 dark:text-emerald-200">
                     <CheckCircle2 className="mr-1 h-3 w-3" />
@@ -240,7 +269,7 @@ export default function SecureFileUpload({
                 type="button"
                 onClick={handleRemove}
                 className="inline-flex items-center rounded-lg border border-red-200 bg-white px-2.5 py-1.5 text-xs font-medium text-red-600 hover:bg-red-50 dark:border-red-900/40 dark:bg-slate-800 dark:text-red-400 dark:hover:bg-red-950/30 shadow-sm transition"
-                title="Remove Document"
+                title="Remove File"
               >
                 <Trash2 className="h-3.5 w-3.5" />
               </button>
@@ -289,7 +318,7 @@ export default function SecureFileUpload({
                 or drag & drop
               </p>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                {description}
+                {effectiveDescription}
               </p>
             </>
           )}
@@ -308,7 +337,7 @@ export default function SecureFileUpload({
       <input
         ref={fileInputRef}
         type="file"
-        accept={acceptedFileTypes}
+        accept={effectiveAcceptedTypes}
         onChange={handleFileChange}
         className="hidden"
       />

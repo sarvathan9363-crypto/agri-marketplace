@@ -20,11 +20,11 @@ exports.getProfile = async (req, res, next) => {
 // @route   PUT /api/buyers/profile
 exports.updateProfile = async (req, res, next) => {
   try {
-    const { fullName, address, city, state, pincode } = req.body;
+    const { fullName, address, city, state, pincode, walletAddress } = req.body;
 
     const buyer = await Buyer.findOneAndUpdate(
       { userId: req.user._id },
-      { fullName, address, city, state, pincode },
+      { fullName, address, city, state, pincode, ...(walletAddress !== undefined ? { walletAddress } : {}) },
       { new: true, runValidators: true }
     );
 

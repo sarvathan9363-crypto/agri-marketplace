@@ -47,6 +47,10 @@ const buyerSchema = new mongoose.Schema({
     type: String,
     default: '',
   },
+  walletAddress: {
+    type: String,
+    default: null,
+  },
   totalOrders: {
     type: Number,
     default: 0,

@@ -4,6 +4,7 @@ import { motion } from 'motion/react';
 import { ArrowLeft, MapPin, BadgeCheck, ShoppingCart, Zap, Minus, Plus, Package, Calendar, Leaf } from 'lucide-react';
 import { LoadingState, StatusBadge } from '../components/ui/Components';
 import ProductCard from '../components/common/ProductCard';
+import BlockchainAuditBadge from '../components/common/BlockchainAuditBadge';
 import PageContainer from '../components/ui/PageContainer';
 import Button from '../components/ui/Button';
 import productService from '../services/productService';
@@ -110,6 +111,9 @@ export default function ProductDetails() {
             <div className="flex items-center gap-1.5 text-sm text-slate-500 font-medium">
               <MapPin className="w-4 h-4 text-[#00C853]" /> {product.location}
             </div>
+
+            {/* Blockchain Audit Badge */}
+            <BlockchainAuditBadge entityType="LISTING" entityId={product._id} />
 
             {/* Price Box */}
             <div className="p-6 bg-white border border-[#E2E8E5] rounded-3xl shadow-sm">

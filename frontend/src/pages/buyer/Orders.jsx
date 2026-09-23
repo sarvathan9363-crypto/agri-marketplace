@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import DataTable from '../../components/ui/DataTable';
 import Button from '../../components/ui/Button';
 import { StatusBadge } from '../../components/ui/Components';
+import BlockchainAuditBadge from '../../components/common/BlockchainAuditBadge';
 import orderService from '../../services/orderService';
+import paymentService from '../../services/paymentService';
 import toast from 'react-hot-toast';
 
 const tabs = ['ALL', 'CREATED', 'CONFIRMED', 'DISPATCHED', 'DELIVERED', 'CANCELLED'];
@@ -11,6 +13,7 @@ const tabs = ['ALL', 'CREATED', 'CONFIRMED', 'DISPATCHED', 'DELIVERED', 'CANCELL
 export default function BuyerOrders() {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [payingOrderId, setPayingOrderId] = useState(null);
   const [tab, setTab] = useState('ALL');
 
   useEffect(() => { fetchOrders(); }, [tab]);
@@ -22,6 +25,60 @@ export default function BuyerOrders() {
       setOrders(res.orders || []);
     } catch { toast.error('Failed to load orders.'); }
     finally { setLoading(false); }
+  };
+
+  const loadRazorpay = () => new Promise((resolve, reject) => {
+    if (window.Razorpay) return resolve();
+    const script = document.createElement('script');
+    script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+    script.onload = resolve;
+    script.onerror = () => reject(new Error('Unable to load secure payment checkout.'));
+    document.body.appendChild(script);
+  });
+
+  const handlePayNow = async (order) => {
+    setPayingOrderId(order._id);
+    try {
+      await loadRazorpay();
+      const checkout = await paymentService.createPaymentOrder(order._id);
+      if (checkout.isMock || checkout.razorpayOrderId?.startsWith('order_mock_') || !window.Razorpay) {
+        await paymentService.verifyPayment({
+          paymentId: checkout.paymentId,
+          razorpay_payment_id: `pay_mock_${Date.now()}`,
+          razorpay_signature: 'mock_signature',
+        });
+        toast.success('Payment verified successfully!');
+        fetchOrders();
+        return;
+      }
+
+      const razorpay = new window.Razorpay({
+        key: checkout.keyId, amount: checkout.amount, currency: checkout.currency,
+        name: 'AgriBazaar', description: `Order ${checkout.orderId}`, order_id: checkout.razorpayOrderId,
+        handler: async (response) => {
+          try {
+            const verified = await paymentService.verifyPayment({
+              paymentId: checkout.paymentId,
+              razorpay_payment_id: response.razorpay_payment_id,
+              razorpay_signature: response.razorpay_signature
+            });
+            if (!verified.verified) throw new Error('Payment is awaiting gateway confirmation.');
+            toast.success('Payment verified successfully!');
+            fetchOrders();
+          } catch (error) { toast.error(error.message || 'Payment verification failed.'); }
+        },
+        modal: { ondismiss: () => toast.error('Payment was cancelled.') },
+        theme: { color: '#00684a' },
+      });
+      razorpay.on('payment.failed', (response) => {
+        toast.error(response?.error?.description || 'Payment failed on Razorpay.');
+      });
+      razorpay.open();
+    } catch (err) {
+      toast.error(err.response?.data?.message || err.message || 'Unable to initiate payment.');
+    } finally {
+      setPayingOrderId(null);
+    }
   };
 
   const columns = [
@@ -51,11 +108,26 @@ export default function BuyerOrders() {
     { header: 'Total Price', key: 'totalAmount', type: 'currency' },
     { header: 'Order Status', key: 'orderStatus', type: 'status' },
     {
+      header: 'Blockchain Audit',
+      key: 'audit',
+      render: (o) => <BlockchainAuditBadge entityType="ORDER" entityId={o._id} compact={true} />
+    },
+    {
       header: 'Action',
       key: 'action',
       headerClassName: 'text-right',
       render: (o) => (
-        <div className="text-right">
+        <div className="flex items-center justify-end gap-2">
+          {o.orderStatus === 'PENDING_PAYMENT' && (
+            <Button
+              variant="primary"
+              size="sm"
+              loading={payingOrderId === o._id}
+              onClick={() => handlePayNow(o)}
+            >
+              Pay Now
+            </Button>
+          )}
           <Link to={`/marketplace/${o.productId}`}>
             <Button variant="ghost" size="sm">View Crop</Button>
           </Link>
