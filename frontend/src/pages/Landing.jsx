@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import heroFarmerImage from '../assets/image.png';
 import {
   ArrowRight,
@@ -16,50 +17,18 @@ import {
 } from 'lucide-react';
 
 export default function Landing() {
-  const trustItems = [
-    {
-      icon: BadgeCheck,
-      label: 'Verified Farmers',
-      desc: 'KYC-checked agricultural sellers with direct identity verification.',
-    },
-    {
-      icon: ShieldCheck,
-      label: 'Transparent Orders',
-      desc: 'End-to-end real-time tracking from field dispatch to delivery.',
-    },
-    {
-      icon: CreditCard,
-      label: 'Secure Payments',
-      desc: 'Encrypted payment gateway supporting UPI, Net Banking & Cards.',
-    },
-    {
-      icon: Truck,
-      label: 'Reliable Delivery',
-      desc: 'Dedicated farm transport logistics for fresh produce preservation.',
-    },
-  ];
-
-  const farmerSteps = [
-    'Register your farm or FPO profile with KYC documents',
-    'Get verified by platform administration within 24 hours',
-    'Create produce listings with custom quantities & pricing',
-    'Receive and manage purchase orders directly from buyers',
-    'Track instant payouts & scale your direct agricultural sales',
-  ];
-
-  const buyerSteps = [
-    'Create a buyer account (Individual consumer or Commercial enterprise)',
-    'Search & filter verified agricultural produce by crop, region & price',
-    'Add items to cart and review transparent cost breakdown',
-    'Make secure payment via preferred payment gateway',
-    'Track real-time shipment & direct farm delivery status',
-  ];
+  const { t } = useTranslation();
+  const trustItems = [BadgeCheck, ShieldCheck, CreditCard, Truck].map((icon, index) => ({
+    icon, label: t(`home.trust.${index}`), desc: t(`home.trustDescription.${index}`),
+  }));
+  const farmerSteps = t('home.farmerSteps', { returnObjects: true });
+  const buyerSteps = t('home.buyerSteps', { returnObjects: true });
 
   const platformStats = [
-    { icon: Users, value: '500+', label: 'REGISTERED FARMERS' },
-    { icon: Package, value: '2,000+', label: 'CROP LISTINGS' },
-    { icon: ShoppingBag, value: '10,000+', label: 'SUCCESSFUL ORDERS' },
-    { icon: Leaf, value: '8', label: 'CROP CATEGORIES' },
+    { icon: Users, value: '500+', label: t('home.platformLabels.0') },
+    { icon: Package, value: '2,000+', label: t('home.platformLabels.1') },
+    { icon: ShoppingBag, value: '10,000+', label: t('home.platformLabels.2') },
+    { icon: Leaf, value: '8', label: t('home.platformLabels.3') },
   ];
 
   const testimonials = [
@@ -93,17 +62,17 @@ export default function Landing() {
     {
       icon: Users,
       value: '500+',
-      label: 'VERIFIED FARMERS',
+      label: t('home.heroLabels.0'),
     },
     {
       icon: BarChart3,
       value: '₹2Cr+',
-      label: 'TRADE VOLUME',
+      label: t('home.heroLabels.1'),
     },
     {
       icon: ShieldCheck,
       value: '100%',
-      label: 'DIRECT SETTLEMENT',
+      label: t('home.heroLabels.2'),
     },
   ];
 
@@ -159,7 +128,7 @@ export default function Landing() {
                   sm:text-sm
                 "
               >
-                FRESHER. FAIRER. TOGETHER.
+                {t('landing.heroEyebrow')}
               </p>
 
               {/* Main Heading */}
@@ -174,9 +143,9 @@ export default function Landing() {
                   text-[#082B36]
                 "
               >
-                CONNECTING FARMERS TO{' '}
+                {t('landing.heroTitle')}{' '}
                 <span className="block text-[#00E676]">
-                  BETTER MARKETS.
+                  {t('landing.heroHighlight')}
                 </span>
               </h1>
 
@@ -193,9 +162,7 @@ export default function Landing() {
                   lg:text-xl
                 "
               >
-                Empowering Indian agriculture with a direct digital marketplace.
-                Buy and sell fresh produce with verified quality, zero
-                commission markups, and transparent delivery tracking.
+                {t('landing.heroDescription')}
               </p>
 
               {/* Buttons */}
@@ -228,7 +195,7 @@ export default function Landing() {
                     hover:bg-[#00C853]
                   "
                 >
-                  Explore Marketplace
+                  {t('landing.exploreMarketplace')}
                   <ArrowRight className="h-5 w-5" />
                 </Link>
 
@@ -253,7 +220,7 @@ export default function Landing() {
                     hover:bg-[#FAFFFC]
                   "
                 >
-                  Join as Farmer / FPO
+                  {t('landing.joinFarmer')}
                 </Link>
               </div>
 
@@ -366,7 +333,7 @@ export default function Landing() {
                 >
                   <img
                     src={heroFarmerImage}
-                    alt="Indian Farmer in Farm Field"
+                    alt={t('landing.heroImageAlt')}
                     className="h-full w-full object-cover object-[center_25%]"
                   />
                 </div>
@@ -396,7 +363,7 @@ export default function Landing() {
                     <Leaf className="h-4 w-4" />
                   </div>
                   <span className="text-xs font-black uppercase tracking-wider text-[#082B36]">
-                    Verified Fresh Produce
+                    {t('landing.verifiedFresh')}
                   </span>
                 </div>
 
@@ -424,8 +391,8 @@ export default function Landing() {
                     <CheckCircle className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-xs font-extrabold text-[#082B36]">Direct Farm Sourcing</p>
-                    <p className="text-[11px] font-bold text-[#00C853]">0% Commission Markups</p>
+                    <p className="text-xs font-extrabold text-[#082B36]">{t('landing.directSourcing')}</p>
+                    <p className="text-[11px] font-bold text-[#00C853]">{t('landing.zeroCommission')}</p>
                   </div>
                 </div>
 
@@ -466,11 +433,11 @@ export default function Landing() {
 
                   <div>
                     <p className="text-sm font-bold">
-                      Farm to Market
+                      {t('landing.farmToMarket')}
                     </p>
 
                     <p className="text-xs text-gray-300">
-                      Faster & Fairer
+                      {t('landing.fasterFairer')}
                     </p>
                   </div>
                 </div>
@@ -590,7 +557,7 @@ export default function Landing() {
                 text-[#00C853]
               "
             >
-              SIMPLE WORKFLOW
+              {t('home.workflow')}
             </span>
 
             <h2
@@ -604,7 +571,7 @@ export default function Landing() {
                 lg:text-5xl
               "
             >
-              How AgriBazaar Works
+              {t('home.workflowTitle')}
             </h2>
 
             <p
@@ -616,8 +583,7 @@ export default function Landing() {
                 sm:text-lg
               "
             >
-              Direct connection between agricultural producers and bulk or
-              retail buyers.
+              {t('home.workflowDescription')}
             </p>
           </header>
 
@@ -656,7 +622,7 @@ export default function Landing() {
                 "
               >
                 <Leaf className="h-4 w-4" />
-                FOR FARMERS & FPOs
+                {t('home.farmers')}
               </div>
 
               <div className="space-y-5">
@@ -735,7 +701,7 @@ export default function Landing() {
                 "
               >
                 <ShoppingBag className="h-4 w-4" />
-                FOR INDIVIDUAL & WHOLESALE BUYERS
+                {t('home.buyers')}
               </div>
 
               <div className="space-y-5">
@@ -811,7 +777,7 @@ export default function Landing() {
                 lg:text-5xl
               "
             >
-              Platform at a Glance
+              {t('home.glance')}
             </h2>
 
             <p
@@ -823,8 +789,7 @@ export default function Landing() {
                 sm:text-lg
               "
             >
-              Empowering agricultural commerce with cutting-edge digital
-              infrastructure
+              {t('home.glanceDescription')}
             </p>
           </header>
 
@@ -929,7 +894,7 @@ export default function Landing() {
                 lg:text-5xl
               "
             >
-              What Our Users Say
+              {t('home.testimonials')}
             </h2>
 
             <p
@@ -941,7 +906,7 @@ export default function Landing() {
                 sm:text-lg
               "
             >
-              Trusted by farmers, commercial buyers and FPOs across India
+              {t('home.testimonialsDescription')}
             </p>
           </header>
 
@@ -1106,7 +1071,7 @@ export default function Landing() {
                     lg:text-5xl
                   "
                 >
-                  Ready to Trade on AgriBazaar?
+                  {t('home.finalTitle')}
                 </h2>
 
                 <p
@@ -1118,8 +1083,7 @@ export default function Landing() {
                     sm:text-lg
                   "
                 >
-                  Join thousands of verified farmers, FPOs, and buyers
-                  transforming direct agricultural commerce across India today.
+                  {t('home.finalDescription')}
                 </p>
 
               </div>
@@ -1150,7 +1114,7 @@ export default function Landing() {
                     hover:bg-[#00C853]
                   "
                 >
-                  Create Free Account
+                  {t('home.createAccount')}
                 </Link>
 
                 <Link
@@ -1171,7 +1135,7 @@ export default function Landing() {
                     hover:bg-white/10
                   "
                 >
-                  Browse Marketplace
+                  {t('home.browse')}
                 </Link>
               </div>
 

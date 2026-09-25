@@ -7,9 +7,13 @@ import { Input, TextArea } from '../../components/ui/Input';
 import cartService from '../../services/cartService';
 import orderService from '../../services/orderService';
 import paymentService from '../../services/paymentService';
+import { useAuth } from '../../context/AuthContext';
 import toast from 'react-hot-toast';
+import { useTranslation } from 'react-i18next';
 
 export default function Checkout() {
+  const { t } = useTranslation();
+  const { user } = useAuth();
   const [step, setStep] = useState(1);
   const [cart, setCart] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -34,7 +38,10 @@ export default function Checkout() {
   });
 
   const openCheckout = (checkout) => new Promise((resolve, reject) => {
-    if (checkout.isMock || checkout.razorpayOrderId?.startsWith('order_mock_') || !window.Razorpay) {
+    const razorpayOrderId = checkout.razorpayOrderId || checkout.order_id || checkout.id;
+    const razorpayKey = checkout.keyId || checkout.key || checkout.key_id;
+
+    if (checkout.isMock || razorpayOrderId?.startsWith('order_mock_') || !window.Razorpay) {
       paymentService.verifyPayment({
         paymentId: checkout.paymentId,
         razorpay_payment_id: `pay_mock_${Date.now()}`,
@@ -43,45 +50,137 @@ export default function Checkout() {
       return;
     }
 
-    const razorpay = new window.Razorpay({
-      key: checkout.keyId, amount: checkout.amount, currency: checkout.currency,
-      name: 'AgriBazaar', description: `Order ${checkout.orderId}`, order_id: checkout.razorpayOrderId,
+    const rawContact = String(user?.mobileNumber || user?.phone || '').replace(/\D/g, '');
+    const validContact = rawContact.length >= 10 ? rawContact.slice(-10) : '';
+
+    const prefillObj = {
+      name: user?.fullName || 'AgriBazaar Customer',
+      email: user?.email || '',
+    };
+    if (validContact) {
+      prefillObj.contact = validContact;
+    }
+
+    const options = {
+      key: razorpayKey,
+      amount: checkout.amount,
+      currency: checkout.currency || 'INR',
+      name: 'AgriBazaar',
+      description: `Order ${checkout.orderId}`,
+      order_id: razorpayOrderId,
+      prefill: prefillObj,
+      notes: {
+        orderId: String(checkout.orderId),
+      },
       handler: async (response) => {
         try {
-          const verified = await paymentService.verifyPayment({ paymentId: checkout.paymentId, razorpay_payment_id: response.razorpay_payment_id, razorpay_signature: response.razorpay_signature });
+          const verified = await paymentService.verifyPayment({
+            paymentId: checkout.paymentId,
+            razorpay_payment_id: response.razorpay_payment_id,
+            razorpay_signature: response.razorpay_signature,
+          });
           if (!verified.verified) throw new Error('Payment is awaiting gateway confirmation.');
           resolve(verified);
         } catch (error) { reject(error); }
       },
-      modal: { ondismiss: () => reject(new Error('Payment was cancelled.')) },
+      modal: {
+        ondismiss: async () => {
+          try {
+            const statusRes = await paymentService.getPaymentStatus(checkout.paymentId);
+            if (statusRes && statusRes.verified) {
+              return resolve(statusRes);
+            }
+          } catch {
+            // ignore fallback
+          }
+          reject(new Error('Payment was cancelled.'));
+        },
+      },
       theme: { color: '#00684a' },
-    });
-    razorpay.on('payment.failed', (response) => {
+    };
+
+    if (import.meta.env.DEV) {
+      console.log('[Checkout] Initializing Razorpay Checkout with options:', {
+        key: options.key,
+        amount: options.amount,
+        currency: options.currency,
+        order_id: options.order_id,
+        orderId: checkout.orderId,
+        paymentId: checkout.paymentId,
+        prefill: options.prefill,
+      });
+    }
+
+    const razorpay = new window.Razorpay(options);
+
+    razorpay.on('payment.failed', async (response) => {
+      if (import.meta.env.DEV) {
+        console.log('[Checkout] Razorpay payment.failed event received:', {
+          code: response?.error?.code,
+          description: response?.error?.description,
+          reason: response?.error?.reason,
+          payment_id: response?.error?.metadata?.payment_id,
+          order_id: response?.error?.metadata?.order_id,
+        });
+      }
+
+      const gatewayPaymentId = response?.error?.metadata?.payment_id;
+
+      if (gatewayPaymentId) {
+        try {
+          // Query backend for authoritative Razorpay server-side status
+          const statusRes = await paymentService.getPaymentStatus(checkout.paymentId, gatewayPaymentId);
+          const paymentStatus = statusRes?.payment?.status || (statusRes?.verified ? 'CAPTURED' : 'PENDING');
+
+          if (paymentStatus === 'CAPTURED' || statusRes?.verified) {
+            return resolve(statusRes);
+          } else if (paymentStatus === 'AUTHORIZED') {
+            const err = new Error('Payment authorization is pending. We are confirming your payment.');
+            err.isPendingStatus = true;
+            return reject(err);
+          } else if (paymentStatus === 'CREATED' || paymentStatus === 'PENDING') {
+            const err = new Error('Payment is still being processed. Please wait while we confirm your payment.');
+            err.isPendingStatus = true;
+            return reject(err);
+          } else if (paymentStatus === 'REFUNDED') {
+            return reject(new Error('Payment was refunded.'));
+          } else if (paymentStatus === 'FAILED') {
+            const description = response?.error?.description || 'Payment was declined by bank or gateway.';
+            return reject(new Error(description));
+          }
+        } catch (err) {
+          if (import.meta.env.DEV) console.warn('[Checkout] Server payment status check error:', err.message);
+        }
+      }
+
       const errorMsg = response?.error?.description || 'Payment could not be completed on Razorpay.';
       reject(new Error(errorMsg));
     });
+
     razorpay.open();
   });
 
-
   const handleOrder = async () => {
-    if (!address.deliveryAddress) { toast.error('Please enter delivery address.'); return; }
+    if (!address.deliveryAddress) { toast.error(t('checkout.enterAddress')); return; }
     setLoading(true);
     try {
       const items = cart.items.map(i => ({ productId: i.productId, quantity: i.quantity }));
       setPaymentError('');
       const created = await orderService.createOrder({ items, ...address });
       await loadRazorpay();
-      for (const order of created.orders) {
-        const checkout = await paymentService.createPaymentOrder(order._id);
-        await openCheckout(checkout);
-      }
-      toast.success('Payment verified successfully!');
+      const targetId = created.orderGroupId || created.orders?.[0]?._id;
+      const checkout = await paymentService.createPaymentOrder(targetId);
+      await openCheckout(checkout);
+      toast.success(t('checkout.paymentVerified'));
       setStep(3);
     } catch (err) {
       const message = err.response?.data?.message || err.message || 'Payment could not be completed.';
       setPaymentError(message);
-      toast.error(message);
+      if (err.isPendingStatus) {
+        toast(message, { icon: '⏳', duration: 6000 });
+      } else {
+        toast.error(message);
+      }
     } finally { setLoading(false); }
   };
 
@@ -95,15 +194,15 @@ export default function Checkout() {
           <div className="w-20 h-20 bg-[#00ed64] text-[#001e2b] rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl">
             <CheckCircle className="w-10 h-10" />
           </div>
-          <span className="text-[#00684a] font-extrabold text-xs tracking-widest uppercase font-display bg-[#00ed64]/20 px-3 py-1 rounded-full">Payment Verified</span>
-          <h1 className="text-3xl font-black text-[#001e2b] font-display mt-3">Payment Successful!</h1>
-          <p className="mt-2 text-sm text-gray-600 font-sans max-w-md mx-auto">Your payment was verified by AgriBazaar. Track delivery updates in your orders tab.</p>
+          <span className="text-[#00684a] font-extrabold text-xs tracking-widest uppercase font-display bg-[#00ed64]/20 px-3 py-1 rounded-full">{t('checkout.paymentVerifiedLabel')}</span>
+          <h1 className="text-3xl font-black text-[#001e2b] font-display mt-3">{t('checkout.paymentSuccess')}</h1>
+          <p className="mt-2 text-sm text-gray-600 font-sans max-w-md mx-auto">{t('checkout.paymentVerifiedDescription')}</p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Button variant="primary" size="lg" onClick={() => navigate('/buyer/orders')}>
-              View My Orders
+              {t('checkout.viewOrders')}
             </Button>
             <Button variant="outline" size="lg" onClick={() => navigate('/marketplace')}>
-              Continue Shopping
+              {t('checkout.continueShopping')}
             </Button>
           </div>
         </PageContainer>
@@ -115,9 +214,9 @@ export default function Checkout() {
     <div className="min-h-[calc(100vh-var(--app-header-height))] bg-[#fafcf8] py-10">
       <PageContainer className="max-w-4xl">
         <div className="mb-8">
-          <span className="text-[#00684a] font-extrabold text-xs tracking-widest uppercase font-display bg-[#00ed64]/20 px-3 py-1 rounded-full">Secure Settlement</span>
-          <h1 className="text-3xl font-black text-[#001e2b] font-display mt-2">Checkout</h1>
-          <p className="text-sm text-gray-600 mt-1 font-sans">Complete your shipping address and review produce details.</p>
+          <span className="text-[#00684a] font-extrabold text-xs tracking-widest uppercase font-display bg-[#00ed64]/20 px-3 py-1 rounded-full">{t('checkout.secureSettlement')}</span>
+          <h1 className="text-3xl font-black text-[#001e2b] font-display mt-2">{t('checkout.title')}</h1>
+          <p className="text-sm text-gray-600 mt-1 font-sans">{t('checkout.addressReviewHint')}</p>
         </div>
 
         {/* Step Indicator */}
@@ -138,8 +237,8 @@ export default function Checkout() {
                 <MapPin className="w-5 h-5" />
               </div>
               <div>
-                <h2 className="text-lg font-extrabold text-[#001e2b] font-display">Delivery Address</h2>
-                <p className="text-xs text-gray-500 font-sans">Where should the farmer ship your produce?</p>
+                <h2 className="text-lg font-extrabold text-[#001e2b] font-display">{t('checkout.deliveryAddress')}</h2>
+                <p className="text-xs text-gray-500 font-sans">{t('checkout.addressHint')}</p>
               </div>
             </div>
 
@@ -205,7 +304,7 @@ export default function Checkout() {
               <div className="pt-4 border-t border-[#f0f4e8] space-y-2 text-sm font-sans">
                 <div className="flex justify-between text-gray-600"><span>Subtotal</span><span className="font-bold text-[#001e2b] font-display">₹{cart.totalAmount}</span></div>
                 <div className="flex justify-between text-gray-600"><span>Delivery</span><span className="text-[#00684a] font-bold font-display">Free</span></div>
-                <div className="flex justify-between text-xl font-black text-[#001e2b] border-t border-[#f0f4e8] pt-3 mt-3 font-display"><span>Total Order</span><span>₹{cart.totalAmount}</span></div>
+                <div className="flex justify-between text-xl font-black text-[#001e2b] border-t border-[#f0f4e8] pt-3 mt-3 font-display"><span>{t('checkout.totalOrder')}</span><span>₹{cart.totalAmount}</span></div>
               </div>
             </div>
 
@@ -215,7 +314,7 @@ export default function Checkout() {
                   <CreditCard className="w-5 h-5" />
                 </div>
                 <div>
-                  <h2 className="text-lg font-extrabold text-[#001e2b] font-display">Secure Payment</h2>
+                  <h2 className="text-lg font-extrabold text-[#001e2b] font-display">{t('checkout.securePayment')}</h2>
                   <p className="text-xs text-gray-500 font-sans">Razorpay Test Mode</p>
                 </div>
               </div>
@@ -224,7 +323,7 @@ export default function Checkout() {
                 Your order is confirmed only after Razorpay payment verification succeeds.
               </p>
 
-              {paymentError && <p className="text-xs text-red-700 bg-red-50 border border-red-200 rounded-xl p-3">Payment Failed: {paymentError}</p>}
+              {paymentError && <p className="text-xs text-red-700 bg-red-50 border border-red-200 rounded-xl p-3">{t('checkout.paymentFailed')}: {paymentError}</p>}
 
               <div className="flex gap-3">
                 <Button variant="outline" size="md" onClick={() => setStep(1)}>

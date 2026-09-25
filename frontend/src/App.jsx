@@ -44,6 +44,7 @@ import AdminSettlements from './pages/admin/Settlements';
 import AdminProducts from './pages/admin/Products';
 import AdminOrders from './pages/admin/Orders';
 import AdminPayments from './pages/admin/Payments';
+import AdminBlockchainAudit from './pages/admin/BlockchainAudit';
 import AdminDisputes from './pages/admin/Disputes';
 import AdminAnalytics from './pages/admin/Analytics';
 
@@ -114,6 +115,7 @@ export default function App() {
             <Route path="products" element={<AdminProducts />} />
             <Route path="orders" element={<AdminOrders />} />
             <Route path="payments" element={<AdminPayments />} />
+            <Route path="blockchain" element={<AdminBlockchainAudit />} />
             <Route path="disputes" element={<AdminDisputes />} />
             <Route path="analytics" element={<AdminAnalytics />} />
             <Route path="settings" element={<Settings />} />

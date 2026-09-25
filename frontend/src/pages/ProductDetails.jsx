@@ -8,9 +8,10 @@ import BlockchainAuditBadge from '../components/common/BlockchainAuditBadge';
 import PageContainer from '../components/ui/PageContainer';
 import Button from '../components/ui/Button';
 import productService from '../services/productService';
-import cartService from '../services/cartService';
 import { useAuth } from '../context/AuthContext';
+import { useCart } from '../context/CartContext';
 import toast from 'react-hot-toast';
+import { useTranslation } from 'react-i18next';
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -21,11 +22,13 @@ export default function ProductDetails() {
   const [qty, setQty] = useState(1);
   const [adding, setAdding] = useState(false);
   const { isAuthenticated, isBuyer } = useAuth();
+  const { addToCart } = useCart();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
 
   useEffect(() => {
     fetchProduct();
-  }, [id]);
+  }, [id, i18n.resolvedLanguage]);
 
   const fetchProduct = async () => {
     setLoading(true);
@@ -37,7 +40,7 @@ export default function ProductDetails() {
       const rel = await productService.getProducts({ category: data.product.category, limit: 4 });
       setRelated((rel.products || []).filter(p => p._id !== id).slice(0, 4));
     } catch {
-      toast.error('Product not found.');
+      toast.error(t('errors.PRODUCT_NOT_FOUND'));
       navigate('/marketplace');
     } finally {
       setLoading(false);
@@ -45,14 +48,14 @@ export default function ProductDetails() {
   };
 
   const handleAddToCart = async () => {
-    if (!isAuthenticated) { toast.error('Please login first.'); navigate('/login'); return; }
-    if (!isBuyer) { toast.error('Only buyers can purchase products.'); return; }
+    if (!isAuthenticated) { toast.error(t('productDetails.loginFirst')); navigate('/login'); return; }
+    if (!isBuyer) { toast.error(t('productDetails.buyersOnly')); return; }
     setAdding(true);
     try {
-      await cartService.addToCart(product._id, qty);
-      toast.success(`${product.productName} added to cart!`);
+      await addToCart(product._id, qty);
+      toast.success(t('productDetails.addedToCart', { name: product.productName }));
     } catch (err) {
-      toast.error(err.response?.data?.message || 'Failed to add to cart.');
+      toast.error(err.response?.data?.message || t('productDetails.addToCartFailed'));
     } finally {
       setAdding(false);
     }
@@ -69,7 +72,7 @@ export default function ProductDetails() {
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-xs font-bold text-slate-500 mb-8 uppercase tracking-wider">
           <Link to="/marketplace" className="hover:text-[#00C853] flex items-center gap-1">
-            <ArrowLeft className="w-4 h-4" /> Marketplace
+            <ArrowLeft className="w-4 h-4" /> {t('marketplace.title')}
           </Link>
           <span>/</span>
           <span className="text-[#082B36]">{product.productName}</span>
@@ -92,7 +95,7 @@ export default function ProductDetails() {
           <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="lg:col-span-6 space-y-6">
             <div className="flex items-center gap-2">
               <span className="px-3 py-1 bg-[#002B36] text-[#00E676] text-xs font-bold uppercase tracking-wider rounded-full">
-                {product.category}
+                {t(`categories.${product.category}`, { defaultValue: product.category })}
               </span>
               <StatusBadge status={product.status} />
             </div>
@@ -103,7 +106,7 @@ export default function ProductDetails() {
               <span className="text-sm font-bold text-slate-700">{product.farmerName}</span>
               {product.farmerVerificationStatus === 'VERIFIED' && (
                 <span className="flex items-center gap-1 text-xs font-bold text-[#00C853] bg-[#00E676]/15 border border-[#00E676]/30 px-2.5 py-0.5 rounded-full">
-                  <BadgeCheck className="w-4 h-4 text-[#00C853]" /> Verified Producer
+                  <BadgeCheck className="w-4 h-4 text-[#00C853]" /> {t('productDetails.verifiedProducer')}
                 </span>
               )}
             </div>
@@ -126,7 +129,7 @@ export default function ProductDetails() {
 
             {product.description && (
               <div className="bg-white rounded-3xl border border-[#E2E8E5] p-6 shadow-sm">
-                <h3 className="font-extrabold text-[#082B36] text-base mb-2">Produce Specifications</h3>
+                <h3 className="font-extrabold text-[#082B36] text-base mb-2">{t('productDetails.specifications')}</h3>
                 <p className="text-sm text-slate-600 leading-relaxed">{product.description}</p>
               </div>
             )}
@@ -158,10 +161,10 @@ export default function ProductDetails() {
 
                 <div className="flex gap-4">
                   <Button variant="primary" size="lg" icon={ShoppingCart} fullWidth onClick={handleAddToCart} loading={adding}>
-                    Add to Cart
+                    {t('marketplace.addToCart')}
                   </Button>
                   <Button variant="secondary" size="lg" icon={Zap} fullWidth onClick={() => handleAddToCart().then(() => navigate('/buyer/cart'))}>
-                    Buy Now
+                    {t('marketplace.buyNow')}
                   </Button>
                 </div>
               </div>
@@ -187,7 +190,7 @@ export default function ProductDetails() {
         {/* Related Products */}
         {related.length > 0 && (
           <div className="mt-20 border-t border-[#E2E8E5] pt-12">
-            <h2 className="text-2xl font-black text-[#082B36] mb-8">Related Crops & Produce</h2>
+            <h2 className="text-2xl font-black text-[#082B36] mb-8">{t('productDetails.related')}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {related.map(p => <ProductCard key={p._id} product={p} />)}
             </div>

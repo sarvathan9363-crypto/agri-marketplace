@@ -229,13 +229,19 @@ exports.login = async (req, res, next) => {
 // @route   GET /api/auth/me
 exports.getMe = async (req, res, next) => {
   try {
+    const { hashId } = require('../blockchain/blockchain.utils');
     const user = req.user;
 
     let profile = null;
+    let accountHash = '';
     if (user.role === 'FARMER') {
       profile = await Farmer.findOne({ userId: user._id });
+      accountHash = hashId(`AGR-F-${user._id.toString()}`);
     } else if (user.role === 'BUYER') {
       profile = await Buyer.findOne({ userId: user._id });
+      accountHash = hashId(`AGR-B-${user._id.toString()}`);
+    } else {
+      accountHash = hashId(`AGR-A-${user._id.toString()}`);
     }
 
     res.json({
@@ -247,6 +253,7 @@ exports.getMe = async (req, res, next) => {
         mobileNumber: user.mobileNumber,
         role: user.role,
         profileImage: user.profileImage,
+        accountHash,
       },
       profile,
     });

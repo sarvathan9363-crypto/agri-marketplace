@@ -3,8 +3,10 @@ import { motion, AnimatePresence } from 'motion/react';
 import { X, LogOut } from 'lucide-react';
 import agriLogo from '../../assets/image copy.png';
 import { useAuth } from '../../context/AuthContext';
+import { useTranslation } from 'react-i18next';
 
 export default function Sidebar({ links, isOpen, onClose }) {
+  const { t } = useTranslation();
   const { user, logout } = useAuth();
   const navigate = useNavigate();
 
@@ -19,7 +21,7 @@ export default function Sidebar({ links, isOpen, onClose }) {
       <aside className="sticky z-30 hidden w-64 shrink-0 flex-col border-r border-[#E2E8E5]/20 bg-[#002B36] text-white shadow-xl lg:flex">
         <div className="flex-1 overflow-y-auto py-6 px-4">
           <div className="px-3 py-1.5 mb-4 flex items-center justify-between">
-            <p className="text-[11px] font-bold text-[#00E676] uppercase tracking-widest">Portal Menu</p>
+            <p className="text-[11px] font-bold text-[#00E676] uppercase tracking-widest">{t('navigation.dashboard')}</p>
           </div>
           
           <nav className="space-y-1.5">
@@ -58,7 +60,7 @@ export default function Sidebar({ links, isOpen, onClose }) {
             onClick={handleLogout}
             className="w-full flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl text-xs font-bold text-red-400 hover:bg-red-950/40 transition-colors border border-red-900/30"
           >
-            <LogOut className="w-4 h-4" /> Sign Out
+            <LogOut className="w-4 h-4" /> {t('navigation.logout')}
           </button>
         </div>
       </aside>
@@ -115,7 +117,7 @@ export default function Sidebar({ links, isOpen, onClose }) {
 
               <div className="border-t border-[#E2E8E5]/20 p-4 bg-[#002129]">
                 <button onClick={handleLogout} className="w-full flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl text-xs font-bold text-red-400 hover:bg-red-950/40 transition-colors border border-red-900/30">
-                  <LogOut className="w-4 h-4" /> Sign Out
+                  <LogOut className="w-4 h-4" /> {t('navigation.logout')}
                 </button>
               </div>
             </motion.aside>

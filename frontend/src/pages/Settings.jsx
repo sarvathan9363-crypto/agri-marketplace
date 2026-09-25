@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { Bell, Shield, Lock, Smartphone, Save } from 'lucide-react';
 import toast from 'react-hot-toast';
+import { useTranslation } from 'react-i18next';
 
 export default function Settings() {
+  const { t } = useTranslation();
   const [emailAlerts, setEmailAlerts] = useState(true);
   const [smsAlerts, setSmsAlerts] = useState(true);
   const [orderUpdates, setOrderUpdates] = useState(true);
@@ -10,15 +12,15 @@ export default function Settings() {
 
   const handleSave = (e) => {
     e.preventDefault();
-    toast.success('Account preferences updated successfully!');
+    toast.success(t('settings.saved'));
   };
 
   return (
     <div className="space-y-8">
       <div>
-        <span className="text-[#00684a] font-extrabold text-xs tracking-widest uppercase font-display bg-[#00ed64]/20 px-3 py-1 rounded-full">Preferences</span>
-        <h1 className="text-3xl font-black text-[#001e2b] font-display mt-2">Account Settings</h1>
-        <p className="text-sm text-gray-600 mt-1 font-sans">Manage your system preferences, security, and notification channels.</p>
+        <span className="text-[#00684a] font-extrabold text-xs tracking-widest uppercase font-display bg-[#00ed64]/20 px-3 py-1 rounded-full">{t('settings.preferences')}</span>
+        <h1 className="text-3xl font-black text-[#001e2b] font-display mt-2">{t('settings.title')}</h1>
+        <p className="text-sm text-gray-600 mt-1 font-sans">{t('settings.description')}</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -30,16 +32,16 @@ export default function Settings() {
                 <Bell className="w-5 h-5" />
               </div>
               <div>
-                <h2 className="text-lg font-extrabold text-[#001e2b] font-display">Notification Preferences</h2>
-                <p className="text-xs text-gray-500">Configure how AgriBazaar alerts you of orders and stock updates.</p>
+                <h2 className="text-lg font-extrabold text-[#001e2b] font-display">{t('settings.notificationPreferences')}</h2>
+                <p className="text-xs text-gray-500">{t('settings.notificationDescription')}</p>
               </div>
             </div>
 
             <div className="space-y-5 divide-y divide-[#f0f4e8]">
               <div className="flex items-center justify-between pt-3">
                 <div>
-                  <p className="text-sm font-bold text-[#001e2b]">Email Order Notifications</p>
-                  <p className="text-xs text-gray-500">Receive emails for new orders and status updates.</p>
+                  <p className="text-sm font-bold text-[#001e2b]">{t('settings.emailOrders')}</p>
+                  <p className="text-xs text-gray-500">{t('settings.emailOrdersDescription')}</p>
                 </div>
                 <input
                   type="checkbox"
@@ -51,8 +53,8 @@ export default function Settings() {
 
               <div className="flex items-center justify-between pt-4">
                 <div>
-                  <p className="text-sm font-bold text-[#001e2b]">SMS Notifications</p>
-                  <p className="text-xs text-gray-500">Get instant SMS alerts on dispatch and delivery.</p>
+                  <p className="text-sm font-bold text-[#001e2b]">{t('settings.sms')}</p>
+                  <p className="text-xs text-gray-500">{t('settings.smsDescription')}</p>
                 </div>
                 <input
                   type="checkbox"
@@ -64,8 +66,8 @@ export default function Settings() {
 
               <div className="flex items-center justify-between pt-4">
                 <div>
-                  <p className="text-sm font-bold text-[#001e2b]">Market Price Trend Alerts</p>
-                  <p className="text-xs text-gray-500">Daily summaries of top agricultural market price shifts.</p>
+                  <p className="text-sm font-bold text-[#001e2b]">{t('settings.priceAlerts')}</p>
+                  <p className="text-xs text-gray-500">{t('settings.priceAlertsDescription')}</p>
                 </div>
                 <input
                   type="checkbox"
@@ -84,16 +86,16 @@ export default function Settings() {
                 <Shield className="w-5 h-5" />
               </div>
               <div>
-                <h2 className="text-lg font-extrabold text-[#001e2b] font-display">Security & Access</h2>
-                <p className="text-xs text-gray-500">Protect your account with extra security layers.</p>
+                <h2 className="text-lg font-extrabold text-[#001e2b] font-display">{t('settings.security')}</h2>
+                <p className="text-xs text-gray-500">{t('settings.securityDescription')}</p>
               </div>
             </div>
 
             <div className="space-y-5">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-bold text-[#001e2b]">Two-Factor Authentication (2FA)</p>
-                  <p className="text-xs text-gray-500">Require OTP verification on login.</p>
+                  <p className="text-sm font-bold text-[#001e2b]">{t('settings.twoFactor')}</p>
+                  <p className="text-xs text-gray-500">{t('settings.twoFactorDescription')}</p>
                 </div>
                 <input
                   type="checkbox"
@@ -109,22 +111,22 @@ export default function Settings() {
             onClick={handleSave}
             className="btn-mongo-primary text-base px-8 py-3.5"
           >
-            <Save className="w-4 h-4" /> Save Preferences
+            <Save className="w-4 h-4" /> {t('settings.save')}
           </button>
         </div>
 
         {/* Info Side Panel */}
         <div className="bg-[#001e2b] text-white rounded-3xl p-8 border border-emerald-900/40 shadow-xl flex flex-col justify-between">
           <div>
-            <span className="text-[#00ed64] text-xs font-black uppercase tracking-widest font-display">AgriBazaar Platform</span>
-            <h3 className="text-xl font-extrabold text-white mt-2 font-display">Need Help?</h3>
+            <span className="text-[#00ed64] text-xs font-black uppercase tracking-widest font-display">{t('settings.platform')}</span>
+            <h3 className="text-xl font-extrabold text-white mt-2 font-display">{t('settings.help')}</h3>
             <p className="text-sm text-gray-300 mt-2 font-sans leading-relaxed">
-              If you need assistance updating your KYC details or farmer verification, contact platform administration.
+              {t('settings.helpDescription')}
             </p>
           </div>
           <div className="mt-8 pt-6 border-t border-emerald-900/40">
             <p className="text-xs text-gray-400 font-mono">System Version: v1.0.4-production</p>
-            <p className="text-xs text-gray-400 font-mono mt-1">Direct Agriculture Commerce Architecture</p>
+            <p className="text-xs text-gray-400 font-mono mt-1">{t('settings.architecture')}</p>
           </div>
         </div>
       </div>

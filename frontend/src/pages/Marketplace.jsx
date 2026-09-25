@@ -1,27 +1,42 @@
 import { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import { Search } from 'lucide-react';
 import ProductCard from '../components/common/ProductCard';
 import { LoadingState, EmptyState } from '../components/ui/Components';
 import PageContainer from '../components/ui/PageContainer';
 import Button from '../components/ui/Button';
 import productService from '../services/productService';
+import { useAuth } from '../context/AuthContext';
+import { useCart } from '../context/CartContext';
 import toast from 'react-hot-toast';
+import { useTranslation } from 'react-i18next';
 
 const categories = ['ALL', 'FRUITS', 'VEGETABLES', 'GRAINS', 'PULSES', 'SPICES', 'MILLETS', 'DAIRY', 'OTHER'];
-const sortOptions = [
-  { value: 'newest', label: 'Newest First' },
-  { value: 'price_asc', label: 'Price: Low to High' },
-  { value: 'price_desc', label: 'Price: High to Low' },
-  { value: 'popular', label: 'Most Popular' },
-];
-
 export default function Marketplace() {
+  const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
+  const { isAuthenticated, isBuyer } = useAuth();
+  const { addToCart } = useCart();
+  const sortOptions = [
+    { value: 'newest', label: t('home.marketplace.newest') }, { value: 'price_asc', label: t('home.marketplace.lowPrice') },
+    { value: 'price_desc', label: t('home.marketplace.highPrice') }, { value: 'popular', label: t('home.marketplace.popular') },
+  ];
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [pagination, setPagination] = useState({});
   const [searchParams, setSearchParams] = useSearchParams();
   const [search, setSearch] = useState(searchParams.get('search') || '');
+
+  const handleAddToCart = async (product) => {
+    if (!isAuthenticated) { toast.error(t('productDetails.loginFirst')); navigate('/login'); return; }
+    if (!isBuyer) { toast.error(t('productDetails.buyersOnly')); return; }
+    try {
+      await addToCart(product._id, 1);
+      toast.success(t('productDetails.addedToCart', { name: product.productName }));
+    } catch (err) {
+      toast.error(err.response?.data?.message || t('productDetails.addToCartFailed'));
+    }
+  };
 
   const category = searchParams.get('category') || 'ALL';
   const sort = searchParams.get('sort') || 'newest';
@@ -29,7 +44,7 @@ export default function Marketplace() {
 
   useEffect(() => {
     fetchProducts();
-  }, [category, sort, page]);
+  }, [category, sort, page, i18n.resolvedLanguage]);
 
   const fetchProducts = async () => {
     setLoading(true);
@@ -41,7 +56,7 @@ export default function Marketplace() {
       setProducts(data.products || []);
       setPagination(data.pagination || {});
     } catch {
-      toast.error('Failed to load products.');
+      toast.error(t('messages.loadFailed'));
     } finally {
       setLoading(false);
     }
@@ -70,9 +85,9 @@ export default function Marketplace() {
       <PageContainer>
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <span className="text-[#002B36] font-bold text-xs tracking-wider uppercase bg-[#00E676]/20 px-3.5 py-1 rounded-full border border-[#00E676]/30">Direct Crop Exchange</span>
-          <h1 className="text-3xl sm:text-5xl font-black text-[#082B36] mt-4">Agricultural Marketplace</h1>
-          <p className="mt-3 text-base text-slate-600">Source quality farm produce directly from verified Indian farmers and FPOs with zero middleman markup.</p>
+          <span className="text-[#002B36] font-bold text-xs tracking-wider uppercase bg-[#00E676]/20 px-3.5 py-1 rounded-full border border-[#00E676]/30">{t('home.marketplace.exchange')}</span>
+          <h1 className="text-3xl sm:text-5xl font-black text-[#082B36] mt-4">{t('marketplace.title')}</h1>
+          <p className="mt-3 text-base text-slate-600">{t('home.marketplace.description')}</p>
         </div>
 
         {/* Search Bar */}
@@ -83,14 +98,14 @@ export default function Marketplace() {
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search by crop name, farmer, or region (e.g. Basmati, Tomato, Nashik)..."
+              placeholder={t('marketplace.searchPlaceholder')}
               className="w-full pl-12 pr-32 py-3.5 bg-white border border-[#E2E8E5] rounded-full text-sm text-[#082B36] focus:outline-none focus:border-[#00E676] focus:ring-4 focus:ring-[#00E676]/15 shadow-sm"
             />
             <button
               type="submit"
               className="absolute right-2 btn-agri-primary text-xs px-6 py-2.5 rounded-full"
             >
-              Search
+              {t('common.search')}
             </button>
           </div>
         </form>
@@ -109,7 +124,7 @@ export default function Marketplace() {
                     : 'bg-white text-slate-700 border border-[#E2E8E5] hover:border-[#00E676]'
                 }`}
               >
-                {cat === 'ALL' ? 'All Produce' : cat.charAt(0) + cat.slice(1).toLowerCase()}
+                {cat === 'ALL' ? t('common.all') : t(`categories.${cat}`, { defaultValue: cat.charAt(0) + cat.slice(1).toLowerCase() })}
               </button>
             );
           })}
@@ -118,10 +133,10 @@ export default function Marketplace() {
         {/* Filter / Sort Subbar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 pb-4 border-b border-[#E2E8E5]">
           <p className="text-sm font-bold text-[#082B36]">
-            Showing <span className="text-[#00C853]">{pagination.total || 0}</span> agricultural listings
+            {t('home.marketplace.showing', { count: pagination.total || 0 })}
           </p>
           <div className="flex items-center gap-3">
-            <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Sort By:</span>
+            <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">{t('marketplace.sort')}:</span>
             <select
               value={sort}
               onChange={(e) => setFilter('sort', e.target.value)}
@@ -134,12 +149,12 @@ export default function Marketplace() {
 
         {/* Product Grid */}
         {loading ? (
-          <LoadingState message="Loading agricultural produce..." />
+          <LoadingState message={t('common.loading')} />
         ) : products.length > 0 ? (
           <>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {products.map(product => (
-                <ProductCard key={product._id} product={product} />
+                <ProductCard key={product._id} product={product} onAddToCart={handleAddToCart} />
               ))}
             </div>
 
@@ -164,11 +179,11 @@ export default function Marketplace() {
           </>
         ) : (
           <EmptyState
-            title="No agricultural products found"
-            description="Try updating your search query or selecting another crop category."
+            title={t('marketplace.noProducts')}
+            description={t('common.noResults')}
             action={
               <Button variant="outline" onClick={() => setFilter('category', 'ALL')}>
-                Reset Filters
+                {t('marketplace.filters')}
               </Button>
             }
           />

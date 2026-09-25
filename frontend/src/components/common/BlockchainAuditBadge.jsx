@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import { ShieldCheck, ExternalLink, RefreshCw } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export default function BlockchainAuditBadge({ entityType, entityId, initialAuditData = null, compact = false }) {
+  const { t } = useTranslation();
   const [audit, setAudit] = useState(initialAuditData);
-  const [loading, setLoading] = useState(!initialAuditData);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (initialAuditData) {
@@ -12,32 +14,34 @@ export default function BlockchainAuditBadge({ entityType, entityId, initialAudi
       return;
     }
 
-    if (!entityType || !entityId) return;
-
-    let isMounted = true;
-    const fetchAudit = async () => {
-      try {
-        const res = await fetch(`/api/blockchain/audit/${entityType}/${entityId}`);
-        const data = await res.json();
-        if (isMounted && data.success) {
-          setAudit(data);
+    // Only fetch if entityId is a valid 66-character keccak256 eventIdHash (starts with 0x)
+    if (entityId && typeof entityId === 'string' && entityId.startsWith('0x') && entityId.length === 66) {
+      let isMounted = true;
+      setLoading(true);
+      const fetchAudit = async () => {
+        try {
+          const res = await fetch(`/api/blockchain/audit/${entityId}`);
+          const data = await res.json();
+          if (isMounted && data.success && data.verified) {
+            setAudit(data);
+          }
+        } catch (err) {
+          // Silent fallback if network/endpoint unavailable
+        } finally {
+          if (isMounted) setLoading(false);
         }
-      } catch (err) {
-        console.warn('Blockchain audit status check failed:', err.message);
-      } finally {
-        if (isMounted) setLoading(false);
-      }
-    };
+      };
 
-    fetchAudit();
-    return () => { isMounted = false; };
-  }, [entityType, entityId, initialAuditData]);
+      fetchAudit();
+      return () => { isMounted = false; };
+    }
+  }, [entityId, initialAuditData]);
 
   if (loading) {
     return (
       <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-[11px] text-emerald-700 font-medium animate-pulse">
         <RefreshCw className="w-3 h-3 animate-spin text-emerald-600" />
-        Checking Blockchain Audit...
+        {t('blockchain.checking')}
       </div>
     );
   }
@@ -55,10 +59,10 @@ export default function BlockchainAuditBadge({ entityType, entityId, initialAudi
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-900/10 text-emerald-700 text-[10px] font-bold hover:bg-emerald-900/20 transition-colors"
-        title={`Verified on ${audit.network || 'Kava Testnet'}: ${audit.transactionHash}`}
+        title={`${t('blockchain.verifiedOn')} ${audit.network || t('blockchain.testnet')}: ${audit.transactionHash}`}
       >
         <ShieldCheck className="w-3 h-3 text-emerald-600" />
-        <span>Audit: {shortTx}</span>
+        <span>{t('blockchain.audit')}: {shortTx}</span>
         <ExternalLink className="w-2.5 h-2.5 text-emerald-500" />
       </a>
     );
@@ -73,11 +77,11 @@ export default function BlockchainAuditBadge({ entityType, entityId, initialAudi
           </div>
           <div>
             <div className="flex items-center gap-1.5 font-bold text-emerald-300">
-              <span>Blockchain Audit Confirmed</span>
+              <span>{t('blockchain.confirmed')}</span>
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             </div>
             <div className="text-[11px] text-emerald-400/80 font-mono">
-              Network: {audit.network || 'Kava Testnet'} (Chain ID: {audit.chainId || 2221})
+              {t('blockchain.network')}: {audit.network || t('blockchain.testnet')} (Chain ID: {audit.chainId || 2221})
             </div>
           </div>
         </div>
@@ -88,7 +92,7 @@ export default function BlockchainAuditBadge({ entityType, entityId, initialAudi
           rel="noopener noreferrer"
           className="flex items-center gap-1 px-3 py-1.5 bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-400/30 rounded-lg text-xs font-semibold transition-all"
         >
-          <span>Tx: {shortTx}</span>
+          <span>{t('blockchain.transaction')}: {shortTx}</span>
           <ExternalLink className="w-3.5 h-3.5" />
         </a>
       </div>

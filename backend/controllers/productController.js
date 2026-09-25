@@ -1,5 +1,18 @@
 const Product = require('../models/Product');
 const Farmer = require('../models/Farmer');
+const { translateText, SUPPORTED_LANGUAGES } = require('../services/translationService');
+
+// Product title and description are public marketplace copy. Never pass farmer identity,
+// contact details, location, documents, or any account/payment fields to Sarvam.
+const localiseProduct = async (product, language) => {
+  if (!product || !language || language === 'en-IN' || !SUPPORTED_LANGUAGES.has(language)) return product;
+  const localized = product.toObject ? product.toObject() : { ...product };
+  await Promise.all(['productName', 'description'].map(async (field) => {
+    if (!localized[field]) return;
+    try { localized[field] = await translateText({ text: localized[field], targetLanguage: language }); } catch (_) { /* source-text fallback */ }
+  }));
+  return localized;
+};
 
 // @desc    Create product
 // @route   POST /api/products
@@ -89,10 +102,11 @@ exports.getProducts = async (req, res, next) => {
       .sort(sortOption)
       .skip(skip)
       .limit(Number(limit));
+    const localizedProducts = await Promise.all(products.map((product) => localiseProduct(product, req.query.language)));
 
     res.json({
       success: true,
-      products,
+      products: localizedProducts,
       pagination: {
         page: Number(page),
         limit: Number(limit),
@@ -121,9 +135,10 @@ exports.getProduct = async (req, res, next) => {
     // Get farmer info
     const farmer = await Farmer.findById(product.farmerId);
 
+    const localizedProduct = await localiseProduct(product, req.query.language);
     res.json({
       success: true,
-      product,
+      product: localizedProduct,
       farmer: farmer ? {
         id: farmer._id,
         fullName: farmer.fullName,

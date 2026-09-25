@@ -7,8 +7,11 @@ import { useAuth } from '../../context/AuthContext';
 import { useCart } from '../../context/CartContext';
 import notificationService from '../../services/notificationService';
 import PageContainer from '../ui/PageContainer';
+import LanguageSelector from './LanguageSelector';
+import { useTranslation } from 'react-i18next';
 
 export default function Navbar() {
+  const { t } = useTranslation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
   const [notifOpen, setNotifOpen] = useState(false);
@@ -64,9 +67,9 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { label: 'Home', to: '/' },
-    { label: 'Marketplace', to: '/marketplace' },
-    { label: 'About', to: '/about' },
+    { label: t('navigation.home'), to: '/' },
+    { label: t('navigation.marketplace'), to: '/marketplace' },
+    { label: t('navigation.about'), to: '/about' },
   ];
 
   return (
@@ -75,13 +78,13 @@ export default function Navbar() {
       <div className="bg-[#002B36] text-white text-xs font-semibold py-2 px-4 border-b border-emerald-950">
         <PageContainer className="flex items-center justify-between">
           <div className="flex items-center gap-2 mx-auto sm:mx-0">
-            <span className="bg-[#00E676] text-[#002B36] px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider">NEW</span>
-            <span className="text-gray-200">Direct Farm-to-Buyer Marketplace — 0% Commission Platform</span>
+            <span className="bg-[#00E676] text-[#002B36] px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider">{t('header.new')}</span>
+            <span className="text-gray-200">{t('header.tagline')}</span>
           </div>
           <div className="hidden sm:flex items-center gap-4 text-xs text-gray-300">
-            <Link to="/about" className="hover:text-[#00E676] transition-colors">Support</Link>
+            <Link to="/about" className="hover:text-[#00E676] transition-colors">{t('navigation.support')}</Link>
             <span>|</span>
-            <Link to="/about" className="hover:text-[#00E676] transition-colors">Help Center</Link>
+            <Link to="/about" className="hover:text-[#00E676] transition-colors">{t('navigation.helpCenter')}</Link>
           </div>
         </PageContainer>
       </div>
@@ -118,7 +121,8 @@ export default function Navbar() {
 
           {/* Right Action Items */}
           <div className="flex items-center gap-3 sm:gap-5">
-            <Link to="/marketplace" className="p-2 text-gray-600 hover:text-[#082B36] transition-colors" title="Search Marketplace">
+            <LanguageSelector compact />
+            <Link to="/marketplace" aria-label={t('navigation.searchMarketplace')} className="p-2 text-gray-600 hover:text-[#082B36] transition-colors" title={t('navigation.searchMarketplace')}>
               <Search className="w-5 h-5" />
             </Link>
 
@@ -151,10 +155,10 @@ export default function Navbar() {
                         className="absolute right-0 mt-2 w-80 bg-white border border-[#E2E8E5] rounded-2xl shadow-2xl overflow-hidden text-[#082B36]"
                       >
                         <div className="flex items-center justify-between px-4 py-3 border-b border-[#E2E8E5] bg-[#F7F9F3]">
-                          <h3 className="font-bold text-sm font-display">Notifications</h3>
+                          <h3 className="font-bold text-sm font-display">{t('navigation.notifications')}</h3>
                           {unreadCount > 0 && (
                             <button onClick={markAllRead} className="text-xs text-[#00C853] font-semibold hover:underline">
-                              Mark all read
+                              {t('header.markAllRead')}
                             </button>
                           )}
                         </div>
@@ -165,7 +169,7 @@ export default function Navbar() {
                               <p className="text-xs text-gray-600 mt-0.5">{n.message}</p>
                             </div>
                           )) : (
-                            <div className="px-4 py-8 text-center text-sm text-gray-500">No notifications</div>
+                            <div className="px-4 py-8 text-center text-sm text-gray-500">{t('header.noNotifications')}</div>
                           )}
                         </div>
                       </motion.div>
@@ -196,10 +200,10 @@ export default function Navbar() {
                         </div>
                         <div className="py-1">
                           <Link to={getDashboardLink()} onClick={() => setProfileOpen(false)} className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-gray-700 hover:bg-emerald-50 hover:text-[#00C853]">
-                            <User className="w-4 h-4" /> Dashboard
+                            <User className="w-4 h-4" /> {t('navigation.dashboard')}
                           </Link>
                           <button onClick={handleLogout} className="w-full flex items-center gap-2.5 px-4 py-2.5 text-sm text-red-600 hover:bg-red-50">
-                            <LogOut className="w-4 h-4" /> Logout
+                            <LogOut className="w-4 h-4" /> {t('navigation.logout')}
                           </button>
                         </div>
                       </motion.div>
@@ -210,10 +214,10 @@ export default function Navbar() {
             ) : (
               <div className="flex items-center gap-3">
                 <Link to="/login" className="px-3.5 py-2 text-sm font-bold text-[#082B36] hover:text-[#00C853] transition-colors font-display">
-                  Sign In
+                  {t('navigation.signIn')}
                 </Link>
                 <Link to="/register" className="btn-agri-primary text-sm">
-                  Get Started →
+                  {t('navigation.getStarted')} →
                 </Link>
               </div>
             )}
@@ -241,10 +245,10 @@ export default function Navbar() {
               {!isAuthenticated && (
                 <div className="pt-2 flex flex-col gap-2">
                   <Link to="/login" onClick={() => setMobileOpen(false)} className="block px-3 py-2 text-center text-[#082B36] font-bold">
-                    Sign In
+                    {t('navigation.signIn')}
                   </Link>
                   <Link to="/register" onClick={() => setMobileOpen(false)} className="btn-agri-primary text-center justify-center">
-                    Get Started →
+                    {t('navigation.getStarted')} →
                   </Link>
                 </div>
               )}
@@ -255,4 +259,3 @@ export default function Navbar() {
     </header>
   );
 }
-

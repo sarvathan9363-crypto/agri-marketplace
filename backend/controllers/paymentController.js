@@ -3,9 +3,9 @@ const Order = require('../models/Order');
 
 exports.createPaymentOrder = async (req, res, next) => {
   try {
-    const order = await Order.findById(req.body.orderId);
-    if (!order) return res.status(404).json({ success: false, message: 'Order not found.' });
-    res.json(await paymentService.createPaymentOrder(order, req.user._id));
+    const targetId = req.body.orderGroupId || req.body.orderId;
+    if (!targetId) return res.status(400).json({ success: false, message: 'Order ID or Order Group ID is required.' });
+    res.json(await paymentService.createPaymentOrder(targetId, req.user._id));
   } catch (error) { next(error); }
 };
 exports.verifyPayment = async (req, res, next) => {
@@ -15,7 +15,10 @@ exports.verifyPayment = async (req, res, next) => {
   } catch (error) { next(error); }
 };
 exports.getPaymentStatus = async (req, res, next) => {
-  try { res.json(await paymentService.getPaymentStatus(req.params.id, req.user._id)); } catch (error) { next(error); }
+  try {
+    const gatewayPaymentId = req.query.razorpay_payment_id || req.query.gatewayPaymentId;
+    res.json(await paymentService.getPaymentStatus(req.params.id, req.user._id, gatewayPaymentId));
+  } catch (error) { next(error); }
 };
 exports.handleWebhook = async (req, res, next) => {
   try { res.json(await paymentService.processWebhook(req.body, req.get('x-razorpay-signature'), req.get('x-razorpay-event-id'))); } catch (error) { next(error); }

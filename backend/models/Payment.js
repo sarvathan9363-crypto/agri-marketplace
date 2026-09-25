@@ -4,8 +4,17 @@ const paymentSchema = new mongoose.Schema({
   orderId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Order',
-    required: true,
+    required: false,
   },
+  orderGroupId: {
+    type: String,
+    default: '',
+    index: true,
+  },
+  orderIds: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Order',
+  }],
   buyerId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
@@ -50,5 +59,6 @@ const paymentSchema = new mongoose.Schema({
 });
 
 paymentSchema.index({ orderId: 1, status: 1 });
+paymentSchema.index({ orderGroupId: 1, status: 1 });
 
 module.exports = mongoose.model('Payment', paymentSchema);

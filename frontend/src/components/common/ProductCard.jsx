@@ -2,8 +2,10 @@ import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ShoppingCart, MapPin, BadgeCheck } from 'lucide-react';
 import BlockchainAuditBadge from './BlockchainAuditBadge';
+import { useTranslation } from 'react-i18next';
 
 export default function ProductCard({ product, onAddToCart }) {
+  const { t, i18n } = useTranslation();
   const imgSrc = product.images?.[0] || 'https://images.unsplash.com/photo-1560493676-04071c5f467b?w=400';
 
   return (
@@ -22,13 +24,13 @@ export default function ProductCard({ product, onAddToCart }) {
             />
             <div className="absolute top-3 left-3">
               <span className="px-2.5 py-1 bg-[#002B36]/85 backdrop-blur-md text-[11px] font-extrabold text-[#00E676] rounded-full uppercase tracking-wider font-display">
-                {product.category}
+                {t(`categories.${product.category}`, { defaultValue: product.category })}
               </span>
             </div>
             {product.farmerVerificationStatus === 'VERIFIED' && (
               <div className="absolute top-3 right-3">
                 <span className="flex items-center gap-1 px-2.5 py-1 bg-[#00C853] text-white text-[11px] font-bold rounded-full font-display">
-                  <BadgeCheck className="w-3.5 h-3.5 text-[#00E676]" /> Verified
+                  <BadgeCheck className="w-3.5 h-3.5 text-[#00E676]" /> {t('verification.verified', { defaultValue: 'Verified' })}
                 </span>
               </div>
             )}
@@ -54,14 +56,15 @@ export default function ProductCard({ product, onAddToCart }) {
 
       <div className="px-5 pb-5 pt-3 border-t border-[#E2E8E5] flex items-end justify-between">
         <div>
-          <p className="text-xl font-black text-[#082B36] font-display">₹{product.pricePerUnit}<span className="text-xs text-gray-500 font-normal font-sans">/{product.unit}</span></p>
-          <p className="text-xs text-gray-500 font-medium">{product.quantity} {product.unit} available</p>
+          <p className="text-xl font-black text-[#082B36] font-display">{new Intl.NumberFormat(i18n.language, { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(product.pricePerUnit)}<span className="text-xs text-gray-500 font-normal font-sans">/{product.unit}</span></p>
+          <p className="text-xs text-gray-500 font-medium">{t('home.marketplace.available', { count: product.quantity, unit: product.unit })}</p>
         </div>
         {onAddToCart && (
           <button
             onClick={(e) => { e.preventDefault(); onAddToCart(product); }}
             className="w-10 h-10 bg-[#00E676] hover:bg-[#00C853] text-[#002B36] rounded-full flex items-center justify-center shadow-md hover:scale-105 transition-all"
-            title="Add to cart"
+            title={t('marketplace.addToCart')}
+            aria-label={t('marketplace.addToCart')}
           >
             <ShoppingCart className="w-5 h-5" />
           </button>
@@ -70,4 +73,3 @@ export default function ProductCard({ product, onAddToCart }) {
     </motion.div>
   );
 }
-

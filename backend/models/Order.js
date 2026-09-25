@@ -80,6 +80,11 @@ const orderSchema = new mongoose.Schema({
     type: String,
     default: '',
   },
+  orderGroupId: {
+    type: String,
+    default: '',
+    index: true,
+  },
   cancellationReason: {
     type: String,
     default: '',

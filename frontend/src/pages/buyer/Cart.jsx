@@ -4,30 +4,40 @@ import { Trash2, Minus, Plus, ShoppingBag, ArrowRight } from 'lucide-react';
 import { LoadingState, EmptyState } from '../../components/ui/Components';
 import PageContainer from '../../components/ui/PageContainer';
 import Button from '../../components/ui/Button';
-import cartService from '../../services/cartService';
+import { useCart } from '../../context/CartContext';
 import toast from 'react-hot-toast';
+import { useTranslation } from 'react-i18next';
 
 export default function Cart() {
-  const [cart, setCart] = useState(null);
+  const { t } = useTranslation();
+  const { cart, updateCartItem, removeFromCart, fetchCart } = useCart();
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
-  useEffect(() => { fetchCart(); }, []);
-
-  const fetchCart = async () => {
-    try { const res = await cartService.getCart(); setCart(res.cart); }
-    catch {} finally { setLoading(false); }
-  };
+  useEffect(() => {
+    const init = async () => {
+      await fetchCart();
+      setLoading(false);
+    };
+    init();
+  }, []);
 
   const updateQty = async (itemId, qty) => {
     if (qty < 1) return;
-    try { const res = await cartService.updateCartItem(itemId, qty); setCart(res.cart); }
-    catch (err) { toast.error(err.response?.data?.message || 'Failed to update.'); }
+    try {
+      await updateCartItem(itemId, qty);
+    } catch (err) {
+      toast.error(err.response?.data?.message || t('cart.updateFailed'));
+    }
   };
 
   const remove = async (itemId) => {
-    try { const res = await cartService.removeFromCart(itemId); setCart(res.cart); toast.success('Item removed.'); }
-    catch { toast.error('Failed to remove.'); }
+    try {
+      await removeFromCart(itemId);
+      toast.success(t('cart.removed'));
+    } catch (err) {
+      toast.error(err.response?.data?.message || t('cart.removeFailed'));
+    }
   };
 
   if (loading) return <LoadingState />;
@@ -39,11 +49,11 @@ export default function Cart() {
       <PageContainer className="py-12">
         <EmptyState
           icon={ShoppingBag}
-          title="Your shopping cart is empty"
-          description="Browse the agricultural marketplace and add produce directly from verified farmers."
+          title={t('cart.empty')}
+          description={t('cart.emptyDescription')}
           action={
             <Link to="/marketplace">
-              <Button variant="primary" size="md">Browse Marketplace</Button>
+              <Button variant="primary" size="md">{t('cart.browse')}</Button>
             </Link>
           }
         />
@@ -55,9 +65,9 @@ export default function Cart() {
     <div className="min-h-[calc(100vh-var(--app-header-height))] bg-[#fafcf8] py-8">
       <PageContainer>
         <div className="mb-8">
-          <span className="text-[#00684a] font-extrabold text-xs tracking-widest uppercase font-display bg-[#00ed64]/20 px-3 py-1 rounded-full">Checkout Bag</span>
-          <h1 className="text-3xl font-black text-[#001e2b] font-display mt-2">Shopping Cart</h1>
-          <p className="text-sm text-gray-600 mt-1 font-sans">Review your selected agricultural items before proceeding to payment.</p>
+          <span className="text-[#00684a] font-extrabold text-xs tracking-widest uppercase font-display bg-[#00ed64]/20 px-3 py-1 rounded-full">{t('cart.eyebrow')}</span>
+          <h1 className="text-3xl font-black text-[#001e2b] font-display mt-2">{t('cart.title')}</h1>
+          <p className="text-sm text-gray-600 mt-1 font-sans">{t('cart.description')}</p>
         </div>
 
         <div className="grid lg:grid-cols-12 gap-8 items-start">
@@ -88,7 +98,7 @@ export default function Cart() {
 
           {/* Summary */}
           <div className="lg:col-span-4 bg-white rounded-3xl border border-[#e8eddb] p-6 lg:p-8 shadow-sm lg:sticky lg:top-6">
-            <h2 className="font-extrabold text-[#001e2b] text-xl mb-6 font-display border-b border-[#f0f4e8] pb-4">Order Summary</h2>
+            <h2 className="font-extrabold text-[#001e2b] text-xl mb-6 font-display border-b border-[#f0f4e8] pb-4">{t('checkout.orderSummary')}</h2>
             <div className="space-y-4 text-sm font-sans">
               <div className="flex justify-between text-gray-600"><span className="font-medium">Items Subtotal</span><span className="font-bold text-[#001e2b] font-display">₹{cart.totalAmount}</span></div>
               <div className="flex justify-between text-gray-600"><span className="font-medium">Estimated Shipping</span><span className="text-[#00684a] font-bold uppercase tracking-wider font-display">Free Direct Delivery</span></div>
@@ -96,7 +106,7 @@ export default function Cart() {
             </div>
             <div className="mt-8">
               <Button variant="primary" size="lg" fullWidth icon={ArrowRight} onClick={() => navigate('/buyer/checkout')}>
-                Proceed to Checkout
+                {t('cart.proceed')}
               </Button>
             </div>
           </div>

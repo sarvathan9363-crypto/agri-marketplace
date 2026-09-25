@@ -157,72 +157,26 @@ exports.getDashboard = async (req, res, next) => {
   }
 };
 
-// Helper to trigger blockchain audit logging for verified farmer
-const triggerFarmerBlockchainAudit = async (farmer) => {
-  if (!farmer || farmer.verificationStatus !== 'VERIFIED') return;
-  const farmerWallet = farmer.walletAddress || null;
-  const farmerId = farmer._id.toString();
-
-  await blockchainQueue.enqueue({
-    entityType: 'FARMER',
-    entityId: farmerId,
-    action: 'REGISTER_FARMER',
-    idempotencyKey: `register_farmer_${farmerId}`,
-    payload: { farmerId, farmerWallet },
-  });
-
-  await blockchainQueue.enqueue({
-    entityType: 'FARMER',
-    entityId: farmerId,
-    action: 'UPDATE_FARMER_VERIFICATION',
-    idempotencyKey: `verify_farmer_${farmerId}`,
-    payload: {
-      farmerWallet,
-      isVerified: true,
-      verificationData: {
-        farmerId,
-        verificationStatus: 'VERIFIED',
-        verifiedAt: farmer.verifiedAt || new Date(),
-      },
-    },
-  });
-};
-
-// Helper to check and update overall verification status
+// Helper to update overall farmer verification status
 const updateOverallVerification = (farmer) => {
-  if (!farmer.verification) {
-    farmer.verification = {};
-  }
-
+  if (!farmer || !farmer.verification) return;
   const v = farmer.verification;
-  let isFullyVerified = false;
+  const isIndividual = farmer.farmerType !== 'FPO' && farmer.farmerType !== 'FPC';
 
-  if (farmer.farmerType === 'FPO') {
-    const isGstinOk = v.gstin?.status === 'verified' || v.gstin?.status === 'not_applicable';
-    isFullyVerified =
-      v.orgIdentity?.status === 'verified' &&
-      v.orgPan?.status === 'verified' &&
-      v.representative?.status === 'verified' &&
-      v.orgBank?.status === 'verified' &&
-      v.orgDocuments?.status === 'verified' &&
-      isGstinOk;
-  } else {
-    isFullyVerified =
-      v.aadhaar?.status === 'verified' &&
-      v.farmerRegistry?.status === 'verified' &&
-      v.landRecord?.status === 'verified' &&
-      v.bankAccount?.status === 'verified' &&
-      v.pan?.status === 'verified';
-  }
+  const requiredKeys = isIndividual
+    ? ['aadhaar', 'farmerRegistry', 'landRecord', 'bankAccount', 'pan']
+    : ['orgIdentity', 'orgPan', 'representative', 'orgBank', 'orgDocuments'];
+
+  const isFullyVerified = requiredKeys.every((key) => {
+    const status = v[key]?.status;
+    return status === 'verified' || status === 'skipped' || status === 'not_applicable';
+  });
 
   v.overallStatus = isFullyVerified ? 'verified' : 'incomplete';
 
   if (isFullyVerified) {
     farmer.verificationStatus = 'VERIFIED';
     if (!farmer.verifiedAt) farmer.verifiedAt = new Date();
-    triggerFarmerBlockchainAudit(farmer).catch((err) => {
-      console.error('[FarmerController] Blockchain audit queueing error:', err.message);
-    });
   } else {
     farmer.verificationStatus = 'PENDING_VERIFICATION';
   }

@@ -1,4 +1,5 @@
 import { StatusBadge, LoadingState, EmptyState } from './Components';
+import { useTranslation } from 'react-i18next';
 
 export default function DataTable({
   columns = [],
@@ -9,10 +10,11 @@ export default function DataTable({
   keyField = '_id',
   onRowClick,
 }) {
+  const { t } = useTranslation();
   if (loading) return <LoadingState />;
 
   if (!data || data.length === 0) {
-    return <EmptyState title={emptyTitle} description={emptyDescription} />;
+    return <EmptyState title={emptyTitle === 'No records found' ? t('ui.noRecords') : emptyTitle} description={emptyDescription === 'There are no items to display at this time.' ? t('ui.noItemsDescription') : emptyDescription} />;
   }
 
   return (

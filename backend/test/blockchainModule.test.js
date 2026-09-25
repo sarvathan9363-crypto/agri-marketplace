@@ -1,3 +1,4 @@
+require('dotenv').config();
 const assert = require('assert');
 const { hashId, hashReference, toPaise, formatAddress } = require('../blockchain/blockchain.utils');
 const blockchainService = require('../blockchain/blockchain.service');

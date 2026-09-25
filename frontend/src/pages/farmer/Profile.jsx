@@ -59,6 +59,23 @@ export default function FarmerProfile() {
         )}
       </div>
 
+      {user?.accountHash && (
+        <div className="bg-[#001e2b] text-white p-5 rounded-2xl shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3 border border-emerald-900/40">
+          <div>
+            <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#00ed64] font-display flex items-center gap-1.5">
+              🛡️ On-Chain Cryptographic Account Hash
+            </span>
+            <p className="font-mono text-xs text-gray-300 mt-1 break-all">{user.accountHash}</p>
+          </div>
+          <button
+            onClick={() => { navigator.clipboard.writeText(user.accountHash); toast.success('Account Hash copied!'); }}
+            className="px-4 py-2 bg-[#00ed64] text-[#001e2b] font-bold text-xs rounded-xl hover:bg-[#00c954] transition-colors shrink-0"
+          >
+            Copy Hash
+          </button>
+        </div>
+      )}
+
       <Card className="max-w-2xl">
         <div className="space-y-6">
           <div className="pb-4 border-b border-[#f0f4e8]">

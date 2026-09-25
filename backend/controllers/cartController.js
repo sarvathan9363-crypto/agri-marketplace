@@ -20,6 +20,7 @@ exports.getCart = async (req, res, next) => {
 exports.addToCart = async (req, res, next) => {
   try {
     const { productId, quantity } = req.body;
+    const parsedQty = Math.max(1, parseInt(quantity, 10) || 1);
 
     const product = await Product.findById(productId);
     if (!product) {
@@ -27,14 +28,7 @@ exports.addToCart = async (req, res, next) => {
     }
 
     if (product.status !== 'ACTIVE') {
-      return res.status(400).json({ success: false, message: 'This product is not available.' });
-    }
-
-    if (product.quantity < quantity) {
-      return res.status(400).json({
-        success: false,
-        message: `Only ${product.quantity} ${product.unit} available.`,
-      });
+      return res.status(400).json({ success: false, message: 'This product is not available for purchase.' });
     }
 
     let cart = await Cart.findOne({ buyerId: req.user._id });
@@ -47,9 +41,22 @@ exports.addToCart = async (req, res, next) => {
       item => item.productId.toString() === productId
     );
 
+    const currentQtyInCart = existingIndex > -1 ? cart.items[existingIndex].quantity : 0;
+    const targetQty = currentQtyInCart + parsedQty;
+
+    if (product.quantity < targetQty) {
+      const remainingAvailable = Math.max(0, product.quantity - currentQtyInCart);
+      return res.status(400).json({
+        success: false,
+        message: remainingAvailable > 0
+          ? `Cannot add ${parsedQty} ${product.unit}. Only ${remainingAvailable} ${product.unit} more available (${currentQtyInCart} already in your cart).`
+          : `You already have all ${product.quantity} ${product.unit} available in your cart.`,
+      });
+    }
+
     if (existingIndex > -1) {
-      cart.items[existingIndex].quantity = quantity;
-      cart.items[existingIndex].subtotal = quantity * product.pricePerUnit;
+      cart.items[existingIndex].quantity = targetQty;
+      cart.items[existingIndex].subtotal = targetQty * product.pricePerUnit;
     } else {
       cart.items.push({
         productId: product._id,
@@ -57,10 +64,10 @@ exports.addToCart = async (req, res, next) => {
         productImage: product.images?.[0] || '',
         farmerId: product.farmerUserId,
         farmerName: product.farmerName,
-        quantity,
+        quantity: parsedQty,
         unit: product.unit,
         pricePerUnit: product.pricePerUnit,
-        subtotal: quantity * product.pricePerUnit,
+        subtotal: parsedQty * product.pricePerUnit,
       });
     }
 

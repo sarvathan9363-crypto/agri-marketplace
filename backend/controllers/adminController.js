@@ -67,9 +67,11 @@ exports.getDashboard = async (req, res, next) => {
 };
 
 // @desc    Get all users
+// @desc    Get all users (admin)
 // @route   GET /api/admin/users
 exports.getUsers = async (req, res, next) => {
   try {
+    const { hashId } = require('../blockchain/blockchain.utils');
     const { role, status, search, page = 1, limit = 20 } = req.query;
     const query = {};
 
@@ -90,9 +92,17 @@ exports.getUsers = async (req, res, next) => {
       .skip(skip)
       .limit(Number(limit));
 
+    const items = users.map(u => {
+      const prefix = u.role === 'FARMER' ? 'AGR-F-' : u.role === 'BUYER' ? 'AGR-B-' : 'AGR-A-';
+      return {
+        ...u.toObject(),
+        accountHash: hashId(`${prefix}${u._id.toString()}`),
+      };
+    });
+
     res.json({
       success: true,
-      users,
+      users: items,
       pagination: { page: Number(page), limit: Number(limit), total, pages: Math.ceil(total / Number(limit)) },
     });
   } catch (error) {
@@ -120,6 +130,7 @@ exports.toggleUserStatus = async (req, res, next) => {
 // @route   GET /api/admin/farmers
 exports.getFarmers = async (req, res, next) => {
   try {
+    const { hashId } = require('../blockchain/blockchain.utils');
     const { verificationStatus, search, page = 1, limit = 20 } = req.query;
     const query = {};
 
@@ -138,6 +149,17 @@ exports.getFarmers = async (req, res, next) => {
       .sort({ createdAt: -1 })
       .skip(skip)
       .limit(Number(limit));
+
+    const items = farmers.map(f => ({
+      ...f.toObject(),
+      accountHash: hashId(`AGR-F-${(f.userId || f._id).toString()}`),
+    }));
+
+    res.json({
+      success: true,
+      farmers: items,
+      pagination: { page: Number(page), limit: Number(limit), total, pages: Math.ceil(total / Number(limit)) },
+    });
 
     res.json({
       success: true,
@@ -407,6 +429,132 @@ exports.getFarmerSettlements = async (req, res, next) => {
       items,
       routeEnabled: process.env.RAZORPAY_ROUTE_ENABLED === 'true',
       pagination: { page: Number(page), limit: Number(limit), total, pages: Math.ceil(total / Number(limit)) },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+// @desc    Get all blockchain audit events directly from Kava EVM Testnet smart contract
+// @route   GET /api/admin/blockchain/events
+exports.getBlockchainEvents = async (req, res, next) => {
+  try {
+    const blockchainConfig = require('../blockchain/blockchain.config');
+    const blockchainService = require('../blockchain/blockchain.service');
+
+    const paymentEvents = await blockchainService.getAllPaymentEvents();
+    const settlementEvents = await blockchainService.getAllSettlementEvents();
+
+    res.json({
+      success: true,
+      network: blockchainConfig.network,
+      chainId: blockchainConfig.chainId,
+      contractAddress: blockchainConfig.contractAddress,
+      explorerBaseUrl: blockchainConfig.explorerBaseUrl,
+      paymentEvents,
+      settlementEvents,
+      totalPaymentEvents: paymentEvents.length,
+      totalSettlementEvents: settlementEvents.length,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+// @desc    Lookup buyer or farmer user details by On-Chain Account Hash
+// @route   GET /api/admin/account-lookup/:accountHash
+exports.lookupAccountByHash = async (req, res, next) => {
+  try {
+    const { accountHash } = req.params;
+    const { hashId } = require('../blockchain/blockchain.utils');
+
+    if (!accountHash || accountHash.trim().length < 10) {
+      return res.status(400).json({ success: false, message: 'Invalid Account Hash parameter.' });
+    }
+
+    const cleanHash = accountHash.trim().toLowerCase();
+
+    // Search Farmers
+    const farmers = await Farmer.find().populate('userId', 'fullName email mobileNumber role profileImage active');
+    for (const f of farmers) {
+      const uId = f.userId?._id?.toString() || f.userId?.toString() || f._id.toString();
+      const fHash = hashId(`AGR-F-${uId}`).toLowerCase();
+      const fAltHash = hashId(`AGR-F-${f._id.toString()}`).toLowerCase();
+
+      if (cleanHash === fHash || cleanHash === fAltHash) {
+        return res.json({
+          success: true,
+          matched: true,
+          accountType: 'FARMER',
+          accountHash,
+          user: f.userId,
+          farmer: {
+            id: f._id,
+            fullName: f.fullName,
+            farmName: f.farmName,
+            email: f.email,
+            mobileNumber: f.mobileNumber,
+            farmerType: f.farmerType,
+            location: f.location,
+            verificationStatus: f.verificationStatus,
+            razorpaySellerStatus: f.razorpaySellerStatus || 'NOT_STARTED',
+          },
+        });
+      }
+    }
+
+    // Search Buyers
+    const buyers = await Buyer.find().populate('userId', 'fullName email mobileNumber role profileImage active');
+    for (const b of buyers) {
+      const uId = b.userId?._id?.toString() || b.userId?.toString() || b._id.toString();
+      const bHash = hashId(`AGR-B-${uId}`).toLowerCase();
+      const bAltHash = hashId(`AGR-B-${b._id.toString()}`).toLowerCase();
+
+      if (cleanHash === bHash || cleanHash === bAltHash) {
+        return res.json({
+          success: true,
+          matched: true,
+          accountType: 'BUYER',
+          accountHash,
+          user: b.userId,
+          buyer: {
+            id: b._id,
+            buyerType: b.buyerType,
+            businessName: b.businessName,
+            address: b.address,
+          },
+        });
+      }
+    }
+
+    // Search all Users directly as fallback
+    const users = await User.find();
+    for (const u of users) {
+      const prefix = u.role === 'FARMER' ? 'AGR-F-' : u.role === 'BUYER' ? 'AGR-B-' : 'AGR-A-';
+      const uHash = hashId(`${prefix}${u._id.toString()}`).toLowerCase();
+      if (cleanHash === uHash) {
+        return res.json({
+          success: true,
+          matched: true,
+          accountType: u.role,
+          accountHash,
+          user: {
+            id: u._id,
+            fullName: u.fullName,
+            email: u.email,
+            mobileNumber: u.mobileNumber,
+            role: u.role,
+            active: u.active,
+          },
+        });
+      }
+    }
+
+    res.json({
+      success: true,
+      matched: false,
+      message: 'No registered user or farmer found matching this account hash.',
+      accountHash,
     });
   } catch (error) {
     next(error);

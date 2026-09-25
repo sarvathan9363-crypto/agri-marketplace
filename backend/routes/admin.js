@@ -16,6 +16,8 @@ router.get('/products', adminController.getProducts);
 router.put('/products/:id/status', adminController.updateProductStatus);
 router.get('/orders', adminController.getOrders);
 router.get('/payments', adminController.getPayments);
+router.get('/blockchain/events', adminController.getBlockchainEvents);
+router.get('/account-lookup/:accountHash', adminController.lookupAccountByHash);
 router.get('/analytics', adminController.getAnalytics);
 router.get('/disputes', disputeController.getAllDisputes);
 router.put('/disputes/:id', disputeController.updateDispute);

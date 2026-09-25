@@ -13,6 +13,7 @@ pragma solidity ^0.8.20;
  * 4. Payment events and settlement events are strictly append-only and immutable.
  *    No overwrite or deletion functions are provided.
  * 5. Multi-vendor marketplace support allows an array of sellerIdHashes per payment.
+ * 6. Product details (itemsSummary) are recorded on-chain for audit transparency.
  */
 contract AgriBazaarPaymentAudit {
     // ------------------------------------------------------------------------
@@ -36,16 +37,50 @@ contract AgriBazaarPaymentAudit {
         REFUNDED
     }
 
+    struct SellerSplit {
+        bytes32 sellerIdHash;
+        uint256 sellerAmountRupees;
+        uint256 sellerAmountPaise;
+        string sellerItemsSummary;
+    }
+
+    struct PaymentInput {
+        bytes32 eventIdHash;
+        bytes32 paymentIdHash;
+        bytes32 orderIdHash;
+        bytes32 buyerIdHash;
+        bytes32 paymentReferenceHash;
+        bytes32 itemsSummaryHash;
+        string itemsSummary;
+        uint256 amountRupees;
+        uint256 amountPaise;
+        PaymentStatus status;
+        SellerSplit[] sellerSplits;
+    }
+
+    struct SettlementInput {
+        bytes32 eventIdHash;
+        bytes32 settlementIdHash;
+        bytes32 orderIdHash;
+        bytes32 sellerIdHash;
+        uint256 sellerAmountRupees;
+        uint256 sellerAmountPaise;
+        SettlementStatus status;
+    }
+
     struct PaymentAuditEvent {
         bytes32 eventIdHash;
         bytes32 paymentIdHash;
         bytes32 orderIdHash;
         bytes32 buyerIdHash;
-        bytes32[] sellerIdHashes;
         bytes32 paymentReferenceHash;
+        bytes32 itemsSummaryHash;
+        string itemsSummary;
+        uint256 amountRupees;
         uint256 amountPaise;
         PaymentStatus status;
         uint256 recordedAt;
+        SellerSplit[] sellerSplits;
     }
 
     struct SettlementAuditEvent {
@@ -53,6 +88,7 @@ contract AgriBazaarPaymentAudit {
         bytes32 settlementIdHash;
         bytes32 orderIdHash;
         bytes32 sellerIdHash;
+        uint256 sellerAmountRupees;
         uint256 sellerAmountPaise;
         SettlementStatus status;
         uint256 recordedAt;
@@ -86,7 +122,9 @@ contract AgriBazaarPaymentAudit {
         bytes32 indexed paymentIdHash,
         bytes32 indexed orderIdHash,
         bytes32 buyerIdHash,
+        string itemsSummary,
         uint8 status,
+        uint256 amountRupees,
         uint256 amountPaise,
         uint256 recordedAt
     );
@@ -97,6 +135,7 @@ contract AgriBazaarPaymentAudit {
         bytes32 indexed orderIdHash,
         bytes32 sellerIdHash,
         uint8 status,
+        uint256 sellerAmountRupees,
         uint256 sellerAmountPaise,
         uint256 recordedAt
     );
@@ -158,95 +197,77 @@ contract AgriBazaarPaymentAudit {
     // ------------------------------------------------------------------------
 
     /**
-     * @notice Records an immutable payment audit event.
-     * @param eventIdHash Unique deterministic hash for duplicate protection
-     * @param paymentIdHash Keccak256 hash of application payment ID (e.g. AGR-PAY-xxx)
-     * @param orderIdHash Keccak256 hash of application order ID (e.g. AGR-O-xxx)
-     * @param buyerIdHash Keccak256 hash of application buyer ID (e.g. AGR-B-xxx)
-     * @param sellerIdHashes Array of Keccak256 hashes of seller IDs (AGR-F-xxx / AGR-FPO-xxx)
-     * @param paymentReferenceHash Keccak256 hash of Razorpay payment reference
-     * @param amountPaise Payment amount in smallest currency unit (paise)
-     * @param status Payment status enum index
+     * @notice Records an immutable payment audit event using input struct to avoid stack too deep.
+     * @param input PaymentInput struct containing all payment audit fields
      */
-    function recordPaymentEvent(
-        bytes32 eventIdHash,
-        bytes32 paymentIdHash,
-        bytes32 orderIdHash,
-        bytes32 buyerIdHash,
-        bytes32[] calldata sellerIdHashes,
-        bytes32 paymentReferenceHash,
-        uint256 amountPaise,
-        PaymentStatus status
-    ) external onlyRelayerOrOwner whenNotPaused {
-        if (eventIdHash == bytes32(0) || paymentIdHash == bytes32(0)) revert InvalidZeroInput();
-        if (eventExists[eventIdHash]) revert AlreadyExists();
+    function recordPaymentEvent(PaymentInput calldata input) external onlyRelayerOrOwner whenNotPaused {
+        if (input.eventIdHash == bytes32(0) || input.paymentIdHash == bytes32(0)) revert InvalidZeroInput();
+        if (eventExists[input.eventIdHash]) revert AlreadyExists();
 
-        eventExists[eventIdHash] = true;
+        eventExists[input.eventIdHash] = true;
 
-        PaymentAuditEvent storage evt = _paymentEvents[eventIdHash];
-        evt.eventIdHash = eventIdHash;
-        evt.paymentIdHash = paymentIdHash;
-        evt.orderIdHash = orderIdHash;
-        evt.buyerIdHash = buyerIdHash;
-        evt.sellerIdHashes = sellerIdHashes;
-        evt.paymentReferenceHash = paymentReferenceHash;
-        evt.amountPaise = amountPaise;
-        evt.status = status;
+        PaymentAuditEvent storage evt = _paymentEvents[input.eventIdHash];
+        evt.eventIdHash = input.eventIdHash;
+        evt.paymentIdHash = input.paymentIdHash;
+        evt.orderIdHash = input.orderIdHash;
+        evt.buyerIdHash = input.buyerIdHash;
+        evt.paymentReferenceHash = input.paymentReferenceHash;
+        evt.itemsSummaryHash = input.itemsSummaryHash;
+        evt.itemsSummary = input.itemsSummary;
+        evt.amountRupees = input.amountRupees;
+        evt.amountPaise = input.amountPaise;
+        evt.status = input.status;
         evt.recordedAt = block.timestamp;
 
-        _paymentEventIds.push(eventIdHash);
+        for (uint256 i = 0; i < input.sellerSplits.length; i++) {
+            evt.sellerSplits.push(input.sellerSplits[i]);
+        }
+
+        _paymentEventIds.push(input.eventIdHash);
 
         emit PaymentAuditRecorded(
-            eventIdHash,
-            paymentIdHash,
-            orderIdHash,
-            buyerIdHash,
-            uint8(status),
-            amountPaise,
+            input.eventIdHash,
+            input.paymentIdHash,
+            input.orderIdHash,
+            input.buyerIdHash,
+            input.itemsSummary,
+            uint8(input.status),
+            input.amountRupees,
+            input.amountPaise,
             block.timestamp
         );
     }
 
     /**
-     * @notice Records an immutable seller settlement audit event.
-     * @param eventIdHash Unique deterministic hash for duplicate protection
-     * @param settlementIdHash Keccak256 hash of application settlement ID (e.g. AGR-S-xxx)
-     * @param orderIdHash Keccak256 hash of application order ID (e.g. AGR-O-xxx)
-     * @param sellerIdHash Keccak256 hash of seller ID (AGR-F-xxx / AGR-FPO-xxx)
-     * @param sellerAmountPaise Net amount settled to seller in paise
-     * @param status Settlement status enum index
+     * @notice Records an immutable seller settlement audit event using input struct.
+     * @param input SettlementInput struct containing all settlement audit fields
      */
-    function recordSettlementEvent(
-        bytes32 eventIdHash,
-        bytes32 settlementIdHash,
-        bytes32 orderIdHash,
-        bytes32 sellerIdHash,
-        uint256 sellerAmountPaise,
-        SettlementStatus status
-    ) external onlyRelayerOrOwner whenNotPaused {
-        if (eventIdHash == bytes32(0) || settlementIdHash == bytes32(0)) revert InvalidZeroInput();
-        if (eventExists[eventIdHash]) revert AlreadyExists();
+    function recordSettlementEvent(SettlementInput calldata input) external onlyRelayerOrOwner whenNotPaused {
+        if (input.eventIdHash == bytes32(0) || input.settlementIdHash == bytes32(0)) revert InvalidZeroInput();
+        if (eventExists[input.eventIdHash]) revert AlreadyExists();
 
-        eventExists[eventIdHash] = true;
+        eventExists[input.eventIdHash] = true;
 
-        SettlementAuditEvent storage evt = _settlementEvents[eventIdHash];
-        evt.eventIdHash = eventIdHash;
-        evt.settlementIdHash = settlementIdHash;
-        evt.orderIdHash = orderIdHash;
-        evt.sellerIdHash = sellerIdHash;
-        evt.sellerAmountPaise = sellerAmountPaise;
-        evt.status = status;
+        SettlementAuditEvent storage evt = _settlementEvents[input.eventIdHash];
+        evt.eventIdHash = input.eventIdHash;
+        evt.settlementIdHash = input.settlementIdHash;
+        evt.orderIdHash = input.orderIdHash;
+        evt.sellerIdHash = input.sellerIdHash;
+        evt.sellerAmountRupees = input.sellerAmountRupees;
+        evt.sellerAmountPaise = input.sellerAmountPaise;
+        evt.status = input.status;
         evt.recordedAt = block.timestamp;
 
-        _settlementEventIds.push(eventIdHash);
+        _settlementEventIds.push(input.eventIdHash);
 
         emit SettlementAuditRecorded(
-            eventIdHash,
-            settlementIdHash,
-            orderIdHash,
-            sellerIdHash,
-            uint8(status),
-            sellerAmountPaise,
+            input.eventIdHash,
+            input.settlementIdHash,
+            input.orderIdHash,
+            input.sellerIdHash,
+            uint8(input.status),
+            input.sellerAmountRupees,
+            input.sellerAmountPaise,
             block.timestamp
         );
     }
@@ -284,6 +305,11 @@ contract AgriBazaarPaymentAudit {
     function getPaymentEvent(bytes32 eventIdHash) external view returns (PaymentAuditEvent memory) {
         if (!eventExists[eventIdHash]) revert NotFound();
         return _paymentEvents[eventIdHash];
+    }
+
+    function getSellerSplits(bytes32 eventIdHash) external view returns (SellerSplit[] memory) {
+        if (!eventExists[eventIdHash]) revert NotFound();
+        return _paymentEvents[eventIdHash].sellerSplits;
     }
 
     function getSettlementEvent(bytes32 eventIdHash) external view returns (SettlementAuditEvent memory) {

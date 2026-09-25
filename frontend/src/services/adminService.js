@@ -53,6 +53,23 @@ const adminService = {
     const res = await api.get('/admin/farmers/settlements', { params });
     return res.data;
   },
+  getBlockchainAuditEvents: async () => {
+    const res = await api.get('/admin/blockchain/events');
+    return res.data;
+  },
+  verifyBlockchainHash: async (eventIdHash) => {
+    const res = await api.get(`/blockchain/audit/${eventIdHash}`);
+    return res.data;
+  },
+  lookupAccountByHash: async (accountHash) => {
+    try {
+      const res = await api.get(`/admin/account-lookup/${accountHash}`);
+      return res.data;
+    } catch {
+      const res = await api.get(`/blockchain/account-lookup/${accountHash}`);
+      return res.data;
+    }
+  },
 };
 
 export default adminService;

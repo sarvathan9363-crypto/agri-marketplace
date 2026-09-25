@@ -106,9 +106,21 @@
       },
       {
         "indexed": false,
+        "internalType": "string",
+        "name": "itemsSummary",
+        "type": "string"
+      },
+      {
+        "indexed": false,
         "internalType": "uint8",
         "name": "status",
         "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amountRupees",
+        "type": "uint256"
       },
       {
         "indexed": false,
@@ -177,6 +189,12 @@
         "internalType": "uint8",
         "name": "status",
         "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "sellerAmountRupees",
+        "type": "uint256"
       },
       {
         "indexed": false,
@@ -259,14 +277,24 @@
             "type": "bytes32"
           },
           {
-            "internalType": "bytes32[]",
-            "name": "sellerIdHashes",
-            "type": "bytes32[]"
-          },
-          {
             "internalType": "bytes32",
             "name": "paymentReferenceHash",
             "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "itemsSummaryHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "string",
+            "name": "itemsSummary",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "amountRupees",
+            "type": "uint256"
           },
           {
             "internalType": "uint256",
@@ -282,6 +310,33 @@
             "internalType": "uint256",
             "name": "recordedAt",
             "type": "uint256"
+          },
+          {
+            "components": [
+              {
+                "internalType": "bytes32",
+                "name": "sellerIdHash",
+                "type": "bytes32"
+              },
+              {
+                "internalType": "uint256",
+                "name": "sellerAmountRupees",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "sellerAmountPaise",
+                "type": "uint256"
+              },
+              {
+                "internalType": "string",
+                "name": "sellerItemsSummary",
+                "type": "string"
+              }
+            ],
+            "internalType": "struct AgriBazaarPaymentAudit.SellerSplit[]",
+            "name": "sellerSplits",
+            "type": "tuple[]"
           }
         ],
         "internalType": "struct AgriBazaarPaymentAudit.PaymentAuditEvent",
@@ -332,6 +387,47 @@
         "type": "bytes32"
       }
     ],
+    "name": "getSellerSplits",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "sellerIdHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint256",
+            "name": "sellerAmountRupees",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "sellerAmountPaise",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "sellerItemsSummary",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct AgriBazaarPaymentAudit.SellerSplit[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "eventIdHash",
+        "type": "bytes32"
+      }
+    ],
     "name": "getSettlementEvent",
     "outputs": [
       {
@@ -355,6 +451,11 @@
             "internalType": "bytes32",
             "name": "sellerIdHash",
             "type": "bytes32"
+          },
+          {
+            "internalType": "uint256",
+            "name": "sellerAmountRupees",
+            "type": "uint256"
           },
           {
             "internalType": "uint256",
@@ -448,44 +549,88 @@
   {
     "inputs": [
       {
-        "internalType": "bytes32",
-        "name": "eventIdHash",
-        "type": "bytes32"
-      },
-      {
-        "internalType": "bytes32",
-        "name": "paymentIdHash",
-        "type": "bytes32"
-      },
-      {
-        "internalType": "bytes32",
-        "name": "orderIdHash",
-        "type": "bytes32"
-      },
-      {
-        "internalType": "bytes32",
-        "name": "buyerIdHash",
-        "type": "bytes32"
-      },
-      {
-        "internalType": "bytes32[]",
-        "name": "sellerIdHashes",
-        "type": "bytes32[]"
-      },
-      {
-        "internalType": "bytes32",
-        "name": "paymentReferenceHash",
-        "type": "bytes32"
-      },
-      {
-        "internalType": "uint256",
-        "name": "amountPaise",
-        "type": "uint256"
-      },
-      {
-        "internalType": "enum AgriBazaarPaymentAudit.PaymentStatus",
-        "name": "status",
-        "type": "uint8"
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "eventIdHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "paymentIdHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "orderIdHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "buyerIdHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "paymentReferenceHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "itemsSummaryHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "string",
+            "name": "itemsSummary",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "amountRupees",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "amountPaise",
+            "type": "uint256"
+          },
+          {
+            "internalType": "enum AgriBazaarPaymentAudit.PaymentStatus",
+            "name": "status",
+            "type": "uint8"
+          },
+          {
+            "components": [
+              {
+                "internalType": "bytes32",
+                "name": "sellerIdHash",
+                "type": "bytes32"
+              },
+              {
+                "internalType": "uint256",
+                "name": "sellerAmountRupees",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "sellerAmountPaise",
+                "type": "uint256"
+              },
+              {
+                "internalType": "string",
+                "name": "sellerItemsSummary",
+                "type": "string"
+              }
+            ],
+            "internalType": "struct AgriBazaarPaymentAudit.SellerSplit[]",
+            "name": "sellerSplits",
+            "type": "tuple[]"
+          }
+        ],
+        "internalType": "struct AgriBazaarPaymentAudit.PaymentInput",
+        "name": "input",
+        "type": "tuple"
       }
     ],
     "name": "recordPaymentEvent",
@@ -496,34 +641,46 @@
   {
     "inputs": [
       {
-        "internalType": "bytes32",
-        "name": "eventIdHash",
-        "type": "bytes32"
-      },
-      {
-        "internalType": "bytes32",
-        "name": "settlementIdHash",
-        "type": "bytes32"
-      },
-      {
-        "internalType": "bytes32",
-        "name": "orderIdHash",
-        "type": "bytes32"
-      },
-      {
-        "internalType": "bytes32",
-        "name": "sellerIdHash",
-        "type": "bytes32"
-      },
-      {
-        "internalType": "uint256",
-        "name": "sellerAmountPaise",
-        "type": "uint256"
-      },
-      {
-        "internalType": "enum AgriBazaarPaymentAudit.SettlementStatus",
-        "name": "status",
-        "type": "uint8"
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "eventIdHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "settlementIdHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "orderIdHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "sellerIdHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint256",
+            "name": "sellerAmountRupees",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "sellerAmountPaise",
+            "type": "uint256"
+          },
+          {
+            "internalType": "enum AgriBazaarPaymentAudit.SettlementStatus",
+            "name": "status",
+            "type": "uint8"
+          }
+        ],
+        "internalType": "struct AgriBazaarPaymentAudit.SettlementInput",
+        "name": "input",
+        "type": "tuple"
       }
     ],
     "name": "recordSettlementEvent",

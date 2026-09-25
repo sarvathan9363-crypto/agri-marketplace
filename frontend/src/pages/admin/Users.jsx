@@ -37,6 +37,26 @@ export default function AdminUsers() {
       render: (u) => <span className="font-extrabold text-[#001e2b] font-display">{u.fullName}</span>
     },
     { header: 'Email Address', key: 'email' },
+    {
+      header: 'On-Chain Account Hash',
+      key: 'accountHash',
+      render: (u) => (
+        <div className="flex items-center gap-1.5 font-mono text-xs text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-100" title={u.accountHash}>
+          <span>{u.accountHash ? `${u.accountHash.slice(0, 10)}...${u.accountHash.slice(-6)}` : 'N/A'}</span>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              navigator.clipboard.writeText(u.accountHash);
+              toast.success('Account Hash copied!');
+            }}
+            className="text-gray-400 hover:text-gray-700 p-0.5 rounded"
+            title="Copy full hash"
+          >
+            📋
+          </button>
+        </div>
+      )
+    },
     { header: 'Account Role', key: 'role', type: 'status' },
     {
       header: 'Account Status',

@@ -7,6 +7,9 @@ const Notification = require('../models/Notification');
 const paymentService = require('../services/paymentService');
 
 // @desc    Create order (from cart or direct buy)
+const mongoose = require('mongoose');
+
+// @desc    Create order (from cart or direct buy)
 // @route   POST /api/orders
 exports.createOrder = async (req, res, next) => {
   try {
@@ -21,7 +24,9 @@ exports.createOrder = async (req, res, next) => {
     }
 
     const buyer = await Buyer.findOne({ userId: req.user._id });
+    const orderGroupId = 'grp_' + new mongoose.Types.ObjectId().toString();
     const orders = [];
+    let totalGroupAmount = 0;
 
     for (const item of items) {
       const product = await Product.findById(item.productId);
@@ -34,7 +39,8 @@ exports.createOrder = async (req, res, next) => {
         });
       }
 
-      const farmer = await Farmer.findById(product.farmerId);
+      const itemTotal = item.quantity * product.pricePerUnit;
+      totalGroupAmount += itemTotal;
 
       const order = await Order.create({
         buyerId: req.user._id,
@@ -47,13 +53,14 @@ exports.createOrder = async (req, res, next) => {
         quantity: item.quantity,
         unit: product.unit,
         pricePerUnit: product.pricePerUnit,
-        totalAmount: item.quantity * product.pricePerUnit,
+        totalAmount: itemTotal,
         deliveryAddress,
         deliveryCity: deliveryCity || '',
         deliveryState: deliveryState || '',
         deliveryPincode: deliveryPincode || '',
         paymentStatus: 'PENDING',
         orderStatus: 'PENDING_PAYMENT',
+        orderGroupId,
       });
 
       // Update product quantity
@@ -79,6 +86,8 @@ exports.createOrder = async (req, res, next) => {
     res.status(201).json({
       success: true,
       message: 'Order placed successfully.',
+      orderGroupId,
+      totalAmount: totalGroupAmount,
       orders,
     });
   } catch (error) {

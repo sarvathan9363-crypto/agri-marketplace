@@ -44,11 +44,14 @@ export function StatsCard({ icon: Icon, label, value, trend, color = 'primary' }
 }
 
 export function StatusBadge({ status }) {
+  const { t } = useTranslation();
   const styles = {
     ACTIVE: 'bg-[#00E676]/20 text-[#00C853] border-[#00E676]',
     VERIFIED: 'bg-[#00C853] text-white border-[#00C853]',
     DELIVERED: 'bg-emerald-100 text-emerald-800 border-emerald-300',
     SUCCESSFUL: 'bg-emerald-100 text-emerald-800 border-emerald-300',
+    CAPTURED: 'bg-emerald-100 text-emerald-800 border-emerald-300',
+    AUTHORIZED: 'bg-blue-100 text-blue-800 border-blue-300',
     RESOLVED: 'bg-emerald-100 text-emerald-800 border-emerald-300',
     PENDING: 'bg-amber-100 text-amber-900 border-amber-300',
     PENDING_VERIFICATION: 'bg-amber-100 text-amber-900 border-amber-300',
@@ -66,7 +69,9 @@ export function StatusBadge({ status }) {
     REFUNDED: 'bg-purple-100 text-purple-800 border-purple-300',
   };
 
-  const label = status?.replace(/_/g, ' ') || 'UNKNOWN';
+  const statusKeys = { ACTIVE: 'active', VERIFIED: 'verified', DELIVERED: 'delivered', SUCCESSFUL: 'successful', CAPTURED: 'captured', AUTHORIZED: 'authorized', RESOLVED: 'resolved', PENDING: 'pending', PENDING_VERIFICATION: 'pendingVerification', CREATED: 'created', OPEN: 'open', CONFIRMED: 'confirmed', UNDER_REVIEW: 'underReview', DISPATCHED: 'dispatched', CANCELLED: 'cancelled', REJECTED: 'rejected', FAILED: 'failed', INACTIVE: 'inactive', DRAFT: 'draft', OUT_OF_STOCK: 'outOfStock', REFUNDED: 'refunded' };
+  const rawKey = statusKeys[status];
+  const label = rawKey ? t(`status.${rawKey}`, { defaultValue: status }) : (status || t('ui.unknown'));
 
   return (
     <span className={`inline-flex items-center px-3 py-1 text-[11px] font-black uppercase tracking-wider rounded-full border ${styles[status] || 'bg-gray-100 text-gray-700 border-gray-300'} font-display`}>
@@ -76,15 +81,17 @@ export function StatusBadge({ status }) {
 }
 
 export function LoadingState({ message = 'Loading content...' }) {
+  const { t } = useTranslation();
   return (
     <div className="flex flex-col items-center justify-center py-20 text-center">
       <div className="w-12 h-12 border-4 border-gray-200 border-t-[#00E676] rounded-full animate-spin" />
-      <p className="mt-4 text-sm font-bold text-[#082B36] font-display">{message}</p>
+      <p className="mt-4 text-sm font-bold text-[#082B36] font-display">{message === 'Loading content...' ? t('ui.loadingContent') : message}</p>
     </div>
   );
 }
 
 export function EmptyState({ icon: Icon, title = 'No items found', description, action }) {
+  const { t } = useTranslation();
   return (
     <div className="flex flex-col items-center justify-center py-20 px-4 text-center bg-white rounded-2xl border border-[#E2E8E5]">
       {Icon && (
@@ -92,7 +99,7 @@ export function EmptyState({ icon: Icon, title = 'No items found', description, 
           <Icon className="w-8 h-8" />
         </div>
       )}
-      <h3 className="text-xl font-extrabold text-[#082B36] font-display">{title}</h3>
+      <h3 className="text-xl font-extrabold text-[#082B36] font-display">{title === 'No items found' ? t('ui.noItems') : title}</h3>
       {description && <p className="text-sm text-gray-500 mt-2 max-w-md font-sans">{description}</p>}
       {action && <div className="mt-6">{action}</div>}
     </div>
@@ -100,19 +107,21 @@ export function EmptyState({ icon: Icon, title = 'No items found', description, 
 }
 
 export function ErrorState({ message = 'Something went wrong.', onRetry }) {
+  const { t } = useTranslation();
   return (
     <div className="flex flex-col items-center justify-center py-20 text-center bg-white rounded-2xl border border-red-200 p-8">
       <div className="w-16 h-16 bg-red-100 text-red-600 rounded-2xl flex items-center justify-center mb-4 text-2xl font-bold">
         ⚠️
       </div>
-      <h3 className="text-xl font-extrabold text-[#082B36] font-display">Error Encountered</h3>
+      <h3 className="text-xl font-extrabold text-[#082B36] font-display">{t('ui.error')}</h3>
       <p className="text-sm text-gray-500 mt-2 font-sans">{message}</p>
       {onRetry && (
         <button onClick={onRetry} className="mt-6 btn-agri-primary text-sm px-6 py-2.5">
-          Try Again
+          {t('ui.tryAgain')}
         </button>
       )}
     </div>
   );
 }
 
+import { useTranslation } from 'react-i18next';

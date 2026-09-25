@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import fileService from '../../services/fileService';
 import toast from 'react-hot-toast';
+import { useTranslation } from 'react-i18next';
 
 export default function SecureFileUpload({
   documentType = 'OTHER_DOC',
@@ -22,13 +23,14 @@ export default function SecureFileUpload({
   entityId = '',
   acceptedFileTypes,
   maxFileSizeMb = 5,
-  label = 'Upload Document',
+  label,
   description,
   existingFile = null,
   onUploadSuccess = () => {},
   onUploadError = () => {},
   onFileRemove = () => {},
 }) {
+  const { t, i18n } = useTranslation();
   const isImageOnly =
     documentType === 'PRODUCT_IMAGE' ||
     documentType === 'AVATAR_IMAGE' ||
@@ -44,8 +46,8 @@ export default function SecureFileUpload({
   const effectiveDescription =
     description ||
     (isImageOnly
-      ? 'High quality JPG, PNG, or WEBP image up to 5MB'
-      : 'PDF, JPG, JPEG, PNG or WEBP up to 5MB');
+      ? t('upload.imageHint')
+      : t('upload.documentHint'));
 
   const fileInputRef = useRef(null);
   const [dragActive, setDragActive] = useState(false);
@@ -60,7 +62,7 @@ export default function SecureFileUpload({
       if (typeof existingFile === 'string') {
         setFileAsset({
           secureUrl: existingFile,
-          fileName: 'Uploaded Document',
+          fileName: t('upload.uploadedDocument'),
           fileSize: null,
         });
       } else {
@@ -86,7 +88,7 @@ export default function SecureFileUpload({
     // Check size limit
     const maxBytes = maxFileSizeMb * 1024 * 1024;
     if (file.size > maxBytes) {
-      const err = `File size exceeds the maximum allowed limit of ${maxFileSizeMb} MB.`;
+      const err = t('upload.fileTooLarge', { size: maxFileSizeMb });
       setErrorMessage(err);
       toast.error(err);
       return false;
@@ -99,7 +101,7 @@ export default function SecureFileUpload({
     const fileExt = '.' + file.name.split('.').pop().toLowerCase();
 
     if (!allowedExts.includes(fileExt)) {
-      const err = `Unsupported file type (${fileExt}). Allowed formats: ${effectiveAcceptedTypes}`;
+      const err = t('upload.unsupportedType', { type: fileExt, formats: effectiveAcceptedTypes });
       setErrorMessage(err);
       toast.error(err);
       return false;
@@ -108,7 +110,7 @@ export default function SecureFileUpload({
     // Strict check for image-only fields (reject PDF)
     if (isImageOnly || (!allowedExts.includes('.pdf') && (file.type === 'application/pdf' || fileExt === '.pdf'))) {
       if (file.type === 'application/pdf' || fileExt === '.pdf') {
-        const err = 'PDF files are not allowed for image uploads. Please select a JPG, PNG, or WEBP image.';
+        const err = t('upload.pdfNotAllowed');
         setErrorMessage(err);
         toast.error(err);
         return false;
@@ -145,7 +147,7 @@ export default function SecureFileUpload({
       if (response.success && response.file) {
         setUploadProgress(100);
         setFileAsset(response.file);
-        toast.success('File uploaded securely to Cloudinary!');
+        toast.success(t('messages.fileUploaded'));
         onUploadSuccess(response.file);
       } else {
         throw new Error(response.message || 'Upload failed');
@@ -186,11 +188,11 @@ export default function SecureFileUpload({
       }
       setFileAsset(null);
       setErrorMessage('');
-      toast.success('Document removed.');
+      toast.success(t('messages.fileRemoved'));
       onFileRemove();
     } catch (error) {
       console.error('Remove file error:', error);
-      toast.error('Failed to remove file asset.');
+      toast.error(t('messages.deleteFailed'));
     }
   };
 
@@ -205,10 +207,10 @@ export default function SecureFileUpload({
     <div className="w-full space-y-2">
       {label && (
         <div className="flex items-center justify-between text-sm font-semibold text-slate-700 dark:text-slate-200">
-          <span>{label}</span>
+          <span>{label || t('upload.document')}</span>
           <span className="flex items-center text-xs font-normal text-emerald-600 dark:text-emerald-400">
             <ShieldCheck className="w-3.5 h-3.5 mr-1" />
-            Cloudinary Protected
+            {t('upload.cloudinaryProtected')}
           </span>
         </div>
       )}
@@ -224,11 +226,11 @@ export default function SecureFileUpload({
               <div className="min-w-0">
                 <div className="flex items-center space-x-2">
                   <p className="truncate text-sm font-medium text-slate-900 dark:text-slate-100">
-                    {fileAsset.fileName || 'Uploaded Asset'}
+                    {fileAsset.fileName || t('upload.uploadedAsset')}
                   </p>
                   <span className="inline-flex items-center rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-medium text-emerald-800 dark:bg-emerald-900/80 dark:text-emerald-200">
                     <CheckCircle2 className="mr-1 h-3 w-3" />
-                    Uploaded
+                    {t('upload.uploaded')}
                   </span>
                 </div>
                 <div className="flex items-center space-x-2 text-xs text-slate-500 dark:text-slate-400 mt-0.5">
@@ -238,7 +240,7 @@ export default function SecureFileUpload({
                   {fileAsset.createdAt && (
                     <>
                       <span>•</span>
-                      <span>{new Date(fileAsset.createdAt).toLocaleDateString()}</span>
+                      <span>{new Intl.DateTimeFormat(i18n.language).format(new Date(fileAsset.createdAt))}</span>
                     </>
                   )}
                 </div>
@@ -254,7 +256,7 @@ export default function SecureFileUpload({
                   className="inline-flex items-center rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700 shadow-sm transition"
                 >
                   <ExternalLink className="mr-1.5 h-3.5 w-3.5" />
-                  View
+                  {t('common.view')}
                 </a>
               )}
               <button
@@ -263,13 +265,13 @@ export default function SecureFileUpload({
                 className="inline-flex items-center rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700 shadow-sm transition"
               >
                 <RefreshCw className="mr-1.5 h-3.5 w-3.5" />
-                Replace
+                {t('upload.replace')}
               </button>
               <button
                 type="button"
                 onClick={handleRemove}
                 className="inline-flex items-center rounded-lg border border-red-200 bg-white px-2.5 py-1.5 text-xs font-medium text-red-600 hover:bg-red-50 dark:border-red-900/40 dark:bg-slate-800 dark:text-red-400 dark:hover:bg-red-950/30 shadow-sm transition"
-                title="Remove File"
+                title={t('upload.removeFile')}
               >
                 <Trash2 className="h-3.5 w-3.5" />
               </button>
@@ -294,7 +296,7 @@ export default function SecureFileUpload({
             <div className="w-full space-y-3 py-2">
               <div className="flex items-center justify-center space-x-2 text-emerald-600 dark:text-emerald-400">
                 <Loader2 className="h-6 w-6 animate-spin" />
-                <span className="text-sm font-semibold">Uploading to Cloudinary...</span>
+                <span className="text-sm font-semibold">{t('upload.uploading')}</span>
               </div>
               <div className="w-full bg-slate-200 rounded-full h-2 dark:bg-slate-700 overflow-hidden max-w-xs mx-auto">
                 <div
@@ -303,7 +305,7 @@ export default function SecureFileUpload({
                 ></div>
               </div>
               <p className="text-xs text-slate-500 dark:text-slate-400">
-                {uploadProgress}% complete
+                {t('upload.progress', { progress: uploadProgress })}
               </p>
             </div>
           ) : (
@@ -313,9 +315,9 @@ export default function SecureFileUpload({
               </div>
               <p className="text-sm font-medium text-slate-900 dark:text-slate-100">
                 <span className="text-emerald-600 dark:text-emerald-400 hover:underline">
-                  Click to choose file
+                  {t('upload.chooseFile')}
                 </span>{' '}
-                or drag & drop
+                {t('upload.orDragDrop')}
               </p>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
                 {effectiveDescription}

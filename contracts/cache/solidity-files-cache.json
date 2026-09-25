@@ -8,11 +8,11 @@
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
+          "evmVersion": "paris",
           "optimizer": {
             "enabled": true,
             "runs": 200
           },
-          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
@@ -41,17 +41,17 @@
       ]
     },
     "C:\\Volume D\\projects\\temp\\agri\\contracts\\contracts\\AgriBazaarPaymentAudit.sol": {
-      "lastModificationDate": 1790097409070,
-      "contentHash": "a9b2880e53c989fa19607ad17b93fbf2",
+      "lastModificationDate": 1790356643567,
+      "contentHash": "8fd422a4e01ba41a20ef6ad25119b0ec",
       "sourceName": "contracts/AgriBazaarPaymentAudit.sol",
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
+          "evmVersion": "paris",
           "optimizer": {
             "enabled": true,
             "runs": 200
           },
-          "evmVersion": "paris",
           "outputSelection": {
             "*": {
               "*": [
