@@ -10,7 +10,7 @@ import { buyerVerificationConfig } from '../../config/buyerVerificationConfig';
 
 export default function BuyerDashboard() {
   const navigate = useNavigate();
-  const { profile } = useAuth();
+  const { user, profile } = useAuth();
   const [data, setData] = useState(null);
   const [verification, setVerification] = useState(null);
   const [verStatus, setVerStatus] = useState('PENDING_VERIFICATION');
@@ -53,6 +53,25 @@ export default function BuyerDashboard() {
         <h1 className="text-3xl font-black text-[#001e2b] font-display mt-2">Buyer Dashboard</h1>
         <p className="text-sm text-gray-600 mt-1 font-sans">Track your orders, spending, and fresh produce recommendations.</p>
       </div>
+
+      {user?.accountHash && (
+        <div className="bg-[#001e2b] text-white p-4 rounded-2xl shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3 border border-emerald-900/40">
+          <div className="min-w-0">
+            <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#00ed64] font-display flex items-center gap-1.5">
+              🛡️ Buyer Cryptographic Account Hash (On-Chain Identity)
+            </span>
+            <p className="font-mono text-xs text-gray-300 mt-1 truncate max-w-full sm:max-w-xl" title={user.accountHash}>
+              {user.accountHash}
+            </p>
+          </div>
+          <button
+            onClick={() => { navigator.clipboard.writeText(user.accountHash); toast.success('Buyer Account Hash copied!'); }}
+            className="px-3.5 py-1.5 bg-[#00ed64] text-[#001e2b] font-bold text-xs rounded-xl hover:bg-[#00c954] transition-colors shrink-0"
+          >
+            📋 Copy Hash
+          </button>
+        </div>
+      )}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <StatsCard icon={ShoppingBag} label="Total Orders" value={data.totalOrders} color="primary" />

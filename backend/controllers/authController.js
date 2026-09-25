@@ -61,6 +61,8 @@ exports.registerFarmer = async (req, res, next) => {
     });
 
     const token = generateToken(user._id);
+    const { hashId } = require('../blockchain/blockchain.utils');
+    const accountHash = hashId(`AGR-F-${user._id.toString()}`);
 
     res.status(201).json({
       success: true,
@@ -72,6 +74,7 @@ exports.registerFarmer = async (req, res, next) => {
         email: user.email,
         mobileNumber: user.mobileNumber,
         role: user.role,
+        accountHash,
       },
       farmer: {
         id: farmer._id,
@@ -138,6 +141,8 @@ exports.registerBuyer = async (req, res, next) => {
     });
 
     const token = generateToken(user._id);
+    const { hashId } = require('../blockchain/blockchain.utils');
+    const accountHash = hashId(`AGR-B-${user._id.toString()}`);
 
     res.status(201).json({
       success: true,
@@ -149,6 +154,7 @@ exports.registerBuyer = async (req, res, next) => {
         email: user.email,
         mobileNumber: user.mobileNumber,
         role: user.role,
+        accountHash,
       },
       buyer: {
         id: buyer._id,
@@ -206,6 +212,10 @@ exports.login = async (req, res, next) => {
       profile = await Buyer.findOne({ userId: user._id });
     }
 
+    const { hashId } = require('../blockchain/blockchain.utils');
+    const prefix = user.role === 'FARMER' ? 'AGR-F-' : user.role === 'BUYER' ? 'AGR-B-' : 'AGR-A-';
+    const accountHash = hashId(`${prefix}${user._id.toString()}`);
+
     res.json({
       success: true,
       message: 'Login successful.',
@@ -217,6 +227,7 @@ exports.login = async (req, res, next) => {
         mobileNumber: user.mobileNumber,
         role: user.role,
         profileImage: user.profileImage,
+        accountHash,
       },
       profile,
     });

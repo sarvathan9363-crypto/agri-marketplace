@@ -4,10 +4,12 @@ import { Package, ShoppingBag, AlertCircle, DollarSign, PlusCircle, ShieldCheck,
 import { StatsCard, StatusBadge, LoadingState } from '../../components/ui/Components';
 import PaymentSettlementCard from '../../components/farmer/PaymentSettlementCard';
 import farmerService from '../../services/farmerService';
+import { useAuth } from '../../context/AuthContext';
 import toast from 'react-hot-toast';
 
 export default function FarmerDashboard() {
   const navigate = useNavigate();
+  const { user } = useAuth();
   const [data, setData] = useState(null);
   const [verification, setVerification] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -61,6 +63,25 @@ export default function FarmerDashboard() {
           <PlusCircle className="w-4 h-4" /> Add New Listing
         </Link>
       </div>
+
+      {user?.accountHash && (
+        <div className="bg-[#001e2b] text-white p-4 rounded-2xl shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3 border border-emerald-900/40">
+          <div className="min-w-0">
+            <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#00ed64] font-display flex items-center gap-1.5">
+              🛡️ Seller Cryptographic Account Hash (On-Chain Identity)
+            </span>
+            <p className="font-mono text-xs text-gray-300 mt-1 truncate max-w-full sm:max-w-xl" title={user.accountHash}>
+              {user.accountHash}
+            </p>
+          </div>
+          <button
+            onClick={() => { navigator.clipboard.writeText(user.accountHash); toast.success('Seller Account Hash copied!'); }}
+            className="px-3.5 py-1.5 bg-[#00ed64] text-[#001e2b] font-bold text-xs rounded-xl hover:bg-[#00c954] transition-colors shrink-0"
+          >
+            📋 Copy Hash
+          </button>
+        </div>
+      )}
 
       {/* DASHBOARD VERIFICATION SECTION CARD */}
       <div className="bg-white rounded-3xl border-2 border-[#e8eddb] p-6 shadow-sm hover:border-[#00684a] transition-all">
