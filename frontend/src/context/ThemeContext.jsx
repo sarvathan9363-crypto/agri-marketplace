@@ -1,18 +1,36 @@
-import { useTranslation } from 'react-i18next';
 import { createContext, useContext, useEffect, useState } from 'react';
 
 const ThemeContext = createContext(null);
 export const THEME_STORAGE_KEY = 'agri_bazaar_theme';
 
 export function ThemeProvider({ children }) {
-  const { t } = useTranslation();
-  const [theme, setTheme] = useState(() => localStorage.getItem(THEME_STORAGE_KEY) || t('common.light'));
+  const [theme, setTheme] = useState(() => {
+    const saved = localStorage.getItem(THEME_STORAGE_KEY);
+    if (saved === 'dark' || saved === 'light') return saved;
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  });
+
   useEffect(() => {
-    document.documentElement.dataset.theme = theme;
-    document.documentElement.style.colorScheme = theme;
+    const root = document.documentElement;
+    root.setAttribute('data-theme', theme);
+    root.style.colorScheme = theme;
+    if (theme === 'dark') {
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('dark');
+    }
     localStorage.setItem(THEME_STORAGE_KEY, theme);
   }, [theme]);
-  return <ThemeContext.Provider value={{ theme, setTheme, toggleTheme: () => setTheme(value => value === t('common.dark') ? t('common.light') : t('common.dark')) }}>{children}</ThemeContext.Provider>;
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+  };
+
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme, toggleTheme, isDark: theme === 'dark' }}>
+      {children}
+    </ThemeContext.Provider>
+  );
 }
 
 export function useTheme() {

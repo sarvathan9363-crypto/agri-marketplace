@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Leaf, Tractor, ShoppingBag, Mail, Lock, Phone, User, MapPin, Eye, EyeOff, Building, ShieldCheck, Play } from 'lucide-react';
+import { Leaf, Tractor, ShoppingBag, Truck, Mail, Lock, Phone, User, MapPin, Eye, EyeOff, Building, ShieldCheck, Play } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import toast from 'react-hot-toast';
 
@@ -11,7 +11,7 @@ export default function Register() {
   const [step, setStep] = useState('select'); // select, farmer, buyer, farmer_verification_prompt
   const [showPass, setShowPass] = useState(false);
   const [loading, setLoading] = useState(false);
-  const { registerFarmer, registerBuyer } = useAuth();
+  const { registerFarmer, registerBuyer, registerTransporter } = useAuth();
   const navigate = useNavigate();
 
   const [farmerForm, setFarmerForm] = useState({
@@ -23,6 +23,38 @@ export default function Register() {
     fullName: '', email: '', mobileNumber: '', password: '', confirmPassword: '',
     buyerType: 'INDIVIDUAL', address: '', city: '', state: '', pincode: '',
   });
+
+  const [transporterForm, setTransporterForm] = useState({
+    fullName: '', email: '', mobileNumber: '', password: '', confirmPassword: '',
+    companyName: '', vehicleType: 'Refrigerated LCV (3.5T)', vehicleNumber: '', operatingStates: '',
+  });
+
+  const handleTransporterSubmit = async (e) => {
+    e.preventDefault();
+    const tr = transporterForm;
+    if (!tr.fullName || !tr.email || !tr.mobileNumber || !tr.password) {
+      toast.error(t('auth.fillAllRequired', { defaultValue: 'Please fill all required fields.' }));
+      return;
+    }
+    if (tr.password !== tr.confirmPassword) {
+      toast.error(t('auth.passwordsDoNotMatch', { defaultValue: 'Passwords do not match.' }));
+      return;
+    }
+    if (tr.password.length < 6) {
+      toast.error(t('auth.passwordMinLength', { defaultValue: 'Password must be at least 6 characters.' }));
+      return;
+    }
+    setLoading(true);
+    try {
+      await registerTransporter(tr);
+      toast.success(t('transport.profileUpdated', { defaultValue: 'Transporter account created successfully!' }));
+      navigate('/transporter/dashboard');
+    } catch (err) {
+      toast.error(err.response?.data?.message || t('auth.registrationFailed', { defaultValue: 'Registration failed.' }));
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleFarmerSubmit = async (e) => {
     e.preventDefault();
@@ -182,7 +214,7 @@ export default function Register() {
   if (step === 'select') {
     return (
       <div className="app-auth-page bg-[#fafcf8] flex items-center justify-center p-4 py-12">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-xl">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-4xl">
           <div className="text-center mb-8">
             <Link to="/" className="inline-flex items-center gap-2.5 mb-4 group">
               <div className="w-12 h-12 bg-[#00ed64] text-[#001e2b] rounded-full flex items-center justify-center shadow-lg">
@@ -194,8 +226,8 @@ export default function Register() {
             <p className="mt-1 text-sm text-gray-600 font-medium">{t('register.selectYourAccountTypeToGet')}</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <button onClick={() => setStep('farmer')} className="bg-white rounded-3xl border-2 border-[#e8eddb] hover:border-[#00684a] p-8 text-left transition-all group hover:shadow-xl">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <button onClick={() => setStep('farmer')} className="bg-white rounded-3xl border-2 border-[#e8eddb] hover:border-[#00684a] p-6 text-left transition-all group hover:shadow-xl">
               <div className="w-14 h-14 bg-[#f0fdf4] group-hover:bg-[#00ed64] rounded-2xl flex items-center justify-center transition-colors mb-4">
                 <Tractor className="w-7 h-7 text-[#00684a] group-hover:text-[#001e2b]" />
               </div>
@@ -204,13 +236,22 @@ export default function Register() {
               <span className="inline-block mt-4 text-xs font-bold text-[#00684a] group-hover:underline">{t('auth.registerAsFarmerBtn', { defaultValue: 'Register as Farmer →' })}</span>
             </button>
 
-            <button onClick={() => setStep('buyer')} className="bg-white rounded-3xl border-2 border-[#e8eddb] hover:border-[#00684a] p-8 text-left transition-all group hover:shadow-xl">
+            <button onClick={() => setStep('buyer')} className="bg-white rounded-3xl border-2 border-[#e8eddb] hover:border-[#00684a] p-6 text-left transition-all group hover:shadow-xl">
               <div className="w-14 h-14 bg-[#f0fdf4] group-hover:bg-[#00ed64] rounded-2xl flex items-center justify-center transition-colors mb-4">
                 <ShoppingBag className="w-7 h-7 text-[#00684a] group-hover:text-[#001e2b]" />
               </div>
               <h3 className="text-xl font-extrabold text-[#001e2b] font-display">{t('register.buyer')}</h3>
               <p className="mt-1.5 text-xs text-gray-500 font-medium leading-relaxed">{t('register.sourceFreshAgriculturalProduceDirectlyFrom')}</p>
               <span className="inline-block mt-4 text-xs font-bold text-[#00684a] group-hover:underline">{t('auth.registerAsBuyerBtn', { defaultValue: 'Register as Buyer →' })}</span>
+            </button>
+
+            <button onClick={() => setStep('transporter')} className="bg-white rounded-3xl border-2 border-[#e8eddb] hover:border-[#00684a] p-6 text-left transition-all group hover:shadow-xl">
+              <div className="w-14 h-14 bg-[#f0fdf4] group-hover:bg-[#00ed64] rounded-2xl flex items-center justify-center transition-colors mb-4">
+                <Truck className="w-7 h-7 text-[#00684a] group-hover:text-[#001e2b]" />
+              </div>
+              <h3 className="text-xl font-extrabold text-[#001e2b] font-display">{t('roles.transporter', { defaultValue: 'Transporter / Freight Carrier' })}</h3>
+              <p className="mt-1.5 text-xs text-gray-500 font-medium leading-relaxed">{t('transport.dashboardSubtitle', { defaultValue: 'Provide agricultural freight transport services & bid on open requests.' })}</p>
+              <span className="inline-block mt-4 text-xs font-bold text-[#00684a] group-hover:underline">{t('auth.registerAsTransporterBtn', { defaultValue: 'Register as Transporter →' })}</span>
             </button>
           </div>
 
@@ -549,4 +590,156 @@ export default function Register() {
       </motion.div>
     </div>
   );
+
+  // Transporter registration form
+  if (step === 'transporter') {
+    return (
+      <div className="app-auth-page bg-[#fafcf8] flex items-center justify-center p-4 py-12">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-xl">
+          <div className="text-center mb-6">
+            <h1 className="text-3xl font-black text-[#001e2b] font-display">{t('auth.transporterRegistration', { defaultValue: 'Transporter Registration' })}</h1>
+            <p className="text-sm text-gray-600 mt-1">{t('transport.dashboardSubtitle', { defaultValue: 'Create your transporter carrier profile to bid on crop shipments.' })}</p>
+          </div>
+
+          <div className="bg-white rounded-3xl border border-[#e8eddb] p-8 shadow-xl">
+            <form onSubmit={handleTransporterSubmit} className="space-y-4">
+              <div>
+                <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">{t('auth.fullNameLabel', { defaultValue: 'Full Name *' })}</label>
+                <div className="relative">
+                  <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <input
+                    type="text"
+                    required
+                    placeholder={t('auth.placeholderFullName', { defaultValue: 'Enter full name' })}
+                    value={transporterForm.fullName}
+                    onChange={(e) => setTransporterForm({ ...transporterForm, fullName: e.target.value })}
+                    className="input-mongo"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">{t('auth.emailAddressLabel', { defaultValue: 'Email Address *' })}</label>
+                  <div className="relative">
+                    <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                    <input
+                      type="email"
+                      required
+                      placeholder="logistics@example.com"
+                      value={transporterForm.email}
+                      onChange={(e) => setTransporterForm({ ...transporterForm, email: e.target.value })}
+                      className="input-mongo"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">{t('auth.mobileNumberLabel', { defaultValue: 'Mobile Number *' })}</label>
+                  <div className="relative">
+                    <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                    <input
+                      type="tel"
+                      required
+                      placeholder="9876543210"
+                      value={transporterForm.mobileNumber}
+                      onChange={(e) => setTransporterForm({ ...transporterForm, mobileNumber: e.target.value })}
+                      className="input-mongo"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">{t('auth.passwordLabel', { defaultValue: 'Password *' })}</label>
+                  <div className="relative">
+                    <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                    <input
+                      type={showPass ? 'text' : 'password'}
+                      required
+                      placeholder={t('auth.placeholderMinChars', { defaultValue: 'At least 6 chars' })}
+                      value={transporterForm.password}
+                      onChange={(e) => setTransporterForm({ ...transporterForm, password: e.target.value })}
+                      className="input-mongo pr-10"
+                    />
+                    <button type="button" onClick={() => setShowPass(!showPass)} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
+                      {showPass ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                    </button>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">{t('auth.confirmPasswordLabel', { defaultValue: 'Confirm Password *' })}</label>
+                  <div className="relative">
+                    <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                    <input
+                      type={showPass ? 'text' : 'password'}
+                      required
+                      placeholder={t('auth.placeholderMinChars', { defaultValue: 'At least 6 chars' })}
+                      value={transporterForm.confirmPassword}
+                      onChange={(e) => setTransporterForm({ ...transporterForm, confirmPassword: e.target.value })}
+                      className="input-mongo"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">{t('transport.companyName', { defaultValue: 'Transporter / Logistics Company Name' })}</label>
+                <div className="relative">
+                  <Building className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <input
+                    type="text"
+                    placeholder="e.g. GreenRoute Freight Logistics"
+                    value={transporterForm.companyName}
+                    onChange={(e) => setTransporterForm({ ...transporterForm, companyName: e.target.value })}
+                    className="input-mongo"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">{t('transport.vehicleType', { defaultValue: 'Primary Vehicle Type' })}</label>
+                  <input
+                    type="text"
+                    placeholder="e.g. Refrigerated LCV (3.5T)"
+                    value={transporterForm.vehicleType}
+                    onChange={(e) => setTransporterForm({ ...transporterForm, vehicleType: e.target.value })}
+                    className="input-mongo"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">{t('transport.vehicleNumber', { defaultValue: 'Vehicle Registration Number' })}</label>
+                  <input
+                    type="text"
+                    placeholder="e.g. MH-12-AG-4589"
+                    value={transporterForm.vehicleNumber}
+                    onChange={(e) => setTransporterForm({ ...transporterForm, vehicleNumber: e.target.value })}
+                    className="input-mongo"
+                  />
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                disabled={loading}
+                className="btn-mongo-primary w-full py-4 text-base mt-2"
+              >
+                {loading ? t('auth.creatingAccount', { defaultValue: 'Creating Account...' }) : t('auth.registerAsTransporter', { defaultValue: 'Register as Transporter' })}
+              </button>
+            </form>
+
+            <button
+              onClick={() => setStep('select')}
+              className="w-full mt-4 text-sm font-bold text-gray-500 hover:text-[#001e2b] text-center block"
+            >
+              ← Back to role selection
+            </button>
+          </div>
+        </motion.div>
+      </div>
+    );
+  }
 }

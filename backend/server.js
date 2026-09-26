@@ -43,6 +43,7 @@ app.use('/api/admin', require('./routes/admin'));
 app.use('/api/notifications', require('./routes/notifications'));
 app.use('/api/disputes', require('./routes/disputes'));
 app.use('/api/payments', require('./routes/payments'));
+app.use('/api/transport', require('./routes/transport'));
 app.use('/api/files', require('./routes/files'));
 app.use('/api/blockchain', require('./routes/blockchain'));
 

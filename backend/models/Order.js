@@ -89,6 +89,25 @@ const orderSchema = new mongoose.Schema({
     type: String,
     default: '',
   },
+  transportRequestId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'TransportRequest',
+    default: null,
+  },
+  transporterId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    default: null,
+  },
+  transportCharge: {
+    type: Number,
+    default: 0,
+  },
+  transporterSettlementStatus: {
+    type: String,
+    enum: ['PENDING', 'PROCESSING', 'TRANSFERRED', 'FAILED'],
+    default: 'PENDING',
+  },
 }, {
   timestamps: true,
 });

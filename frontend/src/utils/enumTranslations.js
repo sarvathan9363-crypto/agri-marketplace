@@ -5,7 +5,10 @@
  */
 
 export function translateStatus(t, status) {
-  if (!status) return t('ui.unknown', { defaultValue: 'Unknown' });
+  if (!status) return typeof t === 'function' ? t('ui.unknown', { defaultValue: 'Unknown' }) : 'Unknown';
+  if (typeof t !== 'function') {
+    return String(status).replace(/_/g, ' ').toLowerCase().replace(/\b\w/g, (l) => l.toUpperCase());
+  }
   const normalized = String(status).toUpperCase();
 
   const map = {
@@ -53,6 +56,7 @@ export function translateStatus(t, status) {
 
 export function translateRole(t, role) {
   if (!role) return '';
+  if (typeof t !== 'function') return role;
   const normalized = String(role).toUpperCase();
 
   const map = {
@@ -66,6 +70,7 @@ export function translateRole(t, role) {
     BUYER: 'roles.buyer',
     SELLER: 'roles.seller',
     ADMIN: 'roles.admin',
+    TRANSPORTER: 'roles.transporter',
   };
 
   const key = map[normalized];
@@ -75,6 +80,7 @@ export function translateRole(t, role) {
 
 export function translateCategory(t, category) {
   if (!category) return '';
+  if (typeof t !== 'function') return category;
   const normalized = String(category).toUpperCase();
 
   const map = {
@@ -95,6 +101,7 @@ export function translateCategory(t, category) {
 
 export function translateUnit(t, unit) {
   if (!unit) return '';
+  if (typeof t !== 'function') return unit;
   const normalized = String(unit).toUpperCase();
 
   const map = {

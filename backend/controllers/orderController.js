@@ -11,9 +11,14 @@ const mongoose = require('mongoose');
 
 // @desc    Create order (from cart or direct buy)
 // @route   POST /api/orders
+const TransportQuotation = require('../models/TransportQuotation');
+const TransportRequest = require('../models/TransportRequest');
+
+// @desc    Create order (from cart or direct buy)
+// @route   POST /api/orders
 exports.createOrder = async (req, res, next) => {
   try {
-    const { items, deliveryAddress, deliveryCity, deliveryState, deliveryPincode } = req.body;
+    const { items, deliveryAddress, deliveryCity, deliveryState, deliveryPincode, quotationId, transportRequestId } = req.body;
 
     if (!items || items.length === 0) {
       return res.status(400).json({ success: false, message: 'No items to order.' });
@@ -23,12 +28,45 @@ exports.createOrder = async (req, res, next) => {
       return res.status(400).json({ success: false, message: 'Delivery address is required.' });
     }
 
+    let transportCharge = 0;
+    let selectedQuotation = null;
+    let selectedTransportRequest = null;
+
+    if (quotationId) {
+      selectedQuotation = await TransportQuotation.findById(quotationId);
+      if (!selectedQuotation) {
+        return res.status(404).json({ success: false, message: 'Transport quotation not found.' });
+      }
+      transportCharge = Number(selectedQuotation.totalQuote || 0);
+      selectedQuotation.status = 'ACCEPTED';
+      await selectedQuotation.save();
+
+      if (selectedQuotation.requestId) {
+        selectedTransportRequest = await TransportRequest.findById(selectedQuotation.requestId);
+        if (selectedTransportRequest) {
+          selectedTransportRequest.status = 'CONFIRMED';
+          selectedTransportRequest.selectedQuotationId = selectedQuotation._id;
+          selectedTransportRequest.transporterId = selectedQuotation.transporterId;
+          await selectedTransportRequest.save();
+        }
+      }
+    } else if (transportRequestId) {
+      selectedTransportRequest = await TransportRequest.findById(transportRequestId);
+      if (selectedTransportRequest && selectedTransportRequest.selectedQuotationId) {
+        selectedQuotation = await TransportQuotation.findById(selectedTransportRequest.selectedQuotationId);
+        if (selectedQuotation) {
+          transportCharge = Number(selectedQuotation.totalQuote || 0);
+        }
+      }
+    }
+
     const buyer = await Buyer.findOne({ userId: req.user._id });
     const orderGroupId = 'grp_' + new mongoose.Types.ObjectId().toString();
     const orders = [];
     let totalGroupAmount = 0;
 
-    for (const item of items) {
+    for (let index = 0; index < items.length; index++) {
+      const item = items[index];
       const product = await Product.findById(item.productId);
       if (!product) continue;
 
@@ -42,6 +80,9 @@ exports.createOrder = async (req, res, next) => {
       const itemTotal = item.quantity * product.pricePerUnit;
       totalGroupAmount += itemTotal;
 
+      // Transport charge is assigned to the primary order in the order group
+      const itemTransportCharge = index === 0 ? transportCharge : 0;
+
       const order = await Order.create({
         buyerId: req.user._id,
         buyerName: req.user.fullName,
@@ -54,6 +95,9 @@ exports.createOrder = async (req, res, next) => {
         unit: product.unit,
         pricePerUnit: product.pricePerUnit,
         totalAmount: itemTotal,
+        transportCharge: itemTransportCharge,
+        transportRequestId: selectedTransportRequest?._id || null,
+        transporterId: selectedQuotation?.transporterId || null,
         deliveryAddress,
         deliveryCity: deliveryCity || '',
         deliveryState: deliveryState || '',
@@ -62,6 +106,11 @@ exports.createOrder = async (req, res, next) => {
         orderStatus: 'PENDING_PAYMENT',
         orderGroupId,
       });
+
+      if (selectedTransportRequest && index === 0) {
+        selectedTransportRequest.orderId = order._id;
+        await selectedTransportRequest.save();
+      }
 
       // Update product quantity
       product.quantity -= item.quantity;
@@ -87,7 +136,7 @@ exports.createOrder = async (req, res, next) => {
       success: true,
       message: 'Order placed successfully.',
       orderGroupId,
-      totalAmount: totalGroupAmount,
+      totalAmount: totalGroupAmount + transportCharge,
       orders,
     });
   } catch (error) {

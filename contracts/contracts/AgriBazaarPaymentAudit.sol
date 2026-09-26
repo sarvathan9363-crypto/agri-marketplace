@@ -49,11 +49,13 @@ contract AgriBazaarPaymentAudit {
         bytes32 paymentIdHash;
         bytes32 orderIdHash;
         bytes32 buyerIdHash;
+        bytes32 transporterIdHash;
         bytes32 paymentReferenceHash;
         bytes32 itemsSummaryHash;
         string itemsSummary;
         uint256 amountRupees;
         uint256 amountPaise;
+        uint256 transportAmountPaise;
         PaymentStatus status;
         SellerSplit[] sellerSplits;
     }
@@ -73,11 +75,13 @@ contract AgriBazaarPaymentAudit {
         bytes32 paymentIdHash;
         bytes32 orderIdHash;
         bytes32 buyerIdHash;
+        bytes32 transporterIdHash;
         bytes32 paymentReferenceHash;
         bytes32 itemsSummaryHash;
         string itemsSummary;
         uint256 amountRupees;
         uint256 amountPaise;
+        uint256 transportAmountPaise;
         PaymentStatus status;
         uint256 recordedAt;
         SellerSplit[] sellerSplits;
@@ -122,10 +126,12 @@ contract AgriBazaarPaymentAudit {
         bytes32 indexed paymentIdHash,
         bytes32 indexed orderIdHash,
         bytes32 buyerIdHash,
+        bytes32 transporterIdHash,
         string itemsSummary,
         uint8 status,
         uint256 amountRupees,
         uint256 amountPaise,
+        uint256 transportAmountPaise,
         uint256 recordedAt
     );
 
@@ -211,11 +217,13 @@ contract AgriBazaarPaymentAudit {
         evt.paymentIdHash = input.paymentIdHash;
         evt.orderIdHash = input.orderIdHash;
         evt.buyerIdHash = input.buyerIdHash;
+        evt.transporterIdHash = input.transporterIdHash;
         evt.paymentReferenceHash = input.paymentReferenceHash;
         evt.itemsSummaryHash = input.itemsSummaryHash;
         evt.itemsSummary = input.itemsSummary;
         evt.amountRupees = input.amountRupees;
         evt.amountPaise = input.amountPaise;
+        evt.transportAmountPaise = input.transportAmountPaise;
         evt.status = input.status;
         evt.recordedAt = block.timestamp;
 
@@ -230,10 +238,12 @@ contract AgriBazaarPaymentAudit {
             input.paymentIdHash,
             input.orderIdHash,
             input.buyerIdHash,
+            input.transporterIdHash,
             input.itemsSummary,
             uint8(input.status),
             input.amountRupees,
             input.amountPaise,
+            input.transportAmountPaise,
             block.timestamp
         );
     }

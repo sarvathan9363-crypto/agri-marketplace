@@ -31,6 +31,7 @@ html, body {
   color: #082B36;
   min-width: 320px;
   min-height: 100%;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 #root { min-height: 100vh; }
@@ -49,7 +50,7 @@ body { line-height: 1.5; }
   :root { --page-gutter: 2rem; }
 }
 
-/* Heading base font — line-height & letter-spacing are left to Tailwind utilities */
+/* Heading base font */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Plus Jakarta Sans', 'Noto Sans Tamil', 'Noto Sans Devanagari', 'Noto Sans Telugu', 'Noto Sans Kannada', 'Noto Sans Malayalam', system-ui, sans-serif;
 }
@@ -157,4 +158,77 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 3px;
 }
 
+/* ==================================================
+   DARK THEME SYSTEM (data-theme="dark" & html.dark)
+   ================================================== */
 
+[data-theme="dark"], html.dark {
+  color-scheme: dark;
+  background-color: #07151e;
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] body {
+  background-color: #07151e;
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] .bg-\[\#fafcf8\],
+[data-theme="dark"] .bg-\[\#F7F9F3\],
+[data-theme="dark"] .app-auth-page {
+  background-color: #07151e !important;
+  color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .bg-white {
+  background-color: #0e2230 !important;
+  color: #f1f5f9 !important;
+  border-color: #1e3a4e !important;
+}
+
+[data-theme="dark"] .text-\[\#001e2b\],
+[data-theme="dark"] .text-\[\#082B36\],
+[data-theme="dark"] .text-gray-900,
+[data-theme="dark"] .text-gray-800 {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .text-gray-600,
+[data-theme="dark"] .text-gray-500 {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .border-\[\#e8eddb\],
+[data-theme="dark"] .border-\[\#E2E8E5\],
+[data-theme="dark"] .border-\[\#f0f4e8\],
+[data-theme="dark"] .border-gray-200,
+[data-theme="dark"] .border-gray-100 {
+  border-color: #1e3a4e !important;
+}
+
+[data-theme="dark"] .bg-\[\#fafcf8\],
+[data-theme="dark"] .bg-gray-50 {
+  background-color: #0b1c27 !important;
+}
+
+[data-theme="dark"] .input-mongo,
+[data-theme="dark"] .input-agri,
+[data-theme="dark"] input[type="text"],
+[data-theme="dark"] input[type="email"],
+[data-theme="dark"] input[type="password"],
+[data-theme="dark"] input[type="tel"],
+[data-theme="dark"] input[type="number"],
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+  background-color: #0f2b3d !important;
+  color: #f8fafc !important;
+  border-color: #1e3a4e !important;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: #07151e;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: #00E676;
+}

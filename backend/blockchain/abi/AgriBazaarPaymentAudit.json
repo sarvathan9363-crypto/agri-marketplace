@@ -106,6 +106,12 @@
       },
       {
         "indexed": false,
+        "internalType": "bytes32",
+        "name": "transporterIdHash",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
         "internalType": "string",
         "name": "itemsSummary",
         "type": "string"
@@ -126,6 +132,12 @@
         "indexed": false,
         "internalType": "uint256",
         "name": "amountPaise",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "transportAmountPaise",
         "type": "uint256"
       },
       {
@@ -278,6 +290,11 @@
           },
           {
             "internalType": "bytes32",
+            "name": "transporterIdHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
             "name": "paymentReferenceHash",
             "type": "bytes32"
           },
@@ -299,6 +316,11 @@
           {
             "internalType": "uint256",
             "name": "amountPaise",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "transportAmountPaise",
             "type": "uint256"
           },
           {
@@ -572,6 +594,11 @@
           },
           {
             "internalType": "bytes32",
+            "name": "transporterIdHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
             "name": "paymentReferenceHash",
             "type": "bytes32"
           },
@@ -593,6 +620,11 @@
           {
             "internalType": "uint256",
             "name": "amountPaise",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "transportAmountPaise",
             "type": "uint256"
           },
           {

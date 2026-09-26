@@ -177,10 +177,11 @@ class BlockchainService {
    * Records an immutable payment event on-chain using hashed references.
    * Includes duplicate protection (idempotency check).
    */
-  async recordPaymentEvent(paymentId, orderGroupId, buyerId, sellerSplitsInput = [], razorpayPaymentId, amountPaise, statusInt = 2, itemsSummary = '') {
+  async recordPaymentEvent(paymentId, orderGroupId, buyerId, sellerSplitsInput = [], razorpayPaymentId, amountPaise, statusInt = 2, itemsSummary = '', transporterId = '', transportAmountPaise = 0) {
     const paymentIdStr = String(paymentId);
     const orderGroupIdStr = String(orderGroupId || paymentId);
     const buyerIdStr = String(buyerId);
+    const transporterIdStr = String(transporterId || 'NONE');
     const rzpRefStr = String(razorpayPaymentId || paymentIdStr);
     const summaryStr = String(itemsSummary || 'Agricultural Produce');
 
@@ -188,6 +189,7 @@ class BlockchainService {
     const paymentIdHash = hashId(`AGR-PAY-${paymentIdStr}`);
     const orderIdHash = hashId(`AGR-GRP-${orderGroupIdStr}`);
     const buyerIdHash = hashId(`AGR-B-${buyerIdStr}`);
+    const transporterIdHash = hashId(`AGR-T-${transporterIdStr}`);
     const paymentReferenceHash = hashId(rzpRefStr);
     const itemsSummaryHash = hashId(summaryStr);
     const amountRupees = BigInt(Math.round(Number(amountPaise) / 100));
@@ -225,11 +227,13 @@ class BlockchainService {
       paymentIdHash,
       orderIdHash,
       buyerIdHash,
+      transporterIdHash,
       paymentReferenceHash,
       itemsSummaryHash,
       itemsSummary: summaryStr,
       amountRupees,
       amountPaise: BigInt(amountPaise),
+      transportAmountPaise: BigInt(transportAmountPaise || 0),
       status: Number(statusInt),
       sellerSplits,
     };
@@ -334,6 +338,7 @@ class BlockchainService {
           paymentIdHash: evt.paymentIdHash,
           orderIdHash: evt.orderIdHash,
           buyerIdHash: evt.buyerIdHash,
+          transporterIdHash: evt.transporterIdHash || '',
           sellerIdHashes,
           sellerSplits: splits,
           paymentReferenceHash: evt.paymentReferenceHash,
@@ -341,6 +346,8 @@ class BlockchainService {
           itemsSummary: evt.itemsSummary || 'Agricultural Produce',
           amountPaise: Number(evt.amountPaise || 0),
           amountRupees: evt.amountRupees ? Number(evt.amountRupees).toFixed(2) : (Number(evt.amountPaise || 0) / 100).toFixed(2),
+          transportAmountPaise: Number(evt.transportAmountPaise || 0),
+          transportAmountRupees: evt.transportAmountPaise ? (Number(evt.transportAmountPaise) / 100).toFixed(2) : '0.00',
           status: Number(evt.status),
           statusText: paymentStatusMap[Number(evt.status)] || 'UNKNOWN',
           recordedAt: new Date(Number(evt.recordedAt || 0) * 1000).toISOString(),

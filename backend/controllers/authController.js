@@ -156,9 +156,80 @@ exports.registerBuyer = async (req, res, next) => {
         role: user.role,
         accountHash,
       },
-      buyer: {
-        id: buyer._id,
-        buyerType: buyer.buyerType,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+// @desc    Register Transporter
+// @route   POST /api/auth/register/transporter
+exports.registerTransporter = async (req, res, next) => {
+  try {
+    const { fullName, email, mobileNumber, password, companyName, vehicleType, vehicleNumber, operatingStates } = req.body;
+
+    const cleanEmail = String(email || '').toLowerCase().trim();
+    const cleanMobile = String(mobileNumber || '').trim();
+
+    const existingUser = await User.findOne({ $or: [{ email: cleanEmail }, { mobileNumber: cleanMobile }] });
+    if (existingUser) {
+      const isEmailMatch = existingUser.email === cleanEmail;
+      const isMobileMatch = existingUser.mobileNumber === cleanMobile;
+      const msg = isEmailMatch && isMobileMatch
+        ? `Both email (${cleanEmail}) and mobile (${cleanMobile}) are already registered.`
+        : isEmailMatch
+        ? `Email (${cleanEmail}) is already registered.`
+        : `Mobile number (${cleanMobile}) is already registered.`;
+
+      return res.status(400).json({ success: false, message: msg });
+    }
+
+    const user = await User.create({
+      fullName,
+      email,
+      mobileNumber,
+      password,
+      role: 'TRANSPORTER',
+    });
+
+    const Transporter = require('../models/Transporter');
+    const transporter = await Transporter.create({
+      userId: user._id,
+      companyName: companyName || fullName + ' Logistics',
+      transporterIdCode: `AGR-T-${user._id.toString().slice(-5).toUpperCase()}`,
+      vehicleType: vehicleType || 'Refrigerated LCV (3.5T)',
+      vehicleNumber: vehicleNumber || 'MH-12-AG-4589',
+      operatingStates: operatingStates ? (Array.isArray(operatingStates) ? operatingStates : [operatingStates]) : ['Maharashtra'],
+      verificationStatus: 'VERIFIED',
+    });
+
+    await Notification.create({
+      userId: user._id,
+      title: 'Welcome Transporter!',
+      message: 'Your transporter account is ready. Start bidding on open agricultural freight requests.',
+      type: 'SYSTEM',
+    });
+
+    const token = generateToken(user._id);
+    const { hashId } = require('../blockchain/blockchain.utils');
+    const accountHash = hashId(`AGR-T-${user._id.toString()}`);
+
+    res.status(201).json({
+      success: true,
+      message: 'Transporter account created successfully.',
+      token,
+      user: {
+        id: user._id,
+        fullName: user.fullName,
+        email: user.email,
+        mobileNumber: user.mobileNumber,
+        role: user.role,
+        accountHash,
+      },
+      transporter: {
+        id: transporter._id,
+        companyName: transporter.companyName,
+        transporterIdCode: transporter.transporterIdCode,
       },
     });
   } catch (error) {

@@ -127,6 +127,47 @@ class SettlementService {
     return settlement;
   }
 
+  async processTransporterSettlement(payment, order) {
+    if (!payment || !order || !order.transporterId || !order.transportCharge || order.transportCharge <= 0) return null;
+    if (payment.status !== 'CAPTURED') return null;
+
+    const transporterId = order.transporterId;
+    const transportAmount = Number(order.transportCharge);
+    const Transporter = require('../models/Transporter');
+    const transporter = await Transporter.findOne({ userId: transporterId });
+
+    const isRouteActive = razorpayRouteService.isRouteEnabled();
+    const canTransfer = isRouteActive && transporter && transporter.razorpayLinkedAccountId && transporter.razorpaySettlementEnabled;
+
+    if (canTransfer) {
+      try {
+        const transferAmountPaise = Math.round(transportAmount * 100);
+        await razorpayRouteService.transferToSeller(
+          payment.razorpayPaymentId,
+          [
+            {
+              account: transporter.razorpayLinkedAccountId,
+              amount: transferAmountPaise,
+              currency: 'INR',
+              notes: { orderId: order._id.toString(), transporterId: transporterId.toString() },
+            },
+          ]
+        );
+        order.transporterSettlementStatus = 'TRANSFERRED';
+        await order.save();
+        console.info('[SettlementService] Transporter settlement transferred for order:', order._id.toString());
+      } catch (err) {
+        order.transporterSettlementStatus = 'FAILED';
+        await order.save();
+        console.error('[SettlementService] Transporter settlement transfer failed:', err.message);
+      }
+    } else {
+      order.transporterSettlementStatus = 'PENDING';
+      await order.save();
+      console.info('[SettlementService] Transporter settlement pending activation for order:', order._id.toString());
+    }
+  }
+
   async processRefundSettlement(orderId, refundAmount) {
     const settlements = await MarketplaceSettlement.find({ orderId });
     for (const s of settlements) {

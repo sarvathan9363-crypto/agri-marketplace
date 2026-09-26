@@ -7,6 +7,7 @@ const Buyer = require('../models/Buyer');
 const Notification = require('../models/Notification');
 const settlementService = require('./settlementService');
 const blockchainService = require('../blockchain/blockchain.service');
+const TransportRequest = require('../models/TransportRequest');
 const fail = (message, statusCode = 400) => Object.assign(new Error(message), { statusCode });
 
 class PaymentService {
@@ -70,14 +71,36 @@ class PaymentService {
 
     if (!orders || orders.length === 0) throw fail('Order not found.', 404);
 
-    // Validate ownership and status
+    // Validate ownership and status & retrieve authoritative transport charge from DB
+    let totalTransportCharge = 0;
     for (const order of orders) {
       if (order.buyerId.toString() !== buyerId.toString()) throw fail('Not authorized.', 403);
       if (order.paymentStatus === 'CAPTURED') throw fail('This order has already been paid.', 409);
       if (order.orderStatus === 'CANCELLED') throw fail('This order has been cancelled.', 409);
+
+      let tCharge = Number(order.transportCharge || 0);
+      if (tCharge <= 0 && (order.transportRequestId || orderGroupId)) {
+        const tr = await TransportRequest.findOne({
+          $or: [
+            { _id: order.transportRequestId },
+            { orderGroupId: orderGroupId },
+            { orderId: order._id }
+          ],
+          status: { $in: ['ACCEPTED', 'TRANSPORTER_SELECTED', 'COMPLETED'] }
+        });
+        if (tr && tr.confirmedTransportCharge > 0) {
+          tCharge = tr.confirmedTransportCharge;
+          order.transportCharge = tCharge;
+          if (tr.confirmedTransporterId) order.transporterId = tr.confirmedTransporterId;
+          order.transportRequestId = tr._id;
+          await order.save();
+        }
+      }
+      totalTransportCharge += tCharge;
     }
 
-    const totalRupees = orders.reduce((sum, o) => sum + Number(o.totalAmount || 0), 0);
+    const productSubtotalRupees = orders.reduce((sum, o) => sum + Number(o.totalAmount || 0), 0);
+    const totalRupees = productSubtotalRupees + totalTransportCharge;
     const amountPaise = Math.round(totalRupees * 100);
     if (!Number.isSafeInteger(amountPaise) || amountPaise < 100) throw fail('Invalid order total amount.');
 
@@ -291,6 +314,7 @@ class PaymentService {
         Notification.create({ userId: order.farmerId, title: 'New Paid Order', message: `Payment was confirmed for ${order.productName} (${order.quantity} ${order.unit}).`, type: 'ORDER' }),
         Notification.create({ userId: order.buyerId, title: 'Payment Confirmed', message: `Your payment for ${order.productName} was confirmed.`, type: 'ORDER' }),
         settlementService.processOrderSettlement(payment, order),
+        settlementService.processTransporterSettlement(payment, order),
       ]);
     }
 
@@ -308,6 +332,11 @@ class PaymentService {
     const amountCapturedPaise = payment.amount;
     const overallItemsSummary = itemsSummaries.join(' | ');
 
+    // Extract transporter info for blockchain audit
+    const assignedTransporterId = orders.find(o => o.transporterId)?.transporterId || '';
+    const totalTransportRupees = orders.reduce((sum, o) => sum + Number(o.transportCharge || 0), 0);
+    const transportAmountPaise = Math.round(totalTransportRupees * 100);
+
     console.log('[PaymentService] Recording unified multi-seller blockchain payment audit...');
     blockchainService.recordPaymentEvent(
       paymentId,
@@ -317,7 +346,9 @@ class PaymentService {
       razorpayPaymentId,
       amountCapturedPaise,
       2, // PaymentStatus.CAPTURED
-      overallItemsSummary
+      overallItemsSummary,
+      assignedTransporterId ? assignedTransporterId.toString() : '',
+      transportAmountPaise
     ).then(res => {
       if (res && res.success) {
         console.log('[PaymentService] Multi-seller blockchain payment audit confirmed:');

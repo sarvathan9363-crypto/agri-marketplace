@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { MapPin, CreditCard, CheckCircle } from 'lucide-react';
+import { MapPin, CreditCard, CheckCircle, Truck } from 'lucide-react';
 import PageContainer from '../../components/ui/PageContainer';
 import Button from '../../components/ui/Button';
 import { Input, TextArea } from '../../components/ui/Input';
 import cartService from '../../services/cartService';
 import orderService from '../../services/orderService';
 import paymentService from '../../services/paymentService';
+import transportService from '../../services/transportService';
+import TransportQuoteSelector from './TransportQuoteSelector';
 import { useAuth } from '../../context/AuthContext';
 import toast from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';
@@ -19,6 +21,13 @@ export default function Checkout() {
   const [loading, setLoading] = useState(false);
   const [paymentError, setPaymentError] = useState('');
   const [address, setAddress] = useState({ deliveryAddress: '', deliveryCity: '', deliveryState: '', deliveryPincode: '' });
+  
+  // Transport states
+  const [selectedQuote, setSelectedQuote] = useState(null);
+  const [transportRequestId, setTransportRequestId] = useState(null);
+  const [showTransportModal, setShowTransportModal] = useState(false);
+  const [creatingTransportReq, setCreatingTransportReq] = useState(false);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -160,13 +169,43 @@ export default function Checkout() {
     razorpay.open();
   });
 
+  const handleOpenTransport = async () => {
+    if (transportRequestId) {
+      setShowTransportModal(true);
+      return;
+    }
+    try {
+      setCreatingTransportReq(true);
+      const res = await transportService.createRequest({
+        pickupAddress: cart?.items?.[0]?.farmerCity || 'Farm Gate Pickup',
+        deliveryAddress: address.deliveryAddress || 'Buyer Address',
+        deliveryCity: address.deliveryCity || '',
+        deliveryState: address.deliveryState || '',
+        deliveryPincode: address.deliveryPincode || '',
+        itemDescription: cart?.items?.map(i => `${i.productName} (${i.quantity} ${i.unit})`).join(', ') || 'Agricultural Produce',
+        estimatedWeightKg: 100,
+      });
+      setTransportRequestId(res.request._id);
+      setShowTransportModal(true);
+    } catch (err) {
+      toast.error(err.response?.data?.message || t('transport.failedToCreateRequest', { defaultValue: 'Could not initialize transport request.' }));
+    } finally {
+      setCreatingTransportReq(false);
+    }
+  };
+
   const handleOrder = async () => {
     if (!address.deliveryAddress) { toast.error(t('checkout.enterAddress')); return; }
     setLoading(true);
     try {
       const items = cart.items.map(i => ({ productId: i.productId, quantity: i.quantity }));
       setPaymentError('');
-      const created = await orderService.createOrder({ items, ...address });
+      const created = await orderService.createOrder({
+        items,
+        ...address,
+        quotationId: selectedQuote?._id || null,
+        transportRequestId: transportRequestId || null,
+      });
       await loadRazorpay();
       const targetId = created.orderGroupId || created.orders?.[0]?._id;
       const checkout = await paymentService.createPaymentOrder(targetId);
@@ -185,6 +224,9 @@ export default function Checkout() {
   };
 
   if (!cart) return null;
+
+  const transportCharge = selectedQuote ? Number(selectedQuote.totalQuote || 0) : 0;
+  const grandTotal = cart.totalAmount + transportCharge;
 
   // Step 3: Success
   if (step === 3) {
@@ -301,10 +343,53 @@ export default function Checkout() {
                 ))}
               </div>
 
-              <div className="pt-4 border-t border-[#f0f4e8] space-y-2 text-sm font-sans">
-                <div className="flex justify-between text-gray-600"><span>{t('checkout.subtotal')}</span><span className="font-bold text-[#001e2b] font-display">₹{cart.totalAmount}</span></div>
-                <div className="flex justify-between text-gray-600"><span>{t('checkout.delivery')}</span><span className="text-[#00684a] font-bold font-display">{t('checkout.free')}</span></div>
-                <div className="flex justify-between text-xl font-black text-[#001e2b] border-t border-[#f0f4e8] pt-3 mt-3 font-display"><span>{t('checkout.totalOrder')}</span><span>₹{cart.totalAmount}</span></div>
+              <div className="pt-4 border-t border-[#f0f4e8] space-y-3 text-sm font-sans">
+                <div className="flex justify-between text-gray-600">
+                  <span>{t('billing.subtotal', { defaultValue: 'Product Subtotal' })}</span>
+                  <span className="font-bold text-[#001e2b] font-display">₹{cart.totalAmount}</span>
+                </div>
+
+                <div className="flex justify-between items-center text-gray-600 py-1 border-t border-b border-[#f0f4e8]">
+                  <div className="flex items-center gap-1.5">
+                    <Truck className="w-4 h-4 text-[#00684a]" />
+                    <span>{t('billing.transportCharge', { defaultValue: 'Transport Charge' })}</span>
+                  </div>
+                  {selectedQuote ? (
+                    <span className="font-bold text-[#00684a] font-display">₹{selectedQuote.totalQuote}</span>
+                  ) : (
+                    <span className="text-gray-400 text-xs italic">{t('transport.notSelected', { defaultValue: 'Not selected (₹0)' })}</span>
+                  )}
+                </div>
+
+                {selectedQuote && (
+                  <div className="text-xs text-[#00684a] bg-emerald-50 px-3 py-1.5 rounded-lg flex justify-between items-center">
+                    <span className="font-medium">{selectedQuote.transporterCompany || selectedQuote.transporterName}</span>
+                    <button type="button" onClick={() => setSelectedQuote(null)} className="text-red-500 font-bold hover:underline ml-2">
+                      {t('common.remove', { defaultValue: 'Remove' })}
+                    </button>
+                  </div>
+                )}
+
+                <div className="pt-1">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    fullWidth
+                    loading={creatingTransportReq}
+                    onClick={handleOpenTransport}
+                    className="text-xs font-display"
+                  >
+                    <Truck className="w-3.5 h-3.5 mr-1.5" />
+                    {selectedQuote
+                      ? t('transport.changeTransporter', { defaultValue: 'Change Transporter / Quote' })
+                      : t('transport.selectTransporter', { defaultValue: 'Select Transporter & Get Quotes' })}
+                  </Button>
+                </div>
+
+                <div className="flex justify-between text-xl font-black text-[#001e2b] border-t border-[#f0f4e8] pt-3 mt-3 font-display">
+                  <span>{t('billing.finalPayableAmount', { defaultValue: 'Final Payable Amount' })}</span>
+                  <span>₹{grandTotal}</span>
+                </div>
               </div>
             </div>
 
@@ -330,9 +415,24 @@ export default function Checkout() {
                   {t('common.back', { defaultValue: 'Back' })}
                 </Button>
                 <Button variant="primary" size="md" fullWidth loading={loading} onClick={handleOrder}>
-                  {t('checkout.paySecurely', { amount: cart.totalAmount, defaultValue: `Pay Securely · ₹${cart.totalAmount}` })}
+                  {t('checkout.paySecurely', { amount: grandTotal, defaultValue: `Pay Securely · ₹${grandTotal}` })}
                 </Button>
               </div>
+            </div>
+          </div>
+        )}
+
+        {showTransportModal && transportRequestId && (
+          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+            <div className="max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+              <TransportQuoteSelector
+                requestId={transportRequestId}
+                onSelectQuote={(quote) => {
+                  setSelectedQuote(quote);
+                  setShowTransportModal(false);
+                }}
+                onClose={() => setShowTransportModal(false)}
+              />
             </div>
           </div>
         )}

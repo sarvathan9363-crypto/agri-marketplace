@@ -8,6 +8,7 @@ import { useCart } from '../../context/CartContext';
 import notificationService from '../../services/notificationService';
 import PageContainer from '../ui/PageContainer';
 import LanguageSelector from './LanguageSelector';
+import ThemeToggle from './ThemeToggle';
 import { useTranslation } from 'react-i18next';
 
 export default function Navbar() {
@@ -121,6 +122,7 @@ export default function Navbar() {
 
           {/* Right Action Items */}
           <div className="flex items-center gap-3 sm:gap-5">
+            <ThemeToggle />
             <LanguageSelector compact />
             <Link to="/marketplace" aria-label={t('navigation.searchMarketplace')} className="p-2 text-gray-600 hover:text-[#082B36] transition-colors" title={t('navigation.searchMarketplace')}>
               <Search className="w-5 h-5" />

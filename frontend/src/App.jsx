@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
+import { ThemeProvider } from './context/ThemeContext';
 
 // Layouts
 import PublicLayout from './layouts/PublicLayout';
@@ -51,11 +52,15 @@ import AdminAnalytics from './pages/admin/Analytics';
 // Common
 import Settings from './pages/Settings';
 
+// Transporter Pages
+import TransporterDashboard from './pages/transporter/Dashboard';
+
 export default function App() {
   return (
-    <AuthProvider>
-      <CartProvider>
-      <Router>
+    <ThemeProvider>
+      <AuthProvider>
+        <CartProvider>
+          <Router>
         <Toaster position="top-right" toastOptions={{ duration: 3000 }} />
         <Routes>
           {/* Public Routes */}
@@ -105,6 +110,13 @@ export default function App() {
             <Route path="settings" element={<Settings />} />
           </Route>
 
+          {/* Transporter Routes */}
+          <Route path="/transporter" element={<BuyerLayout />}>
+            <Route index element={<Navigate to="/transporter/dashboard" replace />} />
+            <Route path="dashboard" element={<TransporterDashboard />} />
+            <Route path="settings" element={<Settings />} />
+          </Route>
+
           {/* Admin Protected Routes */}
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<Navigate to="/admin/dashboard" replace />} />
@@ -124,8 +136,9 @@ export default function App() {
           {/* Fallback */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
-      </Router>
-      </CartProvider>
-    </AuthProvider>
+          </Router>
+        </CartProvider>
+      </AuthProvider>
+    </ThemeProvider>
   );
 }
