@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { ShoppingCart, MapPin, BadgeCheck } from 'lucide-react';
 import BlockchainAuditBadge from './BlockchainAuditBadge';
 import { useTranslation } from 'react-i18next';
+import { translateCategory, translateStatus } from '../../utils/enumTranslations';
 
 export default function ProductCard({ product, onAddToCart }) {
   const { t, i18n } = useTranslation();
@@ -24,13 +25,13 @@ export default function ProductCard({ product, onAddToCart }) {
             />
             <div className="absolute top-3 left-3">
               <span className="px-2.5 py-1 bg-[#002B36]/85 backdrop-blur-md text-[11px] font-extrabold text-[#00E676] rounded-full uppercase tracking-wider font-display">
-                {t(`categories.${product.category}`, { defaultValue: product.category })}
+                {translateCategory(t, product.category)}
               </span>
             </div>
             {product.farmerVerificationStatus === 'VERIFIED' && (
               <div className="absolute top-3 right-3">
                 <span className="flex items-center gap-1 px-2.5 py-1 bg-[#00C853] text-white text-[11px] font-bold rounded-full font-display">
-                  <BadgeCheck className="w-3.5 h-3.5 text-[#00E676]" /> {t('verification.verified', { defaultValue: 'Verified' })}
+                  <BadgeCheck className="w-3.5 h-3.5 text-[#00E676]" /> {translateStatus(t, 'VERIFIED')}
                 </span>
               </div>
             )}

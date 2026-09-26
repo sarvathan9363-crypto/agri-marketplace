@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node ../scripts/verifyNoHardcoded.mjs && vite build",
     "lint": "oxlint",
     "i18n:audit": "node scripts/audit-i18n.js",
     "preview": "vite preview"

@@ -1,5 +1,6 @@
 import { StatusBadge, LoadingState, EmptyState } from './Components';
 import { useTranslation } from 'react-i18next';
+import { translateCategory, translateRole, translateUnit } from '../../utils/enumTranslations';
 
 export default function DataTable({
   columns = [],
@@ -43,6 +44,12 @@ export default function DataTable({
                       col.render(row, rowIdx)
                     ) : col.type === 'status' ? (
                       <StatusBadge status={row[col.key]} />
+                    ) : col.type === 'category' || col.key === 'category' ? (
+                      <span className="font-semibold">{translateCategory(t, row[col.key])}</span>
+                    ) : col.type === 'role' || col.key === 'farmerType' || col.key === 'buyerType' || col.key === 'role' || col.key === 'sellerType' ? (
+                      <span className="font-semibold">{translateRole(t, row[col.key])}</span>
+                    ) : col.type === 'unit' ? (
+                      <span>{translateUnit(t, row[col.key])}</span>
                     ) : col.type === 'currency' ? (
                       <span className="font-extrabold font-display">
                         ₹{Number(row[col.key] || 0).toLocaleString()}

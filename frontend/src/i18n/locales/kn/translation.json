@@ -1,7 +1,7 @@
 {
   "common": {
     "save": "ಉಳಿಸಿ",
-    "cancel": "ರದ್ದುಮಾಡಿ",
+    "cancel": "ರದ್ದುಗೊಳಿಸಿ",
     "delete": "ಅಳಿಸಿ",
     "edit": "ತಿದ್ದು",
     "close": "ಮುಚ್ಚಿ",
@@ -9,7 +9,7 @@
     "loading": "ಲೋಡ್ ಆಗುತ್ತಿದೆ...",
     "submit": "ಸಲ್ಲಿಸಿ",
     "continue": "ಮುಂದುವರಿಸಿ",
-    "back": "ಹಿಂದೆ",
+    "back": "ಹಿಂದಕ್ಕೆ",
     "next": "ಮುಂದೆ",
     "previous": "ಹಿಂದಿನದು",
     "view": "ವೀಕ್ಷಿಸಿ",
@@ -20,7 +20,35 @@
     "actions": "ಕ್ರಿಯೆಗಳು",
     "all": "ಎಲ್ಲಾ",
     "noResults": "ಯಾವುದೇ ಫಲಿತಾಂಶಗಳಿಲ್ಲ",
-    "somethingWentWrong": "ಏನೋ ತಪ್ಪಾಗಿದೆ"
+    "somethingWentWrong": "ಏನೋ ತಪ್ಪಾಗಿದೆ",
+    "executiveControls": "ಕಾರ್ಯನಿರ್ವಾಹಕ ನಿಯಂತ್ರಣಗಳು",
+    "adminDashboard": "ಅಡ್ಮಿನ್ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್",
+    "agribazaarPlatformMetricsFarmerVerificationPipeline": "ಅಗ್ರಿಬಜಾರ್ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ಅಂಕಿಅಂಶಗಳು, ರೈತ ಪರಿಶೀಲನೆ ಮತ್ತು ವ್ಯಾಪಾರದ ಪ್ರಮಾಣ.",
+    "noOrderVolumeDataYet": "ಇನ್ನೂ ಯಾವುದೇ ಆರ್ಡರ್ ಪ್ರಮಾಣದ ಡೇಟಾ ದಾಖಲಾಗಿಲ್ಲ.",
+    "noCategoryDistributionDataYet": "ಇನ್ನೂ ಯಾವುದೇ ಬೆಳೆ ವರ್ಗದ ಡೇಟಾ ದಾಖಲಾಗಿಲ್ಲ.",
+    "recentPlatformOrders": "ಇತ್ತೀಚಿನ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ಆರ್ಡರ್‌ಗಳು",
+    "conflictOversight": "ವಿವಾದ ಮೇಲ್ವಿಚಾರಣೆ",
+    "disputeResolution": "ವಿವಾದ ಪರಿಹಾರ",
+    "arbitrateBuyerAndFarmerClaimsQuality": "ಖರೀದಿದಾರ ಮತ್ತು ರೈತರ ಕ್ಲೈಮ್‌ಗಳು, ಗುಣಮಟ್ಟದ ಕಾಳಜಿಗಳು ಮತ್ತು ಡೆಲಿವರಿ ವಿವಾದಗಳನ್ನು ಬಗೆಹರಿಸಿ.",
+    "resolveDispute": "ವಿವಾದವನ್ನು ಪರಿಹರಿಸಿ",
+    "kycVerificationPipeline": "KYC ಪರಿಶೀಲನಾ పైಪ್‌ಲೈನ್",
+    "reviewFarmRegistrationsVerifyIdentityAnd": "ಫಾರ್ಮ್ ನೋಂದಣಿಗಳನ್ನು ಪರಿಶೀಲಿಸಿ, ಗುರುತನ್ನು ದೃಢೀಕರಿಸಿ ಮತ್ತು ಮಾರಾಟಗಾರರ ಲಾಗಿನ್ ನಿರ್ವಹಿಸಿ.",
+    "platformFulfillment": "ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ನೆರವೇರಿಕೆ",
+    "allPlatformOrders": "ಎಲ್ಲಾ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ಆರ್ಡರ್‌ಗಳು",
+    "fullOversightOfOrdersFulfillmentStatuses": "ವ್ಯಾಪಾರ ಆರ್ಡರ್‌ಗಳು, ನೆರವೇರಿಕೆ ಸ್ಥಿತಿಗಳು ಮತ್ತು ಖರೀದಿದಾರರ ಪಾವತಿಗಳ ಸಂಪೂರ್ಣ ವೀಕ್ಷಣೆ.",
+    "financialAudit": "ಹಣಕಾಸು ಆಡಿಟ್",
+    "paymentAuditLogs": "ಪಾವತಿ ಆಡಿಟ್ ಲಾಗ್‌ಗಳು",
+    "auditPlatformTransactionSettlementsAndGateway": "ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ವಹಿವಾಟು ಸೆಟಲ್‌ಮೆಂಟ್‌ಗಳು ಮತ್ತು ಪಾವತಿ ಗೇಟ್‌ವೇ ಲಾಗ್‌ಗಳನ್ನು ಪರಿಶೀಲಿಸಿ.",
+    "catalogModeration": "ಕ್ಯಾಟಲಾಗ್ ಮಾಡರೇಶನ್",
+    "productModeration": "ಉತ್ಪನ್ನಗಳ ಪರಿಶೀಲನೆ",
+    "reviewActiveDraftAndPausedCrop": "ರೈತರು ಪ್ರಕಟಿಸಿದ ಸಕ್ರಿಯ, ಕರಡು ಮತ್ತು ಅಮಾನತುಗೊಂಡ ಬೆಳೆ ಪಟ್ಟಿಗಳನ್ನು ಪರಿಶೀಲಿಸಿ.",
+    "verify": "ಪರಿಶೀಲಿಸಿ",
+    "reject": "ತಿರಸ್ಕರಿಸಿ",
+    "review": "ಪರಿಶೀಲಿಸಿ",
+    "resolve": "ಪರಿಹರಿಸಿ",
+    "allOrders": "ಎಲ್ಲಾ ಆರ್ಡರ್‌ಗಳು",
+    "editProfile": "ಪ್ರೊಫೈಲ್ ತಿದ್ದುಪಡಿ ಮಾಡಿ",
+    "copyHash": "📋 ಹ್ಯಾಶ್ ನಕಲಿಸಿ"
   },
   "navigation": {
     "home": "ಮುಖಪುಟ",
@@ -41,7 +69,8 @@
     "sales": "ಮಾರಾಟ",
     "verification": "ಪರಿಶೀಲನೆ",
     "language": "ಭಾಷೆ",
-    "searchMarketplace": "ಮಾರುಕಟ್ಟೆಯಲ್ಲಿ ಹುಡುಕಿ"
+    "searchMarketplace": "ಮಾರುಕಟ್ಟೆಯಲ್ಲಿ ಹುಡುಕಿ",
+    "addProduct": "ಉತ್ಪನ್ನ ಸೇರಿಸಿ"
   },
   "header": {
     "new": "ಹೊಸದು",
@@ -64,7 +93,10 @@
     "verificationProcess": "ಪರಿಶೀಲನೆ ಪ್ರಕ್ರಿಯೆ",
     "terms": "ವ್ಯಾಪಾರ ನಿಯಮಗಳು",
     "contact": "ನಿರ್ವಹಣೆಯನ್ನು ಸಂಪರ್ಕಿಸಿ",
-    "engine": "ನೇರ ಕೃಷಿ ವಾಣಿಜ್ಯ ಎಂಜಿನ್"
+    "engine": "ನೇರ ಕೃಷಿ ವಾಣಿಜ್ಯ ಎಂಜಿನ್",
+    "brandDescription": "ರೈತರನ್ನು ಉತ್ತಮ ಮಾರುಕಟ್ಟೆಗಳಿಗೆ ಸಂಪರ್ಕಿಸುವುದು. ವಿಶ್ವಾಸಾರ್ಹ ರೈತರು ಮತ್ತು FPOಗಳಿಂದ ಪೂರ್ಣ ಪಾರದರ್ಶಕತೆಯೊಂದಿಗೆ ತಾಜಾ ಕೃಷಿ ಉತ್ಪನ್ನಗಳನ್ನು ಖರೀದಿಸಿ.",
+    "location": "ನಾಸಿಕ್ ಮತ್ತು ಮುಂಬೈ, ಭಾರತ",
+    "allRightsReserved": "ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ."
   },
   "auth": {
     "login": "ಲಾಗಿನ್",
@@ -76,7 +108,32 @@
     "createAccount": "ನಿಮ್ಮ ಖಾತೆ ರಚಿಸಿ",
     "welcomeBack": "ಮತ್ತೆ ಸ್ವಾಗತ",
     "loginSuccess": "ಯಶಸ್ವಿಯಾಗಿ ಲಾಗಿನ್ ಆಗಿದ್ದೀರಿ",
-    "invalidCredentials": "ಅಮಾನ್ಯ ಇಮೇಲ್ ಅಥವಾ ಪಾಸ್‌ವರ್ಡ್"
+    "invalidCredentials": "ಅಮಾನ್ಯ ಇಮೇಲ್ ಅಥವಾ ಪಾಸ್‌ವರ್ಡ್",
+    "agri": "ಅಗ್ರಿ",
+    "bazaar": "ಬಜಾರ್",
+    "demoCredentials": "ಡೆಮೊ రుజువుగళు",
+    "fullNameLabel": "ಪೂರ್ಣ ಹೆಸರು *",
+    "emailAddressLabel": "ಇಮೇಲ್ ವಿಳಾಸ *",
+    "mobileNumberLabel": "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ *",
+    "passwordLabel": "ಪಾಸ್‌ವರ್ಡ್ *",
+    "confirmPasswordLabel": "ಪಾಸ್‌ವರ್ಡ್ ದೃಢೀಕರಿಸಿ *",
+    "farmOrgNameLabel": "ಫಾರ್ಮ್ / ಸಂಸ್ಥೆಯ ಹೆಸರು *",
+    "sellerTypeLabel": "ಮಾರಾಟಗಾರರ ಪ್ರಕಾರ *",
+    "buyerTypeLabel": "ಖರೀದಿದಾರರ ಪ್ರಕಾರ *",
+    "locationLabel": "ಸ್ಥಳ (ನಗರ/ಜಿಲ್ಲೆ, ರಾಜ್ಯ) *",
+    "registerAsFarmerBtn": "ರೈತನಾಗಿ ನೋಂದಾಯಿಸಿ →",
+    "registerAsBuyerBtn": "ಖರೀದಿದಾರನಾಗಿ ನೋಂದಾಯಿಸಿ →",
+    "registerAsFarmer": "ರೈತನಾಗಿ ನೋಂದಾಯಿಸಿ",
+    "registerAsBuyer": "ಖರೀದಿದಾರನಾಗಿ ನೋಂದಾಯಿಸಿ",
+    "creatingAccount": "ಖಾತೆ ರಚಿಸಲಾಗುತ್ತಿದೆ...",
+    "placeholderFullName": "ಪೂರ್ಣ ಹೆಸರು ನಮೂದಿಸಿ",
+    "placeholderEmail": "you@example.com",
+    "placeholderPassword": "ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ನಮೂದಿಸಿ",
+    "placeholderMinChars": "ಕನಿಷ್ಠ 6 ಅಕ್ಷರಗಳು",
+    "placeholderReEnterPassword": "ಪಾಸ್‌ವರ್ಡ್ ಮರು-ನಮೂದಿಸಿ",
+    "placeholderFarmName": "ಉದಾ. ಕೃಷ್ಣಾ ಸಾವಯವ ಫಾರ್ಮ್",
+    "placeholderLocation": "ಉದಾ. ನಾಸಿಕ್, ಮಹಾರಾಷ್ಟ್ರ",
+    "placeholderAddress": "ಬೀದಿ, ಗ್ರಾಮ, ಪಿನ್‌ಕೋಡ್"
   },
   "marketplace": {
     "title": "ಮಾರುಕಟ್ಟೆ",
@@ -88,7 +145,15 @@
     "filters": "ಫಿಲ್ಟರ್‌ಗಳು",
     "sort": "ವಿಂಗಡಿಸಿ",
     "product": "{{count}} ಉತ್ಪನ್ನ",
-    "product_other": "{{count}} ಉತ್ಪನ್ನಗಳು"
+    "product_other": "{{count}} ಉತ್ಪನ್ನಗಳು",
+    "producerName": "ಉತ್ಪಾದಕರ ಹೆಸರು:",
+    "farmFpoName": "ಫಾರ್ಮ್ / FPO ಹೆಸರು:",
+    "type": "ಪ್ರಕಾರ:",
+    "location": "ಸ್ಥಳ:",
+    "newestFirst": "ಹೊಸತು ಮೊದಲು",
+    "priceLowToHigh": "ಬೆಲೆ: ಕಡಿಮೆಯಿಂದ ಹೆಚ್ಚಿಗೆ",
+    "priceHighToLow": "ಬೆಲೆ: ಹೆಚ್ಚಿನಿಂದ ಕಡಿಮೆಗೆ",
+    "mostPopular": "ಅತ್ಯಂತ ಜನಪ್ರಿಯ"
   },
   "checkout": {
     "title": "ಚೆಕ್‌ಔಟ್",
@@ -98,7 +163,30 @@
     "paymentSuccess": "ಪಾವತಿ ಯಶಸ್ವಿಯಾಗಿದೆ!",
     "paymentVerified": "ಪಾವತಿ ಯಶಸ್ವಿಯಾಗಿ ಪರಿಶೀಲಿಸಲಾಗಿದೆ!",
     "enterAddress": "ದಯವಿಟ್ಟು ವಿತರಣಾ ವಿಳಾಸ ನಮೂದಿಸಿ.",
-    "orderSummary": "ಆರ್ಡರ್ ಸಾರಾಂಶ"
+    "orderSummary": "ಆರ್ಡರ್ ಸಾರಾಂಶ",
+    "itemsSummary": "ವಸ್ತುಗಳ ಸಾರಾಂಶ",
+    "subtotal": "ಉಪ ಮೊತ್ತ",
+    "delivery": "ಡೆಲಿವರಿ",
+    "free": "ಉಚಿತ",
+    "razorpayTestMode": "ರೇಜರ್‌ಪೇ ಟೆಸ್ಟ್ ಮೋಡ್",
+    "fullDeliveryAddress": "ಪೂರ್ಣ ವಿತರಣಾ ವಿಳಾಸ *",
+    "placeholderAddress": "ಬೀದಿ ವಿಳಾಸ, ಕಟ್ಟಡ, ಗ್ರಾಮ...",
+    "cityDistrict": "ನಗರ / ಜಿಲ್ಲೆ",
+    "placeholderCity": "ಉದಾ. ಪುಣೆ",
+    "stateLabel": "ರಾಜ್ಯ",
+    "placeholderState": "ಉದಾ. ಮಹಾರಾಷ್ಟ್ರ",
+    "pincodeLabel": "ಪಿನ್‌ಕೋಡ್",
+    "placeholderPincode": "ಉದಾ. 411001",
+    "stepShipping": "1. ಡೆಲಿವರಿ",
+    "stepPayment": "2. ಪಾವತಿ",
+    "addressRequired": "ವಿಳಾಸ ಅಗತ್ಯವಿದೆ.",
+    "secureSettlement": "ಸುರಕ್ಷಿತ ಪಾವತಿ ಇತ್ಯರ್ಥ",
+    "addressReviewHint": "ಪಾವತಿಯನ್ನು ಖಚಿತಪಡಿಸುವ ಮೊದಲು ಡೆಲಿವರಿ ಸ್ಥಳವನ್ನು ನೀಡಿ ಮತ್ತು ಉತ್ಪನ್ನಗಳನ್ನು ಪರಿಶೀಲಿಸಿ.",
+    "continueToReview": "ಆರ್ಡರ್ ಪರಿಶೀಲನೆಗೆ ಮುಂದುವರಿಯಿರಿ →",
+    "totalOrder": "ಒಟ್ಟು ಮೊತ್ತ",
+    "securePayment": "ಸುರಕ್ಷಿತ ரேಸರ್ಪೇ ಪಾವತಿ",
+    "razorpayVerificationNote": "ರೇಸರ್‌ಪೇ ಪಾವತಿ ಪರಿಶೀಲನೆ ಯಶಸ್ವಿಯಾದ ನಂತರವೇ ನಿಮ್ಮ ಆರ್ಡರ್ ಖಚಿತಗೊಳ್ಳುತ್ತದೆ.",
+    "paySecurely": "ಸುರಕ್ಷಿತವಾಗಿ ಪಾವತಿಸಿ · ₹{{amount}}"
   },
   "status": {
     "active": "ಸಕ್ರಿಯ",
@@ -119,7 +207,21 @@
     "inactive": "ನಿಷ್ಕ್ರಿಯ",
     "draft": "ಕರಡು",
     "outOfStock": "ಸ್ಟಾಕ್ ಇಲ್ಲ",
-    "refunded": "ಮರುಪಾವತಿ ಮಾಡಲಾಗಿದೆ"
+    "refunded": "ಮರುಪಾವತಿ ಮಾಡಲಾಗಿದೆ",
+    "pendingPayment": "ಪಾವತಿ ಬಾಕಿ ಇದೆ",
+    "paid": "ಪಾವತಿಸಲಾಗಿದೆ",
+    "processing": "ಪ್ರಕ್ರಿಯೆಗೊಳಿಸಲಾಗುತ್ತಿದೆ",
+    "shipped": "ರವಾನಿಸಲಾಗಿದೆ",
+    "completed": "ಪೂರ್ಣಗೊಂಡಿದೆ",
+    "onboarding": "ಆನ್‌ಬೋರ್ಡಿಂಗ್",
+    "suspended": "ಅಮಾನತುಗೊಳಿಸಲಾಗಿದೆ",
+    "notStarted": "ಪ್ರಾರಂಭಿಸಲಾಗಿಲ್ಲ",
+    "inProgress": "ಪ್ರಗತಿಯಲ್ಲಿದೆ",
+    "approved": "ಅನುಮೋದಿಸಲಾಗಿದೆ",
+    "enabled": "ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ",
+    "all": "ಎಲ್ಲವೂ",
+    "captured": "ಕ್ಯಾಪ್ಚರ್ ಮಾಡಲಾಗಿದೆ",
+    "authorized": "ಅಧಿಕೃತಗೊಳಿಸಲಾಗಿದೆ"
   },
   "messages": {
     "loadFailed": "ಡೇಟಾವನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.",
@@ -133,42 +235,49 @@
   },
   "cart": {
     "empty": "ನಿಮ್ಮ ಶಾಪಿಂಗ್ ಕಾರ್ಟ್ ಖಾಲಿಯಾಗಿದೆ",
-    "emptyDescription": "Browse the agricultural marketplace and add produce directly from verified farmers.",
+    "emptyDescription": "ಮಾರುಕಟ್ಟೆಯನ್ನು ವೀಕ್ಷಿಸಿ ಮತ್ತು ರೈತರಿಂದ ನೇರವಾಗಿ ಬೆಳೆಗಳನ್ನು ಸೇರಿಸಿ.",
     "browse": "ಮಾರುಕಟ್ಟೆ ವೀಕ್ಷಿಸಿ",
-    "eyebrow": "Checkout Bag",
+    "eyebrow": "ಚೆಕ್‌ಔಟ್ ಬ್ಯಾಗ್",
     "title": "ಶಾಪಿಂಗ್ ಕಾರ್ಟ್",
-    "description": "Review your selected agricultural items before proceeding to payment.",
-    "itemsSubtotal": "Items Subtotal",
-    "shipping": "Estimated Shipping",
-    "freeDelivery": "Free Direct Delivery",
-    "totalAmount": "Total Amount",
+    "description": "ಪಾವತಿಸುವ ಮೊದಲು ಆಯ್ಕೆಮಾಡಿದ ಕೃಷಿ ವಸ್ತುಗಳನ್ನು ಪರಿಶೀಲಿಸಿ.",
+    "itemsSubtotal": "ವಸ್ತುಗಳ ಉಪ ಮೊತ್ತ",
+    "shipping": "ಅಂದಾಜು ಶಿಪ್ಪಿಂಗ್",
+    "freeDelivery": "ಉಚಿತ ನೇರ ಡೆಲಿವರಿ",
+    "totalAmount": "ಒಟ್ಟು ಮೊತ್ತ",
     "proceed": "ಚೆಕ್‌ಔಟ್‌ಗೆ ಮುಂದುವರಿಯಿರಿ",
-    "updateFailed": "Failed to update.",
+    "updateFailed": "ನವೀಕರಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.",
     "removed": "ಐಟಂ ತೆಗೆದುಹಾಕಲಾಗಿದೆ.",
-    "removeFailed": "Failed to remove."
+    "removeFailed": "ತೆಗೆದುಹಾಕಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ."
   },
   "settings": {
     "preferences": "ಆದ್ಯತೆಗಳು",
-    "title": "ಖಾತೆ ಸೆಟ್ಟಿಂಗ್‌ಗಳು",
-    "description": "Manage your system preferences, security, and notification channels.",
+    "title": "ಖಾತೆ ಸಂಯೋಜನೆಗಳು",
+    "description": "ನಿಮ್ಮ ಸಿಸ್ಟಮ್ ಆದ್ಯತೆಗಳು, ಭದ್ರತೆ ಮತ್ತು ಅಧಿಸೂಚನೆ ಚಾನಲ್‌ಗಳನ್ನು ನಿರ್ವಹಿಸಿ.",
     "notificationPreferences": "ಅಧಿಸೂಚನೆ ಆದ್ಯತೆಗಳು",
-    "notificationDescription": "Configure how AgriBazaar alerts you of orders and stock updates.",
-    "emailOrders": "Email Order Notifications",
-    "emailOrdersDescription": "Receive emails for new orders and status updates.",
-    "sms": "SMS Notifications",
-    "smsDescription": "Get instant SMS alerts on dispatch and delivery.",
-    "priceAlerts": "Market Price Trend Alerts",
-    "priceAlertsDescription": "Daily summaries of top agricultural market price shifts.",
+    "notificationDescription": "ಆರ್ಡರ್‌ಗಳು ಮತ್ತು ಸ್ಟಾಕ್ ನವೀಕರಣಗಳ ಕುರಿತು ಅಧಿಸೂಚನೆಗಳನ್ನು ಸಂಯೋಜಿಸಿ.",
+    "emailOrders": "ಇಮೇಲ್ ಆರ್ಡರ್ ಅಧಿಸೂಚನೆಗಳು",
+    "emailOrdersDescription": "ಹೊಸ ಆರ್ಡರ್‌ಗಳಿಗಾಗಿ ಇಮೇಲ್ ಪಡೆಯಿರಿ.",
+    "sms": "SMS ಸೂಚನೆಗಳು",
+    "smsDescription": "ರವಾನೆ మరియు ಡೆಲಿವರಿ ಕುರಿತು ತಕ್ಷಣದ SMS ಎಚ್ಚರಿಕೆಗಳನ್ನು ಪಡೆಯಿರಿ.",
+    "priceAlerts": "ಮಾರುಕಟ್ಟೆ ಬೆಲೆ ಪ್ರವೃತ್ತಿ ಎಚ್ಚರಿಕೆಗಳು",
+    "priceAlertsDescription": "ಪ್ರಮುಖ ಕೃಷಿ ಮಾರುಕಟ್ಟೆ ಬೆಲೆ ಬದಲಾವಣೆಗಳ ದೈನಂದಿನ ಸಾರಾಂಶ.",
     "security": "ಭದ್ರತೆ ಮತ್ತು ಪ್ರವೇಶ",
-    "securityDescription": "Protect your account with extra security layers.",
-    "twoFactor": "Two-Factor Authentication (2FA)",
-    "twoFactorDescription": "Require OTP verification on login.",
+    "securityDescription": "ಹೆಚ್ಚುವರಿ ಭದ್ರತಾ ಪದರಗಳೊಂದಿಗೆ ನಿಮ್ಮ ಖಾತೆಯನ್ನು ರಕ್ಷಿಸಿ.",
+    "twoFactor": "ದ್ವಿಮುಖ ದೃಢೀಕರಣ (2FA)",
+    "twoFactorDescription": "ಲಾಗಿನ್ ಮಾಡುವಾಗ OTP ಪರಿಶೀಲನೆ ಅಗತ್ಯವಿದೆ.",
     "save": "ಆದ್ಯತೆಗಳನ್ನು ಉಳಿಸಿ",
-    "saved": "Account preferences updated successfully!",
+    "saved": "ಖಾತೆ ಆದ್ಯತೆಗಳನ್ನು ಯಶಸ್ವಿಯಾಗಿ ನವೀಕರಿಸಲಾಗಿದೆ!",
     "help": "ಸಹಾಯ ಬೇಕೇ?",
-    "helpDescription": "If you need assistance updating your KYC details or farmer verification, contact platform administration.",
-    "platform": "AgriBazaar Platform",
-    "architecture": "Direct Agriculture Commerce Architecture"
+    "helpDescription": "ನಿಮ್ಮ KYC ವಿವರಗಳು ಅಥವಾ ರೈತರ ಪರಿಶೀಲನೆಯನ್ನು ನವೀಕರಿಸಲು ನೆರವು ಬೇಕಾದರೆ, ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ಆಡಳಿತವನ್ನು ಸಂಪರ್ಕಿಸಿ.",
+    "platform": "ಅಗ್ರಿಬಜಾರ್ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್",
+    "architecture": "ನೇರ ಕೃಷಿ ವಾಣಿಜ್ಯ ರಚನೆ",
+    "systemVersionV104production": "ಸಿಸ್ಟಮ್ ಆವೃತ್ತಿ: v1.0.4-production",
+    "marketPriceTrendAlerts": "ಮಾರುಕಟ್ಟೆ ಬೆಲೆ ಪ್ರವೃತ್ತಿ ಎಚ್ಚರಿಕೆಗಳು",
+    "marketPriceTrendAlertsDescription": "ಪ್ರಮುಖ ಕೃಷಿ ಮಾರುಕಟ್ಟೆ ಬೆಲೆ ಬದಲಾವಣೆಗಳ ದೈನಂದಿನ ಸಾರಾಂಶ.",
+    "securityAndAccess": "ಭದ್ರತೆ ಮತ್ತು ಪ್ರವೇಶ",
+    "securityAndAccessDescription": "ಹೆಚ್ಚುವರಿ ಭದ್ರತಾ ಪದರಗಳೊಂದಿಗೆ ನಿಮ್ಮ ಖಾತೆಯನ್ನು ರಕ್ಷಿಸಿ.",
+    "agribazaarPlatform": "ಅಗ್ರಿಬಜಾರ್ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್",
+    "needHelpDescription": "ನಿಮ್ಮ KYC ವಿವರಗಳು ಅಥವಾ ರೈತರ ಪರಿಶೀಲನೆಯನ್ನು ನವೀಕರಿಸಲು ನೆರವು ಬೇಕಾದರೆ, ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ಆಡಳಿತವನ್ನು ಸಂಪರ್ಕಿಸಿ."
   },
   "blockchain": {
     "checking": "ಬ್ಲಾಕ್‌ಚೈನ್ ಪರಿಶೀಲನೆ ನಡೆಯುತ್ತಿದೆ...",
@@ -176,8 +285,60 @@
     "audit": "ಪರಿಶೀಲನೆ",
     "network": "ನೆಟ್‌ವರ್ಕ್",
     "transaction": "ವಹಿವಾಟು",
-    "verifiedOn": "Verified on",
-    "testnet": "Kava Testnet"
+    "verifiedOn": "ಖಾತರಿಪಡಿಸಲಾಗಿದೆ",
+    "testnet": "ಕಾವಾ ಟೆಸ್ಟ್ನೆಟ್",
+    "blockchainNetwork": "ಬ್ಲಾಕ್‌ಚೈನ್ ನೆಟ್‌ವರ್ಕ್",
+    "smartContractAddress": "ಸ್ಮಾರ್ಟ್ ಕಾಂಟ್ರಾಕ್ಟ್ ವಿಳಾಸ",
+    "onchainPaymentAudits": "ಆನ್-ಚೈನ್ ಪಾವತಿ ಆಡಿಟ್‌ಗಳು",
+    "onchainSettlementAudits": "ಆನ್-ಚೈನ್ ಇತ್ಯರ್ಥ ಆಡಿಟ್‌ಗಳು",
+    "smartContractEventVerifier": "ಸ್ಮಾರ್ಟ್ ಕಾಂಟ್ರಾಕ್ಟ್ ಈವೆಂಟ್ ವೆರಿಫೈಯರ್",
+    "itemsPurchased": "ಖರೀದಿಸಿದ ವಸ್ತುಗಳು",
+    "totalAmount": "ಒಟ್ಟು ಮೊತ್ತ:",
+    "paymentIdHash": "ಪಾವತಿ ID ಹ್ಯಾಶ್:",
+    "orderIdHash": "ಆರ್ಡರ್ ID ಹ್ಯಾಶ್:",
+    "noSellerSplitHashesRecordedFor": "ಈ ಈವೆಂಟ್‌ಗೆ ಯಾವುದೇ ಮಾರಾಟಗಾರರ ಸ್ಪ್ಲಿಟ್ ಹ್ಯಾಶ್‌ಗಳು ದಾಖಲಾಗಿಲ್ಲ.",
+    "amountInPaise": "ಮೊತ್ತ (ಪೈಸೆಯಲ್ಲಿ):",
+    "recordedAt": "ದಾಖಲಾದ ಸಮಯ",
+    "lookupUserIdentityByAccountHash": "ಖಾತೆ ಹ್ಯಾಶ್ ಮೂಲಕ ಬಳಕೆದಾರರ ಗುರುತನ್ನು ಹುಡುಕಿ",
+    "queryingKavaEvmTestnetSmartContract": "ಕಾವಾ EVM ಟೆಸ್ಟ್ನೆಟ್ ಸ್ಮಾರ್ಟ್ ಕಾಂಟ್ರಾಕ್ಟ್ ಪ್ರಶ್ನಿಸಲಾಗುತ್ತಿದೆ...",
+    "noPaymentEventsRecordedOnchainYet": "ಆನ್-ಚೈನ್‌ನಲ್ಲಿ ಇನ್ನೂ ಯಾವುದೇ ಪಾವತಿ ಈವೆಂಟ್‌ಗಳು ದಾಖಲಾಗಿಲ್ಲ",
+    "newPaymentsProcessedThroughRazorpayWill": "ರೇಜರ್‌ಪೇ ಮೂಲಕ ಪ್ರಕ್ರಿಯೆಗೊಳಿಸಲಾದ ಹೊಸ ಪಾವತಿಗಳನ್ನು ಇಲ್ಲಿ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಆಡಿಟ್ ಮಾಡಲಾಗುತ್ತದೆ.",
+    "eventIdHash": "ಈವೆಂಟ್ ID ಹ್ಯಾಶ್",
+    "sellerSplitHashes": "ಮಾರಾಟಗಾರರ ಸ್ಪ್ಲಿಟ್ ಹ್ಯಾಶ್‌ಗಳು",
+    "onchainStatus": "ಆನ್-ಚೈನ್ ಸ್ಥಿತಿ",
+    "noSettlementEventsRecordedOnchainYet": "ಆನ್-ಚೈನ್‌ನಲ್ಲಿ ಇನ್ನೂ ಯಾವುದೇ ಸೆಟಲ್‌ಮೆಂಟ್ ಈವೆಂಟ್‌ಗಳು ದಾಖಲಾಗಿಲ್ಲ",
+    "farmerMarketplaceSettlementsWillAppearHere": "ದಾಖಲಾದಾಗ ರೈತರ ಸೆಟಲ್‌ಮೆಂಟ್‌ಗಳು ಇಲ್ಲಿ ಕಾಣಿಸಿಕೊಳ್ಳುತ್ತವೆ.",
+    "settlementHash": "ಸೆಟಲ್‌ಮೆಂಟ್ ಹ್ಯಾಶ್",
+    "sellerIdentity": "ಮಾರಾಟಗಾರರ ಗುರುತು",
+    "sellerPayoutAmount": "ಮಾರಾಟಗಾರರ ಪಾವತಿ ಮೊತ್ತ",
+    "status": "ಸ್ಥಿತಿ",
+    "accountIdentityLookup": "ಖಾತೆ ಗುರುತಿನ ಶೋಧನೆ",
+    "verifiedDatabaseRecordMatchingOnchainCryptographic": "ಆನ್-ಚೈನ್ ಹ್ಯಾಶ್‌ಗೆ ಹೊಂದುವ ಪರಿಶೀಲಿಸಿದ ಡೇಟಾಬೇಸ್ ದಾಖಲೆ.",
+    "searchingRegisteredUsersAndFarmers": "ನೋಂದಾಯಿತ ಬಳಕೆದಾರರು ಮತ್ತು ರೈತರನ್ನು ಹುಡುಕಲಾಗುತ್ತಿದೆ...",
+    "onchainHash": "ಆನ್-ಚೈನ್ ಹ್ಯಾಶ್:",
+    "accountType": "ಖಾತೆ ಪ್ರಕಾರ:",
+    "fullName": "ಪೂರ್ಣ ಹೆಸರು:",
+    "farmBusiness": "ಫಾರ್ಮ್ / ವ್ಯವಹಾರ:",
+    "email": "ಇಮೇಲ್:",
+    "mobile": "ಮೊಬೈಲ್:",
+    "verificationStatus": "ಪರಿಶೀಲನಾ ಸ್ಥಿತಿ:",
+    "buyerType": "ಖರೀದಿದಾರರ ಪ್ರಕಾರ:",
+    "noAccountFound": "No Account Found",
+    "verifyEventIdHashOnChain": "ಆನ್-ಚೈನ್‌ನಲ್ಲಿ ಈವೆಂಟ್ ID ಹ್ಯಾಶ್ ಪರಿಶೀಲಿಸಿ",
+    "placeholderEventHash": "ಈವೆಂಟ್ ID ಹ್ಯಾಶ್ ಪೇಸ್ಟ್ ಮಾಡಿ (ಉದಾ. 0xd8273e6f...)",
+    "pasteHashSubtitle": "ಖರೀದಿದಾರ ಅಥವಾ ಮಾರಾಟಗಾರರ ಹ್ಯಾಶ್ (0x...) ಪೇಸ್ಟ್ ಮಾಡಿ ವಿವರಗಳನ್ನು ನೋಡಿ.",
+    "placeholderAccountHash": "ಖರೀದಿದಾರ ಅಥವಾ ಮಾರಾಟಗಾರರ ಹ್ಯಾಶ್ ಪೇಸ್ಟ್ ಮಾಡಿ (0x...)",
+    "directSmartContractRpcQuery": "ನೇರ ಸ್ಮಾರ್ಟ್ ಕಾಂಟ್ರಾಕ್ಟ್ RPC ಪ್ರಶ್ನೆ",
+    "blockchainAuditTrail": "ಬ್ಲಾಕ್‌ಚೈನ್ ಆಡಿಟ್ ಹಾದಿ",
+    "immutableAuditRecordsDesc": "ಕಾವಾ EVM ಟೆಸ್ಟ್ನೆಟ್ ಸ್ಮಾರ್ಟ್ ಕಾಂಟ್ರಾಕ್ಟ್ನಿಂದ ನೇರವಾಗಿ ಪಡೆದ ಆಡಿಟ್ ದಾಖಲೆಗಳು.",
+    "fetchingOnChainData": "ಆನ್-ಚೈನ್ ಡೇಟಾ ಪಡೆಯಲಾಗುತ್ತಿದೆ...",
+    "fetchOnChainData": "ಆನ್-ಚೈನ್ ಡೇಟಾ ಪಡೆಯಿರಿ",
+    "buyerSellerHashLookup": "ಖರೀದಿದಾರ ಮತ್ತು ಮಾರಾಟಗಾರರ ಹ್ಯಾಶ್ ಶೋಧನೆ",
+    "lookupIdentity": "ಗುರುತನ್ನು ಹುಡುಕಿ",
+    "paymentAuditsOnChain": "ಆನ್-ಚೈನ್ ಪಾವತಿ ಆಡಿಟ್‌ಗಳು",
+    "settlementAuditsOnChain": "ಆನ್-ಚೈನ್ ಸೆಟಲ್‌ಮೆಂಟ್ ಆಡಿಟ್‌ಗಳು",
+    "buyerHashIdentity": "ಖರೀದಿದಾರರ ಹ್ಯಾಶ್ ಮತ್ತು ಗುರುತು",
+    "amountRupees": "ಮೊತ್ತ (₹)"
   },
   "ui": {
     "loadingContent": "ವಿಷಯ ಲೋಡ್ ಆಗುತ್ತಿದೆ...",
@@ -196,24 +357,24 @@
       "ವಿಶ್ವಾಸಾರ್ಹ ವಿತರಣೆ"
     ],
     "trustDescription": [
-      "KYC-checked agricultural sellers with direct identity verification.",
-      "End-to-end real-time tracking from field dispatch to delivery.",
-      "Encrypted payment gateway supporting UPI, Net Banking & Cards.",
-      "Dedicated farm transport logistics for fresh produce preservation."
+      "ನೇರ ಗುರುತಿನ ಪರಿಶೀಲನೆಯೊಂದಿಗೆ KYC-ತಪಾಸಣೆ ಮಾಡಿದ ಕೃಷಿ ಮಾರಾಟಗಾರರು.",
+      "ಹೊಲದಿಂದ ಡೆಲಿವರಿವರೆಗೆ ಆರಂಭದಿಂದ ಕೊನೆಯವರೆಗೆ ನೈಜ-ಸಮಯದ ಟ್ರ್ಯಾಕಿಂಗ್.",
+      "UPI, ನೆಟ್ ಬ್ಯಾಂಕಿಂಗ್ ಮತ್ತು ಕಾರ್ಡ್‌ಗಳನ್ನು ಬೆಂಬಲಿಸುವ ಸುರಕ್ಷಿತ ಪಾವತಿ ಗೇಟ್‌ವೇ.",
+      "ತಾಜಾ ಉತ್ಪನ್ನಗಳ ಸಂರಕ್ಷಣೆಗಾಗಿ ಪ್ರತ್ಯೇಕ ಫಾರ್ಮ್ ಸಾರಿಗೆ ಪೂರೈಕೆ."
     ],
     "farmerSteps": [
-      "Register your farm or FPO profile with KYC documents",
-      "Get verified by platform administration within 24 hours",
-      "Create produce listings with custom quantities and pricing",
-      "Receive and manage purchase orders directly from buyers",
-      "Track instant payouts and grow your direct agricultural sales"
+      "KYC ದಾಖಲೆಗಳೊಂದಿಗೆ ನಿಮ್ಮ ಫಾರ್ಮ್ ಅಥವಾ FPO ಪ್ರೊಫೈಲ್ ಅನ್ನು ನೋಂದಾಯಿಸಿ",
+      "24 ಗಂಟೆಗಳ ಒಳಗೆ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ಆಡಳಿತದಿಂದ ಪರಿಶೀಲನೆ ಪಡೆಯಿರಿ",
+      "ಕಸ್ಟಮ್ ಪ್ರಮಾಣಗಳು ಮತ್ತು ಬೆಲೆಗಳೊಂದಿಗೆ ಬೆಳೆ ಪಟ್ಟಿಗಳನ್ನು ರಚಿಸಿ",
+      "ಖರೀದಿದಾರರಿಂದ ನೇರವಾಗಿ ಖರೀದಿ ಆರ್ಡರ್‌ಗಳನ್ನು ಸ್ವೀಕರಿಸಿ ಮತ್ತು ನಿರ್ವಹಿಸಿ",
+      "ತಕ್ಷಣದ ಪಾವತಿಗಳನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡಿ ಮತ್ತು ನಿಮ್ಮ ನೇರ ಕೃಷಿ ಮಾರಾಟವನ್ನು ಬೆಳೆಸಿ"
     ],
     "buyerSteps": [
-      "Create a buyer account for personal or business purchasing",
-      "Search verified produce by crop, region and price",
-      "Add items to your cart and review transparent costs",
-      "Make a secure payment using your preferred method",
-      "Track live shipment and direct farm delivery status"
+      "ವೈಯಕ್ತಿಕ ಅಥವಾ ವ್ಯವಹಾರ ಖರೀದಿಗೆ ಖರೀದಿದಾರರ ಖಾತೆಯನ್ನು ರಚಿಸಿ",
+      "ಬೆಳೆ, ಪ್ರದೇಶ ಮತ್ತು ಬೆಲೆಯ ಆಧಾರದ ಮೇಲೆ ಪರಿಶೀಲಿಸಿದ ಉತ್ಪನ್ನಗಳನ್ನು ಹುಡುಕಿ",
+      "ನಿಮ್ಮ ಕಾರ್ಟ್‌ಗೆ ವಸ್ತುಗಳನ್ನು ಸೇರಿಸಿ ಮತ್ತು ಪಾರದರ್ಶಕ ವೆಚ್ಚಗಳನ್ನು ಪರಿಶೀಲಿಸಿ",
+      "ನಿಮ್ಮ ಆದ್ಯತೆಯ ವಿಧಾನವನ್ನು ಬಳಸಿ ಸುರಕ್ಷಿತ ಪಾವತಿ ಮಾಡಿ",
+      "ಲೈವ್ ರವಾನೆ ಮತ್ತು ನೇರ ಫಾರ್ಮ್ ಡೆಲಿವರಿ ಸ್ಥಿತಿಯನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡಿ"
     ],
     "platformLabels": [
       "ನೋಂದಾಯಿತ ರೈತರು",
@@ -227,7 +388,7 @@
     "farmers": "ರೈತರು ಮತ್ತು FPOಗಳಿಗಾಗಿ",
     "buyers": "ವೈಯಕ್ತಿಕ ಮತ್ತು ಸಗಟು ಖರೀದಿದಾರರಿಗಾಗಿ",
     "glance": "ವೇದಿಕೆಯನ್ನು ಒಂದು ನೋಟದಲ್ಲಿ",
-    "glanceDescription": "Empowering agricultural commerce with digital infrastructure",
+    "glanceDescription": "ಡಿಜಿಟಲ್ ಮೂಲಸೌಕರ್ಯದೊಂದಿಗೆ ಕೃಷಿ ವಾಣಿಜ್ಯವನ್ನು ಸಬಲೀಕರಣಗೊಳಿಸುವುದು",
     "testimonials": "ನಮ್ಮ ಬಳಕೆದಾರರ ಮಾತು",
     "testimonialsDescription": "Trusted by farmers, commercial buyers and FPOs across India",
     "finalTitle": "AgriBazaar ನಲ್ಲಿ ವ್ಯಾಪಾರಕ್ಕೆ ಸಿದ್ಧರಿದ್ದೀರಾ?",
@@ -241,13 +402,2218 @@
     ],
     "marketplace": {
       "exchange": "Direct crop exchange",
-      "description": "Source quality farm produce directly from verified Indian farmers and FPOs with zero middleman markup.",
-      "showing": "Showing {{count}} agricultural listings",
+      "description": "ಮಧ್ಯವರ್ತಿಗಳ ಕಮಿಷನ್ ಇಲ್ಲದೆ ಪರಿಶೀಲಿಸಿದ ಭಾರತೀಯ ರೈತರು ಮತ್ತು FPO ಗಳಿಂದ ನೇರವಾಗಿ ಗುಣಮಟ್ಟದ ಕೃಷಿ ಉತ್ಪನ್ನಗಳನ್ನು ಪಡೆಯಿರಿ.",
+      "showing": "{{count}} ಕೃಷಿ ಪಟ್ಟಿಗಳನ್ನು ತೋರಿಸಲಾಗುತ್ತಿದೆ",
       "newest": "Newest first",
       "lowPrice": "Price: low to high",
       "highPrice": "Price: high to low",
       "popular": "Most popular",
-      "available": "{{count}} {{unit}} available"
+      "available": "ದಾಸ್ತಾನಿನಲ್ಲಿ {{count}} {{unit}} ಲಭ್ಯವಿದೆ"
     }
+  },
+  "farmerVerificationWizard": {
+    "fpo": "fpo",
+    "farmer": "FARMER ಪ್ರೋಟೋಕಾಲ್",
+    "failedToLoadVerificationStatus": "Failed to load verification status. ಪ್ರೋಟೋಕಾಲ್",
+    "pleaseEnterAValid12digitAadhaar": "Please enter a valid 12-digit Aadhaar number. ಪ್ರೋಟೋಕಾಲ್",
+    "otpSentToYourAadhaarMobile": "OTP sent to your Aadhaar mobile number! ಪ್ರೋಟೋಕಾಲ್",
+    "pleaseEnter6digitOtp": "Please enter 6-digit OTP. ಪ್ರೋಟೋಕಾಲ್",
+    "verified_identityVerifiedViaUidaiSandbox": "✓ Identity Verified via UIDAI Sandbox! ಪ್ರೋಟೋಕಾಲ್",
+    "pleaseEnterFarmerIdAndDistrict": "Please enter Farmer ID and District. ಪ್ರೋಟೋಕಾಲ್",
+    "verified_farmerRegistryVerified": "✓ Farmer Registry Verified! ಪ್ರೋಟೋಕಾಲ್",
+    "pleaseFillAllRequiredLandRecord": "Please fill all required land record details. ಪ್ರೋಟೋಕಾಲ್",
+    "verified_landRecordVerified": "✓ Land Record Verified! ಪ್ರೋಟೋಕಾಲ್",
+    "pleaseFillAccountHolderAccountNumber": "Please fill Account Holder, Account Number, and IFSC. ಪ್ರೋಟೋಕಾಲ್",
+    "accountNumbersDoNotMatch": "Account numbers do not match. ಪ್ರೋಟೋಕಾಲ್",
+    "verified_bankAccountVerified": "✓ Bank Account Verified! ಪ್ರೋಟೋಕಾಲ್",
+    "pleaseEnterAValid10characterPan": "Please enter a valid 10-character PAN number (e.g. ABCDE1234F). ಪ್ರೋಟೋಕಾಲ್",
+    "verified_panVerifiedSuccessfully": "✓ PAN Verified successfully! ಪ್ರೋಟೋಕಾಲ್",
+    "pmkisanSkipped": "PM-KISAN skipped. ಪ್ರೋಟೋಕಾಲ್",
+    "verified_pmkisanVerified": "✓ PM-KISAN Verified! ಪ್ರೋಟೋಕಾಲ್",
+    "pleaseFillRequiredOrganizationDetails": "Please fill required Organization details. ಪ್ರೋಟೋಕಾಲ್",
+    "verified_organizationIdentityVerified": "✓ Organization Identity Verified! ಪ್ರೋಟೋಕಾಲ್",
+    "pleaseEnterAValid10characterOrganization": "Please enter a valid 10-character Organization PAN. ಪ್ರೋಟೋಕಾಲ್",
+    "verified_organizationPanVerified": "✓ Organization PAN Verified! ಪ್ರೋಟೋಕಾಲ್",
+    "gstinMarkedAsNotApplicable": "GSTIN marked as Not Applicable. ಪ್ರೋಟೋಕಾಲ್",
+    "verified_gstinVerified": "✓ GSTIN Verified! ಪ್ರೋಟೋಕಾಲ್",
+    "pleaseEnterAValid10digitMobile": "Please enter a valid 10-digit mobile number. ಪ್ರೋಟೋಕಾಲ್",
+    "otpSentToRepresentativeMobile": "OTP sent to Representative mobile! ಪ್ರೋಟೋಕಾಲ್",
+    "pleaseEnterRepresentativeNameAndDesignation": "Please enter Representative Name and Designation. ಪ್ರೋಟೋಕಾಲ್",
+    "verified_authorizedRepresentativeVerified": "✓ Authorized Representative Verified! ಪ್ರೋಟೋಕಾಲ್",
+    "verified_organizationBankAccountVerified": "✓ Organization Bank Account Verified! ಪ್ರೋಟೋಕಾಲ್",
+    "pleaseUploadAtLeastRegistrationCertificate": "Please upload at least Registration Certificate, PAN document, and Bank proof. ಪ್ರೋಟೋಕಾಲ್",
+    "verified_organizationDocumentsVerified": "✓ Organization Documents Verified! ಪ್ರೋಟೋಕಾಲ್",
+    "failedToSkipStep": "Failed to skip step. ಪ್ರೋಟೋಕಾಲ್",
+    "progressSavedReturningToDashboard": "Progress saved. Returning to dashboard. ಪ್ರೋಟೋಕಾಲ್",
+    "loadingConfigportaltitle": "Loading {config.portalTitle}... ಪ್ರೋಟೋಕಾಲ್",
+    "verificationSummary": "Verification Summary ಪ್ರೋಟೋಕಾಲ್",
+    "reviewYourOverallVerificationStatusAnd": "Review your overall verification status and finalized badge audit. ಪ್ರೋಟೋಕಾಲ್",
+    "verified": "Verified ಪ್ರೋಟೋಕಾಲ್",
+    "pending": "PENDING ಪ್ರೋಟೋಕಾಲ್",
+    "officialIdentityComplianceGateway": "Official Identity & Compliance Gateway ಪ್ರೋಟೋಕಾಲ್",
+    "fpoFpc": "FPO / FPC",
+    "saveExitToDashboard": "Save & Exit to Dashboard ಪ್ರೋಟೋಕಾಲ್",
+    "textslate900": "text-slate-900 ಪ್ರೋಟೋಕಾಲ್",
+    "textslate700": "text-slate-700 ಪ್ರೋಟೋಕಾಲ್",
+    "required": "(Required) ಪ್ರೋಟೋಕಾಲ್",
+    "optional": "(Optional) ಪ್ರೋಟೋಕಾಲ್",
+    "mandatoryVerification": "MANDATORY VERIFICATION ಪ್ರೋಟೋಕಾಲ್",
+    "optionalVerification": "OPTIONAL VERIFICATION ಪ್ರೋಟೋಕಾಲ್",
+    "aadhaarAuthenticationProtocol": "Aadhaar Authentication ಪ್ರೋಟೋಕಾಲ್",
+    "enterYour12digitAadhaarNumberTo": "Enter your 12-digit Aadhaar number to receive a One-Time Password (OTP) via UIDAI authorized gateway. ಪ್ರೋಟೋಕಾಲ್",
+    "enter12digitAadhaarNumber": "Enter 12-digit Aadhaar number ಪ್ರೋಟೋಕಾಲ್",
+    "sendAadhaarOtp": "Send Aadhaar OTP ಪ್ರೋಟೋಕಾಲ್",
+    "enter6digitOtp_req": "Enter 6-Digit OTP * ಪ್ರೋಟೋಕಾಲ್",
+    "text_mnk1z": "──────",
+    "verifyContinue": "Verify & Continue ಪ್ರೋಟೋಕಾಲ್",
+    "saveExit": "Save & Exit ಪ್ರೋಟೋಕಾಲ್",
+    "skipStep": "Skip Step ಪ್ರೋಟೋಕಾಲ್",
+    "nextStep": "Next Step ಪ್ರೋಟೋಕಾಲ್",
+    "farmerDatabaseProtocol": "Farmer Database ಪ್ರೋಟೋಕಾಲ್",
+    "enterYourOfficialFarmerAgristackId": "Enter your official Farmer / Agristack ID along with state and district to verify active agricultural registry status. ಪ್ರೋಟೋಕಾಲ್",
+    "farmerId": "FARMER ID ಪ್ರೋಟೋಕಾಲ್",
+    "location": "LOCATION ಪ್ರೋಟೋಕಾಲ್",
+    "farmerIdAgristackId_req": "Farmer ID / Agristack ID * ಪ್ರೋಟೋಕಾಲ್",
+    "egMhfarm20248849": "e.g. MH-FARM-2024-8849 ಪ್ರೋಟೋಕಾಲ್",
+    "state_req": "State * ಪ್ರೋಟೋಕಾಲ್",
+    "district_req": "District * ಪ್ರೋಟೋಕಾಲ್",
+    "egNashik": "e.g. Nashik ಪ್ರೋಟೋಕಾಲ್",
+    "back": "Back ಪ್ರೋಟೋಕಾಲ್",
+    "landHoldingProtocol": "Land Holding ಪ್ರೋಟೋಕಾಲ್",
+    "enterStateDistrictTalukVillagePatta": "Enter state, district, taluk, village, Patta / 7-12 number, survey number, and total acreage. ಪ್ರೋಟೋಕಾಲ್",
+    "patta712No": "PATTA / 7-12 NO. ಪ್ರೋಟೋಕಾಲ್",
+    "surveyNo": "SURVEY NO. ಪ್ರೋಟೋಕಾಲ್",
+    "extent": "EXTENT ಪ್ರೋಟೋಕಾಲ್",
+    "taluk_req": "Taluk * ಪ್ರೋಟೋಕಾಲ್",
+    "egNiphad": "e.g. Niphad ಪ್ರೋಟೋಕಾಲ್",
+    "village_req": "Village * ಪ್ರೋಟೋಕಾಲ್",
+    "egLasalgaon": "e.g. Lasalgaon ಪ್ರೋಟೋಕಾಲ್",
+    "pattaKhataNo_req": "Patta / Khata No. * ಪ್ರೋಟೋಕಾಲ್",
+    "eg4829": "e.g. 4829",
+    "surveyNo_req": "Survey No. * ಪ್ರೋಟೋಕಾಲ್",
+    "eg142b": "e.g. 142/B ಪ್ರೋಟೋಕಾಲ್",
+    "landExtentAcres_req": "Land Extent (Acres) * ಪ್ರೋಟೋಕಾಲ್",
+    "eg35Acres": "e.g. 3.5 Acres ಪ್ರೋಟೋಕಾಲ್",
+    "landType": "Land Type ಪ್ರೋಟೋಕಾಲ್",
+    "irrigatedWet": "Irrigated / Wet ಪ್ರೋಟೋಕಾಲ್",
+    "dryRainfed": "Dry / Rainfed ಪ್ರೋಟೋಕಾಲ್",
+    "horticulture": "Horticulture ಪ್ರೋಟೋಕಾಲ್",
+    "uploadPattaLandRecordDocument_req": "Upload Patta / Land Record Document * ಪ್ರೋಟೋಕಾಲ್",
+    "uploadPdfJpgOrPngCopy": "Upload PDF, JPG, or PNG copy of 7/12, Patta, or Chitta (Max 5MB) ಪ್ರೋಟೋಕಾಲ್",
+    "bankSettlementProtocol": "Bank Settlement ಪ್ರೋಟೋಕಾಲ್",
+    "linkYourActiveBankAccountFor": "Link your active bank account for direct payments and automated sales settlements. ಪ್ರೋಟೋಕಾಲ್",
+    "accountHolder": "ACCOUNT HOLDER ಪ್ರೋಟೋಕಾಲ್",
+    "bankName": "BANK NAME ಪ್ರೋಟೋಕಾಲ್",
+    "accountNo": "ACCOUNT NO. ಪ್ರೋಟೋಕಾಲ್",
+    "accountHolderName_req": "Account Holder Name * ಪ್ರೋಟೋಕಾಲ್",
+    "asPerBankPassbook": "As per bank passbook ಪ್ರೋಟೋಕಾಲ್",
+    "bankName_req": "Bank Name * ಪ್ರೋಟೋಕಾಲ್",
+    "branchName": "Branch Name ಪ್ರೋಟೋಕಾಲ್",
+    "egMainBranch": "e.g. Main Branch ಪ್ರೋಟೋಕಾಲ್",
+    "accountNumber_req": "Account Number * ಪ್ರೋಟೋಕಾಲ್",
+    "enterAccountNumber": "Enter account number ಪ್ರೋಟೋಕಾಲ್",
+    "confirmAccountNumber_req": "Confirm Account Number * ಪ್ರೋಟೋಕಾಲ್",
+    "reenterAccountNumber": "Re-enter account number ಪ್ರೋಟೋಕಾಲ್",
+    "ifscCode_req": "IFSC Code * ಪ್ರೋಟೋಕಾಲ್",
+    "egSbin0001234": "e.g. SBIN0001234 ಪ್ರೋಟೋಕಾಲ್",
+    "uploadBankPassbookCancelledCheque_req": "Upload Bank Passbook / Cancelled Cheque * ಪ್ರೋಟೋಕಾಲ್",
+    "uploadFrontPageOfPassbookOr": "Upload front page of passbook or cancelled cheque (Max 5MB) ಪ್ರೋಟೋಕಾಲ್",
+    "panVerificationProtocol": "PAN Verification ಪ್ರೋಟೋಕಾಲ್",
+    "enterYour10characterPermanentAccountNumber": "Enter your 10-character Permanent Account Number for statutory tax compliance & payouts. ಪ್ರೋಟೋಕಾಲ್",
+    "panNumber": "PAN NUMBER ಪ್ರೋಟೋಕಾಲ್",
+    "matchStatus": "MATCH STATUS ಪ್ರೋಟೋಕಾಲ್",
+    "panNumber_req": "PAN Number * ಪ್ರೋಟೋಕಾಲ್",
+    "egAbcde1234f": "e.g. ABCDE1234F ಪ್ರೋಟೋಕಾಲ್",
+    "nameAsPerPanOptional": "Name as per PAN (Optional) ಪ್ರೋಟೋಕಾಲ್",
+    "fullNameAsPrintedOnPan": "Full name as printed on PAN card ಪ್ರೋಟೋಕಾಲ್",
+    "uploadPanCardCopy_req": "Upload PAN Card Copy * ಪ್ರೋಟೋಕಾಲ್",
+    "clearFrontScanOrPhotoOf": "Clear front scan or photo of your PAN card (Max 5MB) ಪ್ರೋಟೋಕಾಲ್",
+    "pmkisanSchemeProtocol": "PM-KISAN Scheme ಪ್ರೋಟೋಕಾಲ್",
+    "optionallyLinkPmkisanBeneficiaryReferenceFor": "Optionally link PM-KISAN Beneficiary Reference for added seller credibility on the marketplace. ಪ್ರೋಟೋಕಾಲ್",
+    "pmkisanRegistrationBeneficiaryReference": "PM-KISAN Registration / Beneficiary Reference ಪ್ರೋಟೋಕಾಲ್",
+    "egPmk987654321": "e.g. PMK-987654321 ಪ್ರೋಟೋಕಾಲ್",
+    "verifyPmkisanContinue": "Verify PM-KISAN & Continue ಪ್ರೋಟೋಕಾಲ್",
+    "viewSummary": "View Summary ಪ್ರೋಟೋಕಾಲ್",
+    "organizationRegistrationProtocol": "Organization Registration ಪ್ರೋಟೋಕಾಲ್",
+    "verifyOfficialFpoFpcCooperativeEntity": "Verify official FPO / FPC / Cooperative entity registration details. ಪ್ರೋಟೋಕಾಲ್",
+    "legalName": "LEGAL NAME ಪ್ರೋಟೋಕಾಲ್",
+    "registrationNo": "REGISTRATION NO. ಪ್ರೋಟೋಕಾಲ್",
+    "organizationLegalName_req": "Organization Legal Name * ಪ್ರೋಟೋಕಾಲ್",
+    "egSahyadriFarmersProducerCoLtd": "e.g. Sahyadri Farmers Producer Co. Ltd. ಪ್ರೋಟೋಕಾಲ್",
+    "organizationType_req": "Organization Type * ಪ್ರೋಟೋಕಾಲ್",
+    "fpoFpcProducerCompany": "FPO / FPC (Producer Company) ಪ್ರೋಟೋಕಾಲ್",
+    "agriculturalCooperativeSociety": "Agricultural Cooperative Society ಪ್ರೋಟೋಕಾಲ್",
+    "farmerShgPartnership": "Farmer SHG / Partnership ಪ್ರೋಟೋಕಾಲ್",
+    "registrationCinNumber_req": "Registration / CIN Number * ಪ್ರೋಟೋಕಾಲ್",
+    "egU01111mh2020ptc123456": "e.g. U01111MH2020PTC123456 ಪ್ರೋಟೋಕಾಲ್",
+    "pincode_req": "Pincode * ಪ್ರೋಟೋಕಾಲ್",
+    "eg422001": "e.g. 422001",
+    "registeredOfficeAddress_req": "Registered Office Address * ಪ್ರೋಟೋಕಾಲ್",
+    "fullAddressOfOrganizationOffice": "Full address of organization office ಪ್ರೋಟೋಕಾಲ್",
+    "organizationPanProtocol": "Organization PAN ಪ್ರೋಟೋಕಾಲ್",
+    "enterPermanentAccountNumberIssuedIn": "Enter Permanent Account Number issued in the legal name of the organization. ಪ್ರೋಟೋಕಾಲ್",
+    "orgPan": "ORG PAN ಪ್ರೋಟೋಕಾಲ್",
+    "organizationPan_req": "Organization PAN * ಪ್ರೋಟೋಕಾಲ್",
+    "egAaacf1234g": "e.g. AAACF1234G ಪ್ರೋಟೋಕಾಲ್",
+    "gstinRegistrationProtocol": "GSTIN Registration ಪ್ರೋಟೋಕಾಲ್",
+    "provide15characterGstinRegistrationIfRegistered": "Provide 15-character GSTIN registration if registered, or mark GSTIN Not Applicable. ಪ್ರೋಟೋಕಾಲ್",
+    "notApplicable": "Not Applicable ಪ್ರೋಟೋಕಾಲ್",
+    "eg27aaacf1234g1z5": "e.g. 27AAACF1234G1Z5 ಪ್ರೋಟೋಕಾಲ್",
+    "verifyGstin": "Verify GSTIN ಪ್ರೋಟೋಕಾಲ್",
+    "authorizedOfficialProtocol": "Authorized Official ಪ್ರೋಟೋಕಾಲ್",
+    "verifyIdentityAndMobileAuthorizationOf": "Verify identity and mobile authorization of the official representing the organization. ಪ್ರೋಟೋಕಾಲ್",
+    "representativeName_req": "Representative Name * ಪ್ರೋಟೋಕಾಲ್",
+    "egRameshKumar": "e.g. Ramesh Kumar ಪ್ರೋಟೋಕಾಲ್",
+    "designation_req": "Designation * ಪ್ರೋಟೋಕಾಲ್",
+    "egCeoManagingDirector": "e.g. CEO / Managing Director ಪ್ರೋಟೋಕಾಲ್",
+    "representativeMobileNumber_req": "Representative Mobile Number * ಪ್ರೋಟೋಕಾಲ್",
+    "enter10digitMobileNumber": "Enter 10-digit mobile number ಪ್ರೋಟೋಕಾಲ್",
+    "sendRepresentativeOtp": "Send Representative OTP ಪ್ರೋಟೋಕಾಲ್",
+    "verifyRepresentative": "Verify Representative ಪ್ರೋಟೋಕಾಲ್",
+    "organizationSettlementAccountProtocol": "Organization Settlement Account ಪ್ರೋಟೋಕಾಲ್",
+    "linkPrimarySettlementBankAccountOf": "Link primary settlement bank account of the FPO / FPC for marketplace direct credits. ಪ್ರೋಟೋಕಾಲ್",
+    "exactLegalNameAsPerBank": "Exact legal name as per bank statement ಪ್ರೋಟೋಕಾಲ್",
+    "egCommercialBranch": "e.g. Commercial Branch ಪ್ರೋಟೋಕಾಲ್",
+    "enterBankAccountNumber": "Enter bank account number ಪ್ರೋಟೋಕಾಲ್",
+    "organizationDocumentDossier": "Organization Document Dossier ಪ್ರೋಟೋಕಾಲ್",
+    "uploadMandatoryRegistrationTaxBankProof": "Upload mandatory registration, tax, bank proof, and authorization files. ಪ್ರೋಟೋಕಾಲ್",
+    "1OrganizationRegistrationCertificate_req": "1. Organization Registration Certificate * ಪ್ರೋಟೋಕಾಲ್",
+    "2OrganizationPanCardCopy_req": "2. Organization PAN Card Copy * ಪ್ರೋಟೋಕಾಲ್",
+    "3BankPassbookCancelledCheque_req": "3. Bank Passbook / Cancelled Cheque * ಪ್ರೋಟೋಕಾಲ್",
+    "4AuthorizationLetterBoardResolution": "4. Authorization Letter / Board Resolution ಪ್ರೋಟೋಕಾಲ್",
+    "5GstCertificateIfApplicable": "5. GST Certificate (If Applicable) ಪ್ರೋಟೋಕಾಲ್",
+    "submitDocumentsProceed": "Submit Documents & Proceed ಪ್ರೋಟೋಕಾಲ್",
+    "backToReview": "Back to Review ಪ್ರೋಟೋಕಾಲ್",
+    "returnToDashboard": "Return to Dashboard ಪ್ರೋಟೋಕಾಲ್",
+    "yourInformationIsSecurelyProcessedSensitive": "Your information is securely processed. Sensitive identity & financial information will be masked where applicable. ಪ್ರೋಟೋಕಾಲ್"
+  },
+  "buyerVerificationWizard": {
+    "couldNotLoadVerificationStatus": "ಪರಿಶೀಲನೆ ಸ್ಥಿತಿಯನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ",
+    "verified": "ಪರಿಶೀಲಿಸಲಾಗಿದೆ",
+    "pending": "ಬಾಕಿ ಇದೆ",
+    "pleaseEnterAValid10digitMobile": "ದಯವಿಟ್ಟು ಮಾನ್ಯವಾದ 10 ಅಂಕಿಗಳ ಮೊಬೈಲ್ ಸಂಖ್ಯೆ ನಮೂದಿಸಿ",
+    "otpSentToYourMobileNumber": "ನಿಮ್ಮ ಮೊಬೈಲ್ ಸಂಖ್ಯೆಗೆ OTP ಕಳುஹಿಸಲಾಗಿದೆ",
+    "pleaseEnter6digitOtpCode": "ದಯವಿಟ್ಟು 6 ಅಂಕಿಗಳ OTP ಕೋಡ್ ನಮೂದಿಸಿ",
+    "mobileNumberVerifiedSuccessfully": "ಮೊಬೈಲ್ ಸಂಖ್ಯೆಯನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಪರಿಶೀಲಿಸಲಾಗಿದೆ",
+    "consentIsRequiredToProceedWith": "ಗುರುತು ಪರಿಶೀಲನೆಯೊಂದಿಗೆ ಮುಂದುವರಿಯಲು ಸಮ್ಮತಿ ಅಗತ್ಯವಿದೆ",
+    "otpSentToYourAadhaarlinkedMobile": "ನಿಮ್ಮ ಆಧಾರ್ ಲಿಂಕ್ ಮಾಡಲಾದ ಮೊಬೈಲ್‌ಗೆ OTP ಕಳುಹಿಸಲಾಗಿದೆ",
+    "pleaseEnter6digitOtp": "ದಯವಿಟ್ಟು 6 ಅಂಕಿಗಳ OTP ನಮೂದಿಸಿ",
+    "identityVerifiedViaAuthorizedGateway": "ಅಧಿಕೃತ ಗೇಟ್‌ವೇ ಮೂಲಕ ಗುರುತು ಪರಿಶೀಲಿಸಲಾಗಿದೆ",
+    "pleaseFillAllRequiredAddressFields": "ದಯವಿಟ್ಟು ಅಗತ್ಯವಿರುವ ಎಲ್ಲಾ ವಿಳಾಸ ಕ್ಷೇತ್ರಗಳನ್ನು ಭರ್ತಿ ಮಾಡಿ",
+    "addressDetailsVerified": "ವಿಳಾಸ ವಿವರಗಳು ಪರಿಶೀಲಿಸಲಾಗಿದೆ",
+    "pleaseFillAllRequiredBusinessIdentity": "ದಯವಿಟ್ಟು ಅಗತ್ಯವಿರುವ ಎಲ್ಲಾ ವಹಿವಾಟು ಗುರುತಿನ ಕ್ಷೇತ್ರಗಳನ್ನು ಭರ್ತಿ ಮಾಡಿ",
+    "businessIdentityVerified": "ವಹಿವಾಟು ಗುರುತು ಪರಿಶೀಲಿಸಲಾಗಿದೆ",
+    "pleaseEnterAValid10characterPan": "Please enter a valid 10-character PAN number (e.g. ABCDE1234F) ಪ್ರೋಟೋಕಾಲ್",
+    "businessPanVerifiedSuccessfully": "ವಹಿವಾಟು ಪ್ಯಾನ್ ಯಶಸ್ವಿಯಾಗಿ ಪರಿಶೀಲಿಸಲಾಗಿದೆ",
+    "gstinMarkedAsNotApplicable": "GSTIN ಅನ್ವಯಿಸುವುದಿಲ್ಲ ಎಂದು ಗುರುತಿಸಲಾಗಿದೆ",
+    "failedToUpdateGstinStatus": "GSTIN ಸ್ಥಿತಿಯನ್ನು ನವೀಕರಿಸಲು ವಿಫಲವಾಗಿದೆ",
+    "pleaseEnterAValid15characterGstin": "ದಯವಿಟ್ಟು ಮಾನ್ಯವಾದ 15 అక్షರಗಳ GSTIN ಸಂಖ್ಯೆ ನಮೂದಿಸಿ",
+    "gstinVerifiedSuccessfully": "GSTIN ಯಶಸ್ವಿಯಾಗಿ ಪರಿಶೀಲಿಸಲಾಗಿದೆ",
+    "pleaseEnterRegistrationNumberIdentifier": "ದಯವಿಟ್ಟು ನೋಂದಣಿ ಸಂಖ್ಯೆ / ઓળખಕ ನಮೂದಿಸಿ",
+    "pleaseEnterRepresentativeNameAndDesignation": "ದಯವಿಟ್ಟು ಪ್ರತಿನಿಧಿಯ ಹೆಸರು ಮತ್ತು ಹುದ್ದೆಯನ್ನು ನಮೂದಿಸಿ",
+    "pleaseEnterValidMobileNumber": "ದಯವಿಟ್ಟು ಮಾನ್ಯವಾದ ಮೊಬೈಲ್ ಸಂಖ್ಯೆ ನಮೂದಿಸಿ",
+    "otpSentToRepresentativeMobile": "ಪ್ರತಿನಿಧಿಯ ಮೊಬೈಲ್‌ಗೆ OTP ಕಳುಹಿಸಲಾಗಿದೆ",
+    "failedToSendOtp": "OTP ಕಳುಹಿಸಲು ವಿಫಲವಾಗಿದೆ",
+    "authorizedRepresentativeVerified": "ಅಧಿಕೃತ ಪ್ರತಿನಿಧಿ ಪರಿಶೀಲಿಸಲಾಗಿದೆ",
+    "pleaseFillAllRequiredBankAccount": "ದಯವಿಟ್ಟು ಅಗತ್ಯವಿರುವ ಎಲ್ಲಾ ಬ್ಯಾಂಕ್ ಖಾತೆ ಕ್ಷೇತ್ರಗಳನ್ನು ಭರ್ತಿ ಮಾಡಿ",
+    "accountNumbersDoNotMatch": "ಖಾತೆ ಸಂಖ್ಯೆಗಳು ಹೊಂದಿಕೆಯಾಗುತ್ತಿಲ್ಲ",
+    "bankAccountVerifiedSuccessfully": "ಬ್ಯಾಂಕ್ ಖಾತೆ ಯಶಸ್ವಿಯಾಗಿ ಪರಿಶೀಲಿಸಲಾಗಿದೆ",
+    "udyamRegistrationMarkedAsNotApplicable": "ಉದ್ಯಮ್ ನೋಂದಣಿ ಅನ್ವಯಿಸುವುದಿಲ್ಲ ಎಂದು ಗುರುತಿಸಲಾಗಿದೆ",
+    "failedToUpdateUdyamStatus": "ಉದ್ಯಮ್ ಸ್ಥಿತಿಯನ್ನು ನವೀಕರಿಸಲು ವಿಫಲವಾಗಿದೆ",
+    "pleaseEnterValidUdyamRegistrationNumber": "ದಯವಿಟ್ಟು ಮಾನ್ಯವಾದ ಉದ್ಯಮ್ ನೋಂದಣಿ ಸಂಖ್ಯೆ ನಮೂದಿಸಿ",
+    "udyamRegistrationVerified": "ಉದ್ಯಮ್ ನೋಂದಣಿ ಪರಿಶೀಲಿಸಲಾಗಿದೆ",
+    "fssaiLicenseMarkedAsNotApplicable": "FSSAI / License marked as Not Applicable ಪ್ರೋಟೋಕಾಲ್",
+    "failedToUpdateLicenseStatus": "ಪರವಾನಗಿ ಸ್ಥಿತಿಯನ್ನು ನವೀಕರಿಸಲು ವಿಫಲವಾಗಿದೆ",
+    "pleaseEnterValidFssaiLicenseRegistration": "Please enter valid FSSAI / License registration number ಪ್ರೋಟೋಕಾಲ್",
+    "fssaiLicenseVerified": "FSSAI / License verified ಪ್ರೋಟೋಕಾಲ್",
+    "documentsRecordedAndVerified": "ದಾಖಲೆಗಳನ್ನು ದಾಖಲಿಸಲಾಗಿದೆ ಮತ್ತು ಪರಿಶೀಲಿಸಲಾಗಿದೆ",
+    "thisStepIsRequiredAndCannot": "ಈ ಹಂತವು ಕಡ್ಡಾಯವಾಗಿದೆ ಮತ್ತು ಬಿಟ್ಟುಬಿಡಲು ಸಾಧ್ಯವಿಲ್ಲ",
+    "step": "Step ಪ್ರೋಟೋಕಾಲ್",
+    "failedToSkipStep": "Failed to skip step ಪ್ರೋಟೋಕಾಲ್",
+    "verificationDetailsSaved": "ಪರಿಶೀಲನೆ ವಿವರಗಳನ್ನು ಉಳಿಸಲಾಗಿದೆ!",
+    "couldNotCompleteVerification": "ಪರಿಶೀಲನೆಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ",
+    "loadingOfficialVerificationPortal": "Loading Official Verification Portal... ಪ್ರೋಟೋಕಾಲ್",
+    "officialIdentityComplianceGateway": "ಅಧಿಕೃತ ಗುರುತು ಮತ್ತು ಅನುಸರಣೆ ಗೇಟ್‌ವೇ",
+    "saveExitToDashboard": "ಉಳಿಸಿ ಮತ್ತು ಡ್ಯಾಶ್‌ಬೋರ್ಡ್‌ಗೆ ನಿರ್ಗಮಿಸಿ",
+    "textslate900": "text-slate-900 ಪ್ರೋಟೋಕಾಲ್",
+    "textslate700": "text-slate-700 ಪ್ರೋಟೋಕಾಲ್",
+    "required": "(Required) ಪ್ರೋಟೋಕಾಲ್",
+    "optional": "(Optional) ಪ್ರೋಟೋಕಾಲ್",
+    "stepCurrentstepOfStepslength": "Step {currentStep} of {steps.length} ಪ್ರೋಟೋಕಾಲ್",
+    "mandatoryVerification": "ಕಡ್ಡಾಯ ಪರಿಶೀಲನೆ",
+    "optionalCheck": "ಐಚ್ಛಿಕ ಪರಿಶೀಲನೆ",
+    "mobileAuthenticationProtocol": "Mobile Authentication ಪ್ರೋಟೋಕಾಲ್",
+    "enterYour10digitMobileNumberTo": "Enter your 10-digit mobile number to receive a secure One-Time Password (OTP). OTP will not be stored permanently. ಪ್ರೋಟೋಕಾಲ್",
+    "enter10digitMobileNumber": "10 ಅಂಕಿಗಳ ಮೊಬೈಲ್ ಸಂಖ್ಯೆ ನಮೂದಿಸಿ",
+    "enter6digitOtp": "6 ಅಂಕಿಗಳ OTP ನಮೂদಿಸಿ",
+    "otpSentTo91xxxxxmobileformmobilenumberslice4": "OTP sent to +91-XXXXX{mobileForm.mobileNumber.slice(-4)} ಪ್ರೋಟೋಕಾಲ್",
+    "back": "Back ಪ್ರೋಟೋಕಾಲ್",
+    "verifyOtpContinue": "OTP ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಮುಂದುವರಿಯಿರಿ",
+    "getMobileOtp": "ಮೊಬೈಲ್ OTP ಪಡೆಯಿರಿ",
+    "authorizedIdentityVerification": "Authorized Identity Verification ಪ್ರೋಟೋಕಾಲ್",
+    "identityIsValidatedSecurelyViaAuthorized": "Identity is validated securely via authorized verification reference. Full raw identity document numbers are never permanently stored. ಪ್ರೋಟೋಕಾಲ್",
+    "aadhaarbasedAuthorizedVerification": "Aadhaar-based Authorized Verification ಪ್ರೋಟೋಕಾಲ್",
+    "panbasedIdentityVerification": "PAN-based Identity Verification ಪ್ರೋಟೋಕಾಲ್",
+    "voterIdNationalPortalVerification": "Voter ID / National Portal Verification ಪ್ರೋಟೋಕಾಲ್",
+    "verifyIdentityContinue": "ಗುರುತು ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಮುಂದುವರಿಯಿರಿ",
+    "sendIdentityOtp": "ಗುರುತು OTP ಕಳುಹಿಸಿ",
+    "flatHouseNoBuildingStreetArea": "ಫ್ಲಾಟ್, ಮನೆ ಸಂಖ್ಯೆ, ಕಟ್ಟಡ, ರಸ್ತೆ, ಪ್ರದೇಶ",
+    "districtName": "ಜಿಲ್ಲೆಯ ಹೆಸರು",
+    "cityOrTown": "ನಗರ ಅಥವಾ ಪಟ್ಟಣ",
+    "6digitPinCode": "6 ಅಂಕಿಗಳ ಪಿನ್ ಕೋಡ್",
+    "verifyAddressContinue": "ವಿಳಾಸ ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಮುಂದುವರಿಯಿರಿ",
+    "asRegisteredInMcaGstPan": "As registered in MCA / GST / PAN ಪ್ರೋಟೋಕಾಲ್",
+    "brandOrTradeNameOptional": "ಬ್ರ್ಯಾಂಡ್ ಅಥವಾ ವಹಿವಾಟು ಹೆಸರು (ಐಚ್ಛಿಕ)",
+    "retailerAgribusinessDealer": "Retailer / Agribusiness Dealer ಪ್ರೋಟೋಕಾಲ್",
+    "wholesalerTrader": "Wholesaler / Trader ಪ್ರೋಟೋಕಾಲ್",
+    "foodProcessorMill": "Food Processor / Mill ಪ್ರೋಟೋಕಾಲ್",
+    "exporterInstitutionalBuyer": "Exporter / Institutional Buyer ಪ್ರೋಟೋಕಾಲ್",
+    "proprietorshipFirm": "Proprietorship Firm ಪ್ರೋಟೋಕಾಲ್",
+    "partnershipFirm": "Partnership Firm ಪ್ರೋಟೋಕಾಲ್",
+    "privateLimitedCompany": "Private Limited Company ಪ್ರೋಟೋಕಾಲ್",
+    "registeredOfficeTradePremisesAddress": "ನೋಂದಾಯಿತ ಕಚೇರಿ / ವಹಿವಾಟು ಆವರಣದ ವಿಳಾಸ",
+    "district": "ಜಿಲ್ಲೆ",
+    "6digitPincode": "6 ಅಂಕಿಗಳ ಪಿನ್‌ಕೋಡ್",
+    "verifyBusinessIdentity": "Verify Business Identity ಪ್ರೋಟೋಕಾಲ್",
+    "incomeTaxDepartmentPanVerification": "Income Tax Department PAN Verification ಪ್ರೋಟೋಕಾಲ್",
+    "enterThe10characterPermanentAccountNumber": "Enter the 10-character Permanent Account Number issued in the legal name of the entity. ಪ್ರೋಟೋಕಾಲ್",
+    "egAbcde1234f": "e.g. ABCDE1234F ಪ್ರೋಟೋಕಾಲ್",
+    "legalEntityName": "ಕಾನೂನುಬದ್ಧ ಸಂಸ್ಥೆಯ ಹೆಸರು",
+    "verifyBusinessPan": "Verify Business PAN ಪ್ರೋಟೋಕಾಲ್",
+    "goodsAndServicesTaxIdentificationGstin": "Goods and Services Tax Identification (GSTIN) ಪ್ರೋಟೋಕಾಲ್",
+    "gstinVerificationIsConditionalSmallTraders": "GSTIN verification is conditional. Small traders or exempt agricultural businesses can select \"GSTIN Not Applicable\". ಪ್ರೋಟೋಕಾಲ್",
+    "eg27aaaaa0000a1z5": "e.g. 27AAAAA0000A1Z5 ಪ್ರೋಟೋಕಾಲ್",
+    "gstinNotApplicable": "GSTIN Not Applicable ಪ್ರೋಟೋಕಾಲ್",
+    "verifyGstinContinue": "GSTIN ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಮುಂದುವರಿಯಿರಿ",
+    "privatePublicLimitedCompanyCin": "Private / Public Limited Company (CIN) ಪ್ರೋಟೋಕಾಲ್",
+    "limitedLiabilityPartnershipLlpin": "Limited Liability Partnership (LLPIN) ಪ್ರೋಟೋಕಾಲ್",
+    "registeredPartnershipFirm": "Registered Partnership Firm ಪ್ರೋಟೋಕಾಲ್",
+    "registeredSoleProprietorship": "Registered Sole Proprietorship ಪ್ರೋಟೋಕಾಲ್",
+    "cooperativeSocietyFarmerFederation": "Cooperative Society / Farmer Federation ಪ್ರೋಟೋಕಾಲ್",
+    "egU01100mh2020ptc123456": "e.g. U01100MH2020PTC123456 ಪ್ರೋಟೋಕಾಲ್",
+    "verifyRegistration": "Verify Registration ಪ್ರೋಟೋಕಾಲ್",
+    "fullName": "ಪೂರ್ಣ ಹೆಸರು",
+    "ownerProprietor": "Owner / Proprietor ಪ್ರೋಟೋಕಾಲ್",
+    "partner": "Partner ಪ್ರೋಟೋಕಾಲ್",
+    "director": "Director ಪ್ರೋಟೋಕಾಲ್",
+    "ceoManagingDirector": "CEO / Managing Director ಪ್ರೋಟೋಕಾಲ್",
+    "managerProcurementOfficer": "Manager / Procurement Officer ಪ್ರೋಟೋಕಾಲ್",
+    "authorizedSignatory": "Authorized Signatory ಪ್ರೋಟೋಕಾಲ್",
+    "10digitMobile": "10 ಅಂಕಿಗಳ ಮೊಬೈಲ್",
+    "6digitOtp": "6 ಅಂಕಿಗಳ OTP",
+    "iConfirmIPossessOfficialBoard": "I confirm I possess official board authorization / power of attorney to act as authorized buyer representative. ಪ್ರೋಟೋಕಾಲ್",
+    "verifyRepresentativeOtp": "ಪ್ರತಿನಿಧಿ OTP ಪರಿಶೀಲಿಸಿ",
+    "sendRepresentativeOtp": "ಪ್ರತಿನಿಧಿ OTP ಕಳುಹಿಸಿ",
+    "nameAsPerBankPassbook": "ಬ್ಯಾಂಕ್ ಪಾಸ್‌ಬುಕ್ ಪ್ರಕಾರ ಹೆಸರು",
+    "branchName": "శాఖೆಯ ಹೆಸರು",
+    "egSbin0001234": "e.g. SBIN0001234 ಪ್ರೋಟೋಕಾಲ್",
+    "accountNumber": "ಖಾತೆ ಸಂಖ್ಯೆ",
+    "reenterAccountNumber": "ಖಾತೆ ಸಂಖ್ಯೆಯನ್ನು ಮರು-ನಮೂದಿಸಿ",
+    "verifyBankAccount": "Verify Bank Account ಪ್ರೋಟೋಕಾಲ್",
+    "udyamMsmeRegistration": "Udyam MSME Registration ಪ್ರೋಟೋಕಾಲ್",
+    "conditionalCheckEnterYourUdyamRegistration": "Conditional check. Enter your Udyam Registration Number if registered as MSME enterprise, or select \"Udyam Not Applicable\". ಪ್ರೋಟೋಕಾಲ್",
+    "egUdyammh000000000": "e.g. UDYAM-MH-00-0000000 ಪ್ರೋಟೋಕಾಲ್",
+    "udyamNotApplicable": "Udyam Not Applicable ಪ್ರೋಟೋಕಾಲ್",
+    "verifyUdyamContinue": "ಉದ್ಯಮ್ ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಮುಂದುವರಿಯಿರಿ",
+    "fssaiCommodityTradeLicense": "FSSAI / Commodity Trade License ಪ್ರೋಟೋಕಾಲ್",
+    "showThisOnlyWhereBuyerActivity": "Show this only where buyer activity requires food safety/commodity trading permits. Select \"Not Applicable\" if non-food operations. ಪ್ರೋಟೋಕಾಲ್",
+    "fssaiRegistrationLicense": "FSSAI Registration / License ಪ್ರೋಟೋಕಾಲ್",
+    "apmcMandiTradeLicense": "APMC / Mandi Trade License ಪ್ರೋಟೋಕಾಲ್",
+    "agriculturalCommodityTradeLicense": "Agricultural Commodity Trade License ಪ್ರೋಟೋಕಾಲ್",
+    "eg10020021000123": "e.g. 10020021000123",
+    "licenseNotApplicable": "License Not Applicable ಪ್ರೋಟೋಕಾಲ್",
+    "verifyLicenseContinue": "ಪರವಾನಗಿ ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಮುಂದುವರಿಯಿರಿ",
+    "documentUploadComplianceAudit": "ದಾಖಲೆ ಅಪ್‌ಲೋಡ್ ಮತ್ತು ಅನುಸರಣೆ ಆಡಿಟ್",
+    "uploadClearScanOrPdfCopies": "Upload clear scan or PDF copies of required business certificates. Max file size: 5MB. ಪ್ರೋಟೋಕಾಲ್",
+    "businessRegistrationIncorporationCertificate": "ವಹಿವಾಟು ನೋಂದಣಿ / ಸಂಯೋಜನೆ ಪ್ರಮಾಣಪತ್ರ",
+    "businessPanDocument": "ವಹಿವಾಟು ಪ್ಯಾನ್ ದಾಖಲೆ",
+    "bankAccountProofCancelledCheque": "ಬ್ಯಾಂಕ್ ಖಾತೆ ಪುರಾವೆ / ರದ್ದುಗೊಳಿಸಿದ ಚೆಕ್",
+    "boardOwnerAuthorizationDocument": "ಬೋರ್ಡ್ / ಮಾಲೀಕರ ಅಧಿಕಾರ ದಾಖಲೆ",
+    "gstCertificateIfApplicable": "ಜಿಎಸ್‌ಟಿ ಪ್ರಮಾಣಪತ್ರ (ಅನ್ವಯಿಸಿದರೆ)",
+    "udyamRegistrationCertificateIfApplicable": "ಉದ್ಯಮ್ ನೋಂದಣಿ ಪ್ರಮಾಣಪತ್ರ (ಅನ್ವಯಿಸಿದರೆ)",
+    "fssaiMandiLicenseDocumentIfApplicable": "FSSAI / Mandi License Document (if applicable) ಪ್ರೋಟೋಕಾಲ್",
+    "requiredDocument": "ಅಗತ್ಯವಿರುವ ದಾಖಲೆ",
+    "conditionalDocument": "ಸಷರತ್ತು ದಾಖಲೆ",
+    "verified_uploaded": "✓ ಅಪ್‌ಲೋಡ್ ಮಾಡಲಾಗಿದೆ",
+    "uploadDocument": "ದಾಖಲೆಯನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ",
+    "invalidDocumentFileFormatExtAllowed": "Invalid document file format (${ext}). Allowed formats: PDF, JPG, PNG, WEBP. ಪ್ರೋಟೋಕಾಲ್",
+    "uploadedDoctitle": "Uploaded ${doc.title} ಪ್ರೋಟೋಕಾಲ್",
+    "submitDocumentsProceed": "ದಾಖಲೆಗಳನ್ನು ಸಲ್ಲಿಸಿ ಮುಂದುವರಿಯಿರಿ",
+    "backToReview": "Back to Review ಪ್ರೋಟೋಕಾಲ್",
+    "finalizeBuyerVerification": "Finalize Buyer Verification ಪ್ರೋಟೋಕಾಲ್",
+    "yourInformationIsSecurelyProcessedSensitive": "ನಿಮ್ಮ ಮಾಹಿತಿಯನ್ನು ಸುರಕ್ಷಿತವಾಗಿ ಪ್ರಕ್ರಿಯೆಗೊಳಿಸಲಾಗುತ್ತದೆ. ಸೂಕ್ಷ್ಮ ಗುರುತು ಮತ್ತು ಹಣಕಾಸಿನ ಮಾಹಿತಿಯನ್ನು ಮರೆಮಾಡಲಾಗುತ್ತದೆ."
+  },
+  "farmerVerification": {
+    "aadhaarTitle": "ಗುರುತು ಪರಿಶೀಲನೆ (ಆಧಾರ್)",
+    "aadhaarDesc": "Authorized UIDAI identity verification ಪ್ರೋಟೋಕಾಲ್",
+    "farmerRegistryTitle": "ರೈತ ಐಡಿ / ನೋಂದಣಿ",
+    "farmerRegistryDesc": "ರಾಜ್ಯ / ರಾಷ್ಟ್ರೀಯ ರೈತ ಅಗ್ರಿಸ್ಟಾಕ್ ಡೇಟಾಬೇಸ್ ದಾಖಲೆ",
+    "landRecordTitle": "ಜಮೀನು ದಾಖಲೆ / ಪಟ್ಟಾ",
+    "landRecordDesc": "ಕೃಷಿ ಜಮೀನು ಹಿಡುವಳಿ ಅಥವಾ ಸಾಗುವಳಿ ದಾಖಲೆ",
+    "bankAccountTitle": "ಬ್ಯಾಂಕ್ ಖಾತೆ ಪರಿಶೀಲನೆ",
+    "bankAccountDesc": "ನೇರ ಪಾವತಿಗಳಿಗಾಗಿ ಇತ್ಯರ್ಥ ಬ್ಯಾಂಕ್ ಖಾತೆ",
+    "panTitle": "ಪ್ಯಾನ್ ಕಾರ್ಡ್ ಪರಿಶೀಲನೆ",
+    "panDesc": "ಗುರುತು ಮತ್ತು ಪಾವತಿಗಳಿಗಾಗಿ ಕಾಯಂ ಖಾತೆ ಸಂಖ್ಯೆ",
+    "pmKisanTitle": "PM-KISAN ಪರಿಶೀಲನೆ (ಐಚ್ಛಿಕ)",
+    "pmKisanDesc": "PM-KISAN ಫಲಾನುಭವಿ ನೋಂದಣಿ ಉಲ್ಲೇಖ",
+    "orgIdentityTitle": "ನಿಮ್ಮ ಸಂಸ್ಥೆಯನ್ನು ಪರಿಶೀಲಿಸಿ",
+    "orgIdentityDesc": "Legal organization registration, CIN, and state address ಪ್ರೋಟೋಕಾಲ್",
+    "orgPanTitle": "ಸಂಸ್ಥೆಯ ಪ್ಯಾನ್ ಪರಿಶೀಲಿಸಿ",
+    "orgPanDesc": "ಕಾನೂನುಬದ್ಧ ಸಂಸ್ಥೆಯ ಹೆಸರಿನಲ್ಲಿ ನೀಡಲಾದ ಕಾಯಂ ಖಾತೆ ಸಂಖ್ಯೆ",
+    "gstinTitle": "ವಹಿವಾಟಿನ ವಿವರಗಳನ್ನು ಪರಿಶೀಲಿಸಿ (GSTIN)",
+    "gstinDesc": "GSTIN ನೋಂದಣಿ (ಐಚ್ಛಿಕ / ಸಷರತ್ತು)",
+    "representativeTitle": "ಅಧಿಕೃತ ಪ್ರತಿನಿಧಿಯನ್ನು ಪರಿಶೀಲಿಸಿ",
+    "representativeDesc": "ನಿರ್ವಹಣಾ ಅಧಿಕಾರಿಯ ಗುರುತು ಮತ್ತು ಹುದ್ದೆ",
+    "orgBankTitle": "ಸಂಸ್ಥೆಯ ಬ್ಯಾಂಕ್ ಖಾತೆಯನ್ನು ಪರಿಶೀಲಿಸಿ",
+    "orgBankDesc": "ಇತ್ಯರ್ಥಗಳಿಗಾಗಿ ಸಂಸ್ಥೆಗೆ ಸೇರಿದ ಬ್ಯಾಂಕ್ ಖಾತೆ",
+    "orgDocumentsTitle": "ಸಂಸ್ಥೆಯ ದಾಖಲೆಗಳು",
+    "orgDocumentsDesc": "ನೋಂದಣಿ ಪ್ರಮಾಣಪತ್ರ, ಪ್ಯಾನ್ ದಾಖಲೆ, ಬ್ಯಾಂಕ್ ಪುರಾವೆ ಮತ್ತು ಅಧಿಕಾರ ಪತ್ರವನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ",
+    "verifiedFpoBadge": "✓ ಪರಿಶೀಲಿಸಿದ FPO",
+    "verifiedFarmerBadge": "✓ ಪರಿಶೀಲಿಸಿದ ರೈತ",
+    "loadingVerificationDashboard": "Loading verification dashboard... ಪ್ರೋಟೋಕಾಲ್",
+    "all5RequiredChecksActive": "All 5 required checks active ಪ್ರೋಟೋಕಾಲ್",
+    "overallProgress": "ఒట్టు ప్రగతి",
+    "verificationChecksBreakdown": "Verification Checks Breakdown ಪ್ರೋಟೋಕಾಲ್",
+    "verificationStatusHeading": "పరిశీలనె స్థితి మరియు ఆధారగళు",
+    "centralDashboardAgri": "నిమ్మ కృషి వివరగళు, ప్రగతి మరియు అధీకృత స్థితియన్ను నోడలు కేంద్రీయ డాష్‌బోర్డ్.",
+    "centralDashboardOrg": "నిమ్మ సంస్థె వివరగళు, ప్రగతి మరియు అధీకృత స్థితియన్ను నోడలు కేంద్రీయ డాష్‌బోర్డ్.",
+    "verifiedStat": "{{count}} ఖాత్రిపడిసలాగిదే",
+    "skippedStat": "{{count}} బిడలాగిదే",
+    "pendingStat": "{{count}} అగత్య బాకియిరువవు",
+    "congratulationsVerifiedMsg": "అభినందనెగళు! ఎల్లా అగత్య గుర్తిసిద వివరగళు సంపూర్ణవాగి ఖాత్రిపడిసలాగిదే. నిమ్మ ఉత్పన్నగళిగే ఈగ అధీకృత బ్యాడ్జ్ తోరిసలాగుత్తిదే."
+  },
+  "paymentSettlementCard": {
+    "bank": "ಬ್ಯಾಂಕ್:",
+    "account": "ಖಾತೆ:",
+    "ifsc": "IFSC:",
+    "linkedAccount": "ಸಂಪರ್ಕಿತ ಖಾತೆ:",
+    "settlement": "ಇತ್ಯರ್ಥ:",
+    "lastSynced": "ಕೊನೆಯದಾಗಿ ಸಿಂಕ್ ಮಾಡಲಾಗಿದೆ:",
+    "governmentSettlementPortal": "ಸರ್ಕಾರಿ ಇತ್ಯರ್ಥ ಪೋರ್ಟಲ್",
+    "paymentAndSettlement": "ಪಾವತಿ ಮತ್ತು ಇತ್ಯರ್ಥ",
+    "notConnectedBadge": "ಪಾವತಿ ಖಾತೆ ಸಂಪರ್ಕಗೊಂಡಿಲ್ಲ",
+    "setupHeadline": "ಪಾವತಿ ಮತ್ತು ಇತ್ಯರ್ಥ ಸಂಯೋಜನೆ",
+    "setupDescription": "ನೇರ ಪಾವತಿಗಳನ್ನು ಸ್ವೀಕರಿಸಲು ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಸಂಪರ್ಕಿಸಿ.",
+    "connectAccount": "ಪಾವತಿ ಖಾತೆಯನ್ನು ಸಂಪರ್ಕಿಸಿ",
+    "onboardingBadge": "ಖಾತೆ ಸಂಯೋಜನೆ ಪ್ರಗತಿಯಲ್ಲಿದೆ",
+    "onboardingHeadline": "ಇತ್ಯರ್ಥ ಪರಿಶೀಲನೆ ನಡೆಯುತ್ತಿದೆ",
+    "onboardingDescription": "Razorpay ನಿಮ್ಮ ಖಾತೆಯ ವಿವರಗಳನ್ನು ಪರಿಶೀಲಿಸುತ್ತಿದೆ.",
+    "continueSetup": "ಸಂಯೋಜನೆಯನ್ನು ಮುಂದುವರಿಸಿ",
+    "pendingBadge": "Razorpay ಪರಿಶೀಲನೆ ಬಾಕಿ ಇದೆ",
+    "pendingHeadline": "Razorpay ಪರಿಶೀಲನೆ ಪ್ರಗತಿಯಲ್ಲಿದೆ",
+    "pendingDescription": "ಖಾತೆ ಮಾಹಿತಿ ಸಲ್ಲಿಕೆಯಾಗಿದೆ. ಪರಿಶೀಲನೆ ಬಾಕಿ ಇದೆ.",
+    "checkStatus": "ಸ್ಥಿತಿಯನ್ನು ರಿಫ್ರೆಶ್ ಮಾಡಿ",
+    "activeBadge": "✓ ಪಾವತಿ ಖಾತೆ ಸಂಪರ್ಕಗೊಂಡಿದೆ",
+    "activeHeadline": "ಇತ್ಯರ್ಥ ಖಾತೆ ಸಕ್ರಿಯವಾಗಿದೆ",
+    "activeDescription": "ನಿಮ್ಮ ಖಾತೆ ಸಕ್ರಿಯವಾಗಿದೆ. ಮಾರಾಟದ ಪಾವತಿಗಳು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಬರುತ್ತವೆ.",
+    "accountConnected": "ಪಾವತಿ ಖಾತೆ ಸಂಪರ್ಕಗೊಂಡಿದೆ",
+    "rejectedBadge": "Razorpay ಪರಿಶೀಲನೆ ಅಗತ್ಯವಿದೆ",
+    "rejectedHeadline": "ಪರಿಶೀಲನೆ ಮರುಪರಿಶೀಲನೆ ಅಗತ್ಯವಿದೆ",
+    "rejectedDescription": "ಹೆಚ್ಚುವರಿ ದಾಖಲೆಗಳು ಅಗತ್ಯವಿದೆ.",
+    "resolveVerification": "ಪರಿಶೀಲನೆಯನ್ನು ಸರಿಪಡಿಸಿ",
+    "suspendedBadge": "ಪಾವತಿ ಇತ್ಯರ್ಥ ತಾತ್ಕಾಲಿಕವಾಗಿ ಲಭ್ಯವಿಲ್ಲ",
+    "suspendedHeadline": "ಇತ್ಯರ್ಥ ಅಮಾನತುಗೊಳಿಸಲಾಗಿದೆ",
+    "suspendedDescription": "ಈ ಖಾತೆಗೆ ಪಾವತಿ ಇತ್ಯರ್ಥ ಲಭ್ಯವಿಲ್ಲ. ಬೆಂಬಲವನ್ನು ಸಂಪರ್ಕಿಸಿ.",
+    "contactSupport": "ಬೆಂಬಲವನ್ನು ಸಂಪರ್ಕಿಸಿ",
+    "settlementPendingNotice": "ಮಾರುಕಟ್ಟೆ ಇತ್ಯರ್ಥ ಸಂಯೋಜನೆ Razorpay ಸಕ್ರಿಯಗೊಳಿಸುವಿಕೆಗೆ ಬಾಕಿ ಇದೆ.",
+    "refreshStatus": "ಸ್ಥಿತಿಯನ್ನು ರಿಫ್ರೆಶ್ ಮಾಡಿ",
+    "failedToLoadStatus": "ಪಾವತಿ ಇತ್ಯರ್ಥ ಸ್ಥಿತಿಯನ್ನು ಲೋಡ್ ಮಾಡಲು ವಿಫಲವಾಗಿದೆ.",
+    "statusUpdated": "ಸ್ಥಿತಿ ನವೀಕರಿಸಲಾಗಿದೆ!",
+    "contactSupportToast": "Please contact AgriBazaar support at support@agribazaar.org",
+    "actionFailed": "ಕ್ರಿಯೆ ವಿಫಲವಾಗಿದೆ."
+  },
+  "about": {
+    "ourPurpose": "ನಮ್ಮ ಉದ್ದೇಶ",
+    "aboutAgribazaar": "ಅಗ್ರಿಬಜಾರ್ ಬಗ್ಗೆ",
+    "corePillar": "ಮುಖ್ಯ ಸ್ತಂಭ",
+    "ourMission": "ನಮ್ಮ ಧ್ಯೇಯ",
+    "futureready": "ಭವಿಷ್ಯಕ್ಕೆ ಸಿದ್ಧ",
+    "ourVision": "ನಮ್ಮ ದೃಷ್ಟಿಕೋನ"
+  },
+  "admin": {
+    "noAnalyticsDataRecordedYet": "ಇನ್ನೂ ಯಾವುದೇ ವಿಶ್ಲೇಷಣೆ ಡೇಟಾ ದಾಖಲಾಗಿಲ್ಲ.",
+    "platformIntelligence": "ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ಇಂಟೆಲಿಜೆನ್ಸ್",
+    "platformAnalytics": "ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ವಿಶ್ಲೇಷಣೆಗಳು",
+    "deepDiveIntoTradeRevenuesSeller": "ವ್ಯಾಪಾರ ಆದಾಯ, ಮಾರಾಟಗಾರರ ನೋಂದಣಿ ವೇಗ ಮತ್ತು ವರ್ಗ ಪ್ರಮಾಣದ ಸಮಗ್ರ ವಿಶ್ಲೇಷಣೆ.",
+    "account": "ಖಾತೆ:",
+    "ifsc": "IFSC ಕೋಡ್:",
+    "razorpayRouteCapabilityIsPendingActivation": "ರೇಜರ್‌ಪೇ ರೂಟ್ ಸಾಮರ್ಥ್ಯ ಸಕ್ರಿಯಗೊಳಿಸುವಿಕೆ ಬಾಕಿ ಇದೆ",
+    "isActiveNormalBuyerCheckoutPayments": "ಸಕ್ರಿಯವಾಗಿದೆ. ಸಾಮಾನ್ಯ ಖರೀದಿದಾರ ಪಾವತಿಗಳು ಸರಿಯಾಗಿ ಕೆಲಸ ಮಾಡುತ್ತವೆ.",
+    "pending": "ಬಾಕಿ ಇದೆ",
+    "userDirectory": "ಬಳಕೆದಾರರ ಡೈರೆಕ್ಟರಿ",
+    "platformUserManagement": "ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ಬಳಕೆದಾರರ ನಿರ್ವಹಣೆ",
+    "viewUserRolesAccessStatusesAnd": "ಬಳಕೆದಾರರ ಪಾತ್ರಗಳು, ಪ್ರವೇಶ ಸ್ಥಿತಿಗಳನ್ನು ವೀಕ್ಷಿಸಿ ಮತ್ತು ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ಅನುಮತಿಗಳನ್ನು ನಿರ್ವಹಿಸಿ.",
+    "users": "ಬಳಕೆದಾರರು",
+    "farmers": "ರೈತರು / FPOಗಳು",
+    "settlements": "ಇತ್ಯರ್ಥಗಳು",
+    "payments": "ಪಾವತಿಗಳು",
+    "blockchain": "ಬ್ಲಾಕ್‌ಚೈನ್ ಆಡಿಟ್",
+    "disputes": "ವಿವಾದಗಳು",
+    "analytics": "ವಿಶ್ಲೇಷಣೆಗಳು"
+  },
+  "buyerDashboard": {
+    "buyerPortal": "ಖರೀದಿದಾರರ ಪೋರ್ಟಲ್",
+    "buyerDashboard": "ಖರೀದಿದಾರರ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್",
+    "trackYourOrdersSpendingAndFresh": "ನಿಮ್ಮ ಆರ್ಡರ್‌ಗಳು, ವೆಚ್ಚಗಳು ಮತ್ತು ತಾಜಾ ಬೆಳೆಗಳನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡಿ.",
+    "buyerVerificationStatus": "ಖರೀದಿದಾರರ ಪರಿಶೀಲನಾ ಸ್ಥಿತಿ",
+    "viewVerificationDetails": "ಪರಿಶೀಲನೆಯ ವಿವರಗಳನ್ನು ವೀಕ್ಷಿಸಿ",
+    "recentOrders": "ಇತ್ತೀಚಿನ ಆರ್ಡರ್‌ಗಳು",
+    "noOrdersPlacedYet": "ಇನ್ನೂ ಯಾವುದೇ ಆರ್ಡರ್‌ಗಳನ್ನು ಮಾಡಲಾಗಿಲ್ಲ.",
+    "browseMarketplace": "ಮಾರುಕಟ್ಟೆಯನ್ನು ವೀಕ್ಷಿಸಿ",
+    "recommendedProduce": "ಶಿಫಾರಸು ಮಾಡಿದ ಬೆಳೆಗಳು",
+    "totalOrders": "ಒಟ್ಟು ಆದೇಶಗಳು",
+    "activeOrders": "ಸಕ್ರಿಯ ಆದೇಶಗಳು",
+    "completed": "ಪೂರ್ಣಗೊಂಡಿದೆ",
+    "totalSpent": "ಒಟ್ಟು ವೆಚ್ಚ",
+    "accountHashCopied": "ಖರೀದಿದಾರರ ಖಾತೆ ಹ್ಯಾಶ್ ನಕಲಿಸಲಾಗಿದೆ!",
+    "failedToLoad": "ಡ್ಯಾಶ್‌ಬೋರ್ಡ್ ಲೋಡ್ ಮಾಡಲು ವಿಫಲವಾಗಿದೆ.",
+    "viewAllOrders": "ಎಲ್ಲಾ ಆದೇಶಗಳನ್ನು ವೀಕ್ಷಿಸಿ →",
+    "startVerification": "ಪರಿಶೀಲನೆ ಪ್ರಾರಂಭಿಸಿ",
+    "continueVerification": "ಪರಿಶೀಲನೆ ಮುಂದುವರಿಸಿ"
+  },
+  "buyerOrders": {
+    "viewCrop": "ಬೆಳೆ ವೀಕ್ಷಿಸಿ",
+    "orderTracking": "ಆರ್ಡರ್ ಟ್ರ್ಯಾಕಿಂಗ್",
+    "myOrders": "ನನ್ನ ಆರ್ಡರ್‌ಗಳು",
+    "viewShipmentProgressAndPurchaseHistory": "ಎಲ್ಲಾ ಮಾರಾಟಗಾರರಲ್ಲಿ ರವಾನೆ ಪ್ರಗತಿ ಮತ್ತು ಖರೀದಿ ಇತಿಹಾಸವನ್ನು ವೀಕ್ಷಿಸಿ.",
+    "browseProduce": "ಉತ್ಪನ್ನಗಳನ್ನು ವೀಕ್ಷಿಸಿ",
+    "colProduceItem": "ಉತ್ಪನ್ನದ ವಸ್ತು",
+    "colFarmerProducer": "ರೈತ / ಉತ್ಪಾದಕ",
+    "colQuantity": "ಪ್ರಮಾಣ",
+    "colTotalPrice": "ಒಟ್ಟು ದರ",
+    "colOrderStatus": "ಆದೇಶದ ಸ್ಥಿತಿ",
+    "colBlockchainAudit": "ಬ್ಲಾಕ್‌ಚೇನ್ ಆಡಿಟ್",
+    "colAction": "ಕ್ರಿಯೆ",
+    "noOrdersFound": "ಯಾವೂದೇ ಆದೇಶಗಳು ಕಂಡುಬಂದಿಲ್ಲ",
+    "noOrdersDesc": "ನಿಮ್ಮ ಆದೇಶಗಳು ಇಲ್ಲಿ ಕಾಣಿಸಿಕೊಳ್ಳುತ್ತವೆ.",
+    "failedToLoadOrders": "ಆದೇಶಗಳನ್ನು ಲೋಡ್ ಮಾಡಲು ವಿಫಲವಾಗಿದೆ."
+  },
+  "buyerProfile": {
+    "buyerAccount": "ಖರೀದಿದಾರರ ಖಾತೆ",
+    "buyerProfile": "ಖರೀದಿದಾರರ ಪ್ರೊಫೈಲ್",
+    "manageYourPersonalDetailsAndDefault": "ನಿಮ್ಮ ವೈಯಕ್ತಿಕ ವಿವರಗಳು ಮತ್ತು ಶಿಪ್ಪಿಂಗ್ ವಿಳಾಸವನ್ನು ನಿರ್ವಹಿಸಿ.",
+    "fullName": "ಪೂರ್ಣ ಹೆಸರು",
+    "emailAddress": "ಇಮೇಲ್ ವಿಳಾಸ",
+    "mobileNumber": "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ",
+    "deliveryAddress": "ಡೆಲಿವರಿ ವಿಳಾಸ",
+    "city": "ನಗರ",
+    "state": "ರಾಜ್ಯ",
+    "pincode": "ಪಿನ್‌ಕೋಡ್",
+    "buyerAccountType": "ಖರೀದಿದಾರರ ಖಾತೆ ಪ್ರಕಾರ",
+    "profileUpdatedToast": "ಖರೀದಿದಾರರ ಪ್ರೊಫೈಲ್ ನವೀಕರಿಸಲಾಗಿದೆ!",
+    "accountHashCopiedToast": "ಖಾತೆ ಹ್ಯಾಶ್ ನಕಲಿಸಲಾಗಿದೆ!"
+  },
+  "buyerVerification": {
+    "loadingBuyerVerificationStatus": "ಖರೀದಿದಾರರ ಪರಿಶೀಲನಾ ಸ್ಥಿತಿ ಲೋಡ್ ಆಗುತ್ತಿದೆ...",
+    "status": "ಸ್ಥಿತಿ",
+    "overallStatus": "ಒಟ್ಟು ಸ್ಥಿತಿ",
+    "progress": "ಪ್ರಗತಿ",
+    "viewVerificationDetails": "ಪರಿಶೀಲನಾ ವಿವರಗಳನ್ನು ವೀಕ್ಷಿಸಿ",
+    "officialPortal": "• ಅಧಿಕೃತ ಪರಿಶೀಲನಾ ಪೋರ್ಟಲ್",
+    "continueVerification": "ಪರಿಶೀಲನೆ ಮುಂದುವರಿಸಿ",
+    "startVerification": "ಪರಿಶೀಲನೆ ಪ್ರಾರಂಭಿಸಿ",
+    "failedToLoad": "ಪರಿಶೀಲನೆ ಸ್ಥಿತಿಯನ್ನು ಲೋಡ್ ಮಾಡಲು ವಿಫಲವಾಗಿದೆ.",
+    "title": "ಖರೀದಿದಾರರ ಪರಿಶೀಲನಾ ಸ್ಥಿತಿ",
+    "subtitle": "ಅಗ್ರಿಬಜಾರ್‌ನಲ್ಲಿ ಗುರುತು, ವ್ಯಾಪಾರ ಅನುಸರಣೆ ಮತ್ತು ನಿಯಂತ್ರಕ ರುಜುವಾತುಗಳನ್ನು ನಿರ್ವಹಿಸಿ.",
+    "completedCountOfTotal": "{{total}} ರಲ್ಲಿ {{count}} ಪೂರ್ಣಗೊಂಡಿದೆ",
+    "checklistHeading": "ಪರಿಶೀಲನಾ ಪರಿಶೀಲನಾಪಟ್ಟಿ",
+    "wizardCardHeading": "ನಿಮ್ಮ ಪರಿಶೀಲನಾ ಮಾರ್ಗದರ್ಶಿಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ",
+    "wizardCardDesc": "ರೈತರೊಂದಿಗೆ ನಂಬಿಕೆಯನ್ನು ಬೆಳೆಸಲು ಮತ್ತು ಪರಿಶೀಲಿಸಿದ ಖರೀದಿದಾರ ಬ್ಯಾಡ್ಜ್‌ಗಳನ್ನು ಪಡೆಯಲು ಅಗತ್ಯವಿರುವ ಎಲ್ಲಾ ಗುರುತು, ತೆರಿಗೆ, ಬ್ಯಾಂಕ್ ಮತ್ತು ದಾಖಲೆ ಪರಿಶೀಲನೆಗಳನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ."
+  },
+  "farmerAddProduct": {
+    "cropPreview": "ಬೆಳೆ ಮುನ್ನೋಟ",
+    "price": "ಬೆಲೆ:",
+    "stock": "ಸ್ಟಾಕ್:",
+    "location": "ಸ್ಥಳ:",
+    "harvest": "ಕೊಯ್ಲು:",
+    "newCropListing": "ಹೊಸ ಬೆಳೆ ಪಟ್ಟಿ",
+    "addNewProduct": "ಹೊಸ ಉತ್ಪನ್ನವನ್ನು ಸೇರಿಸಿ",
+    "createAVerifiedProduceListingTo": "ನೇರವಾಗಿ ಮಾರಾಟ ಮಾಡಲು ಪರಿಶೀಲಿಸಿದ ಬೆಳೆ ಪಟ್ಟಿಯನ್ನು ರಚಿಸಿ.",
+    "productCropNameLabel": "ಉತ್ಪನ್ನ / ಬೆಳೆಯ ಹೆಸರು *",
+    "placeholderProductName": "ಉದಾ. ಸಾವಯವ ਬਾಸ್ಮತಿ ಅಕ್ಕಿ",
+    "cropCategoryLabel": "ಬೆಳೆಯ ವರ್ಗ *",
+    "measurementUnitLabel": "ಅಳತೆಯ ಘಟಕ *",
+    "produceDescriptionLabel": "ಉತ್ಪನ್ನದ ವಿವರಣೆ",
+    "placeholderDescription": "ಕೃಷಿ ತಂತ್ರಗಳು, ತಳಿ ಅಥವಾ ಪ್ಯಾಕೇಜಿಂಗ್ ಅನ್ನು ವಿವರಿಸಿ...",
+    "availableQuantityLabel": "ಲಭ್ಯವಿರುವ ಪ್ರಮಾಣ *",
+    "placeholderQuantity": "ಉದಾ. 500",
+    "pricePerUnitLabel": "PRICE PER {{unit}} (₹) *",
+    "placeholderPrice": "ಉದಾ. 85",
+    "farmLocationLabel": "ಫಾರ್ಮ್ ಸ್ಥಳ (ನಗರ, ರಾಜ್ಯ) *",
+    "placeholderLocation": "ಉದಾ. ನಾಸಿಕ್, ಮಹಾರಾಷ್ಟ್ರ",
+    "harvestDateLabel": "ಕಟಾವು ದಿನಾಂಕ",
+    "availableFromLabel": "ಇಂದ ಲಭ್ಯವಿದೆ",
+    "uploadImageLabel": "ಬೆಳೆಯ ಚಿತ್ರ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ *",
+    "uploadImageDesc": "ಉತ್ತಮ ಗುಣಮಟ್ಟದ JPG, PNG, ಅಥವಾ WEBP ಚಿತ್ರ (PDF ಅನುಮತಿಸಲಾಗಿಲ್ಲ)",
+    "saveDraft": "ಕರಡು ಉಳಿಸಿ",
+    "previewListing": "ಪೂರ್ವವೀಕ್ಷಣೆ ವೀಕ್ಷಿಸಿ",
+    "publishListing": "ಪ್ರಕಟಿಸಿ",
+    "publishing": "ಪ್ರಕಟಿಸಲಾಗುತ್ತಿದೆ...",
+    "backToEdit": "ಸಂಪಾದನೆಗೆ ಹಿಂತಿರುಗಿ",
+    "nameRequired": "ಉತ್ಪನ್ನದ ಹೆಸರು ಅಗತ್ಯವಿದೆ.",
+    "categoryRequired": "ವರ್ಗ ಅಗತ್ಯವಿದೆ.",
+    "quantityGreaterThanZero": "ಪ್ರಮಾಣ 0 ಗಿಂತ ಹೆಚ್ಚಿರಬೇಕು.",
+    "priceGreaterThanZero": "ದರ 0 ಗಿಂತ ಹೆಚ್ಚಿರಬೇಕು.",
+    "locationRequired": "ಸ್ಥಳ ಅಗತ್ಯವಿದೆ.",
+    "savedAsDraft": "ಉತ್ಪನ್ನವನ್ನು ಕರಡಾಗಿ ಉಳಿಸಲಾಗಿದೆ.",
+    "publishedSuccess": "ಉತ್ಪನ್ನ ಯಶಸ್ವಿಯಾಗಿ ಪ್ರಕಟಗೊಂಡಿದೆ!",
+    "failedToCreate": "ಉತ್ಪನ್ನ ರಚಿಸಲು ವಿಫಲವಾಗಿದೆ."
+  },
+  "farmerDashboard": {
+    "manageYourAgriculturalProductsIncomingOrders": "నిమ్మ ಕೃಷಿ ಉತ್ಪನ್ನಗಳು, రాబోయే ఆదేశాలు మరియు రాబడిని నిర్పహించండి.",
+    "recentOrders": "ఇటీవలి ఆర్డర్‌లు",
+    "noOrdersReceivedYet": "ఇనూ యావుదే ఆర్డర్‌గళు స్వీకరిసలాగిల్ల.",
+    "activeListings": "సక్రియ పట్టికలు",
+    "noActiveListings": "యావుదే సక్రియ పట్టికగళిల్ల.",
+    "fpoSellerDashboard": "FPO / FPC ಮಾರಾಟಗಾರರ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್",
+    "sellerDashboard": "ಮಾರಾಟಗಾರರ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್",
+    "fpoOverview": "FPO ಅವಲೋಕನ",
+    "farmerOverview": "ರೈತ ಅವಲೋಕನ",
+    "addNewListing": "ಹೊಸ ಪಟ್ಟಿ ಸೇರಿಸಿ",
+    "sellerCryptographicAccountHash": "ಮಾರಾಟಗಾರರ ಕ್ರಿಪ್ಟೋಗ್ರಾಫಿಕ್ ಖಾತೆ ಹ್ಯಾಶ್ (ಆನ್-ಚೈನ್ ಗುರುತು)",
+    "copyHash": "ಹ್ಯಾಶ್ ನಕಲಿಸಿ",
+    "accountHashCopied": "ಮಾರಾಟಗಾರರ ಖಾತೆ ಹ್ಯಾಶ್ ನಕಲಿಸಲಾಗಿದೆ!",
+    "verifiedFpoBadge": "✓ ಪರಿಶೀಲಿಸಿದ FPO",
+    "verifiedFarmerBadge": "✓ ಪರಿಶೀಲಿಸಿದ ರೈತ",
+    "completeYourVerification": "ನಿಮ್ಮ ಪರಿಶೀಲನೆಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ",
+    "activeBadge": "ಸಕ್ರಿಯ ಬ್ಯಾಡ್ಜ್",
+    "checksCompletedCount": "ಅಗತ್ಯವಿರುವ 5 ತಪಾಸಣೆಗಳಲ್ಲಿ {{count}} ಪೂರ್ಣಗೊಂಡಿವೆ",
+    "allRequiredVerificationActive": "ಎಲ್ಲಾ ಅಗತ್ಯ ಪರಿಶೀಲನೆ ಸಕ್ರಿಯವಾಗಿದೆ",
+    "verificationIncomplete": "ಪರಿಶೀಲನೆ ಅಪೂರ್ಣವಾಗಿದೆ",
+    "updateVerification": "ಪರಿಶೀಲನೆ ನವೀಕರಿಸಿ",
+    "continueVerification": "ಪರಿಶೀಲನೆ ಮುಂದುವರಿಸಿ",
+    "totalProducts": "ಒಟ್ಟು ಉತ್ಪನ್ನಗಳು",
+    "activeListingsLabel": "ಸಕ್ರಿಯ ಪಟ್ಟಿಗಳು",
+    "pendingOrders": "ಬಾಕಿ ಇರುವ ಆದೇಶಗಳು",
+    "totalSales": "ಒಟ್ಟು ಮಾರಾಟ",
+    "viewAll": "ఎల్లవన్ను నోడి →",
+    "addProductButton": "+ ఉత్పన్న సేరిసి"
+  },
+  "farmerProducts": {
+    "cropInventory": "బెళె కొఠార",
+    "myProducts": "నన్న ఉత్పన్నగళు",
+    "colProduceDetails": "ಉತ್ಪನ್ನದ ವಿವರಗಳು",
+    "colCategory": "బెళె వర్గ",
+    "colPriceUnit": "బెలె / యూనిట్",
+    "colStockQuantity": "ದಾಸ್ತಾನು ಪ್ರಮಾಣ",
+    "colStatus": "స్థితి",
+    "colActions": "క్రియెగళు",
+    "noProductsListed": "ಇನ್ನೂ ಯಾವುದೇ ಉತ್ಪನ್ನಗಳನ್ನು ಪಟ್ಟಿ ಮಾಡಲಾಗಿಲ್ಲ",
+    "noProductsDesc": "ನಿಮ್ಮ ಮೊದಲ ಉತ್ಪನ್ನವನ್ನು ಪ್ರಕಟಿಸುವ ಮೂಲಕ ಮಾರಾಟ ಪ್ರಾರಂಭಿಸಿ.",
+    "addProductBtn": "+ ಉತ್ಪನ್ನ ಸೇರಿಸಿ",
+    "manageListingsDesc": "నిమ్మ సక్రియ, ముసౌదే మరియు స్టాక్ ఇల్లద బెళె పట్టికగళన్ను నిర్పహిసి (మొత్త {{count}}).",
+    "addNewProduct": "హొస ఉత్పన్న సేరిసి",
+    "searchPlaceholder": "బెళె పట్టికగళన్ను హుడుకి...",
+    "colProduct": "ఉత్పన్న",
+    "colAvailableStock": "లభ్యవిరువ స్టాక్"
+  },
+  "farmerOrders": {
+    "orderManagement": "ಆರ್ಡರ್ ನಿರ್ವಹಣೆ",
+    "incomingProduceOrders": "ಬರುವ ಬೆಳೆ ಆರ್ಡರ್‌ಗಳು",
+    "fulfillPurchaseOrdersReceivedFromRetail": "ಚಿಲ್ಲರೆ ಮತ್ತು ಸಗಟು ಖರೀದಿದారರಿಂದ ಬಂದ ಆರ್ಡರ್‌ಗಳನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ.",
+    "colProduceItems": "ಉತ್ಪನ್ನದ ವಸ್ತುಗಳು",
+    "colBuyerInfo": "ಖರೀದಿದಾರರ ಮಾಹಿತಿ",
+    "colQuantity": "ಪ್ರಮಾಣ",
+    "colTotalValue": "ಒಟ್ಟು ಮೌಲ್ಯ",
+    "colOrderStatus": "ಆದೇಶದ ಸ್ಥಿತಿ",
+    "colAuditProvenance": "ಆಡಿಟ್ ಮೂಲ",
+    "colActions": "ಕ್ರಿಯೆಗಳು",
+    "allOrdersTab": "ಎಲ್ಲಾ ಆದೇಶಗಳು",
+    "standardDelivery": "ಸಾಮಾನ್ಯ ವಿತರಣೆ",
+    "confirmBtn": "ಖಚಿತಪಡಿಸಿ",
+    "cancelBtn": "ರದ್ದುಗೊಳಿಸಿ",
+    "dispatchBtn": "ರವಾನಿಸಿ",
+    "markDeliveredBtn": "ವಿತರಿಸಲಾಗಿದೆ ಎಂದು ಗುರುತಿಸಿ",
+    "noOrdersInStatus": "ಈ ಸ್ಥಿತಿಯಲ್ಲಿ ಯಾವುದೇ ಆದೇಶಗಳಿಲ್ಲ",
+    "noOrdersDescription": "ಖರೀದಿದಾರರು ಆದೇಶಿಸಿದಾಗ, ಅವು ಇಲ್ಲಿ ಕಾಣಿಸಿಕೊಳ್ಳುತ್ತವೆ.",
+    "statusUpdatedToast": "ಆರ್ಡರ್ ಸ್ಥಿತಿಯನ್ನು {{status}} ಗೆ ನವೀಕರಿಸಲಾಗಿದೆ.",
+    "failedToLoadOrders": "ಆದೇಶಗಳನ್ನು ಲೋಡ್ ಮಾಡಲು ವಿಫಲವಾಗಿದೆ.",
+    "failedToUpdateStatus": "ಆದೇಶದ ಸ್ಥಿತಿಯನ್ನು ನವೀಕರಿಸಲು ವಿಫಲವಾಗಿದೆ."
+  },
+  "farmerProfile": {
+    "sellerIdentity": "ಮಾರಾಟಗಾರರ ಗುರುತು",
+    "farmerProfile": "ರೈತನ ಪ್ರೊಫೈಲ್",
+    "manageYourAgriculturalCredentialsFarmLocation": "ನಿಮ್ಮ ಕೃಷಿ ವಿವರಗಳು, ಫಾರ್ಮ್ ಸ್ಥಳ ಮತ್ತು ಸಂಪರ್ಕ ಮಾಹಿತಿಯನ್ನು ನಿರ್ವಹಿಸಿ.",
+    "fullName": "ಪೂರ್ಣ ಹೆಸರು",
+    "farmFpoName": "ಫಾರ್ಮ್ / FPO ಹೆಸರು",
+    "emailAddress": "ಇಮೇಲ್ ವಿಳಾಸ",
+    "mobileNumber": "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ",
+    "location": "ಸ್ಥಳ",
+    "address": "ವಿಳಾಸ",
+    "sellerType": "ಮಾರಾಟಗಾರರ ಪ್ರಕಾರ",
+    "verificationStatus": "ಪರಿಶೀಲನಾ ಸ್ಥಿತಿ",
+    "editProfile": "ಪ್ರೊಫೈಲ್ ಸಂಪಾದಿಸಿ",
+    "onChainCryptographicAccountHash": "ಆನ್-ಚೈನ್ ಕ್ರಿಪ್ಟೋಗ್ರಾಫಿಕ್ ಖಾತೆ ಹ್ಯಾಶ್",
+    "copyHash": "ಹ್ಯಾಶ್ ನಕಲಿಸಿ",
+    "accountHashCopiedToast": "ಖಾತೆ ಹ್ಯಾಶ್ ನಕಲಿಸಲಾಗಿದೆ!",
+    "profileAvatarPhotoLabel": "ಪ್ರೊಫೈಲ್ ಅವತಾರ ಛಾಯಾಚಿತ್ರ",
+    "profileAvatarPhotoDesc": "ಪ್ರೊಫೈಲ್ ಫೋಟೋ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ (JPG, PNG, WEBP)",
+    "updatedSuccessToast": "ರೈತರ ಪ್ರೊಫೈಲ್ ನವೀಕರಿಸಲಾಗಿದೆ!",
+    "updatedFailedToast": "ಪ್ರೊಫೈಲ್ ನವೀಕರಿಸಲು ವಿಫಲವಾಗಿದೆ.",
+    "onChainHashTitle": "🛡️ ಆನ್-ಚೈನ್ ಕ್ರಿಪ್ಟೋಗ್ರಾಫಿಕ್ ಖಾತೆ ಹ್ಯಾಶ್"
+  },
+  "farmerSales": {
+    "salesAnalyticsComingSoon": "ಮಾರಾಟ ವಿಶ್ಲೇಷಣೆ ಶೀಘ್ರದಲ್ಲೇ ಬರಲಿದೆ.",
+    "financialInsights": "ಹಣಕಾಸು ವಿಶ್ಲೇಷಣೆ",
+    "salesAnalytics": "ಮಾರಾಟ ವಿಶ್ಲೇಷಣೆ",
+    "trackYourMonthlyRevenueGrowthAverage": "ನಿಮ್ಮ ಮಾಸಿಕ ಆದಾಯದ ಬೆಳವಣಿಗೆ ಮತ್ತು ಮಾರಾಟದ ಕಾರ್ಯಕ್ಷಮತೆಯನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡಿ.",
+    "totalRevenue": "ಒಟ್ಟು ಆದಾಯ",
+    "avgOrderValue": "ಸರಾಸರಿ ಆದೇಶದ ಮೌಲ್ಯ",
+    "fulfilledOrders": "ಪೂರ್ಣಗೊಂಡ ಆದೇಶಗಳು",
+    "activeCustomers": "ಸಕ್ರಿಯ ಗ್ರಾಹಕರು"
+  },
+  "register": {
+    "agri": "ಅಗ್ರಿ",
+    "bazaar": "ಬಜಾರ್",
+    "joinAgribazaar": "AgriBazaar ಸೇರಿರಿ",
+    "selectYourAccountTypeToGet": "ಪ್ರಾರಂಭಿಸಲು ನಿಮ್ಮ ಖಾತೆ ಪ್ರಕಾರವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+    "farmerFpo": "ರೈತ / FPO",
+    "sellYourProduceDirectlyToBuyers": "ನಿಮ್ಮ ಉತ್ಪನ್ನಗಳನ್ನು ನೇರವಾಗಿ ನ್ಯಾಯಯುತ ಬೆಲೆಗೆ ಮಾರಾಟ ಮಾಡಿ.",
+    "buyer": "ಖರೀದಿದಾರ",
+    "sourceFreshAgriculturalProduceDirectlyFrom": "ರೈತರಿಂದ ನೇರವಾಗಿ ತಾಜಾ ಕೃಷಿ ಉತ್ಪನ್ನಗಳನ್ನು ಪಡೆಯಿರಿ.",
+    "signIn": "ಸೈನ್ ಇನ್ ಮಾಡಿ",
+    "farmerRegistration": "ರೈತ ನೋಂದಣಿ",
+    "createYourSellerProfileToList": "ಬೆಳೆ ಪಟ್ಟಿ ಮಾಡಲು ನಿಮ್ಮ ಮಾರಾಟಗಾರರ ಪ್ರೊಫೈಲ್ ರಚಿಸಿ",
+    "individualFarmer": "ವೈಯಕ್ತಿಕ ರೈತ",
+    "farmerProducerOrganizationFpo": "ರೈತ ಉತ್ಪಾದಕರ ಸಂಸ್ಥೆ (FPO)",
+    "fullFarmAddress": "ಪೂರ್ಣ ಫಾರ್ಮ್ ವಿಳಾಸ",
+    "buyerRegistration": "ಖರೀದಿದಾರರ ನೋಂದಣಿ",
+    "createYourAccountToPurchaseProduce": "ಉತ್ಪನ್ನಗಳನ್ನು ಖರೀದಿಸಲು ನಿಮ್ಮ ಖಾತೆಯನ್ನು ರಚಿಸಿ",
+    "individualConsumer": "ವೈಯಕ್ತಿಕ ಗ್ರಾಹಕ",
+    "businessRetailer": "ವ್ಯವಹಾರ / ಚಿಲ್ಲರೆ ಮಾರಾಟಗಾರ",
+    "wholesaleBulkBuyer": "ಸಗಟು ಖರೀದಿ ಗ್ರಾಹಕ",
+    "deliveryAddress": "ಡೆಲಿವರಿ ವಿಳಾಸ"
+  },
+  "roles": {
+    "farmer": "ರೈತ",
+    "fpo": "ರೈತ ಉತ್ಪಾದಕರ ಸಂಸ್ಥೆ (FPO)",
+    "individual": "ವೈಯಕ್ತಿಕ ಗ್ರಾಹಕ",
+    "business": "ವ್ಯಾಪಾರ / ಚಿಲ್ಲರೆ ಮಾರಾಟಗಾರ",
+    "bulkBuyer": "ಸಗಟು ಸಾಗಣೆ ಖರೀದಿದಾರ",
+    "retailBuyer": "ಚಿಲ್ಲರೆ ಖರೀದಿದಾರ",
+    "wholesaler": "ಸಗಟು ವ್ಯಾಪಾರಿ",
+    "buyer": "ಖರೀದಿದಾರ",
+    "seller": "ಮಾರಾಟಗಾರ",
+    "admin": "ಆಡಳಿತಾಧಿಕಾರಿ"
+  },
+  "categories": {
+    "fruits": "హణ్ణుగళు",
+    "vegetables": "తరికారిగళు",
+    "grains": "ధాన్యగళు మత్తు అక్కి",
+    "pulses": "బెళెగళు",
+    "spices": "మసాలె పదాథాగళు",
+    "millets": "సిరిధాన్యగళు",
+    "dairy": "హాలు ఉత్పన్నగళు",
+    "other": "ఇతర బెళెగళు"
+  },
+  "units": {
+    "kg": "ಕಿಲೋಗ್ರಾಂ (KG)",
+    "quintal": "ಕ್ವಿಂಟಾಲ್ (100 KG)",
+    "ton": "ಮೆಟ್ರಿಕ್ ಟನ್",
+    "litre": "ಲೀಟರ್",
+    "piece": "ಪೀಸ್ / ಕಟ್ಟು"
+  },
+  "adminDashboard": {
+    "colProductName": "ಉತ್ಪನ್ನದ ಹೆಸರು",
+    "colBuyer": "ಖರೀದಿದಾರ",
+    "colFarmerFpo": "ರೈತ / FPO",
+    "colAmount": "ಮೊತ್ತ",
+    "colStatus": "ಸ್ಥಿತಿ",
+    "totalUsers": "ಒಟ್ಟು ಬಳಕೆದಾರರು",
+    "farmersFpos": "ರೈತರು / FPOಗಳು",
+    "pendingVerifications": "ಬಾಕಿ ಇರುವ ಪರಿಶೀಲನೆಗಳು",
+    "activeProducts": "ಸಕ್ರಿಯ ಉತ್ಪನ್ನಗಳು",
+    "totalOrders": "ಒಟ್ಟು ಆದೇಶಗಳು",
+    "completedOrders": "ಪೂರ್ಣಗೊಂಡ ಆರ್ಡರ್‌ಗಳು",
+    "totalRevenue": "ಒಟ್ಟು ಆದಾಯ",
+    "totalBuyers": "ಒಟ್ಟು ಖರೀದಿದಾರರು",
+    "monthlyOrderVolumeTitle": "ಮಾಸಿಕ ಆರ್ಡರ್ ಪ್ರಮಾಣ",
+    "monthlyOrderVolumeDesc": "ತಿಂಗಳ ಪ್ರಕಾರ ಪೂರ್ಣಗೊಂಡ ಆರ್ಡರ್‌ಗಳ ಸಂಖ್ಯೆ.",
+    "categoryDistributionTitle": "ಉತ್ಪನ್ನ ವರ್ಗದ ಹಂಚಿಕೆ",
+    "categoryDistributionDesc": "ವರ್ಗಗಳಾದ್ಯಂತ ಸಕ್ರಿಯ ಬೆಳೆ ಪಟ್ಟಿಗಳು.",
+    "noPlatformOrders": "ಯಾವುದೇ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ಆರ್ಡರ್‌ಗಳಿಲ್ಲ"
+  },
+  "adminOrders": {
+    "colOrderRef": "ಆರ್ಡರ್ ಉಲ್ಲೇಖ",
+    "colProduceItem": "ಉತ್ಪನ್ನದ ವಸ್ತು",
+    "colBuyer": "ಖರೀದಿದಾರ",
+    "colFarmerFpo": "ರೈತ / FPO",
+    "colTotalValue": "ಒಟ್ಟು ಮೌಲ್ಯ",
+    "colPaymentStatus": "ಪಾವತಿ ಸ್ಥಿತಿ",
+    "colOrderStatus": "ಆರ್ಡರ್ ಸ್ಥಿತಿ",
+    "noOrdersFound": "ಯಾವುದೇ ಆರ್ಡರ್‌ಗಳು ಕಂಡುಬಂದಿಲ್ಲ",
+    "allOrders": "ಎಲ್ಲಾ ಆರ್ಡರ್‌ಗಳು"
+  },
+  "adminDisputes": {
+    "colComplainant": "ದೂರುದಾರ",
+    "colReason": "ವಿವಾದದ ಕಾರಣ",
+    "colStatus": "ಸ್ಥಿತಿ",
+    "colActions": "ಕ್ರಿಯೆಗಳು",
+    "noDisputes": "ಯಾವುದೇ ತೆರೆದ ವಿವಾದಗಳಿಲ್ಲ",
+    "noDisputesDesc": "ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ವ್ಯಾಪಾರವು 0 ಕ್ಲೈಮ್‌ಗಳೊಂದಿಗೆ സുഗമವಾಗಿ ನಡೆಯುತ್ತಿದೆ.",
+    "placeholderResponse": "ಅಡ್ಮಿನ್ ಪ್ರತಿಕ್ರಿಯೆ ವಿವರಗಳು...",
+    "resolveIssue": "ಸಮಸ್ಯೆಯನ್ನು ಪರಿಹರಿಸಿ",
+    "rejectClaim": "ಕ್ಲೈಮ್ ತಿರಸ್ಕರಿಸಿ",
+    "resolveClaim": "ಕ್ಲೈಮ್ ಪರಿಹರಿಸಿ"
+  },
+  "adminFarmers": {
+    "colFarmerName": "ರೈತ / FPO ಹೆಸರು",
+    "colVerification": "ಪರಿಶೀಲನೆ",
+    "colAuditProvenance": "ಆಡಿಟ್ ಮೂಲ",
+    "approvalHeadline": "ರೈತರು ಮತ್ತು FPOಗಳ ಅನುಮೋದನೆ",
+    "noVerificationApps": "ಯಾವುದೇ ಪರಿಶೀಲನಾ ಅರ್ಜಿಗಳು ಕಂಡುಬಂದಿಲ್ಲ",
+    "placeholderRejection": "ತಿರಸ್ಕಾರಕ್ಕೆ ಕಾರಣ ನೀಡಿ...",
+    "allApplications": "ಎಲ್ಲಾ ಅರ್ಜಿಗಳು",
+    "approveVerification": "ಪರಿಶೀಲನೆ ಅನುಮೋದಿಸಿ",
+    "colSellerType": "ಮಾರಾಟಗಾರರ ಪ್ರಕಾರ",
+    "colContactInfo": "ಸಂಪರ್ಕ ಮಾಹಿತಿ",
+    "colLocation": "స్థள",
+    "colActions": "ಕ್ರಿಯೆಗಳು",
+    "rejectFarmerBtn": "ರೈತನನ್ನು ತಿರಸ್ಕರಿಸಿ"
+  },
+  "adminPayments": {
+    "colTxRef": "ಪಾವತಿ ವಹಿವಾಟು ಉಲ್ಲೇಖ",
+    "colAmount": "ಮೊತ್ತ",
+    "colStatus": "ಸ್ಥಿತಿ",
+    "colDate": "ದಿನಾಂಕ",
+    "noPaymentRecords": "ಯಾವುದೇ ಪಾವತಿ ದಾಖಲೆಗಳು ಕಂಡುಬಂದಿಲ್ಲ",
+    "noPaymentRecordsDesc": "ಖರೀದಿದಾರರ ಆರ್ಡರ್‌ಗಳನ್ನು ಪ್ರಕ್ರಿಯೆಗೊಳಿಸಿದಾಗ ವಹಿವಾಟುಗಳು ಇಲ್ಲಿ ದಾಖಲಾಗುತ್ತವೆ.",
+    "viewOnChainAudit": "ಆನ್-ಚೈನ್ ಬ್ಲಾಕ್‌ಚೈನ್ ಆಡಿಟ್ ವೀಕ್ಷಿಸಿ"
+  },
+  "adminProducts": {
+    "colCropListing": "ಬೆಳೆ ಪಟ್ಟಿ",
+    "colFarmerFpo": "ರೈತ / FPO",
+    "colListingStatus": "ಪಟ್ಟಿ ಸ್ಥಿತಿ",
+    "allListings": "ಎಲ್ಲಾ ಪಟ್ಟಿಗಳು",
+    "disableListing": "ಪಟ್ಟಿಯನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ",
+    "enableListing": "ಪಟ್ಟಿಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ",
+    "colCategory": "ವರ್ಗ",
+    "colPriceUnit": "ಬೆಲೆ / ಯುನಿಟ್",
+    "colActions": "ಕ್ರಿಯೆಗಳು",
+    "noProduceListingsFound": "ಯಾವುದೇ ಬೆಳೆ ಪಟ್ಟಿಗಳು ಕಂಡುಬಂದಿಲ್ಲ"
+  },
+  "adminSettlements": {
+    "colFarmerProducer": "ರೈತ / ಉತ್ಪಾದಕ",
+    "colVerification": "ಅಗ್ರಿಬಜಾರ್ ಪರಿಶೀಲನೆ",
+    "colRazorpayStatus": "ರೇಜರ್‌ಪೇ ಮಾರಾಟಗಾರರ ಸ್ಥಿತಿ",
+    "colSettlementAccount": "ಸೆಟಲ್‌ಮೆಂಟ್ ಖಾತೆ",
+    "colTotalSettled": "ಒಟ್ಟು ಇತ್ಯರ್ಥಗೊಂಡಿದೆ",
+    "colPendingSettlement": "ಬಾಕಿ ಇರುವ ಸೆಟಲ್‌ಮೆಂಟ್",
+    "colAuditProvenance": "ಆಡಿಟ್ ಮೂಲ",
+    "noSettlementRecords": "ಯಾವುದೇ ಮಾರಾಟಗಾರರ ಸೆಟಲ್‌ಮೆಂಟ್ ದಾಖಲೆಗಳಿಲ್ಲ",
+    "noSettlementDesc": "ರೈತರ ಸೆಟಲ್‌ಮೆಂಟ್ ಸ್ಥಿತಿಗಳು ಇಲ್ಲಿ ಕಾಣಿಸಿಕೊಳ್ಳುತ್ತವೆ.",
+    "razorpayRoutePendingTitle": "ರೇಜರ್‌ಪೇ ರೂಟ್ ಸಾಮರ್ಥ್ಯ ಸಕ್ರಿಯಗೊಳಿಸುವಿಕೆ ಬಾಕಿ ಇದೆ (ಟೆಸ್ಟ್ ಮೋಡ್)",
+    "razorpayRoutePendingDesc": "పరిసరాల జెండా RAZORPAY_ROUTE_ENABLED=false సక్రియంగా ఉంది. സാധാരണ ખરીದಿದਾਰ ಪಾವತಿಗಳು ಸರಿಯಾಗಿ ಕೆಲಸ ಮಾಡುತ್ತವೆ.",
+    "financialControlBadge": "ಮಾರುಕಟ್ಟೆ ಹಣಕಾಸು ನಿಯಂತ್ರಣ",
+    "headline": "ಪಾವತಿ ಮತ್ತು ಸೆಟಲ್‌ಮೆಂಟ್ ಅವಲೋಕನ",
+    "subtitle": "ರೈತರ ಪಾವತಿಗಳು ಮತ್ತು ಸೆಟಲ್‌ಮೆಂಟ್‌ಗಳನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡಿ.",
+    "refreshSettlements": "ಸೆಟಲ್‌ಮೆಂಟ್‌ಗಳನ್ನು ರಿಫ್ರೆಶ್ ಮಾಡಿ",
+    "allFarmers": "ಎಲ್ಲಾ ರೈತರು"
+  },
+  "adminUsers": {
+    "colUserName": "ಬಳಕೆದಾರರ ಹೆಸರು",
+    "colEmail": "ಇಮೇಲ್ ವಿಳಾಸ",
+    "colAccountHash": "ಆನ್-ಚೈನ್ ಖಾತೆ ಹ್ಯಾಶ್",
+    "colAccountRole": "ಖಾತೆ ಪಾತ್ರ",
+    "suspendAccount": "ಖಾತೆಯನ್ನು ಅಮಾನತುಗೊಳಿಸಿ",
+    "activateAccount": "ಖಾತೆಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ",
+    "allRoles": "ಎಲ್ಲಾ ಪಾತ್ರಗಳು",
+    "colAccountStatus": "ಖಾತೆ ಸ್ಥಿತಿ",
+    "colActions": "ಕ್ರಿಯೆಗಳು",
+    "noRegisteredUsersFound": "ಯಾವುದೇ ನೋಂದಾಯಿತ ಬಳಕೆದಾರರು ಕಂಡುಬಂದಿಲ್ಲ"
+  },
+  "adminAnalytics": {
+    "monthlyRevenueTrend": "ಮಾಸಿಕ ಆದಾಯ ಪ್ರವೃತ್ತಿ",
+    "grossVolumeDesc": "ತಿಂಗಳ ಬಾಗಿ ಒಟ್ಟು ವ್ಯಾಪಾರ ಮೌಲ್ಯ.",
+    "orderStatusBreakdown": "ಆರ್ಡರ್ ಸ್ಥಿತಿ ವಿವರಗಳು",
+    "orderRatioDesc": "ಬಾಕಿ, ಸಕ್ರಿಯ ಮತ್ತು ಪೂರ್ಣಗೊಂಡ ಆರ್ಡರ್‌ಗಳ ಪ್ರಮಾಣ.",
+    "farmerRegistrations": "ರೈತ ಮತ್ತು FPO ನೋಂದಣಿಗಳು",
+    "registrationVelocityDesc": "ಸಮಯದೊಂದಿಗೆ ನೋಂದಣಿ ವೇಗ.",
+    "categoryListingVolume": "ವರ್ಗ ಪಟ್ಟಿ ಪ್ರಮಾಣ",
+    "categoryListingsDesc": "ಪ್ರತಿ ಬೆಳೆ ವರ್ಗಕ್ಕೆ ಸಕ್ರಿಯ ಪಟ್ಟಿಗಳ ಸಂಖ್ಯೆ."
+  },
+  "landing": {
+    "heroEyebrow": "ತಾಜಾ. ನ್ಯಾಯಯುತ. ಒಟ್ಟಿಗೆ.",
+    "heroTitle": "ರೈತರನ್ನು ಸಂಪರ್ಕಿಸುವುದು",
+    "heroHighlight": "ಉತ್ತಮ ಮಾರುಕಟ್ಟೆಗಳೊಂದಿಗೆ.",
+    "heroDescription": "ನೇರ ಡಿಜಿಟಲ್ ಮಾರುಕಟ್ಟೆಯೊಂದಿಗೆ ಭಾರತೀಯ ಕೃಷಿಯನ್ನು ಸಬಲೀಕರಣಗೊಳಿಸುವುದು.",
+    "exploreMarketplace": "ಮಾರುಕಟ್ಟೆಯನ್ನು ಅನ್ವೇಷಿಸಿ",
+    "joinFarmer": "ರೈತ / FPO ಆಗಿ ಸೇರಿ",
+    "heroImageAlt": "ಹೊಲದಲ್ಲಿ ಭಾರತೀಯ ರೈತ",
+    "verifiedFresh": "ಪರಿಶೀಲಿಸಿದ ತಾಜಾ ಉತ್ಪನ್ನಗಳು",
+    "directSourcing": "ನೇರ ಫಾರ್ಮ್ ಮೂಲ",
+    "zeroCommission": "0% ಕಮಿಷನ್ ಶುಲ್ಕ",
+    "farmToMarket": "ಫಾರ್ಮ್‌ನಿಂದ ಮಾರುಕಟ್ಟೆಗೆ",
+    "fasterFairer": "ವೇಗವಾದ ಮತ್ತು ನ್ಯಾಯಯುತ"
+  },
+  "r": {
+    "o": {
+      "l": {
+        "e": {
+          "s": {
+            ".": {
+              "i": {
+                "n": {
+                  "d": {
+                    "i": {
+                      "v": {
+                        "i": {
+                          "d": {
+                            "u": {
+                              "a": {
+                                "l": "ವೈಯಕ್ತಿಕ ಖರೀದಿದಾರ"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "b": {
+                "u": {
+                  "s": {
+                    "i": {
+                      "n": {
+                        "e": {
+                          "s": {
+                            "s": "ವ್ಯವಹಾರ / ಚಿಲ್ಲರೆ ಮಾರಾಟಗಾರ"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "l": {
+                    "k": {
+                      "B": {
+                        "u": {
+                          "y": {
+                            "e": {
+                              "r": "ಸಗಟು ಖರೀದಿ ಗ್ರಾಹಕ"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "f": {
+                "a": {
+                  "r": {
+                    "m": {
+                      "e": {
+                        "r": "ವೈಯಕ್ತಿಕ ರೈತ"
+                      }
+                    }
+                  }
+                },
+                "p": {
+                  "o": "ರೈತ ಉತ್ಪಾದಕರ ಸಂಸ್ಥೆ (FPO)"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "c": {
+    "a": {
+      "t": {
+        "e": {
+          "g": {
+            "o": {
+              "r": {
+                "i": {
+                  "e": {
+                    "s": {
+                      ".": {
+                        "f": {
+                          "r": {
+                            "u": {
+                              "i": {
+                                "t": {
+                                  "s": "ಹಣ್ಣುಗಳು"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "v": {
+                          "e": {
+                            "g": {
+                              "e": {
+                                "t": {
+                                  "a": {
+                                    "b": {
+                                      "l": {
+                                        "e": {
+                                          "s": "ತರಕಾರಿಗಳು"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "g": {
+                          "r": {
+                            "a": {
+                              "i": {
+                                "n": {
+                                  "s": "ಧಾನ್ಯಗಳು ಮತ್ತು ಅಕ್ಕಿ"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "p": {
+                          "u": {
+                            "l": {
+                              "s": {
+                                "e": {
+                                  "s": "ಬೇಳೆಕಾಳುಗಳು"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "s": {
+                          "p": {
+                            "i": {
+                              "c": {
+                                "e": {
+                                  "s": "ಸಾಂಬಾರು ಪದಾರ್ಥಗಳು"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "m": {
+                          "i": {
+                            "l": {
+                              "l": {
+                                "e": {
+                                  "t": {
+                                    "s": "ಸಿರಿಧಾನ್ಯಗಳು"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "d": {
+                          "a": {
+                            "i": {
+                              "r": {
+                                "y": "ಡೈರಿ ಉತ್ಪನ್ನಗಳು"
+                              }
+                            }
+                          }
+                        },
+                        "o": {
+                          "t": {
+                            "h": {
+                              "e": {
+                                "r": "ಇತರ ಬೆಳೆ ಉತ್ಪನ್ನಗಳು"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "o": {
+      "m": {
+        "m": {
+          "o": {
+            "n": {
+              ".": {
+                "a": {
+                  "l": {
+                    "l": {
+                      "O": {
+                        "r": {
+                          "d": {
+                            "e": {
+                              "r": {
+                                "s": "ಎಲ್ಲಾ ಆರ್ಡರ್‌ಗಳು"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "p": {
+                  "a": {
+                    "y": {
+                      "N": {
+                        "o": {
+                          "w": "ಈಗ ಪಾವತಿಸಿ"
+                        }
+                      }
+                    }
+                  }
+                },
+                "e": {
+                  "d": {
+                    "i": {
+                      "t": {
+                        "P": {
+                          "r": {
+                            "o": {
+                              "f": {
+                                "i": {
+                                  "l": {
+                                    "e": "ಪ್ರೊಫೈಲ್ ಸಂಪಾದಿಸಿ"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "s": {
+                  "a": {
+                    "v": {
+                      "e": {
+                        "C": {
+                          "h": {
+                            "a": {
+                              "n": {
+                                "g": {
+                                  "e": {
+                                    "s": "ಬದಲಾವಣೆಗಳನ್ನು ಉಳಿಸಿ"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "c": {
+                  "o": {
+                    "p": {
+                      "y": {
+                        "H": {
+                          "a": {
+                            "s": {
+                              "h": "ಹ್ಯಾಶ್ ಕಾಪಿ ಮಾಡಿ"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "b": {
+    "u": {
+      "y": {
+        "e": {
+          "r": {
+            "V": {
+              "e": {
+                "r": {
+                  "i": {
+                    "f": {
+                      "i": {
+                        "c": {
+                          "a": {
+                            "t": {
+                              "i": {
+                                "o": {
+                                  "n": {
+                                    ".": {
+                                      "b": {
+                                        "u": {
+                                          "y": {
+                                            "e": {
+                                              "r": {
+                                                "L": {
+                                                  "a": {
+                                                    "b": {
+                                                      "e": {
+                                                        "l": "ಖರೀದಿದಾರ"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "t": {
+                                        "i": {
+                                          "t": {
+                                            "l": {
+                                              "e": "ಖರೀದಿದಾರರ ಪರಿಶೀಲನಾ ಸ್ಥಿತಿ"
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "s": {
+                                        "u": {
+                                          "b": {
+                                            "t": {
+                                              "i": {
+                                                "t": {
+                                                  "l": {
+                                                    "e": "ಅಗ್ರಿಬಜಾರ್‌ನಲ್ಲಿ ಗುರುತು, ವ್ಯವಹಾರ ನಿಯಮಗಳು ಮತ್ತು ದಾಖಲೆಗಳನ್ನು ನಿರ್ವಹಿಸಿ."
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "c": {
+                                        "h": {
+                                          "e": {
+                                            "c": {
+                                              "k": {
+                                                "l": {
+                                                  "i": {
+                                                    "s": {
+                                                      "t": {
+                                                        "H": {
+                                                          "e": {
+                                                            "a": {
+                                                              "d": {
+                                                                "i": {
+                                                                  "n": {
+                                                                    "g": "ಪರಿಶೀಲನಾ ಪರಿಶೀಲನಾ ಪಟ್ಟಿ"
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "o": {
+                                          "m": {
+                                            "p": {
+                                              "l": {
+                                                "e": {
+                                                  "t": {
+                                                    "e": {
+                                                      "d": {
+                                                        "C": {
+                                                          "o": {
+                                                            "u": {
+                                                              "n": {
+                                                                "t": {
+                                                                  "O": {
+                                                                    "f": {
+                                                                      "T": {
+                                                                        "o": {
+                                                                          "t": {
+                                                                            "a": {
+                                                                              "l": "{{total}} ರಲ್ಲಿ {{count}} ಪೂರ್ಣಗೊಂಡಿದೆ"
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "w": {
+                                        "i": {
+                                          "z": {
+                                            "a": {
+                                              "r": {
+                                                "d": {
+                                                  "C": {
+                                                    "a": {
+                                                      "r": {
+                                                        "d": {
+                                                          "H": {
+                                                            "e": {
+                                                              "a": {
+                                                                "d": {
+                                                                  "i": {
+                                                                    "n": {
+                                                                      "g": "ನಿಮ್ಮ ಪರಿಶೀಲನಾ ವಿಝಾರ್ಡ್ ಪೂರ್ಣಗೊಳಿಸಿ"
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          },
+                                                          "D": {
+                                                            "e": {
+                                                              "s": {
+                                                                "c": "ರೈತರಲ್ಲಿ ವಿಶ್ವಾಸ ಮೂಡಿಸಲು ಮತ್ತು ಪರಿಶೀಲಿಸಿದ ಬ್ಯಾಡ್ಜ್‌ಗಳನ್ನು ಪಡೆಯಲು ಎಲ್ಲಾ ತಪಾಸಣೆಗಳನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ."
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "o": {
+                                        "f": {
+                                          "f": {
+                                            "i": {
+                                              "c": {
+                                                "i": {
+                                                  "a": {
+                                                    "l": {
+                                                      "P": {
+                                                        "o": {
+                                                          "r": {
+                                                            "t": {
+                                                              "a": {
+                                                                "l": "• ಅಧಿಕೃತ ಪರಿಶೀಲನಾ ಪೋರ್ಟಲ್"
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "a": {
+                                        "l": {
+                                          "l": {
+                                            "C": {
+                                              "h": {
+                                                "e": {
+                                                  "c": {
+                                                    "k": {
+                                                      "s": {
+                                                        "C": {
+                                                          "o": {
+                                                            "m": {
+                                                              "p": {
+                                                                "l": {
+                                                                  "e": {
+                                                                    "t": {
+                                                                      "e": {
+                                                                        "d": {
+                                                                          "D": {
+                                                                            "e": {
+                                                                              "s": {
+                                                                                "c": "ಅಗತ್ಯವಿರುವ ಎಲ್ಲಾ ಪರಿಶೀಲನಾ ತಪಾಸಣೆಗಳು ಯಶಸ್ವಿಯಾಗಿ ಪೂರ್ಣಗೊಂಡಿವೆ."
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "v": {
+                                        "e": {
+                                          "r": {
+                                            "i": {
+                                              "f": {
+                                                "i": {
+                                                  "e": {
+                                                    "d": {
+                                                      "O": {
+                                                        "n": "ಪರಿಶೀಲಿಸಿದ ದಿನಾಂಕ:"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "C": {
+                                      "o": {
+                                        "n": {
+                                          "f": {
+                                            "i": {
+                                              "g": {
+                                                ".": {
+                                                  "I": {
+                                                    "N": {
+                                                      "D": {
+                                                        "I": {
+                                                          "V": {
+                                                            "I": {
+                                                              "D": {
+                                                                "U": {
+                                                                  "A": {
+                                                                    "L": {
+                                                                      ".": {
+                                                                        "p": {
+                                                                          "o": {
+                                                                            "r": {
+                                                                              "t": {
+                                                                                "a": {
+                                                                                  "l": {
+                                                                                    "T": {
+                                                                                      "i": {
+                                                                                        "t": {
+                                                                                          "l": {
+                                                                                            "e": "ವೈಯಕ್ತಿಕ ಖರೀದಿದಾರರ ಪರಿಶೀಲನಾ ಪೋರ್ಟಲ್"
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          },
+                                                                          "a": {
+                                                                            "g": {
+                                                                              "e": {
+                                                                                "T": {
+                                                                                  "i": {
+                                                                                    "t": {
+                                                                                      "l": {
+                                                                                        "e": "ವೈಯಕ್ತಿಕ ಖರೀದಿದಾರರ ಅನುಸರಣೆ ಮತ್ತು ಪರಿಶೀಲನೆ"
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "b": {
+                                                                          "a": {
+                                                                            "d": {
+                                                                              "g": {
+                                                                                "e": {
+                                                                                  "T": {
+                                                                                    "e": {
+                                                                                      "x": {
+                                                                                        "t": "ಪರಿಶೀಲಿಸಿದ ವೈಯಕ್ತಿಕ ಖರೀದಿದಾರ"
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "i": {
+                                                                          "n": {
+                                                                            "c": {
+                                                                              "o": {
+                                                                                "m": {
+                                                                                  "p": {
+                                                                                    "l": {
+                                                                                      "e": {
+                                                                                        "t": {
+                                                                                          "e": {
+                                                                                            "B": {
+                                                                                              "a": {
+                                                                                                "d": {
+                                                                                                  "g": {
+                                                                                                    "e": {
+                                                                                                      "T": {
+                                                                                                        "e": {
+                                                                                                          "x": {
+                                                                                                            "t": "ಪರಿಶೀಲನೆ ಬಾಕಿ ಇದೆ"
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "s": {
+                                                                          "t": {
+                                                                            "e": {
+                                                                              "p": {
+                                                                                "s": {
+                                                                                  ".": {
+                                                                                    "m": {
+                                                                                      "o": {
+                                                                                        "b": {
+                                                                                          "i": {
+                                                                                            "l": {
+                                                                                              "e": {
+                                                                                                ".": {
+                                                                                                  "s": {
+                                                                                                    "h": {
+                                                                                                      "o": {
+                                                                                                        "r": {
+                                                                                                          "t": {
+                                                                                                            "L": {
+                                                                                                              "a": {
+                                                                                                                "b": {
+                                                                                                                  "e": {
+                                                                                                                    "l": "ಮೊಬೈಲ್ OTP"
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  },
+                                                                                                  "n": {
+                                                                                                    "a": {
+                                                                                                      "m": {
+                                                                                                        "e": "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ ಪರಿಶೀಲನೆ"
+                                                                                                      }
+                                                                                                    }
+                                                                                                  },
+                                                                                                  "d": {
+                                                                                                    "e": {
+                                                                                                      "s": {
+                                                                                                        "c": {
+                                                                                                          "r": {
+                                                                                                            "i": {
+                                                                                                              "p": {
+                                                                                                                "t": {
+                                                                                                                  "i": {
+                                                                                                                    "o": {
+                                                                                                                      "n": "SMS OTP ಮೂಲಕ ಮೊಬೈಲ್ ಸಂಖ್ಯೆಯನ್ನು ಪರಿಶೀಲಿಸಿ."
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    },
+                                                                                    "i": {
+                                                                                      "d": {
+                                                                                        "e": {
+                                                                                          "n": {
+                                                                                            "t": {
+                                                                                              "i": {
+                                                                                                "t": {
+                                                                                                  "y": {
+                                                                                                    ".": {
+                                                                                                      "s": {
+                                                                                                        "h": {
+                                                                                                          "o": {
+                                                                                                            "r": {
+                                                                                                              "t": {
+                                                                                                                "L": {
+                                                                                                                  "a": {
+                                                                                                                    "b": {
+                                                                                                                      "e": {
+                                                                                                                        "l": "ಸರ್ಕಾರಿ ಗುರುತು"
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      },
+                                                                                                      "n": {
+                                                                                                        "a": {
+                                                                                                          "m": {
+                                                                                                            "e": "ಆಧಾರ್ / ಪಾಸ್‌ಪೋರ್ಟ್ / ಮತದಾರರ ID"
+                                                                                                          }
+                                                                                                        }
+                                                                                                      },
+                                                                                                      "d": {
+                                                                                                        "e": {
+                                                                                                          "s": {
+                                                                                                            "c": {
+                                                                                                              "r": {
+                                                                                                                "i": {
+                                                                                                                  "p": {
+                                                                                                                    "t": {
+                                                                                                                      "i": {
+                                                                                                                        "o": {
+                                                                                                                          "n": "ಸರ್ಕಾರಿ ಗುರುತಿನ ಚೀಟಿಯೊಂದಿಗೆ ಪರಿಶೀಲನೆ."
+                                                                                                                        }
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    },
+                                                                                    "a": {
+                                                                                      "d": {
+                                                                                        "d": {
+                                                                                          "r": {
+                                                                                            "e": {
+                                                                                              "s": {
+                                                                                                "s": {
+                                                                                                  ".": {
+                                                                                                    "s": {
+                                                                                                      "h": {
+                                                                                                        "o": {
+                                                                                                          "r": {
+                                                                                                            "t": {
+                                                                                                              "L": {
+                                                                                                                "a": {
+                                                                                                                  "b": {
+                                                                                                                    "e": {
+                                                                                                                      "l": "ಶಿಪ್ಪಿಂಗ್ ವಿಳಾಸ"
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    },
+                                                                                                    "n": {
+                                                                                                      "a": {
+                                                                                                        "m": {
+                                                                                                          "e": "ಡೆಲಿವರಿ ಮತ್ತು ವಸತಿ ವಿಳಾಸ"
+                                                                                                        }
+                                                                                                      }
+                                                                                                    },
+                                                                                                    "d": {
+                                                                                                      "e": {
+                                                                                                        "s": {
+                                                                                                          "c": {
+                                                                                                            "r": {
+                                                                                                              "i": {
+                                                                                                                "p": {
+                                                                                                                  "t": {
+                                                                                                                    "i": {
+                                                                                                                      "o": {
+                                                                                                                        "n": "ಸರಕು ಡೆಲಿವರಿಗಾಗಿ ಮಾನ್ಯ ವಸತಿ ವಿಳಾಸ."
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    },
+                                                                                    "s": {
+                                                                                      "u": {
+                                                                                        "m": {
+                                                                                          "m": {
+                                                                                            "a": {
+                                                                                              "r": {
+                                                                                                "y": {
+                                                                                                  ".": {
+                                                                                                    "s": {
+                                                                                                      "h": {
+                                                                                                        "o": {
+                                                                                                          "r": {
+                                                                                                            "t": {
+                                                                                                              "L": {
+                                                                                                                "a": {
+                                                                                                                  "b": {
+                                                                                                                    "e": {
+                                                                                                                      "l": "ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಸಲ್ಲಿಸಿ"
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    },
+                                                                                                    "n": {
+                                                                                                      "a": {
+                                                                                                        "m": {
+                                                                                                          "e": "ಪರಿಶೀಲನಾ ವಿಮರ್ಶೆ"
+                                                                                                        }
+                                                                                                      }
+                                                                                                    },
+                                                                                                    "d": {
+                                                                                                      "e": {
+                                                                                                        "s": {
+                                                                                                          "c": {
+                                                                                                            "r": {
+                                                                                                              "i": {
+                                                                                                                "p": {
+                                                                                                                  "t": {
+                                                                                                                    "i": {
+                                                                                                                      "o": {
+                                                                                                                        "n": "ಸಲ್ಲಿಸಿದ ವಿವರಗಳ ಅಂತಿಮ ಪರಿಶೀಲನೆ."
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "m": {
+    "a": {
+      "r": {
+        "k": {
+          "e": {
+            "t": {
+              "p": {
+                "l": {
+                  "a": {
+                    "c": {
+                      "e": {
+                        ".": {
+                          "n": {
+                            "e": {
+                              "w": {
+                                "e": {
+                                  "s": {
+                                    "t": {
+                                      "F": {
+                                        "i": {
+                                          "r": {
+                                            "s": {
+                                              "t": "ಇತ್ತೀಚಿನವು ಮೊದಲು"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "p": {
+                            "r": {
+                              "i": {
+                                "c": {
+                                  "e": {
+                                    "L": {
+                                      "o": {
+                                        "w": {
+                                          "T": {
+                                            "o": {
+                                              "H": {
+                                                "i": {
+                                                  "g": {
+                                                    "h": "ಬೆಲೆ: ಕಡಿಮೆಯಿಂದ ఎక్కువ"
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "H": {
+                                      "i": {
+                                        "g": {
+                                          "h": {
+                                            "T": {
+                                              "o": {
+                                                "L": {
+                                                  "o": {
+                                                    "w": "ಬೆಲೆ: ಹೆಚ್ಚಿನಿಂದ ಕಡಿಮೆ"
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "m": {
+                            "o": {
+                              "s": {
+                                "t": {
+                                  "P": {
+                                    "o": {
+                                      "p": {
+                                        "u": {
+                                          "l": {
+                                            "a": {
+                                              "r": "ಅತ್ಯಂತ ಜನಪ್ರಿಯ"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "p": {
+    "r": {
+      "o": {
+        "d": {
+          "u": {
+            "c": {
+              "t": {
+                "D": {
+                  "e": {
+                    "t": {
+                      "a": {
+                        "i": {
+                          "l": {
+                            "s": {
+                              ".": {
+                                "a": {
+                                  "v": {
+                                    "a": {
+                                      "i": {
+                                        "l": {
+                                          "a": {
+                                            "b": {
+                                              "l": {
+                                                "e": {
+                                                  "I": {
+                                                    "n": {
+                                                      "S": {
+                                                        "t": {
+                                                          "o": {
+                                                            "c": {
+                                                              "k": "{{count}} {{unit}} ಸ್ಟಾಕ್‌ನಲ್ಲಿ ಲಭ್ಯವಿದೆ"
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "F": {
+                                                    "r": {
+                                                      "o": {
+                                                        "m": {
+                                                          "L": {
+                                                            "a": {
+                                                              "b": {
+                                                                "e": {
+                                                                  "l": "ಲಭ್ಯತೆ: {{date}}"
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "b": {
+                                    "o": {
+                                      "u": {
+                                        "t": {
+                                          "F": {
+                                            "a": {
+                                              "r": {
+                                                "m": {
+                                                  "e": {
+                                                    "r": {
+                                                      "T": {
+                                                        "i": {
+                                                          "t": {
+                                                            "l": {
+                                                              "e": "ರೈತ / ಉತ್ಪಾದಕರ ಬಗ್ಗೆ"
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "h": {
+                                  "a": {
+                                    "r": {
+                                      "v": {
+                                        "e": {
+                                          "s": {
+                                            "t": {
+                                              "D": {
+                                                "a": {
+                                                  "t": {
+                                                    "e": {
+                                                      "L": {
+                                                        "a": {
+                                                          "b": {
+                                                            "e": {
+                                                              "l": "ಕೊಯ್ಲು: {{date}}"
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "q": {
+                                  "u": {
+                                    "a": {
+                                      "n": {
+                                        "t": {
+                                          "i": {
+                                            "t": {
+                                              "y": {
+                                                "L": {
+                                                  "a": {
+                                                    "b": {
+                                                      "e": {
+                                                        "l": "ಪ್ರಮಾಣ ({{unit}}):"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "buyerVerificationConfig": {
+    "INDIVIDUAL": {
+      "portalTitle": "ವೈಯಕ್ತಿಕ ಖರೀದಿದಾರರ ಪರಿಶೀಲನೆ",
+      "pageTitle": "ಖರೀದಿದಾರರ ಪರಿಶೀಲನಾ ಸ್ಥಿತಿ",
+      "badgeText": "ಪರಿಶೀಲಿಸಿದ ವೈಯಕ್ತಿಕ ಖರೀದಿದಾರ",
+      "incompleteBadgeText": "ಪರಿಶೀಲನೆ ಬಾಕಿ ಇದೆ",
+      "steps": {
+        "mobile": {
+          "shortLabel": "ಮೊಬೈಲ್",
+          "name": "ಮೊಬೈಲ್ ಪರಿಶೀಲನೆ",
+          "description": "ಸೂಚನೆ ಮತ್ತು ಎಚ್ಚರಿಕೆ ಪ್ರವೇಶಕ್ಕಾಗಿ ಮೊಬೈಲ್ ಸಂಖ್ಯೆಯನ್ನು ಪರಿಶೀಲಿಸಿ."
+        },
+        "identity": {
+          "shortLabel": "ಗುರುತು",
+          "name": "ಆಧಾರ್ / ಗುರುತಿನ ಪುರಾವೆ",
+          "description": "ಸರ್ಕಾರಿ ಗುರುತಿನ ಪುರಾವೆಯ ಮುಂಭಾಗ ಮತ್ತು ಹಿಂಭಾಗದ ಪ್ರತಿಯನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ."
+        },
+        "address": {
+          "shortLabel": "ವಿಳಾಸ",
+          "name": "ವಿಳಾಸ ಪರಿಶೀಲನೆ",
+          "description": "ಪರಿಶೀಲಿಸಿದ ಡೆಲಿವರಿ ಮತ್ತು ಬಿಲ್ಲಿಂಗ್ ವಿಳಾಸದ ವಿವರಗಳನ್ನು ಒದಗಿಸಿ."
+        },
+        "summary": {
+          "shortLabel": "ಸಾರಾಂಶ",
+          "name": "ಪರಿಶೀಲನಾ ಸಾರಾಂಶ",
+          "description": "ನಿಮ್ಮ ವೈಯಕ್ತಿಕ ಪರಿಶೀಲನಾ ಅರ್ಜಿಯನ್ನು ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಸಲ್ಲಿಸಿ."
+        }
+      }
+    },
+    "BUSINESS": {
+      "portalTitle": "ವ್ಯಾಪಾರ ಖರೀದಿದಾರರ ಪರಿಶೀಲನೆ",
+      "pageTitle": "ಸಂಸ್ಥೆಯ ಪರಿಶೀಲನಾ ಸ್ಥಿತಿ",
+      "badgeText": "ಪರಿಶೀಲಿಸಿದ ವ್ಯಾಪಾರ ಖರೀದಿದಾರ",
+      "incompleteBadgeText": "ವ್ಯಾಪಾರ ಪರಿಶೀಲನೆ ಬಾಕಿ ಇದೆ",
+      "steps": {
+        "business": {
+          "shortLabel": "ವ್ಯಾಪಾರ",
+          "name": "ವ್ಯಾಪಾರದ ವಿವರಗಳು",
+          "description": "ಕಾನೂನುಬದ್ಧ ಸಂಸ್ಥೆಯ ಹೆಸರು, ಪ್ರಕಾರ ಮತ್ತು ನೋಂದಾಯಿತ ವಿಳಾಸವನ್ನು ನಮೂದಿಸಿ."
+        },
+        "pan": {
+          "shortLabel": "ಪ್ಯಾನ್",
+          "name": "ವ್ಯಾಪಾರ ಪ್ಯಾನ್ ಕಾರ್ಡ್",
+          "description": "ನೋಂದಾಯಿತ ಕಂಪನಿ ಅಥವಾ ಸಂಸ್ಥೆಯ ಪ್ಯಾನ್ ವಿವರಗಳನ್ನು ಒದಗಿಸಿ."
+        },
+        "gstin": {
+          "shortLabel": "ಜಿಎಸ್‌ಟಿಐಎನ್",
+          "name": "ಜಿಎಸ್‌ಟಿಐಎನ್ ನೋಂದಣಿ",
+          "description": "ಸರಕು ಮತ್ತು ಸೇವಾ ತೆರಿಗೆ ಗುರುತಿನ ಸಂಖ್ಯೆಯನ್ನು ಒದಗಿಸಿ."
+        },
+        "businessRegistration": {
+          "shortLabel": "ನೋಂದಣಿ",
+          "name": "ಸಂಸ್ಥೆಯ ನೋಂದಣಿ ಪ್ರಮಾಣಪತ್ರ",
+          "description": "ಅಧಿಕೃತ ವ್ಯಾಪಾರ ನೋಂದಣಿ ಪ್ರಮಾಣಪತ್ರವನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ."
+        },
+        "representative": {
+          "shortLabel": "ಪ್ರತಿನಿಧಿ",
+          "name": "ಅಧಿಕೃತ ಪ್ರತಿನಿಧಿ",
+          "description": "ಮ್ಯಾನೇಜರ್ ಅಥವಾ ಅಧಿಕೃತ ಸಹಿದಾರರ ವಿವರಗಳನ್ನು ಒದಗಿಸಿ."
+        },
+        "bank": {
+          "shortLabel": "ಬ್ಯಾಂಕ್",
+          "name": "ಬ್ಯಾಂಕ್ ಖಾತೆ ವಿವರಗಳು",
+          "description": "ಬಿಲ್ಲಿಂಗ್‌ಗಾಗಿ ವಾಣಿಜ್ಯ ಬ್ಯಾಂಕ್ ಖಾತೆ ವಿವರಗಳನ್ನು ಒದಗಿಸಿ."
+        },
+        "documents": {
+          "shortLabel": "ದಾಖಲೆಗಳು",
+          "name": "ಪೂರಕ ದಾಖಲೆಗಳು",
+          "description": "ಹೆಚ್ಚುವರಿ ವ್ಯಾಪಾರ ಪರಿಶೀಲನಾ ದಾಖಲೆಗಳನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ."
+        },
+        "summary": {
+          "shortLabel": "ಸಾರಾಂಶ",
+          "name": "ಪರಿಶೀಲನಾ ಪರಿಶೀಲನೆ",
+          "description": "ಅರ್ಜಿ ಸಲ್ಲಿಸುವ ಮೊದಲು ಕಂಪನಿಯ ವಿವರಗಳನ್ನು ಪರಿಶೀಲಿಸಿ."
+        }
+      }
+    },
+    "BULK_BUYER": {
+      "portalTitle": "ಸಗಟು ಖರೀದಿದಾರರ ಪರಿಶೀಲನೆ",
+      "pageTitle": "ಸಗಟು ಪರವಾನಗಿ ಪರಿಶೀಲನೆ",
+      "badgeText": "ಪರಿಶೀಲಿಸಿದ ಸಗಟು ಖರೀದಿದಾರ",
+      "incompleteBadgeText": "ಸಗಟು ಪರಿಶೀಲನೆ ಬಾಕಿ ಇದೆ",
+      "steps": {
+        "business": {
+          "shortLabel": "ವ್ಯಾಪಾರ",
+          "name": "ಸಗಟು ಸಂಸ್ಥೆಯ ವಿವರಗಳು",
+          "description": "ಸಗಟು ಕಂಪನಿಯ ಹೆಸರು, ಕಾರ್ಯಾಚರಣೆಯ ವ್ಯಾಪ್ತಿ ಮತ್ತು ವಿಳಾಸವನ್ನು ನಮೂದಿಸಿ."
+        },
+        "pan": {
+          "shortLabel": "ಪ್ಯಾನ್",
+          "name": "ಸಂಸ್ಥೆಯ ಪ್ಯಾನ್",
+          "description": "ಸಂಸ್ಥೆಯ ಪ್ಯಾನ್ ದಾಖಲೆಯನ್ನು ಒದಗಿಸಿ."
+        },
+        "gstin": {
+          "shortLabel": "ಜಿಎಸ್‌ಟಿಐಎನ್",
+          "name": "ಸಗಟು ಜಿಎಸ್‌ಟಿಐಎನ್",
+          "description": "ನೋಂದಾಯಿತ ಜಿಎಸ್‌ಟಿಐಎನ್ ವಿವರಗಳನ್ನು ಒದಗಿಸಿ."
+        },
+        "businessRegistration": {
+          "shortLabel": "ನೋಂದಣಿ",
+          "name": "ವಾಣಿಜ್ಯ / ನೋಂದಣಿ ಪ್ರಮಾಣಪತ್ರ",
+          "description": "ವಾಣಿಜ್ಯ ವ್ಯಾಪಾರ ಪರವಾನಗಿ ಅಥವಾ ನೋಂದಣಿ ಪ್ರಮಾಣಪತ್ರವನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ."
+        },
+        "udyam": {
+          "shortLabel": "ಉದ್ಯಮ್",
+          "name": "ಉದ್ಯಮ್ MSME ನೋಂದಣಿ",
+          "description": "MSME ಉದ್ಯಮ್ ನೋಂದಣಿ ಪ್ರಮಾಣಪತ್ರವನ್ನು ಒದಗಿಸಿ."
+        },
+        "representative": {
+          "shortLabel": "ಪ್ರತಿನಿಧಿ",
+          "name": "ಸಗಟು ಸಂಪರ್ಕ ವ್ಯಕ್ತಿ",
+          "description": "ಪ್ರಾಥಮಿಕ ಸಂಪರ್ಕ ಮತ್ತು ಅಧಿಕೃತ ಪ್ರತಿನಿಧಿ ಮಾಹಿತಿಯನ್ನು ಒದಗಿಸಿ."
+        },
+        "bank": {
+          "shortLabel": "ಬ್ಯಾಂಕ್",
+          "name": "ಇತ್ಯರ್ಥ ಬ್ಯಾಂಕ್ ಖಾತೆ",
+          "description": "ಹೆಚ್ಚಿನ ಪ್ರಮಾಣದ ವ್ಯಾಪಾರ ಇತ್ಯರ್ಥಗಳಿಗೆ ಬ್ಯಾಂಕ್ ವಿವರಗಳನ್ನು ಒದಗಿಸಿ."
+        },
+        "fssai": {
+          "shortLabel": "FSSAI",
+          "name": "FSSAI ಆಹಾರ ಸುರಕ್ಷತಾ ಪರವಾನಗಿ",
+          "description": "ಆಹಾರ ಪದಾರ್ಥಗಳ ವ್ಯಾಪಾರ ಮಾಡುತ್ತಿದ್ದರೆ FSSAI ಪರವಾನಗಿಯನ್ನು ಒದಗಿಸಿ."
+        },
+        "documents": {
+          "shortLabel": "ದಾಖಲೆಗಳು",
+          "name": "ಸಗಟು ಪರವಾನಗಿಗಳು ಮತ್ತು ಅನುಮತಿಗಳು",
+          "description": "ವ್ಯಾಪಾರ ಅನುಮತಿಗಳು, ಮಂಡಿ ಪರವಾನಗಿಗಳು ಮತ್ತು ತೆರಿಗೆ ದಾಖಲೆಗಳನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ."
+        },
+        "summary": {
+          "shortLabel": "ಸಾರಾಂಶ",
+          "name": "ಅಂತಿಮ ಸಗಟು ಪರಿಶೀಲನೆ",
+          "description": "ಸಲ್ಲಿಸುವ ಮೊದಲು ಎಲ್ಲಾ ಸಗಟು ದಾಖಲೆಗಳನ್ನು ಪರಿಶೀಲಿಸಿ."
+        }
+      }
+    }
+  },
+  "productDetails": {
+    "availableInStock": "ದಾಸ್ತಾನಿನಲ್ಲಿ {{count}} {{unit}} ಲಭ್ಯವಿದೆ",
+    "harvestDateLabel": "ಕೊಯ್ಲು: {{date}}",
+    "availableFromLabel": "ಲಭ್ಯತೆ: {{date}}",
+    "quantityLabel": "ಪ್ರಮಾಣ ({{unit}}):",
+    "aboutFarmerTitle": "ರೈತ / ಉತ್ಪಾದಕರ ಬಗ್ಗೆ"
   }
 }

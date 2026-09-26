@@ -1,7 +1,7 @@
 {
   "common": {
     "save": "சேமி",
-    "cancel": "ரத்துசெய்",
+    "cancel": "ரத்து செய்",
     "delete": "நீக்கு",
     "edit": "திருத்து",
     "close": "மூடு",
@@ -9,7 +9,7 @@
     "loading": "ஏற்றப்படுகிறது...",
     "submit": "சமர்ப்பி",
     "continue": "தொடரவும்",
-    "back": "பின்",
+    "back": "பின்செல்",
     "next": "அடுத்து",
     "previous": "முந்தையது",
     "view": "பார்",
@@ -20,7 +20,35 @@
     "actions": "செயல்கள்",
     "all": "அனைத்தும்",
     "noResults": "முடிவுகள் இல்லை",
-    "somethingWentWrong": "ஏதோ தவறு ஏற்பட்டது"
+    "somethingWentWrong": "ஏதோ தவறு ஏற்பட்டது",
+    "executiveControls": "நிர்வாகக் கட்டுப்பாடுகள்",
+    "adminDashboard": "நிர்வாகி டாஷ்போர்டு",
+    "agribazaarPlatformMetricsFarmerVerificationPipeline": "AgriBazaar தள அளவீடுகள், விவசாயி சரிபார்ப்பு செயல்முறை மற்றும் வர்த்தக அளவுகள்.",
+    "noOrderVolumeDataYet": "மாதாந்திர ஆர்டர் விவரங்கள் எதுவும் இன்னும் பதிவாகவில்லை.",
+    "noCategoryDistributionDataYet": "பயிர் வகை விவரங்கள் எதுவும் இன்னும் பதிவாகவில்லை.",
+    "recentPlatformOrders": "சமீபத்திய தள ஆர்டர்கள்",
+    "conflictOversight": "சிக்கல் மேலாண்மை",
+    "disputeResolution": "சிக்கல்கள் தீர்வு",
+    "arbitrateBuyerAndFarmerClaimsQuality": "வாங்குபவர் மற்றும் விவசாயிகளின் கோரிக்கைகள் மற்றும் டெலிவரி சிக்கல்களைத் தீர்க்கவும்.",
+    "resolveDispute": "சிக்கலைத் தீர்க்கவும்",
+    "kycVerificationPipeline": "KYC சரிபார்ப்பு செயல்முறை",
+    "reviewFarmRegistrationsVerifyIdentityAnd": "பண்ணை பதிவுகளை மதிப்பாய்வு செய்யவும், அடையாளத்தை சரிபார்க்கவும், விற்பனையாளர் சான்றுகளை நிர்வகிக்கவும்.",
+    "platformFulfillment": "தள நிறைவேற்றம்",
+    "allPlatformOrders": "அனைத்து தள ஆர்டர்கள்",
+    "fullOversightOfOrdersFulfillmentStatuses": "வர்த்தக ஆர்டர்கள், நிறைவேற்ற நிலைகள் மற்றும் வாங்குபவர் பணம் செலுத்துதல்களின் முழு பார்வை.",
+    "financialAudit": "நிதி தணிக்கை",
+    "paymentAuditLogs": "பணம் செலுத்தல் தணிக்கை பதிவுகள்",
+    "auditPlatformTransactionSettlementsAndGateway": "தள பரிவர்த்தனை செட்டில்மென்ட்கள் மற்றும் பேமெண்ட் கேட்வே பதிவுகளைத் தணிக்கை செய்யுங்கள்.",
+    "catalogModeration": "கேட்டலாக் மாடரேஷன்",
+    "productModeration": "தயாரிப்பு மாடரேஷன்",
+    "reviewActiveDraftAndPausedCrop": "விவசாயிகளால் வெளியிடப்பட்ட செயலில் உள்ள, வரைவு மற்றும் இடைநிறுத்தப்பட்ட பயிர் லிஸ்டிங்கை மதிப்பாய்வு செய்யவும்.",
+    "verify": "சரிபார்",
+    "reject": "நிராகரி",
+    "review": "மீளாய்வு செய்",
+    "resolve": "தீர்க்கவும்",
+    "allOrders": "அனைத்து ஆர்டர்கள்",
+    "editProfile": "சுயவிவரத்தைத் திருத்து",
+    "copyHash": "📋 ஹேஷ் நகலெடு"
   },
   "navigation": {
     "home": "முகப்பு",
@@ -41,7 +69,8 @@
     "sales": "விற்பனை",
     "verification": "சரிபார்ப்பு",
     "language": "மொழி",
-    "searchMarketplace": "சந்தையில் தேடுக"
+    "searchMarketplace": "சந்தையில் தேடுக",
+    "addProduct": "தயாரிப்பு சேர்"
   },
   "header": {
     "new": "புதியது",
@@ -64,7 +93,10 @@
     "verificationProcess": "சரிபார்ப்பு செயல்முறை",
     "terms": "வணிக விதிமுறைகள்",
     "contact": "நிர்வாகத்தைத் தொடர்புகொள்ளவும்",
-    "engine": "நேரடி பண்ணை வணிக இயந்திரம்"
+    "engine": "நேரடி பண்ணை வணிக இயந்திரம்",
+    "brandDescription": "விவசாயிகளை சிறந்த சந்தைகளுடன் இணைக்கிறது. புதிய விவசாய விளைபொருட்களை நம்பகமான விவசாயிகள் மற்றும் FPO களிடமிருந்து நேரடி வெளிப்படைத்தன்மையுடன் வாங்குங்கள்.",
+    "location": "நாசிக் & மும்பை, இந்தியா",
+    "allRightsReserved": "அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை."
   },
   "auth": {
     "login": "உள்நுழை",
@@ -76,7 +108,32 @@
     "createAccount": "உங்கள் கணக்கை உருவாக்குங்கள்",
     "welcomeBack": "மீண்டும் வரவேற்கிறோம்",
     "loginSuccess": "வெற்றிகரமாக உள்நுழைந்தீர்கள்",
-    "invalidCredentials": "தவறான மின்னஞ்சல் அல்லது கடவுச்சொல்"
+    "invalidCredentials": "தவறான மின்னஞ்சல் அல்லது கடவுச்சொல்",
+    "agri": "அக்ரி",
+    "bazaar": "பஜார்",
+    "demoCredentials": "டெமோ சான்றுகள்",
+    "fullNameLabel": "முழு பெயர் *",
+    "emailAddressLabel": "மின்னஞ்சல் முகவரி *",
+    "mobileNumberLabel": "கைபேசி எண் *",
+    "passwordLabel": "கடவுச்சொல் *",
+    "confirmPasswordLabel": "கடவுச்சொல்லை உறுதிப்படுத்துக *",
+    "farmOrgNameLabel": "பண்ணை / அமைப்பின் பெயர் *",
+    "sellerTypeLabel": "விற்பனையாளர் வகை *",
+    "buyerTypeLabel": "வாங்குபவர் வகை *",
+    "locationLabel": "இருப்பிடம் (நகரம்/மாவட்டம், மாநிலம்) *",
+    "registerAsFarmerBtn": "விவசாயியாகப் பதிவுசெய்க →",
+    "registerAsBuyerBtn": "வாங்குபவராகப் பதிவுசெய்க →",
+    "registerAsFarmer": "விவசாயியாகப் பதிவுசெய்க",
+    "registerAsBuyer": "வாங்குபவராகப் பதிவுசெய்க",
+    "creatingAccount": "கணக்கு உருவாக்கப்படுகிறது...",
+    "placeholderFullName": "முழு பெயரை உள்ளிடவும்",
+    "placeholderEmail": "you@example.com",
+    "placeholderPassword": "உங்கள் கடவுச்சொல்லை உள்ளிடவும்",
+    "placeholderMinChars": "குறைந்தது 6 எழுத்துக்கள்",
+    "placeholderReEnterPassword": "கடவுச்சொல்லை மீண்டும் உள்ளிடவும்",
+    "placeholderFarmName": "எ.கா. கிருஷ்ணா ஆர்கானிக் பண்ணை",
+    "placeholderLocation": "எ.கா. நாசிக், மகாராஷ்டிரா",
+    "placeholderAddress": "தெரு, கிராமம், அஞ்சல் குறியீடு"
   },
   "marketplace": {
     "title": "சந்தை",
@@ -87,8 +144,16 @@
     "categories": "வகைகள்",
     "filters": "வடிகட்டிகள்",
     "sort": "வரிசைப்படுத்து",
-    "product": "{{count}} பொருள்",
-    "product_other": "{{count}} பொருட்கள்"
+    "product": "{{count}} தயாரிப்பு",
+    "product_other": "{{count}} தயாரிப்புகள்",
+    "producerName": "உற்பத்தியாளர் பெயர்:",
+    "farmFpoName": "பண்ணை / FPO பெயர்:",
+    "type": "வகை:",
+    "location": "இருப்பிடம்:",
+    "newestFirst": "புதியது முதலில்",
+    "priceLowToHigh": "விலை: குறைந்ததிலிருந்து அதிகம்",
+    "priceHighToLow": "விலை: அதிகத்திலிருந்து குறைவு",
+    "mostPopular": "மிகவும் பிரபலமானது"
   },
   "checkout": {
     "title": "கட்டணம் செலுத்துதல்",
@@ -98,7 +163,30 @@
     "paymentSuccess": "பணம் வெற்றிகரமாகச் செலுத்தப்பட்டது!",
     "paymentVerified": "பணம் வெற்றிகரமாகச் சரிபார்க்கப்பட்டது!",
     "enterAddress": "விநியோக முகவரியை உள்ளிடவும்.",
-    "orderSummary": "ஆர்டர் சுருக்கம்"
+    "orderSummary": "ஆர்டர் சுருக்கம்",
+    "itemsSummary": "பொருட்களின் சுருக்கம்",
+    "subtotal": "இடைக்கூட்டுத் தொகை",
+    "delivery": "விநியோகம்",
+    "free": "இலவசம்",
+    "razorpayTestMode": "ரேஸர்பே சோதனை முறைமை",
+    "fullDeliveryAddress": "முழு விநியோக முகவரி *",
+    "placeholderAddress": "தெரு முகவரி, கட்டிடம், கிராமம்...",
+    "cityDistrict": "நகரம் / மாவட்டம்",
+    "placeholderCity": "எ.கா. புனே",
+    "stateLabel": "மாநிலம்",
+    "placeholderState": "எ.கா. மகாராஷ்டிரா",
+    "pincodeLabel": "அஞ்சல் குறியீடு",
+    "placeholderPincode": "எ.கா. 411001",
+    "stepShipping": "1. விநியோகம்",
+    "stepPayment": "2. பணம் செலுத்துதல்",
+    "addressRequired": "முகவரி தேவை.",
+    "secureSettlement": "பாதுகாப்பான மற்றும் உறுதியான தீர்வு",
+    "addressReviewHint": "பணம் செலுத்துவதை உறுதிப்படுத்தும் முன் விநியோக இருப்பிடம் மற்றும் விளைபொருட்களை மதிப்பாய்வு செய்யவும்.",
+    "continueToReview": "ஆர்டர் மதிப்பாய்வுக்கு தொடரவும் →",
+    "totalOrder": "மொத்தத் தொகை",
+    "securePayment": "பாதுகாப்பான ரேசர்பே கட்டணம்",
+    "razorpayVerificationNote": "ரேசர்பே கட்டணச் சரிபார்ப்பு வெற்றிகரமாக முடிந்த பின்னரே உங்கள் ஆர்டர் உறுதிசெய்யப்படும்.",
+    "paySecurely": "பாதுகாப்பாகப் பணம் செலுத்துங்கள் · ₹{{amount}}"
   },
   "status": {
     "active": "செயலில்",
@@ -119,7 +207,21 @@
     "inactive": "செயலற்றது",
     "draft": "வரைவு",
     "outOfStock": "கையிருப்பில் இல்லை",
-    "refunded": "பணத்திருப்பம் வழங்கப்பட்டது"
+    "refunded": "பணத்திருப்பம் வழங்கப்பட்டது",
+    "pendingPayment": "பணம் செலுத்த நிலுவையில் உள்ளது",
+    "paid": "பணம் செலுத்தப்பட்டது",
+    "processing": "செயலாக்கத்தில் உள்ளது",
+    "shipped": "அனுப்பப்பட்டது",
+    "completed": "நிறைவடைந்தது",
+    "onboarding": "இணைவு செயல்பாட்டில்",
+    "suspended": "இடைநீக்கம் செய்யப்பட்டது",
+    "notStarted": "தொடங்கப்படவில்லை",
+    "inProgress": "செயல்பாட்டில் உள்ளது",
+    "approved": "ஒப்புதல் அளிக்கப்பட்டது",
+    "enabled": "செயல்படுத்தப்பட்டது",
+    "all": "அனைத்து நிலைகளும்",
+    "captured": "கைப்பற்றப்பட்டது",
+    "authorized": "அங்கீகரிக்கப்பட்டது"
   },
   "messages": {
     "loadFailed": "தரவை ஏற்ற முடியவில்லை.",
@@ -137,7 +239,7 @@
     "heroHighlight": "சிறந்த சந்தைகளுடன்.",
     "heroDescription": "நேரடி டிஜிட்டல் சந்தை மூலம் இந்திய வேளாண்மையை வலுப்படுத்துகிறோம். தரம் உறுதிப்படுத்தப்பட்ட புதிய விளைபொருட்களை கமிஷன் இல்லாமல் வாங்கவும் விற்கவும் முடியும்.",
     "exploreMarketplace": "சந்தையை ஆராயுங்கள்",
-    "joinFarmer": "விவசாயி / FPO ஆக இணையுங்கள்",
+    "joinFarmer": "விவசாயியாக / FPO இணையுங்கள்",
     "heroImageAlt": "வயலில் உள்ள இந்திய விவசாயி",
     "verifiedFresh": "சரிபார்க்கப்பட்ட புதிய விளைபொருள்",
     "directSourcing": "நேரடி பண்ணை கொள்முதல்",
@@ -164,25 +266,32 @@
   "settings": {
     "preferences": "விருப்பத்தேர்வுகள்",
     "title": "கணக்கு அமைப்புகள்",
-    "description": "உங்கள் அமைப்பு விருப்பங்கள், பாதுகாப்பு மற்றும் அறிவிப்பு சேனல்களை நிர்வகிக்கவும்.",
+    "description": "உங்கள் கணினி விருப்பத்தேர்வுகள், பாதுகாப்பு மற்றும் அறிவிப்பு சேனல்களை நிர்வகிக்கவும்.",
     "notificationPreferences": "அறிவிப்பு விருப்பத்தேர்வுகள்",
     "notificationDescription": "ஆர்டர்கள் மற்றும் இருப்பு மாற்றங்களை AgriBazaar எவ்வாறு அறிவிக்க வேண்டும் என்பதை அமைக்கவும்.",
     "emailOrders": "மின்னஞ்சல் ஆர்டர் அறிவிப்புகள்",
     "emailOrdersDescription": "புதிய ஆர்டர்கள் மற்றும் நிலை மாற்றங்களுக்கு மின்னஞ்சல் பெறவும்.",
     "sms": "SMS அறிவிப்புகள்",
-    "smsDescription": "அனுப்பல் மற்றும் விநியோகத்திற்கு உடனடி SMS எச்சரிக்கைகள் பெறவும்.",
-    "priceAlerts": "சந்தை விலைப் போக்கு எச்சரிக்கைகள்",
-    "priceAlertsDescription": "முக்கிய வேளாண் சந்தை விலை மாற்றங்களின் தினசரி சுருக்கம்.",
-    "security": "பாதுகாப்பு மற்றும் அணுகல்",
-    "securityDescription": "கூடுதல் பாதுகாப்பு அடுக்குகளால் உங்கள் கணக்கைப் பாதுகாக்கவும்.",
-    "twoFactor": "இரு-அங்க அங்கீகாரம் (2FA)",
-    "twoFactorDescription": "உள்நுழைவில் OTP சரிபார்ப்பைக் கோரவும்.",
-    "save": "விருப்பத்தேர்வுகளைச் சேமிக்கவும்",
-    "saved": "கணக்கு விருப்பத்தேர்வுகள் புதுப்பிக்கப்பட்டன!",
-    "help": "உதவி வேண்டுமா?",
-    "helpDescription": "KYC விவரங்கள் அல்லது விவசாயி சரிபார்ப்பைப் புதுப்பிக்க உதவி தேவைப்பட்டால் நிர்வாகத்தைத் தொடர்புகொள்ளவும்.",
+    "smsDescription": "அனுப்புதல் மற்றும் விநியோகம் குறித்த உடனடி SMS எச்சரிக்கைகளைப் பெறுங்கள்.",
+    "priceAlerts": "சந்தை விலை போக்கு அறிவிப்புகள்",
+    "priceAlertsDescription": "முக்கிய விவசாய சந்தை விலை மாற்றங்களின் தினசரி சுருக்கம்.",
+    "security": "பாதுகாப்பு & அணுகல்",
+    "securityDescription": "கூடுதல் பாதுகாப்பு அடுக்குகளுடன் உங்கள் கணக்கைப் பாதுகாக்கவும்.",
+    "twoFactor": "இரண்டு காரணி அங்கீகாரம் (2FA)",
+    "twoFactorDescription": "உள்நுழைவின் போது OTP சரிபார்ப்பு தேவை.",
+    "save": "விருப்பத்தேர்வுகளைச் சேமி",
+    "saved": "கணக்கு விருப்பத்தேர்வுகள் வெற்றிகரமாகப் புதுப்பிக்கப்பட்டன!",
+    "help": "உதவி தேவையா?",
+    "helpDescription": "உங்கள் KYC விவரங்கள் அல்லது விவசாயி சரிபார்ப்பைப் புதுப்பிப்பதில் உதவி தேவைப்பட்டால், தள நிர்வாகத்தைத் தொடர்பு கொள்ளவும்.",
     "platform": "AgriBazaar தளம்",
-    "architecture": "நேரடி வேளாண் வணிகக் கட்டமைப்பு"
+    "architecture": "நேரடி விவசாய வர்த்தகக் கட்டமைப்பு",
+    "systemVersionV104production": "சிஸ்டம் பதிப்பு: v1.0.4-production",
+    "marketPriceTrendAlerts": "சந்தை விலை போக்கு அறிவிப்புகள்",
+    "marketPriceTrendAlertsDescription": "முக்கிய விவசாய சந்தை விலை மாற்றங்களின் தினசரி சுருக்கம்.",
+    "securityAndAccess": "பாதுகாப்பு & அணுகல்",
+    "securityAndAccessDescription": "கூடுதல் பாதுகாப்பு அடுக்குகளுடன் உங்கள் கணக்கைப் பாதுகாக்கவும்.",
+    "agribazaarPlatform": "AGRIBAZAAR தளம்",
+    "needHelpDescription": "உங்கள் KYC விவரங்கள் அல்லது விவசாயி சரிபார்ப்பைப் புதுப்பிப்பதில் உதவி தேவைப்பட்டால், தள நிர்வாகத்தைத் தொடர்பு கொள்ளவும்."
   },
   "blockchain": {
     "checking": "பிளாக்செயின் தணிக்கையைச் சரிபார்க்கிறது...",
@@ -191,7 +300,59 @@
     "network": "பிணையம்",
     "transaction": "பரிவர்த்தனை",
     "verifiedOn": "சரிபார்க்கப்பட்டது",
-    "testnet": "Kava சோதனை வலை"
+    "testnet": "காவா டெஸ்ட்நெட்",
+    "blockchainNetwork": "பிளாக்செயின் நெட்வொர்க்",
+    "smartContractAddress": "ஸ்மார்ட் காண்ட்ராக்ட் முகவரி",
+    "onchainPaymentAudits": "ஆன்-செயின் கட்டணத் தணிக்கை",
+    "onchainSettlementAudits": "ஆன்-செயின் தீர்வுத் தணிக்கை",
+    "smartContractEventVerifier": "ஸ்மார்ட் காண்ட்ராக்ட் நிகழ்வு சரிபார்ப்பி",
+    "itemsPurchased": "வாங்கிய பொருட்கள்",
+    "totalAmount": "மொத்தத் தொகை:",
+    "paymentIdHash": "கட்டண ID ஹேஷ்:",
+    "orderIdHash": "ஆர்டர் ID ஹேஷ்:",
+    "noSellerSplitHashesRecordedFor": "இந்த நிகழ்விற்கு விற்பனையாளர் பகிர்வு ஹாஷ்கள் எதுவுமில்லை.",
+    "amountInPaise": "தொகை (பைசாவில்):",
+    "recordedAt": "பதிவுசெய்யப்பட்ட நேரம்",
+    "lookupUserIdentityByAccountHash": "கணக்கு ஹாஷ் மூலம் பயனர் அடையாளத்தைத் தேடுங்கள்",
+    "queryingKavaEvmTestnetSmartContract": "காவா EVM டெஸ்ட்நெட் ஸ்மார்ட் காண்ட்ராக்ட் வினவப்படுகிறது...",
+    "noPaymentEventsRecordedOnchainYet": "ஆன்-செயினில் இதுவரை பணம் செலுத்தல் நிகழ்வுகள் எதுவுமில்லை",
+    "newPaymentsProcessedThroughRazorpayWill": "ரேஸர்பே மூலம் செயலாக்கப்படும் புதிய கட்டணங்கள் இங்கே தானாகவே தணிக்கை செய்யப்படும்.",
+    "eventIdHash": "நிகழ்வு ID ஹாஷ்",
+    "sellerSplitHashes": "விற்பனையாளர் பகிர்வு ஹாஷ்கள்",
+    "onchainStatus": "ஆன்-செயின் நிலை",
+    "noSettlementEventsRecordedOnchainYet": "ஆன்-செயினில் இதுவரை செட்டில்மென்ட் நிகழ்வுகள் எதுவுமில்லை",
+    "farmerMarketplaceSettlementsWillAppearHere": "பதிவுசெய்யப்படும் போது விவசாயி செட்டில்மென்ட்கள் இங்கே தோன்றும்.",
+    "settlementHash": "செட்டில்மென்ட் ஹாஷ்",
+    "sellerIdentity": "விற்பனையாளர் அடையாளம்",
+    "sellerPayoutAmount": "விற்பனையாளர் தொகை",
+    "status": "நிலை",
+    "accountIdentityLookup": "கணக்கு அடையாளத் தேடல்",
+    "verifiedDatabaseRecordMatchingOnchainCryptographic": "ஆன்-செயின் ஹாஷுடன் பொருந்தக்கூடிய தரவுத்தள பதிவு சரிபார்க்கப்பட்டது.",
+    "searchingRegisteredUsersAndFarmers": "பதிவுசெய்த பயனர்கள் மற்றும் விவசாயிகளைத் தேடுகிறது...",
+    "onchainHash": "ஆன்-செயின் ஹாஷ்:",
+    "accountType": "கணக்கு வகை:",
+    "fullName": "முழு பெயர்:",
+    "farmBusiness": "பண்ணை / வணிகம்:",
+    "email": "மின்னஞ்சல்:",
+    "mobile": "மொபைல் எண்:",
+    "verificationStatus": "சரிபார்ப்பு நிலை:",
+    "buyerType": "வாங்குபவர் வகை:",
+    "noAccountFound": "No Account Found",
+    "directSmartContractRpcQuery": "நேரடி ஸ்மார்ட் காண்ட்ராக்ட் RPC வினவல்",
+    "blockchainAuditTrail": "பிளாக்செயின் தணிக்கைப் பாதை",
+    "immutableAuditRecordsDesc": "காவா EVM டெஸ்ட்நெட் ஸ்மார்ட் காண்ட்ராக்ட்டிலிருந்து நேரடியாக பெறப்பட்ட மாற்ற முடியாத தணிக்கை பதிவுகள்.",
+    "fetchingOnChainData": "ஆன்-செயின் தரவு பெறப்படுகிறது...",
+    "fetchOnChainData": "ஆன்-செயின் தரவைப் பெறு",
+    "buyerSellerHashLookup": "வாங்குபவர் & விற்பனையாளர் ஹாஷ் தேடல்",
+    "lookupIdentity": "அடையாளத்தைத் தேடு",
+    "paymentAuditsOnChain": "ஆன்-செயின் பணம் செலுத்தல் தணிக்கை",
+    "settlementAuditsOnChain": "ஆன்-செயின் செட்டில்மென்ட் தணிக்கை",
+    "buyerHashIdentity": "வாங்குபவர் ஹாஷ் & அடையாளம்",
+    "amountRupees": "தொகை (₹)",
+    "verifyEventIdHashOnChain": "ஆன்-செயினில் நிகழ்வு ID ஹேஷைச் சரிபார்",
+    "placeholderEventHash": "நிகழ்வு ID ஹேஷை ஒட்டவும் (எ.கா. 0xd8273e6f...)",
+    "pasteHashSubtitle": "வாங்குபவர் அல்லது விற்பனையாளர் ஹேஷை (0x...) ஒட்டி அவர்களின் சுயவிவரம் மற்றும் சரிபார்ப்பு நிலையைப் பெறலாம்.",
+    "placeholderAccountHash": "வாங்குபவர் அல்லது விற்பனையாளர் ஹேஷை ஒட்டவும் (0x...)"
   },
   "ui": {
     "loadingContent": "உள்ளடக்கம் ஏற்றப்படுகிறது...",
@@ -210,24 +371,24 @@
       "நம்பகமான விநியோகம்"
     ],
     "trustDescription": [
-      "அடையாளம் சரிபார்க்கப்பட்ட விவசாய விற்பனையாளர்கள்.",
-      "வயலிலிருந்து விநியோகம் வரை நேரடி கண்காணிப்பு.",
-      "UPI, நெட் பேங்கிங் மற்றும் அட்டைகளுக்கான பாதுகாப்பான கட்டண நுழைவாயில்.",
-      "புதிய விளைபொருட்களுக்கான நம்பகமான பண்ணை போக்குவரத்து."
+      "நேரடி அடையாள சரிபார்ப்புடன் KYC சோதிக்கப்பட்ட விவசாய விற்பனையாளர்கள்.",
+      "வயலிலிருந்து விநியோகம் வரை தொடக்கத்திலிருந்து முடிவு வரையிலான நேரலை கண்காணிப்பு.",
+      "UPI, நெட் பேங்கிங் & கார்டுகளை ஆதரிக்கும் பாதுகாப்பான கட்டண வாயில்.",
+      "புதிய விளைபொருட்களின் பாதுகாப்பிற்காக பிரத்யேக பண்ணை போக்குவரத்து."
     ],
     "farmerSteps": [
-      "KYC ஆவணங்களுடன் பண்ணை அல்லது FPO சுயவிவரத்தைப் பதிவு செய்யுங்கள்",
-      "24 மணி நேரத்தில் தள நிர்வாகத்தின் சரிபார்ப்பைப் பெறுங்கள்",
-      "அளவு மற்றும் விலையுடன் விளைபொருள் பட்டியல்களை உருவாக்குங்கள்",
-      "வாங்குபவர்களின் ஆர்டர்களை நேரடியாக நிர்வகியுங்கள்",
-      "உடனடி பணப்பரிவர்த்தனையைக் கண்காணித்து விற்பனையை வளர்த்திடுங்கள்"
+      "KYC ஆவணங்களுடன் உங்கள் பண்ணை அல்லது FPO சுயவிவரத்தைப் பதிவு செய்யுங்கள்",
+      "24 மணி நேரத்திற்குள் தள நிர்வாகத்தால் சரிபார்க்கப்படுங்கள்",
+      "விருப்பமான அளவு மற்றும் விலையுடன் விளைபொருள் பட்டியல்களை உருவாக்குங்கள்",
+      "வாங்குபவர்களிடமிருந்து நேரடியாக கொள்முதல் ஆர்டர்களைப் பெற்று நிர்வகியுங்கள்",
+      "உடனடி செலுத்துதல்களைக் கண்காணித்து உங்கள் நேரடி விவசாய விற்பனையை உயர்த்துங்கள்"
     ],
     "buyerSteps": [
-      "தனிப்பட்ட அல்லது வணிக வாங்கலுக்கான கணக்கை உருவாக்குங்கள்",
-      "பயிர், பகுதி மற்றும் விலைப்படி சரிபார்க்கப்பட்ட விளைபொருட்களைத் தேடுங்கள்",
-      "கூடையில் சேர்த்து வெளிப்படையான செலவுகளைப் பாருங்கள்",
-      "விருப்பமான முறையில் பாதுகாப்பாகக் கட்டணம் செலுத்துங்கள்",
-      "நேரடி அனுப்புதல் மற்றும் பண்ணை விநியோகத்தைக் கண்காணியுங்கள்"
+      "தனிப்பட்ட அல்லது வணிகக் கொள்முதலுக்கான வாங்குபவர் கணக்கை உருவாக்குங்கள்",
+      "பயிர், பகுதி மற்றும் விலை வாரியாக சரிபார்க்கப்பட்ட விளைபொருட்களைத் தேடுங்கள்",
+      "பொருட்களை உங்கள் கூடையில் சேர்த்து வெளிப்படையான செலவுகளை மதிப்பாய்வு செய்யவும்",
+      "உங்களுக்கு விருப்பமான முறையைப் பயன்படுத்தி பாதுகாப்பான கட்டணம் செலுத்துங்கள்",
+      "நேரடி கப்பல் போக்குவரத்து மற்றும் பண்ணை விநியோக நிலையைக் கண்காணியுங்கள்"
     ],
     "platformLabels": [
       "பதிவுசெய்த விவசாயிகள்",
@@ -241,11 +402,11 @@
     "farmers": "விவசாயிகள் மற்றும் FPOக்களுக்கு",
     "buyers": "தனிப்பட்ட மற்றும் மொத்த வாங்குபவர்களுக்கு",
     "glance": "தளத்தின் ஒரு பார்வை",
-    "glanceDescription": "டிஜிட்டல் கட்டமைப்பால் விவசாய வணிகத்தை வலுப்படுத்துகிறோம்",
+    "glanceDescription": "டிஜிட்டல் உள்கட்டமைப்புடன் விவசாய வர்த்தகத்தை மேம்படுத்துதல்",
     "testimonials": "எங்கள் பயனர்கள் சொல்வது",
-    "testimonialsDescription": "இந்தியா முழுவதும் விவசாயிகள், வணிக வாங்குபவர்கள் மற்றும் FPOகளின் நம்பிக்கை",
+    "testimonialsDescription": "Trusted by farmers, commercial buyers and FPOs across India",
     "finalTitle": "AgriBazaar-ல் வணிகம் செய்ய தயாரா?",
-    "finalDescription": "நேரடி விவசாய வணிகத்தை மாற்றும் சரிபார்க்கப்பட்ட விவசாயிகள், FPOக்கள் மற்றும் வாங்குபவர்களுடன் இணையுங்கள்.",
+    "finalDescription": "Join verified farmers, FPOs and buyers transforming direct agricultural commerce across India.",
     "createAccount": "இலவச கணக்கை உருவாக்குங்கள்",
     "browse": "சந்தையை உலாவுங்கள்",
     "heroLabels": [
@@ -255,13 +416,2230 @@
     ],
     "marketplace": {
       "exchange": "Direct crop exchange",
-      "description": "Source quality farm produce directly from verified Indian farmers and FPOs with zero middleman markup.",
-      "showing": "Showing {{count}} agricultural listings",
+      "description": "சரிபார்க்கப்பட்ட இந்திய விவசாயிகள் மற்றும் FPO-க்களிடமிருந்து நேரடியாக தரமான விவசாய விளைபொருட்களை இடைத்தரகர் கட்டணமின்றிப் பெறுங்கள்.",
+      "showing": "{{count}} விவசாயப் பட்டியல்கள் காட்டப்படுகின்றன",
       "newest": "Newest first",
       "lowPrice": "Price: low to high",
       "highPrice": "Price: high to low",
       "popular": "Most popular",
-      "available": "{{count}} {{unit}} available"
+      "available": "இருப்பில் {{count}} {{unit}} உள்ளது"
     }
+  },
+  "farmerVerificationWizard": {
+    "fpo": "fpo",
+    "farmer": "FARMER நெறிமுறை",
+    "failedToLoadVerificationStatus": "Failed to load verification status. நெறிமுறை",
+    "pleaseEnterAValid12digitAadhaar": "Please enter a valid 12-digit Aadhaar number. நெறிமுறை",
+    "otpSentToYourAadhaarMobile": "OTP sent to your Aadhaar mobile number! நெறிமுறை",
+    "pleaseEnter6digitOtp": "Please enter 6-digit OTP. நெறிமுறை",
+    "verified_identityVerifiedViaUidaiSandbox": "✓ Identity Verified via UIDAI Sandbox! நெறிமுறை",
+    "pleaseEnterFarmerIdAndDistrict": "Please enter Farmer ID and District. நெறிமுறை",
+    "verified_farmerRegistryVerified": "✓ Farmer Registry Verified! நெறிமுறை",
+    "pleaseFillAllRequiredLandRecord": "Please fill all required land record details. நெறிமுறை",
+    "verified_landRecordVerified": "✓ Land Record Verified! நெறிமுறை",
+    "pleaseFillAccountHolderAccountNumber": "Please fill Account Holder, Account Number, and IFSC. நெறிமுறை",
+    "accountNumbersDoNotMatch": "Account numbers do not match. நெறிமுறை",
+    "verified_bankAccountVerified": "✓ Bank Account Verified! நெறிமுறை",
+    "pleaseEnterAValid10characterPan": "Please enter a valid 10-character PAN number (e.g. ABCDE1234F). நெறிமுறை",
+    "verified_panVerifiedSuccessfully": "✓ PAN Verified successfully! நெறிமுறை",
+    "pmkisanSkipped": "PM-KISAN skipped. நெறிமுறை",
+    "verified_pmkisanVerified": "✓ PM-KISAN Verified! நெறிமுறை",
+    "pleaseFillRequiredOrganizationDetails": "Please fill required Organization details. நெறிமுறை",
+    "verified_organizationIdentityVerified": "✓ Organization Identity Verified! நெறிமுறை",
+    "pleaseEnterAValid10characterOrganization": "Please enter a valid 10-character Organization PAN. நெறிமுறை",
+    "verified_organizationPanVerified": "✓ Organization PAN Verified! நெறிமுறை",
+    "gstinMarkedAsNotApplicable": "GSTIN marked as Not Applicable. நெறிமுறை",
+    "verified_gstinVerified": "✓ GSTIN Verified! நெறிமுறை",
+    "pleaseEnterAValid10digitMobile": "Please enter a valid 10-digit mobile number. நெறிமுறை",
+    "otpSentToRepresentativeMobile": "OTP sent to Representative mobile! நெறிமுறை",
+    "pleaseEnterRepresentativeNameAndDesignation": "Please enter Representative Name and Designation. நெறிமுறை",
+    "verified_authorizedRepresentativeVerified": "✓ Authorized Representative Verified! நெறிமுறை",
+    "verified_organizationBankAccountVerified": "✓ Organization Bank Account Verified! நெறிமுறை",
+    "pleaseUploadAtLeastRegistrationCertificate": "Please upload at least Registration Certificate, PAN document, and Bank proof. நெறிமுறை",
+    "verified_organizationDocumentsVerified": "✓ Organization Documents Verified! நெறிமுறை",
+    "failedToSkipStep": "Failed to skip step. நெறிமுறை",
+    "progressSavedReturningToDashboard": "Progress saved. Returning to dashboard. நெறிமுறை",
+    "loadingConfigportaltitle": "Loading {config.portalTitle}... நெறிமுறை",
+    "verificationSummary": "Verification Summary நெறிமுறை",
+    "reviewYourOverallVerificationStatusAnd": "Review your overall verification status and finalized badge audit. நெறிமுறை",
+    "verified": "Verified நெறிமுறை",
+    "pending": "PENDING நெறிமுறை",
+    "officialIdentityComplianceGateway": "Official Identity & Compliance Gateway நெறிமுறை",
+    "fpoFpc": "FPO / FPC",
+    "saveExitToDashboard": "Save & Exit to Dashboard நெறிமுறை",
+    "textslate900": "text-slate-900 நெறிமுறை",
+    "textslate700": "text-slate-700 நெறிமுறை",
+    "required": "(Required) நெறிமுறை",
+    "optional": "(Optional) நெறிமுறை",
+    "mandatoryVerification": "MANDATORY VERIFICATION நெறிமுறை",
+    "optionalVerification": "OPTIONAL VERIFICATION நெறிமுறை",
+    "aadhaarAuthenticationProtocol": "Aadhaar Authentication நெறிமுறை",
+    "enterYour12digitAadhaarNumberTo": "Enter your 12-digit Aadhaar number to receive a One-Time Password (OTP) via UIDAI authorized gateway. நெறிமுறை",
+    "enter12digitAadhaarNumber": "Enter 12-digit Aadhaar number நெறிமுறை",
+    "sendAadhaarOtp": "Send Aadhaar OTP நெறிமுறை",
+    "enter6digitOtp_req": "Enter 6-Digit OTP * நெறிமுறை",
+    "text_mnk1z": "──────",
+    "verifyContinue": "Verify & Continue நெறிமுறை",
+    "saveExit": "Save & Exit நெறிமுறை",
+    "skipStep": "Skip Step நெறிமுறை",
+    "nextStep": "Next Step நெறிமுறை",
+    "farmerDatabaseProtocol": "Farmer Database நெறிமுறை",
+    "enterYourOfficialFarmerAgristackId": "Enter your official Farmer / Agristack ID along with state and district to verify active agricultural registry status. நெறிமுறை",
+    "farmerId": "FARMER ID நெறிமுறை",
+    "location": "LOCATION நெறிமுறை",
+    "farmerIdAgristackId_req": "Farmer ID / Agristack ID * நெறிமுறை",
+    "egMhfarm20248849": "e.g. MH-FARM-2024-8849 நெறிமுறை",
+    "state_req": "State * நெறிமுறை",
+    "district_req": "District * நெறிமுறை",
+    "egNashik": "e.g. Nashik நெறிமுறை",
+    "back": "Back நெறிமுறை",
+    "landHoldingProtocol": "Land Holding நெறிமுறை",
+    "enterStateDistrictTalukVillagePatta": "Enter state, district, taluk, village, Patta / 7-12 number, survey number, and total acreage. நெறிமுறை",
+    "patta712No": "PATTA / 7-12 NO. நெறிமுறை",
+    "surveyNo": "SURVEY NO. நெறிமுறை",
+    "extent": "EXTENT நெறிமுறை",
+    "taluk_req": "Taluk * நெறிமுறை",
+    "egNiphad": "e.g. Niphad நெறிமுறை",
+    "village_req": "Village * நெறிமுறை",
+    "egLasalgaon": "e.g. Lasalgaon நெறிமுறை",
+    "pattaKhataNo_req": "Patta / Khata No. * நெறிமுறை",
+    "eg4829": "e.g. 4829",
+    "surveyNo_req": "Survey No. * நெறிமுறை",
+    "eg142b": "e.g. 142/B நெறிமுறை",
+    "landExtentAcres_req": "Land Extent (Acres) * நெறிமுறை",
+    "eg35Acres": "e.g. 3.5 Acres நெறிமுறை",
+    "landType": "Land Type நெறிமுறை",
+    "irrigatedWet": "Irrigated / Wet நெறிமுறை",
+    "dryRainfed": "Dry / Rainfed நெறிமுறை",
+    "horticulture": "Horticulture நெறிமுறை",
+    "uploadPattaLandRecordDocument_req": "Upload Patta / Land Record Document * நெறிமுறை",
+    "uploadPdfJpgOrPngCopy": "Upload PDF, JPG, or PNG copy of 7/12, Patta, or Chitta (Max 5MB) நெறிமுறை",
+    "bankSettlementProtocol": "Bank Settlement நெறிமுறை",
+    "linkYourActiveBankAccountFor": "Link your active bank account for direct payments and automated sales settlements. நெறிமுறை",
+    "accountHolder": "ACCOUNT HOLDER நெறிமுறை",
+    "bankName": "BANK NAME நெறிமுறை",
+    "accountNo": "ACCOUNT NO. நெறிமுறை",
+    "accountHolderName_req": "Account Holder Name * நெறிமுறை",
+    "asPerBankPassbook": "As per bank passbook நெறிமுறை",
+    "bankName_req": "Bank Name * நெறிமுறை",
+    "branchName": "Branch Name நெறிமுறை",
+    "egMainBranch": "e.g. Main Branch நெறிமுறை",
+    "accountNumber_req": "Account Number * நெறிமுறை",
+    "enterAccountNumber": "Enter account number நெறிமுறை",
+    "confirmAccountNumber_req": "Confirm Account Number * நெறிமுறை",
+    "reenterAccountNumber": "Re-enter account number நெறிமுறை",
+    "ifscCode_req": "IFSC Code * நெறிமுறை",
+    "egSbin0001234": "e.g. SBIN0001234 நெறிமுறை",
+    "uploadBankPassbookCancelledCheque_req": "Upload Bank Passbook / Cancelled Cheque * நெறிமுறை",
+    "uploadFrontPageOfPassbookOr": "Upload front page of passbook or cancelled cheque (Max 5MB) நெறிமுறை",
+    "panVerificationProtocol": "PAN Verification நெறிமுறை",
+    "enterYour10characterPermanentAccountNumber": "Enter your 10-character Permanent Account Number for statutory tax compliance & payouts. நெறிமுறை",
+    "panNumber": "PAN NUMBER நெறிமுறை",
+    "matchStatus": "MATCH STATUS நெறிமுறை",
+    "panNumber_req": "PAN Number * நெறிமுறை",
+    "egAbcde1234f": "e.g. ABCDE1234F நெறிமுறை",
+    "nameAsPerPanOptional": "Name as per PAN (Optional) நெறிமுறை",
+    "fullNameAsPrintedOnPan": "Full name as printed on PAN card நெறிமுறை",
+    "uploadPanCardCopy_req": "Upload PAN Card Copy * நெறிமுறை",
+    "clearFrontScanOrPhotoOf": "Clear front scan or photo of your PAN card (Max 5MB) நெறிமுறை",
+    "pmkisanSchemeProtocol": "PM-KISAN Scheme நெறிமுறை",
+    "optionallyLinkPmkisanBeneficiaryReferenceFor": "Optionally link PM-KISAN Beneficiary Reference for added seller credibility on the marketplace. நெறிமுறை",
+    "pmkisanRegistrationBeneficiaryReference": "PM-KISAN Registration / Beneficiary Reference நெறிமுறை",
+    "egPmk987654321": "e.g. PMK-987654321 நெறிமுறை",
+    "verifyPmkisanContinue": "Verify PM-KISAN & Continue நெறிமுறை",
+    "viewSummary": "View Summary நெறிமுறை",
+    "organizationRegistrationProtocol": "Organization Registration நெறிமுறை",
+    "verifyOfficialFpoFpcCooperativeEntity": "Verify official FPO / FPC / Cooperative entity registration details. நெறிமுறை",
+    "legalName": "LEGAL NAME நெறிமுறை",
+    "registrationNo": "REGISTRATION NO. நெறிமுறை",
+    "organizationLegalName_req": "Organization Legal Name * நெறிமுறை",
+    "egSahyadriFarmersProducerCoLtd": "e.g. Sahyadri Farmers Producer Co. Ltd. நெறிமுறை",
+    "organizationType_req": "Organization Type * நெறிமுறை",
+    "fpoFpcProducerCompany": "FPO / FPC (Producer Company) நெறிமுறை",
+    "agriculturalCooperativeSociety": "Agricultural Cooperative Society நெறிமுறை",
+    "farmerShgPartnership": "Farmer SHG / Partnership நெறிமுறை",
+    "registrationCinNumber_req": "Registration / CIN Number * நெறிமுறை",
+    "egU01111mh2020ptc123456": "e.g. U01111MH2020PTC123456 நெறிமுறை",
+    "pincode_req": "Pincode * நெறிமுறை",
+    "eg422001": "e.g. 422001",
+    "registeredOfficeAddress_req": "Registered Office Address * நெறிமுறை",
+    "fullAddressOfOrganizationOffice": "Full address of organization office நெறிமுறை",
+    "organizationPanProtocol": "Organization PAN நெறிமுறை",
+    "enterPermanentAccountNumberIssuedIn": "Enter Permanent Account Number issued in the legal name of the organization. நெறிமுறை",
+    "orgPan": "ORG PAN நெறிமுறை",
+    "organizationPan_req": "Organization PAN * நெறிமுறை",
+    "egAaacf1234g": "e.g. AAACF1234G நெறிமுறை",
+    "gstinRegistrationProtocol": "GSTIN Registration நெறிமுறை",
+    "provide15characterGstinRegistrationIfRegistered": "Provide 15-character GSTIN registration if registered, or mark GSTIN Not Applicable. நெறிமுறை",
+    "notApplicable": "Not Applicable நெறிமுறை",
+    "eg27aaacf1234g1z5": "e.g. 27AAACF1234G1Z5 நெறிமுறை",
+    "verifyGstin": "Verify GSTIN நெறிமுறை",
+    "authorizedOfficialProtocol": "Authorized Official நெறிமுறை",
+    "verifyIdentityAndMobileAuthorizationOf": "Verify identity and mobile authorization of the official representing the organization. நெறிமுறை",
+    "representativeName_req": "Representative Name * நெறிமுறை",
+    "egRameshKumar": "e.g. Ramesh Kumar நெறிமுறை",
+    "designation_req": "Designation * நெறிமுறை",
+    "egCeoManagingDirector": "e.g. CEO / Managing Director நெறிமுறை",
+    "representativeMobileNumber_req": "Representative Mobile Number * நெறிமுறை",
+    "enter10digitMobileNumber": "Enter 10-digit mobile number நெறிமுறை",
+    "sendRepresentativeOtp": "Send Representative OTP நெறிமுறை",
+    "verifyRepresentative": "Verify Representative நெறிமுறை",
+    "organizationSettlementAccountProtocol": "Organization Settlement Account நெறிமுறை",
+    "linkPrimarySettlementBankAccountOf": "Link primary settlement bank account of the FPO / FPC for marketplace direct credits. நெறிமுறை",
+    "exactLegalNameAsPerBank": "Exact legal name as per bank statement நெறிமுறை",
+    "egCommercialBranch": "e.g. Commercial Branch நெறிமுறை",
+    "enterBankAccountNumber": "Enter bank account number நெறிமுறை",
+    "organizationDocumentDossier": "Organization Document Dossier நெறிமுறை",
+    "uploadMandatoryRegistrationTaxBankProof": "Upload mandatory registration, tax, bank proof, and authorization files. நெறிமுறை",
+    "1OrganizationRegistrationCertificate_req": "1. Organization Registration Certificate * நெறிமுறை",
+    "2OrganizationPanCardCopy_req": "2. Organization PAN Card Copy * நெறிமுறை",
+    "3BankPassbookCancelledCheque_req": "3. Bank Passbook / Cancelled Cheque * நெறிமுறை",
+    "4AuthorizationLetterBoardResolution": "4. Authorization Letter / Board Resolution நெறிமுறை",
+    "5GstCertificateIfApplicable": "5. GST Certificate (If Applicable) நெறிமுறை",
+    "submitDocumentsProceed": "Submit Documents & Proceed நெறிமுறை",
+    "backToReview": "Back to Review நெறிமுறை",
+    "returnToDashboard": "Return to Dashboard நெறிமுறை",
+    "yourInformationIsSecurelyProcessedSensitive": "Your information is securely processed. Sensitive identity & financial information will be masked where applicable. நெறிமுறை"
+  },
+  "buyerVerificationWizard": {
+    "couldNotLoadVerificationStatus": "சரிபார்ப்பு நிலையை ஏற்ற முடியவில்லை",
+    "verified": "சரிபார்க்கப்பட்டது",
+    "pending": "நிலுவையில் உள்ளது",
+    "pleaseEnterAValid10digitMobile": "சரியான 10 இலக்க மொபைல் எண்ணை உள்ளிடவும்",
+    "otpSentToYourMobileNumber": "உங்கள் மொபைல் எண்ணுக்கு OTP அனுப்பப்பட்டது",
+    "pleaseEnter6digitOtpCode": "6 இலக்க OTP குறியீட்டை உள்ளிடவும்",
+    "mobileNumberVerifiedSuccessfully": "மொபைல் எண் வெற்றிகரமாக சரிபார்க்கப்பட்டது",
+    "consentIsRequiredToProceedWith": "அடையாள சரிபார்ப்பைத் தொடர சம்மதம் தேவை",
+    "otpSentToYourAadhaarlinkedMobile": "உங்கள் ஆதாரோடு இணைக்கப்பட்ட மொபைலுக்கு OTP அனுப்பப்பட்டது",
+    "pleaseEnter6digitOtp": "6 இலக்க OTP ஐ உள்ளிடவும்",
+    "identityVerifiedViaAuthorizedGateway": "அங்கீகரிக்கப்பட்ட நுழைவாயில் மூலம் அடையாளம் சரிபார்க்கப்பட்டது",
+    "pleaseFillAllRequiredAddressFields": "தேவையான அனைத்து முகவரி புலங்களையும் நிரப்பவும்",
+    "addressDetailsVerified": "முகவரி விவரங்கள் சரிபார்க்கப்பட்டன",
+    "pleaseFillAllRequiredBusinessIdentity": "தேவையான அனைத்து வணிக அடையாள புலங்களையும் நிரப்பவும்",
+    "businessIdentityVerified": "வணிக அடையாளம் சரிபார்க்கப்பட்டது",
+    "pleaseEnterAValid10characterPan": "Please enter a valid 10-character PAN number (e.g. ABCDE1234F) நெறிமுறை",
+    "businessPanVerifiedSuccessfully": "வணிக பான் வெற்றிகரமாக சரிபார்க்கப்பட்டது",
+    "gstinMarkedAsNotApplicable": "GSTIN பொருந்தாது எனக் குறிக்கப்பட்டது",
+    "failedToUpdateGstinStatus": "GSTIN நிலையை புதுப்பிக்க முடியவில்லை",
+    "pleaseEnterAValid15characterGstin": "சரியான 15 எழுத்து GSTIN எண்ணை உள்ளிடவும்",
+    "gstinVerifiedSuccessfully": "GSTIN வெற்றிகரமாக சரிபார்க்கப்பட்டது",
+    "pleaseEnterRegistrationNumberIdentifier": "பதிவு எண் / அடையாளங்காட்டியை உள்ளிடவும்",
+    "pleaseEnterRepresentativeNameAndDesignation": "பிரதிநிதி பெயர் மற்றும் பதவியை உள்ளிடவும்",
+    "pleaseEnterValidMobileNumber": "சரியான மொபைல் எண்ணை உள்ளிடவும்",
+    "otpSentToRepresentativeMobile": "பிரதிநிதியின் மொபைலுக்கு OTP அனுப்பப்பட்டது",
+    "failedToSendOtp": "OTP அனுப்ப முடியவில்லை",
+    "authorizedRepresentativeVerified": "அங்கீகரிக்கப்பட்ட பிரதிநிதி சரிபார்க்கப்பட்டார்",
+    "pleaseFillAllRequiredBankAccount": "தேவையான அனைத்து வங்கி கணக்கு புலங்களையும் நிரப்பவும்",
+    "accountNumbersDoNotMatch": "வங்கி கணக்கு எண்கள் பொருந்தவில்லை",
+    "bankAccountVerifiedSuccessfully": "வங்கி கணக்கு வெற்றிகரமாக சரிபார்க்கப்பட்டது",
+    "udyamRegistrationMarkedAsNotApplicable": "உதியாம் பதிவு பொருந்தாது எனக் குறிக்கப்பட்டது",
+    "failedToUpdateUdyamStatus": "உதியாம் நிலையை புதுப்பிக்க முடியவில்லை",
+    "pleaseEnterValidUdyamRegistrationNumber": "சரியான உதியாம் பதிவு எண்ணை உள்ளிடவும்",
+    "udyamRegistrationVerified": "உதியாம் பதிவு சரிபார்க்கப்பட்டது",
+    "fssaiLicenseMarkedAsNotApplicable": "FSSAI / License marked as Not Applicable நெறிமுறை",
+    "failedToUpdateLicenseStatus": "உரிம நிலையை புதுப்பிக்க முடியவில்லை",
+    "pleaseEnterValidFssaiLicenseRegistration": "Please enter valid FSSAI / License registration number நெறிமுறை",
+    "fssaiLicenseVerified": "FSSAI / License verified நெறிமுறை",
+    "documentsRecordedAndVerified": "ஆவணங்கள் பதிவு செய்யப்பட்டு சரிபார்க்கப்பட்டன",
+    "thisStepIsRequiredAndCannot": "இந்த படி கட்டாயமானது மற்றும் தவிர்க்க முடியாது",
+    "step": "Step நெறிமுறை",
+    "failedToSkipStep": "Failed to skip step நெறிமுறை",
+    "verificationDetailsSaved": "சரிபார்ப்பு விவரங்கள் சேமிக்கப்பட்டன!",
+    "couldNotCompleteVerification": "சரிபார்ப்பை முடிக்க முடியவில்லை",
+    "loadingOfficialVerificationPortal": "Loading Official Verification Portal... நெறிமுறை",
+    "officialIdentityComplianceGateway": "அதிகாரப்பூர்வ அடையாளம் மற்றும் இணக்க நுழைவாயில்",
+    "saveExitToDashboard": "சேமித்து டாஷ்போர்டிற்கு வெளியேறு",
+    "textslate900": "text-slate-900 நெறிமுறை",
+    "textslate700": "text-slate-700 நெறிமுறை",
+    "required": "(Required) நெறிமுறை",
+    "optional": "(Optional) நெறிமுறை",
+    "stepCurrentstepOfStepslength": "Step {currentStep} of {steps.length} நெறிமுறை",
+    "mandatoryVerification": "கட்டாய சரிபார்ப்பு",
+    "optionalCheck": "விருப்பத் தணிக்கை",
+    "mobileAuthenticationProtocol": "Mobile Authentication நெறிமுறை",
+    "enterYour10digitMobileNumberTo": "Enter your 10-digit mobile number to receive a secure One-Time Password (OTP). OTP will not be stored permanently. நெறிமுறை",
+    "enter10digitMobileNumber": "10 இலக்க மொபைல் எண்ணை உள்ளிடவும்",
+    "enter6digitOtp": "6 இலக்க OTP ஐ உள்ளிடவும்",
+    "otpSentTo91xxxxxmobileformmobilenumberslice4": "OTP sent to +91-XXXXX{mobileForm.mobileNumber.slice(-4)} நெறிமுறை",
+    "back": "Back நெறிமுறை",
+    "verifyOtpContinue": "OTP சரிபார்த்து தொடரவும்",
+    "getMobileOtp": "மொபைல் OTP பெறவும்",
+    "authorizedIdentityVerification": "Authorized Identity Verification நெறிமுறை",
+    "identityIsValidatedSecurelyViaAuthorized": "Identity is validated securely via authorized verification reference. Full raw identity document numbers are never permanently stored. நெறிமுறை",
+    "aadhaarbasedAuthorizedVerification": "Aadhaar-based Authorized Verification நெறிமுறை",
+    "panbasedIdentityVerification": "PAN-based Identity Verification நெறிமுறை",
+    "voterIdNationalPortalVerification": "Voter ID / National Portal Verification நெறிமுறை",
+    "verifyIdentityContinue": "அடையாளத்தை சரிபார்த்து தொடரவும்",
+    "sendIdentityOtp": "அடையாள OTP அனுப்பவும்",
+    "flatHouseNoBuildingStreetArea": "பிளாட், கதவு எண், கட்டிடம், தெரு, பகுதி",
+    "districtName": "மாவட்ட பெயர்",
+    "cityOrTown": "நகரம் அல்லது ஊர்",
+    "6digitPinCode": "6 இலக்க பின்கோடு",
+    "verifyAddressContinue": "முகவரியை சரிபார்த்து தொடரவும்",
+    "asRegisteredInMcaGstPan": "As registered in MCA / GST / PAN நெறிமுறை",
+    "brandOrTradeNameOptional": "பிராண்ட் அல்லது வணிகப் பெயர் (விருப்பமானது)",
+    "retailerAgribusinessDealer": "Retailer / Agribusiness Dealer நெறிமுறை",
+    "wholesalerTrader": "Wholesaler / Trader நெறிமுறை",
+    "foodProcessorMill": "Food Processor / Mill நெறிமுறை",
+    "exporterInstitutionalBuyer": "Exporter / Institutional Buyer நெறிமுறை",
+    "proprietorshipFirm": "Proprietorship Firm நெறிமுறை",
+    "partnershipFirm": "Partnership Firm நெறிமுறை",
+    "privateLimitedCompany": "Private Limited Company நெறிமுறை",
+    "registeredOfficeTradePremisesAddress": "பதிவு செய்யப்பட்ட அலுவலகம் / வணிக வளாக முகவரி",
+    "district": "மாவட்டம்",
+    "6digitPincode": "6 இலக்க பின்கோடு",
+    "verifyBusinessIdentity": "Verify Business Identity நெறிமுறை",
+    "incomeTaxDepartmentPanVerification": "Income Tax Department PAN Verification நெறிமுறை",
+    "enterThe10characterPermanentAccountNumber": "Enter the 10-character Permanent Account Number issued in the legal name of the entity. நெறிமுறை",
+    "egAbcde1234f": "e.g. ABCDE1234F நெறிமுறை",
+    "legalEntityName": "சட்டப்பூர்வ நிறுவனத்தின் பெயர்",
+    "verifyBusinessPan": "Verify Business PAN நெறிமுறை",
+    "goodsAndServicesTaxIdentificationGstin": "Goods and Services Tax Identification (GSTIN) நெறிமுறை",
+    "gstinVerificationIsConditionalSmallTraders": "GSTIN verification is conditional. Small traders or exempt agricultural businesses can select \"GSTIN Not Applicable\". நெறிமுறை",
+    "eg27aaaaa0000a1z5": "e.g. 27AAAAA0000A1Z5 நெறிமுறை",
+    "gstinNotApplicable": "GSTIN Not Applicable நெறிமுறை",
+    "verifyGstinContinue": "GSTIN சரிபார்த்து தொடரவும்",
+    "privatePublicLimitedCompanyCin": "Private / Public Limited Company (CIN) நெறிமுறை",
+    "limitedLiabilityPartnershipLlpin": "Limited Liability Partnership (LLPIN) நெறிமுறை",
+    "registeredPartnershipFirm": "Registered Partnership Firm நெறிமுறை",
+    "registeredSoleProprietorship": "Registered Sole Proprietorship நெறிமுறை",
+    "cooperativeSocietyFarmerFederation": "Cooperative Society / Farmer Federation நெறிமுறை",
+    "egU01100mh2020ptc123456": "e.g. U01100MH2020PTC123456 நெறிமுறை",
+    "verifyRegistration": "Verify Registration நெறிமுறை",
+    "fullName": "முழு பெயர்",
+    "ownerProprietor": "Owner / Proprietor நெறிமுறை",
+    "partner": "Partner நெறிமுறை",
+    "director": "Director நெறிமுறை",
+    "ceoManagingDirector": "CEO / Managing Director நெறிமுறை",
+    "managerProcurementOfficer": "Manager / Procurement Officer நெறிமுறை",
+    "authorizedSignatory": "Authorized Signatory நெறிமுறை",
+    "10digitMobile": "10 இலக்க மொபைல்",
+    "6digitOtp": "6 இலக்க OTP",
+    "iConfirmIPossessOfficialBoard": "I confirm I possess official board authorization / power of attorney to act as authorized buyer representative. நெறிமுறை",
+    "verifyRepresentativeOtp": "பிரதிநிதி OTP சரிபார்க்கவும்",
+    "sendRepresentativeOtp": "பிரதிநிதி OTP அனுப்பவும்",
+    "nameAsPerBankPassbook": "வங்கி பாஸ்புக்கில் உள்ள பெயர்",
+    "branchName": "கிளை பெயர்",
+    "egSbin0001234": "e.g. SBIN0001234 நெறிமுறை",
+    "accountNumber": "கணக்கு எண்",
+    "reenterAccountNumber": "கணக்கு எண்ணை மீண்டும் உள்ளிடவும்",
+    "verifyBankAccount": "Verify Bank Account நெறிமுறை",
+    "udyamMsmeRegistration": "Udyam MSME Registration நெறிமுறை",
+    "conditionalCheckEnterYourUdyamRegistration": "Conditional check. Enter your Udyam Registration Number if registered as MSME enterprise, or select \"Udyam Not Applicable\". நெறிமுறை",
+    "egUdyammh000000000": "e.g. UDYAM-MH-00-0000000 நெறிமுறை",
+    "udyamNotApplicable": "Udyam Not Applicable நெறிமுறை",
+    "verifyUdyamContinue": "உதியாம் சரிபார்த்து தொடரவும்",
+    "fssaiCommodityTradeLicense": "FSSAI / Commodity Trade License நெறிமுறை",
+    "showThisOnlyWhereBuyerActivity": "Show this only where buyer activity requires food safety/commodity trading permits. Select \"Not Applicable\" if non-food operations. நெறிமுறை",
+    "fssaiRegistrationLicense": "FSSAI Registration / License நெறிமுறை",
+    "apmcMandiTradeLicense": "APMC / Mandi Trade License நெறிமுறை",
+    "agriculturalCommodityTradeLicense": "Agricultural Commodity Trade License நெறிமுறை",
+    "eg10020021000123": "e.g. 10020021000123",
+    "licenseNotApplicable": "License Not Applicable நெறிமுறை",
+    "verifyLicenseContinue": "உரிமம் சரிபார்த்து தொடரவும்",
+    "documentUploadComplianceAudit": "ஆவண பதிவேற்றம் மற்றும் இணக்க தணிக்கை",
+    "uploadClearScanOrPdfCopies": "Upload clear scan or PDF copies of required business certificates. Max file size: 5MB. நெறிமுறை",
+    "businessRegistrationIncorporationCertificate": "வணிக பதிவு / ஒருங்கிணைப்பு சான்றிதழ்",
+    "businessPanDocument": "வணிக பான் ஆவணம்",
+    "bankAccountProofCancelledCheque": "வங்கி கணக்கு ஆதாரம் / ரத்து செய்யப்பட்ட செக்",
+    "boardOwnerAuthorizationDocument": "வாரியம் / உரிமையாளர் அதிகாரமளிப்பு ஆவணம்",
+    "gstCertificateIfApplicable": "ஜிஎஸ்டி சான்றிதழ் (பொருந்தினால்)",
+    "udyamRegistrationCertificateIfApplicable": "உதியாம் பதிவு சான்றிதழ் (பொருந்தினால்)",
+    "fssaiMandiLicenseDocumentIfApplicable": "FSSAI / Mandi License Document (if applicable) நெறிமுறை",
+    "requiredDocument": "கட்டாய ஆவணம்",
+    "conditionalDocument": "நிபந்தனை ஆவணம்",
+    "verified_uploaded": "✓ பதிவேற்றப்பட்டது",
+    "uploadDocument": "ஆவணத்தைப் பதிவேற்றவும்",
+    "invalidDocumentFileFormatExtAllowed": "Invalid document file format (${ext}). Allowed formats: PDF, JPG, PNG, WEBP. நெறிமுறை",
+    "uploadedDoctitle": "Uploaded ${doc.title} நெறிமுறை",
+    "submitDocumentsProceed": "ஆவணங்களைச் சமர்ப்பித்து தொடரவும்",
+    "backToReview": "Back to Review நெறிமுறை",
+    "finalizeBuyerVerification": "Finalize Buyer Verification நெறிமுறை",
+    "yourInformationIsSecurelyProcessedSensitive": "உங்கள் தகவல்கள் பாதுகாப்பாக செயலாக்கப்படுகின்றன. உணர்திறன் மிக்க அடையாளம் மற்றும் நிதித் தகவல்கள் மறைக்கப்படும்."
+  },
+  "farmerVerification": {
+    "aadhaarTitle": "அடையாள சரிபார்ப்பு (ஆதார்)",
+    "aadhaarDesc": "Authorized UIDAI identity verification நெறிமுறை",
+    "farmerRegistryTitle": "விவசாயி அடையாள எண் / பதிவு",
+    "farmerRegistryDesc": "மாநில / தேசிய விவசாயி அக்ரிஸ்டாக் தரவுத்தள பதிவு",
+    "landRecordTitle": "நிலப் பதிவு / பட்டா",
+    "landRecordDesc": "வேளாண் நில உடைமை அல்லது சாகுபடி பதிவு",
+    "bankAccountTitle": "வங்கி கணக்கு சரிபார்ப்பு",
+    "bankAccountDesc": "நேரடி செலுத்துதல்களுக்கான தீர்வு வங்கி கணக்கு",
+    "panTitle": "பான் கார்டு சரிபார்ப்பு",
+    "panDesc": "அடையாளம் மற்றும் செலுத்துதல்களுக்கான பான் எண்",
+    "pmKisanTitle": "PM-KISAN சரிபார்ப்பு (விருப்பமானது)",
+    "pmKisanDesc": "PM-KISAN பயனாளிகள் பதிவு குறிப்பு",
+    "orgIdentityTitle": "உங்கள் நிறுவனத்தை சரிபார்க்கவும்",
+    "orgIdentityDesc": "Legal organization registration, CIN, and state address நெறிமுறை",
+    "orgPanTitle": "நிறுவன பான் சரிபார்க்கவும்",
+    "orgPanDesc": "சட்டப்பூர்வ நிறுவன பெயரில் வழங்கப்பட்ட பான் எண்",
+    "gstinTitle": "வணிக விவரங்களை சரிபார்க்கவும் (GSTIN)",
+    "gstinDesc": "GSTIN பதிவு (விருப்பமானது / நிபந்தனைக்குட்பட்டது)",
+    "representativeTitle": "அங்கீகரிக்கப்பட்ட பிரதிநிதியை சரிபார்க்கவும்",
+    "representativeDesc": "நிர்வாக அதிகாரியின் அடையாளம் மற்றும் பதவி",
+    "orgBankTitle": "நிறுவன வங்கி கணக்கை சரிபார்க்கவும்",
+    "orgBankDesc": "தீர்வுகளுக்கான நிறுவனத்திற்கு சொந்தமான வங்கி கணக்கு",
+    "orgDocumentsTitle": "நிறுவனத்தின் ஆவணங்கள்",
+    "orgDocumentsDesc": "பதிவு சான்றிதழ், பான் ஆவணம், வங்கி ஆதாரம் மற்றும் அதிகாரக் கடிதத்தை பதிவேற்றவும்",
+    "verifiedFpoBadge": "✓ சரிபார்க்கப்பட்ட FPO",
+    "verifiedFarmerBadge": "✓ சரிபார்க்கப்பட்ட விவசாயி",
+    "loadingVerificationDashboard": "சரிபார்ப்பு டாஷ்போர்டு ஏற்றப்படுகிறது...",
+    "all5RequiredChecksActive": "தேவையான 5 சரிபார்ப்புகளும் செயலில் உள்ளன",
+    "overallProgress": "ஒட்டுமொத்த முன்னேற்றம்",
+    "verificationChecksBreakdown": "சரிபார்ப்பு சோதனைகளின் விவரம்",
+    "verificationStatusHeading": "சரிபார்ப்பு நிலை & சான்றுகள்",
+    "centralDashboardAgri": "உங்கள் விவசாய சான்றுகள், முன்னேற்றம் மற்றும் அதிகாரப்பூர்வ நிலையைப் பார்ப்பதற்கான மத்திய டாஷ்போர்டு.",
+    "centralDashboardOrg": "உங்கள் நிறுவன சான்றுகள், முன்னேற்றம் மற்றும் அதிகாரப்பூர்வ நிலையைப் பார்ப்பதற்கான மத்திய டாஷ்போர்டு.",
+    "verifiedStat": "{{count}} சரிபார்க்கப்பட்டது",
+    "skippedStat": "{{count}} தவிர்க்கப்பட்டது",
+    "pendingStat": "{{count}} தேவைப்படும் நிலுவை",
+    "congratulationsVerifiedMsg": "வாழ்த்துகள்! தேவையான அனைத்து அடையாளம் மற்றும் நிறுவன சான்றுகளும் முழுமையாக சரிபார்க்கப்பட்டுள்ளன. உங்கள் விளைபொருள் பட்டியல்களில் இப்போது அதிகாரப்பூர்வ சரிபார்க்கப்பட்ட பேட்ஜ் காட்டப்படுகிறது.",
+    "requiredCheck": "தேவையான சோதனை",
+    "optionalCheck": "விருப்ப சோதனை",
+    "statusActive": "நிலை: செயலில்",
+    "statusNotApplicable": "நிலை: பொருந்தாது",
+    "statusSkipped": "நிலை: தவிர்க்கப்பட்டது",
+    "statusNotStarted": "நிலை: தொடங்கப்படவில்லை",
+    "viewEdit": "பார் / திருத்து",
+    "completeInWizard": "விசாரணையில் பூர்த்தி செய்",
+    "reviewUpdateCredentials": "சான்றுகளை மறுஆய்வு செய் / புதுப்பி"
+  },
+  "paymentSettlementCard": {
+    "bank": "வங்கி:",
+    "account": "கணக்கு:",
+    "ifsc": "IFSC:",
+    "linkedAccount": "இணைக்கப்பட்ட கணக்கு:",
+    "settlement": "தீர்வு:",
+    "lastSynced": "கடைசியாக ஒத்திசைக்கப்பட்டது:",
+    "governmentSettlementPortal": "அரசு தீர்வு போர்டல்",
+    "paymentAndSettlement": "பணம் செலுத்துதல் & தீர்வு",
+    "notConnectedBadge": "பணப்பட்டுவாடா கணக்கு இணைக்கப்படவில்லை",
+    "setupHeadline": "பணம் செலுத்துதல் & தீர்வு அமைப்பு",
+    "setupDescription": "சந்தை விளைபொருள் ஆர்டர்களுக்கு நேரடிப் பணத்தைப் பெற உங்கள் தீர்வுக் கணக்கை இணைக்கவும்.",
+    "connectAccount": "பணப்பட்டுவாடா கணக்கை இணைக்கவும்",
+    "onboardingBadge": "கணக்கு அமைப்பு செயல்பாட்டில் உள்ளது",
+    "onboardingHeadline": "தீர்வு சரிபார்ப்பு நடைபெறுகிறது",
+    "onboardingDescription": "ரேஸர்பே உங்கள் விற்பனையாளர் கணக்கு விவரங்களை மறுஆய்வு செய்கிறது.",
+    "continueSetup": "அமைப்பைத் தொடரவும்",
+    "pendingBadge": "ரேஸர்பே சரிபார்ப்பு நிலுவையில் உள்ளது",
+    "pendingHeadline": "ரேஸர்பே சரிபார்ப்பு செயல்பாட்டில் உள்ளது",
+    "pendingDescription": "கணக்கு விவரங்கள் சமர்ப்பிக்கப்பட்டுள்ளன. ரேஸர்பே ஒப்புதலுக்காக நிலுவையில் உள்ளது.",
+    "checkStatus": "நிலையைப் புதுப்பி",
+    "activeBadge": "✓ பணப்பட்டுவாடா கணக்கு இணைக்கப்பட்டது",
+    "activeHeadline": "தீர்வுக் கணக்கு செயலில் உள்ளது",
+    "activeDescription": "உங்கள் ரேஸர்பே கணக்கு செயலில் உள்ளது. விற்பனைப் பணம் தானாகவே தீர்வு செய்யப்படும்.",
+    "accountConnected": "பணப்பட்டுவாடா கணக்கு இணைக்கப்பட்டது",
+    "rejectedBadge": "ரேஸர்பே சரிபார்ப்பு / மறுஆய்வு தேவைப்படுகிறது",
+    "rejectedHeadline": "சரிபார்ப்பு மறுஆய்வு தேவைப்படுகிறது",
+    "rejectedDescription": "ரேஸர்பே கூடுதல் ஆவணங்கள் அல்லது மறுஆய்வைக் கோருகிறது.",
+    "resolveVerification": "சரிபார்ப்பைச் சரிசெய்க",
+    "suspendedBadge": "பணப்பட்டுவாடா தற்காலிகமாக கிடைக்கவில்லை",
+    "suspendedHeadline": "பணப்பட்டுவாடா இடைநிறுத்தப்பட்டது",
+    "suspendedDescription": "இந்தக் கணக்கிற்கு பணப்பட்டுவாடா தற்காலிகமாக கிடைக்கவில்லை. ஆதரவைத் தொடர்பு கொள்ளவும்.",
+    "contactSupport": "ஆதரவைத் தொடர்பு கொள்ளவும்",
+    "settlementPendingNotice": "சந்தை தீர்வு அமைப்பு ரேஸர்பே செயலாக்கத்திற்காக நிலுவையில் உள்ளது.",
+    "refreshStatus": "நிலையைப் புதுப்பி",
+    "failedToLoadStatus": "தீர்வு நிலையை ஏற்றுவதில் தோல்வி.",
+    "statusUpdated": "நிலை புதுப்பிக்கப்பட்டது!",
+    "contactSupportToast": "Please contact AgriBazaar support at support@agribazaar.org",
+    "actionFailed": "செயல் தோல்வியடைந்தது."
+  },
+  "about": {
+    "ourPurpose": "எங்கள் நோக்கம்",
+    "aboutAgribazaar": "அக்ரிபஜார் பற்றி",
+    "corePillar": "முக்கிய தூண்",
+    "ourMission": "எங்கள் இலக்கு",
+    "futureready": "எதிர்காலத்திற்கு தயார்",
+    "ourVision": "எங்கள் பார்வை"
+  },
+  "admin": {
+    "noAnalyticsDataRecordedYet": "பகுப்பாய்வு தரவு எதுவும் இன்னும் பதிவாகவில்லை.",
+    "platformIntelligence": "தள நுண்ணறிவு",
+    "platformAnalytics": "தளப் பகுப்பாய்வு",
+    "deepDiveIntoTradeRevenuesSeller": "வர்த்தக வருவாய், விற்பனையாளர் பதிவு வேகம் மற்றும் பயிர் அளவு பற்றிய ஆழமான பகுப்பாய்வு.",
+    "account": "கணக்கு:",
+    "ifsc": "IFSC கோடு:",
+    "razorpayRouteCapabilityIsPendingActivation": "ரேஸர்பே ரூட் சேவையை செயல்படுத்துவது நிலுவையில் உள்ளது",
+    "isActiveNormalBuyerCheckoutPayments": "செயலில் உள்ளது. வழக்கமான வாங்குபவர் பணம் செலுத்துதல் சரியாக இயங்குகிறது.",
+    "pending": "நிலுவையில் உள்ளது",
+    "userDirectory": "பயனர்கள் அடைவு",
+    "platformUserManagement": "தள பயனர்கள் மேலாண்மை",
+    "viewUserRolesAccessStatusesAnd": "பயனர் பங்குகள், அணுகல் நிலைகளைப் பார்த்து தள அனுமதிகளை நிர்வகிக்கவும்.",
+    "users": "பயனாளர்கள்",
+    "farmers": "விவசாயிகள் / FPOக்கள்",
+    "settlements": "பணத் தீர்வுகள்",
+    "payments": "பணம் செலுத்துதல்கள்",
+    "blockchain": "பிளாக்செயின் தணிக்கை",
+    "disputes": "சிக்கல்கள் / புகார்கள்",
+    "analytics": "பகுப்பாய்வு"
+  },
+  "buyerDashboard": {
+    "buyerPortal": "வாங்குபவர் போர்டல்",
+    "buyerDashboard": "வாங்குபவர் டாஷ்போர்டு",
+    "trackYourOrdersSpendingAndFresh": "உங்கள் ஆர்டர்கள், செலவு மற்றும் புதிய பயிர்களைக் கண்காணிக்கவும்.",
+    "buyerVerificationStatus": "வாங்குபவர் சரிபார்ப்பு நிலை",
+    "viewVerificationDetails": "சரிபார்ப்பு விவரங்களைப் பார்",
+    "recentOrders": "சமீபத்திய ஆர்டர்கள்",
+    "noOrdersPlacedYet": "இன்னும் ஆர்டர்கள் எதுவுமில்லை.",
+    "browseMarketplace": "சந்தையை உலாவும்",
+    "recommendedProduce": "பரிந்துரைக்கப்பட்ட பயிர்கள்",
+    "totalOrders": "மொத்த ஆர்டர்கள்",
+    "activeOrders": "செயலில் உள்ள ஆர்டர்கள்",
+    "completed": "நிறைவடைந்தது",
+    "totalSpent": "மொத்த செலவு",
+    "accountHashCopied": "வாங்குபவர் கணக்கு ஹேஷ் நகலெடுக்கப்பட்டது!",
+    "failedToLoad": "டாஷ்போர்டை ஏற்றுவதில் தோல்வி.",
+    "viewAllOrders": "அனைத்து ஆர்டர்களையும் பார் →",
+    "startVerification": "சரிபார்ப்பைத் தொடங்கு",
+    "continueVerification": "சரிபார்ப்பைத் தொடரவும்"
+  },
+  "buyerOrders": {
+    "viewCrop": "பயிரைப் பார்",
+    "orderTracking": "ஆர்டர் கண்காணிப்பு",
+    "myOrders": "எனது ஆர்டர்கள்",
+    "viewShipmentProgressAndPurchaseHistory": "அனைத்து விற்பனையாளர்களிடமிருந்தும் அனுப்பப்பட்ட நிலை மற்றும் கொள்முதல் வரலாற்றைப் பார்க்கவும்.",
+    "browseProduce": "பயிர்களை உலாவு",
+    "colProduceItem": "விளைபொருள்",
+    "colFarmerProducer": "விவசாயி / உற்பத்தியாளர்",
+    "colQuantity": "அளவு",
+    "colTotalPrice": "மொத்த விலை",
+    "colOrderStatus": "ஆர்டர் நிலை",
+    "colBlockchainAudit": "பிளாக்செயின் தணிக்கை",
+    "colAction": "செயல்",
+    "noOrdersFound": "ஆர்டர்கள் எதுவும் இல்லை",
+    "noOrdersDesc": "நீங்கள் செய்த ஆர்டர்கள் இங்கே காட்சியளிக்கும்.",
+    "failedToLoadOrders": "ஆர்டர்களை ஏற்றுவதில் தோல்வி."
+  },
+  "buyerProfile": {
+    "buyerAccount": "வாங்குபவர் கணக்கு",
+    "buyerProfile": "வாங்குபவர் சுயவிவரம்",
+    "manageYourPersonalDetailsAndDefault": "உங்கள் தனிப்பட்ட விவரங்கள் மற்றும் இயல்புநிலை விநியோக முகவரியை நிர்வகிக்கவும்.",
+    "fullName": "முழு பெயர்",
+    "emailAddress": "மின்னஞ்சல் முகவரி",
+    "mobileNumber": "மொபைல் எண்",
+    "deliveryAddress": "விநியோக முகவரி",
+    "city": "நகரம்",
+    "state": "மாநிலம்",
+    "pincode": "அஞ்சல் குறியீடு",
+    "buyerAccountType": "வாங்குபவர் கணக்கு வகை",
+    "profileUpdatedToast": "வாங்குபவர் சுயவிவரம் புதுப்பிக்கப்பட்டது!",
+    "accountHashCopiedToast": "கணக்கு ஹேஷ் நகலெடுக்கப்பட்டது!"
+  },
+  "buyerVerification": {
+    "loadingBuyerVerificationStatus": "வாங்குபவர் சரிபார்ப்பு நிலை ஏற்றப்படுகிறது...",
+    "status": "நிலை",
+    "overallStatus": "ஒட்டுமொத்த நிலை",
+    "progress": "முன்னேற்றம்",
+    "viewVerificationDetails": "சரிபார்ப்பு விவரங்களைக் காண்க",
+    "officialPortal": "• அதிகாரப்பூர்வ சரிபார்ப்பு போர்டல்",
+    "continueVerification": "சரிபார்ப்பைத் தொடரவும்",
+    "startVerification": "சரிபார்ப்பைத் தொடங்கு",
+    "failedToLoad": "சரிபார்ப்பு நிலையை ஏற்றுவதில் தோல்வி.",
+    "title": "வாங்குபவர் சரிபார்ப்பு நிலை",
+    "subtitle": "அக்ரிபஜாரில் அடையாளம், வணிக இணக்கம் மற்றும் ஒழுங்குமுறை சான்றுகளை நிர்வகிக்கவும்.",
+    "completedCountOfTotal": "{{total}}-இல் {{count}} நிறைவு செய்யப்பட்டது",
+    "checklistHeading": "சரிபார்ப்பு சரிபார்ப்புப் பட்டியல்",
+    "wizardCardHeading": "உங்கள் சரிபார்ப்பு வழிகாட்டியை முடிக்கவும்",
+    "wizardCardDesc": "விவசாயிகளுடன் நம்பிக்கையை வளர்க்கவும், சரிபார்க்கப்பட்ட வாங்குபவர் பேட்ஜ்களைப் பெறவும் தேவையான அனைத்து அடையாள, வரி, வங்கி மற்றும் ஆவணச் சோதனைகளை முடிக்கவும்."
+  },
+  "farmerAddProduct": {
+    "cropPreview": "பயிர் முன்னோட்டம்",
+    "price": "விலை:",
+    "stock": "இருப்பு:",
+    "location": "இருப்பிடம்:",
+    "harvest": "அறுவடை:",
+    "newCropListing": "புதிய பயிர் பட்டியல்",
+    "addNewProduct": "புதிய தயாரிப்பு சேர்",
+    "createAVerifiedProduceListingTo": "நேரடியாக விற்க சரிபார்க்கப்பட்ட பயிர் லிஸ்டிங்கை உருவாக்குங்கள்.",
+    "productCropNameLabel": "தயாரிப்பு / பயிர் பெயர் *",
+    "placeholderProductName": "எ.கா. ஆர்கானிக் பாஸ்மதி அரிசி",
+    "cropCategoryLabel": "பயிர் வகை *",
+    "measurementUnitLabel": "அளவீட்டு அலகு *",
+    "produceDescriptionLabel": "விளைபொருள் விவரம்",
+    "placeholderDescription": "விவசாய முறைகள், ரகம் அல்லது சிறப்பு பேக்கிங் பற்றி விவரிக்கவும்...",
+    "availableQuantityLabel": "கிடைக்கக்கூடிய அளவு *",
+    "placeholderQuantity": "எ.கா. 500",
+    "pricePerUnitLabel": "கிலோ/அலகு விலை (₹) *",
+    "placeholderPrice": "எ.கா. 85",
+    "farmLocationLabel": "பண்ணை இருப்பிடம் (நகரம், மாநிலம்) *",
+    "placeholderLocation": "எ.கா. நாசிக், மகாராஷ்டிரா",
+    "harvestDateLabel": "அறுவடை தேதி",
+    "availableFromLabel": "கிடைக்கும் தேதி",
+    "uploadImageLabel": "பயிர் தயாரிப்பு படத்தைப் பதிவேற்றவும் *",
+    "uploadImageDesc": "உயர்தர JPG, PNG, அல்லது WEBP படம் (PDF அனுமதிக்கப்படாது)",
+    "saveDraft": "வரைவைச் சேமி",
+    "previewListing": "பட்டியலை முன்தோற்றம் செய்",
+    "publishListing": "பட்டியலை வெளியிடு",
+    "publishing": "வெளியிடப்படுகிறது...",
+    "backToEdit": "திருத்தத்திற்குத் திரும்பு",
+    "nameRequired": "தயாரிப்பு பெயர் தேவை.",
+    "categoryRequired": "பயிர் வகை தேவை.",
+    "quantityGreaterThanZero": "அளவு 0 ஐ விட அதிகமாக இருக்க வேண்டும்.",
+    "priceGreaterThanZero": "விலை 0 ஐ விட அதிகமாக இருக்க வேண்டும்.",
+    "locationRequired": "இருப்பிடம் தேவை.",
+    "savedAsDraft": "தயாரிப்பு வரைவாகச் சேமிக்கப்பட்டது.",
+    "publishedSuccess": "தயாரிப்பு வெற்றிகரமாக வெளியிடப்பட்டது!",
+    "failedToCreate": "தயாரிப்பை உருவாக்குவதில் தோல்வி.",
+    "createVerifiedListingDesc": "வாங்குபவர்களுக்கு நேரடியாக விற்பனை செய்ய சரிபார்க்கப்பட்ட விளைபொருள் பட்டியலை உருவாக்கவும்.",
+    "productCropName": "தயாரிப்பு / பயிர் பெயர்",
+    "cropCategory": "பயிர் வகை",
+    "measurementUnit": "அளவீட்டு அலகு",
+    "unitPriceInr": "அலகு விலை (₹)",
+    "availableStockQuantity": "கிடைக்கும் இருப்பு அளவு",
+    "minimumOrderQuantity": "குறைந்தபட்ச ஆர்டர் அளவு",
+    "harvestDate": "அறுவடை தேதி",
+    "farmLocationOrigin": "பண்ணை இருப்பிடம் / தோற்றம்",
+    "cropDescription": "பயிர் விளக்கம் & தரம்",
+    "organicCertified": "இயற்கை / சான்றளிக்கப்பட்ட விளைபொருள்",
+    "cancel": "ரத்துசெய்"
+  },
+  "farmerDashboard": {
+    "manageYourAgriculturalProductsIncomingOrders": "உங்கள் விவசாயப் பொருட்கள், வரவிருக்கும் ஆர்டர்கள் மற்றும் வருவாயை நிர்வகிக்கவும்.",
+    "recentOrders": "சமீபத்திய ஆர்டர்கள்",
+    "noOrdersReceivedYet": "இன்னும் ஆர்டர்கள் எதுவும் பெறப்படவில்லை.",
+    "activeListings": "செயலில் உள்ள பட்டியல்கள்",
+    "noActiveListings": "செயலில் உள்ள பட்டியல்கள் எதுவும் இல்லை.",
+    "fpoSellerDashboard": "FPO / FPC விற்பனையாளர் டாஷ்போர்டு",
+    "sellerDashboard": "விற்பனையாளர் டாஷ்போர்டு",
+    "fpoOverview": "FPO கண்ணோட்டம்",
+    "farmerOverview": "விவசாயி கண்ணோட்டம்",
+    "addNewListing": "புதிய பட்டியல் சேர்க்க",
+    "sellerCryptographicAccountHash": "விற்பனையாளர் கிரிப்டோகிராஃபிக் கணக்கு ஹேஷ் (ஆன்-செயின் அடையாளம்)",
+    "copyHash": "ஹேஷ் நகலெடு",
+    "accountHashCopied": "விற்பனையாளர் கணக்கு ஹேஷ் நகலெடுக்கப்பட்டது!",
+    "verifiedFpoBadge": "✓ சரிபார்க்கப்பட்ட FPO",
+    "verifiedFarmerBadge": "✓ சரிபார்க்கப்பட்ட விவசாயி",
+    "completeYourVerification": "உங்கள் சரிபார்ப்பை பூர்த்தி செய்யவும்",
+    "activeBadge": "செயலில் உள்ள பேட்ஜ்",
+    "checksCompletedCount": "தேவையான 5 சோதனைகளில் {{count}} முடிந்தது",
+    "allRequiredVerificationActive": "தேவையான அனைத்து சரிபார்ப்புகளும் செயலில் உள்ளன",
+    "verificationIncomplete": "சரிபார்ப்பு அரைகுறையாக உள்ளது",
+    "updateVerification": "சரிபார்ப்பைப் புதுப்பிக்கவும்",
+    "continueVerification": "சரிபார்ப்பைத் தொடரவும்",
+    "totalProducts": "மொத்த தயாரிப்புகள்",
+    "activeListingsLabel": "செயலில் உள்ள பட்டியல்கள்",
+    "pendingOrders": "நிலுவையில் உள்ள ஆர்டர்கள்",
+    "totalSales": "மொத்த விற்பனை",
+    "viewAll": "அனைத்தையும் காண்க →",
+    "addProductButton": "+ தயாரிப்பு சேர்"
+  },
+  "farmerProducts": {
+    "cropInventory": "பயிர் இருப்பு",
+    "myProducts": "எனது பொருட்கள்",
+    "colProduceDetails": "விளைபொருள் விவரங்கள்",
+    "colCategory": "பயிர் வகை",
+    "colPriceUnit": "விலை / அலகு",
+    "colStockQuantity": "இருப்பு அளவு",
+    "colStatus": "நிலை",
+    "colActions": "செயல்கள்",
+    "noProductsListed": "தயாரிப்புகள் எதுவும் சேர்க்கப்படவில்லை",
+    "noProductsDesc": "உங்கள் முதல் விளைபொருளைப் பட்டியலிட்டு விற்பனையைத் தொடங்குங்கள்.",
+    "addProductBtn": "+ தயாரிப்பு சேர்",
+    "manageListingsDesc": "உங்கள் செயலில் உள்ள, வரைவு மற்றும் கையிருப்பில் இல்லாத விளைபொருள் பட்டியல்களை நிர்வகிக்கவும் (மொத்தம் {{count}}).",
+    "addNewProduct": "புதிய தயாரிப்பு சேர்",
+    "searchPlaceholder": "பயிர் பட்டியல்களைத் தேடுங்கள்...",
+    "colProduct": "தயாரிப்பு",
+    "colAvailableStock": "இருப்பு அளவு",
+    "pauseBtn": "நிறுத்து",
+    "activateBtn": "செயல்படுத்து"
+  },
+  "farmerOrders": {
+    "orderManagement": "ஆர்டர் மேலாண்மை",
+    "incomingProduceOrders": "உள்வரும் பயிர் ஆர்டர்கள்",
+    "fulfillPurchaseOrdersReceivedFromRetail": "சில்லறை மற்றும் மொத்த வாங்குபவர்களிடமிருந்து பெறப்பட்ட ஆர்டர்களை நிறைவேற்றுங்கள்.",
+    "colProduceItems": "விளைபொருள் பொருட்கள்",
+    "colBuyerInfo": "வாங்குபவர் தகவல்",
+    "colQuantity": "அளவு",
+    "colTotalValue": "மொத்த மதிப்பு",
+    "colOrderStatus": "ஆர்டர் நிலை",
+    "colAuditProvenance": "தணிக்கை மூலம்",
+    "colActions": "செயல்கள்",
+    "allOrdersTab": "அனைத்து ஆர்டர்களும்",
+    "standardDelivery": "சாதாரண விநியோகம்",
+    "confirmBtn": "உறுதிசெய்",
+    "cancelBtn": "ரத்துசெய்",
+    "dispatchBtn": "அனுப்பு",
+    "markDeliveredBtn": "விநியோகிக்கப்பட்டதாகக் குறி",
+    "noOrdersInStatus": "இந்த நிலையில் ஆர்டர்கள் இல்லை",
+    "noOrdersDescription": "வாங்குபவர்கள் ஆர்டர் செய்யும்போது, அவை இங்கே காட்சியளிக்கும்.",
+    "statusUpdatedToast": "ஆர்டர் நிலை {{status}} ஆக புதுப்பிக்கப்பட்டது.",
+    "failedToLoadOrders": "ஆர்டர்களை ஏற்றுவதில் தோல்வி.",
+    "failedToUpdateStatus": "ஆர்டர் நிலையைப் புதுப்பிப்பதில் தோல்வி."
+  },
+  "farmerProfile": {
+    "sellerIdentity": "விற்பனையாளர் அடையாளம்",
+    "farmerProfile": "விவசாயி சுயவிவரம்",
+    "manageYourAgriculturalCredentialsFarmLocation": "உங்கள் விவசாய சான்றுகள், பண்ணை இருப்பிடம் மற்றும் தொடர்புத் தகவலை நிர்வகிக்கவும்.",
+    "fullName": "முழு பெயர்",
+    "farmFpoName": "பண்ணை / FPO பெயர்",
+    "emailAddress": "மின்னஞ்சல் முகவரி",
+    "mobileNumber": "மொபைல் எண்",
+    "location": "இருப்பிடம்",
+    "address": "முகவரி",
+    "sellerType": "விற்பனையாளர் வகை",
+    "verificationStatus": "சரிபார்ப்பு நிலை",
+    "editProfile": "சுயவிவரத்தைத் திருத்து",
+    "onChainCryptographicAccountHash": "ஆன்-செயின் கிரிப்டோகிராஃபிக் கணக்கு ஹேஷ்",
+    "copyHash": "ஹேஷ் நகலெடு",
+    "accountHashCopiedToast": "கணக்கு ஹேஷ் நகலெடுக்கப்பட்டது!",
+    "profileAvatarPhotoLabel": "சுயவிவர அவதார் புகைப்படம்",
+    "profileAvatarPhotoDesc": "சுயவிவரப் புகைப்படத்தைப் பதிவேற்றவும் (JPG, PNG, WEBP)",
+    "updatedSuccessToast": "விவசாயி சுயவிவரம் புதுப்பிக்கப்பட்டது!",
+    "updatedFailedToast": "சுயவிவரத்தைப் புதுப்பிப்பதில் தோல்வி.",
+    "sellerProfileCredentials": "விற்பனையாளர் சுயவிவரம் & சான்றுகள்",
+    "manageYourAgriculturalCredentials": "உங்கள் விவசாய சான்றுகள், பண்ணை இருப்பிடம் மற்றும் தொடர்புத் தகவலை நிர்வகிக்கவும்.",
+    "onChainHashTitle": "🛡️ ஆன்-செயின் கிரிப்டோகிராஃபிக் கணக்கு ஹேஷ்"
+  },
+  "farmerSales": {
+    "salesAnalyticsComingSoon": "விற்பனை பகுப்பாய்வு விரைவில் வரவுள்ளது.",
+    "financialInsights": "நிதி நுண்ணறிவு",
+    "salesAnalytics": "விற்பனை பகுப்பாய்வு",
+    "trackYourMonthlyRevenueGrowthAverage": "உங்கள் மாதாந்திர வருவாய் வளர்ச்சி மற்றும் விற்பனை செயல்திறனைக் கண்காணிக்கவும்.",
+    "totalRevenue": "மொத்த வருவாய்",
+    "avgOrderValue": "சராசரி ஆர்டர் மதிப்பு",
+    "fulfilledOrders": "பூர்த்தியடைந்த ஆர்டர்கள்",
+    "activeCustomers": "செயலில் உள்ள வாடிக்கையாளர்கள்"
+  },
+  "register": {
+    "agri": "அக்ரி",
+    "bazaar": "பஜார்",
+    "joinAgribazaar": "AgriBazaar இல் இணையுங்கள்",
+    "selectYourAccountTypeToGet": "தொடங்க உங்கள் கணக்கு வகையைத் தேர்ந்தெடுக்கவும்",
+    "farmerFpo": "விவசாயி / FPO",
+    "sellYourProduceDirectlyToBuyers": "உங்கள் விளைபொருட்களை நேரடியாக நியாயமான விலையில் விற்கவும்.",
+    "buyer": "வாங்குபவர்",
+    "sourceFreshAgriculturalProduceDirectlyFrom": "விவசாயிகளிடமிருந்து நேரடியாக புதிய விளைபொருட்களைப் பெறுங்கள்.",
+    "signIn": "உள்நுழைக",
+    "farmerRegistration": "விவசாயி பதிவு",
+    "createYourSellerProfileToList": "விற்பனையாளர் சுயவிவரத்தை உருவாக்குங்கள்",
+    "individualFarmer": "தனிநபர் விவசாயி",
+    "farmerProducerOrganizationFpo": "விவசாய உற்பத்தியாளர் அமைப்பு (FPO)",
+    "fullFarmAddress": "முழு பண்ணை முகவரி",
+    "buyerRegistration": "வாங்குபவர் பதிவு",
+    "createYourAccountToPurchaseProduce": "விளைபொருட்களை வாங்க உங்கள் கணக்கை உருவாக்குங்கள்",
+    "individualConsumer": "தனிநபர் நுகர்வோர்",
+    "businessRetailer": "வணிகம் / சில்லறை விற்பனையாளர்",
+    "wholesaleBulkBuyer": "மொத்த விற்பனை வாங்குபவர்",
+    "deliveryAddress": "விநியோக முகவரி"
+  },
+  "roles": {
+    "farmer": "விவசாயி",
+    "fpo": "விவசாயிகள் உற்பத்தியாளர் நிறுவனம் (FPO)",
+    "individual": "தனி நபர் நுகர்வோர்",
+    "business": "வணிகம் / சில்லறை விற்பனையாளர்",
+    "bulkBuyer": "மொத்த வாங்குபவர்",
+    "retailBuyer": "சில்லறை வாங்குபவர்",
+    "wholesaler": "மொத்த வியாபாரி",
+    "buyer": "வாங்குபவர்",
+    "seller": "விற்பனையாளர்",
+    "admin": "நிர்வாகி"
+  },
+  "categories": {
+    "fruits": "பழங்கள்",
+    "vegetables": "காய்கறிகள்",
+    "grains": "தானியங்கள் & அரிசி",
+    "pulses": "பருப்பு வகைகள்",
+    "spices": "நறுமணப் பொருட்கள்",
+    "millets": "சிறுதானியங்கள்",
+    "dairy": "பால் பொருட்கள்",
+    "other": "இதர பயிர்கள்"
+  },
+  "units": {
+    "kg": "கிலோகிராம் (KG)",
+    "quintal": "குவிண்டால் (100 KG)",
+    "ton": "மெட்ரிக் டன்",
+    "litre": "லிட்டர்",
+    "piece": "எண்ணிக்கை / கட்டு"
+  },
+  "adminDashboard": {
+    "colProductName": "தயாரிப்பு பெயர்",
+    "colBuyer": "வாங்குபவர்",
+    "colFarmerFpo": "விவசாயி / FPO",
+    "colAmount": "தொகை",
+    "colStatus": "நிலை",
+    "totalUsers": "மொத்த பயனர்கள்",
+    "farmersFpos": "விவசாயிகள் / FPOக்கள்",
+    "pendingVerifications": "நிலுவையில் உள்ள சரிபார்ப்புகள்",
+    "activeProducts": "செயலில் உள்ள தயாரிப்புகள்",
+    "totalOrders": "மொத்த ஆர்டர்கள்",
+    "completedOrders": "நிறைவடைந்த ஆர்டர்கள்",
+    "totalRevenue": "மொத்த வருவாய்",
+    "totalBuyers": "மொத்த வாங்குபவர்கள்",
+    "monthlyOrderVolumeTitle": "மாதாந்திர ஆர்டர் அளவு",
+    "monthlyOrderVolumeDesc": "மாத வாரியாக நிறைவேற்றப்பட்ட ஆர்டர்களின் எண்ணிக்கை.",
+    "categoryDistributionTitle": "பயிர் வகை விநியோகம்",
+    "categoryDistributionDesc": "வகைகள் வாரியாக செயலில் உள்ள பயிர் லிஸ்டிங்.",
+    "noPlatformOrders": "தள ஆர்டர்கள் எதுவும் இல்லை"
+  },
+  "adminOrders": {
+    "colOrderRef": "ஆர்டர் குறிப்பு",
+    "colProduceItem": "பயிர் பொருள்",
+    "colBuyer": "வாங்குபவர்",
+    "colFarmerFpo": "விவசாயி / FPO",
+    "colTotalValue": "மொத்த மதிப்பு",
+    "colPaymentStatus": "பணம் செலுத்தல் நிலை",
+    "colOrderStatus": "ஆர்டர் நிலை",
+    "noOrdersFound": "ஆர்டர்கள் எதுவும் கிடைக்கவில்லை",
+    "allOrders": "அனைத்து ஆர்டர்கள்"
+  },
+  "adminDisputes": {
+    "colComplainant": "புகாரளிப்பவர்",
+    "colReason": "சிக்கல் காரணம்",
+    "colStatus": "நிலை",
+    "colActions": "செயல்கள்",
+    "noDisputes": "திறந்த சிக்கல்கள் எதுவும் இல்லை",
+    "noDisputesDesc": "பிளாட்ஃபார்ம் வர்த்தகம் 0 கோரிக்கைகளுடன் சீராக இயங்குகிறது.",
+    "placeholderResponse": "நிர்வாகி பதில் விவரங்கள்...",
+    "resolveIssue": "சிக்கலைத் தீர்க்கவும்",
+    "rejectClaim": "கோரிக்கையை நிராகரி",
+    "resolveClaim": "கோரிக்கையைத் தீர்க்கவும்"
+  },
+  "adminFarmers": {
+    "colFarmerName": "விவசாயி / FPO பெயர்",
+    "colVerification": "சரிபார்ப்பு",
+    "colAuditProvenance": "தணிக்கை மூலம்",
+    "approvalHeadline": "விவசாயிகள் மற்றும் FPO ஒப்புதல்",
+    "noVerificationApps": "சரிபார்ப்பு விண்ணப்பங்கள் எதுவும் கிடைக்கவில்லை",
+    "placeholderRejection": "நிராகரிப்பிற்கான காரணத்தைக் குறிப்பிடவும்...",
+    "allApplications": "அனைத்து விண்ணப்பங்களும்",
+    "approveVerification": "சரிபார்ப்பை அங்கீகரி",
+    "rejectFarmerModalTitle": "{{name}} நிராகரிக்கப்பட வேண்டுமா?",
+    "rejectFarmerBtn": "விவசாயியை நிராகரி",
+    "colSellerType": "விற்பனையாளர் வகை",
+    "colContactInfo": "தொடர்பு தகவல்",
+    "colLocation": "இருப்பிடம்",
+    "colActions": "செயல்கள்"
+  },
+  "adminPayments": {
+    "colTxRef": "பரிவர்த்தனை குறிப்பு",
+    "colAmount": "தொகை",
+    "colStatus": "நிலை",
+    "colDate": "தேதி",
+    "noPaymentRecords": "பணம் செலுத்திய பதிவுகள் எதுவும் கிடைக்கவில்லை",
+    "noPaymentRecordsDesc": "வாங்குபவர் ஆர்டர்கள் செயல்படுத்தப்படும் போது பரிவர்த்தனைகள் இங்கே பதிவாகும்.",
+    "viewOnChainAudit": "ஆன்-செயின் பிளாக்செயின் தணிக்கையை காண்க"
+  },
+  "adminProducts": {
+    "colCropListing": "பயிர் லிஸ்டிங்",
+    "colFarmerFpo": "விவசாயி / FPO",
+    "colListingStatus": "லிஸ்டிங் நிலை",
+    "allListings": "அனைத்து லிஸ்டிங்கும்",
+    "disableListing": "லிஸ்டிங்கை முடக்கு",
+    "enableListing": "லிஸ்டிங்கை இயக்கு",
+    "colCategory": "பயிர் வகை",
+    "colPriceUnit": "விலை / அலகு",
+    "colActions": "செயல்கள்",
+    "noProduceListingsFound": "பயிர் லிஸ்டிங் எதுவும் கிடைக்கவில்லை"
+  },
+  "adminSettlements": {
+    "colFarmerProducer": "விவசாயி / உற்பத்தியாளர்",
+    "colVerification": "அக்ரிபஜார் சரிபார்ப்பு",
+    "colRazorpayStatus": "ரேஸர்பே விற்பனையாளர் நிலை",
+    "colSettlementAccount": "செட்டில்மென்ட் கணக்கு",
+    "colTotalSettled": "மொத்தம் செலுத்தப்பட்டது",
+    "colPendingSettlement": "நிலுவையில் உள்ள செட்டில்மென்ட்",
+    "colAuditProvenance": "தணிக்கை மூலம்",
+    "noSettlementRecords": "விற்பனையாளர் செட்டில்மென்ட் பதிவுகள் இல்லை",
+    "noSettlementDesc": "விவசாயி செட்டில்மென்ட் நிலைகள் இங்கே தோன்றும்.",
+    "financialControlBadge": "சந்தை நிதி மேலாண்மை",
+    "headline": "பணம் செலுத்தல் & செட்டில்மென்ட் பார்வை",
+    "subtitle": "ரேஸர்பே விற்பனையாளர் கணக்கு அமைவு மற்றும் விவசாயிகளுக்கான செட்டில்மென்ட்களைக் கண்காணிக்கவும்.",
+    "refreshSettlements": "செட்டில்மென்ட்களை புதுப்பி",
+    "allFarmers": "அனைத்து விவசாயிகள்",
+    "razorpayRoutePendingTitle": "ரேஸர்பே ரூட் சேவையை செயல்படுத்துவது நிலுவையில் உள்ளது (சோதனை பயன்முறை)",
+    "razorpayRoutePendingDesc": "சுற்றுச்சூழல் கொடி RAZORPAY_ROUTE_ENABLED=false செயல்படுகிறது. சாதாரண வாங்குபவர் பணம் செலுத்துதல் சரியாக இயங்குகிறது."
+  },
+  "adminUsers": {
+    "colUserName": "பயனர் பெயர்",
+    "colEmail": "மின்னஞ்சல் முகவரி",
+    "colAccountHash": "ஆன்-செயின் கணக்கு ஹாஷ்",
+    "colAccountRole": "கணக்கு பங்கு",
+    "suspendAccount": "கணக்கை இடைநிறுத்து",
+    "activateAccount": "கணக்கை செயல்படுத்து",
+    "allRoles": "அனைத்து பங்குகள்",
+    "colAccountStatus": "கணக்கு நிலை",
+    "colActions": "செயல்கள்",
+    "noRegisteredUsersFound": "பதிவுசெய்த பயனர்கள் யாரும் கிடைக்கவில்லை"
+  },
+  "adminAnalytics": {
+    "monthlyRevenueTrend": "மாதாந்திர வருவாய் போக்கு",
+    "grossVolumeDesc": "மாதவாரியாக மொத்த வர்த்தக மதிப்பு.",
+    "orderStatusBreakdown": "ஆர்டர் நிலை விவரம்",
+    "orderRatioDesc": "நிலுவையில் உள்ள, செயலில் உள்ள மற்றும் முடிந்த ஆர்டர்களின் விகிதம்.",
+    "farmerRegistrations": "விவசாயி & FPO பதிவுகள்",
+    "registrationVelocityDesc": "காலப்போக்கில் பதிவு வளர்ச்சி.",
+    "categoryListingVolume": "பயிர் வகை பட்டியல் அளவு",
+    "categoryListingsDesc": "ஒவ்வொரு விளைபொருள் வகையிலும் உள்ள செயலில் உள்ள பட்டியல்களின் எண்ணிக்கை."
+  },
+  "r": {
+    "o": {
+      "l": {
+        "e": {
+          "s": {
+            ".": {
+              "i": {
+                "n": {
+                  "d": {
+                    "i": {
+                      "v": {
+                        "i": {
+                          "d": {
+                            "u": {
+                              "a": {
+                                "l": "தனிநபர் வாங்குபவர்"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "b": {
+                "u": {
+                  "s": {
+                    "i": {
+                      "n": {
+                        "e": {
+                          "s": {
+                            "s": "வணிகம் / சில்லறை விற்பனையாளர்"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "l": {
+                    "k": {
+                      "B": {
+                        "u": {
+                          "y": {
+                            "e": {
+                              "r": "மொத்த விற்பனை வாங்குபவர்"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "f": {
+                "a": {
+                  "r": {
+                    "m": {
+                      "e": {
+                        "r": "தனிநபர் விவசாயி"
+                      }
+                    }
+                  }
+                },
+                "p": {
+                  "o": "விவசாய உற்பத்தியாளர் அமைப்பு (FPO)"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "c": {
+    "a": {
+      "t": {
+        "e": {
+          "g": {
+            "o": {
+              "r": {
+                "i": {
+                  "e": {
+                    "s": {
+                      ".": {
+                        "f": {
+                          "r": {
+                            "u": {
+                              "i": {
+                                "t": {
+                                  "s": "பழங்கள்"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "v": {
+                          "e": {
+                            "g": {
+                              "e": {
+                                "t": {
+                                  "a": {
+                                    "b": {
+                                      "l": {
+                                        "e": {
+                                          "s": "காய்கறிகள்"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "g": {
+                          "r": {
+                            "a": {
+                              "i": {
+                                "n": {
+                                  "s": "தானியங்கள் & அரிசி"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "p": {
+                          "u": {
+                            "l": {
+                              "s": {
+                                "e": {
+                                  "s": "பருப்பு வகைகள்"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "s": {
+                          "p": {
+                            "i": {
+                              "c": {
+                                "e": {
+                                  "s": "நறுமணப் பொருட்கள்"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "m": {
+                          "i": {
+                            "l": {
+                              "l": {
+                                "e": {
+                                  "t": {
+                                    "s": "சிறுதானியங்கள்"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "d": {
+                          "a": {
+                            "i": {
+                              "r": {
+                                "y": "பால் பொருட்கள்"
+                              }
+                            }
+                          }
+                        },
+                        "o": {
+                          "t": {
+                            "h": {
+                              "e": {
+                                "r": "இதர பயிர் விளைபொருட்கள்"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "o": {
+      "m": {
+        "m": {
+          "o": {
+            "n": {
+              ".": {
+                "a": {
+                  "l": {
+                    "l": {
+                      "O": {
+                        "r": {
+                          "d": {
+                            "e": {
+                              "r": {
+                                "s": "அனைத்து ஆர்டர்கள்"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "p": {
+                  "a": {
+                    "y": {
+                      "N": {
+                        "o": {
+                          "w": "இப்போது பணம் செலுத்துங்கள்"
+                        }
+                      }
+                    }
+                  }
+                },
+                "e": {
+                  "d": {
+                    "i": {
+                      "t": {
+                        "P": {
+                          "r": {
+                            "o": {
+                              "f": {
+                                "i": {
+                                  "l": {
+                                    "e": "சுயவிவரத்தைத் திருத்து"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "s": {
+                  "a": {
+                    "v": {
+                      "e": {
+                        "C": {
+                          "h": {
+                            "a": {
+                              "n": {
+                                "g": {
+                                  "e": {
+                                    "s": "மாற்றங்களைச் சேமிக்கவும்"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "c": {
+                  "o": {
+                    "p": {
+                      "y": {
+                        "H": {
+                          "a": {
+                            "s": {
+                              "h": "ஹாஷ் நகலெடு"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "b": {
+    "u": {
+      "y": {
+        "e": {
+          "r": {
+            "V": {
+              "e": {
+                "r": {
+                  "i": {
+                    "f": {
+                      "i": {
+                        "c": {
+                          "a": {
+                            "t": {
+                              "i": {
+                                "o": {
+                                  "n": {
+                                    ".": {
+                                      "b": {
+                                        "u": {
+                                          "y": {
+                                            "e": {
+                                              "r": {
+                                                "L": {
+                                                  "a": {
+                                                    "b": {
+                                                      "e": {
+                                                        "l": "வாங்குபவர்"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "t": {
+                                        "i": {
+                                          "t": {
+                                            "l": {
+                                              "e": "வாங்குபவர் சரிபார்ப்பு நிலை"
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "s": {
+                                        "u": {
+                                          "b": {
+                                            "t": {
+                                              "i": {
+                                                "t": {
+                                                  "l": {
+                                                    "e": "அக்ரிபஜாரில் அடையாளம், வணிக இணக்கம் மற்றும் ஒழுங்குமுறை சான்றுகளை நிர்வகிக்கவும்."
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "c": {
+                                        "h": {
+                                          "e": {
+                                            "c": {
+                                              "k": {
+                                                "l": {
+                                                  "i": {
+                                                    "s": {
+                                                      "t": {
+                                                        "H": {
+                                                          "e": {
+                                                            "a": {
+                                                              "d": {
+                                                                "i": {
+                                                                  "n": {
+                                                                    "g": "சரிபார்ப்பு சரிபார்ப்பு பட்டியல்"
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "o": {
+                                          "m": {
+                                            "p": {
+                                              "l": {
+                                                "e": {
+                                                  "t": {
+                                                    "e": {
+                                                      "d": {
+                                                        "C": {
+                                                          "o": {
+                                                            "u": {
+                                                              "n": {
+                                                                "t": {
+                                                                  "O": {
+                                                                    "f": {
+                                                                      "T": {
+                                                                        "o": {
+                                                                          "t": {
+                                                                            "a": {
+                                                                              "l": "{{total}} இல் {{count}} முடிந்தது"
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "w": {
+                                        "i": {
+                                          "z": {
+                                            "a": {
+                                              "r": {
+                                                "d": {
+                                                  "C": {
+                                                    "a": {
+                                                      "r": {
+                                                        "d": {
+                                                          "H": {
+                                                            "e": {
+                                                              "a": {
+                                                                "d": {
+                                                                  "i": {
+                                                                    "n": {
+                                                                      "g": "உங்கள் சரிபார்ப்பு வழிகாட்டியை முடிக்கவும்"
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          },
+                                                          "D": {
+                                                            "e": {
+                                                              "s": {
+                                                                "c": "விவசாயிகளுடன் நம்பிக்கையை உருவாக்க மற்றும் சரிபார்க்கப்பட்ட பேட்ஜ்களைப் பெற அனைத்து சோதனைகளையும் முடிக்கவும்."
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "o": {
+                                        "f": {
+                                          "f": {
+                                            "i": {
+                                              "c": {
+                                                "i": {
+                                                  "a": {
+                                                    "l": {
+                                                      "P": {
+                                                        "o": {
+                                                          "r": {
+                                                            "t": {
+                                                              "a": {
+                                                                "l": "• அதிகாரப்பூர்வ சரிபார்ப்பு போர்டல்"
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "a": {
+                                        "l": {
+                                          "l": {
+                                            "C": {
+                                              "h": {
+                                                "e": {
+                                                  "c": {
+                                                    "k": {
+                                                      "s": {
+                                                        "C": {
+                                                          "o": {
+                                                            "m": {
+                                                              "p": {
+                                                                "l": {
+                                                                  "e": {
+                                                                    "t": {
+                                                                      "e": {
+                                                                        "d": {
+                                                                          "D": {
+                                                                            "e": {
+                                                                              "s": {
+                                                                                "c": "தேவையான அனைத்து சரிபார்ப்பு சோதனைகளும் வெற்றிகரமாக முடிவடைந்து தணிக்கை செய்யப்பட்டுள்ளன."
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "v": {
+                                        "e": {
+                                          "r": {
+                                            "i": {
+                                              "f": {
+                                                "i": {
+                                                  "e": {
+                                                    "d": {
+                                                      "O": {
+                                                        "n": "சரிபார்க்கப்பட்ட தேதி:"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "C": {
+                                      "o": {
+                                        "n": {
+                                          "f": {
+                                            "i": {
+                                              "g": {
+                                                ".": {
+                                                  "I": {
+                                                    "N": {
+                                                      "D": {
+                                                        "I": {
+                                                          "V": {
+                                                            "I": {
+                                                              "D": {
+                                                                "U": {
+                                                                  "A": {
+                                                                    "L": {
+                                                                      ".": {
+                                                                        "p": {
+                                                                          "o": {
+                                                                            "r": {
+                                                                              "t": {
+                                                                                "a": {
+                                                                                  "l": {
+                                                                                    "T": {
+                                                                                      "i": {
+                                                                                        "t": {
+                                                                                          "l": {
+                                                                                            "e": "தனிநபர் வாங்குபவர் சரிபார்ப்பு போர்டல்"
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          },
+                                                                          "a": {
+                                                                            "g": {
+                                                                              "e": {
+                                                                                "T": {
+                                                                                  "i": {
+                                                                                    "t": {
+                                                                                      "l": {
+                                                                                        "e": "தனிநபர் வாங்குபவர் இணக்கம் & சரிபார்ப்பு"
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "b": {
+                                                                          "a": {
+                                                                            "d": {
+                                                                              "g": {
+                                                                                "e": {
+                                                                                  "T": {
+                                                                                    "e": {
+                                                                                      "x": {
+                                                                                        "t": "சரிபார்க்கப்பட்ட தனிநபர் வாங்குபவர்"
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "i": {
+                                                                          "n": {
+                                                                            "c": {
+                                                                              "o": {
+                                                                                "m": {
+                                                                                  "p": {
+                                                                                    "l": {
+                                                                                      "e": {
+                                                                                        "t": {
+                                                                                          "e": {
+                                                                                            "B": {
+                                                                                              "a": {
+                                                                                                "d": {
+                                                                                                  "g": {
+                                                                                                    "e": {
+                                                                                                      "T": {
+                                                                                                        "e": {
+                                                                                                          "x": {
+                                                                                                            "t": "சரிபார்ப்பு நிலுவையில் உள்ளது"
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "s": {
+                                                                          "t": {
+                                                                            "e": {
+                                                                              "p": {
+                                                                                "s": {
+                                                                                  ".": {
+                                                                                    "m": {
+                                                                                      "o": {
+                                                                                        "b": {
+                                                                                          "i": {
+                                                                                            "l": {
+                                                                                              "e": {
+                                                                                                ".": {
+                                                                                                  "s": {
+                                                                                                    "h": {
+                                                                                                      "o": {
+                                                                                                        "r": {
+                                                                                                          "t": {
+                                                                                                            "L": {
+                                                                                                              "a": {
+                                                                                                                "b": {
+                                                                                                                  "e": {
+                                                                                                                    "l": "மொபைல் OTP"
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  },
+                                                                                                  "n": {
+                                                                                                    "a": {
+                                                                                                      "m": {
+                                                                                                        "e": "கைபேசி எண் சரிபார்ப்பு"
+                                                                                                      }
+                                                                                                    }
+                                                                                                  },
+                                                                                                  "d": {
+                                                                                                    "e": {
+                                                                                                      "s": {
+                                                                                                        "c": {
+                                                                                                          "r": {
+                                                                                                            "i": {
+                                                                                                              "p": {
+                                                                                                                "t": {
+                                                                                                                  "i": {
+                                                                                                                    "o": {
+                                                                                                                      "n": "SMS OTP மூலம் மொபைல் எண்ணை சரிபார்க்கவும்."
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    },
+                                                                                    "i": {
+                                                                                      "d": {
+                                                                                        "e": {
+                                                                                          "n": {
+                                                                                            "t": {
+                                                                                              "i": {
+                                                                                                "t": {
+                                                                                                  "y": {
+                                                                                                    ".": {
+                                                                                                      "s": {
+                                                                                                        "h": {
+                                                                                                          "o": {
+                                                                                                            "r": {
+                                                                                                              "t": {
+                                                                                                                "L": {
+                                                                                                                  "a": {
+                                                                                                                    "b": {
+                                                                                                                      "e": {
+                                                                                                                        "l": "அரசு அடையாளம்"
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      },
+                                                                                                      "n": {
+                                                                                                        "a": {
+                                                                                                          "m": {
+                                                                                                            "e": "ஆதார் / பாஸ்போர்ட் / வாக்காளர் அடையாள அட்டை"
+                                                                                                          }
+                                                                                                        }
+                                                                                                      },
+                                                                                                      "d": {
+                                                                                                        "e": {
+                                                                                                          "s": {
+                                                                                                            "c": {
+                                                                                                              "r": {
+                                                                                                                "i": {
+                                                                                                                  "p": {
+                                                                                                                    "t": {
+                                                                                                                      "i": {
+                                                                                                                        "o": {
+                                                                                                                          "n": "அரசாங்க அடையாள அட்டையுடன் சரிபார்ப்பு."
+                                                                                                                        }
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    },
+                                                                                    "a": {
+                                                                                      "d": {
+                                                                                        "d": {
+                                                                                          "r": {
+                                                                                            "e": {
+                                                                                              "s": {
+                                                                                                "s": {
+                                                                                                  ".": {
+                                                                                                    "s": {
+                                                                                                      "h": {
+                                                                                                        "o": {
+                                                                                                          "r": {
+                                                                                                            "t": {
+                                                                                                              "L": {
+                                                                                                                "a": {
+                                                                                                                  "b": {
+                                                                                                                    "e": {
+                                                                                                                      "l": "விநியோக முகவரி"
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    },
+                                                                                                    "n": {
+                                                                                                      "a": {
+                                                                                                        "m": {
+                                                                                                          "e": "விநியோக மற்றும் குடியிருப்பு முகவரி"
+                                                                                                        }
+                                                                                                      }
+                                                                                                    },
+                                                                                                    "d": {
+                                                                                                      "e": {
+                                                                                                        "s": {
+                                                                                                          "c": {
+                                                                                                            "r": {
+                                                                                                              "i": {
+                                                                                                                "p": {
+                                                                                                                  "t": {
+                                                                                                                    "i": {
+                                                                                                                      "o": {
+                                                                                                                        "n": "பயிர் விநியோகத்திற்கான சரியான முகவரி."
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    },
+                                                                                    "s": {
+                                                                                      "u": {
+                                                                                        "m": {
+                                                                                          "m": {
+                                                                                            "a": {
+                                                                                              "r": {
+                                                                                                "y": {
+                                                                                                  ".": {
+                                                                                                    "s": {
+                                                                                                      "h": {
+                                                                                                        "o": {
+                                                                                                          "r": {
+                                                                                                            "t": {
+                                                                                                              "L": {
+                                                                                                                "a": {
+                                                                                                                  "b": {
+                                                                                                                    "e": {
+                                                                                                                      "l": "மதிப்பாய்வு & சமர்ப்பிப்பு"
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    },
+                                                                                                    "n": {
+                                                                                                      "a": {
+                                                                                                        "m": {
+                                                                                                          "e": "சரிபார்ப்பு மதிப்பாய்வு"
+                                                                                                        }
+                                                                                                      }
+                                                                                                    },
+                                                                                                    "d": {
+                                                                                                      "e": {
+                                                                                                        "s": {
+                                                                                                          "c": {
+                                                                                                            "r": {
+                                                                                                              "i": {
+                                                                                                                "p": {
+                                                                                                                  "t": {
+                                                                                                                    "i": {
+                                                                                                                      "o": {
+                                                                                                                        "n": "சமர்ப்பிக்கப்பட்ட சான்றுகளின் இறுதி மதிப்பாய்வு."
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "m": {
+    "a": {
+      "r": {
+        "k": {
+          "e": {
+            "t": {
+              "p": {
+                "l": {
+                  "a": {
+                    "c": {
+                      "e": {
+                        ".": {
+                          "n": {
+                            "e": {
+                              "w": {
+                                "e": {
+                                  "s": {
+                                    "t": {
+                                      "F": {
+                                        "i": {
+                                          "r": {
+                                            "s": {
+                                              "t": "புதியது முதலில்"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "p": {
+                            "r": {
+                              "i": {
+                                "c": {
+                                  "e": {
+                                    "L": {
+                                      "o": {
+                                        "w": {
+                                          "T": {
+                                            "o": {
+                                              "H": {
+                                                "i": {
+                                                  "g": {
+                                                    "h": "விலை: குறைந்ததிலிருந்து அதிகம்"
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "H": {
+                                      "i": {
+                                        "g": {
+                                          "h": {
+                                            "T": {
+                                              "o": {
+                                                "L": {
+                                                  "o": {
+                                                    "w": "விலை: அதிகத்திலிருந்து குறைவு"
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "m": {
+                            "o": {
+                              "s": {
+                                "t": {
+                                  "P": {
+                                    "o": {
+                                      "p": {
+                                        "u": {
+                                          "l": {
+                                            "a": {
+                                              "r": "மிகவும் பிரபலமானவை"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "p": {
+    "r": {
+      "o": {
+        "d": {
+          "u": {
+            "c": {
+              "t": {
+                "D": {
+                  "e": {
+                    "t": {
+                      "a": {
+                        "i": {
+                          "l": {
+                            "s": {
+                              ".": {
+                                "a": {
+                                  "v": {
+                                    "a": {
+                                      "i": {
+                                        "l": {
+                                          "a": {
+                                            "b": {
+                                              "l": {
+                                                "e": {
+                                                  "I": {
+                                                    "n": {
+                                                      "S": {
+                                                        "t": {
+                                                          "o": {
+                                                            "c": {
+                                                              "k": "{{count}} {{unit}} இருப்பில் உள்ளது"
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "F": {
+                                                    "r": {
+                                                      "o": {
+                                                        "m": {
+                                                          "L": {
+                                                            "a": {
+                                                              "b": {
+                                                                "e": {
+                                                                  "l": "கிடைக்கும் தேதி: {{date}}"
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "b": {
+                                    "o": {
+                                      "u": {
+                                        "t": {
+                                          "F": {
+                                            "a": {
+                                              "r": {
+                                                "m": {
+                                                  "e": {
+                                                    "r": {
+                                                      "T": {
+                                                        "i": {
+                                                          "t": {
+                                                            "l": {
+                                                              "e": "விவசாயி / உற்பத்தியாளர் பற்றி"
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "h": {
+                                  "a": {
+                                    "r": {
+                                      "v": {
+                                        "e": {
+                                          "s": {
+                                            "t": {
+                                              "D": {
+                                                "a": {
+                                                  "t": {
+                                                    "e": {
+                                                      "L": {
+                                                        "a": {
+                                                          "b": {
+                                                            "e": {
+                                                              "l": "அறுவடை: {{date}}"
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "q": {
+                                  "u": {
+                                    "a": {
+                                      "n": {
+                                        "t": {
+                                          "i": {
+                                            "t": {
+                                              "y": {
+                                                "L": {
+                                                  "a": {
+                                                    "b": {
+                                                      "e": {
+                                                        "l": "அளவு ({{unit}}):"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "buyerVerificationConfig": {
+    "INDIVIDUAL": {
+      "portalTitle": "தனிநபர் வாங்குபவர் சரிபார்ப்பு",
+      "pageTitle": "வாங்குபவர் சரிபார்ப்பு நிலை",
+      "badgeText": "சரிபார்க்கப்பட்ட தனிநபர் வாங்குபவர்",
+      "incompleteBadgeText": "சரிபார்ப்பு நிலுவையில் உள்ளது",
+      "steps": {
+        "mobile": {
+          "shortLabel": "மொபைல்",
+          "name": "மொபைல் சரிபார்ப்பு",
+          "description": "அறிவிப்புகள் மற்றும் விழிப்பூட்டல்களைப் பெற மொபைல் எண்ணைச் சரிபார்க்கவும்."
+        },
+        "identity": {
+          "shortLabel": "அடையாளம்",
+          "name": "ஆதார் / அடையாளச் சான்று",
+          "description": "அரசு அடையாளச் சான்றின் முன் & பின் நகலை பதிவேற்றவும்."
+        },
+        "address": {
+          "shortLabel": "முகவரி",
+          "name": "முகவரி சரிபார்ப்பு",
+          "description": "சரிபார்க்கப்பட்ட விநியோகம் & கட்டண முகவரி விவரங்களை வழங்கவும்."
+        },
+        "summary": {
+          "shortLabel": "சுருக்கம்",
+          "name": "சரிபார்ப்பு சுருக்கம்",
+          "description": "உங்கள் தனிநபர் சரிபார்ப்பு விண்ணப்பத்தை மதிப்பாய்வு செய்து சமர்ப்பிக்கவும்."
+        }
+      }
+    },
+    "BUSINESS": {
+      "portalTitle": "வணிக வாங்குபவர் சரிபார்ப்பு",
+      "pageTitle": "நிறுவன சரிபார்ப்பு நிலை",
+      "badgeText": "சரிபார்க்கப்பட்ட வணிக வாங்குபவர்",
+      "incompleteBadgeText": "வணிக சரிபார்ப்பு நிலுவையில் உள்ளது",
+      "steps": {
+        "business": {
+          "shortLabel": "வணிகம்",
+          "name": "வணிக விவரங்கள்",
+          "description": "சட்டப்பூர்வ நிறுவனத்தின் பெயர், வகை மற்றும் பதிவுசெய்த முகவரியை உள்ளிடவும்."
+        },
+        "pan": {
+          "shortLabel": "பான்",
+          "name": "வணிக பான் கார்டு",
+          "description": "பதிவுசெய்த நிறுவனம் அல்லது அமைப்பின் பான் விவரங்களை வழங்கவும்."
+        },
+        "gstin": {
+          "shortLabel": "ஜிஎஸ்டிஐஎன்",
+          "name": "ஜிஎஸ்டிஐஎன் பதிவு",
+          "description": "சரக்கு மற்றும் சேவை வரி அடையாள எண்ணை வழங்கவும்."
+        },
+        "businessRegistration": {
+          "shortLabel": "பதிவு",
+          "name": "நிறுவன பதிவுச் சான்றிதழ்",
+          "description": "அதிகாரப்பூர்வ வணிகப் பதிவுச் சான்றிதழைப் பதிவேற்றவும்."
+        },
+        "representative": {
+          "shortLabel": "பிரதிநிதி",
+          "name": "அதிகாரம் பெற்ற பிரதிநிதி",
+          "description": "மேலாளர் அல்லது அதிகாரம் பெற்ற கையொப்பமிட்டவர் விவரங்களை வழங்கவும்."
+        },
+        "bank": {
+          "shortLabel": "வங்கி",
+          "name": "வங்கி கணக்கு விவரங்கள்",
+          "description": "கட்டணப் பரிவர்த்தனைகளுக்கான வணிக வங்கி கணக்கு விவரங்களை வழங்கவும்."
+        },
+        "documents": {
+          "shortLabel": "ஆவணங்கள்",
+          "name": "துணை ஆவணங்கள்",
+          "description": "கூடுதல் வணிக சரிபார்ப்பு ஆவணங்களைப் பதிவேற்றவும்."
+        },
+        "summary": {
+          "shortLabel": "சுருக்கம்",
+          "name": "சரிபார்ப்பு மதிப்பாய்வு",
+          "description": "விண்ணப்பத்தைச் சமர்ப்பிப்பதற்கு முன் நிறுவனத்தின் விவரங்களை மதிப்பாய்வு செய்யவும்."
+        }
+      }
+    },
+    "BULK_BUYER": {
+      "portalTitle": "மொத்த விற்பனை வாங்குபவர் சரிபார்ப்பு",
+      "pageTitle": "மொத்த விற்பனை உரிம சரிபார்ப்பு",
+      "badgeText": "சரிபார்க்கப்பட்ட மொத்த விற்பனை வாங்குபவர்",
+      "incompleteBadgeText": "மொத்த விற்பனை சரிபார்ப்பு நிலுவையில் உள்ளது",
+      "steps": {
+        "business": {
+          "shortLabel": "வணிகம்",
+          "name": "மொத்த விற்பனை நிறுவன விவரங்கள்",
+          "description": "மொத்த விற்பனை நிறுவனத்தின் பெயர், செயல்பாட்டு எல்லை மற்றும் முகவரியை உள்ளிடவும்."
+        },
+        "pan": {
+          "shortLabel": "பான்",
+          "name": "நிறுவன பான்",
+          "description": "நிறுவன பான் ஆவணத்தை வழங்கவும்."
+        },
+        "gstin": {
+          "shortLabel": "ஜிஎஸ்டிஐஎன்",
+          "name": "மொத்த விற்பனை ஜிஎஸ்டிஐஎன்",
+          "description": "பதிவுசெய்த ஜிஎஸ்டிஐஎன் விவரங்களை வழங்கவும்."
+        },
+        "businessRegistration": {
+          "shortLabel": "பதிவு",
+          "name": "வர்த்தக / பதிவுச் சான்றிதழ்",
+          "description": "வணிக வர்த்தக உரிமம் அல்லது பதிவுச் சான்றிதழைப் பதிவேற்றவும்."
+        },
+        "udyam": {
+          "shortLabel": "உத்யம்",
+          "name": "உத்யம் எம்எஸ்எம்இ பதிவு",
+          "description": "எம்எஸ்எம்இ உத்யம் பதிவுச் சான்றிதழை வழங்கவும்."
+        },
+        "representative": {
+          "shortLabel": "பிரதிநிதி",
+          "name": "மொத்த விற்பனை தொடர்பு நபர்",
+          "description": "முதன்மைத் தொடர்பு மற்றும் அதிகாரம் பெற்ற பிரதிநிதி தகவலை வழங்கவும்."
+        },
+        "bank": {
+          "shortLabel": "வங்கி",
+          "name": "தீர்வு வங்கி கணக்கு",
+          "description": "பெரிய அளவிலான வர்த்தகத் தீர்வுகளுக்கான வங்கி விவரங்களை வழங்கவும்."
+        },
+        "fssai": {
+          "shortLabel": "எஃப்எஸ்எஸ்ஏஐ",
+          "name": "எஃப்எஸ்எஸ்ஏஐ உணவுப் பாதுகாப்பு உரிமம்",
+          "description": "உணவுப் பொருட்களைக் கையாளும் பட்சத்தில் எஃப்எஸ்எஸ்ஏஐ உரிமத்தை வழங்கவும்."
+        },
+        "documents": {
+          "shortLabel": "ஆவணங்கள்",
+          "name": "மொத்த விற்பனை உரிமங்கள் & அனுமதிகள்",
+          "description": "வர்த்தக அனுமதிகள், மண்டி உரிமங்கள் மற்றும் வரி ஆவணங்களைப் பதிவேற்றவும்."
+        },
+        "summary": {
+          "shortLabel": "சுருக்கம்",
+          "name": "இறுதி மொத்த விற்பனை மதிப்பாய்வு",
+          "description": "சமர்ப்பிப்பதற்கு முன் அனைத்து மொத்த விற்பனை ஆவணங்களையும் மதிப்பாய்வு செய்யவும்."
+        }
+      }
+    }
+  },
+  "productDetails": {
+    "availableInStock": "இருப்பில் {{count}} {{unit}} உள்ளது",
+    "harvestDateLabel": "அறுவடை: {{date}}",
+    "availableFromLabel": "கிடைக்கும் நாள்: {{date}}",
+    "quantityLabel": "அளவு ({{unit}}):",
+    "aboutFarmerTitle": "விவசாயி / உற்பத்தியாளர் பற்றி"
   }
 }

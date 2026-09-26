@@ -100,9 +100,9 @@ export default function Cart() {
           <div className="lg:col-span-4 bg-white rounded-3xl border border-[#e8eddb] p-6 lg:p-8 shadow-sm lg:sticky lg:top-6">
             <h2 className="font-extrabold text-[#001e2b] text-xl mb-6 font-display border-b border-[#f0f4e8] pb-4">{t('checkout.orderSummary')}</h2>
             <div className="space-y-4 text-sm font-sans">
-              <div className="flex justify-between text-gray-600"><span className="font-medium">Items Subtotal</span><span className="font-bold text-[#001e2b] font-display">₹{cart.totalAmount}</span></div>
-              <div className="flex justify-between text-gray-600"><span className="font-medium">Estimated Shipping</span><span className="text-[#00684a] font-bold uppercase tracking-wider font-display">Free Direct Delivery</span></div>
-              <div className="flex justify-between border-t border-[#f0f4e8] pt-4"><span className="font-extrabold text-[#001e2b] text-base font-display">Total Amount</span><span className="text-2xl font-black text-[#001e2b] font-display">₹{cart.totalAmount}</span></div>
+              <div className="flex justify-between text-gray-600"><span className="font-medium">{t('cart.itemsSubtotal')}</span><span className="font-bold text-[#001e2b] font-display">₹{cart.totalAmount}</span></div>
+              <div className="flex justify-between text-gray-600"><span className="font-medium">{t('cart.shipping')}</span><span className="text-[#00684a] font-bold uppercase tracking-wider font-display">{t('cart.freeDelivery')}</span></div>
+              <div className="flex justify-between border-t border-[#f0f4e8] pt-4"><span className="font-extrabold text-[#001e2b] text-base font-display">{t('cart.totalAmount')}</span><span className="text-2xl font-black text-[#001e2b] font-display">₹{cart.totalAmount}</span></div>
             </div>
             <div className="mt-8">
               <Button variant="primary" size="lg" fullWidth icon={ArrowRight} onClick={() => navigate('/buyer/checkout')}>

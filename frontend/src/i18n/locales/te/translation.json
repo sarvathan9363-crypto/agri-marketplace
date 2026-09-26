@@ -1,7 +1,7 @@
 {
   "common": {
     "save": "సేవ్ చేయండి",
-    "cancel": "రద్దు చేయండి",
+    "cancel": "రద్దు చేయి",
     "delete": "తొలగించండి",
     "edit": "సవరించండి",
     "close": "మూసివేయండి",
@@ -20,7 +20,35 @@
     "actions": "చర్యలు",
     "all": "అన్నీ",
     "noResults": "ఫలితాలు లేవు",
-    "somethingWentWrong": "ఏదో తప్పు జరిగింది"
+    "somethingWentWrong": "ఏదో తప్పు జరిగింది",
+    "executiveControls": "ఎగ్జిక్యూటివ్ నియంత్రణలు",
+    "adminDashboard": "అడ్మిన్ డాష్‌బోర్డ్",
+    "agribazaarPlatformMetricsFarmerVerificationPipeline": "అగ్రిబజార్ ప్లాట్‌ఫారమ్ గణాంకాలు, రైతు పరిశీలన పైప్‌లైన్ మరియు వాణిజ్య పరిమాణాలు.",
+    "noOrderVolumeDataYet": "ఇంకా ఎలాంటి ఆర్డర్ పరిమాణ డేటా నమోదు కాలేదు.",
+    "noCategoryDistributionDataYet": "ఇంకా ఎలాంటి పంట వర్గాల డేటా నమోదు కాలేదు.",
+    "recentPlatformOrders": "ఇటీవలి ప్లాట్‌ఫారమ్ ఆర్డర్లు",
+    "conflictOversight": "వివాద పర్యవేక్షణ",
+    "disputeResolution": "వివాదాల పరిష్కారం",
+    "arbitrateBuyerAndFarmerClaimsQuality": "కొనుగోలుదారు మరియు రైతు క్లెయిమ్‌లు, నాణ్యత ఆందోళనలు మరియు డెలివరీ వివాదాలను పరిష్కరించండి.",
+    "resolveDispute": "వివాదాన్ని పరిష్కరించండి",
+    "kycVerificationPipeline": "KYC సరిచూసే పైప్‌లైన్",
+    "reviewFarmRegistrationsVerifyIdentityAnd": "వ్యవసాయ నమోదులను సమీక్షించండి, గుర్తింపును సరిచూడండి మరియు విక్రేతల వివరాలను నిర్వహించండి.",
+    "platformFulfillment": "ప్లాట్‌ఫారమ్ ఆర్డర్ల నిర్వహణ",
+    "allPlatformOrders": "అన్ని ప్లాట్‌ఫారమ్ ఆర్డర్లు",
+    "fullOversightOfOrdersFulfillmentStatuses": "వర్తక ఆర్డర్లు, నెరవేర్పు స్థితులు మరియు కొనుగోలుదారుల చెల్లింపుల పూర్తి పర్యవేక్షణ.",
+    "financialAudit": "ఆర్థిక ఆడిట్",
+    "paymentAuditLogs": "చెల్లింపు ఆడిట్ లాగ్‌లు",
+    "auditPlatformTransactionSettlementsAndGateway": "ప్లాట్‌ఫారమ్ లావాదేవీల సెటిల్‌మెంట్‌లు మరియు పేమెంట్ గేట్‌వే లాగ్‌లను ఆడిట్ చేయండి.",
+    "catalogModeration": "కేటలాగ్ పర్యవేక్షణ",
+    "productModeration": "ఉత్పత్తుల పర్యవేక్షణ",
+    "reviewActiveDraftAndPausedCrop": "రైతులు ప్రచురించిన సక్రియ, డ్రాఫ్ట్ మరియు నిలిపివేయబడిన పంట జాబితాలను సమీక్షించండి.",
+    "verify": "సరిచూడు",
+    "reject": "తిరస్కరించு",
+    "review": "సమీక్షించండి",
+    "resolve": "పరిష్కరించండి",
+    "allOrders": "అన్ని ఆర్డర్లు",
+    "editProfile": "ప్రొఫైల్ సవరించండి",
+    "copyHash": "📋 హ్యాష్ కాపీ చేయండి"
   },
   "navigation": {
     "home": "హోమ్",
@@ -41,7 +69,8 @@
     "sales": "అమ్మకాలు",
     "verification": "ధృవీకరణ",
     "language": "భాష",
-    "searchMarketplace": "మార్కెట్‌ప్లేస్‌లో వెతకండి"
+    "searchMarketplace": "మార్కెట్‌ప్లేస్‌లో వెతకండి",
+    "addProduct": "ఉత్పత్తిని జోడించండి"
   },
   "header": {
     "new": "కొత్తది",
@@ -64,7 +93,10 @@
     "verificationProcess": "ధృవీకరణ ప్రక్రియ",
     "terms": "వాణిజ్య నిబంధనలు",
     "contact": "నిర్వాహకులను సంప్రదించండి",
-    "engine": "నేరుగా వ్యవసాయ వాణిజ్య యంత్రం"
+    "engine": "నేరుగా వ్యవసాయ వాణిజ్య యంత్రం",
+    "brandDescription": "రైతులను మెరుగైన మార్కెట్లతో అనుసంధానించడం. విశ్వసనీయ రైతులు మరియు FPOల నుండి పూర్తి పారదర్శకతతో తాజా వ్యవసాయ ఉత్పత్తులను కొనండి.",
+    "location": "నాసిక్ & ముంబై, ఇండియా",
+    "allRightsReserved": "సర్వ హక్కులు ప్రత్యేకించబడ్డాయి."
   },
   "auth": {
     "login": "లాగిన్",
@@ -76,7 +108,32 @@
     "createAccount": "మీ ఖాతాను సృష్టించండి",
     "welcomeBack": "తిరిగి స్వాగతం",
     "loginSuccess": "విజయవంతంగా లాగిన్ అయ్యారు",
-    "invalidCredentials": "చెల్లని ఇమెయిల్ లేదా పాస్‌వర్డ్"
+    "invalidCredentials": "చెల్లని ఇమెయిల్ లేదా పాస్‌వర్డ్",
+    "agri": "అగ్రి",
+    "bazaar": "బజార్",
+    "demoCredentials": "డెమో ఆధారాలు",
+    "fullNameLabel": "పూర్తి పేరు *",
+    "emailAddressLabel": "ఈమెయిల్ చిరునామా *",
+    "mobileNumberLabel": "మొబైల్ నంబరు *",
+    "passwordLabel": "పాస్‌వర్డ్ *",
+    "confirmPasswordLabel": "పాస్‌వర్డ్‌ను నిర్ధారించండి *",
+    "farmOrgNameLabel": "ఫారమ్ / సంస్థ పేరు *",
+    "sellerTypeLabel": "విక్రేత రకం *",
+    "buyerTypeLabel": "కొనుగోలుదారు రకం *",
+    "locationLabel": "స్థానం (నగరం/జిల్లా, రాష్ట్రం) *",
+    "registerAsFarmerBtn": "రైతుగా నమోదు చేసుకోండి →",
+    "registerAsBuyerBtn": "కొనుగోలుదారుగా నమోదు చేసుకోండి →",
+    "registerAsFarmer": "రైతుగా నమోదు చేసుకోండి",
+    "registerAsBuyer": "కొనుగోలుదారుగా నమోదు చేసుకోండి",
+    "creatingAccount": "ఖాతా సృష్టించబడుతోంది...",
+    "placeholderFullName": "పూర్తి పేరును నమోదు చేయండి",
+    "placeholderEmail": "you@example.com",
+    "placeholderPassword": "మీ పాస్‌వర్డ్‌ను నమోదు చేయండి",
+    "placeholderMinChars": "కనీసం 6 అక్షరాలు",
+    "placeholderReEnterPassword": "పాస్‌వర్డ్‌ను మళ్లీ నమోదు చేయండి",
+    "placeholderFarmName": "ఉదా. కృష్ణ ఆర్గానిక్ ఫారమ్",
+    "placeholderLocation": "ఉదా. నాసిక్, మహారాష్ట్ర",
+    "placeholderAddress": "వీధి, గ్రామం, పిన్‌కోడ్"
   },
   "marketplace": {
     "title": "మార్కెట్‌ప్లేస్",
@@ -88,17 +145,48 @@
     "filters": "ఫిల్టర్‌లు",
     "sort": "క్రమబద్ధీకరించండి",
     "product": "{{count}} ఉత్పత్తి",
-    "product_other": "{{count}} ఉత్పత్తులు"
+    "product_other": "{{count}} ఉత్పత్తులు",
+    "producerName": "ఉత్పత్తిదారు పేరు:",
+    "farmFpoName": "ఫార్మ్ / FPO పేరు:",
+    "type": "రకం:",
+    "location": "ప్రాంతం:",
+    "newestFirst": "కొత్తవి ముందుగా",
+    "priceLowToHigh": "ధర: తక్కువ నుండి ఎక్కువ",
+    "priceHighToLow": "ధర: ఎక్కువ నుండి తక్కువ",
+    "mostPopular": "చాలా ప్రసిద్ధమైనవి"
   },
   "checkout": {
-    "title": "చెక్‌అవుట్",
+    "title": "చెక్అవుట్",
     "deliveryAddress": "డెలివరీ చిరునామా",
     "addressHint": "రైతు మీ ఉత్పత్తిని ఎక్కడ పంపాలి?",
     "placeOrder": "చెల్లింపుకు కొనసాగండి",
     "paymentSuccess": "చెల్లింపు విజయవంతమైంది!",
     "paymentVerified": "చెల్లింపు విజయవంతంగా ధృవీకరించబడింది!",
     "enterAddress": "దయచేసి డెలివరీ చిరునామా నమోదు చేయండి.",
-    "orderSummary": "ఆర్డర్ సారాంశం"
+    "orderSummary": "ఆర్డర్ సారాంశం",
+    "itemsSummary": "వస్తువుల సారాంశం",
+    "subtotal": "ఉప మొత్తం",
+    "delivery": "డెలివరీ",
+    "free": "ఉచితం",
+    "razorpayTestMode": "రేజర్‌పే టెస్ట్ మోడ్",
+    "fullDeliveryAddress": "పూర్తి డెలివరీ చిరునామా *",
+    "placeholderAddress": "వీధి చిరునామా, భవనం, గ్రామం...",
+    "cityDistrict": "నగరం / జిల్లా",
+    "placeholderCity": "ఉదా. పూణే",
+    "stateLabel": "రాష్ట్రం",
+    "placeholderState": "ఉదా. మహారాష్ట్ర",
+    "pincodeLabel": "పిన్‌కోడ్",
+    "placeholderPincode": "ఉదా. 411001",
+    "stepShipping": "1. డెలివరీ",
+    "stepPayment": "2. చెల్లింపు",
+    "addressRequired": "చిరునామా అవసరం.",
+    "secureSettlement": "సురక్షితమైన సెటిల్మెంట్",
+    "addressReviewHint": "చెల్లింపును నిర్ధారించే ముందు డెలివరీ స్థానాన్ని మరియు ఉత్పత్తులను సమీక్షించండి.",
+    "continueToReview": "ఆర్డర్ సమీక్షకు కొనసాగండి →",
+    "totalOrder": "మొత్తం మొత్తం",
+    "securePayment": "సురక్షిత రేజర్‌పే చెల్లింపు",
+    "razorpayVerificationNote": "రేజర్‌పే చెల్లింపు ధృవీకరణ విజయవంతమైన తర్వాత మాత్రమే మీ ఆర్డర్ నిర్ధారించబడుతుంది.",
+    "paySecurely": "సురక్షితంగా చెల్లించండి · ₹{{amount}}"
   },
   "status": {
     "active": "క్రియాశీలం",
@@ -119,12 +207,26 @@
     "inactive": "క్రియారహితం",
     "draft": "డ్రాఫ్ట్",
     "outOfStock": "స్టాక్ లేదు",
-    "refunded": "వాపసు చెల్లించబడింది"
+    "refunded": "వాపసు చెల్లించబడింది",
+    "pendingPayment": "చెల్లింపు పెండింగ్‌లో ఉంది",
+    "paid": "చెల్లించబడింది",
+    "processing": "ప్రాసెసింగ్",
+    "shipped": "రవాణా చేయబడింది",
+    "completed": "పూర్తయింది",
+    "onboarding": "ఆన్‌బోర్డింగ్",
+    "suspended": "సస్పెండ్ చేయబడింది",
+    "notStarted": "ప్రారంభించబడలేదు",
+    "inProgress": "పురోగతిలో ఉంది",
+    "approved": "ఆమోదించబడింది",
+    "enabled": "సక్షమం చేయబడింది",
+    "all": "అన్నీ",
+    "captured": "క్యాప్చర్ చేయబడింది",
+    "authorized": "అధికారికం"
   },
   "messages": {
     "loadFailed": "డేటా లోడ్ కాలేదు.",
     "updateSuccess": "విజయవంతంగా నవీకరించబడింది.",
-    "updateFailed": "నవీకరించడం సాధ్యం కాలేదు.",
+    "updateFailed": "నవీకరించడం విఫలమైంది.",
     "deleteConfirm": "మీరు ఈ అంశాన్ని తొలగించాలని అనుకుంటున్నారా?",
     "deleteSuccess": "విజయవంతంగా తొలగించబడింది.",
     "deleteFailed": "తొలగించడం సాధ్యం కాలేదు.",
@@ -133,42 +235,49 @@
   },
   "cart": {
     "empty": "మీ షాపింగ్ కార్ట్ ఖాళీగా ఉంది",
-    "emptyDescription": "Browse the agricultural marketplace and add produce directly from verified farmers.",
+    "emptyDescription": "మార్కెట్‌ప్లేస్‌ను బ్రౌజ్ చేయండి మరియు నేరుగా రైతుల నుండి ఉత్పత్తులను జోడించండి.",
     "browse": "మార్కెట్‌ప్లేస్ చూడండి",
-    "eyebrow": "Checkout Bag",
+    "eyebrow": "చెక్‌అవుట్ బ్యాగ్",
     "title": "షాపింగ్ కార్ట్",
-    "description": "Review your selected agricultural items before proceeding to payment.",
-    "itemsSubtotal": "Items Subtotal",
-    "shipping": "Estimated Shipping",
-    "freeDelivery": "Free Direct Delivery",
-    "totalAmount": "Total Amount",
+    "description": "చెల్లింపుకు ముందు ఎంచుకున్న వ్యవసాయ వస్తువులను సమీక్షించండి.",
+    "itemsSubtotal": "వస్తువుల ఉప మొత్తం",
+    "shipping": "అంచనా షిప్పింగ్",
+    "freeDelivery": "ఉచిత నేరుగా డెలివరీ",
+    "totalAmount": "మొత్తం మొత్తం",
     "proceed": "చెక్‌అవుట్‌కు వెళ్లండి",
-    "updateFailed": "Failed to update.",
+    "updateFailed": "నవీకరించడం విఫలమైంది.",
     "removed": "అంశం తొలగించబడింది.",
-    "removeFailed": "Failed to remove."
+    "removeFailed": "తొలగించడం విఫలమైంది."
   },
   "settings": {
     "preferences": "ప్రాధాన్యతలు",
-    "title": "ఖాతా సెట్టింగ్‌లు",
-    "description": "Manage your system preferences, security, and notification channels.",
+    "title": "ఖాతా అమరికలు",
+    "description": "మీ సిస్టమ్ ప్రాధాన్యతలు, భద్రత మరియు నోటిఫికేషన్ ఛానెల్‌లను నిర్వహించండి.",
     "notificationPreferences": "నోటిఫికేషన్ ప్రాధాన్యతలు",
-    "notificationDescription": "Configure how AgriBazaar alerts you of orders and stock updates.",
-    "emailOrders": "Email Order Notifications",
-    "emailOrdersDescription": "Receive emails for new orders and status updates.",
-    "sms": "SMS Notifications",
-    "smsDescription": "Get instant SMS alerts on dispatch and delivery.",
-    "priceAlerts": "Market Price Trend Alerts",
-    "priceAlertsDescription": "Daily summaries of top agricultural market price shifts.",
-    "security": "భద్రత మరియు యాక్సెస్",
-    "securityDescription": "Protect your account with extra security layers.",
-    "twoFactor": "Two-Factor Authentication (2FA)",
-    "twoFactorDescription": "Require OTP verification on login.",
-    "save": "ప్రాధాన్యతలను సేవ్ చేయండి",
-    "saved": "Account preferences updated successfully!",
+    "notificationDescription": "ఆర్డర్లు మరియు స్టాక్ నవీకరణల గురించి నోటిఫికేషన్‌లను అమర్చండి.",
+    "emailOrders": "ఈమెయిల్ ఆర్డర్ నోటిఫికేషన్‌లు",
+    "emailOrdersDescription": "కొత్త ఆర్డర్‌లు మరియు స్థితి నవీకరణల కోసం ఈమెయిల్‌లను పొందండి.",
+    "sms": "SMS నోటిఫికేషన్లు",
+    "smsDescription": "డెలివరీపై తక్షణ SMS హెచ్చరికలను పొందండి.",
+    "priceAlerts": "మార్కెట్ ధరల ట్రెండ్ హెచ్చరికలు",
+    "priceAlertsDescription": "ప్రధాన వ్యవసాయ మార్కెట్ ధర మార్పుల రోజువారీ సారాంశం.",
+    "security": "భద్రత మరియు ప్రాప్యత",
+    "securityDescription": "అదనపు భద్రతా పొరలతో మీ ఖాతాను రక్షించుకోండి.",
+    "twoFactor": "రెండు అంశాల ప్రామాణీకరణ (2FA)",
+    "twoFactorDescription": "లాగిన్‌లో OTP పరిశీలన అవసరం.",
+    "save": "ప్రాధాన్యతలను సేవ్ చేయి",
+    "saved": "ఖాతా ప్రాధాన్యతలు విజయవంతంగా నవీకరించబడ్డాయి!",
     "help": "సహాయం కావాలా?",
-    "helpDescription": "If you need assistance updating your KYC details or farmer verification, contact platform administration.",
-    "platform": "AgriBazaar Platform",
-    "architecture": "Direct Agriculture Commerce Architecture"
+    "helpDescription": "మీ KYC వివరాలు లేదా రైతు పరిశీలనను నవీకరించడంలో సహాయం కావాలంటే ప్లాట్‌ఫారమ్ పరిపాలనను సంప్రదించండి.",
+    "platform": "అగ్రిబజార్ ప్లాట్‌ఫారమ్",
+    "architecture": "నేరుగా వ్యవసాయ వాణిజ్య నిర్మాణం",
+    "systemVersionV104production": "సిస్టమ్ వెర్షన్: v1.0.4-production",
+    "marketPriceTrendAlerts": "మార్కెట్ ధరల ట్రెండ్ హెచ్చరికలు",
+    "marketPriceTrendAlertsDescription": "ప్రధాన వ్యవసాయ మార్కెట్ ధర మార్పుల రోజువారీ సారాంశం.",
+    "securityAndAccess": "భద్రత మరియు ప్రాప్యత",
+    "securityAndAccessDescription": "అదనపు భద్రతా పొరలతో మీ ఖాతాను రక్షించుకోండి.",
+    "agribazaarPlatform": "అగ్రిబజార్ ప్లాట్‌ఫారమ్",
+    "needHelpDescription": "మీ KYC వివరాలు లేదా రైతు పరిశీలనను నవీకరించడంలో సహాయం కావాలంటే ప్లాట్‌ఫారమ్ పరిపాలనను సంప్రదించండి."
   },
   "blockchain": {
     "checking": "బ్లాక్‌చెయిన్ ఆడిట్ తనిఖీ చేస్తోంది...",
@@ -176,8 +285,60 @@
     "audit": "ఆడిట్",
     "network": "నెట్‌వర్క్",
     "transaction": "లావాదేవీ",
-    "verifiedOn": "Verified on",
-    "testnet": "Kava Testnet"
+    "verifiedOn": "పరిశీలించబడింది",
+    "testnet": "కావా టెస్ట్‌నెట్",
+    "blockchainNetwork": "బ్లాక్‌చైన్ నెట్‌వర్క్",
+    "smartContractAddress": "స్మార్ట్ కాంట్రాక్ట్ చిరునామా",
+    "onchainPaymentAudits": "ఆన్-చైన్ చెల్లింపు ఆడిట్‌లు",
+    "onchainSettlementAudits": "ఆన్-చైన్ పరిపరిష్కార ఆడిట్‌లు",
+    "smartContractEventVerifier": "స్మార్ట్ కాంట్రాక్ట్ ఈవెంట్ వెరిఫైయర్",
+    "itemsPurchased": "కొనుగోలు చేసిన వస్తువులు",
+    "totalAmount": "మొత్తం మొత్తం:",
+    "paymentIdHash": "చెల్లింపు ID హ్యాష్:",
+    "orderIdHash": "ఆర్డర్ ID హ్యాష్:",
+    "noSellerSplitHashesRecordedFor": "ఈ ఈవెంట్ కోసం విక్రేత స్ప్లిట్ హ్యాష్‌లు ఏవీ నమోదు కాలేదు.",
+    "amountInPaise": "సొమ్ము (పైసలలో):",
+    "recordedAt": "నమోదైన సమయం",
+    "lookupUserIdentityByAccountHash": "ఖాతా హ్యాష్ ద్వారా వినియోగదారు గుర్తింపును శోధించండి",
+    "queryingKavaEvmTestnetSmartContract": "కావా EVM టెస్ట్‌నెట్ స్మార్ట్ కాంట్రాక్ట్‌ను క్వెరీ చేస్తోంది...",
+    "noPaymentEventsRecordedOnchainYet": "ఆన్-చైన్‌లో ఇంకా ఎలాంటి చెల్లింపు ఈవెంట్‌లు నమోదు కాలేదు",
+    "newPaymentsProcessedThroughRazorpayWill": "రేజర్‌పే ద్వారా ప్రాసెస్ చేయబడిన కొత్త చెల్లింపులు ఇక్కడ ఆటోమేటిక్‌గా ఆడిట్ చేయబడతాయి.",
+    "eventIdHash": "ఈవెంట్ ID హ్యాష్",
+    "sellerSplitHashes": "విక్రేత స్ప్లిట్ హ్యాష్‌లు",
+    "onchainStatus": "ఆన్-చైన్ స్థితి",
+    "noSettlementEventsRecordedOnchainYet": "ఆన్-చైన్‌లో ఇంకా ఎలాంటి సెటిల్‌మెంట్ ఈవెంట్‌లు నమోదు కాలేదు",
+    "farmerMarketplaceSettlementsWillAppearHere": "నమోదైనప్పుడు రైతు సెటిల్‌మెంట్‌లు ఇక్కడ కనిపిస్తాయి.",
+    "settlementHash": "సెటిల్‌మెంట్ హ్యాష్",
+    "sellerIdentity": "విక్రేత గుర్తింపు",
+    "sellerPayoutAmount": "విక్రేత చెల్లింపు మొత్తం",
+    "status": "స్థితి",
+    "accountIdentityLookup": "ఖాతా గుర్తింపు శోధన",
+    "verifiedDatabaseRecordMatchingOnchainCryptographic": "ఆన్-చైన్ హ్యాష్‌తో సరిపోలే సరిచూసిన డేటాబేస్ రికార్డు.",
+    "searchingRegisteredUsersAndFarmers": "నమోదిత వినియోగదారులు మరియు రైతులను శోధిస్తోంది...",
+    "onchainHash": "ఆన్-చైన్ హ్యాష్:",
+    "accountType": "ఖాతా రకం:",
+    "fullName": "పూర్తి పేరు:",
+    "farmBusiness": "ఫార్మ్ / వ్యాపారం:",
+    "email": "ఇమెయిల్:",
+    "mobile": "మొబైల్:",
+    "verificationStatus": "సరిచూసే స్థితి:",
+    "buyerType": "కొనుగోలుదారు రకం:",
+    "noAccountFound": "No Account Found",
+    "verifyEventIdHashOnChain": "ఆన్-చైన్‌లో ఈవెంట్ ID హ్యాష్ పరిశీలించు",
+    "placeholderEventHash": "ఈవెంట్ ID హ్యాష్ పేస్ట్ చేయండి (ఉదా. 0xd8273e6f...)",
+    "pasteHashSubtitle": "ఎవరైనా కొనుగోలుదారు లేదా విక్రేత హ్యాష్ (0x...) పేస్ట్ చేసి వారి స్వయంవివరాలు చూడండి.",
+    "placeholderAccountHash": "కొనుగోలుదారు లేదా విక్రేత హ్యాష్ పేస్ట్ చేయండి (0x...)",
+    "directSmartContractRpcQuery": "డైరెక్ట్ స్మార్ట్ కాంట్రాక్ట్ RPC క్వెరీ",
+    "blockchainAuditTrail": "బ్లాక్‌చెయిన్ ఆడిట్ బాట",
+    "immutableAuditRecordsDesc": "కావా EVM టెస్ట్‌నెట్ స్మార్ట్ కాంట్రాక్ట్ నుండి నేరుగా సేకరించిన ఆడిట్ రికార్డులు.",
+    "fetchingOnChainData": "ఆన్-చైన్ డేటా సేకరిస్తోంది...",
+    "fetchOnChainData": "ఆన్-చైన్ డేటాను పొందండి",
+    "buyerSellerHashLookup": "కొనుగోలుదారు & విక్రేత హ్యాష్ శోధన",
+    "lookupIdentity": "గుర్తింపును శోధించండి",
+    "paymentAuditsOnChain": "ఆన్-చైన్ చెల్లింపు ఆడిట్‌లు",
+    "settlementAuditsOnChain": "ఆన్-చైన్ సెటిల్‌మెంట్ ఆడిట్‌లు",
+    "buyerHashIdentity": "కొనుగోలుదారు హ్యాష్ & గుర్తింపు",
+    "amountRupees": "సొమ్ము (₹)"
   },
   "ui": {
     "loadingContent": "కంటెంట్ లోడ్ అవుతోంది...",
@@ -196,24 +357,24 @@
       "నమ్మకమైన డెలివరీ"
     ],
     "trustDescription": [
-      "గుర్తింపు ధృవీకరించిన వ్యవసాయ విక్రేతలు.",
-      "పొలం నుండి డెలివరీ వరకు ప్రత్యక్ష ట్రాకింగ్.",
-      "UPI, నెట్ బ్యాంకింగ్, కార్డులకు సురక్షిత చెల్లింపు గేట్‌వే.",
-      "తాజా ఉత్పత్తుల కోసం నమ్మకమైన వ్యవసాయ రవాణా."
+      "ప్రత్యక్ష గుర్తింపు తనిఖీతో KYC-తనిఖీ చేసిన వ్యవసాయ విక్రేతలు.",
+      "పొలం నుండి డెలివరీ వరకు ప్రారంభం నుండి ముగింపు వరకు లైవ్ ట్రాకింగ్.",
+      "UPI, నెట్ బ్యాంకింగ్ & కార్డ్‌లకు మద్దతు ఇచ్చే ఎన్‌క్రిప్టెడ్ పేమెంట్ గేట్‌వే.",
+      "తాజా ఉత్పత్తుల పరిరక్షణ కోసం ప్రత్యేక వ్యవసాయ రవాణా సరఫరా."
     ],
     "farmerSteps": [
-      "KYC పత్రాలతో మీ పొలం లేదా FPO ప్రొఫైల్‌ను నమోదు చేయండి",
-      "24 గంటల్లో ప్లాట్‌ఫారమ్ ధృవీకరణ పొందండి",
-      "పరిమాణం మరియు ధరతో ఉత్పత్తి జాబితాలు రూపొందించండి",
-      "కొనుగోలుదారుల ఆర్డర్లను నేరుగా నిర్వహించండి",
-      "తక్షణ చెల్లింపులను ట్రాక్ చేసి ప్రత్యక్ష విక్రయాలను పెంచండి"
+      "KYC పత్రాలతో మీ ఫార్మ్ లేదా FPO ప్రొఫైల్‌ను నమోదు చేయండి",
+      "24 గంటల్లో ప్లాట్‌ఫారమ్ పరిపాలన ద్వారా సరిచూడబడండి",
+      "అనుకూల పరిమాణాలు మరియు ధరలతో ఉత్పత్తుల జాబితాలను సృష్టించండి",
+      "కొనుగోలుదారుల నుండి నేరుగా కొనుగోలు ఆర్డర్‌లను స్వీకరించండి మరియు నిర్వహించండి",
+      "తక్షణ చెల్లింపులను ట్రాక్ చేయండి మరియు మీ ప్రత్యక్ష వ్యవసాయ అమ్మకాలను పెంచుకోండి"
     ],
     "buyerSteps": [
-      "వ్యక్తిగత లేదా వ్యాపార కొనుగోలుకు ఖాతాను సృష్టించండి",
-      "పంట, ప్రాంతం, ధర ప్రకారం ధృవీకరించిన ఉత్పత్తులను వెతకండి",
-      "కార్ట్‌కు జోడించి పారదర్శక ఖర్చులను చూడండి",
-      "మీకు ఇష్టమైన పద్ధతిలో సురక్షిత చెల్లింపు చేయండి",
-      "ప్రత్యక్ష రవాణా మరియు పొలం డెలివరీని ట్రాక్ చేయండి"
+      "వ్యక్తిగత లేదా వ్యాపార కొనుగోలు కోసం కొనుగోలుదారు ఖాతాను సృష్టించండి",
+      "పంట, ప్రాంతం మరియు ధర ఆధారంగా సరిచూసిన ఉత్పత్తులను శోధించండి",
+      "వస్తువులను మీ కార్ట్‌కు జోడించి పారదర్శక ఖర్చులను సమీక్షించండి",
+      "మీకు ఇష్టమైన పద్ధతిని ఉపయోగించి సురక్షితమైన చెల్లింపు చేయండి",
+      "లైవ్ షిప్‌మెంట్ మరియు ప్రత్యక్ష ఫార్మ్ డెలివరీ స్థితిని ట్రాక్ చేయండి"
     ],
     "platformLabels": [
       "నమోదైన రైతులు",
@@ -227,11 +388,11 @@
     "farmers": "రైతులు మరియు FPOల కోసం",
     "buyers": "వ్యక్తిగత మరియు టోకు కొనుగోలుదారుల కోసం",
     "glance": "ప్లాట్‌ఫారమ్ ఒక చూపులో",
-    "glanceDescription": "డిజిటల్ మౌలిక సదుపాయాలతో వ్యవసాయ వాణిజ్యాన్ని బలోపేతం చేస్తున్నాం",
+    "glanceDescription": "డిజిటల్ మౌలిక సదుపాయాలతో వ్యవసాయ వాణిజ్యాన్ని సాధికారపరచడం",
     "testimonials": "మా వినియోగదారులు చెప్పేది",
-    "testimonialsDescription": "భారతదేశమంతటా రైతులు, వాణిజ్య కొనుగోలుదారులు మరియు FPOల విశ్వాసం",
+    "testimonialsDescription": "Trusted by farmers, commercial buyers and FPOs across India",
     "finalTitle": "AgriBazaarలో వ్యాపారం చేయడానికి సిద్ధమా?",
-    "finalDescription": "ప్రత్యక్ష వ్యవసాయ వాణిజ్యాన్ని మార్చుతున్న ధృవీకరించిన రైతులు, FPOలు మరియు కొనుగోలుదారులతో చేరండి.",
+    "finalDescription": "Join verified farmers, FPOs and buyers transforming direct agricultural commerce across India.",
     "createAccount": "ఉచిత ఖాతా సృష్టించండి",
     "browse": "మార్కెట్‌ప్లేస్ చూడండి",
     "heroLabels": [
@@ -241,13 +402,2220 @@
     ],
     "marketplace": {
       "exchange": "Direct crop exchange",
-      "description": "Source quality farm produce directly from verified Indian farmers and FPOs with zero middleman markup.",
-      "showing": "Showing {{count}} agricultural listings",
+      "description": "మధ్యవర్తుల ధరలు లేకుండా ధృవీకరించబడిన భారతీయ రైతులు మరియు FPOల నుండి నేరుగా నాణ్యమైన వ్యవసాయ ఉత్పత్తులను పొందండి.",
+      "showing": "{{count}} వ్యవసాయ జాబితాలు చూపబడుతున్నాయి",
       "newest": "Newest first",
       "lowPrice": "Price: low to high",
       "highPrice": "Price: high to low",
       "popular": "Most popular",
-      "available": "{{count}} {{unit}} available"
+      "available": "స్టాక్‌లో {{count}} {{unit}} అందుబాటులో ఉంది"
     }
+  },
+  "farmerVerificationWizard": {
+    "fpo": "fpo",
+    "farmer": "FARMER ప్రోటోకాల్",
+    "failedToLoadVerificationStatus": "Failed to load verification status. ప్రోటోకాల్",
+    "pleaseEnterAValid12digitAadhaar": "Please enter a valid 12-digit Aadhaar number. ప్రోటోకాల్",
+    "otpSentToYourAadhaarMobile": "OTP sent to your Aadhaar mobile number! ప్రోటోకాల్",
+    "pleaseEnter6digitOtp": "Please enter 6-digit OTP. ప్రోటోకాల్",
+    "verified_identityVerifiedViaUidaiSandbox": "✓ Identity Verified via UIDAI Sandbox! ప్రోటోకాల్",
+    "pleaseEnterFarmerIdAndDistrict": "Please enter Farmer ID and District. ప్రోటోకాల్",
+    "verified_farmerRegistryVerified": "✓ Farmer Registry Verified! ప్రోటోకాల్",
+    "pleaseFillAllRequiredLandRecord": "Please fill all required land record details. ప్రోటోకాల్",
+    "verified_landRecordVerified": "✓ Land Record Verified! ప్రోటోకాల్",
+    "pleaseFillAccountHolderAccountNumber": "Please fill Account Holder, Account Number, and IFSC. ప్రోటోకాల్",
+    "accountNumbersDoNotMatch": "Account numbers do not match. ప్రోటోకాల్",
+    "verified_bankAccountVerified": "✓ Bank Account Verified! ప్రోటోకాల్",
+    "pleaseEnterAValid10characterPan": "Please enter a valid 10-character PAN number (e.g. ABCDE1234F). ప్రోటోకాల్",
+    "verified_panVerifiedSuccessfully": "✓ PAN Verified successfully! ప్రోటోకాల్",
+    "pmkisanSkipped": "PM-KISAN skipped. ప్రోటోకాల్",
+    "verified_pmkisanVerified": "✓ PM-KISAN Verified! ప్రోటోకాల్",
+    "pleaseFillRequiredOrganizationDetails": "Please fill required Organization details. ప్రోటోకాల్",
+    "verified_organizationIdentityVerified": "✓ Organization Identity Verified! ప్రోటోకాల్",
+    "pleaseEnterAValid10characterOrganization": "Please enter a valid 10-character Organization PAN. ప్రోటోకాల్",
+    "verified_organizationPanVerified": "✓ Organization PAN Verified! ప్రోటోకాల్",
+    "gstinMarkedAsNotApplicable": "GSTIN marked as Not Applicable. ప్రోటోకాల్",
+    "verified_gstinVerified": "✓ GSTIN Verified! ప్రోటోకాల్",
+    "pleaseEnterAValid10digitMobile": "Please enter a valid 10-digit mobile number. ప్రోటోకాల్",
+    "otpSentToRepresentativeMobile": "OTP sent to Representative mobile! ప్రోటోకాల్",
+    "pleaseEnterRepresentativeNameAndDesignation": "Please enter Representative Name and Designation. ప్రోటోకాల్",
+    "verified_authorizedRepresentativeVerified": "✓ Authorized Representative Verified! ప్రోటోకాల్",
+    "verified_organizationBankAccountVerified": "✓ Organization Bank Account Verified! ప్రోటోకాల్",
+    "pleaseUploadAtLeastRegistrationCertificate": "Please upload at least Registration Certificate, PAN document, and Bank proof. ప్రోటోకాల్",
+    "verified_organizationDocumentsVerified": "✓ Organization Documents Verified! ప్రోటోకాల్",
+    "failedToSkipStep": "Failed to skip step. ప్రోటోకాల్",
+    "progressSavedReturningToDashboard": "Progress saved. Returning to dashboard. ప్రోటోకాల్",
+    "loadingConfigportaltitle": "Loading {config.portalTitle}... ప్రోటోకాల్",
+    "verificationSummary": "Verification Summary ప్రోటోకాల్",
+    "reviewYourOverallVerificationStatusAnd": "Review your overall verification status and finalized badge audit. ప్రోటోకాల్",
+    "verified": "Verified ప్రోటోకాల్",
+    "pending": "PENDING ప్రోటోకాల్",
+    "officialIdentityComplianceGateway": "Official Identity & Compliance Gateway ప్రోటోకాల్",
+    "fpoFpc": "FPO / FPC",
+    "saveExitToDashboard": "Save & Exit to Dashboard ప్రోటోకాల్",
+    "textslate900": "text-slate-900 ప్రోటోకాల్",
+    "textslate700": "text-slate-700 ప్రోటోకాల్",
+    "required": "(Required) ప్రోటోకాల్",
+    "optional": "(Optional) ప్రోటోకాల్",
+    "mandatoryVerification": "MANDATORY VERIFICATION ప్రోటోకాల్",
+    "optionalVerification": "OPTIONAL VERIFICATION ప్రోటోకాల్",
+    "aadhaarAuthenticationProtocol": "Aadhaar Authentication ప్రోటోకాల్",
+    "enterYour12digitAadhaarNumberTo": "Enter your 12-digit Aadhaar number to receive a One-Time Password (OTP) via UIDAI authorized gateway. ప్రోటోకాల్",
+    "enter12digitAadhaarNumber": "Enter 12-digit Aadhaar number ప్రోటోకాల్",
+    "sendAadhaarOtp": "Send Aadhaar OTP ప్రోటోకాల్",
+    "enter6digitOtp_req": "Enter 6-Digit OTP * ప్రోటోకాల్",
+    "text_mnk1z": "──────",
+    "verifyContinue": "Verify & Continue ప్రోటోకాల్",
+    "saveExit": "Save & Exit ప్రోటోకాల్",
+    "skipStep": "Skip Step ప్రోటోకాల్",
+    "nextStep": "Next Step ప్రోటోకాల్",
+    "farmerDatabaseProtocol": "Farmer Database ప్రోటోకాల్",
+    "enterYourOfficialFarmerAgristackId": "Enter your official Farmer / Agristack ID along with state and district to verify active agricultural registry status. ప్రోటోకాల్",
+    "farmerId": "FARMER ID ప్రోటోకాల్",
+    "location": "LOCATION ప్రోటోకాల్",
+    "farmerIdAgristackId_req": "Farmer ID / Agristack ID * ప్రోటోకాల్",
+    "egMhfarm20248849": "e.g. MH-FARM-2024-8849 ప్రోటోకాల్",
+    "state_req": "State * ప్రోటోకాల్",
+    "district_req": "District * ప్రోటోకాల్",
+    "egNashik": "e.g. Nashik ప్రోటోకాల్",
+    "back": "Back ప్రోటోకాల్",
+    "landHoldingProtocol": "Land Holding ప్రోటోకాల్",
+    "enterStateDistrictTalukVillagePatta": "Enter state, district, taluk, village, Patta / 7-12 number, survey number, and total acreage. ప్రోటోకాల్",
+    "patta712No": "PATTA / 7-12 NO. ప్రోటోకాల్",
+    "surveyNo": "SURVEY NO. ప్రోటోకాల్",
+    "extent": "EXTENT ప్రోటోకాల్",
+    "taluk_req": "Taluk * ప్రోటోకాల్",
+    "egNiphad": "e.g. Niphad ప్రోటోకాల్",
+    "village_req": "Village * ప్రోటోకాల్",
+    "egLasalgaon": "e.g. Lasalgaon ప్రోటోకాల్",
+    "pattaKhataNo_req": "Patta / Khata No. * ప్రోటోకాల్",
+    "eg4829": "e.g. 4829",
+    "surveyNo_req": "Survey No. * ప్రోటోకాల్",
+    "eg142b": "e.g. 142/B ప్రోటోకాల్",
+    "landExtentAcres_req": "Land Extent (Acres) * ప్రోటోకాల్",
+    "eg35Acres": "e.g. 3.5 Acres ప్రోటోకాల్",
+    "landType": "Land Type ప్రోటోకాల్",
+    "irrigatedWet": "Irrigated / Wet ప్రోటోకాల్",
+    "dryRainfed": "Dry / Rainfed ప్రోటోకాల్",
+    "horticulture": "Horticulture ప్రోటోకాల్",
+    "uploadPattaLandRecordDocument_req": "Upload Patta / Land Record Document * ప్రోటోకాల్",
+    "uploadPdfJpgOrPngCopy": "Upload PDF, JPG, or PNG copy of 7/12, Patta, or Chitta (Max 5MB) ప్రోటోకాల్",
+    "bankSettlementProtocol": "Bank Settlement ప్రోటోకాల్",
+    "linkYourActiveBankAccountFor": "Link your active bank account for direct payments and automated sales settlements. ప్రోటోకాల్",
+    "accountHolder": "ACCOUNT HOLDER ప్రోటోకాల్",
+    "bankName": "BANK NAME ప్రోటోకాల్",
+    "accountNo": "ACCOUNT NO. ప్రోటోకాల్",
+    "accountHolderName_req": "Account Holder Name * ప్రోటోకాల్",
+    "asPerBankPassbook": "As per bank passbook ప్రోటోకాల్",
+    "bankName_req": "Bank Name * ప్రోటోకాల్",
+    "branchName": "Branch Name ప్రోటోకాల్",
+    "egMainBranch": "e.g. Main Branch ప్రోటోకాల్",
+    "accountNumber_req": "Account Number * ప్రోటోకాల్",
+    "enterAccountNumber": "Enter account number ప్రోటోకాల్",
+    "confirmAccountNumber_req": "Confirm Account Number * ప్రోటోకాల్",
+    "reenterAccountNumber": "Re-enter account number ప్రోటోకాల్",
+    "ifscCode_req": "IFSC Code * ప్రోటోకాల్",
+    "egSbin0001234": "e.g. SBIN0001234 ప్రోటోకాల్",
+    "uploadBankPassbookCancelledCheque_req": "Upload Bank Passbook / Cancelled Cheque * ప్రోటోకాల్",
+    "uploadFrontPageOfPassbookOr": "Upload front page of passbook or cancelled cheque (Max 5MB) ప్రోటోకాల్",
+    "panVerificationProtocol": "PAN Verification ప్రోటోకాల్",
+    "enterYour10characterPermanentAccountNumber": "Enter your 10-character Permanent Account Number for statutory tax compliance & payouts. ప్రోటోకాల్",
+    "panNumber": "PAN NUMBER ప్రోటోకాల్",
+    "matchStatus": "MATCH STATUS ప్రోటోకాల్",
+    "panNumber_req": "PAN Number * ప్రోటోకాల్",
+    "egAbcde1234f": "e.g. ABCDE1234F ప్రోటోకాల్",
+    "nameAsPerPanOptional": "Name as per PAN (Optional) ప్రోటోకాల్",
+    "fullNameAsPrintedOnPan": "Full name as printed on PAN card ప్రోటోకాల్",
+    "uploadPanCardCopy_req": "Upload PAN Card Copy * ప్రోటోకాల్",
+    "clearFrontScanOrPhotoOf": "Clear front scan or photo of your PAN card (Max 5MB) ప్రోటోకాల్",
+    "pmkisanSchemeProtocol": "PM-KISAN Scheme ప్రోటోకాల్",
+    "optionallyLinkPmkisanBeneficiaryReferenceFor": "Optionally link PM-KISAN Beneficiary Reference for added seller credibility on the marketplace. ప్రోటోకాల్",
+    "pmkisanRegistrationBeneficiaryReference": "PM-KISAN Registration / Beneficiary Reference ప్రోటోకాల్",
+    "egPmk987654321": "e.g. PMK-987654321 ప్రోటోకాల్",
+    "verifyPmkisanContinue": "Verify PM-KISAN & Continue ప్రోటోకాల్",
+    "viewSummary": "View Summary ప్రోటోకాల్",
+    "organizationRegistrationProtocol": "Organization Registration ప్రోటోకాల్",
+    "verifyOfficialFpoFpcCooperativeEntity": "Verify official FPO / FPC / Cooperative entity registration details. ప్రోటోకాల్",
+    "legalName": "LEGAL NAME ప్రోటోకాల్",
+    "registrationNo": "REGISTRATION NO. ప్రోటోకాల్",
+    "organizationLegalName_req": "Organization Legal Name * ప్రోటోకాల్",
+    "egSahyadriFarmersProducerCoLtd": "e.g. Sahyadri Farmers Producer Co. Ltd. ప్రోటోకాల్",
+    "organizationType_req": "Organization Type * ప్రోటోకాల్",
+    "fpoFpcProducerCompany": "FPO / FPC (Producer Company) ప్రోటోకాల్",
+    "agriculturalCooperativeSociety": "Agricultural Cooperative Society ప్రోటోకాల్",
+    "farmerShgPartnership": "Farmer SHG / Partnership ప్రోటోకాల్",
+    "registrationCinNumber_req": "Registration / CIN Number * ప్రోటోకాల్",
+    "egU01111mh2020ptc123456": "e.g. U01111MH2020PTC123456 ప్రోటోకాల్",
+    "pincode_req": "Pincode * ప్రోటోకాల్",
+    "eg422001": "e.g. 422001",
+    "registeredOfficeAddress_req": "Registered Office Address * ప్రోటోకాల్",
+    "fullAddressOfOrganizationOffice": "Full address of organization office ప్రోటోకాల్",
+    "organizationPanProtocol": "Organization PAN ప్రోటోకాల్",
+    "enterPermanentAccountNumberIssuedIn": "Enter Permanent Account Number issued in the legal name of the organization. ప్రోటోకాల్",
+    "orgPan": "ORG PAN ప్రోటోకాల్",
+    "organizationPan_req": "Organization PAN * ప్రోటోకాల్",
+    "egAaacf1234g": "e.g. AAACF1234G ప్రోటోకాల్",
+    "gstinRegistrationProtocol": "GSTIN Registration ప్రోటోకాల్",
+    "provide15characterGstinRegistrationIfRegistered": "Provide 15-character GSTIN registration if registered, or mark GSTIN Not Applicable. ప్రోటోకాల్",
+    "notApplicable": "Not Applicable ప్రోటోకాల్",
+    "eg27aaacf1234g1z5": "e.g. 27AAACF1234G1Z5 ప్రోటోకాల్",
+    "verifyGstin": "Verify GSTIN ప్రోటోకాల్",
+    "authorizedOfficialProtocol": "Authorized Official ప్రోటోకాల్",
+    "verifyIdentityAndMobileAuthorizationOf": "Verify identity and mobile authorization of the official representing the organization. ప్రోటోకాల్",
+    "representativeName_req": "Representative Name * ప్రోటోకాల్",
+    "egRameshKumar": "e.g. Ramesh Kumar ప్రోటోకాల్",
+    "designation_req": "Designation * ప్రోటోకాల్",
+    "egCeoManagingDirector": "e.g. CEO / Managing Director ప్రోటోకాల్",
+    "representativeMobileNumber_req": "Representative Mobile Number * ప్రోటోకాల్",
+    "enter10digitMobileNumber": "Enter 10-digit mobile number ప్రోటోకాల్",
+    "sendRepresentativeOtp": "Send Representative OTP ప్రోటోకాల్",
+    "verifyRepresentative": "Verify Representative ప్రోటోకాల్",
+    "organizationSettlementAccountProtocol": "Organization Settlement Account ప్రోటోకాల్",
+    "linkPrimarySettlementBankAccountOf": "Link primary settlement bank account of the FPO / FPC for marketplace direct credits. ప్రోటోకాల్",
+    "exactLegalNameAsPerBank": "Exact legal name as per bank statement ప్రోటోకాల్",
+    "egCommercialBranch": "e.g. Commercial Branch ప్రోటోకాల్",
+    "enterBankAccountNumber": "Enter bank account number ప్రోటోకాల్",
+    "organizationDocumentDossier": "Organization Document Dossier ప్రోటోకాల్",
+    "uploadMandatoryRegistrationTaxBankProof": "Upload mandatory registration, tax, bank proof, and authorization files. ప్రోటోకాల్",
+    "1OrganizationRegistrationCertificate_req": "1. Organization Registration Certificate * ప్రోటోకాల్",
+    "2OrganizationPanCardCopy_req": "2. Organization PAN Card Copy * ప్రోటోకాల్",
+    "3BankPassbookCancelledCheque_req": "3. Bank Passbook / Cancelled Cheque * ప్రోటోకాల్",
+    "4AuthorizationLetterBoardResolution": "4. Authorization Letter / Board Resolution ప్రోటోకాల్",
+    "5GstCertificateIfApplicable": "5. GST Certificate (If Applicable) ప్రోటోకాల్",
+    "submitDocumentsProceed": "Submit Documents & Proceed ప్రోటోకాల్",
+    "backToReview": "Back to Review ప్రోటోకాల్",
+    "returnToDashboard": "Return to Dashboard ప్రోటోకాల్",
+    "yourInformationIsSecurelyProcessedSensitive": "Your information is securely processed. Sensitive identity & financial information will be masked where applicable. ప్రోటోకాల్"
+  },
+  "buyerVerificationWizard": {
+    "couldNotLoadVerificationStatus": "సరిచూసే స్థితిని లోడ్ చేయడం విఫలమైంది",
+    "verified": "సరిచూడబడింది",
+    "pending": "పెండింగ్‌లో ఉంది",
+    "pleaseEnterAValid10digitMobile": "దయచేసి చెల్లుబాటు అయ్యే 10 అంకెల మొబైల్ సంఖ్యను నమోదు చేయండి",
+    "otpSentToYourMobileNumber": "మీ మొబైల్ నంబర్‌కు OTP పంపబడింది",
+    "pleaseEnter6digitOtpCode": "దయచేసి 6 అంకెల OTP కోడ్‌ను నమోదు చేయండి",
+    "mobileNumberVerifiedSuccessfully": "మొబైల్ సంఖ్య విజ‌య‌వంతంగా సరిచూడబడింది",
+    "consentIsRequiredToProceedWith": "గుర్తింపు సరిచూసేందుకు సమ్మతి అవసరం",
+    "otpSentToYourAadhaarlinkedMobile": "మీ ఆధార్‌తో అనుసంధానించబడిన మొబైల్‌కు OTP పంపబడింది",
+    "pleaseEnter6digitOtp": "దయచేసి 6 అంకెల OTP ని నమోదు చేయండి",
+    "identityVerifiedViaAuthorizedGateway": "అధికారిక గేట్‌వే ద్వారా గుర్తింపు సరిచూడబడింది",
+    "pleaseFillAllRequiredAddressFields": "దయచేసి అవసరమైన అన్ని చిరునామా స్థలాలను నింపండి",
+    "addressDetailsVerified": "చిరునామా వివరాలు సరిచూడబడ్డాయి",
+    "pleaseFillAllRequiredBusinessIdentity": "దయచేసి అవసరమైన అన్ని వ్యాపార గుర్తింపు స్థలాలను నింపండి",
+    "businessIdentityVerified": "వ్యాపార గుర్తింపు సరిచూడబడింది",
+    "pleaseEnterAValid10characterPan": "Please enter a valid 10-character PAN number (e.g. ABCDE1234F) ప్రోటోకాల్",
+    "businessPanVerifiedSuccessfully": "వ్యాపార పాన్ విజ‌య‌వంతంగా సరిచూడబడింది",
+    "gstinMarkedAsNotApplicable": "GSTIN వర్తించదని గురుతించబడింది",
+    "failedToUpdateGstinStatus": "GSTIN స్థితిని నవీకరించడం విఫలమైంది",
+    "pleaseEnterAValid15characterGstin": "దయచేసి చెల్లుబాటు అయ్యే 15 అక్షరాల GSTIN సంఖ్యను నమోదు చేయండి",
+    "gstinVerifiedSuccessfully": "GSTIN విజ‌య‌వంతంగా సరిచూడబడింది",
+    "pleaseEnterRegistrationNumberIdentifier": "దయచేసి రిజిస్ట్రేషన్ సంఖ్య / ఐడెంటిఫైయర్ నమోదు చేయండి",
+    "pleaseEnterRepresentativeNameAndDesignation": "దయచేసి ప్రతినిధి పేరు మరియు హోదాను నమోదు చేయండి",
+    "pleaseEnterValidMobileNumber": "దయచేసి చెల్లుబాటు అయ్యే మొబైల్ సంఖ్యను నమోదు చేయండి",
+    "otpSentToRepresentativeMobile": "ప్రతినిధి మొబైల్‌కు OTP పంపబడింది",
+    "failedToSendOtp": "OTP పంపడం విఫలమైంది",
+    "authorizedRepresentativeVerified": "అధికారిక ప్రతినిధి సరిచూడబడ్డారు",
+    "pleaseFillAllRequiredBankAccount": "దయచేసి అవసరమైన అన్ని బ్యాంక్ ఖాతా స్థలాలను నింపండి",
+    "accountNumbersDoNotMatch": "ఖాతా సంఖ్యలు సరిపోలడం లేదు",
+    "bankAccountVerifiedSuccessfully": "బ్యాంక్ ఖాతా విజ‌య‌వంతంగా సరిచూడబడింది",
+    "udyamRegistrationMarkedAsNotApplicable": "ఉద్యమ్ రిజిస్ట్రేషన్ వర్తించదని గురుతించబడింది",
+    "failedToUpdateUdyamStatus": "ఉద్యమ్ స్థితిని నవీకరించడం విఫలమైంది",
+    "pleaseEnterValidUdyamRegistrationNumber": "దయచేసి చెల్లుబాటు అయ్యే ఉద్యమ్ రిజిస్ట్రేషన్ సంఖ్యను నమోదు చేయండి",
+    "udyamRegistrationVerified": "ఉద్యమ్ రిజిస్ట్రేషన్ సరిచూడబడింది",
+    "fssaiLicenseMarkedAsNotApplicable": "FSSAI / License marked as Not Applicable ప్రోటోకాల్",
+    "failedToUpdateLicenseStatus": "లైసెన్స్ స్థితిని నవీకరించడం విఫలమైంది",
+    "pleaseEnterValidFssaiLicenseRegistration": "Please enter valid FSSAI / License registration number ప్రోటోకాల్",
+    "fssaiLicenseVerified": "FSSAI / License verified ప్రోటోకాల్",
+    "documentsRecordedAndVerified": "పత్రాలు రికార్డు చేయబడ్డాయి మరియు సరిచూడబడ్డాయి",
+    "thisStepIsRequiredAndCannot": "ఈ దశ తప్పనిసరి మరియు దాటవేయబడదు",
+    "step": "Step ప్రోటోకాల్",
+    "failedToSkipStep": "Failed to skip step ప్రోటోకాల్",
+    "verificationDetailsSaved": "సరిచూసే వివరాలు సేవ్ చేయబడ్డాయి!",
+    "couldNotCompleteVerification": "సరిచూసే ప్రక్రియ పూర్తి చేయలేకపోయాము",
+    "loadingOfficialVerificationPortal": "Loading Official Verification Portal... ప్రోటోకాల్",
+    "officialIdentityComplianceGateway": "అధికారిక గుర్తింపు మరియు సమ్మతి గేట్‌వే",
+    "saveExitToDashboard": "సేవ్ చేసి డాష్‌బోర్డ్‌కు నిష్క్రమించండి",
+    "textslate900": "text-slate-900 ప్రోటోకాల్",
+    "textslate700": "text-slate-700 ప్రోటోకాల్",
+    "required": "(Required) ప్రోటోకాల్",
+    "optional": "(Optional) ప్రోటోకాల్",
+    "stepCurrentstepOfStepslength": "Step {currentStep} of {steps.length} ప్రోటోకాల్",
+    "mandatoryVerification": "తప్పనిసరి సరిచూసే ప్రక్రియ",
+    "optionalCheck": "ఐచ్ఛిక తనిఖీ",
+    "mobileAuthenticationProtocol": "Mobile Authentication ప్రోటోకాల్",
+    "enterYour10digitMobileNumberTo": "Enter your 10-digit mobile number to receive a secure One-Time Password (OTP). OTP will not be stored permanently. ప్రోటోకాల్",
+    "enter10digitMobileNumber": "10 అంకెల మొబైల్ సంఖ్యను నమోదు చేయండి",
+    "enter6digitOtp": "6 అంకెల OTP నమోదు చేయండి",
+    "otpSentTo91xxxxxmobileformmobilenumberslice4": "OTP sent to +91-XXXXX{mobileForm.mobileNumber.slice(-4)} ప్రోటోకాల్",
+    "back": "Back ప్రోటోకాల్",
+    "verifyOtpContinue": "OTP సరిచూసి కొనసాగించండి",
+    "getMobileOtp": "మొబైల్ OTP పొందండి",
+    "authorizedIdentityVerification": "Authorized Identity Verification ప్రోటోకాల్",
+    "identityIsValidatedSecurelyViaAuthorized": "Identity is validated securely via authorized verification reference. Full raw identity document numbers are never permanently stored. ప్రోటోకాల్",
+    "aadhaarbasedAuthorizedVerification": "Aadhaar-based Authorized Verification ప్రోటోకాల్",
+    "panbasedIdentityVerification": "PAN-based Identity Verification ప్రోటోకాల్",
+    "voterIdNationalPortalVerification": "Voter ID / National Portal Verification ప్రోటోకాల్",
+    "verifyIdentityContinue": "గుర్తింపును సరిచూసి కొనసాగించండి",
+    "sendIdentityOtp": "గుర్తింపు OTP పంపండి",
+    "flatHouseNoBuildingStreetArea": "ఫ్లాట్, ఇంటి నంబర్, భవనం, వీధి, ప్రాంతం",
+    "districtName": "జిల్లా పేరు",
+    "cityOrTown": "నగరం లేదా పట్టణం",
+    "6digitPinCode": "6 అంకెల పిన్ కోడ్",
+    "verifyAddressContinue": "చిరునామాను సరిచూసి కొనసాగించండి",
+    "asRegisteredInMcaGstPan": "As registered in MCA / GST / PAN ప్రోటోకాల్",
+    "brandOrTradeNameOptional": "బ్రాండ్ లేదా వ్యాపార పేరు (ఐచ్ఛికం)",
+    "retailerAgribusinessDealer": "Retailer / Agribusiness Dealer ప్రోటోకాల్",
+    "wholesalerTrader": "Wholesaler / Trader ప్రోటోకాల్",
+    "foodProcessorMill": "Food Processor / Mill ప్రోటోకాల్",
+    "exporterInstitutionalBuyer": "Exporter / Institutional Buyer ప్రోటోకాల్",
+    "proprietorshipFirm": "Proprietorship Firm ప్రోటోకాల్",
+    "partnershipFirm": "Partnership Firm ప్రోటోకాల్",
+    "privateLimitedCompany": "Private Limited Company ప్రోటోకాల్",
+    "registeredOfficeTradePremisesAddress": "రిజిస్టర్డ్ ఆఫీస్ / వ్యాపార ప్రాంగణం చిరునామా",
+    "district": "జిల్లా",
+    "6digitPincode": "6 అంకెల పిన్‌కోడ్",
+    "verifyBusinessIdentity": "Verify Business Identity ప్రోటోకాల్",
+    "incomeTaxDepartmentPanVerification": "Income Tax Department PAN Verification ప్రోటోకాల్",
+    "enterThe10characterPermanentAccountNumber": "Enter the 10-character Permanent Account Number issued in the legal name of the entity. ప్రోటోకాల్",
+    "egAbcde1234f": "e.g. ABCDE1234F ప్రోటోకాల్",
+    "legalEntityName": "చట్టపరమైన సంస్థ పేరు",
+    "verifyBusinessPan": "Verify Business PAN ప్రోటోకాల్",
+    "goodsAndServicesTaxIdentificationGstin": "Goods and Services Tax Identification (GSTIN) ప్రోటోకాల్",
+    "gstinVerificationIsConditionalSmallTraders": "GSTIN verification is conditional. Small traders or exempt agricultural businesses can select \"GSTIN Not Applicable\". ప్రోటోకాల్",
+    "eg27aaaaa0000a1z5": "e.g. 27AAAAA0000A1Z5 ప్రోటోకాల్",
+    "gstinNotApplicable": "GSTIN Not Applicable ప్రోటోకాల్",
+    "verifyGstinContinue": "GSTIN సరిచూసి కొనసాగించండి",
+    "privatePublicLimitedCompanyCin": "Private / Public Limited Company (CIN) ప్రోటోకాల్",
+    "limitedLiabilityPartnershipLlpin": "Limited Liability Partnership (LLPIN) ప్రోటోకాల్",
+    "registeredPartnershipFirm": "Registered Partnership Firm ప్రోటోకాల్",
+    "registeredSoleProprietorship": "Registered Sole Proprietorship ప్రోటోకాల్",
+    "cooperativeSocietyFarmerFederation": "Cooperative Society / Farmer Federation ప్రోటోకాల్",
+    "egU01100mh2020ptc123456": "e.g. U01100MH2020PTC123456 ప్రోటోకాల్",
+    "verifyRegistration": "Verify Registration ప్రోటోకాల్",
+    "fullName": "పూర్తి పేరు",
+    "ownerProprietor": "Owner / Proprietor ప్రోటోకాల్",
+    "partner": "Partner ప్రోటోకాల్",
+    "director": "Director ప్రోటోకాల్",
+    "ceoManagingDirector": "CEO / Managing Director ప్రోటోకాల్",
+    "managerProcurementOfficer": "Manager / Procurement Officer ప్రోటోకాల్",
+    "authorizedSignatory": "Authorized Signatory ప్రోటోకాల్",
+    "10digitMobile": "10 అంకెల మొబైల్",
+    "6digitOtp": "6 అంకెల OTP",
+    "iConfirmIPossessOfficialBoard": "I confirm I possess official board authorization / power of attorney to act as authorized buyer representative. ప్రోటోకాల్",
+    "verifyRepresentativeOtp": "ప్రతినిధి OTP సరిచూడండి",
+    "sendRepresentativeOtp": "ప్రతినిధి OTP పంపండి",
+    "nameAsPerBankPassbook": "బ్యాంక్ పాస్‌బుక్ ప్రకారం పేరు",
+    "branchName": "శాఖ పేరు",
+    "egSbin0001234": "e.g. SBIN0001234 ప్రోటోకాల్",
+    "accountNumber": "ఖాతా సంఖ్య",
+    "reenterAccountNumber": "ఖాతా సంఖ్యను మళ్లీ నమోదు చేయండి",
+    "verifyBankAccount": "Verify Bank Account ప్రోటోకాల్",
+    "udyamMsmeRegistration": "Udyam MSME Registration ప్రోటోకాల్",
+    "conditionalCheckEnterYourUdyamRegistration": "Conditional check. Enter your Udyam Registration Number if registered as MSME enterprise, or select \"Udyam Not Applicable\". ప్రోటోకాల్",
+    "egUdyammh000000000": "e.g. UDYAM-MH-00-0000000 ప్రోటోకాల్",
+    "udyamNotApplicable": "Udyam Not Applicable ప్రోటోకాల్",
+    "verifyUdyamContinue": "ఉద్యమ్ సరిచూసి కొనసాగించండి",
+    "fssaiCommodityTradeLicense": "FSSAI / Commodity Trade License ప్రోటోకాల్",
+    "showThisOnlyWhereBuyerActivity": "Show this only where buyer activity requires food safety/commodity trading permits. Select \"Not Applicable\" if non-food operations. ప్రోటోకాల్",
+    "fssaiRegistrationLicense": "FSSAI Registration / License ప్రోటోకాల్",
+    "apmcMandiTradeLicense": "APMC / Mandi Trade License ప్రోటోకాల్",
+    "agriculturalCommodityTradeLicense": "Agricultural Commodity Trade License ప్రోటోకాల్",
+    "eg10020021000123": "e.g. 10020021000123",
+    "licenseNotApplicable": "License Not Applicable ప్రోటోకాల్",
+    "verifyLicenseContinue": "లైసెన్స్ సరిచూసి కొనసాగించండి",
+    "documentUploadComplianceAudit": "పత్రాల అప్‌లోడ్ మరియు సమ్మతి ఆడిట్",
+    "uploadClearScanOrPdfCopies": "Upload clear scan or PDF copies of required business certificates. Max file size: 5MB. ప్రోటోకాల్",
+    "businessRegistrationIncorporationCertificate": "వ్యాపార రిజిస్ట్రేషన్ / ఇంకార్పొరేషన్ సర్టిఫికేట్",
+    "businessPanDocument": "వ్యాపార పాన్ పత్రం",
+    "bankAccountProofCancelledCheque": "బ్యాంక్ ఖాతా రుజువు / రద్దు చేసిన చెక్",
+    "boardOwnerAuthorizationDocument": "బోర్డు / యజమాని అధికార పత్రం",
+    "gstCertificateIfApplicable": "GST Certificate (if applicable) ప్రోటోకాల్",
+    "udyamRegistrationCertificateIfApplicable": "ఉద్యమ్ రిజిస్ట్రేషన్ సర్టిఫికేట్ (వర్తిస్తే)",
+    "fssaiMandiLicenseDocumentIfApplicable": "FSSAI / Mandi License Document (if applicable) ప్రోటోకాల్",
+    "requiredDocument": "అవసరమైన పత్రం",
+    "conditionalDocument": "షరతులతో కూడిన పత్రం",
+    "verified_uploaded": "✓ అప్‌లోడ్ చేయబడింది",
+    "uploadDocument": "పత్రాన్ని అప్‌లోడ్ చేయండి",
+    "invalidDocumentFileFormatExtAllowed": "Invalid document file format (${ext}). Allowed formats: PDF, JPG, PNG, WEBP. ప్రోటోకాల్",
+    "uploadedDoctitle": "Uploaded ${doc.title} ప్రోటోకాల్",
+    "submitDocumentsProceed": "పత్రాలను సమర్పించి కొనసాగించండి",
+    "backToReview": "Back to Review ప్రోటోకాల్",
+    "finalizeBuyerVerification": "Finalize Buyer Verification ప్రోటోకాల్",
+    "yourInformationIsSecurelyProcessedSensitive": "మీ సమాచారం సురక్షితంగా ప్రాసెస్ చేయబడుతుంది. అవసరమైన ప్రదేశాలలో సున్నితమైన సమాచారం దాచబడుతుంది."
+  },
+  "farmerVerification": {
+    "aadhaarTitle": "గుర్తింపు సరిచూసే ప్రక్రియ (ఆధార్)",
+    "aadhaarDesc": "Authorized UIDAI identity verification ప్రోటోకాల్",
+    "farmerRegistryTitle": "రైతు ఐడీ / రిజిస్ట్రీ",
+    "farmerRegistryDesc": "రాష్ట్ర / జాతీయ రైతు అగ్రిస్టాక్ డేటాబేస్ రికార్డు",
+    "landRecordTitle": "భూమి రికార్డు / పట్టా",
+    "landRecordDesc": "వ్యవసాయ భూమి కలిగివున్న లేదా సాగు రికార్డు",
+    "bankAccountTitle": "బ్యాంక్ ఖాతా సరిచూసే ప్రక్రియ",
+    "bankAccountDesc": "నేరుగా చెల్లింపుల కోసం బ్యాంక్ ఖాతా",
+    "panTitle": "పాన్ కార్డ్ సరిచూసే ప్రక్రియ",
+    "panDesc": "గుర్తింపు మరియు చెల్లింపుల కోసం పాన్ సంఖ్య",
+    "pmKisanTitle": "PM-KISAN సరిచూసే ప్రక్రియ (ఐచ్ఛికం)",
+    "pmKisanDesc": "PM-KISAN లబ్ధిదారుల రిజిస్ట్రేషన్ సూచన",
+    "orgIdentityTitle": "మీ సంస్థను సరిచూడండి",
+    "orgIdentityDesc": "Legal organization registration, CIN, and state address ప్రోటోకాల్",
+    "orgPanTitle": "సంస్థ పాన్ సరిచూడండి",
+    "orgPanDesc": "చట్టపరమైన సంస్థ పేరుతో జారీ చేయబడిన పాన్ సంఖ్య",
+    "gstinTitle": "వ్యాపార వివరాలను సరిచూడండి (GSTIN)",
+    "gstinDesc": "GSTIN రిజిస్ట్రేషన్ (ఐచ్ఛికం / షరతులతో)",
+    "representativeTitle": "అధికారిక ప్రతినిధిని సరిచూడండి",
+    "representativeDesc": "నిర్వహణ అధికారి గుర్తింపు మరియు హోదా",
+    "orgBankTitle": "సంస్థ బ్యాంక్ ఖాతాను సరిచూడండి",
+    "orgBankDesc": "చెల్లింపుల కోసం సంస్థకు చెందిన బ్యాంక్ ఖాతా",
+    "orgDocumentsTitle": "సంస్థ పత్రాలు",
+    "orgDocumentsDesc": "రిజిస్ట్రేషన్ సర్టిఫికేట్, పాన్ పత్రం, బ్యాంక్ రుజువు మరియు అధికార లేఖను అప్‌లోడ్ చేయండి",
+    "verifiedFpoBadge": "✓ సరిచూడబడిన FPO",
+    "verifiedFarmerBadge": "✓ సరిచూడబడిన రైతు",
+    "loadingVerificationDashboard": "పరిశీలన డాష్‌బోర్డ్ లోడ్ అవుతోంది...",
+    "all5RequiredChecksActive": "అన్ని 5 అవసరమైన పరిశీలనలు సక్రియంగా ఉన్నాయి",
+    "overallProgress": "మొత్తం ప్రగతి",
+    "verificationChecksBreakdown": "పరిశీలనల వివరాలు",
+    "verificationStatusHeading": "పరిశీలన స్థితి & వివరాలు",
+    "centralDashboardAgri": "మీ వ్యవసాయ వివరాలు, ప్రగతి మరియు అధికారిక స్థితిని చూడటానికి కేంద్రీయ డాష్‌బోర్డ్.",
+    "centralDashboardOrg": "మీ సంస్థ వివరాలు, ప్రగతి మరియు అధికారిక స్థితిని చూడటానికి కేంద్రీయ డాష్‌బోర్డ్.",
+    "verifiedStat": "{{count}} పరిశీలించబడింది",
+    "skippedStat": "{{count}} దాటవేయబడింది",
+    "pendingStat": "{{count}} అవసరమైనవి పెండింగ్‌లో ఉన్నాయి",
+    "congratulationsVerifiedMsg": "అభినందనలు! అవసరమైన అన్ని గురింపు మరియు సంస్థ ఆధారాలు పూర్తిగా పరిశీలించబడ్డాయి. మీ పంట ఉత్పత్తులకు ఇప్పుడు అధికారిక వెరిఫైడ్ బ్యాడ్జ్ ప్రదర్శించబడుతుంది."
+  },
+  "paymentSettlementCard": {
+    "bank": "బ్యాంక్:",
+    "account": "ఖాతా:",
+    "ifsc": "IFSC:",
+    "linkedAccount": "అనుసంధానించబడిన ఖాతా:",
+    "settlement": "సెటిల్‌మెంట్:",
+    "lastSynced": "చివరిగా సింక్ చేయబడింది:",
+    "governmentSettlementPortal": "ప్రభుత్వ సెటిల్‌మెంట్ పోర్టల్",
+    "paymentAndSettlement": "చెల్లింపు & సెటిల్‌మెంట్",
+    "notConnectedBadge": "చెల్లింపు ఖాతా అనుసంధానించబడలేదు",
+    "setupHeadline": "చెల్లింపు & సెటిల్‌మెంట్ సెటప్",
+    "setupDescription": "మార్కెట్‌ప్లేస్ ఉత్పత్తుల ఆర్డర్‌లకు ప్రత్యక్ష చెల్లింపులు పొందడానికి మీ ఖాతాను కనెక్ట్ చేయండి.",
+    "connectAccount": "చెల్లింపు ఖాతాను అనుసంధానించండి",
+    "onboardingBadge": "ఖాతా సెటప్ కొనసాగుతోంది",
+    "onboardingHeadline": "సెటిల్‌మెంట్ ధృవీకరణ జరుగుతోంది",
+    "onboardingDescription": "Razorpay మీ విక్రేత ఖాతా వివరాలను సమీక్షిస్తోంది.",
+    "continueSetup": "సెటప్‌ను కొనసాగించండి",
+    "pendingBadge": "Razorpay ధృవీకరణ పెండింగ్‌లో ఉంది",
+    "pendingHeadline": "Razorpay ధృవీకరణ కొనసాగుతోంది",
+    "pendingDescription": "ఖాతా సమాచారం సమర్పించబడింది. ధృవీకరణ పెండింగ్‌లో ఉంది.",
+    "checkStatus": "స్థితిని రిఫ్రెష్ చేయండి",
+    "activeBadge": "✓ చెల్లింపు ఖాతా అనుసంధానించబడింది",
+    "activeHeadline": "సెటిల్‌మెంట్ ఖాతా సక్రియంగా ఉంది",
+    "activeDescription": "మీ ఖాతా సక్రియంగా ఉంది. అమ్మకాల చెల్లింపులు స్వయంచాలకంగా స్థిరపడతాయి.",
+    "accountConnected": "చెల్లింపు ఖాతా అనుసంధానించబడింది",
+    "rejectedBadge": "Razorpay ధృవీకరణ / సమీక్ష అవసరం",
+    "rejectedHeadline": "ధృవీకరణ సమీక్ష అవసరం",
+    "rejectedDescription": "అదనపు పత్రాలు లేదా సమీక్ష అవసరం.",
+    "resolveVerification": "ధృవీకరణను పరిష్కరించండి",
+    "suspendedBadge": "చెల్లింపు సెటిల్‌మెంట్ తాత్కాలికంగా అందుబాటులో లేదు",
+    "suspendedHeadline": "సెటిల్‌మెంట్ నిలిపివేయబడింది",
+    "suspendedDescription": "ఈ ఖాతాకు చెల్లింపు సెటిల్‌మెంట్‌లు అందుబాటులో లేవు. మద్దతును సంప్రదించండి.",
+    "contactSupport": "మద్దతును సంప్రదించండి",
+    "settlementPendingNotice": "మార్కెట్‌ప్లేస్ సెటిల్‌మెంట్ సెటప్ Razorpay యాక్టివేషన్ కోసం పెండింగ్‌లో ఉంది.",
+    "refreshStatus": "స్థితిని రిఫ్రెష్ చేయండి",
+    "failedToLoadStatus": "చెల్లింపు సెటిల్‌మెంట్ స్థితిని లోడ్ చేయడం విఫలమైంది.",
+    "statusUpdated": "స్థితి అప్‌డేట్ చేయబడింది!",
+    "contactSupportToast": "Please contact AgriBazaar support at support@agribazaar.org",
+    "actionFailed": "చర్య విఫలమైంది."
+  },
+  "about": {
+    "ourPurpose": "మా ఉద్దేశం",
+    "aboutAgribazaar": "అగ్రిబజార్ గురించి",
+    "corePillar": "ముఖ్యమైన స్తంభం",
+    "ourMission": "మా లక్ష్యం",
+    "futureready": "భవిష్యత్తుకు సిద్ధం",
+    "ourVision": "మా దృష్టి"
+  },
+  "admin": {
+    "noAnalyticsDataRecordedYet": "ఇంకా ఎలాంటి విశ్లేషణ డేటా నమోదు కాలేదు.",
+    "platformIntelligence": "ఇంటెలిజెన్స్ ప్లాట్‌ఫారమ్",
+    "platformAnalytics": "ప్లాట్‌ఫారమ్ విశ్లేషణలు",
+    "deepDiveIntoTradeRevenuesSeller": "వ్యాపార రాబడి, విక్రేత నమోదు వేగం మరియు వర్గం పరిమాణం యొక్క సమగ్ర విశ్లేషణ.",
+    "account": "ఖాతా:",
+    "ifsc": "IFSC కోడ్:",
+    "razorpayRouteCapabilityIsPendingActivation": "రేజర్‌పే రూట్ సామర్థ్య సక్రియం పెండింగ్‌లో ఉంది",
+    "isActiveNormalBuyerCheckoutPayments": "సక్రియంగా ఉంది. సాధారణ కొనుగోలుదారు చెల్లింపులు సరిగ్గా పనిచేస్తాయి.",
+    "pending": "పెండింగ్",
+    "userDirectory": "వినియోగదారుల డైరెక్టరీ",
+    "platformUserManagement": "ప్లాట్‌ఫారమ్ వినియోగదారుల నిర్వహణ",
+    "viewUserRolesAccessStatusesAnd": "వినియోగదారు పాత్రలు, ప్రాప్యత స్థితులను చూడండి మరియు ప్లాట్‌ఫారమ్ అనుమతులను నిర్వహించండి.",
+    "users": "వినియోగదారులు",
+    "farmers": "రైతులు / FPOలు",
+    "settlements": "పరిష్కారాలు",
+    "payments": "చెల్లింపులు",
+    "blockchain": "బ్లాక్‌చైన్ ఆడిట్",
+    "disputes": "వివాదాలు",
+    "analytics": "విశ్లేషణలు"
+  },
+  "buyerDashboard": {
+    "buyerPortal": "కొనుగోలుదారు పోర్టల్",
+    "buyerDashboard": "కొనుగోలుదారు డాష్‌బోర్డ్",
+    "trackYourOrdersSpendingAndFresh": "మీ ఆర్డర్లు, ఖర్చులు మరియు తాజా పంటలను ట్రాక్ చేయండి.",
+    "buyerVerificationStatus": "కొనుగోలుదారు సరిచూసే స్థితి",
+    "viewVerificationDetails": "ధృవీకరణ వివరాలను చూడండి",
+    "recentOrders": "ఇటీవలి ఆర్డర్లు",
+    "noOrdersPlacedYet": "ఇంకా ఎలాంటి ఆర్డర్లు చేయలేదు.",
+    "browseMarketplace": "మార్కెట్‌ప్లేస్‌ను బ్రౌజ్ చేయండి",
+    "recommendedProduce": "సిఫార్సు చేసిన పంటలు",
+    "totalOrders": "మొత్తం ఆర్డర్లు",
+    "activeOrders": "యాక్టివ్ ఆర్డర్లు",
+    "completed": "పూర్తయింది",
+    "totalSpent": "మొత్తం ఖర్చు",
+    "accountHashCopied": "కొనుగోలుదారు ఖాతా హాష్ కాపీ చేయబడింది!",
+    "failedToLoad": "డాష్‌బోర్డ్‌ను లోడ్ చేయడం విఫలమైంది.",
+    "viewAllOrders": "అన్ని ఆర్డర్లను చూడండి →",
+    "startVerification": "ధృవీకరణను ప్రారంభించండి",
+    "continueVerification": "ధృవీకరణను కొనసాగించండి"
+  },
+  "buyerOrders": {
+    "viewCrop": "పంటను చూడండి",
+    "orderTracking": "ఆర్డర్ ట్రాకింగ్",
+    "myOrders": "నా ఆర్డర్లు",
+    "viewShipmentProgressAndPurchaseHistory": "అన్ని విక్రేతలలో రవాణా పురోగతి మరియు కొనుగోలు చరిత్రను చూడండి.",
+    "browseProduce": "ఉత్పత్తులను బ్రౌజ్ చేయండి",
+    "colProduceItem": "ఉత్పత్తి అంశం",
+    "colFarmerProducer": "రైతు / ఉత్పత్తిదారుడు",
+    "colQuantity": "పరిమాణం",
+    "colTotalPrice": "మొత్తం ధర",
+    "colOrderStatus": "ఆర్డర్ స్థితి",
+    "colBlockchainAudit": "బ్లాక్‌చైన్ ఆడిట్",
+    "colAction": "చర్య",
+    "noOrdersFound": "ఆర్డర్‌లు కనుగొనబడలేదు",
+    "noOrdersDesc": "మీరు ఉంచిన ఆర్డర్లు ఇక్కడ కనిపిస్తాయి.",
+    "failedToLoadOrders": "ఆర్డర్‌లను లోడ్ చేయడం విఫలమైంది."
+  },
+  "buyerProfile": {
+    "buyerAccount": "కొనుగోలుదారు ఖాతా",
+    "buyerProfile": "కొనుగోలుదారు ప్రొఫైల్",
+    "manageYourPersonalDetailsAndDefault": "మీ వ్యక్తిగత వివరాలు మరియు డిఫాల్ట్ షిప్పింగ్ చిరునామాను నిర్వహించండి.",
+    "fullName": "పూర్తి పేరు",
+    "emailAddress": "ఈమెయిల్ చిరునామా",
+    "mobileNumber": "మొబైల్ సంఖ్య",
+    "deliveryAddress": "డెలివరీ చిరునామా",
+    "city": "నగరం",
+    "state": "రాష్ట్రం",
+    "pincode": "పిన్‌కోడ్",
+    "buyerAccountType": "కొనుగోలుదారు ఖాతా రకం",
+    "profileUpdatedToast": "కొనుగోలుదారు ప్రొఫైల్ అప్‌డేట్ చేయబడింది!",
+    "accountHashCopiedToast": "ఖాతా హాష్ కాపీ చేయబడింది!"
+  },
+  "buyerVerification": {
+    "loadingBuyerVerificationStatus": "కొనుగోలుదారు సరిచూసే స్థితి లోడ్ అవుతోంది...",
+    "status": "స్థితి",
+    "overallStatus": "మొత్తం స్థితి",
+    "progress": "పురోగతి",
+    "viewVerificationDetails": "సరిచూసే వివరాలను చూడండి",
+    "officialPortal": "• అధికారిక ధృవీకరణ పోర్టల్",
+    "continueVerification": "ధృవీకరణను కొనసాగించండి",
+    "startVerification": "ధృవీకరణను ప్రారంభించండి",
+    "failedToLoad": "ధృవీకరణ స్థితిని లోడ్ చేయడం విఫలమైంది.",
+    "title": "కొనుగోలుదారు ధృవీకరణ స్థితి",
+    "subtitle": "అగ్రిబజార్‌లో గుర్తింపు, వ్యాపార నిబంధనలు మరియు నియంత్రణ ఆధారాలను నిర్వహించండి.",
+    "completedCountOfTotal": "{{total}} లో {{count}} పూర్తయింది",
+    "checklistHeading": "ధృవీకరణ చెక్‌లిస్ట్",
+    "wizardCardHeading": "మీ ధృవీకరణ విజార్డ్‌ను పూర్తి చేయండి",
+    "wizardCardDesc": "రైతులతో నమ్మకాన్ని పెంచుకోవడానికి మరియు ధృవీకరించబడిన కొనుగోలుదారు బ్యాడ్జిలను పొందడానికి అవసరమైన గుర్తింపు, పన్ను, బ్యాంక్ మరియు పత్రాల తనిఖీలను పూర్తి చేయండి."
+  },
+  "farmerAddProduct": {
+    "cropPreview": "పంట పూర్వావలోకనం",
+    "price": "ధర:",
+    "stock": "స్టాక్:",
+    "location": "ప్రాంతం:",
+    "harvest": "కోత:",
+    "newCropListing": "కొత్త పంట జాబితా",
+    "addNewProduct": "కొత్త ఉత్పత్తిని జోడించండి",
+    "createAVerifiedProduceListingTo": "నేరుగా విక్రయించడానికి సరిచూసిన పంట జాబితాను సృష్టించండి.",
+    "productCropNameLabel": "ఉత్పత్తి / పంట పేరు *",
+    "placeholderProductName": "ఉదా. ఆర్గానిక్ బాస్మతీ బియ్యం",
+    "cropCategoryLabel": "పంట వర్గం *",
+    "measurementUnitLabel": "కొలత ప్రమాణం *",
+    "produceDescriptionLabel": "ఉత్పత్తి వివరణ",
+    "placeholderDescription": "వ్యవసాయ పద్ధతులు, రకం లేదా ప్రత్యేక ప్యాకేజింగ్‌ను వివరించండి...",
+    "availableQuantityLabel": "అందుబాటులో ఉన్న పరిమాణం *",
+    "placeholderQuantity": "ఉదా. 500",
+    "pricePerUnitLabel": "PRICE PER {{unit}} (₹) *",
+    "placeholderPrice": "ఉదా. 85",
+    "farmLocationLabel": "ఫారమ్ స్థానం (నగరం, రాష్ట్రం) *",
+    "placeholderLocation": "ఉదా. నాసిక్, మహారాష్ట్ర",
+    "harvestDateLabel": "కోత తేదీ",
+    "availableFromLabel": "నుండి అందుబాటులో ఉంది",
+    "uploadImageLabel": "పంట చిత్రం అప్‌లోడ్ చేయండి *",
+    "uploadImageDesc": "అధిక నాణ్యత కలిగిన JPG, PNG, లేదా WEBP చిత్రం (PDF అనుమతించబడదు)",
+    "saveDraft": "డ్రాఫ్ట్ సేవ్ చేయండి",
+    "previewListing": "లిస్టింగ్ ప్రివ్యూ చూడండి",
+    "publishListing": "పబ్లిష్ చేయండి",
+    "publishing": "పబ్లిష్ అవుతోంది...",
+    "backToEdit": "ఎడిట్‌కి తిరిగి వెళ్లండి",
+    "nameRequired": "ఉత్పత్తి పేరు అవసరం.",
+    "categoryRequired": "వర్గం అవసరం.",
+    "quantityGreaterThanZero": "పరిమాణం 0 కంటే ఎక్కువ ఉండాలి.",
+    "priceGreaterThanZero": "ధర 0 కంటే ఎక్కువ ఉండాలి.",
+    "locationRequired": "స్థానం అవసరం.",
+    "savedAsDraft": "ఉత్పత్తి డ్రాఫ్ట్‌గా సేవ్ చేయబడింది.",
+    "publishedSuccess": "ఉత్పత్తి విజయవంతంగా పబ్లిష్ చేయబడింది!",
+    "failedToCreate": "ఉత్పత్తిని సృష్టించడం విఫలమైంది."
+  },
+  "farmerDashboard": {
+    "manageYourAgriculturalProductsIncomingOrders": "మీ వ్యవసాయ ఉత్పత్తులు, آنے والے ఆపరేషన్లు మరియు రాబడిని నిర్వహించండి.",
+    "recentOrders": "ఇటీవలి ఆర్డర్లు",
+    "noOrdersReceivedYet": "ఇంకా ఎలాంటి ఆర్డర్లు రాలేదు.",
+    "activeListings": "సక్రియ జాబితాలు",
+    "noActiveListings": "సక్రియ జాబితాలు లేవు.",
+    "fpoSellerDashboard": "FPO / FPC విక్రేత డాష్‌బోర్డ్",
+    "sellerDashboard": "విక్రేత డాష్‌బోర్డ్",
+    "fpoOverview": "FPO అవలోకనం",
+    "farmerOverview": "రైతు అవలోకనం",
+    "addNewListing": "కొత్త లిస్టింగ్ జోడించండి",
+    "sellerCryptographicAccountHash": "విక్రేత క్రిప్టోగ్రాఫిక్ ఖాతా హాష్ (ఆన్-చైన్ గుర్తింపు)",
+    "copyHash": "హాష్ కాపీ చేయండి",
+    "accountHashCopied": "విక్రేత ఖాతా హాష్ కాపీ చేయబడింది!",
+    "verifiedFpoBadge": "✓ ధృవీకరించబడిన FPO",
+    "verifiedFarmerBadge": "✓ ధృవీకరించబడిన రైతు",
+    "completeYourVerification": "మీ ధృవీకరణను పూర్తి చేయండి",
+    "activeBadge": "యాక్టివ్ బ్యాడ్జ్",
+    "checksCompletedCount": "అవసరమైన 5 చెక్కులలో {{count}} పూర్తయ్యాయి",
+    "allRequiredVerificationActive": "అవసరమైన అన్ని ధృవీకరణలు సక్రియంగా ఉన్నాయి",
+    "verificationIncomplete": "ధృవీకరణ అసంపూర్తిగా ఉంది",
+    "updateVerification": "ధృవీకరణను అప్‌డేట్ చేయండి",
+    "continueVerification": "ధృవీకరణను కొనసాగించండి",
+    "totalProducts": "మొత్తం ఉత్పత్తులు",
+    "activeListingsLabel": "యాక్టివ్ లిస్టింగ్‌లు",
+    "pendingOrders": "పెండింగ్ ఆర్డర్లు",
+    "totalSales": "మొత్తం విక్రయాలు",
+    "viewAll": "అన్నీ చూడండి →",
+    "addProductButton": "+ ఉత్పత్తిని జోడించండి"
+  },
+  "farmerProducts": {
+    "cropInventory": "పంట నిల్వలు",
+    "myProducts": "నా ఉత్పత్తులు",
+    "colProduceDetails": "ఉత్పత్తి వివరాలు",
+    "colCategory": "పంట వర్గం",
+    "colPriceUnit": "ధర / యూనిట్",
+    "colStockQuantity": "స్టాక్ పరిమాణం",
+    "colStatus": "స్థితి",
+    "colActions": "చర్యలు",
+    "noProductsListed": "ఇంకా ఏ ఉత్పత్తులు జాబితా చేయబడలేదు",
+    "noProductsDesc": "మీ మొదటి ఉత్పత్తిని పబ్లిష్ చేయడం ద్వారా అమ్మకం ప్రారంభించండి.",
+    "addProductBtn": "+ ఉత్పత్తిని జోడించండి",
+    "manageListingsDesc": "మీ సక్రియ, ముసాయిదా మరియు స్టాక్ లేని పంట జాబితాలను నిర్వహించండి (మొత్తం {{count}}).",
+    "addNewProduct": "కొత్త ఉత్పత్తిని జోడించండి",
+    "searchPlaceholder": "పంట జాబితాలను శోధించండి...",
+    "colProduct": "ఉత్పత్తి",
+    "colAvailableStock": "లభ్యత నిల్వ",
+    "pauseBtn": "నిలిపివేయి",
+    "activateBtn": "సక్రియం చేయి"
+  },
+  "farmerOrders": {
+    "orderManagement": "ఆర్డర్ నిర్వహణ",
+    "incomingProduceOrders": "వచ్చే పంట ఆర్డర్లు",
+    "fulfillPurchaseOrdersReceivedFromRetail": "రిటైల్ మరియు హోల్‌సేల్ కొనుగోలుదారుల నుండి వచ్చిన ఆర్డర్‌లను నెరవేర్చండి.",
+    "colProduceItems": "ఉత్పత్తి అంశాలు",
+    "colBuyerInfo": "కొనుగోలుదారు సమాచారం",
+    "colQuantity": "పరిమాణం",
+    "colTotalValue": "మొత్తం విలువ",
+    "colOrderStatus": "ఆర్డర్ స్థితి",
+    "colAuditProvenance": "ఆడిట్ మూలం",
+    "colActions": "చర్యలు",
+    "allOrdersTab": "అన్ని ఆర్డర్లు",
+    "standardDelivery": "స్టాండర్డ్ డెలివరీ",
+    "confirmBtn": "ధృవీకరించండి",
+    "cancelBtn": "రద్దు చేయండి",
+    "dispatchBtn": "డిస్పాచ్ చేయండి",
+    "markDeliveredBtn": "డెలివరీ చేయబడినట్లు గుర్తించండి",
+    "noOrdersInStatus": "ఈ స్థితిలో ఆర్డర్‌లు లేవు",
+    "noOrdersDescription": "కొనుగోలుదారులు ఆర్డర్లు చేసినప్పుడు, అవి ఇక్కడ కనిపిస్తాయి.",
+    "statusUpdatedToast": "ఆర్డర్ స్థితి {{status}}కి నవీకరించబడింది.",
+    "failedToLoadOrders": "ఆర్డర్‌లను లోడ్ చేయడం విஃபలమైంది.",
+    "failedToUpdateStatus": "ఆర్డర్ స్థితిని అప్‌డేట్ చేయడం విఫలమైంది."
+  },
+  "farmerProfile": {
+    "sellerIdentity": "విక్రేత గుర్తింపు",
+    "farmerProfile": "రైతు ప్రొఫైల్",
+    "manageYourAgriculturalCredentialsFarmLocation": "మీ వ్యవసాయ ఆధారాలు, ఫార్మ్ స్థానం మరియు సంప్రదింపు సమాచారాన్ని నిర్వహించండి.",
+    "fullName": "పూర్తి పేరు",
+    "farmFpoName": "ఫార్మ్ / FPO పేరు",
+    "emailAddress": "ఈమెయిల్ చిరునామా",
+    "mobileNumber": "మొబైల్ సంఖ్య",
+    "location": "ప్రాంతం",
+    "address": "చిరునామా",
+    "sellerType": "విక్రేత రకం",
+    "verificationStatus": "సరిచూసే స్థితి",
+    "editProfile": "ప్రొఫైల్‌ను సవరించండి",
+    "onChainCryptographicAccountHash": "ఆన్-చైన్ క్రిప్టోగ్రాఫిక్ ఖాతా హాష్",
+    "copyHash": "హాష్ కాపీ చేయండి",
+    "accountHashCopiedToast": "ఖాతా హాష్ కాపీ చేయబడింది!",
+    "profileAvatarPhotoLabel": "ప్రొఫైల్ అవతార్ ఫోటో",
+    "profileAvatarPhotoDesc": "ప్రొఫైల్ ఫోటోను అప్‌లోడ్ చేయండి (JPG, PNG, WEBP)",
+    "updatedSuccessToast": "రైతు ప్రొఫైల్ అప్‌డేట్ చేయబడింది!",
+    "updatedFailedToast": "ప్రొఫైల్‌ను అప్‌డేట్ చేయడం విఫలమైంది.",
+    "onChainHashTitle": "🛡️ ఆన్-చైన్ క్రిప్టోగ్రాఫిక్ ఖాతా హ్యాష్"
+  },
+  "farmerSales": {
+    "salesAnalyticsComingSoon": "అమ్మకాల విశ్లేషణ త్వరలో రానుంది.",
+    "financialInsights": "ఆర్థిక విశ్లేషణలు",
+    "salesAnalytics": "అమ్మకాల విశ్లేషణ",
+    "trackYourMonthlyRevenueGrowthAverage": "మీ మాసపు ఆదాయ వృద్ధి మరియు అమ్మకాల పనితీరును ట్రాక్ చేయండి.",
+    "totalRevenue": "మొత్తం రాబడి",
+    "avgOrderValue": "సగటు ఆర్డర్ విలువ",
+    "fulfilledOrders": "పూర్తయిన ఆర్డర్లు",
+    "activeCustomers": "యాక్టివ్ కస్టమర్లు"
+  },
+  "register": {
+    "agri": "అగ్రి",
+    "bazaar": "బజార్",
+    "joinAgribazaar": "AgriBazaar లో చేరండి",
+    "selectYourAccountTypeToGet": "ప్రారంభించడానికి మీ ఖాతా రకాన్ని ఎంచుకోండి",
+    "farmerFpo": "రైతు / FPO",
+    "sellYourProduceDirectlyToBuyers": "మీ ఉత్పత్తులను నేరుగా న్యాయమైన ధరలకు విక్రయించండి.",
+    "buyer": "కొనుగోలుదారు",
+    "sourceFreshAgriculturalProduceDirectlyFrom": "రైతుల నుండి నేరుగా తాజా వ్యవసాయ ఉత్పత్తులను పొందండి.",
+    "signIn": "సైన్ ఇన్ చేయండి",
+    "farmerRegistration": "రైతు రిజిస్ట్రేషన్",
+    "createYourSellerProfileToList": "ఉత్పత్తులను జాబితా చేయడానికి మీ విక్రేత ప్రొఫైల్‌ను సృష్టించండి",
+    "individualFarmer": "వ్యక్తిగత రైతు",
+    "farmerProducerOrganizationFpo": "రైతు ఉత్పత్తిదారుల సంస్థ (FPO)",
+    "fullFarmAddress": "పూర్తి ఫార్మ్ చిరునామా",
+    "buyerRegistration": "కొనుగోలుదారు రిజిస్ట్రేషన్",
+    "createYourAccountToPurchaseProduce": "ఉత్పత్తులను కొనుగోలు చేయడానికి మీ ఖాతాను సృష్టించండి",
+    "individualConsumer": "వ్యక్తిగత వినియోగదారుడు",
+    "businessRetailer": "వ్యాపారం / రిటైలర్",
+    "wholesaleBulkBuyer": "హోల్‌సేల్ బల్క్ కొనుగోలుదారు",
+    "deliveryAddress": "డెలివరీ చిరునామా"
+  },
+  "roles": {
+    "farmer": "రైతు",
+    "fpo": "రైతు ఉత్పత్తిదారుల సంస్థ (FPO)",
+    "individual": "వ్యక్తిగత వినియోగదారుడు",
+    "business": "వ్యాపారం / రిటైలర్",
+    "bulkBuyer": "హోల్‌సేల్ బల్క్ కొనుగోలుదారు",
+    "retailBuyer": "రిటైల్ కొనుగోలుదారు",
+    "wholesaler": "హోల్‌సేలర్",
+    "buyer": "కొనుగోలుదారు",
+    "seller": "అమ్మకந்தாருడు",
+    "admin": "అడ్మినిస్ట్రేటర్"
+  },
+  "categories": {
+    "fruits": "పండ్లు",
+    "vegetables": "కూరగాయలు",
+    "grains": "ధాన్యాలు & బియ్యం",
+    "pulses": "పప్పుధాన్యాలు",
+    "spices": "మసాలా దినుసులు",
+    "millets": "చిరుధాన్యాలు",
+    "dairy": "పాలు & పాల ఉత్పత్తులు",
+    "other": "ఇతర పంటలు"
+  },
+  "units": {
+    "kg": "కిలోగ్రామ్ (KG)",
+    "quintal": "క్వింటాల్ (100 KG)",
+    "ton": "మెట్రిక్ టన్ను",
+    "litre": "లీటరు",
+    "piece": "పీస్ / బండిల్"
+  },
+  "adminDashboard": {
+    "colProductName": "ఉత్పత్తి పేరు",
+    "colBuyer": "కొనుగోలుదారు",
+    "colFarmerFpo": "రైతు / FPO",
+    "colAmount": "మొత్తం",
+    "colStatus": "స్థితి",
+    "totalUsers": "మొత్తం వినియోగదారులు",
+    "farmersFpos": "రైతులు / FPOలు",
+    "pendingVerifications": "పెండింగ్ ధృవీకరణలు",
+    "activeProducts": "యాక్టివ్ ఉత్పత్తులు",
+    "totalOrders": "మొత్తం ఆర్డర్లు",
+    "completedOrders": "పూర్తయిన ఆర్డర్లు",
+    "totalRevenue": "మొత్తం ఆదాయం",
+    "totalBuyers": "మొత్తం కొనుగోలుదారులు",
+    "monthlyOrderVolumeTitle": "మాసపు ఆర్డర్ పరిమాణం",
+    "monthlyOrderVolumeDesc": "నెలవారీగా పూర్తయిన ఆర్డర్ల సంఖ్య.",
+    "categoryDistributionTitle": "ఉత్పత్తి వర్గాల పంపిణీ",
+    "categoryDistributionDesc": "వర్గాల వారీగా సక్రియ పంట జాబితాలు.",
+    "noPlatformOrders": "ప్లాట్‌ఫారమ్ ఆర్డర్లు ఏవీ లేవు"
+  },
+  "adminOrders": {
+    "colOrderRef": "ఆర్డర్ సూచన",
+    "colProduceItem": "పంట వస్తువు",
+    "colBuyer": "కొనుగోలుదారు",
+    "colFarmerFpo": "రైతు / FPO",
+    "colTotalValue": "మొత్తం విలువ",
+    "colPaymentStatus": "చెల్లింపు స్థితి",
+    "colOrderStatus": "ఆర్డర్ స్థితి",
+    "noOrdersFound": "ఆర్డర్లు ఏవీ కనుగొనబడలేదు",
+    "allOrders": "అన్ని ఆర్డర్లు"
+  },
+  "adminDisputes": {
+    "colComplainant": "ఫిర్యాదుదారు",
+    "colReason": "వివాద కారణం",
+    "colStatus": "స్థితి",
+    "colActions": "చర్యలు",
+    "noDisputes": "తెరిచిన వివాదాలు ఏవీ లేవు",
+    "noDisputesDesc": "ప్లాట్‌ఫారమ్ వర్తకం 0 క్లెయిమ్‌లతో సజావుగా సాగుతోంది.",
+    "placeholderResponse": "అడ్మిన్ స్పందన వివరాలు...",
+    "resolveIssue": "సమస్యను పరిష్కరించండి",
+    "rejectClaim": "క్లెయిమ్‌ను తిరస్కరించు",
+    "resolveClaim": "క్లెయిమ్‌ను పరిష్కరించండి"
+  },
+  "adminFarmers": {
+    "colFarmerName": "రైతు / FPO పేరు",
+    "colVerification": "సరిచూడడం",
+    "colAuditProvenance": "ఆడిట్ మూలం",
+    "approvalHeadline": "రైతులు & FPOల ఆమోదం",
+    "noVerificationApps": "సరిచూసే దరఖాస్తులు ఏవీ కనుగొనబడలేదు",
+    "placeholderRejection": "తిరస్కరణకు గల కారణాన్ని తెలియజేయండి...",
+    "allApplications": "అన్ని దరఖాస్తులు",
+    "approveVerification": "సరిచూడడాన్ని ఆమోదించండి",
+    "colSellerType": "విక్రేత రకం",
+    "colContactInfo": "సమాచార సంప్రదింపు",
+    "colLocation": "ప్రాంతం",
+    "colActions": "చర్యలు",
+    "rejectFarmerBtn": "రైతును తిరస్కరించండి"
+  },
+  "adminPayments": {
+    "colTxRef": "లావాదేవీ సూచన",
+    "colAmount": "సొమ్ము",
+    "colStatus": "స్థితి",
+    "colDate": "తేదీ",
+    "noPaymentRecords": "చెల్లింపు రికార్డులు ఏవీ కనుగొనబడలేదు",
+    "noPaymentRecordsDesc": "కొనుగోలుదారు ఆర్డర్లు ప్రాసెస్ చేయబడినప్పుడు లావాదేవీలు ఇక్కడ నమోదు చేయబడతాయి.",
+    "viewOnChainAudit": "ఆన్-చైన్ బ్లాక్‌చెయిన్ ఆడిట్ చూడండి"
+  },
+  "adminProducts": {
+    "colCropListing": "పంట జాబితా",
+    "colFarmerFpo": "రైతు / FPO",
+    "colListingStatus": "జాబితా స్థితి",
+    "allListings": "అన్ని జాబితాలు",
+    "disableListing": "జాబితాను నిలిపివేయి",
+    "enableListing": "జాబితాను ప్రారంభించు",
+    "colCategory": "వర్గం",
+    "colPriceUnit": "ధర / యూనిట్",
+    "colActions": "చర్యలు",
+    "noProduceListingsFound": "పంట జాబితాలు ఏవీ కనుగొనబడలేదు"
+  },
+  "adminSettlements": {
+    "colFarmerProducer": "రైతు / ఉత్పత్తిదారు",
+    "colVerification": "అగ్రిబజార్ సరిచూడడం",
+    "colRazorpayStatus": "రేజర్‌పే విక్రేత స్థితి",
+    "colSettlementAccount": "సెటిల్‌మెంట్ ఖాతా",
+    "colTotalSettled": "మొత్తం పరిష్కరించబడింది",
+    "colPendingSettlement": "పెండింగ్ సెటిల్‌మెంట్",
+    "colAuditProvenance": "ఆడిట్ మూలం",
+    "noSettlementRecords": "విక్రేత సెటిల్‌మెంట్ రికార్డులు లేవు",
+    "noSettlementDesc": "రైతు సెటిల్‌మెంట్ స్థితులు ఇక్కడ కనిపిస్తాయి.",
+    "razorpayRoutePendingTitle": "రేజర్‌పే రూట్ సామర్థ్య సక్రియం పెండింగ్‌లో ఉంది (టెస్ట్ మోడ్)",
+    "razorpayRoutePendingDesc": "ఎన్విరాన్‌మెంట్ ఫ్లాగ్ RAZORPAY_ROUTE_ENABLED=false సక్రియంగా ఉంది. సాధారణ కొనుగోలుదారు చెల్లింపులు సరిగ్గా పనిచేస్తాయి.",
+    "financialControlBadge": "మార్కెట్‌ప్లేస్ ఆర్థిక నియంత్రణ",
+    "headline": "చెల్లింపు & సెటిల్‌మెంట్ అవలోకనం",
+    "subtitle": "రైతుల వ్యాపార చెల్లింపులు మరియు సెటిల్‌మెంట్‌లను ట్రాక్ చేయండి.",
+    "refreshSettlements": "సెటిల్‌మెంట్‌లను రిఫ్రెష్ చేయండి",
+    "allFarmers": "అందరూ రైతులు"
+  },
+  "adminUsers": {
+    "colUserName": "వినియోగదారు పేరు",
+    "colEmail": "ఇమెయిల్ విలాసం",
+    "colAccountHash": "ఆన్-చైన్ ఖాతా హ్యాష్",
+    "colAccountRole": "ఖాతా పాత్ర",
+    "suspendAccount": "ఖాతాను నిలిపివేయి",
+    "activateAccount": "ఖాతాను సక్రియం చేయి",
+    "allRoles": "అన్ని పాత్రలు",
+    "colAccountStatus": "ఖాతా స్థితి",
+    "colActions": "చర్యలు",
+    "noRegisteredUsersFound": "నమోదిత వినియోగదారులు ఎవరూ కనుగొనబడలేదు"
+  },
+  "adminAnalytics": {
+    "monthlyRevenueTrend": "మాససిక రాబడి ట్రెండ్",
+    "grossVolumeDesc": "నెలకు మొత్తం సరుకుల పరిమాణం.",
+    "orderStatusBreakdown": "ఆర్డర్ స్థితి వివరాలు",
+    "orderRatioDesc": "పెండింగ్, సక్రియ మరియు పూర్తయిన ఆర్డర్ల నిష్పత్తి.",
+    "farmerRegistrations": "రైతు & FPO నమోదులు",
+    "registrationVelocityDesc": "కాలక్రమేణా నమోదుల వేగం.",
+    "categoryListingVolume": "వర్గం జాబితా పరిమాణం",
+    "categoryListingsDesc": "ప్రతి పంట వర్గానికి సక్రియ జాబితాల సంఖ్య."
+  },
+  "landing": {
+    "heroEyebrow": "తాజా. న్యాయమైన. కలిసి.",
+    "heroTitle": "రైతులను అనుసంధానించడం",
+    "heroHighlight": "మెరుగైన మార్కెట్లతో.",
+    "heroDescription": "నేరుగా డిజిటల్ మార్కెట్‌ప్లేస్‌తో భారతీయ వ్యవసాయాన్ని సాధికారపరచడం.",
+    "exploreMarketplace": "మార్కెట్‌ప్లేస్‌ను అన్వేషించండి",
+    "joinFarmer": "రైతు / FPOగా చేరండి",
+    "heroImageAlt": "పొలంలో భారతీయ రైతు",
+    "verifiedFresh": "సరిచూసిన తాజా ఉత్పత్తులు",
+    "directSourcing": "నేరుగా పొలం కొనుగోలు",
+    "zeroCommission": "0% కమిషన్ ఛార్జీలు",
+    "farmToMarket": "పొలం నుండి మార్కెట్‌కు",
+    "fasterFairer": "వేగవంతమైన మరియు న్యాయమైన"
+  },
+  "r": {
+    "o": {
+      "l": {
+        "e": {
+          "s": {
+            ".": {
+              "i": {
+                "n": {
+                  "d": {
+                    "i": {
+                      "v": {
+                        "i": {
+                          "d": {
+                            "u": {
+                              "a": {
+                                "l": "వ్యక్తిగత కొనుగోలుదారు"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "b": {
+                "u": {
+                  "s": {
+                    "i": {
+                      "n": {
+                        "e": {
+                          "s": {
+                            "s": "వ్యాపారం / రిటైలర్"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "l": {
+                    "k": {
+                      "B": {
+                        "u": {
+                          "y": {
+                            "e": {
+                              "r": "హోల్‌సేల్ బల్క్ కొనుగోలుదారు"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "f": {
+                "a": {
+                  "r": {
+                    "m": {
+                      "e": {
+                        "r": "వ్యక్తిగత రైతు"
+                      }
+                    }
+                  }
+                },
+                "p": {
+                  "o": "రైతు ఉత్పత్తిదారుల సంస్థ (FPO)"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "c": {
+    "a": {
+      "t": {
+        "e": {
+          "g": {
+            "o": {
+              "r": {
+                "i": {
+                  "e": {
+                    "s": {
+                      ".": {
+                        "f": {
+                          "r": {
+                            "u": {
+                              "i": {
+                                "t": {
+                                  "s": "పండ్లు"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "v": {
+                          "e": {
+                            "g": {
+                              "e": {
+                                "t": {
+                                  "a": {
+                                    "b": {
+                                      "l": {
+                                        "e": {
+                                          "s": "కూరగాయలు"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "g": {
+                          "r": {
+                            "a": {
+                              "i": {
+                                "n": {
+                                  "s": "ధాన్యాలు & బియ్యం"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "p": {
+                          "u": {
+                            "l": {
+                              "s": {
+                                "e": {
+                                  "s": "పప్పుధాన్యాలు"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "s": {
+                          "p": {
+                            "i": {
+                              "c": {
+                                "e": {
+                                  "s": "సుగంధ ద్రవ్యాలు"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "m": {
+                          "i": {
+                            "l": {
+                              "l": {
+                                "e": {
+                                  "t": {
+                                    "s": "చిరుధాన్యాలు"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "d": {
+                          "a": {
+                            "i": {
+                              "r": {
+                                "y": "పాడి ఉత్పత్తులు"
+                              }
+                            }
+                          }
+                        },
+                        "o": {
+                          "t": {
+                            "h": {
+                              "e": {
+                                "r": "ఇతర పంట ఉత్పత్తులు"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "o": {
+      "m": {
+        "m": {
+          "o": {
+            "n": {
+              ".": {
+                "a": {
+                  "l": {
+                    "l": {
+                      "O": {
+                        "r": {
+                          "d": {
+                            "e": {
+                              "r": {
+                                "s": "అన్ని ఆర్డర్లు"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "p": {
+                  "a": {
+                    "y": {
+                      "N": {
+                        "o": {
+                          "w": "ఇప్పుడే చెల్లించండి"
+                        }
+                      }
+                    }
+                  }
+                },
+                "e": {
+                  "d": {
+                    "i": {
+                      "t": {
+                        "P": {
+                          "r": {
+                            "o": {
+                              "f": {
+                                "i": {
+                                  "l": {
+                                    "e": "ప్రొఫైల్‌ను సవరించండి"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "s": {
+                  "a": {
+                    "v": {
+                      "e": {
+                        "C": {
+                          "h": {
+                            "a": {
+                              "n": {
+                                "g": {
+                                  "e": {
+                                    "s": "మార్పులను సేవ్ చేయండి"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "c": {
+                  "o": {
+                    "p": {
+                      "y": {
+                        "H": {
+                          "a": {
+                            "s": {
+                              "h": "హ్యాష్ కాపీ చేయండి"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "b": {
+    "u": {
+      "y": {
+        "e": {
+          "r": {
+            "V": {
+              "e": {
+                "r": {
+                  "i": {
+                    "f": {
+                      "i": {
+                        "c": {
+                          "a": {
+                            "t": {
+                              "i": {
+                                "o": {
+                                  "n": {
+                                    ".": {
+                                      "b": {
+                                        "u": {
+                                          "y": {
+                                            "e": {
+                                              "r": {
+                                                "L": {
+                                                  "a": {
+                                                    "b": {
+                                                      "e": {
+                                                        "l": "కొనుగోలుదారు"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "t": {
+                                        "i": {
+                                          "t": {
+                                            "l": {
+                                              "e": "కొనుగోలుదారు సరిచూసే స్థితి"
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "s": {
+                                        "u": {
+                                          "b": {
+                                            "t": {
+                                              "i": {
+                                                "t": {
+                                                  "l": {
+                                                    "e": "అగ్రిబజార్‌లో గుర్తింపు, వ్యాపార వర్తింపు మరియు నిబంధనల వివరాలను నిర్వహించండి."
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "c": {
+                                        "h": {
+                                          "e": {
+                                            "c": {
+                                              "k": {
+                                                "l": {
+                                                  "i": {
+                                                    "s": {
+                                                      "t": {
+                                                        "H": {
+                                                          "e": {
+                                                            "a": {
+                                                              "d": {
+                                                                "i": {
+                                                                  "n": {
+                                                                    "g": "సరిచూసే చెక్‌లిస్ట్"
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "o": {
+                                          "m": {
+                                            "p": {
+                                              "l": {
+                                                "e": {
+                                                  "t": {
+                                                    "e": {
+                                                      "d": {
+                                                        "C": {
+                                                          "o": {
+                                                            "u": {
+                                                              "n": {
+                                                                "t": {
+                                                                  "O": {
+                                                                    "f": {
+                                                                      "T": {
+                                                                        "o": {
+                                                                          "t": {
+                                                                            "a": {
+                                                                              "l": "{{total}} లో {{count}} పూర్తయింది"
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "w": {
+                                        "i": {
+                                          "z": {
+                                            "a": {
+                                              "r": {
+                                                "d": {
+                                                  "C": {
+                                                    "a": {
+                                                      "r": {
+                                                        "d": {
+                                                          "H": {
+                                                            "e": {
+                                                              "a": {
+                                                                "d": {
+                                                                  "i": {
+                                                                    "n": {
+                                                                      "g": "మీ సరిచూసే విజార్డ్‌ను పూర్తి చేయండి"
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          },
+                                                          "D": {
+                                                            "e": {
+                                                              "s": {
+                                                                "c": "రైతులతో నమ్మకాన్ని పెంపొందించడానికి మరియు ధృవీకరించిన బ్యాడ్జ్‌లను పొందడానికి అన్ని తనిఖీలను పూర్తి చేయండి."
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "o": {
+                                        "f": {
+                                          "f": {
+                                            "i": {
+                                              "c": {
+                                                "i": {
+                                                  "a": {
+                                                    "l": {
+                                                      "P": {
+                                                        "o": {
+                                                          "r": {
+                                                            "t": {
+                                                              "a": {
+                                                                "l": "• అధికారిక సరిచూసే పోర్టల్"
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "a": {
+                                        "l": {
+                                          "l": {
+                                            "C": {
+                                              "h": {
+                                                "e": {
+                                                  "c": {
+                                                    "k": {
+                                                      "s": {
+                                                        "C": {
+                                                          "o": {
+                                                            "m": {
+                                                              "p": {
+                                                                "l": {
+                                                                  "e": {
+                                                                    "t": {
+                                                                      "e": {
+                                                                        "d": {
+                                                                          "D": {
+                                                                            "e": {
+                                                                              "s": {
+                                                                                "c": "అన్ని అవసరమైన సరిచూసే తనిఖీలు విజయవంతంగా పూర్తయ్యాయి."
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "v": {
+                                        "e": {
+                                          "r": {
+                                            "i": {
+                                              "f": {
+                                                "i": {
+                                                  "e": {
+                                                    "d": {
+                                                      "O": {
+                                                        "n": "పరిశీలించిన తేదీ:"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "C": {
+                                      "o": {
+                                        "n": {
+                                          "f": {
+                                            "i": {
+                                              "g": {
+                                                ".": {
+                                                  "I": {
+                                                    "N": {
+                                                      "D": {
+                                                        "I": {
+                                                          "V": {
+                                                            "I": {
+                                                              "D": {
+                                                                "U": {
+                                                                  "A": {
+                                                                    "L": {
+                                                                      ".": {
+                                                                        "p": {
+                                                                          "o": {
+                                                                            "r": {
+                                                                              "t": {
+                                                                                "a": {
+                                                                                  "l": {
+                                                                                    "T": {
+                                                                                      "i": {
+                                                                                        "t": {
+                                                                                          "l": {
+                                                                                            "e": "వ్యక్తిగత కొనుగోలుదారు సరిచూసే పోర్టల్"
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          },
+                                                                          "a": {
+                                                                            "g": {
+                                                                              "e": {
+                                                                                "T": {
+                                                                                  "i": {
+                                                                                    "t": {
+                                                                                      "l": {
+                                                                                        "e": "వ్యక్తిగత కొనుగోలుదారు వర్తింపు & సరిచూడడం"
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "b": {
+                                                                          "a": {
+                                                                            "d": {
+                                                                              "g": {
+                                                                                "e": {
+                                                                                  "T": {
+                                                                                    "e": {
+                                                                                      "x": {
+                                                                                        "t": "ధృవీకరించిన వ్యక్తిగత కొనుగోలుదారు"
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "i": {
+                                                                          "n": {
+                                                                            "c": {
+                                                                              "o": {
+                                                                                "m": {
+                                                                                  "p": {
+                                                                                    "l": {
+                                                                                      "e": {
+                                                                                        "t": {
+                                                                                          "e": {
+                                                                                            "B": {
+                                                                                              "a": {
+                                                                                                "d": {
+                                                                                                  "g": {
+                                                                                                    "e": {
+                                                                                                      "T": {
+                                                                                                        "e": {
+                                                                                                          "x": {
+                                                                                                            "t": "సరిచూడడం పెండింగ్‌లో ఉంది"
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "s": {
+                                                                          "t": {
+                                                                            "e": {
+                                                                              "p": {
+                                                                                "s": {
+                                                                                  ".": {
+                                                                                    "m": {
+                                                                                      "o": {
+                                                                                        "b": {
+                                                                                          "i": {
+                                                                                            "l": {
+                                                                                              "e": {
+                                                                                                ".": {
+                                                                                                  "s": {
+                                                                                                    "h": {
+                                                                                                      "o": {
+                                                                                                        "r": {
+                                                                                                          "t": {
+                                                                                                            "L": {
+                                                                                                              "a": {
+                                                                                                                "b": {
+                                                                                                                  "e": {
+                                                                                                                    "l": "మొబైల్ OTP"
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  },
+                                                                                                  "n": {
+                                                                                                    "a": {
+                                                                                                      "m": {
+                                                                                                        "e": "మొబైల్ నంబర్ సరిచూడడం"
+                                                                                                      }
+                                                                                                    }
+                                                                                                  },
+                                                                                                  "d": {
+                                                                                                    "e": {
+                                                                                                      "s": {
+                                                                                                        "c": {
+                                                                                                          "r": {
+                                                                                                            "i": {
+                                                                                                              "p": {
+                                                                                                                "t": {
+                                                                                                                  "i": {
+                                                                                                                    "o": {
+                                                                                                                      "n": "SMS OTP ద్వారా మొబైల్ నంబర్‌ను సరిచూడండి."
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    },
+                                                                                    "i": {
+                                                                                      "d": {
+                                                                                        "e": {
+                                                                                          "n": {
+                                                                                            "t": {
+                                                                                              "i": {
+                                                                                                "t": {
+                                                                                                  "y": {
+                                                                                                    ".": {
+                                                                                                      "s": {
+                                                                                                        "h": {
+                                                                                                          "o": {
+                                                                                                            "r": {
+                                                                                                              "t": {
+                                                                                                                "L": {
+                                                                                                                  "a": {
+                                                                                                                    "b": {
+                                                                                                                      "e": {
+                                                                                                                        "l": "ప్రభుత్వ గుర్తింపు"
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      },
+                                                                                                      "n": {
+                                                                                                        "a": {
+                                                                                                          "m": {
+                                                                                                            "e": "ఆధార్ / పాస్‌పోర్ట్ / ఓటరు ID"
+                                                                                                          }
+                                                                                                        }
+                                                                                                      },
+                                                                                                      "d": {
+                                                                                                        "e": {
+                                                                                                          "s": {
+                                                                                                            "c": {
+                                                                                                              "r": {
+                                                                                                                "i": {
+                                                                                                                  "p": {
+                                                                                                                    "t": {
+                                                                                                                      "i": {
+                                                                                                                        "o": {
+                                                                                                                          "n": "ప్రభుత్వ ఐడీ కార్డుతో సరిచూడడం."
+                                                                                                                        }
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    },
+                                                                                    "a": {
+                                                                                      "d": {
+                                                                                        "d": {
+                                                                                          "r": {
+                                                                                            "e": {
+                                                                                              "s": {
+                                                                                                "s": {
+                                                                                                  ".": {
+                                                                                                    "s": {
+                                                                                                      "h": {
+                                                                                                        "o": {
+                                                                                                          "r": {
+                                                                                                            "t": {
+                                                                                                              "L": {
+                                                                                                                "a": {
+                                                                                                                  "b": {
+                                                                                                                    "e": {
+                                                                                                                      "l": "షిప్పింగ్ చిరునామా"
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    },
+                                                                                                    "n": {
+                                                                                                      "a": {
+                                                                                                        "m": {
+                                                                                                          "e": "డెలివరీ మరియు నివాస చిరునామా"
+                                                                                                        }
+                                                                                                      }
+                                                                                                    },
+                                                                                                    "d": {
+                                                                                                      "e": {
+                                                                                                        "s": {
+                                                                                                          "c": {
+                                                                                                            "r": {
+                                                                                                              "i": {
+                                                                                                                "p": {
+                                                                                                                  "t": {
+                                                                                                                    "i": {
+                                                                                                                      "o": {
+                                                                                                                        "n": "సరుకు డెలివరీ కోసం చెల్లుబాటు అయ్యే నివాస చిరునామా."
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    },
+                                                                                    "s": {
+                                                                                      "u": {
+                                                                                        "m": {
+                                                                                          "m": {
+                                                                                            "a": {
+                                                                                              "r": {
+                                                                                                "y": {
+                                                                                                  ".": {
+                                                                                                    "s": {
+                                                                                                      "h": {
+                                                                                                        "o": {
+                                                                                                          "r": {
+                                                                                                            "t": {
+                                                                                                              "L": {
+                                                                                                                "a": {
+                                                                                                                  "b": {
+                                                                                                                    "e": {
+                                                                                                                      "l": "సమీక్షించండి & సమర్పించండి"
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    },
+                                                                                                    "n": {
+                                                                                                      "a": {
+                                                                                                        "m": {
+                                                                                                          "e": "సరిచూసే సమీక్ష"
+                                                                                                        }
+                                                                                                      }
+                                                                                                    },
+                                                                                                    "d": {
+                                                                                                      "e": {
+                                                                                                        "s": {
+                                                                                                          "c": {
+                                                                                                            "r": {
+                                                                                                              "i": {
+                                                                                                                "p": {
+                                                                                                                  "t": {
+                                                                                                                    "i": {
+                                                                                                                      "o": {
+                                                                                                                        "n": "సమర్పించిన ఆధారాల తుది సమీక్ష."
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "m": {
+    "a": {
+      "r": {
+        "k": {
+          "e": {
+            "t": {
+              "p": {
+                "l": {
+                  "a": {
+                    "c": {
+                      "e": {
+                        ".": {
+                          "n": {
+                            "e": {
+                              "w": {
+                                "e": {
+                                  "s": {
+                                    "t": {
+                                      "F": {
+                                        "i": {
+                                          "r": {
+                                            "s": {
+                                              "t": "కొత్తవి ముందుగా"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "p": {
+                            "r": {
+                              "i": {
+                                "c": {
+                                  "e": {
+                                    "L": {
+                                      "o": {
+                                        "w": {
+                                          "T": {
+                                            "o": {
+                                              "H": {
+                                                "i": {
+                                                  "g": {
+                                                    "h": "ధర: తక్కువ నుండి ఎక్కువ"
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "H": {
+                                      "i": {
+                                        "g": {
+                                          "h": {
+                                            "T": {
+                                              "o": {
+                                                "L": {
+                                                  "o": {
+                                                    "w": "ధర: ఎక్కువ నుండి తక్కువ"
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "m": {
+                            "o": {
+                              "s": {
+                                "t": {
+                                  "P": {
+                                    "o": {
+                                      "p": {
+                                        "u": {
+                                          "l": {
+                                            "a": {
+                                              "r": "అత్యంత ప్రజాదరణ పొందినవి"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "p": {
+    "r": {
+      "o": {
+        "d": {
+          "u": {
+            "c": {
+              "t": {
+                "D": {
+                  "e": {
+                    "t": {
+                      "a": {
+                        "i": {
+                          "l": {
+                            "s": {
+                              ".": {
+                                "a": {
+                                  "v": {
+                                    "a": {
+                                      "i": {
+                                        "l": {
+                                          "a": {
+                                            "b": {
+                                              "l": {
+                                                "e": {
+                                                  "I": {
+                                                    "n": {
+                                                      "S": {
+                                                        "t": {
+                                                          "o": {
+                                                            "c": {
+                                                              "k": "{{count}} {{unit}} స్టాక్‌లో అందుబాటులో ఉంది"
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "F": {
+                                                    "r": {
+                                                      "o": {
+                                                        "m": {
+                                                          "L": {
+                                                            "a": {
+                                                              "b": {
+                                                                "e": {
+                                                                  "l": "అందుబాటులో ఉంది: {{date}}"
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "b": {
+                                    "o": {
+                                      "u": {
+                                        "t": {
+                                          "F": {
+                                            "a": {
+                                              "r": {
+                                                "m": {
+                                                  "e": {
+                                                    "r": {
+                                                      "T": {
+                                                        "i": {
+                                                          "t": {
+                                                            "l": {
+                                                              "e": "రైతు / ఉత్పత్తిదారు గురించి"
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "h": {
+                                  "a": {
+                                    "r": {
+                                      "v": {
+                                        "e": {
+                                          "s": {
+                                            "t": {
+                                              "D": {
+                                                "a": {
+                                                  "t": {
+                                                    "e": {
+                                                      "L": {
+                                                        "a": {
+                                                          "b": {
+                                                            "e": {
+                                                              "l": "కోత: {{date}}"
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "q": {
+                                  "u": {
+                                    "a": {
+                                      "n": {
+                                        "t": {
+                                          "i": {
+                                            "t": {
+                                              "y": {
+                                                "L": {
+                                                  "a": {
+                                                    "b": {
+                                                      "e": {
+                                                        "l": "పరిమాణం ({{unit}}):"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "buyerVerificationConfig": {
+    "INDIVIDUAL": {
+      "portalTitle": "వ్యక్తిగత కొనుగోలుదారు ధృవీకరణ",
+      "pageTitle": "కొనుగోలుదారు ధృవీకరణ స్థితి",
+      "badgeText": "ధృవీకరించబడిన వ్యక్తిగత కొనుగోలుదారు",
+      "incompleteBadgeText": "ధృవీకరణ పెండింగ్‌లో ఉంది",
+      "steps": {
+        "mobile": {
+          "shortLabel": "మొబైల్",
+          "name": "మొబైల్ ధృవీకరణ",
+          "description": "నోటిఫికేషన్‌లు మరియు अलर्टల ప్రాప్యత కోసం మొబైల్ నంబర్‌ను ధృవీకరించండి."
+        },
+        "identity": {
+          "shortLabel": "గుర్తింపు",
+          "name": "ఆధార్ / గుర్తింపు రుజువు",
+          "description": "ప్రభుత్వ గుర్తింపు రుజువు యొక్క ముందు & వెనుక ప్రతిని అప్‌లోడ్ చేయండి."
+        },
+        "address": {
+          "shortLabel": "చిరునామా",
+          "name": "చిరునామా ధృవీకరణ",
+          "description": "ధృవీకరించబడిన డెలివరీ & బిల్లింగ్ చిరునామా వివరాలను అందించండి."
+        },
+        "summary": {
+          "shortLabel": "సారాంశం",
+          "name": "ధృవీకరణ సారాంశం",
+          "description": "మీ వ్యక్తిగత ధృవీకరణ దరఖాస్తును సమీక్షించి సమర్పించండి."
+        }
+      }
+    },
+    "BUSINESS": {
+      "portalTitle": "వ్యాపార కొనుగోలుదారు ధృవీకరణ",
+      "pageTitle": "కార్పొరేట్ ధృవీకరణ స్థితి",
+      "badgeText": "ధృవీకరించబడిన వ్యాపార కొనుగోలుదారు",
+      "incompleteBadgeText": "వ్యాపార ధృవీకరణ పెండింగ్‌లో ఉంది",
+      "steps": {
+        "business": {
+          "shortLabel": "వ్యాపారం",
+          "name": "వ్యాపార వివరాలు",
+          "description": "చట్టపరమైన సంస్థ పేరు, రకం మరియు నమోదిత చిరునామాను నమోదు చేయండి."
+        },
+        "pan": {
+          "shortLabel": "పాన్",
+          "name": "వ్యాపార పాన్ కార్డ్",
+          "description": "నమోదిత కంపెనీ లేదా సంస్థ యొక్క పాన్ వివరాలను అందించండి."
+        },
+        "gstin": {
+          "shortLabel": "జిఎస్‌టిఐఎన్",
+          "name": "జిఎస్‌టిఐఎన్ నమోదు",
+          "description": "వస్తువులు మరియు సేవల పన్ను గుర్తింపు సంఖ్యను అందించండి."
+        },
+        "businessRegistration": {
+          "shortLabel": "నమోదు",
+          "name": "సంస్థల నమోదు పత్రం",
+          "description": "అధికారిక వ్యాపార నమోదు పత్రాన్ని అప్‌లోడ్ చేయండి."
+        },
+        "representative": {
+          "shortLabel": "ప్రతినిధి",
+          "name": "అధికారిక ప్రతినిధి",
+          "description": "మేనేజర్ లేదా అధికారిక సంతకం చేసేవారి వివరాలను అందించండి."
+        },
+        "bank": {
+          "shortLabel": "బ్యాంక్",
+          "name": "బ్యాంక్ ఖాతా వివరాలు",
+          "description": "బిల్లింగ్ కోసం వాణిజ్య బ్యాంక్ ఖాతా వివరాలను అందించండి."
+        },
+        "documents": {
+          "shortLabel": "పత్రాలు",
+          "name": "సహాయక పత్రాలు",
+          "description": "అదనపు వ్యాపార ధృవీకరణ పత్రాలను అప్‌లోడ్ చేయండి."
+        },
+        "summary": {
+          "shortLabel": "సారాంశం",
+          "name": "ధృవీకరణ సమీక్ష",
+          "description": "దరఖాస్తు సమర్పించే ముందు కంపెనీ వివరాలను సమీక్షించండి."
+        }
+      }
+    },
+    "BULK_BUYER": {
+      "portalTitle": "హాప్‌సేల్ కొనుగోలుదారు ధృవీకరణ",
+      "pageTitle": "హోల్‌సేల్ లైసెన్స్ ధృవీకరణ",
+      "badgeText": "ధృవీకరించబడిన హోల్‌సేల్ కొనుగోలుదారు",
+      "incompleteBadgeText": "హోల్‌సేల్ ధృవీకరణ పెండింగ్‌లో ఉంది",
+      "steps": {
+        "business": {
+          "shortLabel": "వ్యాపారం",
+          "name": "హోల్‌సేల్ సంస్థ వివరాలు",
+          "description": "హోల్‌సేల్ కంపెనీ పేరు, నిర్వహణ పరిధి మరియు చిరునామాను నమోదు చేయండి."
+        },
+        "pan": {
+          "shortLabel": "పాన్",
+          "name": "సంస్థ పాన్",
+          "description": "సంస్థ పాన్ పత్రాన్ని అందించండి."
+        },
+        "gstin": {
+          "shortLabel": "జిఎస్‌టిఐఎన్",
+          "name": "హోల్‌సేల్ జిఎస్‌టిఐఎన్",
+          "description": "నమోదిత జిఎస్‌టిఐఎన్ వివరాలను అందించండి."
+        },
+        "businessRegistration": {
+          "shortLabel": "నమోదు",
+          "name": "వాణిజ్య / నమోదు పత్రం",
+          "description": "వాణిజ్య లైసెన్స్ లేదా నమోదు పత్రాన్ని అప్‌లోడ్ చేయండి."
+        },
+        "udyam": {
+          "shortLabel": "ఉద్యమ్",
+          "name": "ఉద్యమ్ MSME నమోదు",
+          "description": "MSME ఉద్యమ్ నమోదు పత్రాన్ని అందించండి."
+        },
+        "representative": {
+          "shortLabel": "ప్రతినిధి",
+          "name": "హోల్‌సేల్ సంప్రదింపు వ్యక్తి",
+          "description": "ప్రాథమిక సంప్రదింపు మరియు అధికారిక ప్రతినిధి సమాచారాన్ని అందించండి."
+        },
+        "bank": {
+          "shortLabel": "బ్యాంక్",
+          "name": "సెటిల్మెంట్ బ్యాంక్ ఖాతా",
+          "description": "భారీ వర్తక సెటిల్మెంట్ల కోసం బ్యాంక్ వివరాలను అందించండి."
+        },
+        "fssai": {
+          "shortLabel": "FSSAI",
+          "name": "FSSAI ఆహార భద్రత లైసెన్స్",
+          "description": "ఆహార పదార్థాల వర్తకం చేస్తే FSSAI లైసెన్స్‌ను అందించండి."
+        },
+        "documents": {
+          "shortLabel": "పత్రాలు",
+          "name": "హోల్‌సేల్ లైసెన్స్‌లు & అనుమతులు",
+          "description": "వర్తక అనుమతులు, మండి లైసెన్స్‌లు మరియు పన్ను పత్రాలను అప్‌లోడ్ చేయండి."
+        },
+        "summary": {
+          "shortLabel": "సారాంశం",
+          "name": "తుది హోల్‌సేల్ సమీక్ష",
+          "description": "సమర్పించే ముందు అన్ని హోల్‌సేల్ పత్రాలను సమీక్షించండి."
+        }
+      }
+    }
+  },
+  "productDetails": {
+    "availableInStock": "స్టాక్‌లో {{count}} {{unit}} అందుబాటులో ఉంది",
+    "harvestDateLabel": "కోత: {{date}}",
+    "availableFromLabel": "లభ్యత: {{date}}",
+    "quantityLabel": "పరిమాణం ({{unit}}):",
+    "aboutFarmerTitle": "రైతు / ఉత్పత్తిదారు గురించి"
   }
 }

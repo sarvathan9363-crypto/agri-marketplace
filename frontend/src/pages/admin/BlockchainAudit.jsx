@@ -1,9 +1,11 @@
+import { useTranslation } from 'react-i18next';
 import { useState, useEffect } from 'react';
 import { Database, RefreshCw, ExternalLink, ShieldCheck, CheckCircle2, XCircle, Search, Layers, Coins, UserCheck, User, Tractor, Mail, Phone, X } from 'lucide-react';
 import adminService from '../../services/adminService';
 import toast from 'react-hot-toast';
 
 export default function AdminBlockchainAudit() {
+  const { t } = useTranslation();
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState({
     network: 'Kava EVM Testnet',
@@ -92,13 +94,13 @@ export default function AdminBlockchainAudit() {
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
           <span className="text-[#00684a] font-extrabold text-xs tracking-widest uppercase font-display bg-[#00ed64]/20 px-3 py-1 rounded-full inline-flex items-center gap-1.5">
-            <ShieldCheck className="w-3.5 h-3.5 text-[#00684a]" /> Direct Smart Contract RPC Query
+            <ShieldCheck className="w-3.5 h-3.5 text-[#00684a]" /> {t('blockchain.directSmartContractRpcQuery', { defaultValue: 'Direct Smart Contract RPC Query' })}
           </span>
           <h1 className="text-3xl font-black text-[#001e2b] font-display mt-2 flex items-center gap-3">
-            Blockchain Audit Trail
+            {t('blockchain.blockchainAuditTrail', { defaultValue: 'Blockchain Audit Trail' })}
           </h1>
           <p className="text-sm text-gray-600 mt-1 font-sans">
-            Immutable, append-only payment & settlement audit records fetched directly from Kava EVM Testnet smart contract without database dependency.
+            {t('blockchain.immutableAuditRecordsDesc', { defaultValue: 'Immutable, append-only payment & settlement audit records fetched directly from Kava EVM Testnet smart contract without database dependency.' })}
           </p>
         </div>
 
@@ -108,14 +110,14 @@ export default function AdminBlockchainAudit() {
           className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm bg-[#00684a] text-white hover:bg-[#004f38] transition-all shadow-md hover:shadow-lg disabled:opacity-50"
         >
           <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
-          {loading ? 'Fetching On-Chain Data...' : 'Fetch On-Chain Data'}
+          {loading ? t('blockchain.fetchingOnChainData', { defaultValue: 'Fetching On-Chain Data...' }) : t('blockchain.fetchOnChainData', { defaultValue: 'Fetch On-Chain Data' })}
         </button>
       </div>
 
       {/* Contract & Network Info Header Cards */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm space-y-1">
-          <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Blockchain Network</span>
+          <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">{t('blockchain.blockchainNetwork')}</span>
           <div className="flex items-center justify-between">
             <span className="text-lg font-bold text-gray-900 font-display">{data.network}</span>
             <span className="text-xs font-mono font-bold bg-blue-50 text-blue-600 px-2 py-0.5 rounded-md">ID: {data.chainId}</span>
@@ -123,7 +125,7 @@ export default function AdminBlockchainAudit() {
         </div>
 
         <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm space-y-1">
-          <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Smart Contract Address</span>
+          <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">{t('blockchain.smartContractAddress')}</span>
           <div className="flex items-center justify-between">
             <span className="text-xs font-mono font-bold text-gray-800" title={data.contractAddress}>
               {data.contractAddress ? `${data.contractAddress.slice(0, 8)}...${data.contractAddress.slice(-6)}` : 'N/A'}
@@ -141,7 +143,7 @@ export default function AdminBlockchainAudit() {
         </div>
 
         <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm space-y-1">
-          <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">On-Chain Payment Audits</span>
+          <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">{t('blockchain.onchainPaymentAudits')}</span>
           <div className="flex items-center justify-between">
             <span className="text-2xl font-black text-emerald-700 font-display">{data.totalPaymentEvents}</span>
             <Coins className="w-6 h-6 text-emerald-500 opacity-60" />
@@ -149,7 +151,7 @@ export default function AdminBlockchainAudit() {
         </div>
 
         <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm space-y-1">
-          <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">On-Chain Settlement Audits</span>
+          <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">{t('blockchain.onchainSettlementAudits')}</span>
           <div className="flex items-center justify-between">
             <span className="text-2xl font-black text-purple-700 font-display">{data.totalSettlementEvents}</span>
             <Layers className="w-6 h-6 text-purple-500 opacity-60" />
@@ -162,13 +164,13 @@ export default function AdminBlockchainAudit() {
         {/* Tool 1: Live Event ID Hash Verification */}
         <div className="bg-gradient-to-r from-[#001e2b] to-[#003846] p-6 rounded-2xl text-white shadow-lg space-y-4">
           <div className="flex items-center gap-2 text-emerald-400 font-bold text-xs uppercase tracking-widest font-display">
-            <Search className="w-4 h-4" /> Verify Event ID Hash On-Chain
+            <Search className="w-4 h-4" /> {t('blockchain.verifyEventIdHashOnChain', { defaultValue: 'VERIFY EVENT ID HASH ON-CHAIN' })}
           </div>
-          <h3 className="text-lg font-bold">Smart Contract Event Verifier</h3>
+          <h3 className="text-lg font-bold">{t('blockchain.smartContractEventVerifier')}</h3>
           <form onSubmit={handleVerifyHash} className="flex flex-col sm:flex-row gap-3">
             <input
               type="text"
-              placeholder="Paste Event ID Hash (e.g. 0xd8273e6f...)"
+              placeholder={t('blockchain.placeholderEventHash', { defaultValue: 'Paste Event ID Hash (e.g. 0xd8273e6f...)' })}
               value={verifyHashInput}
               onChange={(e) => setVerifyHashInput(e.target.value)}
               className="flex-1 bg-white/10 border border-white/20 rounded-xl px-4 py-2.5 text-sm font-mono text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00ed64]"
@@ -178,7 +180,7 @@ export default function AdminBlockchainAudit() {
               disabled={verifying || !verifyHashInput.trim()}
               className="px-5 py-2.5 rounded-xl bg-[#00ed64] hover:bg-[#00c954] text-[#001e2b] font-bold text-sm transition-all disabled:opacity-50 flex items-center justify-center gap-2 shrink-0"
             >
-              {verifying ? <RefreshCw className="w-4 h-4 animate-spin" /> : 'Verify'}
+              {verifying ? <RefreshCw className="w-4 h-4 animate-spin" /> : t('common.verify', { defaultValue: 'Verify' })}
             </button>
           </form>
 
@@ -202,12 +204,12 @@ export default function AdminBlockchainAudit() {
                       <div className="flex items-center gap-2">
                         <span className="text-base">📦</span>
                         <div>
-                          <span className="text-gray-400 text-xs block">Items Purchased:</span>
+                          <span className="text-gray-400 text-xs block">{t('blockchain.itemsPurchased')}</span>
                           <span className="text-white font-bold">{verifyResult.event.itemsSummary || 'Agricultural Produce'}</span>
                         </div>
                       </div>
                       <div className="text-right">
-                        <span className="text-gray-400 text-xs block font-sans">Total Amount:</span>
+                        <span className="text-gray-400 text-xs block font-sans">{t('blockchain.totalAmount')}</span>
                         <span className="text-emerald-400 font-display font-extrabold text-lg">₹{verifyResult.event.amountRupees || (verifyResult.event.amountPaise / 100).toFixed(2)}</span>
                       </div>
                     </div>
@@ -215,7 +217,7 @@ export default function AdminBlockchainAudit() {
                     <div className="space-y-2.5 pt-1 text-gray-300">
                       {/* Payment ID Hash */}
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 bg-white/5 p-2.5 rounded-lg border border-white/5">
-                        <span className="text-gray-400 font-sans text-xs font-semibold shrink-0">Payment ID Hash:</span>
+                        <span className="text-gray-400 font-sans text-xs font-semibold shrink-0">{t('blockchain.paymentIdHash')}</span>
                         <div className="flex items-center gap-1.5 min-w-0">
                           <span className="font-mono text-[11px] text-gray-200 truncate" title={verifyResult.event.paymentIdHash}>
                             {verifyResult.event.paymentIdHash}
@@ -232,7 +234,7 @@ export default function AdminBlockchainAudit() {
 
                       {/* Order ID Hash */}
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 bg-white/5 p-2.5 rounded-lg border border-white/5">
-                        <span className="text-gray-400 font-sans text-xs font-semibold shrink-0">Order ID Hash:</span>
+                        <span className="text-gray-400 font-sans text-xs font-semibold shrink-0">{t('blockchain.orderIdHash')}</span>
                         <div className="flex items-center gap-1.5 min-w-0">
                           <span className="font-mono text-[11px] text-gray-200 truncate" title={verifyResult.event.orderIdHash}>
                             {verifyResult.event.orderIdHash}
@@ -338,13 +340,13 @@ export default function AdminBlockchainAudit() {
                             </div>
                           ))
                         ) : (
-                          <span className="text-xs text-amber-200/60 font-sans italic">No Seller Split Hashes recorded for this event.</span>
+                          <span className="text-xs text-amber-200/60 font-sans italic">{t('blockchain.noSellerSplitHashesRecordedFor')}</span>
                         )}
                       </div>
 
                       <div className="flex flex-wrap items-center justify-between text-[11px] text-gray-400 pt-1 font-sans border-t border-white/10 gap-2">
-                        <span>Amount in Paise: <strong className="text-gray-200">{verifyResult.event.amountPaise}</strong></span>
-                        <span>Recorded At: <strong className="text-gray-200">{new Date(verifyResult.event.recordedAt).toLocaleString()}</strong></span>
+                        <span>{t('blockchain.amountInPaise')}<strong className="text-gray-200">{verifyResult.event.amountPaise}</strong></span>
+                        <span>{t('blockchain.recordedAt')}<strong className="text-gray-200">{new Date(verifyResult.event.recordedAt).toLocaleString()}</strong></span>
                       </div>
                     </div>
                   </div>
@@ -359,16 +361,16 @@ export default function AdminBlockchainAudit() {
         {/* Tool 2: Buyer & Seller Account Hash Identity Lookup */}
         <div className="bg-gradient-to-r from-[#002b36] to-[#004859] p-6 rounded-2xl text-white shadow-lg space-y-4">
           <div className="flex items-center gap-2 text-cyan-400 font-bold text-xs uppercase tracking-widest font-display">
-            <UserCheck className="w-4 h-4" /> Buyer & Seller Hash Lookup
+            <UserCheck className="w-4 h-4" /> {t('blockchain.buyerSellerHashLookup', { defaultValue: 'Buyer & Seller Hash Lookup' })}
           </div>
-          <h3 className="text-lg font-bold">Lookup User Identity by Account Hash</h3>
+          <h3 className="text-lg font-bold">{t('blockchain.lookupUserIdentityByAccountHash')}</h3>
           <p className="text-xs text-gray-300 font-sans">
-            Paste any Buyer Hash or Seller Hash (`0x...`) to reveal their full profile, contact info, and verification status.
+            {t('blockchain.pasteHashSubtitle', { defaultValue: 'Paste any Buyer Hash or Seller Hash (0x...) to reveal their full profile, contact info, and verification status.' })}
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <input
               type="text"
-              placeholder="Paste Buyer Hash or Seller Hash (0x...)"
+              placeholder={t('blockchain.placeholderAccountHash', { defaultValue: 'Paste Buyer Hash or Seller Hash (0x...)' })}
               value={accountSearchInput}
               onChange={(e) => setAccountSearchInput(e.target.value)}
               className="flex-1 bg-white/10 border border-white/20 rounded-xl px-4 py-2.5 text-sm font-mono text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400"
@@ -377,7 +379,7 @@ export default function AdminBlockchainAudit() {
               onClick={() => handleLookupAccount(accountSearchInput)}
               className="px-5 py-2.5 rounded-xl bg-cyan-400 hover:bg-cyan-300 text-[#002b36] font-bold text-sm transition-all flex items-center justify-center gap-2 shrink-0"
             >
-              <UserCheck className="w-4 h-4" /> Lookup Identity
+              <UserCheck className="w-4 h-4" /> {t('blockchain.lookupIdentity', { defaultValue: 'Lookup Identity' })}
             </button>
           </div>
         </div>
@@ -396,7 +398,7 @@ export default function AdminBlockchainAudit() {
             }`}
           >
             <Coins className="w-4 h-4" />
-            Payment Audits On-Chain
+            {t('blockchain.paymentAuditsOnChain', { defaultValue: 'Payment Audits On-Chain' })}
             <span className="ml-1.5 text-xs bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded-full">
               {data.paymentEvents.length}
             </span>
@@ -411,7 +413,7 @@ export default function AdminBlockchainAudit() {
             }`}
           >
             <Layers className="w-4 h-4" />
-            Settlement Audits On-Chain
+            {t('blockchain.settlementAuditsOnChain', { defaultValue: 'Settlement Audits On-Chain' })}
             <span className="ml-1.5 text-xs bg-purple-100 text-purple-800 font-bold px-2 py-0.5 rounded-full">
               {data.settlementEvents.length}
             </span>
@@ -423,26 +425,26 @@ export default function AdminBlockchainAudit() {
           {loading ? (
             <div className="py-16 text-center text-gray-500 space-y-3">
               <RefreshCw className="w-8 h-8 animate-spin mx-auto text-[#00684a]" />
-              <p className="font-medium text-sm">Querying Kava EVM Testnet Smart Contract...</p>
+              <p className="font-medium text-sm">{t('blockchain.queryingKavaEvmTestnetSmartContract')}</p>
             </div>
           ) : activeTab === 'payments' ? (
             data.paymentEvents.length === 0 ? (
               <div className="py-16 text-center text-gray-500">
                 <Database className="w-12 h-12 mx-auto text-gray-300 mb-3" />
-                <p className="font-bold text-gray-700">No payment events recorded on-chain yet</p>
-                <p className="text-xs text-gray-400 mt-1">New payments processed through Razorpay will be automatically audited here.</p>
+                <p className="font-bold text-gray-700">{t('blockchain.noPaymentEventsRecordedOnchainYet')}</p>
+                <p className="text-xs text-gray-400 mt-1">{t('blockchain.newPaymentsProcessedThroughRazorpayWill')}</p>
               </div>
             ) : (
               <table className="w-full text-left border-collapse min-w-[1000px]">
                 <thead>
                   <tr className="text-xs font-extrabold uppercase text-gray-400 border-b border-gray-100 pb-3">
-                    <th className="py-3 px-3">Event ID Hash</th>
-                    <th className="py-3 px-3">Items Purchased</th>
-                    <th className="py-3 px-3">Buyer Hash & Identity</th>
-                    <th className="py-3 px-3">Seller Split Hashes</th>
-                    <th className="py-3 px-3">Amount (₹)</th>
-                    <th className="py-3 px-3">On-Chain Status</th>
-                    <th className="py-3 px-3">Recorded At</th>
+                    <th className="py-3 px-3">{t('blockchain.eventIdHash')}</th>
+                    <th className="py-3 px-3">{t('blockchain.itemsPurchased')}</th>
+                    <th className="py-3 px-3">{t('blockchain.buyerHashIdentity', { defaultValue: 'Buyer Hash & Identity' })}</th>
+                    <th className="py-3 px-3">{t('blockchain.sellerSplitHashes')}</th>
+                    <th className="py-3 px-3">{t('blockchain.amountRupees', { defaultValue: 'Amount (₹)' })}</th>
+                    <th className="py-3 px-3">{t('blockchain.onchainStatus')}</th>
+                    <th className="py-3 px-3">{t('blockchain.recordedAt')}</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-50 text-xs">
@@ -524,19 +526,19 @@ export default function AdminBlockchainAudit() {
             data.settlementEvents.length === 0 ? (
               <div className="py-16 text-center text-gray-500">
                 <Database className="w-12 h-12 mx-auto text-gray-300 mb-3" />
-                <p className="font-bold text-gray-700">No settlement events recorded on-chain yet</p>
-                <p className="text-xs text-gray-400 mt-1">Farmer marketplace settlements will appear here when recorded.</p>
+                <p className="font-bold text-gray-700">{t('blockchain.noSettlementEventsRecordedOnchainYet')}</p>
+                <p className="text-xs text-gray-400 mt-1">{t('blockchain.farmerMarketplaceSettlementsWillAppearHere')}</p>
               </div>
             ) : (
               <table className="w-full text-left border-collapse min-w-[900px]">
                 <thead>
                   <tr className="text-xs font-extrabold uppercase text-gray-400 border-b border-gray-100 pb-3">
-                    <th className="py-3 px-3">Event ID Hash</th>
-                    <th className="py-3 px-3">Settlement Hash</th>
-                    <th className="py-3 px-3">Seller Identity</th>
-                    <th className="py-3 px-3">Seller Payout Amount</th>
-                    <th className="py-3 px-3">Status</th>
-                    <th className="py-3 px-3">Recorded At</th>
+                    <th className="py-3 px-3">{t('blockchain.eventIdHash')}</th>
+                    <th className="py-3 px-3">{t('blockchain.settlementHash')}</th>
+                    <th className="py-3 px-3">{t('blockchain.sellerIdentity')}</th>
+                    <th className="py-3 px-3">{t('blockchain.sellerPayoutAmount')}</th>
+                    <th className="py-3 px-3">{t('blockchain.status')}</th>
+                    <th className="py-3 px-3">{t('blockchain.recordedAt')}</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-50 text-xs">
@@ -603,8 +605,8 @@ export default function AdminBlockchainAudit() {
                   🛡️
                 </span>
                 <div>
-                  <h3 className="text-xl font-extrabold text-[#001e2b] font-display">Account Identity Lookup</h3>
-                  <p className="text-xs text-gray-500 font-sans">Verified database record matching On-Chain Cryptographic Hash.</p>
+                  <h3 className="text-xl font-extrabold text-[#001e2b] font-display">{t('blockchain.accountIdentityLookup')}</h3>
+                  <p className="text-xs text-gray-500 font-sans">{t('blockchain.verifiedDatabaseRecordMatchingOnchainCryptographic')}</p>
                 </div>
               </div>
               <button
@@ -618,17 +620,17 @@ export default function AdminBlockchainAudit() {
             {accountModal.loading ? (
               <div className="py-12 text-center text-gray-500 space-y-3">
                 <RefreshCw className="w-8 h-8 animate-spin mx-auto text-[#00684a]" />
-                <p className="font-bold text-sm">Searching registered users and farmers...</p>
+                <p className="font-bold text-sm">{t('blockchain.searchingRegisteredUsersAndFarmers')}</p>
               </div>
             ) : accountModal.data?.matched ? (
               <div className="space-y-4">
                 <div className="p-3 bg-emerald-50 rounded-xl border border-emerald-200 text-xs font-mono text-emerald-900 break-all">
-                  <strong>On-Chain Hash:</strong> {accountModal.data.accountHash}
+                  <strong>{t('blockchain.onchainHash')}</strong> {accountModal.data.accountHash}
                 </div>
 
                 <div className="bg-gray-50 p-4 rounded-2xl space-y-3 font-sans text-sm">
                   <div className="flex justify-between border-b pb-2">
-                    <span className="text-gray-500">Account Type:</span>
+                    <span className="text-gray-500">{t('blockchain.accountType')}</span>
                     <span className="font-extrabold font-display uppercase tracking-wider text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-full text-xs">
                       {accountModal.data.accountType}
                     </span>
@@ -637,43 +639,43 @@ export default function AdminBlockchainAudit() {
                   {accountModal.data.farmer ? (
                     <>
                       <div className="flex justify-between border-b pb-2">
-                        <span className="text-gray-500 flex items-center gap-1.5"><User className="w-4 h-4 text-gray-400" /> Full Name:</span>
+                        <span className="text-gray-500 flex items-center gap-1.5"><User className="w-4 h-4 text-gray-400" />{t('blockchain.fullName')}</span>
                         <span className="font-bold text-gray-900">{accountModal.data.farmer.fullName}</span>
                       </div>
                       <div className="flex justify-between border-b pb-2">
-                        <span className="text-gray-500 flex items-center gap-1.5"><Tractor className="w-4 h-4 text-gray-400" /> Farm / Business:</span>
+                        <span className="text-gray-500 flex items-center gap-1.5"><Tractor className="w-4 h-4 text-gray-400" />{t('blockchain.farmBusiness')}</span>
                         <span className="font-bold text-gray-900">{accountModal.data.farmer.farmName || 'Independent Farmer'}</span>
                       </div>
                       <div className="flex justify-between border-b pb-2">
-                        <span className="text-gray-500 flex items-center gap-1.5"><Mail className="w-4 h-4 text-gray-400" /> Email:</span>
+                        <span className="text-gray-500 flex items-center gap-1.5"><Mail className="w-4 h-4 text-gray-400" />{t('blockchain.email')}</span>
                         <span className="font-mono text-gray-900">{accountModal.data.farmer.email}</span>
                       </div>
                       <div className="flex justify-between border-b pb-2">
-                        <span className="text-gray-500 flex items-center gap-1.5"><Phone className="w-4 h-4 text-gray-400" /> Mobile:</span>
+                        <span className="text-gray-500 flex items-center gap-1.5"><Phone className="w-4 h-4 text-gray-400" />{t('blockchain.mobile')}</span>
                         <span className="font-mono text-gray-900">{accountModal.data.farmer.mobileNumber}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-500">Verification Status:</span>
+                        <span className="text-gray-500">{t('blockchain.verificationStatus')}</span>
                         <span className="font-bold text-emerald-700">{accountModal.data.farmer.verificationStatus}</span>
                       </div>
                     </>
                   ) : (
                     <>
                       <div className="flex justify-between border-b pb-2">
-                        <span className="text-gray-500 flex items-center gap-1.5"><User className="w-4 h-4 text-gray-400" /> Full Name:</span>
+                        <span className="text-gray-500 flex items-center gap-1.5"><User className="w-4 h-4 text-gray-400" />{t('blockchain.fullName')}</span>
                         <span className="font-bold text-gray-900">{accountModal.data.user?.fullName || accountModal.data.buyer?.businessName}</span>
                       </div>
                       <div className="flex justify-between border-b pb-2">
-                        <span className="text-gray-500 flex items-center gap-1.5"><Mail className="w-4 h-4 text-gray-400" /> Email:</span>
+                        <span className="text-gray-500 flex items-center gap-1.5"><Mail className="w-4 h-4 text-gray-400" />{t('blockchain.email')}</span>
                         <span className="font-mono text-gray-900">{accountModal.data.user?.email}</span>
                       </div>
                       <div className="flex justify-between border-b pb-2">
-                        <span className="text-gray-500 flex items-center gap-1.5"><Phone className="w-4 h-4 text-gray-400" /> Mobile:</span>
+                        <span className="text-gray-500 flex items-center gap-1.5"><Phone className="w-4 h-4 text-gray-400" />{t('blockchain.mobile')}</span>
                         <span className="font-mono text-gray-900">{accountModal.data.user?.mobileNumber}</span>
                       </div>
                       {accountModal.data.buyer?.buyerType && (
                         <div className="flex justify-between">
-                          <span className="text-gray-500">Buyer Type:</span>
+                          <span className="text-gray-500">{t('blockchain.buyerType')}</span>
                           <span className="font-bold text-blue-700">{accountModal.data.buyer.buyerType}</span>
                         </div>
                       )}
@@ -684,7 +686,7 @@ export default function AdminBlockchainAudit() {
             ) : (
               <div className="py-8 text-center space-y-2">
                 <XCircle className="w-12 h-12 text-gray-300 mx-auto" />
-                <p className="font-bold text-gray-800">No Account Found</p>
+                <p className="font-bold text-gray-800">{t('blockchain.noAccountFound')}</p>
                 <p className="text-xs text-gray-500 max-w-sm mx-auto">{accountModal.data?.message || 'No registered user matches this cryptographic account hash.'}</p>
               </div>
             )}

@@ -20,12 +20,12 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sm text-gray-400 leading-relaxed font-sans max-w-sm mb-6">
-              Connecting farmers to better markets. Buy fresh agricultural produce directly from trusted farmers and FPOs with full transparency.
+              {t('footer.brandDescription', { defaultValue: 'Connecting farmers to better markets. Buy fresh agricultural produce directly from trusted farmers and FPOs with full transparency.' })}
             </p>
             <div className="space-y-2.5 text-xs text-gray-300">
               <div className="flex items-center gap-2.5"><Mail className="w-4 h-4 text-[#00E676]" /> support@agribazaar.com</div>
               <div className="flex items-center gap-2.5"><Phone className="w-4 h-4 text-[#00E676]" /> +91 98765 43210</div>
-              <div className="flex items-center gap-2.5"><MapPin className="w-4 h-4 text-[#00E676]" /> Nashik & Mumbai, India</div>
+              <div className="flex items-center gap-2.5"><MapPin className="w-4 h-4 text-[#00E676]" /> {t('footer.location', { defaultValue: 'Nashik & Mumbai, India' })}</div>
             </div>
           </div>
 
@@ -65,7 +65,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-emerald-950 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-gray-400">© 2026 AgriBazaar. All rights reserved.</p>
+          <p className="text-xs text-gray-400">© 2026 AgriBazaar. {t('footer.allRightsReserved', { defaultValue: 'All rights reserved.' })}</p>
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#00E676]" />
             <span className="text-xs text-gray-300 font-bold font-display">{t('footer.engine')}</span>

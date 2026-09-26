@@ -125,7 +125,7 @@ export default function Settings() {
             </p>
           </div>
           <div className="mt-8 pt-6 border-t border-emerald-900/40">
-            <p className="text-xs text-gray-400 font-mono">System Version: v1.0.4-production</p>
+            <p className="text-xs text-gray-400 font-mono">{t('settings.systemVersionV104production')}</p>
             <p className="text-xs text-gray-400 font-mono mt-1">{t('settings.architecture')}</p>
           </div>
         </div>

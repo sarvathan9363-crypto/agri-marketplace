@@ -12,6 +12,7 @@ import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
 import toast from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';
+import { translateCategory, translateRole } from '../utils/enumTranslations';
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -95,7 +96,7 @@ export default function ProductDetails() {
           <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="lg:col-span-6 space-y-6">
             <div className="flex items-center gap-2">
               <span className="px-3 py-1 bg-[#002B36] text-[#00E676] text-xs font-bold uppercase tracking-wider rounded-full">
-                {t(`categories.${product.category}`, { defaultValue: product.category })}
+                {translateCategory(t, product.category)}
               </span>
               <StatusBadge status={product.status} />
             </div>
@@ -122,9 +123,9 @@ export default function ProductDetails() {
             <div className="p-6 bg-white border border-[#E2E8E5] rounded-3xl shadow-sm">
               <div className="flex items-baseline gap-2">
                 <span className="text-4xl font-black text-[#082B36]">₹{product.pricePerUnit}</span>
-                <span className="text-sm font-bold text-slate-500">per {product.unit}</span>
+                <span className="text-sm font-bold text-slate-500">/{product.unit}</span>
               </div>
-              <p className="text-xs font-semibold text-slate-500 mt-1">{product.quantity} {product.unit} available in stock</p>
+              <p className="text-xs font-semibold text-slate-500 mt-1">{t('productDetails.availableInStock', { count: product.quantity, unit: product.unit, defaultValue: `${product.quantity} ${product.unit} available in stock` })}</p>
             </div>
 
             {product.description && (
@@ -137,12 +138,12 @@ export default function ProductDetails() {
             <div className="grid grid-cols-2 gap-4">
               {product.harvestDate && (
                 <div className="flex items-center gap-2.5 p-3.5 bg-white border border-[#E2E8E5] rounded-2xl text-xs font-bold text-slate-700">
-                  <Calendar className="w-4 h-4 text-[#00C853]" /> Harvest: {product.harvestDate}
+                  <Calendar className="w-4 h-4 text-[#00C853]" /> {t('productDetails.harvestDateLabel', { date: product.harvestDate, defaultValue: `Harvest: ${product.harvestDate}` })}
                 </div>
               )}
               {product.availableFrom && (
                 <div className="flex items-center gap-2.5 p-3.5 bg-white border border-[#E2E8E5] rounded-2xl text-xs font-bold text-slate-700">
-                  <Package className="w-4 h-4 text-[#00C853]" /> Available: {product.availableFrom}
+                  <Package className="w-4 h-4 text-[#00C853]" /> {t('productDetails.availableFromLabel', { date: product.availableFrom, defaultValue: `Available: ${product.availableFrom}` })}
                 </div>
               )}
             </div>
@@ -151,7 +152,7 @@ export default function ProductDetails() {
             {product.status === 'ACTIVE' && (
               <div className="space-y-4 pt-2">
                 <div className="flex items-center gap-4">
-                  <span className="text-xs font-extrabold uppercase tracking-wider text-[#082B36]">Quantity ({product.unit}):</span>
+                  <span className="text-xs font-extrabold uppercase tracking-wider text-[#082B36]">{t('productDetails.quantityLabel', { unit: product.unit, defaultValue: `Quantity (${product.unit}):` })}</span>
                   <div className="flex items-center border border-[#E2E8E5] rounded-xl overflow-hidden bg-white">
                     <button onClick={() => setQty(Math.max(1, qty - 1))} className="px-3.5 py-2 hover:bg-slate-100 font-bold"><Minus className="w-4 h-4 text-[#082B36]" /></button>
                     <span className="px-4 py-2 font-black text-[#082B36] min-w-[3rem] text-center">{qty}</span>
@@ -174,13 +175,13 @@ export default function ProductDetails() {
             {farmer && (
               <div className="p-6 bg-[#002B36] text-white rounded-3xl border border-[#E2E8E5]/20 shadow-md">
                 <h3 className="font-extrabold text-base mb-3 flex items-center gap-2 text-[#00E676]">
-                  <Leaf className="w-5 h-5" /> About the Farmer / Producer
+                  <Leaf className="w-5 h-5" /> {t('productDetails.aboutFarmerTitle', { defaultValue: 'About the Farmer / Producer' })}
                 </h3>
                 <div className="space-y-2 text-xs">
-                  <p><span className="text-slate-400">Producer Name:</span> <span className="text-white font-bold">{farmer.fullName}</span></p>
-                  <p><span className="text-slate-400">Farm / FPO Name:</span> <span className="text-white font-bold">{farmer.farmName}</span></p>
-                  <p><span className="text-slate-400">Type:</span> <span className="text-white font-bold">{farmer.farmerType}</span></p>
-                  <p><span className="text-slate-400">Location:</span> <span className="text-white font-bold">{farmer.location}</span></p>
+                  <p><span className="text-slate-400">{t('marketplace.producerName')}</span> <span className="text-white font-bold">{farmer.fullName}</span></p>
+                  <p><span className="text-slate-400">{t('marketplace.farmFpoName')}</span> <span className="text-white font-bold">{farmer.farmName}</span></p>
+                  <p><span className="text-slate-400">{t('marketplace.type')}</span> <span className="text-white font-bold">{translateRole(t, farmer.farmerType)}</span></p>
+                  <p><span className="text-slate-400">{t('marketplace.location')}</span> <span className="text-white font-bold">{farmer.location}</span></p>
                 </div>
               </div>
             )}

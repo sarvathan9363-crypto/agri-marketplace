@@ -150,7 +150,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
         setCurrentStep(initialStep);
       }
     } catch {
-      toast.error('Failed to load verification status.');
+      toast.error(t('farmerVerificationWizard.failedToLoadVerificationStatus'));
     } finally {
       setLoading(false);
     }
@@ -181,13 +181,13 @@ export default function VerificationWizard({ accountType: propAccountType }) {
     e.preventDefault();
     const clean = aadhaarForm.aadhaarNumber.replace(/\D/g, '');
     if (clean.length !== 12) {
-      toast.error('Please enter a valid 12-digit Aadhaar number.'); return;
+      toast.error(t('farmerVerificationWizard.pleaseEnterAValid12digitAadhaar')); return;
     }
     setSubmitting(true);
     try {
       const res = await farmerService.sendAadhaarOtp(clean);
       setAadhaarForm((prev) => ({ ...prev, otpSent: true, referenceId: res.referenceId }));
-      toast.success('OTP sent to your Aadhaar mobile number!');
+      toast.success(t('farmerVerificationWizard.otpSentToYourAadhaarMobile'));
     } catch (err) {
       toast.error(err.response?.data?.message || 'Failed to send OTP.');
     } finally { setSubmitting(false); }
@@ -196,13 +196,13 @@ export default function VerificationWizard({ accountType: propAccountType }) {
   const handleVerifyAadhaarOtp = async (e) => {
     e.preventDefault();
     if (!aadhaarForm.otp || aadhaarForm.otp.trim().length !== 6) {
-      toast.error('Please enter 6-digit OTP.'); return;
+      toast.error(t('farmerVerificationWizard.pleaseEnter6digitOtp')); return;
     }
     setSubmitting(true);
     try {
       const res = await farmerService.verifyAadhaarOtp(aadhaarForm.aadhaarNumber, aadhaarForm.otp);
       setVerification(res.verification);
-      toast.success('✓ Identity Verified via UIDAI Sandbox!');
+      toast.success(t('farmerVerificationWizard.verified_identityVerifiedViaUidaiSandbox'));
       setCurrentStep(2);
     } catch (err) {
       toast.error(err.response?.data?.message || 'OTP verification failed.');
@@ -212,13 +212,13 @@ export default function VerificationWizard({ accountType: propAccountType }) {
   const handleVerifyFarmerReg = async (e) => {
     e.preventDefault();
     if (!farmerRegForm.farmerId || !farmerRegForm.district) {
-      toast.error('Please enter Farmer ID and District.'); return;
+      toast.error(t('farmerVerificationWizard.pleaseEnterFarmerIdAndDistrict')); return;
     }
     setSubmitting(true);
     try {
       const res = await farmerService.verifyFarmerRegistry(farmerRegForm);
       setVerification(res.verification);
-      toast.success('✓ Farmer Registry Verified!');
+      toast.success(t('farmerVerificationWizard.verified_farmerRegistryVerified'));
       setCurrentStep(3);
     } catch (err) {
       toast.error(err.response?.data?.message || 'Farmer registry verification failed.');
@@ -228,13 +228,13 @@ export default function VerificationWizard({ accountType: propAccountType }) {
   const handleVerifyLandRecord = async (e) => {
     e.preventDefault();
     if (!landForm.district || !landForm.taluk || !landForm.village || !landForm.pattaNumber || !landForm.surveyNumber || !landForm.extent) {
-      toast.error('Please fill all required land record details.'); return;
+      toast.error(t('farmerVerificationWizard.pleaseFillAllRequiredLandRecord')); return;
     }
     setSubmitting(true);
     try {
       const res = await farmerService.verifyLandRecord(landForm);
       setVerification(res.verification);
-      toast.success('✓ Land Record Verified!');
+      toast.success(t('farmerVerificationWizard.verified_landRecordVerified'));
       setCurrentStep(4);
     } catch (err) {
       toast.error(err.response?.data?.message || 'Land record verification failed.');
@@ -244,16 +244,16 @@ export default function VerificationWizard({ accountType: propAccountType }) {
   const handleVerifyBankAccount = async (e) => {
     e.preventDefault();
     if (!bankForm.accountHolderName || !bankForm.accountNumber || !bankForm.ifsc) {
-      toast.error('Please fill Account Holder, Account Number, and IFSC.'); return;
+      toast.error(t('farmerVerificationWizard.pleaseFillAccountHolderAccountNumber')); return;
     }
     if (bankForm.accountNumber !== bankForm.confirmAccountNumber) {
-      toast.error('Account numbers do not match.'); return;
+      toast.error(t('farmerVerificationWizard.accountNumbersDoNotMatch')); return;
     }
     setSubmitting(true);
     try {
       const res = await farmerService.verifyBankAccount(bankForm);
       setVerification(res.verification);
-      toast.success('✓ Bank Account Verified!');
+      toast.success(t('farmerVerificationWizard.verified_bankAccountVerified'));
       setCurrentStep(5);
     } catch (err) {
       toast.error(err.response?.data?.message || 'Bank account verification failed.');
@@ -264,13 +264,13 @@ export default function VerificationWizard({ accountType: propAccountType }) {
     e.preventDefault();
     const cleanPan = panForm.panNumber.toUpperCase().trim();
     if (!/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/.test(cleanPan)) {
-      toast.error('Please enter a valid 10-character PAN number (e.g. ABCDE1234F).'); return;
+      toast.error(t('farmerVerificationWizard.pleaseEnterAValid10characterPan')); return;
     }
     setSubmitting(true);
     try {
       const res = await farmerService.verifyPan({ panNumber: cleanPan, nameAsPerPan: panForm.nameAsPerPan });
       setVerification(res.verification);
-      toast.success('✓ PAN Verified successfully!');
+      toast.success(t('farmerVerificationWizard.verified_panVerifiedSuccessfully'));
       setCurrentStep(6);
     } catch (err) {
       toast.error(err.response?.data?.message || 'PAN verification failed.');
@@ -286,7 +286,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
         pmKisanRef: isSkip ? '' : pmKisanForm.pmKisanRef,
       });
       setVerification(res.verification);
-      toast.success(isSkip ? 'PM-KISAN skipped.' : '✓ PM-KISAN Verified!');
+      toast.success(isSkip ? t('farmerVerificationWizard.pmkisanSkipped') : t('farmerVerificationWizard.verified_pmkisanVerified'));
       setCurrentStep(7);
     } catch (err) {
       toast.error(err.response?.data?.message || 'PM-KISAN verification failed.');
@@ -299,13 +299,13 @@ export default function VerificationWizard({ accountType: propAccountType }) {
   const handleVerifyOrgIdentity = async (e) => {
     e.preventDefault();
     if (!orgForm.orgName || !orgForm.registrationNumber || !orgForm.district || !orgForm.address || !orgForm.pincode) {
-      toast.error('Please fill required Organization details.'); return;
+      toast.error(t('farmerVerificationWizard.pleaseFillRequiredOrganizationDetails')); return;
     }
     setSubmitting(true);
     try {
       const res = await farmerService.verifyOrgIdentity(orgForm);
       setVerification(res.verification);
-      toast.success('✓ Organization Identity Verified!');
+      toast.success(t('farmerVerificationWizard.verified_organizationIdentityVerified'));
       setCurrentStep(2);
     } catch (err) {
       toast.error(err.response?.data?.message || 'Organization verification failed.');
@@ -316,13 +316,13 @@ export default function VerificationWizard({ accountType: propAccountType }) {
     e.preventDefault();
     const cleanPan = orgPanForm.panNumber.toUpperCase().trim();
     if (!/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/.test(cleanPan)) {
-      toast.error('Please enter a valid 10-character Organization PAN.'); return;
+      toast.error(t('farmerVerificationWizard.pleaseEnterAValid10characterOrganization')); return;
     }
     setSubmitting(true);
     try {
       const res = await farmerService.verifyOrgPan(orgPanForm);
       setVerification(res.verification);
-      toast.success('✓ Organization PAN Verified!');
+      toast.success(t('farmerVerificationWizard.verified_organizationPanVerified'));
       setCurrentStep(3);
     } catch (err) {
       toast.error(err.response?.data?.message || 'PAN verification failed.');
@@ -338,7 +338,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
         gstinNumber: gstinForm.gstinNumber,
       });
       setVerification(res.verification);
-      toast.success(isNotApp ? 'GSTIN marked as Not Applicable.' : '✓ GSTIN Verified!');
+      toast.success(isNotApp ? t('farmerVerificationWizard.gstinMarkedAsNotApplicable') : t('farmerVerificationWizard.verified_gstinVerified'));
       setCurrentStep(4);
     } catch (err) {
       toast.error(err.response?.data?.message || 'GSTIN verification failed.');
@@ -349,13 +349,13 @@ export default function VerificationWizard({ accountType: propAccountType }) {
     e.preventDefault();
     const clean = repForm.mobileNumber.replace(/\D/g, '');
     if (clean.length !== 10) {
-      toast.error('Please enter a valid 10-digit mobile number.'); return;
+      toast.error(t('farmerVerificationWizard.pleaseEnterAValid10digitMobile')); return;
     }
     setSubmitting(true);
     try {
       const res = await farmerService.sendRepOtp(clean);
       setRepForm((prev) => ({ ...prev, otpSent: true, referenceId: res.referenceId }));
-      toast.success('OTP sent to Representative mobile!');
+      toast.success(t('farmerVerificationWizard.otpSentToRepresentativeMobile'));
     } catch (err) {
       toast.error(err.response?.data?.message || 'Failed to send OTP.');
     } finally { setSubmitting(false); }
@@ -364,16 +364,16 @@ export default function VerificationWizard({ accountType: propAccountType }) {
   const handleVerifyRepOtp = async (e) => {
     e.preventDefault();
     if (!repForm.repName || !repForm.designation) {
-      toast.error('Please enter Representative Name and Designation.'); return;
+      toast.error(t('farmerVerificationWizard.pleaseEnterRepresentativeNameAndDesignation')); return;
     }
     if (!repForm.otp || repForm.otp.trim().length !== 6) {
-      toast.error('Please enter 6-digit OTP.'); return;
+      toast.error(t('farmerVerificationWizard.pleaseEnter6digitOtp')); return;
     }
     setSubmitting(true);
     try {
       const res = await farmerService.verifyRepOtp(repForm);
       setVerification(res.verification);
-      toast.success('✓ Authorized Representative Verified!');
+      toast.success(t('farmerVerificationWizard.verified_authorizedRepresentativeVerified'));
       setCurrentStep(5);
     } catch (err) {
       toast.error(err.response?.data?.message || 'Verification failed.');
@@ -383,16 +383,16 @@ export default function VerificationWizard({ accountType: propAccountType }) {
   const handleVerifyOrgBank = async (e) => {
     e.preventDefault();
     if (!orgBankForm.accountHolderName || !orgBankForm.accountNumber || !orgBankForm.ifsc) {
-      toast.error('Please fill Account Holder, Account Number, and IFSC.'); return;
+      toast.error(t('farmerVerificationWizard.pleaseFillAccountHolderAccountNumber')); return;
     }
     if (orgBankForm.accountNumber !== orgBankForm.confirmAccountNumber) {
-      toast.error('Account numbers do not match.'); return;
+      toast.error(t('farmerVerificationWizard.accountNumbersDoNotMatch')); return;
     }
     setSubmitting(true);
     try {
       const res = await farmerService.verifyOrgBank(orgBankForm);
       setVerification(res.verification);
-      toast.success('✓ Organization Bank Account Verified!');
+      toast.success(t('farmerVerificationWizard.verified_organizationBankAccountVerified'));
       setCurrentStep(6);
     } catch (err) {
       toast.error(err.response?.data?.message || 'Bank verification failed.');
@@ -402,13 +402,13 @@ export default function VerificationWizard({ accountType: propAccountType }) {
   const handleVerifyOrgDocuments = async (e) => {
     e.preventDefault();
     if (!docsForm.regCert || !docsForm.panDoc || !docsForm.bankProof) {
-      toast.error('Please upload at least Registration Certificate, PAN document, and Bank proof.'); return;
+      toast.error(t('farmerVerificationWizard.pleaseUploadAtLeastRegistrationCertificate')); return;
     }
     setSubmitting(true);
     try {
       const res = await farmerService.verifyOrgDocuments(docsForm);
       setVerification(res.verification);
-      toast.success('✓ Organization Documents Verified!');
+      toast.success(t('farmerVerificationWizard.verified_organizationDocumentsVerified'));
       setCurrentStep(7);
     } catch (err) {
       toast.error(err.response?.data?.message || 'Document verification failed.');
@@ -424,14 +424,14 @@ export default function VerificationWizard({ accountType: propAccountType }) {
       toast('Step skipped. Status saved as skipped.', { icon: '⏭️' });
       setCurrentStep(nextStepNumber);
     } catch {
-      toast.error('Failed to skip step.');
+      toast.error(t('farmerVerificationWizard.failedToSkipStep'));
     } finally {
       setSubmitting(false);
     }
   };
 
   const handleSaveAndExit = () => {
-    toast.success('Progress saved. Returning to dashboard.');
+    toast.success(t('farmerVerificationWizard.progressSavedReturningToDashboard'));
     navigate('/farmer/dashboard');
   };
 
@@ -440,7 +440,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
       <div className="min-h-screen bg-slate-50 flex items-center justify-center p-6">
         <div className="text-center">
           <Loader2 className="w-10 h-10 text-emerald-700 animate-spin mx-auto mb-3" />
-          <p className="text-sm font-semibold text-slate-700">Loading {config.portalTitle}...</p>
+          <p className="text-sm font-semibold text-slate-700">{t('farmerVerificationWizard.loadingConfigportaltitle')}</p>
         </div>
       </div>
     );
@@ -500,7 +500,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
           </div>
           <div className="flex items-center space-x-3 text-xs bg-emerald-950/60 px-3 py-1.5 rounded border border-emerald-800">
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
-            <span>Official Identity & Compliance Gateway</span>
+            <span>{t('farmerVerificationWizard.officialIdentityComplianceGateway')}</span>
           </div>
         </div>
       </header>
@@ -531,7 +531,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
             className="self-start md:self-auto inline-flex items-center space-x-1.5 text-xs font-semibold text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-300 px-3 py-2 rounded transition"
           >
             <Save className="w-3.5 h-3.5" />
-            <span>Save & Exit to Dashboard</span>
+            <span>{t('farmerVerificationWizard.saveExitToDashboard')}</span>
           </button>
         </div>
 
@@ -625,7 +625,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
             <div className="border-b border-slate-200 pb-4 mb-6">
               <div className="flex items-center space-x-2">
                 <span className="text-xs font-bold uppercase tracking-wide text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded">
-                  STEP {currentStep} OF {totalStepsCount} • {activeStepObj?.req ? 'MANDATORY VERIFICATION' : 'OPTIONAL VERIFICATION'}
+                  STEP {currentStep} OF {totalStepsCount} • {activeStepObj?.req ? t('farmerVerificationWizard.mandatoryVerification') : t('farmerVerificationWizard.optionalVerification')}
                 </span>
               </div>
               <h3 className="text-xl font-bold text-slate-900 mt-2 flex items-center gap-2">
@@ -646,8 +646,8 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                 {currentStep === 1 && (
                   <div className="space-y-6">
                     <div className="p-3.5 bg-slate-50 border border-slate-200 rounded text-xs text-slate-700 space-y-1">
-                      <p className="font-bold text-slate-900">Aadhaar Authentication Protocol</p>
-                      <p className="text-slate-600">Enter your 12-digit Aadhaar number to receive a One-Time Password (OTP) via UIDAI authorized gateway.</p>
+                      <p className="font-bold text-slate-900">{t('farmerVerificationWizard.aadhaarAuthenticationProtocol')}</p>
+                      <p className="text-slate-600">{t('farmerVerificationWizard.enterYour12digitAadhaarNumberTo')}</p>
                     </div>
 
                     {verification?.aadhaar?.status === 'verified' ? (
@@ -675,7 +675,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                             type="text"
                             maxLength={12}
                             disabled={aadhaarForm.otpSent}
-                            placeholder="Enter 12-digit Aadhaar number"
+                            placeholder={t('farmerVerificationWizard.enter12digitAadhaarNumber')}
                             value={aadhaarForm.aadhaarNumber}
                             onChange={(e) => setAadhaarForm({ ...aadhaarForm, aadhaarNumber: e.target.value })}
                             className="w-full border border-slate-300 rounded text-xs px-3 py-2.5 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 font-mono tracking-widest disabled:bg-slate-100 outline-none"
@@ -689,7 +689,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                             className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50 transition"
                           >
                             {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                            <span>Send Aadhaar OTP</span>
+                            <span>{t('farmerVerificationWizard.sendAadhaarOtp')}</span>
                             <ArrowRight className="w-3.5 h-3.5" />
                           </button>
                         ) : (
@@ -698,11 +698,11 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                               ✓ OTP sent to mobile linked with Aadhaar reference <span className="font-mono font-bold">{aadhaarForm.referenceId}</span>
                             </div>
                             <div>
-                              <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">Enter 6-Digit OTP *</label>
+                              <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.enter6digitOtp_req')}</label>
                               <input
                                 type="text"
                                 maxLength={6}
-                                placeholder="──────"
+                                placeholder={t('farmerVerificationWizard.text_mnk1z')}
                                 value={aadhaarForm.otp}
                                 onChange={(e) => setAadhaarForm({ ...aadhaarForm, otp: e.target.value })}
                                 className="w-full border border-slate-300 rounded text-xs px-3 py-2.5 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 font-mono text-center text-lg tracking-[0.4em] outline-none"
@@ -722,7 +722,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                                 className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50 transition"
                               >
                                 {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                                <span>Verify & Continue</span>
+                                <span>{t('farmerVerificationWizard.verifyContinue')}</span>
                                 <ArrowRight className="w-3.5 h-3.5" />
                               </button>
                             </div>
@@ -738,7 +738,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                         className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded border border-slate-300"
                       >
                         <Save className="w-3.5 h-3.5" />
-                        <span>Save & Exit</span>
+                        <span>{t('farmerVerificationWizard.saveExit')}</span>
                       </button>
 
                       <div className="flex items-center space-x-2">
@@ -748,7 +748,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                           onClick={() => handleSkipCurrentStep('aadhaar', 2)}
                           className="inline-flex items-center space-x-1 text-xs font-semibold text-amber-800 bg-amber-50 hover:bg-amber-100 px-4 py-2 rounded border border-amber-300"
                         >
-                          <span>Skip Step</span>
+                          <span>{t('farmerVerificationWizard.skipStep')}</span>
                         </button>
                         {verification?.aadhaar?.status === 'verified' && (
                           <button
@@ -756,7 +756,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                             onClick={() => setCurrentStep(2)}
                             className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm"
                           >
-                            <span>Next Step</span>
+                            <span>{t('farmerVerificationWizard.nextStep')}</span>
                             <ArrowRight className="w-3.5 h-3.5" />
                           </button>
                         )}
@@ -769,8 +769,8 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                 {currentStep === 2 && (
                   <div className="space-y-6">
                     <div className="p-3.5 bg-slate-50 border border-slate-200 rounded text-xs text-slate-700 space-y-1">
-                      <p className="font-bold text-slate-900">Farmer Database Protocol</p>
-                      <p className="text-slate-600">Enter your official Farmer / Agristack ID along with state and district to verify active agricultural registry status.</p>
+                      <p className="font-bold text-slate-900">{t('farmerVerificationWizard.farmerDatabaseProtocol')}</p>
+                      <p className="text-slate-600">{t('farmerVerificationWizard.enterYourOfficialFarmerAgristackId')}</p>
                     </div>
 
                     {verification?.farmerRegistry?.status === 'verified' ? (
@@ -784,18 +784,18 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                           </span>
                         </div>
                         <div className="grid grid-cols-2 gap-4 text-xs">
-                          <div><span className="text-slate-500 block font-semibold">FARMER ID</span><strong className="text-slate-900 font-mono">{verification.farmerRegistry.farmerIdMasked}</strong></div>
-                          <div><span className="text-slate-500 block font-semibold">LOCATION</span><strong className="text-slate-900">{verification.farmerRegistry.district}, {verification.farmerRegistry.state}</strong></div>
+                          <div><span className="text-slate-500 block font-semibold">{t('farmerVerificationWizard.farmerId')}</span><strong className="text-slate-900 font-mono">{verification.farmerRegistry.farmerIdMasked}</strong></div>
+                          <div><span className="text-slate-500 block font-semibold">{t('farmerVerificationWizard.location')}</span><strong className="text-slate-900">{verification.farmerRegistry.district}, {verification.farmerRegistry.state}</strong></div>
                         </div>
                       </div>
                     ) : (
                       <form onSubmit={handleVerifyFarmerReg} className="space-y-4">
                         <div>
-                          <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">Farmer ID / Agristack ID *</label>
+                          <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.farmerIdAgristackId_req')}</label>
                           <input
                             type="text"
                             required
-                            placeholder="e.g. MH-FARM-2024-8849"
+                            placeholder={t('farmerVerificationWizard.egMhfarm20248849')}
                             value={farmerRegForm.farmerId}
                             onChange={(e) => setFarmerRegForm({ ...farmerRegForm, farmerId: e.target.value })}
                             className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 outline-none"
@@ -803,7 +803,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div>
-                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">State *</label>
+                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.state_req')}</label>
                             <select
                               value={farmerRegForm.state}
                               onChange={(e) => setFarmerRegForm({ ...farmerRegForm, state: e.target.value })}
@@ -813,11 +813,11 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                             </select>
                           </div>
                           <div>
-                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">District *</label>
+                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.district_req')}</label>
                             <input
                               type="text"
                               required
-                              placeholder="e.g. Nashik"
+                              placeholder={t('farmerVerificationWizard.egNashik')}
                               value={farmerRegForm.district}
                               onChange={(e) => setFarmerRegForm({ ...farmerRegForm, district: e.target.value })}
                               className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 outline-none"
@@ -830,7 +830,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                           className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50 transition"
                         >
                           {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                          <span>Verify & Continue</span>
+                          <span>{t('farmerVerificationWizard.verifyContinue')}</span>
                           <ArrowRight className="w-3.5 h-3.5" />
                         </button>
                       </form>
@@ -843,7 +843,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                         className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded border border-slate-300"
                       >
                         <ArrowLeft className="w-3.5 h-3.5" />
-                        <span>Back</span>
+                        <span>{t('farmerVerificationWizard.back')}</span>
                       </button>
 
                       <div className="flex items-center space-x-2">
@@ -853,7 +853,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                           onClick={() => handleSkipCurrentStep('farmerRegistry', 3)}
                           className="inline-flex items-center space-x-1 text-xs font-semibold text-amber-800 bg-amber-50 hover:bg-amber-100 px-4 py-2 rounded border border-amber-300"
                         >
-                          <span>Skip Step</span>
+                          <span>{t('farmerVerificationWizard.skipStep')}</span>
                         </button>
                         {verification?.farmerRegistry?.status === 'verified' && (
                           <button
@@ -861,7 +861,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                             onClick={() => setCurrentStep(3)}
                             className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm"
                           >
-                            <span>Next Step</span>
+                            <span>{t('farmerVerificationWizard.nextStep')}</span>
                             <ArrowRight className="w-3.5 h-3.5" />
                           </button>
                         )}
@@ -874,8 +874,8 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                 {currentStep === 3 && (
                   <div className="space-y-6">
                     <div className="p-3.5 bg-slate-50 border border-slate-200 rounded text-xs text-slate-700 space-y-1">
-                      <p className="font-bold text-slate-900">Land Holding Protocol</p>
-                      <p className="text-slate-600">Enter state, district, taluk, village, Patta / 7-12 number, survey number, and total acreage.</p>
+                      <p className="font-bold text-slate-900">{t('farmerVerificationWizard.landHoldingProtocol')}</p>
+                      <p className="text-slate-600">{t('farmerVerificationWizard.enterStateDistrictTalukVillagePatta')}</p>
                     </div>
 
                     {verification?.landRecord?.status === 'verified' ? (
@@ -889,16 +889,16 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                           </span>
                         </div>
                         <div className="grid grid-cols-3 gap-3 text-xs">
-                          <div><span className="text-slate-500 block font-semibold">PATTA / 7-12 NO.</span><strong className="text-slate-900 font-mono">{verification.landRecord.pattaNumberMasked}</strong></div>
-                          <div><span className="text-slate-500 block font-semibold">SURVEY NO.</span><strong className="text-slate-900">{verification.landRecord.surveyNumber}</strong></div>
-                          <div><span className="text-slate-500 block font-semibold">EXTENT</span><strong className="text-slate-900">{verification.landRecord.extent}</strong></div>
+                          <div><span className="text-slate-500 block font-semibold">{t('farmerVerificationWizard.patta712No')}</span><strong className="text-slate-900 font-mono">{verification.landRecord.pattaNumberMasked}</strong></div>
+                          <div><span className="text-slate-500 block font-semibold">{t('farmerVerificationWizard.surveyNo')}</span><strong className="text-slate-900">{verification.landRecord.surveyNumber}</strong></div>
+                          <div><span className="text-slate-500 block font-semibold">{t('farmerVerificationWizard.extent')}</span><strong className="text-slate-900">{verification.landRecord.extent}</strong></div>
                         </div>
                       </div>
                     ) : (
                       <form onSubmit={handleVerifyLandRecord} className="space-y-4">
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                           <div>
-                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">State *</label>
+                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.state_req')}</label>
                             <select
                               value={landForm.state}
                               onChange={(e) => setLandForm({ ...landForm, state: e.target.value })}
@@ -908,22 +908,22 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                             </select>
                           </div>
                           <div>
-                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">District *</label>
+                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.district_req')}</label>
                             <input
                               type="text"
                               required
-                              placeholder="e.g. Nashik"
+                              placeholder={t('farmerVerificationWizard.egNashik')}
                               value={landForm.district}
                               onChange={(e) => setLandForm({ ...landForm, district: e.target.value })}
                               className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 outline-none"
                             />
                           </div>
                           <div>
-                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">Taluk *</label>
+                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.taluk_req')}</label>
                             <input
                               type="text"
                               required
-                              placeholder="e.g. Niphad"
+                              placeholder={t('farmerVerificationWizard.egNiphad')}
                               value={landForm.taluk}
                               onChange={(e) => setLandForm({ ...landForm, taluk: e.target.value })}
                               className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 outline-none"
@@ -933,33 +933,33 @@ export default function VerificationWizard({ accountType: propAccountType }) {
 
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                           <div>
-                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">Village *</label>
+                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.village_req')}</label>
                             <input
                               type="text"
                               required
-                              placeholder="e.g. Lasalgaon"
+                              placeholder={t('farmerVerificationWizard.egLasalgaon')}
                               value={landForm.village}
                               onChange={(e) => setLandForm({ ...landForm, village: e.target.value })}
                               className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 outline-none"
                             />
                           </div>
                           <div>
-                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">Patta / Khata No. *</label>
+                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.pattaKhataNo_req')}</label>
                             <input
                               type="text"
                               required
-                              placeholder="e.g. 4829"
+                              placeholder={t('farmerVerificationWizard.eg4829')}
                               value={landForm.pattaNumber}
                               onChange={(e) => setLandForm({ ...landForm, pattaNumber: e.target.value })}
                               className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 outline-none"
                             />
                           </div>
                           <div>
-                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">Survey No. *</label>
+                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.surveyNo_req')}</label>
                             <input
                               type="text"
                               required
-                              placeholder="e.g. 142/B"
+                              placeholder={t('farmerVerificationWizard.eg142b')}
                               value={landForm.surveyNumber}
                               onChange={(e) => setLandForm({ ...landForm, surveyNumber: e.target.value })}
                               className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 outline-none"
@@ -969,26 +969,26 @@ export default function VerificationWizard({ accountType: propAccountType }) {
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                           <div>
-                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">Land Extent (Acres) *</label>
+                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.landExtentAcres_req')}</label>
                             <input
                               type="text"
                               required
-                              placeholder="e.g. 3.5 Acres"
+                              placeholder={t('farmerVerificationWizard.eg35Acres')}
                               value={landForm.extent}
                               onChange={(e) => setLandForm({ ...landForm, extent: e.target.value })}
                               className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 outline-none"
                             />
                           </div>
                           <div>
-                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">Land Type</label>
+                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.landType')}</label>
                             <select
                               value={landForm.landType}
                               onChange={(e) => setLandForm({ ...landForm, landType: e.target.value })}
                               className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 outline-none bg-white"
                             >
-                              <option value="Wet">Irrigated / Wet</option>
-                              <option value="Dry">Dry / Rainfed</option>
-                              <option value="Horticulture">Horticulture</option>
+                              <option value="Wet">{t('farmerVerificationWizard.irrigatedWet')}</option>
+                              <option value="Dry">{t('farmerVerificationWizard.dryRainfed')}</option>
+                              <option value="Horticulture">{t('farmerVerificationWizard.horticulture')}</option>
                             </select>
                           </div>
                         </div>
@@ -1012,8 +1012,8 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                             category="VERIFICATION"
                             subCategory="LAND"
                             entityType="VERIFICATION"
-                            label="Upload Patta / Land Record Document *"
-                            description="Upload PDF, JPG, or PNG copy of 7/12, Patta, or Chitta (Max 5MB)"
+                            label={t('farmerVerificationWizard.uploadPattaLandRecordDocument_req')}
+                            description={t('farmerVerificationWizard.uploadPdfJpgOrPngCopy')}
                           />
                         </div>
 
@@ -1023,7 +1023,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                           className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50 transition"
                         >
                           {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                          <span>Verify & Continue</span>
+                          <span>{t('farmerVerificationWizard.verifyContinue')}</span>
                           <ArrowRight className="w-3.5 h-3.5" />
                         </button>
                       </form>
@@ -1036,7 +1036,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                         className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded border border-slate-300"
                       >
                         <ArrowLeft className="w-3.5 h-3.5" />
-                        <span>Back</span>
+                        <span>{t('farmerVerificationWizard.back')}</span>
                       </button>
 
                       <div className="flex items-center space-x-2">
@@ -1046,7 +1046,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                           onClick={() => handleSkipCurrentStep('landRecord', 4)}
                           className="inline-flex items-center space-x-1 text-xs font-semibold text-amber-800 bg-amber-50 hover:bg-amber-100 px-4 py-2 rounded border border-amber-300"
                         >
-                          <span>Skip Step</span>
+                          <span>{t('farmerVerificationWizard.skipStep')}</span>
                         </button>
                         {verification?.landRecord?.status === 'verified' && (
                           <button
@@ -1054,7 +1054,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                             onClick={() => setCurrentStep(4)}
                             className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm"
                           >
-                            <span>Next Step</span>
+                            <span>{t('farmerVerificationWizard.nextStep')}</span>
                             <ArrowRight className="w-3.5 h-3.5" />
                           </button>
                         )}
@@ -1067,8 +1067,8 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                 {currentStep === 4 && (
                   <div className="space-y-6">
                     <div className="p-3.5 bg-slate-50 border border-slate-200 rounded text-xs text-slate-700 space-y-1">
-                      <p className="font-bold text-slate-900">Bank Settlement Protocol</p>
-                      <p className="text-slate-600">Link your active bank account for direct payments and automated sales settlements.</p>
+                      <p className="font-bold text-slate-900">{t('farmerVerificationWizard.bankSettlementProtocol')}</p>
+                      <p className="text-slate-600">{t('farmerVerificationWizard.linkYourActiveBankAccountFor')}</p>
                     </div>
 
                     {verification?.bankAccount?.status === 'verified' ? (
@@ -1082,19 +1082,19 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                           </span>
                         </div>
                         <div className="grid grid-cols-3 gap-3 text-xs">
-                          <div><span className="text-slate-500 block font-semibold">ACCOUNT HOLDER</span><strong className="text-slate-900">{verification.bankAccount.accountHolderName}</strong></div>
-                          <div><span className="text-slate-500 block font-semibold">BANK NAME</span><strong className="text-slate-900">{verification.bankAccount.bankName}</strong></div>
-                          <div><span className="text-slate-500 block font-semibold">ACCOUNT NO.</span><strong className="text-slate-900 font-mono">{verification.bankAccount.accountNumberMasked}</strong></div>
+                          <div><span className="text-slate-500 block font-semibold">{t('farmerVerificationWizard.accountHolder')}</span><strong className="text-slate-900">{verification.bankAccount.accountHolderName}</strong></div>
+                          <div><span className="text-slate-500 block font-semibold">{t('farmerVerificationWizard.bankName')}</span><strong className="text-slate-900">{verification.bankAccount.bankName}</strong></div>
+                          <div><span className="text-slate-500 block font-semibold">{t('farmerVerificationWizard.accountNo')}</span><strong className="text-slate-900 font-mono">{verification.bankAccount.accountNumberMasked}</strong></div>
                         </div>
                       </div>
                     ) : (
                       <form onSubmit={handleVerifyBankAccount} className="space-y-4">
                         <div>
-                          <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">Account Holder Name *</label>
+                          <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.accountHolderName_req')}</label>
                           <input
                             type="text"
                             required
-                            placeholder="As per bank passbook"
+                            placeholder={t('farmerVerificationWizard.asPerBankPassbook')}
                             value={bankForm.accountHolderName}
                             onChange={(e) => setBankForm({ ...bankForm, accountHolderName: e.target.value })}
                             className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 outline-none"
@@ -1102,7 +1102,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div>
-                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">Bank Name *</label>
+                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.bankName_req')}</label>
                             <select
                               value={bankForm.bankName}
                               onChange={(e) => setBankForm({ ...bankForm, bankName: e.target.value })}
@@ -1112,10 +1112,10 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                             </select>
                           </div>
                           <div>
-                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">Branch Name</label>
+                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.branchName')}</label>
                             <input
                               type="text"
-                              placeholder="e.g. Main Branch"
+                              placeholder={t('farmerVerificationWizard.egMainBranch')}
                               value={bankForm.branchName}
                               onChange={(e) => setBankForm({ ...bankForm, branchName: e.target.value })}
                               className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 outline-none"
@@ -1124,22 +1124,22 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div>
-                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">Account Number *</label>
+                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.accountNumber_req')}</label>
                             <input
                               type="password"
                               required
-                              placeholder="Enter account number"
+                              placeholder={t('farmerVerificationWizard.enterAccountNumber')}
                               value={bankForm.accountNumber}
                               onChange={(e) => setBankForm({ ...bankForm, accountNumber: e.target.value })}
                               className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 font-mono outline-none"
                             />
                           </div>
                           <div>
-                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">Confirm Account Number *</label>
+                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.confirmAccountNumber_req')}</label>
                             <input
                               type="text"
                               required
-                              placeholder="Re-enter account number"
+                              placeholder={t('farmerVerificationWizard.reenterAccountNumber')}
                               value={bankForm.confirmAccountNumber}
                               onChange={(e) => setBankForm({ ...bankForm, confirmAccountNumber: e.target.value })}
                               className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 font-mono outline-none"
@@ -1147,12 +1147,12 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                           </div>
                         </div>
                         <div>
-                          <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">IFSC Code *</label>
+                          <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.ifscCode_req')}</label>
                           <input
                             type="text"
                             required
                             maxLength={11}
-                            placeholder="e.g. SBIN0001234"
+                            placeholder={t('farmerVerificationWizard.egSbin0001234')}
                             value={bankForm.ifsc}
                             onChange={(e) => setBankForm({ ...bankForm, ifsc: e.target.value.toUpperCase() })}
                             className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 font-mono uppercase outline-none"
@@ -1165,8 +1165,8 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                             category="VERIFICATION"
                             subCategory="BANK"
                             entityType="VERIFICATION"
-                            label="Upload Bank Passbook / Cancelled Cheque *"
-                            description="Upload front page of passbook or cancelled cheque (Max 5MB)"
+                            label={t('farmerVerificationWizard.uploadBankPassbookCancelledCheque_req')}
+                            description={t('farmerVerificationWizard.uploadFrontPageOfPassbookOr')}
                           />
                         </div>
 
@@ -1176,7 +1176,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                           className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50 transition"
                         >
                           {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                          <span>Verify & Continue</span>
+                          <span>{t('farmerVerificationWizard.verifyContinue')}</span>
                           <ArrowRight className="w-3.5 h-3.5" />
                         </button>
                       </form>
@@ -1189,7 +1189,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                         className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded border border-slate-300"
                       >
                         <ArrowLeft className="w-3.5 h-3.5" />
-                        <span>Back</span>
+                        <span>{t('farmerVerificationWizard.back')}</span>
                       </button>
 
                       <div className="flex items-center space-x-2">
@@ -1199,7 +1199,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                           onClick={() => handleSkipCurrentStep('bankAccount', 5)}
                           className="inline-flex items-center space-x-1 text-xs font-semibold text-amber-800 bg-amber-50 hover:bg-amber-100 px-4 py-2 rounded border border-amber-300"
                         >
-                          <span>Skip Step</span>
+                          <span>{t('farmerVerificationWizard.skipStep')}</span>
                         </button>
                         {verification?.bankAccount?.status === 'verified' && (
                           <button
@@ -1207,7 +1207,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                             onClick={() => setCurrentStep(5)}
                             className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm"
                           >
-                            <span>Next Step</span>
+                            <span>{t('farmerVerificationWizard.nextStep')}</span>
                             <ArrowRight className="w-3.5 h-3.5" />
                           </button>
                         )}
@@ -1220,8 +1220,8 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                 {currentStep === 5 && (
                   <div className="space-y-6">
                     <div className="p-3.5 bg-slate-50 border border-slate-200 rounded text-xs text-slate-700 space-y-1">
-                      <p className="font-bold text-slate-900">PAN Verification Protocol</p>
-                      <p className="text-slate-600">Enter your 10-character Permanent Account Number for statutory tax compliance & payouts.</p>
+                      <p className="font-bold text-slate-900">{t('farmerVerificationWizard.panVerificationProtocol')}</p>
+                      <p className="text-slate-600">{t('farmerVerificationWizard.enterYour10characterPermanentAccountNumber')}</p>
                     </div>
 
                     {verification?.pan?.status === 'verified' ? (
@@ -1235,29 +1235,29 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                           </span>
                         </div>
                         <div className="grid grid-cols-2 gap-4 text-xs">
-                          <div><span className="text-slate-500 block font-semibold">PAN NUMBER</span><strong className="text-slate-900 font-mono">{verification.pan.panMasked}</strong></div>
-                          <div><span className="text-slate-500 block font-semibold">MATCH STATUS</span><strong className="text-emerald-700">Confirmed Match ✓</strong></div>
+                          <div><span className="text-slate-500 block font-semibold">{t('farmerVerificationWizard.panNumber')}</span><strong className="text-slate-900 font-mono">{verification.pan.panMasked}</strong></div>
+                          <div><span className="text-slate-500 block font-semibold">{t('farmerVerificationWizard.matchStatus')}</span><strong className="text-emerald-700">Confirmed Match ✓</strong></div>
                         </div>
                       </div>
                     ) : (
                       <form onSubmit={handleVerifyPan} className="space-y-4">
                         <div>
-                          <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">PAN Number *</label>
+                          <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.panNumber_req')}</label>
                           <input
                             type="text"
                             required
                             maxLength={10}
-                            placeholder="e.g. ABCDE1234F"
+                            placeholder={t('farmerVerificationWizard.egAbcde1234f')}
                             value={panForm.panNumber}
                             onChange={(e) => setPanForm({ ...panForm, panNumber: e.target.value.toUpperCase() })}
                             className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 font-mono uppercase tracking-wider outline-none"
                           />
                         </div>
                         <div>
-                          <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">Name as per PAN (Optional)</label>
+                          <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.nameAsPerPanOptional')}</label>
                           <input
                             type="text"
-                            placeholder="Full name as printed on PAN card"
+                            placeholder={t('farmerVerificationWizard.fullNameAsPrintedOnPan')}
                             value={panForm.nameAsPerPan}
                             onChange={(e) => setPanForm({ ...panForm, nameAsPerPan: e.target.value })}
                             className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 outline-none"
@@ -1270,8 +1270,8 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                             category="VERIFICATION"
                             subCategory="PAN"
                             entityType="VERIFICATION"
-                            label="Upload PAN Card Copy *"
-                            description="Clear front scan or photo of your PAN card (Max 5MB)"
+                            label={t('farmerVerificationWizard.uploadPanCardCopy_req')}
+                            description={t('farmerVerificationWizard.clearFrontScanOrPhotoOf')}
                           />
                         </div>
 
@@ -1281,7 +1281,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                           className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50 transition"
                         >
                           {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                          <span>Verify & Continue</span>
+                          <span>{t('farmerVerificationWizard.verifyContinue')}</span>
                           <ArrowRight className="w-3.5 h-3.5" />
                         </button>
                       </form>
@@ -1294,7 +1294,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                         className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded border border-slate-300"
                       >
                         <ArrowLeft className="w-3.5 h-3.5" />
-                        <span>Back</span>
+                        <span>{t('farmerVerificationWizard.back')}</span>
                       </button>
 
                       <div className="flex items-center space-x-2">
@@ -1304,7 +1304,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                           onClick={() => handleSkipCurrentStep('pan', 6)}
                           className="inline-flex items-center space-x-1 text-xs font-semibold text-amber-800 bg-amber-50 hover:bg-amber-100 px-4 py-2 rounded border border-amber-300"
                         >
-                          <span>Skip Step</span>
+                          <span>{t('farmerVerificationWizard.skipStep')}</span>
                         </button>
                         {verification?.pan?.status === 'verified' && (
                           <button
@@ -1312,7 +1312,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                             onClick={() => setCurrentStep(6)}
                             className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm"
                           >
-                            <span>Next Step</span>
+                            <span>{t('farmerVerificationWizard.nextStep')}</span>
                             <ArrowRight className="w-3.5 h-3.5" />
                           </button>
                         )}
@@ -1325,8 +1325,8 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                 {currentStep === 6 && (
                   <div className="space-y-6">
                     <div className="p-3.5 bg-slate-50 border border-slate-200 rounded text-xs text-slate-700 space-y-1">
-                      <p className="font-bold text-slate-900">PM-KISAN Scheme Protocol</p>
-                      <p className="text-slate-600">Optionally link PM-KISAN Beneficiary Reference for added seller credibility on the marketplace.</p>
+                      <p className="font-bold text-slate-900">{t('farmerVerificationWizard.pmkisanSchemeProtocol')}</p>
+                      <p className="text-slate-600">{t('farmerVerificationWizard.optionallyLinkPmkisanBeneficiaryReferenceFor')}</p>
                     </div>
 
                     {verification?.pmKisan?.status === 'verified' ? (
@@ -1338,10 +1338,10 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                     ) : (
                       <div className="space-y-4">
                         <div>
-                          <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">PM-KISAN Registration / Beneficiary Reference</label>
+                          <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.pmkisanRegistrationBeneficiaryReference')}</label>
                           <input
                             type="text"
-                            placeholder="e.g. PMK-987654321"
+                            placeholder={t('farmerVerificationWizard.egPmk987654321')}
                             value={pmKisanForm.pmKisanRef}
                             onChange={(e) => setPmKisanForm({ ...pmKisanForm, pmKisanRef: e.target.value })}
                             className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 font-mono outline-none"
@@ -1363,7 +1363,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                             className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50 transition"
                           >
                             {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                            <span>Verify PM-KISAN & Continue</span>
+                            <span>{t('farmerVerificationWizard.verifyPmkisanContinue')}</span>
                             <ArrowRight className="w-3.5 h-3.5" />
                           </button>
                         </div>
@@ -1377,14 +1377,14 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                         className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded border border-slate-300"
                       >
                         <ArrowLeft className="w-3.5 h-3.5" />
-                        <span>Back</span>
+                        <span>{t('farmerVerificationWizard.back')}</span>
                       </button>
                       <button
                         type="button"
                         onClick={() => setCurrentStep(7)}
                         className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm"
                       >
-                        <span>View Summary</span>
+                        <span>{t('farmerVerificationWizard.viewSummary')}</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </button>
                     </div>
@@ -1402,8 +1402,8 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                 {currentStep === 1 && (
                   <div className="space-y-6">
                     <div className="p-3.5 bg-slate-50 border border-slate-200 rounded text-xs text-slate-700 space-y-1">
-                      <p className="font-bold text-slate-900">Organization Registration Protocol</p>
-                      <p className="text-slate-600">Verify official FPO / FPC / Cooperative entity registration details.</p>
+                      <p className="font-bold text-slate-900">{t('farmerVerificationWizard.organizationRegistrationProtocol')}</p>
+                      <p className="text-slate-600">{t('farmerVerificationWizard.verifyOfficialFpoFpcCooperativeEntity')}</p>
                     </div>
 
                     {verification?.orgIdentity?.status === 'verified' ? (
@@ -1417,52 +1417,52 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                           </span>
                         </div>
                         <div className="grid grid-cols-2 gap-4 text-xs">
-                          <div><span className="text-slate-500 block font-semibold">LEGAL NAME</span><strong className="text-slate-900">{verification.orgIdentity.orgName}</strong></div>
-                          <div><span className="text-slate-500 block font-semibold">REGISTRATION NO.</span><strong className="text-slate-900 font-mono">{verification.orgIdentity.registrationNumber}</strong></div>
+                          <div><span className="text-slate-500 block font-semibold">{t('farmerVerificationWizard.legalName')}</span><strong className="text-slate-900">{verification.orgIdentity.orgName}</strong></div>
+                          <div><span className="text-slate-500 block font-semibold">{t('farmerVerificationWizard.registrationNo')}</span><strong className="text-slate-900 font-mono">{verification.orgIdentity.registrationNumber}</strong></div>
                         </div>
                       </div>
                     ) : (
                       <form onSubmit={handleVerifyOrgIdentity} className="space-y-4">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div>
-                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">Organization Legal Name *</label>
+                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.organizationLegalName_req')}</label>
                             <input
                               type="text"
                               required
-                              placeholder="e.g. Sahyadri Farmers Producer Co. Ltd."
+                              placeholder={t('farmerVerificationWizard.egSahyadriFarmersProducerCoLtd')}
                               value={orgForm.orgName}
                               onChange={(e) => setOrgForm({ ...orgForm, orgName: e.target.value })}
                               className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 outline-none"
                             />
                           </div>
                           <div>
-                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">Organization Type *</label>
+                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.organizationType_req')}</label>
                             <select
                               value={orgForm.orgType}
                               onChange={(e) => setOrgForm({ ...orgForm, orgType: e.target.value })}
                               className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 outline-none bg-white"
                             >
-                              <option value="FPO / FPC">FPO / FPC (Producer Company)</option>
-                              <option value="Cooperative Society">Agricultural Cooperative Society</option>
-                              <option value="Partnership / SHG">Farmer SHG / Partnership</option>
+                              <option value="FPO / FPC">{t('farmerVerificationWizard.fpoFpcProducerCompany')}</option>
+                              <option value="Cooperative Society">{t('farmerVerificationWizard.agriculturalCooperativeSociety')}</option>
+                              <option value="Partnership / SHG">{t('farmerVerificationWizard.farmerShgPartnership')}</option>
                             </select>
                           </div>
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div>
-                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">Registration / CIN Number *</label>
+                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.registrationCinNumber_req')}</label>
                             <input
                               type="text"
                               required
-                              placeholder="e.g. U01111MH2020PTC123456"
+                              placeholder={t('farmerVerificationWizard.egU01111mh2020ptc123456')}
                               value={orgForm.registrationNumber}
                               onChange={(e) => setOrgForm({ ...orgForm, registrationNumber: e.target.value })}
                               className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 font-mono outline-none"
                             />
                           </div>
                           <div>
-                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">State *</label>
+                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.state_req')}</label>
                             <select
                               value={orgForm.state}
                               onChange={(e) => setOrgForm({ ...orgForm, state: e.target.value })}
@@ -1475,22 +1475,22 @@ export default function VerificationWizard({ accountType: propAccountType }) {
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div>
-                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">District *</label>
+                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.district_req')}</label>
                             <input
                               type="text"
                               required
-                              placeholder="e.g. Nashik"
+                              placeholder={t('farmerVerificationWizard.egNashik')}
                               value={orgForm.district}
                               onChange={(e) => setOrgForm({ ...orgForm, district: e.target.value })}
                               className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 outline-none"
                             />
                           </div>
                           <div>
-                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">Pincode *</label>
+                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.pincode_req')}</label>
                             <input
                               type="text"
                               required
-                              placeholder="e.g. 422001"
+                              placeholder={t('farmerVerificationWizard.eg422001')}
                               value={orgForm.pincode}
                               onChange={(e) => setOrgForm({ ...orgForm, pincode: e.target.value })}
                               className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 outline-none font-mono"
@@ -1499,11 +1499,11 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                         </div>
 
                         <div>
-                          <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">Registered Office Address *</label>
+                          <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.registeredOfficeAddress_req')}</label>
                           <textarea
                             rows={2}
                             required
-                            placeholder="Full address of organization office"
+                            placeholder={t('farmerVerificationWizard.fullAddressOfOrganizationOffice')}
                             value={orgForm.address}
                             onChange={(e) => setOrgForm({ ...orgForm, address: e.target.value })}
                             className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 outline-none"
@@ -1516,7 +1516,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                           className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50 transition"
                         >
                           {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                          <span>Verify & Continue</span>
+                          <span>{t('farmerVerificationWizard.verifyContinue')}</span>
                           <ArrowRight className="w-3.5 h-3.5" />
                         </button>
                       </form>
@@ -1529,7 +1529,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                         className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded border border-slate-300"
                       >
                         <Save className="w-3.5 h-3.5" />
-                        <span>Save & Exit</span>
+                        <span>{t('farmerVerificationWizard.saveExit')}</span>
                       </button>
 
                       {verification?.orgIdentity?.status === 'verified' && (
@@ -1538,7 +1538,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                           onClick={() => setCurrentStep(2)}
                           className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm"
                         >
-                          <span>Next Step</span>
+                          <span>{t('farmerVerificationWizard.nextStep')}</span>
                           <ArrowRight className="w-3.5 h-3.5" />
                         </button>
                       )}
@@ -1550,8 +1550,8 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                 {currentStep === 2 && (
                   <div className="space-y-6">
                     <div className="p-3.5 bg-slate-50 border border-slate-200 rounded text-xs text-slate-700 space-y-1">
-                      <p className="font-bold text-slate-900">Organization PAN Protocol</p>
-                      <p className="text-slate-600">Enter Permanent Account Number issued in the legal name of the organization.</p>
+                      <p className="font-bold text-slate-900">{t('farmerVerificationWizard.organizationPanProtocol')}</p>
+                      <p className="text-slate-600">{t('farmerVerificationWizard.enterPermanentAccountNumberIssuedIn')}</p>
                     </div>
 
                     {verification?.orgPan?.status === 'verified' ? (
@@ -1565,19 +1565,19 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                           </span>
                         </div>
                         <div className="grid grid-cols-2 gap-4 text-xs">
-                          <div><span className="text-slate-500 block font-semibold">ORG PAN</span><strong className="text-slate-900 font-mono">{verification.orgPan.panMasked}</strong></div>
-                          <div><span className="text-slate-500 block font-semibold">LEGAL NAME</span><strong className="text-slate-900">{verification.orgPan.orgName}</strong></div>
+                          <div><span className="text-slate-500 block font-semibold">{t('farmerVerificationWizard.orgPan')}</span><strong className="text-slate-900 font-mono">{verification.orgPan.panMasked}</strong></div>
+                          <div><span className="text-slate-500 block font-semibold">{t('farmerVerificationWizard.legalName')}</span><strong className="text-slate-900">{verification.orgPan.orgName}</strong></div>
                         </div>
                       </div>
                     ) : (
                       <form onSubmit={handleVerifyOrgPan} className="space-y-4">
                         <div>
-                          <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">Organization PAN *</label>
+                          <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.organizationPan_req')}</label>
                           <input
                             type="text"
                             required
                             maxLength={10}
-                            placeholder="e.g. AAACF1234G"
+                            placeholder={t('farmerVerificationWizard.egAaacf1234g')}
                             value={orgPanForm.panNumber}
                             onChange={(e) => setOrgPanForm({ ...orgPanForm, panNumber: e.target.value.toUpperCase() })}
                             className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 font-mono uppercase tracking-wider outline-none"
@@ -1589,7 +1589,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                           className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50 transition"
                         >
                           {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                          <span>Verify & Continue</span>
+                          <span>{t('farmerVerificationWizard.verifyContinue')}</span>
                           <ArrowRight className="w-3.5 h-3.5" />
                         </button>
                       </form>
@@ -1602,7 +1602,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                         className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded border border-slate-300"
                       >
                         <ArrowLeft className="w-3.5 h-3.5" />
-                        <span>Back</span>
+                        <span>{t('farmerVerificationWizard.back')}</span>
                       </button>
 
                       {verification?.orgPan?.status === 'verified' && (
@@ -1611,7 +1611,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                           onClick={() => setCurrentStep(3)}
                           className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm"
                         >
-                          <span>Next Step</span>
+                          <span>{t('farmerVerificationWizard.nextStep')}</span>
                           <ArrowRight className="w-3.5 h-3.5" />
                         </button>
                       )}
@@ -1623,8 +1623,8 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                 {currentStep === 3 && (
                   <div className="space-y-6">
                     <div className="p-3.5 bg-slate-50 border border-slate-200 rounded text-xs text-slate-700 space-y-1">
-                      <p className="font-bold text-slate-900">GSTIN Registration Protocol</p>
-                      <p className="text-slate-600">Provide 15-character GSTIN registration if registered, or mark GSTIN Not Applicable.</p>
+                      <p className="font-bold text-slate-900">{t('farmerVerificationWizard.gstinRegistrationProtocol')}</p>
+                      <p className="text-slate-600">{t('farmerVerificationWizard.provide15characterGstinRegistrationIfRegistered')}</p>
                     </div>
 
                     {verification?.gstin?.status === 'verified' || verification?.gstin?.status === 'not_applicable' ? (
@@ -1634,7 +1634,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                             <CheckCircle2 className="w-5 h-5 text-emerald-700" /> GSTIN Status Confirmed
                           </span>
                           <span className="text-[10px] font-bold bg-emerald-200 text-emerald-900 px-2.5 py-0.5 rounded border border-emerald-300 uppercase">
-                            {verification.gstin.status === 'not_applicable' ? 'Not Applicable' : 'Verified'}
+                            {verification.gstin.status === 'not_applicable' ? t('farmerVerificationWizard.notApplicable') : 'Verified'}
                           </span>
                         </div>
                       </div>
@@ -1645,7 +1645,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                           <input
                             type="text"
                             maxLength={15}
-                            placeholder="e.g. 27AAACF1234G1Z5"
+                            placeholder={t('farmerVerificationWizard.eg27aaacf1234g1z5')}
                             value={gstinForm.gstinNumber}
                             onChange={(e) => setGstinForm({ ...gstinForm, gstinNumber: e.target.value.toUpperCase() })}
                             className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 font-mono uppercase tracking-wider outline-none"
@@ -1667,7 +1667,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                             className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50 transition"
                           >
                             {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                            <span>Verify GSTIN</span>
+                            <span>{t('farmerVerificationWizard.verifyGstin')}</span>
                             <ArrowRight className="w-3.5 h-3.5" />
                           </button>
                         </div>
@@ -1681,14 +1681,14 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                         className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded border border-slate-300"
                       >
                         <ArrowLeft className="w-3.5 h-3.5" />
-                        <span>Back</span>
+                        <span>{t('farmerVerificationWizard.back')}</span>
                       </button>
                       <button
                         type="button"
                         onClick={() => setCurrentStep(4)}
                         className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm"
                       >
-                        <span>Next Step</span>
+                        <span>{t('farmerVerificationWizard.nextStep')}</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </button>
                     </div>
@@ -1699,8 +1699,8 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                 {currentStep === 4 && (
                   <div className="space-y-6">
                     <div className="p-3.5 bg-slate-50 border border-slate-200 rounded text-xs text-slate-700 space-y-1">
-                      <p className="font-bold text-slate-900">Authorized Official Protocol</p>
-                      <p className="text-slate-600">Verify identity and mobile authorization of the official representing the organization.</p>
+                      <p className="font-bold text-slate-900">{t('farmerVerificationWizard.authorizedOfficialProtocol')}</p>
+                      <p className="text-slate-600">{t('farmerVerificationWizard.verifyIdentityAndMobileAuthorizationOf')}</p>
                     </div>
 
                     {verification?.representative?.status === 'verified' ? (
@@ -1718,22 +1718,22 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                       <form onSubmit={repForm.otpSent ? handleVerifyRepOtp : handleSendRepOtp} className="space-y-4">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div>
-                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">Representative Name *</label>
+                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.representativeName_req')}</label>
                             <input
                               type="text"
                               required
-                              placeholder="e.g. Ramesh Kumar"
+                              placeholder={t('farmerVerificationWizard.egRameshKumar')}
                               value={repForm.repName}
                               onChange={(e) => setRepForm({ ...repForm, repName: e.target.value })}
                               className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 outline-none"
                             />
                           </div>
                           <div>
-                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">Designation *</label>
+                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.designation_req')}</label>
                             <input
                               type="text"
                               required
-                              placeholder="e.g. CEO / Managing Director"
+                              placeholder={t('farmerVerificationWizard.egCeoManagingDirector')}
                               value={repForm.designation}
                               onChange={(e) => setRepForm({ ...repForm, designation: e.target.value })}
                               className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 outline-none"
@@ -1742,12 +1742,12 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                         </div>
 
                         <div>
-                          <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">Representative Mobile Number *</label>
+                          <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.representativeMobileNumber_req')}</label>
                           <input
                             type="text"
                             maxLength={10}
                             disabled={repForm.otpSent}
-                            placeholder="Enter 10-digit mobile number"
+                            placeholder={t('farmerVerificationWizard.enter10digitMobileNumber')}
                             value={repForm.mobileNumber}
                             onChange={(e) => setRepForm({ ...repForm, mobileNumber: e.target.value })}
                             className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 font-mono outline-none disabled:bg-slate-100"
@@ -1761,17 +1761,17 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                             className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50 transition"
                           >
                             {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                            <span>Send Representative OTP</span>
+                            <span>{t('farmerVerificationWizard.sendRepresentativeOtp')}</span>
                             <ArrowRight className="w-3.5 h-3.5" />
                           </button>
                         ) : (
                           <div className="space-y-3 pt-1">
                             <div>
-                              <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">Enter 6-Digit OTP *</label>
+                              <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.enter6digitOtp_req')}</label>
                               <input
                                 type="text"
                                 maxLength={6}
-                                placeholder="──────"
+                                placeholder={t('farmerVerificationWizard.text_mnk1z')}
                                 value={repForm.otp}
                                 onChange={(e) => setRepForm({ ...repForm, otp: e.target.value })}
                                 className="w-full border border-slate-300 rounded text-xs px-3 py-2.5 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 font-mono text-center text-lg tracking-[0.4em] outline-none"
@@ -1783,7 +1783,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                               className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50 transition"
                             >
                               {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                              <span>Verify Representative</span>
+                              <span>{t('farmerVerificationWizard.verifyRepresentative')}</span>
                               <ArrowRight className="w-3.5 h-3.5" />
                             </button>
                           </div>
@@ -1798,7 +1798,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                         className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded border border-slate-300"
                       >
                         <ArrowLeft className="w-3.5 h-3.5" />
-                        <span>Back</span>
+                        <span>{t('farmerVerificationWizard.back')}</span>
                       </button>
 
                       {verification?.representative?.status === 'verified' && (
@@ -1807,7 +1807,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                           onClick={() => setCurrentStep(5)}
                           className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm"
                         >
-                          <span>Next Step</span>
+                          <span>{t('farmerVerificationWizard.nextStep')}</span>
                           <ArrowRight className="w-3.5 h-3.5" />
                         </button>
                       )}
@@ -1819,8 +1819,8 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                 {currentStep === 5 && (
                   <div className="space-y-6">
                     <div className="p-3.5 bg-slate-50 border border-slate-200 rounded text-xs text-slate-700 space-y-1">
-                      <p className="font-bold text-slate-900">Organization Settlement Account Protocol</p>
-                      <p className="text-slate-600">Link primary settlement bank account of the FPO / FPC for marketplace direct credits.</p>
+                      <p className="font-bold text-slate-900">{t('farmerVerificationWizard.organizationSettlementAccountProtocol')}</p>
+                      <p className="text-slate-600">{t('farmerVerificationWizard.linkPrimarySettlementBankAccountOf')}</p>
                     </div>
 
                     {verification?.orgBank?.status === 'verified' ? (
@@ -1837,11 +1837,11 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                     ) : (
                       <form onSubmit={handleVerifyOrgBank} className="space-y-4">
                         <div>
-                          <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">Account Holder Name *</label>
+                          <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.accountHolderName_req')}</label>
                           <input
                             type="text"
                             required
-                            placeholder="Exact legal name as per bank statement"
+                            placeholder={t('farmerVerificationWizard.exactLegalNameAsPerBank')}
                             value={orgBankForm.accountHolderName}
                             onChange={(e) => setOrgBankForm({ ...orgBankForm, accountHolderName: e.target.value })}
                             className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 outline-none"
@@ -1849,7 +1849,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div>
-                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">Bank Name *</label>
+                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.bankName_req')}</label>
                             <select
                               value={orgBankForm.bankName}
                               onChange={(e) => setOrgBankForm({ ...orgBankForm, bankName: e.target.value })}
@@ -1859,10 +1859,10 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                             </select>
                           </div>
                           <div>
-                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">Branch Name</label>
+                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.branchName')}</label>
                             <input
                               type="text"
-                              placeholder="e.g. Commercial Branch"
+                              placeholder={t('farmerVerificationWizard.egCommercialBranch')}
                               value={orgBankForm.branchName}
                               onChange={(e) => setOrgBankForm({ ...orgBankForm, branchName: e.target.value })}
                               className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 outline-none"
@@ -1871,22 +1871,22 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div>
-                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">Account Number *</label>
+                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.accountNumber_req')}</label>
                             <input
                               type="password"
                               required
-                              placeholder="Enter bank account number"
+                              placeholder={t('farmerVerificationWizard.enterBankAccountNumber')}
                               value={orgBankForm.accountNumber}
                               onChange={(e) => setOrgBankForm({ ...orgBankForm, accountNumber: e.target.value })}
                               className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 font-mono outline-none"
                             />
                           </div>
                           <div>
-                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">Confirm Account Number *</label>
+                            <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.confirmAccountNumber_req')}</label>
                             <input
                               type="text"
                               required
-                              placeholder="Re-enter account number"
+                              placeholder={t('farmerVerificationWizard.reenterAccountNumber')}
                               value={orgBankForm.confirmAccountNumber}
                               onChange={(e) => setOrgBankForm({ ...orgBankForm, confirmAccountNumber: e.target.value })}
                               className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 font-mono outline-none"
@@ -1894,12 +1894,12 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                           </div>
                         </div>
                         <div>
-                          <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">IFSC Code *</label>
+                          <label className="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-1">{t('farmerVerificationWizard.ifscCode_req')}</label>
                           <input
                             type="text"
                             required
                             maxLength={11}
-                            placeholder="e.g. SBIN0001234"
+                            placeholder={t('farmerVerificationWizard.egSbin0001234')}
                             value={orgBankForm.ifsc}
                             onChange={(e) => setOrgBankForm({ ...orgBankForm, ifsc: e.target.value.toUpperCase() })}
                             className="w-full border border-slate-300 rounded text-xs px-3 py-2 focus:ring-1 focus:ring-emerald-700 focus:border-emerald-700 font-mono uppercase outline-none"
@@ -1912,7 +1912,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                           className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50 transition"
                         >
                           {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                          <span>Verify & Continue</span>
+                          <span>{t('farmerVerificationWizard.verifyContinue')}</span>
                           <ArrowRight className="w-3.5 h-3.5" />
                         </button>
                       </form>
@@ -1925,7 +1925,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                         className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded border border-slate-300"
                       >
                         <ArrowLeft className="w-3.5 h-3.5" />
-                        <span>Back</span>
+                        <span>{t('farmerVerificationWizard.back')}</span>
                       </button>
 
                       {verification?.orgBank?.status === 'verified' && (
@@ -1934,7 +1934,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                           onClick={() => setCurrentStep(6)}
                           className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm"
                         >
-                          <span>Next Step</span>
+                          <span>{t('farmerVerificationWizard.nextStep')}</span>
                           <ArrowRight className="w-3.5 h-3.5" />
                         </button>
                       )}
@@ -1946,8 +1946,8 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                 {currentStep === 6 && (
                   <div className="space-y-6">
                     <div className="p-3.5 bg-slate-50 border border-slate-200 rounded text-xs text-slate-700 space-y-1">
-                      <p className="font-bold text-slate-900">Organization Document Dossier</p>
-                      <p className="text-slate-600">Upload mandatory registration, tax, bank proof, and authorization files.</p>
+                      <p className="font-bold text-slate-900">{t('farmerVerificationWizard.organizationDocumentDossier')}</p>
+                      <p className="text-slate-600">{t('farmerVerificationWizard.uploadMandatoryRegistrationTaxBankProof')}</p>
                     </div>
 
                     {verification?.orgDocuments?.status === 'verified' ? (
@@ -1968,7 +1968,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                           category="VERIFICATION"
                           subCategory="REGISTRATION"
                           entityType="VERIFICATION"
-                          label="1. Organization Registration Certificate *"
+                          label={t('farmerVerificationWizard.1OrganizationRegistrationCertificate_req')}
                           onUploadSuccess={() => setDocsForm((prev) => ({ ...prev, regCert: true }))}
                         />
 
@@ -1977,7 +1977,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                           category="VERIFICATION"
                           subCategory="PAN"
                           entityType="VERIFICATION"
-                          label="2. Organization PAN Card Copy *"
+                          label={t('farmerVerificationWizard.2OrganizationPanCardCopy_req')}
                           onUploadSuccess={() => setDocsForm((prev) => ({ ...prev, panDoc: true }))}
                         />
 
@@ -1986,7 +1986,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                           category="VERIFICATION"
                           subCategory="BANK"
                           entityType="VERIFICATION"
-                          label="3. Bank Passbook / Cancelled Cheque *"
+                          label={t('farmerVerificationWizard.3BankPassbookCancelledCheque_req')}
                           onUploadSuccess={() => setDocsForm((prev) => ({ ...prev, bankProof: true }))}
                         />
 
@@ -1995,7 +1995,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                           category="VERIFICATION"
                           subCategory="AUTHORIZATION"
                           entityType="VERIFICATION"
-                          label="4. Authorization Letter / Board Resolution"
+                          label={t('farmerVerificationWizard.4AuthorizationLetterBoardResolution')}
                           onUploadSuccess={() => setDocsForm((prev) => ({ ...prev, authDoc: true }))}
                         />
 
@@ -2004,7 +2004,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                           category="VERIFICATION"
                           subCategory="GST"
                           entityType="VERIFICATION"
-                          label="5. GST Certificate (If Applicable)"
+                          label={t('farmerVerificationWizard.5GstCertificateIfApplicable')}
                           onUploadSuccess={() => setDocsForm((prev) => ({ ...prev, gstCert: true }))}
                         />
 
@@ -2014,7 +2014,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                           className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50 transition"
                         >
                           {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                          <span>Submit Documents & Proceed</span>
+                          <span>{t('farmerVerificationWizard.submitDocumentsProceed')}</span>
                           <ArrowRight className="w-3.5 h-3.5" />
                         </button>
                       </form>
@@ -2027,14 +2027,14 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                         className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded border border-slate-300"
                       >
                         <ArrowLeft className="w-3.5 h-3.5" />
-                        <span>Back</span>
+                        <span>{t('farmerVerificationWizard.back')}</span>
                       </button>
                       <button
                         type="button"
                         onClick={() => setCurrentStep(7)}
                         className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm"
                       >
-                        <span>View Summary</span>
+                        <span>{t('farmerVerificationWizard.viewSummary')}</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </button>
                     </div>
@@ -2119,7 +2119,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                     className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded border border-slate-300"
                   >
                     <ArrowLeft className="w-3.5 h-3.5" />
-                    <span>Back to Review</span>
+                    <span>{t('farmerVerificationWizard.backToReview')}</span>
                   </button>
 
                   <button
@@ -2128,7 +2128,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
                     className="inline-flex items-center space-x-2 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-6 py-3 rounded shadow-md"
                   >
                     <ShieldCheck className="w-4 h-4 text-emerald-300" />
-                    <span>Return to Dashboard</span>
+                    <span>{t('farmerVerificationWizard.returnToDashboard')}</span>
                   </button>
                 </div>
               </div>
@@ -2138,7 +2138,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
             <div className="mt-8 pt-4 border-t border-slate-200 text-center">
               <p className="text-[11px] text-slate-500 flex items-center justify-center gap-1.5">
                 <Lock className="w-3.5 h-3.5 text-slate-400" />
-                <span>Your information is securely processed. Sensitive identity & financial information will be masked where applicable.</span>
+                <span>{t('farmerVerificationWizard.yourInformationIsSecurelyProcessedSensitive')}</span>
               </p>
             </div>
           </div>

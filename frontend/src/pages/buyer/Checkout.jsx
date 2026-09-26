@@ -224,7 +224,7 @@ export default function Checkout() {
           {[1, 2].map(s => (
             <div key={s} className="flex items-center gap-3">
               <div className={`w-9 h-9 rounded-full flex items-center justify-center text-sm font-black font-display transition-colors ${step >= s ? 'bg-[#00ed64] text-[#001e2b]' : 'bg-gray-100 text-gray-400'}`}>{s}</div>
-              <span className={`text-xs font-bold font-display uppercase tracking-wider ${step >= s ? 'text-[#001e2b]' : 'text-gray-400'}`}>{s === 1 ? '1. Shipping' : '2. Payment'}</span>
+              <span className={`text-xs font-bold font-display uppercase tracking-wider ${step >= s ? 'text-[#001e2b]' : 'text-gray-400'}`}>{s === 1 ? t('checkout.stepShipping', { defaultValue: '1. Shipping' }) : t('checkout.stepPayment', { defaultValue: '2. Payment' })}</span>
               {s < 2 && <div className="w-12 h-0.5 bg-[#e8eddb]" />}
             </div>
           ))}
@@ -244,30 +244,30 @@ export default function Checkout() {
 
             <div className="space-y-4">
               <TextArea
-                label="Full Delivery Address *"
+                label={t('checkout.fullDeliveryAddress', { defaultValue: 'Full Delivery Address *' })}
                 required
                 rows={2}
-                placeholder="Street address, building, village..."
+                placeholder={t('checkout.placeholderAddress', { defaultValue: 'Street address, building, village...' })}
                 value={address.deliveryAddress}
                 onChange={e => setAddress({ ...address, deliveryAddress: e.target.value })}
               />
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <Input
-                  label="City / District"
-                  placeholder="e.g. Pune"
+                  label={t('checkout.cityDistrict', { defaultValue: 'City / District' })}
+                  placeholder={t('checkout.placeholderCity', { defaultValue: 'e.g. Pune' })}
                   value={address.deliveryCity}
                   onChange={e => setAddress({ ...address, deliveryCity: e.target.value })}
                 />
                 <Input
-                  label="State"
-                  placeholder="e.g. Maharashtra"
+                  label={t('checkout.stateLabel', { defaultValue: 'State' })}
+                  placeholder={t('checkout.placeholderState', { defaultValue: 'e.g. Maharashtra' })}
                   value={address.deliveryState}
                   onChange={e => setAddress({ ...address, deliveryState: e.target.value })}
                 />
                 <Input
-                  label="Pincode"
-                  placeholder="e.g. 411001"
+                  label={t('checkout.pincodeLabel', { defaultValue: 'Pincode' })}
+                  placeholder={t('checkout.placeholderPincode', { defaultValue: 'e.g. 411001' })}
                   value={address.deliveryPincode}
                   onChange={e => setAddress({ ...address, deliveryPincode: e.target.value })}
                 />
@@ -278,9 +278,9 @@ export default function Checkout() {
               variant="primary"
               size="lg"
               fullWidth
-              onClick={() => { if (!address.deliveryAddress) { toast.error('Address required.'); return; } setStep(2); }}
+              onClick={() => { if (!address.deliveryAddress) { toast.error(t('checkout.addressRequired', { defaultValue: 'Address required.' })); return; } setStep(2); }}
             >
-              Continue to Order Review →
+              {t('checkout.continueToReview', { defaultValue: 'Continue to Order Review →' })}
             </Button>
           </div>
         )}
@@ -288,7 +288,7 @@ export default function Checkout() {
         {step === 2 && (
           <div className="grid lg:grid-cols-12 gap-8 items-start">
             <div className="lg:col-span-7 bg-white rounded-3xl border border-[#e8eddb] p-8 shadow-sm space-y-6">
-              <h2 className="text-lg font-extrabold text-[#001e2b] font-display border-b border-[#f0f4e8] pb-4">Items Summary</h2>
+              <h2 className="text-lg font-extrabold text-[#001e2b] font-display border-b border-[#f0f4e8] pb-4">{t('checkout.itemsSummary')}</h2>
               <div className="space-y-3">
                 {cart.items.map(item => (
                   <div key={item._id} className="flex justify-between items-center p-4 bg-[#fafcf8] border border-[#e8eddb] rounded-2xl">
@@ -302,8 +302,8 @@ export default function Checkout() {
               </div>
 
               <div className="pt-4 border-t border-[#f0f4e8] space-y-2 text-sm font-sans">
-                <div className="flex justify-between text-gray-600"><span>Subtotal</span><span className="font-bold text-[#001e2b] font-display">₹{cart.totalAmount}</span></div>
-                <div className="flex justify-between text-gray-600"><span>Delivery</span><span className="text-[#00684a] font-bold font-display">Free</span></div>
+                <div className="flex justify-between text-gray-600"><span>{t('checkout.subtotal')}</span><span className="font-bold text-[#001e2b] font-display">₹{cart.totalAmount}</span></div>
+                <div className="flex justify-between text-gray-600"><span>{t('checkout.delivery')}</span><span className="text-[#00684a] font-bold font-display">{t('checkout.free')}</span></div>
                 <div className="flex justify-between text-xl font-black text-[#001e2b] border-t border-[#f0f4e8] pt-3 mt-3 font-display"><span>{t('checkout.totalOrder')}</span><span>₹{cart.totalAmount}</span></div>
               </div>
             </div>
@@ -315,22 +315,22 @@ export default function Checkout() {
                 </div>
                 <div>
                   <h2 className="text-lg font-extrabold text-[#001e2b] font-display">{t('checkout.securePayment')}</h2>
-                  <p className="text-xs text-gray-500 font-sans">Razorpay Test Mode</p>
+                  <p className="text-xs text-gray-500 font-sans">{t('checkout.razorpayTestMode')}</p>
                 </div>
               </div>
 
               <p className="text-xs text-gray-500 font-sans leading-relaxed">
-                Your order is confirmed only after Razorpay payment verification succeeds.
+                {t('checkout.razorpayVerificationNote', { defaultValue: 'Your order is confirmed only after Razorpay payment verification succeeds.' })}
               </p>
 
               {paymentError && <p className="text-xs text-red-700 bg-red-50 border border-red-200 rounded-xl p-3">{t('checkout.paymentFailed')}: {paymentError}</p>}
 
               <div className="flex gap-3">
                 <Button variant="outline" size="md" onClick={() => setStep(1)}>
-                  Back
+                  {t('common.back', { defaultValue: 'Back' })}
                 </Button>
                 <Button variant="primary" size="md" fullWidth loading={loading} onClick={handleOrder}>
-                  Pay Securely · ₹{cart.totalAmount}
+                  {t('checkout.paySecurely', { amount: cart.totalAmount, defaultValue: `Pay Securely · ₹${cart.totalAmount}` })}
                 </Button>
               </div>
             </div>

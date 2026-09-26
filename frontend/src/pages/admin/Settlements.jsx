@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+import { translateStatus } from '../../utils/enumTranslations';
 import { useState, useEffect } from 'react';
 import DataTable from '../../components/ui/DataTable';
 import adminService from '../../services/adminService';
@@ -6,6 +8,7 @@ import toast from 'react-hot-toast';
 import { DollarSign, ShieldCheck, CreditCard, AlertCircle, RefreshCw } from 'lucide-react';
 
 export default function AdminSettlements() {
+  const { t } = useTranslation();
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [routeEnabled, setRouteEnabled] = useState(false);
@@ -43,7 +46,7 @@ export default function AdminSettlements() {
 
   const columns = [
     {
-      header: 'Farmer / Producer',
+      header: t('adminSettlements.colFarmerProducer', { defaultValue: 'FARMER / PRODUCER' }),
       key: 'fullName',
       render: (f) => (
         <div>
@@ -53,32 +56,32 @@ export default function AdminSettlements() {
       ),
     },
     {
-      header: 'AgriBazaar Verification',
+      header: t('adminSettlements.colVerification', { defaultValue: 'AGRIBAZAAR VERIFICATION' }),
       key: 'verificationStatus',
       render: (f) => (
         <span className={`px-2.5 py-1 rounded-full text-xs font-bold border ${
           f.verificationStatus === 'VERIFIED' ? 'bg-emerald-50 text-emerald-700 border-emerald-200' : 'bg-amber-50 text-amber-700 border-amber-200'
         }`}>
-          {f.verificationStatus === 'VERIFIED' ? '✓ VERIFIED FARMER' : 'PENDING VERIFICATION'}
+          {f.verificationStatus === 'VERIFIED' ? t('status.verified', { defaultValue: 'VERIFIED' }) : t('status.pendingVerification', { defaultValue: 'PENDING VERIFICATION' })}
         </span>
       ),
     },
     {
-      header: 'Razorpay Seller Status',
+      header: t('adminSettlements.colRazorpayStatus', { defaultValue: 'RAZORPAY SELLER STATUS' }),
       key: 'razorpaySellerStatus',
       render: (f) => (
         <span className={`px-2.5 py-1 rounded-full text-xs font-bold border ${statusBadgeColors[f.razorpaySellerStatus] || statusBadgeColors.NOT_STARTED}`}>
-          {f.razorpaySellerStatus}
+          {translateStatus(t, f.razorpaySellerStatus)}
         </span>
       ),
     },
     {
-      header: 'Settlement Account',
+      header: t('adminSettlements.colSettlementAccount', { defaultValue: 'SETTLEMENT ACCOUNT' }),
       key: 'bankAccountMasked',
       render: (f) => (
         <div className="text-xs font-sans text-gray-700">
-          <p><span className="font-bold text-[#001e2b]">Account:</span> {f.bankAccountMasked}</p>
-          <p><span className="font-bold text-[#001e2b]">IFSC:</span> {f.ifsc}</p>
+          <p><span className="font-bold text-[#001e2b]">{t('admin.account')}</span> {f.bankAccountMasked}</p>
+          <p><span className="font-bold text-[#001e2b]">{t('admin.ifsc')}</span> {f.ifsc}</p>
           {f.linkedAccountIdMasked && (
             <p className="text-[#00684a] font-mono text-[10px] mt-0.5">Linked: {f.linkedAccountIdMasked}</p>
           )}
@@ -86,17 +89,17 @@ export default function AdminSettlements() {
       ),
     },
     {
-      header: 'Total Settled',
+      header: t('adminSettlements.colTotalSettled', { defaultValue: 'TOTAL SETTLED' }),
       key: 'totalSettled',
       render: (f) => <span className="font-black text-[#00684a] font-display">₹{f.totalSettled.toLocaleString()}</span>,
     },
     {
-      header: 'Pending Settlement',
+      header: t('adminSettlements.colPendingSettlement', { defaultValue: 'PENDING SETTLEMENT' }),
       key: 'pendingAmount',
       render: (f) => <span className="font-bold text-amber-700 font-display">₹{f.pendingAmount.toLocaleString()}</span>,
     },
     {
-      header: 'Audit Provenance',
+      header: t('adminSettlements.colAuditProvenance', { defaultValue: 'AUDIT PROVENANCE' }),
       key: 'audit',
       render: (f) => <BlockchainAuditBadge entityType="SETTLEMENT" entityId={f._id} compact={true} />,
     },
@@ -107,13 +110,13 @@ export default function AdminSettlements() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <span className="text-[#00684a] font-extrabold text-xs tracking-widest uppercase font-display bg-[#00ed64]/20 px-3 py-1 rounded-full">
-            Marketplace Financial Control
+            {t('adminSettlements.financialControlBadge', { defaultValue: 'Marketplace Financial Control' })}
           </span>
           <h1 className="text-3xl font-black text-[#001e2b] font-display mt-2">
-            Payment & Settlement Overview
+            {t('adminSettlements.headline', { defaultValue: 'Payment & Settlement Overview' })}
           </h1>
           <p className="text-sm text-gray-600 mt-1 font-sans">
-            Track Razorpay seller account onboarding, Route activation, and marketplace split settlements across farmers.
+            {t('adminSettlements.subtitle', { defaultValue: 'Track Razorpay seller account onboarding, Route activation, and marketplace split settlements across farmers.' })}
           </p>
         </div>
         <button
@@ -121,7 +124,7 @@ export default function AdminSettlements() {
           onClick={fetchSettlements}
           className="btn-mongo-primary text-xs px-4 py-2.5 flex items-center justify-center gap-2"
         >
-          <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin' : ''}`} /> Refresh Settlements
+          <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin' : ''}`} /> {t('adminSettlements.refreshSettlements', { defaultValue: 'Refresh Settlements' })}
         </button>
       </div>
 
@@ -129,9 +132,9 @@ export default function AdminSettlements() {
         <div className="bg-amber-50 border border-amber-200 rounded-3xl p-5 flex items-start gap-3">
           <AlertCircle className="w-5 h-5 text-amber-700 shrink-0 mt-0.5" />
           <div className="text-xs font-sans text-amber-900 space-y-1">
-            <p className="font-bold text-sm">Razorpay Route Capability is Pending Activation (Test Mode)</p>
+            <p className="font-bold text-sm">{t('adminSettlements.razorpayRoutePendingTitle', { defaultValue: 'Razorpay Route Capability is Pending Activation (Test Mode)' })}</p>
             <p>
-              Environment flag <code className="bg-amber-100 px-1 py-0.5 rounded text-amber-950">RAZORPAY_ROUTE_ENABLED=false</code> is active. Normal buyer checkout payments function properly. Marketplace farmer settlements remain recorded as <strong>PENDING</strong> until Razorpay Route is enabled on your merchant account.
+              {t('adminSettlements.razorpayRoutePendingDesc', { defaultValue: 'Environment flag RAZORPAY_ROUTE_ENABLED=false is active. Normal buyer checkout payments function properly. Marketplace farmer settlements remain recorded as PENDING until Razorpay Route is enabled on your merchant account.' })}
             </p>
           </div>
         </div>
@@ -147,7 +150,7 @@ export default function AdminSettlements() {
               filterStatus === st ? 'bg-[#001e2b] text-[#00ed64]' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
             }`}
           >
-            {st === '' ? 'All Farmers' : st}
+            {st === '' ? t('adminSettlements.allFarmers', { defaultValue: 'All Farmers' }) : translateStatus(t, st)}
           </button>
         ))}
       </div>
@@ -156,8 +159,8 @@ export default function AdminSettlements() {
         columns={columns}
         data={items}
         loading={loading}
-        emptyTitle="No seller settlement records"
-        emptyDescription="Farmer settlement statuses will appear here."
+        emptyTitle={t('adminSettlements.noSettlementRecords', { defaultValue: 'No seller settlement records' })}
+        emptyDescription={t('adminSettlements.noSettlementDesc', { defaultValue: 'Farmer settlement statuses will appear here.' })}
       />
     </div>
   );

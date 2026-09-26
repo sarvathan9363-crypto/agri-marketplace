@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Package, ShoppingBag, AlertCircle, DollarSign, PlusCircle, ShieldCheck, CheckCircle2, ArrowRight } from 'lucide-react';
@@ -8,6 +9,7 @@ import { useAuth } from '../../context/AuthContext';
 import toast from 'react-hot-toast';
 
 export default function FarmerDashboard() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const { user } = useAuth();
   const [data, setData] = useState(null);
@@ -27,7 +29,7 @@ export default function FarmerDashboard() {
       setData(dashRes.dashboard);
       setVerification(verifRes.verification);
     } catch {
-      toast.error('Failed to load dashboard data.');
+      toast.error(t('farmerDashboard.failedToLoadDashboardData', { defaultValue: 'Failed to load dashboard data.' }));
     } finally {
       setLoading(false);
     }
@@ -44,7 +46,7 @@ export default function FarmerDashboard() {
   const completedCount = requiredKeys.filter((k) => verification?.[k]?.status === 'verified').length;
   const isFullyVerified = completedCount === 5;
   const wizardPath = isFpo ? '/fpo/verification/onboarding' : '/farmer/verification/wizard';
-  const badgeTitle = isFpo ? '✓ VERIFIED FPO' : '✓ VERIFIED FARMER';
+  const badgeTitle = isFpo ? t('farmerDashboard.verifiedFpoBadge', { defaultValue: '✓ VERIFIED FPO' }) : t('farmerDashboard.verifiedFarmerBadge', { defaultValue: '✓ VERIFIED FARMER' });
 
   return (
     <div className="space-y-8">
@@ -52,15 +54,15 @@ export default function FarmerDashboard() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <span className="text-[#00684a] font-extrabold text-xs tracking-widest uppercase font-display bg-[#00ed64]/20 px-3 py-1 rounded-full">
-            {isFpo ? 'FPO / FPC Seller Dashboard' : 'Seller Dashboard'}
+            {isFpo ? t('farmerDashboard.fpoSellerDashboard', { defaultValue: 'FPO / FPC Seller Dashboard' }) : t('farmerDashboard.sellerDashboard', { defaultValue: 'Seller Dashboard' })}
           </span>
           <h1 className="text-3xl font-black text-[#001e2b] font-display mt-2">
-            {isFpo ? 'FPO Overview' : 'Farmer Overview'}
+            {isFpo ? t('farmerDashboard.fpoOverview', { defaultValue: 'FPO Overview' }) : t('farmerDashboard.farmerOverview', { defaultValue: 'Farmer Overview' })}
           </h1>
-          <p className="text-sm text-gray-600 mt-1 font-sans">Manage your agricultural products, incoming orders, and revenue.</p>
+          <p className="text-sm text-gray-600 mt-1 font-sans">{t('farmerDashboard.manageYourAgriculturalProductsIncomingOrders')}</p>
         </div>
         <Link to="/farmer/products/add" className="btn-mongo-primary text-sm px-6 py-3">
-          <PlusCircle className="w-4 h-4" /> Add New Listing
+          <PlusCircle className="w-4 h-4" /> {t('farmerDashboard.addNewListing', { defaultValue: 'Add New Listing' })}
         </Link>
       </div>
 
@@ -68,17 +70,17 @@ export default function FarmerDashboard() {
         <div className="bg-[#001e2b] text-white p-4 rounded-2xl shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3 border border-emerald-900/40">
           <div className="min-w-0">
             <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#00ed64] font-display flex items-center gap-1.5">
-              🛡️ Seller Cryptographic Account Hash (On-Chain Identity)
+              🛡️ {t('farmerDashboard.sellerCryptographicAccountHash', { defaultValue: 'SELLER CRYPTOGRAPHIC ACCOUNT HASH (ON-CHAIN IDENTITY)' })}
             </span>
             <p className="font-mono text-xs text-gray-300 mt-1 truncate max-w-full sm:max-w-xl" title={user.accountHash}>
               {user.accountHash}
             </p>
           </div>
           <button
-            onClick={() => { navigator.clipboard.writeText(user.accountHash); toast.success('Seller Account Hash copied!'); }}
+            onClick={() => { navigator.clipboard.writeText(user.accountHash); toast.success(t('farmerDashboard.accountHashCopied', { defaultValue: 'Seller Account Hash copied!' })); }}
             className="px-3.5 py-1.5 bg-[#00ed64] text-[#001e2b] font-bold text-xs rounded-xl hover:bg-[#00c954] transition-colors shrink-0"
           >
-            📋 Copy Hash
+            📋 {t('farmerDashboard.copyHash', { defaultValue: 'Copy Hash' })}
           </button>
         </div>
       )}
@@ -90,28 +92,28 @@ export default function FarmerDashboard() {
             <div className="flex items-center gap-2">
               <ShieldCheck className={`w-6 h-6 ${isFullyVerified ? 'text-[#00C853]' : 'text-amber-600'}`} />
               <h2 className="text-xl font-black text-[#001e2b] font-display">
-                {isFullyVerified ? badgeTitle : 'Complete Your Verification'}
+                {isFullyVerified ? badgeTitle : t('farmerDashboard.completeYourVerification', { defaultValue: 'Complete Your Verification' })}
               </h2>
               {isFullyVerified && (
                 <span className="px-3 py-0.5 rounded-full text-xs font-black bg-emerald-100 text-emerald-800">
-                  Active Badge
+                  {t('farmerDashboard.activeBadge', { defaultValue: 'Active Badge' })}
                 </span>
               )}
             </div>
 
             <p className="text-sm font-bold text-gray-700 font-sans">
-              {completedCount} of 5 required checks completed
+              {t('farmerDashboard.checksCompletedCount', { count: completedCount, total: 5, defaultValue: `${completedCount} of 5 required checks completed` })}
             </p>
 
             {/* Status indicator pill */}
             <div className="flex items-center gap-2 pt-1">
               {isFullyVerified ? (
                 <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#00C853] bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">
-                  <CheckCircle2 className="w-4 h-4" /> All Required Verification Active
+                  <CheckCircle2 className="w-4 h-4" /> {t('farmerDashboard.allRequiredVerificationActive', { defaultValue: 'All Required Verification Active' })}
                 </span>
               ) : (
                 <span className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-800 bg-amber-50 border border-amber-200 px-3 py-1 rounded-full">
-                  <AlertCircle className="w-4 h-4 text-amber-600" /> Verification Incomplete
+                  <AlertCircle className="w-4 h-4 text-amber-600" /> {t('farmerDashboard.verificationIncomplete', { defaultValue: 'Verification Incomplete' })}
                 </span>
               )}
             </div>
@@ -123,7 +125,7 @@ export default function FarmerDashboard() {
               onClick={() => navigate(wizardPath)}
               className="btn-mongo-primary px-6 py-3.5 text-sm font-bold flex items-center justify-center gap-2"
             >
-              {isFullyVerified ? 'Update Verification' : 'Continue Verification'} <ArrowRight className="w-4 h-4" />
+              {isFullyVerified ? t('farmerDashboard.updateVerification', { defaultValue: 'Update Verification' }) : t('farmerDashboard.continueVerification', { defaultValue: 'Continue Verification' })} <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </div>
@@ -134,10 +136,10 @@ export default function FarmerDashboard() {
 
       {/* Metrics Row */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <StatsCard icon={Package} label="Total Products" value={data.totalProducts} color="primary" />
-        <StatsCard icon={Package} label="Active Listings" value={data.activeListings} color="emerald" />
-        <StatsCard icon={ShoppingBag} label="Pending Orders" value={data.pendingOrders} color="amber" />
-        <StatsCard icon={DollarSign} label="Total Sales" value={`₹${(data.totalSales || 0).toLocaleString()}`} color="blue" />
+        <StatsCard icon={Package} label={t('farmerDashboard.totalProducts', { defaultValue: 'Total Products' })} value={data.totalProducts} color="primary" />
+        <StatsCard icon={Package} label={t('farmerDashboard.activeListingsLabel', { defaultValue: 'Active Listings' })} value={data.activeListings} color="emerald" />
+        <StatsCard icon={ShoppingBag} label={t('farmerDashboard.pendingOrders', { defaultValue: 'Pending Orders' })} value={data.pendingOrders} color="amber" />
+        <StatsCard icon={DollarSign} label={t('farmerDashboard.totalSales', { defaultValue: 'Total Sales' })} value={`₹${(data.totalSales || 0).toLocaleString()}`} color="blue" />
       </div>
 
       {/* Tables Grid */}
@@ -145,8 +147,8 @@ export default function FarmerDashboard() {
         {/* Recent Orders */}
         <div className="bg-white rounded-3xl border border-[#e8eddb] p-6 shadow-sm">
           <div className="flex items-center justify-between mb-5 border-b border-[#f0f4e8] pb-4">
-            <h2 className="font-extrabold text-[#001e2b] text-lg font-display">Recent Orders</h2>
-            <Link to="/farmer/orders" className="text-xs font-bold text-[#00684a] hover:underline font-display">View All →</Link>
+            <h2 className="font-extrabold text-[#001e2b] text-lg font-display">{t('farmerDashboard.recentOrders')}</h2>
+            <Link to="/farmer/orders" className="text-xs font-bold text-[#00684a] hover:underline font-display">{t('farmerDashboard.viewAll', { defaultValue: 'View All →' })}</Link>
           </div>
           {data.recentOrders?.length > 0 ? (
             <div className="space-y-3">
@@ -164,15 +166,15 @@ export default function FarmerDashboard() {
               ))}
             </div>
           ) : (
-            <p className="text-sm text-gray-400 text-center py-10 font-sans">No orders received yet.</p>
+            <p className="text-sm text-gray-400 text-center py-10 font-sans">{t('farmerDashboard.noOrdersReceivedYet')}</p>
           )}
         </div>
 
         {/* Active Products */}
         <div className="bg-white rounded-3xl border border-[#e8eddb] p-6 shadow-sm">
           <div className="flex items-center justify-between mb-5 border-b border-[#f0f4e8] pb-4">
-            <h2 className="font-extrabold text-[#001e2b] text-lg font-display">Active Listings</h2>
-            <Link to="/farmer/products" className="text-xs font-bold text-[#00684a] hover:underline font-display">View All →</Link>
+            <h2 className="font-extrabold text-[#001e2b] text-lg font-display">{t('farmerDashboard.activeListings')}</h2>
+            <Link to="/farmer/products" className="text-xs font-bold text-[#00684a] hover:underline font-display">{t('farmerDashboard.viewAll', { defaultValue: 'View All →' })}</Link>
           </div>
           {data.activeProducts?.length > 0 ? (
             <div className="space-y-3">
@@ -189,8 +191,8 @@ export default function FarmerDashboard() {
             </div>
           ) : (
             <div className="text-center py-10">
-              <p className="text-sm text-gray-400">No active listings.</p>
-              <Link to="/farmer/products/add" className="mt-3 inline-block btn-mongo-primary text-xs px-4 py-2">+ Add Product</Link>
+              <p className="text-sm text-gray-400">{t('farmerDashboard.noActiveListings')}</p>
+              <Link to="/farmer/products/add" className="mt-3 inline-block btn-mongo-primary text-xs px-4 py-2">{t('farmerDashboard.addProductButton', { defaultValue: '+ Add Product' })}</Link>
             </div>
           )}
         </div>

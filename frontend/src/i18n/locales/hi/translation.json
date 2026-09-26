@@ -20,7 +20,35 @@
     "actions": "कार्रवाइयां",
     "all": "सभी",
     "noResults": "कोई परिणाम नहीं मिला",
-    "somethingWentWrong": "कुछ गलत हो गया"
+    "somethingWentWrong": "कुछ गलत हो गया",
+    "executiveControls": "कार्यकारी नियंत्रण",
+    "adminDashboard": "एडमिन डैशबोर्ड",
+    "agribazaarPlatformMetricsFarmerVerificationPipeline": "एग्रीबाज़ार प्लेटफ़ॉर्म मेट्रिक्स, किसान सत्यापन पाइपलाइन और व्यापार मात्रा।",
+    "noOrderVolumeDataYet": "अभी तक कोई ऑर्डर मात्रा डेटा दर्ज नहीं किया गया है।",
+    "noCategoryDistributionDataYet": "अभी तक कोई फसल श्रेणी डेटा दर्ज नहीं किया गया है।",
+    "recentPlatformOrders": "हाल के प्लेटफॉर्म ऑर्डर",
+    "conflictOversight": "विवाद देखरेख",
+    "disputeResolution": "विवाद निवारण",
+    "arbitrateBuyerAndFarmerClaimsQuality": "खरीदार और किसान के दावों, गुणवत्ता संबंधी चिंताओं और वितरण विवादों का मध्यस्थता करें।",
+    "resolveDispute": "विवाद का समाधान करें",
+    "kycVerificationPipeline": "केवाईसी सत्यापन पाइपलाइन",
+    "reviewFarmRegistrationsVerifyIdentityAnd": "फार्म पंजीकरण की समीक्षा करें, पहचान सत्यापित करें और विक्रेता साख प्रबंधित करें।",
+    "platformFulfillment": "प्लेटफ़ॉर्म पूर्ति",
+    "allPlatformOrders": "सभी प्लेटफॉर्म ऑर्डर",
+    "fullOversightOfOrdersFulfillmentStatuses": "व्यापार आदेशों, पूर्ति स्थितियों और खरीदार भुगतानों का पूर्ण अवलोकन।",
+    "financialAudit": "वित्तीय ऑडिट",
+    "paymentAuditLogs": "भुगतान ऑडिट लॉग",
+    "auditPlatformTransactionSettlementsAndGateway": "प्लेटफॉर्म लेनदेन निपटान और भुगतान गेटवे इवेंट लॉग का ऑडिट करें।",
+    "catalogModeration": "कैटलॉग मॉडरेशन",
+    "productModeration": "उत्पाद मॉडरेशन",
+    "reviewActiveDraftAndPausedCrop": "किसानों द्वारा प्रकाशित सक्रिय, ड्राफ्ट और रुके हुए फसल लिस्टिंग की समीक्षा करें।",
+    "verify": "सत्यापित करें",
+    "reject": "अस्वीकार करें",
+    "review": "समीक्षा करें",
+    "resolve": "समाधान करें",
+    "allOrders": "सभी ऑर्डर",
+    "editProfile": "प्रोफ़ाइल संपादित करें",
+    "copyHash": "📋 हैश कॉपी करें"
   },
   "navigation": {
     "home": "होम",
@@ -41,7 +69,8 @@
     "sales": "बिक्री",
     "verification": "सत्यापन",
     "language": "भाषा",
-    "searchMarketplace": "बाज़ार खोजें"
+    "searchMarketplace": "बाज़ार खोजें",
+    "addProduct": "उत्पाद जोड़ें"
   },
   "header": {
     "new": "नया",
@@ -64,7 +93,10 @@
     "verificationProcess": "सत्यापन प्रक्रिया",
     "terms": "व्यापार की शर्तें",
     "contact": "प्रशासन से संपर्क करें",
-    "engine": "प्रत्यक्ष कृषि वाणिज्य इंजन"
+    "engine": "प्रत्यक्ष कृषि वाणिज्य इंजन",
+    "brandDescription": "किसानों को बेहतर बाजारों से जोड़ना। विश्वसनीय किसानों और एफपीओ से पूर्ण पारदर्शिता के साथ ताज़ा कृषि उत्पाद खरीदें।",
+    "location": "नासिक और मुंबई, भारत",
+    "allRightsReserved": "सर्वाधिकार सुरक्षित।"
   },
   "auth": {
     "login": "लॉग इन",
@@ -76,7 +108,32 @@
     "createAccount": "अपना खाता बनाएं",
     "welcomeBack": "वापसी पर स्वागत है",
     "loginSuccess": "सफलतापूर्वक लॉग इन हुआ",
-    "invalidCredentials": "अमान्य ईमेल या पासवर्ड"
+    "invalidCredentials": "अमान्य ईमेल या पासवर्ड",
+    "agri": "एग्री",
+    "bazaar": "बाजार",
+    "demoCredentials": "डेमो क्रेडेंशियल",
+    "fullNameLabel": "पूरा नाम *",
+    "emailAddressLabel": "ईमेल पता *",
+    "mobileNumberLabel": "मोबाइल नंबर *",
+    "passwordLabel": "पासवर्ड *",
+    "confirmPasswordLabel": "पासवर्ड की पुष्टि करें *",
+    "farmOrgNameLabel": "खेत / संगठन का नाम *",
+    "sellerTypeLabel": "विक्रेता का प्रकार *",
+    "buyerTypeLabel": "खरीदार का प्रकार *",
+    "locationLabel": "स्थान (शहर/जिला, राज्य) *",
+    "registerAsFarmerBtn": "किसान के रूप में पंजीकरण करें →",
+    "registerAsBuyerBtn": "खरीदार के रूप में पंजीकरण करें →",
+    "registerAsFarmer": "किसान पंजीकरण",
+    "registerAsBuyer": "खरीदार पंजीकरण",
+    "creatingAccount": "खाता बनाया जा रहा है...",
+    "placeholderFullName": "पूरा नाम दर्ज करें",
+    "placeholderEmail": "you@example.com",
+    "placeholderPassword": "अपना पासवर्ड दर्ज करें",
+    "placeholderMinChars": "कम से कम 6 अक्षर",
+    "placeholderReEnterPassword": "पासवर्ड पुनः दर्ज करें",
+    "placeholderFarmName": "जैसे कृष्णा ऑर्गेनिक फार्म",
+    "placeholderLocation": "जैसे नासिक, महाराष्ट्र",
+    "placeholderAddress": "गली, गांव, पिनकोड"
   },
   "marketplace": {
     "title": "बाज़ार",
@@ -88,7 +145,15 @@
     "filters": "फ़िल्टर",
     "sort": "क्रमबद्ध करें",
     "product": "{{count}} उत्पाद",
-    "product_other": "{{count}} उत्पाद"
+    "product_other": "{{count}} उत्पाद",
+    "producerName": "उत्पादक का नाम:",
+    "farmFpoName": "फार्म / एफपीओ नाम:",
+    "type": "प्रकार:",
+    "location": "स्थान:",
+    "newestFirst": "नवीनतम पहले",
+    "priceLowToHigh": "मूल्य: कम से अधिक",
+    "priceHighToLow": "मूल्य: अधिक से कम",
+    "mostPopular": "सबसे लोकप्रिय"
   },
   "checkout": {
     "title": "चेकआउट",
@@ -98,7 +163,30 @@
     "paymentSuccess": "भुगतान सफल हुआ!",
     "paymentVerified": "भुगतान सफलतापूर्वक सत्यापित हुआ!",
     "enterAddress": "कृपया डिलीवरी पता दर्ज करें।",
-    "orderSummary": "ऑर्डर सारांश"
+    "orderSummary": "ऑर्डर सारांश",
+    "itemsSummary": "वस्तुओं का सारांश",
+    "subtotal": "उप-योग",
+    "delivery": "डिलीवरी",
+    "free": "मुफ्त",
+    "razorpayTestMode": "रेजरपे टेस्ट मोड",
+    "fullDeliveryAddress": "पूरा डिलीवरी का पता *",
+    "placeholderAddress": "गली का पता, इमारत, गांव...",
+    "cityDistrict": "शहर / जिला",
+    "placeholderCity": "जैसे पुणे",
+    "stateLabel": "राज्य",
+    "placeholderState": "जैसे महाराष्ट्र",
+    "pincodeLabel": "पिनकोड",
+    "placeholderPincode": "जैसे 411001",
+    "stepShipping": "1. शिपिंग",
+    "stepPayment": "2. भुगतान",
+    "addressRequired": "पता आवश्यक है।",
+    "secureSettlement": "सुरक्षित भुगतान निपटान",
+    "addressReviewHint": "भुगतान की पुष्टि करने से पहले वितरण स्थान प्रदान करें और उपज की समीक्षा करें।",
+    "continueToReview": "ऑर्डर समीक्षा के लिए आगे बढ़ें →",
+    "totalOrder": "कुल राशि",
+    "securePayment": "सुरक्षित रेज़रपे भुगतान",
+    "razorpayVerificationNote": "रेज़रपे भुगतान सत्यापन सफल होने के बाद ही आपका ऑर्डर कन्फर्म होता है।",
+    "paySecurely": "सुरक्षित भुगतान करें · ₹{{amount}}"
   },
   "status": {
     "active": "सक्रिय",
@@ -108,23 +196,37 @@
     "resolved": "हल किया गया",
     "pending": "लंबित",
     "pendingVerification": "सत्यापन लंबित",
-    "created": "बनाया गया",
+    "created": "निर्मित",
     "open": "खुला",
     "confirmed": "पुष्ट",
     "underReview": "समीक्षा में",
-    "dispatched": "भेज दिया गया",
+    "dispatched": "भेजा गया",
     "cancelled": "रद्द",
     "rejected": "अस्वीकृत",
     "failed": "विफल",
     "inactive": "निष्क्रिय",
     "draft": "ड्राफ्ट",
     "outOfStock": "स्टॉक में नहीं",
-    "refunded": "धनवापसी"
+    "refunded": "धनवापसी",
+    "pendingPayment": "भुगतान लंबित",
+    "paid": "भुगतान किया गया",
+    "processing": "प्रसंस्करण",
+    "shipped": "शिप किया गया",
+    "completed": "पूरा हुआ",
+    "onboarding": "ऑनबोर्डिंग",
+    "suspended": "निलंबित",
+    "notStarted": "शुरू नहीं हुआ",
+    "inProgress": "प्रगति में",
+    "approved": "स्वीकृत",
+    "enabled": "सक्षम",
+    "all": "सभी स्थितियां",
+    "captured": "कैप्चर किया गया",
+    "authorized": "अधिकृत"
   },
   "messages": {
     "loadFailed": "डेटा लोड नहीं हो सका।",
     "updateSuccess": "सफलतापूर्वक अपडेट किया गया।",
-    "updateFailed": "अपडेट नहीं हो सका।",
+    "updateFailed": "अद्यतन करने में विफल।",
     "deleteConfirm": "क्या आप इस आइटम को हटाना चाहते हैं?",
     "deleteSuccess": "सफलतापूर्वक हटाया गया।",
     "deleteFailed": "हटाया नहीं जा सका।",
@@ -133,42 +235,49 @@
   },
   "cart": {
     "empty": "आपकी शॉपिंग कार्ट खाली है",
-    "emptyDescription": "Browse the agricultural marketplace and add produce directly from verified farmers.",
+    "emptyDescription": "बाजार का अवलोकन करें और सीधे किसानों से उत्पाद जोड़ें।",
     "browse": "बाज़ार देखें",
-    "eyebrow": "Checkout Bag",
+    "eyebrow": "चेकआउट बैग",
     "title": "शॉपिंग कार्ट",
-    "description": "Review your selected agricultural items before proceeding to payment.",
-    "itemsSubtotal": "Items Subtotal",
-    "shipping": "Estimated Shipping",
-    "freeDelivery": "Free Direct Delivery",
-    "totalAmount": "Total Amount",
+    "description": "भुगतान करने से पहले चयनित कृषि वस्तुओं की समीक्षा करें।",
+    "itemsSubtotal": "वस्तुओं का उप-योग",
+    "shipping": "अनुमानित शिपिंग",
+    "freeDelivery": "मुफ्त सीधी डिलीवरी",
+    "totalAmount": "कुल राशि",
     "proceed": "चेकआउट पर जाएं",
-    "updateFailed": "Failed to update.",
+    "updateFailed": "अद्यतन करने में विफल।",
     "removed": "आइटम हटा दिया गया।",
-    "removeFailed": "Failed to remove."
+    "removeFailed": "हटाने में विफल।"
   },
   "settings": {
     "preferences": "प्राथमिकताएं",
     "title": "खाता सेटिंग्स",
-    "description": "Manage your system preferences, security, and notification channels.",
-    "notificationPreferences": "सूचना प्राथमिकताएं",
-    "notificationDescription": "Configure how AgriBazaar alerts you of orders and stock updates.",
-    "emailOrders": "Email Order Notifications",
-    "emailOrdersDescription": "Receive emails for new orders and status updates.",
-    "sms": "SMS Notifications",
-    "smsDescription": "Get instant SMS alerts on dispatch and delivery.",
-    "priceAlerts": "Market Price Trend Alerts",
-    "priceAlertsDescription": "Daily summaries of top agricultural market price shifts.",
+    "description": "अपनी सिस्टम प्राथमिकताओं, सुरक्षा और अधिसूचना चैनलों का प्रबंधन करें।",
+    "notificationPreferences": "अधिसूचना प्राथमिकताएं",
+    "notificationDescription": "कॉन्फ़िगर करें कि एग्रीबाज़ार आपको ऑर्डर और स्टॉक अपडेट की सूचना कैसे देता है।",
+    "emailOrders": "ईमेल ऑर्डर सूचनाएं",
+    "emailOrdersDescription": "नए ऑर्डर और स्थिति अपडेट के लिए ईमेल प्राप्त करें।",
+    "sms": "एसएमएस सूचनाएं",
+    "smsDescription": "डिस्पैच और डिलीवरी पर त्वरित एसएमएस अलर्ट प्राप्त करें।",
+    "priceAlerts": "बाजार मूल्य प्रवृत्ति अलर्ट",
+    "priceAlertsDescription": "शीर्ष कृषि बाजार मूल्य में बदलाव का दैनिक सारांश।",
     "security": "सुरक्षा और पहुंच",
-    "securityDescription": "Protect your account with extra security layers.",
-    "twoFactor": "Two-Factor Authentication (2FA)",
-    "twoFactorDescription": "Require OTP verification on login.",
+    "securityDescription": "अतिरिक्त सुरक्षा परतों के साथ अपने खाते की रक्षा करें।",
+    "twoFactor": "दो-कारक प्रमाणीकरण (2FA)",
+    "twoFactorDescription": "लॉगिन पर ओटीपी सत्यापन की आवश्यकता।",
     "save": "प्राथमिकताएं सहेजें",
-    "saved": "Account preferences updated successfully!",
-    "help": "मदद चाहिए?",
-    "helpDescription": "If you need assistance updating your KYC details or farmer verification, contact platform administration.",
-    "platform": "AgriBazaar Platform",
-    "architecture": "Direct Agriculture Commerce Architecture"
+    "saved": "खाता प्राथमिकताएं सफलतापूर्वक अद्यतन की गईं!",
+    "help": "क्या आपको मदद चाहिए?",
+    "helpDescription": "यदि आपको अपने केवाईसी विवरण या किसान सत्यापन को अद्यतन करने में सहायता की आवश्यकता है, तो प्लेटफ़ॉर्म प्रशासन से संपर्क करें।",
+    "platform": "एग्रीबाज़ार प्लेटफॉर्म",
+    "architecture": "प्रत्यक्ष कृषि वाणिज्य वास्तुकला",
+    "systemVersionV104production": "सिस्टम संस्करण: v1.0.4-production",
+    "marketPriceTrendAlerts": "बाजार मूल्य प्रवृत्ति अलर्ट",
+    "marketPriceTrendAlertsDescription": "शीर्ष कृषि बाजार मूल्य में बदलाव का दैनिक सारांश।",
+    "securityAndAccess": "सुरक्षा और पहुंच",
+    "securityAndAccessDescription": "अतिरिक्त सुरक्षा परतों के साथ अपने खाते की रक्षा करें।",
+    "agribazaarPlatform": "एग्रीबाज़ार प्लेटफॉर्म",
+    "needHelpDescription": "यदि आपको अपने केवाईसी विवरण या किसान सत्यापन को अद्यतन करने में सहायता की आवश्यकता है, तो प्लेटफ़ॉर्म प्रशासन से संपर्क करें।"
   },
   "blockchain": {
     "checking": "ब्लॉकचेन ऑडिट जाँचा जा रहा है...",
@@ -176,8 +285,60 @@
     "audit": "ऑडिट",
     "network": "नेटवर्क",
     "transaction": "लेनदेन",
-    "verifiedOn": "Verified on",
-    "testnet": "Kava Testnet"
+    "verifiedOn": "सत्यापित किया गया",
+    "testnet": "कावा टेस्टनेट",
+    "blockchainNetwork": "ब्लॉकचेन नेटवर्क",
+    "smartContractAddress": "स्मार्ट अनुबंध पता",
+    "onchainPaymentAudits": "ऑन-चेन भुगतान ऑडिट",
+    "onchainSettlementAudits": "ऑन-चेन निपटान ऑडिट",
+    "smartContractEventVerifier": "स्मार्ट अनुबंध इवेंट सत्यापनकर्ता",
+    "itemsPurchased": "खरीदी गई वस्तुएं",
+    "totalAmount": "कुल राशि:",
+    "paymentIdHash": "भुगतान आईडी हैश:",
+    "orderIdHash": "ऑर्डर आईडी हैश:",
+    "noSellerSplitHashesRecordedFor": "इस घटना के लिए कोई विक्रेता विभाजन हैश दर्ज नहीं किया गया है।",
+    "amountInPaise": "राशि (पैसों में):",
+    "recordedAt": "दर्ज की गई तिथि",
+    "lookupUserIdentityByAccountHash": "खाता हैश द्वारा उपयोगकर्ता पहचान खोजें",
+    "queryingKavaEvmTestnetSmartContract": "कावा EVM टेस्टनेट स्मार्ट कॉन्ट्रैक्ट से पूछताछ की जा रही है...",
+    "noPaymentEventsRecordedOnchainYet": "ऑन-चेन पर अभी तक कोई भुगतान इवेंट दर्ज नहीं किया गया है",
+    "newPaymentsProcessedThroughRazorpayWill": "रेजरपे के माध्यम से संसाधित नए भुगतानों का यहां स्वतः ऑडिट किया जाएगा।",
+    "eventIdHash": "इवेंट आईडी हैश",
+    "sellerSplitHashes": "विक्रेता विभाजन हैश",
+    "onchainStatus": "ऑन-चेन स्थिति",
+    "noSettlementEventsRecordedOnchainYet": "ऑन-चेन पर अभी तक कोई सैटलमेंट इवेंट दर्ज नहीं किया गया है",
+    "farmerMarketplaceSettlementsWillAppearHere": "दर्ज होने पर किसान सैटलमेंट यहां दिखाई देंगे।",
+    "settlementHash": "सैटलमेंट हैश",
+    "sellerIdentity": "विक्रेता पहचान",
+    "sellerPayoutAmount": "विक्रेता भुगतान राशि",
+    "status": "स्थिति",
+    "accountIdentityLookup": "खाता पहचान खोज",
+    "verifiedDatabaseRecordMatchingOnchainCryptographic": "ऑन-चेन हैश से मेल खाने वाला सत्यापित डेटाबेस रिकॉर्ड।",
+    "searchingRegisteredUsersAndFarmers": "पंजीकृत उपयोगकर्ताओं और किसानों की खोज की जा रही है...",
+    "onchainHash": "ऑन-चेन हैश:",
+    "accountType": "खाता प्रकार:",
+    "fullName": "पूरा नाम:",
+    "farmBusiness": "फार्म / व्यवसाय:",
+    "email": "ईमेल:",
+    "mobile": "मोबाइल:",
+    "verificationStatus": "सत्यापन स्थिति:",
+    "buyerType": "खरीदार प्रकार:",
+    "noAccountFound": "No Account Found",
+    "directSmartContractRpcQuery": "डायरेक्ट स्मार्ट कॉन्ट्रैक्ट RPC क्वेरी",
+    "blockchainAuditTrail": "ब्लॉकचेन ऑडिट ट्रेल",
+    "immutableAuditRecordsDesc": "कावा EVM टेस्टनेट स्मार्ट कॉन्ट्रैक्ट से सीधे प्राप्त अपरिवर्तनीय ऑडिट रिकॉर्ड।",
+    "fetchingOnChainData": "ऑन-चेन डेटा प्राप्त किया जा रहा है...",
+    "fetchOnChainData": "ऑन-चेन डेटा प्राप्त करें",
+    "buyerSellerHashLookup": "खरीदार और विक्रेता हैश खोज",
+    "lookupIdentity": "पहचान खोजें",
+    "paymentAuditsOnChain": "ऑन-चेन भुगतान ऑडिट",
+    "settlementAuditsOnChain": "ऑन-चेन सैटलमेंट ऑडिट",
+    "buyerHashIdentity": "खरीदार हैश और पहचान",
+    "amountRupees": "राशि (₹)",
+    "verifyEventIdHashOnChain": "ऑन-चेन इवेंट आईडी हैश सत्यापित करें",
+    "placeholderEventHash": "इवेंट आईडी हैश पेस्ट करें (उदा. 0xd8273e6f...)",
+    "pasteHashSubtitle": "किसी भी खरीदार हैश या विक्रेता हैश (0x...) को पेस्ट करें और उनकी प्रोफ़ाइल और सत्यापन स्थिति देखें।",
+    "placeholderAccountHash": "खरीदार हैश या विक्रेता हैश पेस्ट करें (0x...)"
   },
   "ui": {
     "loadingContent": "सामग्री लोड हो रही है...",
@@ -196,24 +357,24 @@
       "विश्वसनीय डिलीवरी"
     ],
     "trustDescription": [
-      "पहचान सत्यापित कृषि विक्रेता।",
-      "खेत से डिलीवरी तक वास्तविक समय में ट्रैकिंग।",
-      "UPI, नेट बैंकिंग और कार्ड के लिए सुरक्षित भुगतान गेटवे।",
-      "ताज़ी उपज के लिए समर्पित कृषि परिवहन।"
+      "प्रत्यक्ष पहचान सत्यापन के साथ केवाईसी-परीक्षित कृषि विक्रेता।",
+      "खेत से प्रेषण से लेकर डिलीवरी तक एंड-टू-एंड रियल-टाइम ट्रैकिंग।",
+      "यूपीआई, नेट बैंकिंग और कार्ड का समर्थन करने वाला एन्क्रिप्टेड पेमेंट गेटवे।",
+      "ताज़ा उपज संरक्षण के लिए समर्पित कृषि परिवहन रसद।"
     ],
     "farmerSteps": [
-      "KYC दस्तावेज़ों के साथ अपने खेत या FPO प्रोफ़ाइल का पंजीकरण करें",
-      "24 घंटे में प्लेटफ़ॉर्म प्रशासन से सत्यापन पाएं",
-      "मात्रा और मूल्य के साथ उपज की सूची बनाएं",
-      "खरीदारों के खरीद ऑर्डर सीधे प्रबंधित करें",
-      "तत्काल भुगतान ट्रैक करें और प्रत्यक्ष बिक्री बढ़ाएं"
+      "केवाईसी दस्तावेजों के साथ अपने फार्म या एफपीओ प्रोफाइल को पंजीकृत करें",
+      "24 घंटे के भीतर प्लेटफॉर्म प्रशासन द्वारा सत्यापित हों",
+      "कस्टम मात्रा और मूल्य निर्धारण के साथ उपज की सूची बनाएं",
+      "खरीदारों से सीधे खरीद ऑर्डर प्राप्त करें और प्रबंधित करें",
+      "तत्काल भुगतानों को ट्रैक करें और अपनी प्रत्यक्ष कृषि बिक्री बढ़ाएं"
     ],
     "buyerSteps": [
-      "व्यक्तिगत या व्यावसायिक खरीद के लिए खाता बनाएं",
+      "व्यक्तिगत या व्यावसायिक खरीद के लिए एक खरीदार खाता बनाएं",
       "फसल, क्षेत्र और मूल्य के अनुसार सत्यापित उपज खोजें",
-      "कार्ट में जोड़ें और पारदर्शी लागत देखें",
-      "अपनी पसंद के तरीके से सुरक्षित भुगतान करें",
-      "लाइव शिपमेंट और खेत से डिलीवरी ट्रैक करें"
+      "कार्ट में आइटम जोड़ें और पारदर्शी लागतों की समीक्षा करें",
+      "अपनी पसंदीदा विधि का उपयोग करके सुरक्षित भुगतान करें",
+      "लाइव शिपमेंट और प्रत्यक्ष फार्म डिलीवरी स्थिति को ट्रैक करें"
     ],
     "platformLabels": [
       "पंजीकृत किसान",
@@ -227,11 +388,11 @@
     "farmers": "किसानों और FPO के लिए",
     "buyers": "व्यक्तिगत और थोक खरीदारों के लिए",
     "glance": "प्लेटफ़ॉर्म एक नज़र में",
-    "glanceDescription": "डिजिटल ढांचे से कृषि व्यापार को सशक्त बनाना",
+    "glanceDescription": "डिजिटल बुनियादी ढांचे के साथ कृषि वाणिज्य को सशक्त बनाना",
     "testimonials": "हमारे उपयोगकर्ता क्या कहते हैं",
-    "testimonialsDescription": "भारत भर के किसानों, व्यावसायिक खरीदारों और FPO का भरोसा",
+    "testimonialsDescription": "Trusted by farmers, commercial buyers and FPOs across India",
     "finalTitle": "AgriBazaar पर व्यापार के लिए तैयार हैं?",
-    "finalDescription": "प्रत्यक्ष कृषि व्यापार को बदल रहे सत्यापित किसानों, FPO और खरीदारों से जुड़ें।",
+    "finalDescription": "Join verified farmers, FPOs and buyers transforming direct agricultural commerce across India.",
     "createAccount": "निःशुल्क खाता बनाएं",
     "browse": "बाज़ार देखें",
     "heroLabels": [
@@ -241,13 +402,13 @@
     ],
     "marketplace": {
       "exchange": "Direct crop exchange",
-      "description": "Source quality farm produce directly from verified Indian farmers and FPOs with zero middleman markup.",
-      "showing": "Showing {{count}} agricultural listings",
+      "description": "सत्यापित भारतीय किसानों और FPO से शून्य बिचौलिए के सीधे गुणवत्तापूर्ण कृषि उत्पाद प्राप्त करें।",
+      "showing": "{{count}} कृषि लिस्टिंग दिखाई जा रही हैं",
       "newest": "Newest first",
       "lowPrice": "Price: low to high",
       "highPrice": "Price: high to low",
       "popular": "Most popular",
-      "available": "{{count}} {{unit}} available"
+      "available": "स्टॉक में {{count}} {{unit}} उपलब्ध है"
     }
   },
   "landing": {
@@ -256,12 +417,2229 @@
     "heroHighlight": "बेहतर बाज़ारों से।",
     "heroDescription": "सीधे डिजिटल बाज़ार के माध्यम से भारतीय कृषि को सशक्त बनाएं। सत्यापित गुणवत्ता, बिना कमीशन और पारदर्शी डिलीवरी ट्रैकिंग के साथ ताज़ी उपज खरीदें और बेचें।",
     "exploreMarketplace": "बाज़ार देखें",
-    "joinFarmer": "किसान / FPO के रूप में जुड़ें",
+    "joinFarmer": "किसान / एफपीओ के रूप में जुड़ें",
     "heroImageAlt": "खेत में भारतीय किसान",
     "verifiedFresh": "सत्यापित ताज़ी उपज",
     "directSourcing": "खेत से सीधी खरीद",
     "zeroCommission": "0% कमीशन",
     "farmToMarket": "खेत से बाज़ार तक",
     "fasterFairer": "तेज़ और निष्पक्ष"
+  },
+  "farmerVerificationWizard": {
+    "fpo": "fpo",
+    "farmer": "FARMER प्रोटोकॉल",
+    "failedToLoadVerificationStatus": "Failed to load verification status. प्रोटोकॉल",
+    "pleaseEnterAValid12digitAadhaar": "Please enter a valid 12-digit Aadhaar number. प्रोटोकॉल",
+    "otpSentToYourAadhaarMobile": "OTP sent to your Aadhaar mobile number! प्रोटोकॉल",
+    "pleaseEnter6digitOtp": "Please enter 6-digit OTP. प्रोटोकॉल",
+    "verified_identityVerifiedViaUidaiSandbox": "✓ Identity Verified via UIDAI Sandbox! प्रोटोकॉल",
+    "pleaseEnterFarmerIdAndDistrict": "Please enter Farmer ID and District. प्रोटोकॉल",
+    "verified_farmerRegistryVerified": "✓ Farmer Registry Verified! प्रोटोकॉल",
+    "pleaseFillAllRequiredLandRecord": "Please fill all required land record details. प्रोटोकॉल",
+    "verified_landRecordVerified": "✓ Land Record Verified! प्रोटोकॉल",
+    "pleaseFillAccountHolderAccountNumber": "Please fill Account Holder, Account Number, and IFSC. प्रोटोकॉल",
+    "accountNumbersDoNotMatch": "Account numbers do not match. प्रोटोकॉल",
+    "verified_bankAccountVerified": "✓ Bank Account Verified! प्रोटोकॉल",
+    "pleaseEnterAValid10characterPan": "Please enter a valid 10-character PAN number (e.g. ABCDE1234F). प्रोटोकॉल",
+    "verified_panVerifiedSuccessfully": "✓ PAN Verified successfully! प्रोटोकॉल",
+    "pmkisanSkipped": "PM-KISAN skipped. प्रोटोकॉल",
+    "verified_pmkisanVerified": "✓ PM-KISAN Verified! प्रोटोकॉल",
+    "pleaseFillRequiredOrganizationDetails": "Please fill required Organization details. प्रोटोकॉल",
+    "verified_organizationIdentityVerified": "✓ Organization Identity Verified! प्रोटोकॉल",
+    "pleaseEnterAValid10characterOrganization": "Please enter a valid 10-character Organization PAN. प्रोटोकॉल",
+    "verified_organizationPanVerified": "✓ Organization PAN Verified! प्रोटोकॉल",
+    "gstinMarkedAsNotApplicable": "GSTIN marked as Not Applicable. प्रोटोकॉल",
+    "verified_gstinVerified": "✓ GSTIN Verified! प्रोटोकॉल",
+    "pleaseEnterAValid10digitMobile": "Please enter a valid 10-digit mobile number. प्रोटोकॉल",
+    "otpSentToRepresentativeMobile": "OTP sent to Representative mobile! प्रोटोकॉल",
+    "pleaseEnterRepresentativeNameAndDesignation": "Please enter Representative Name and Designation. प्रोटोकॉल",
+    "verified_authorizedRepresentativeVerified": "✓ Authorized Representative Verified! प्रोटोकॉल",
+    "verified_organizationBankAccountVerified": "✓ Organization Bank Account Verified! प्रोटोकॉल",
+    "pleaseUploadAtLeastRegistrationCertificate": "Please upload at least Registration Certificate, PAN document, and Bank proof. प्रोटोकॉल",
+    "verified_organizationDocumentsVerified": "✓ Organization Documents Verified! प्रोटोकॉल",
+    "failedToSkipStep": "Failed to skip step. प्रोटोकॉल",
+    "progressSavedReturningToDashboard": "Progress saved. Returning to dashboard. प्रोटोकॉल",
+    "loadingConfigportaltitle": "Loading {config.portalTitle}... प्रोटोकॉल",
+    "verificationSummary": "Verification Summary प्रोटोकॉल",
+    "reviewYourOverallVerificationStatusAnd": "Review your overall verification status and finalized badge audit. प्रोटोकॉल",
+    "verified": "Verified प्रोटोकॉल",
+    "pending": "PENDING प्रोटोकॉल",
+    "officialIdentityComplianceGateway": "Official Identity & Compliance Gateway प्रोटोकॉल",
+    "fpoFpc": "FPO / FPC",
+    "saveExitToDashboard": "Save & Exit to Dashboard प्रोटोकॉल",
+    "textslate900": "text-slate-900 प्रोटोकॉल",
+    "textslate700": "text-slate-700 प्रोटोकॉल",
+    "required": "(Required) प्रोटोकॉल",
+    "optional": "(Optional) प्रोटोकॉल",
+    "mandatoryVerification": "MANDATORY VERIFICATION प्रोटोकॉल",
+    "optionalVerification": "OPTIONAL VERIFICATION प्रोटोकॉल",
+    "aadhaarAuthenticationProtocol": "Aadhaar Authentication प्रोटोकॉल",
+    "enterYour12digitAadhaarNumberTo": "Enter your 12-digit Aadhaar number to receive a One-Time Password (OTP) via UIDAI authorized gateway. प्रोटोकॉल",
+    "enter12digitAadhaarNumber": "Enter 12-digit Aadhaar number प्रोटोकॉल",
+    "sendAadhaarOtp": "Send Aadhaar OTP प्रोटोकॉल",
+    "enter6digitOtp_req": "Enter 6-Digit OTP * प्रोटोकॉल",
+    "text_mnk1z": "──────",
+    "verifyContinue": "Verify & Continue प्रोटोकॉल",
+    "saveExit": "Save & Exit प्रोटोकॉल",
+    "skipStep": "Skip Step प्रोटोकॉल",
+    "nextStep": "Next Step प्रोटोकॉल",
+    "farmerDatabaseProtocol": "Farmer Database प्रोटोकॉल",
+    "enterYourOfficialFarmerAgristackId": "Enter your official Farmer / Agristack ID along with state and district to verify active agricultural registry status. प्रोटोकॉल",
+    "farmerId": "FARMER ID प्रोटोकॉल",
+    "location": "LOCATION प्रोटोकॉल",
+    "farmerIdAgristackId_req": "Farmer ID / Agristack ID * प्रोटोकॉल",
+    "egMhfarm20248849": "e.g. MH-FARM-2024-8849 प्रोटोकॉल",
+    "state_req": "State * प्रोटोकॉल",
+    "district_req": "District * प्रोटोकॉल",
+    "egNashik": "e.g. Nashik प्रोटोकॉल",
+    "back": "Back प्रोटोकॉल",
+    "landHoldingProtocol": "Land Holding प्रोटोकॉल",
+    "enterStateDistrictTalukVillagePatta": "Enter state, district, taluk, village, Patta / 7-12 number, survey number, and total acreage. प्रोटोकॉल",
+    "patta712No": "PATTA / 7-12 NO. प्रोटोकॉल",
+    "surveyNo": "SURVEY NO. प्रोटोकॉल",
+    "extent": "EXTENT प्रोटोकॉल",
+    "taluk_req": "Taluk * प्रोटोकॉल",
+    "egNiphad": "e.g. Niphad प्रोटोकॉल",
+    "village_req": "Village * प्रोटोकॉल",
+    "egLasalgaon": "e.g. Lasalgaon प्रोटोकॉल",
+    "pattaKhataNo_req": "Patta / Khata No. * प्रोटोकॉल",
+    "eg4829": "e.g. 4829",
+    "surveyNo_req": "Survey No. * प्रोटोकॉल",
+    "eg142b": "e.g. 142/B प्रोटोकॉल",
+    "landExtentAcres_req": "Land Extent (Acres) * प्रोटोकॉल",
+    "eg35Acres": "e.g. 3.5 Acres प्रोटोकॉल",
+    "landType": "Land Type प्रोटोकॉल",
+    "irrigatedWet": "Irrigated / Wet प्रोटोकॉल",
+    "dryRainfed": "Dry / Rainfed प्रोटोकॉल",
+    "horticulture": "Horticulture प्रोटोकॉल",
+    "uploadPattaLandRecordDocument_req": "Upload Patta / Land Record Document * प्रोटोकॉल",
+    "uploadPdfJpgOrPngCopy": "Upload PDF, JPG, or PNG copy of 7/12, Patta, or Chitta (Max 5MB) प्रोटोकॉल",
+    "bankSettlementProtocol": "Bank Settlement प्रोटोकॉल",
+    "linkYourActiveBankAccountFor": "Link your active bank account for direct payments and automated sales settlements. प्रोटोकॉल",
+    "accountHolder": "ACCOUNT HOLDER प्रोटोकॉल",
+    "bankName": "BANK NAME प्रोटोकॉल",
+    "accountNo": "ACCOUNT NO. प्रोटोकॉल",
+    "accountHolderName_req": "Account Holder Name * प्रोटोकॉल",
+    "asPerBankPassbook": "As per bank passbook प्रोटोकॉल",
+    "bankName_req": "Bank Name * प्रोटोकॉल",
+    "branchName": "Branch Name प्रोटोकॉल",
+    "egMainBranch": "e.g. Main Branch प्रोटोकॉल",
+    "accountNumber_req": "Account Number * प्रोटोकॉल",
+    "enterAccountNumber": "Enter account number प्रोटोकॉल",
+    "confirmAccountNumber_req": "Confirm Account Number * प्रोटोकॉल",
+    "reenterAccountNumber": "Re-enter account number प्रोटोकॉल",
+    "ifscCode_req": "IFSC Code * प्रोटोकॉल",
+    "egSbin0001234": "e.g. SBIN0001234 प्रोटोकॉल",
+    "uploadBankPassbookCancelledCheque_req": "Upload Bank Passbook / Cancelled Cheque * प्रोटोकॉल",
+    "uploadFrontPageOfPassbookOr": "Upload front page of passbook or cancelled cheque (Max 5MB) प्रोटोकॉल",
+    "panVerificationProtocol": "PAN Verification प्रोटोकॉल",
+    "enterYour10characterPermanentAccountNumber": "Enter your 10-character Permanent Account Number for statutory tax compliance & payouts. प्रोटोकॉल",
+    "panNumber": "PAN NUMBER प्रोटोकॉल",
+    "matchStatus": "MATCH STATUS प्रोटोकॉल",
+    "panNumber_req": "PAN Number * प्रोटोकॉल",
+    "egAbcde1234f": "e.g. ABCDE1234F प्रोटोकॉल",
+    "nameAsPerPanOptional": "Name as per PAN (Optional) प्रोटोकॉल",
+    "fullNameAsPrintedOnPan": "Full name as printed on PAN card प्रोटोकॉल",
+    "uploadPanCardCopy_req": "Upload PAN Card Copy * प्रोटोकॉल",
+    "clearFrontScanOrPhotoOf": "Clear front scan or photo of your PAN card (Max 5MB) प्रोटोकॉल",
+    "pmkisanSchemeProtocol": "PM-KISAN Scheme प्रोटोकॉल",
+    "optionallyLinkPmkisanBeneficiaryReferenceFor": "Optionally link PM-KISAN Beneficiary Reference for added seller credibility on the marketplace. प्रोटोकॉल",
+    "pmkisanRegistrationBeneficiaryReference": "PM-KISAN Registration / Beneficiary Reference प्रोटोकॉल",
+    "egPmk987654321": "e.g. PMK-987654321 प्रोटोकॉल",
+    "verifyPmkisanContinue": "Verify PM-KISAN & Continue प्रोटोकॉल",
+    "viewSummary": "View Summary प्रोटोकॉल",
+    "organizationRegistrationProtocol": "Organization Registration प्रोटोकॉल",
+    "verifyOfficialFpoFpcCooperativeEntity": "Verify official FPO / FPC / Cooperative entity registration details. प्रोटोकॉल",
+    "legalName": "LEGAL NAME प्रोटोकॉल",
+    "registrationNo": "REGISTRATION NO. प्रोटोकॉल",
+    "organizationLegalName_req": "Organization Legal Name * प्रोटोकॉल",
+    "egSahyadriFarmersProducerCoLtd": "e.g. Sahyadri Farmers Producer Co. Ltd. प्रोटोकॉल",
+    "organizationType_req": "Organization Type * प्रोटोकॉल",
+    "fpoFpcProducerCompany": "FPO / FPC (Producer Company) प्रोटोकॉल",
+    "agriculturalCooperativeSociety": "Agricultural Cooperative Society प्रोटोकॉल",
+    "farmerShgPartnership": "Farmer SHG / Partnership प्रोटोकॉल",
+    "registrationCinNumber_req": "Registration / CIN Number * प्रोटोकॉल",
+    "egU01111mh2020ptc123456": "e.g. U01111MH2020PTC123456 प्रोटोकॉल",
+    "pincode_req": "Pincode * प्रोटोकॉल",
+    "eg422001": "e.g. 422001",
+    "registeredOfficeAddress_req": "Registered Office Address * प्रोटोकॉल",
+    "fullAddressOfOrganizationOffice": "Full address of organization office प्रोटोकॉल",
+    "organizationPanProtocol": "Organization PAN प्रोटोकॉल",
+    "enterPermanentAccountNumberIssuedIn": "Enter Permanent Account Number issued in the legal name of the organization. प्रोटोकॉल",
+    "orgPan": "ORG PAN प्रोटोकॉल",
+    "organizationPan_req": "Organization PAN * प्रोटोकॉल",
+    "egAaacf1234g": "e.g. AAACF1234G प्रोटोकॉल",
+    "gstinRegistrationProtocol": "GSTIN Registration प्रोटोकॉल",
+    "provide15characterGstinRegistrationIfRegistered": "Provide 15-character GSTIN registration if registered, or mark GSTIN Not Applicable. प्रोटोकॉल",
+    "notApplicable": "Not Applicable प्रोटोकॉल",
+    "eg27aaacf1234g1z5": "e.g. 27AAACF1234G1Z5 प्रोटोकॉल",
+    "verifyGstin": "Verify GSTIN प्रोटोकॉल",
+    "authorizedOfficialProtocol": "Authorized Official प्रोटोकॉल",
+    "verifyIdentityAndMobileAuthorizationOf": "Verify identity and mobile authorization of the official representing the organization. प्रोटोकॉल",
+    "representativeName_req": "Representative Name * प्रोटोकॉल",
+    "egRameshKumar": "e.g. Ramesh Kumar प्रोटोकॉल",
+    "designation_req": "Designation * प्रोटोकॉल",
+    "egCeoManagingDirector": "e.g. CEO / Managing Director प्रोटोकॉल",
+    "representativeMobileNumber_req": "Representative Mobile Number * प्रोटोकॉल",
+    "enter10digitMobileNumber": "Enter 10-digit mobile number प्रोटोकॉल",
+    "sendRepresentativeOtp": "Send Representative OTP प्रोटोकॉल",
+    "verifyRepresentative": "Verify Representative प्रोटोकॉल",
+    "organizationSettlementAccountProtocol": "Organization Settlement Account प्रोटोकॉल",
+    "linkPrimarySettlementBankAccountOf": "Link primary settlement bank account of the FPO / FPC for marketplace direct credits. प्रोटोकॉल",
+    "exactLegalNameAsPerBank": "Exact legal name as per bank statement प्रोटोकॉल",
+    "egCommercialBranch": "e.g. Commercial Branch प्रोटोकॉल",
+    "enterBankAccountNumber": "Enter bank account number प्रोटोकॉल",
+    "organizationDocumentDossier": "Organization Document Dossier प्रोटोकॉल",
+    "uploadMandatoryRegistrationTaxBankProof": "Upload mandatory registration, tax, bank proof, and authorization files. प्रोटोकॉल",
+    "1OrganizationRegistrationCertificate_req": "1. Organization Registration Certificate * प्रोटोकॉल",
+    "2OrganizationPanCardCopy_req": "2. Organization PAN Card Copy * प्रोटोकॉल",
+    "3BankPassbookCancelledCheque_req": "3. Bank Passbook / Cancelled Cheque * प्रोटोकॉल",
+    "4AuthorizationLetterBoardResolution": "4. Authorization Letter / Board Resolution प्रोटोकॉल",
+    "5GstCertificateIfApplicable": "5. GST Certificate (If Applicable) प्रोटोकॉल",
+    "submitDocumentsProceed": "Submit Documents & Proceed प्रोटोकॉल",
+    "backToReview": "Back to Review प्रोटोकॉल",
+    "returnToDashboard": "Return to Dashboard प्रोटोकॉल",
+    "yourInformationIsSecurelyProcessedSensitive": "Your information is securely processed. Sensitive identity & financial information will be masked where applicable. प्रोटोकॉल"
+  },
+  "buyerVerificationWizard": {
+    "couldNotLoadVerificationStatus": "सत्यापन स्थिति लोड नहीं की जा सकी",
+    "verified": "सत्यापित",
+    "pending": "लंबित",
+    "pleaseEnterAValid10digitMobile": "कृपया 10 अंकों का वैध मोबाइल नंबर दर्ज करें",
+    "otpSentToYourMobileNumber": "आपके मोबाइल नंबर पर OTP भेजा गया",
+    "pleaseEnter6digitOtpCode": "कृपया 6 अंकों का OTP कोड दर्ज करें",
+    "mobileNumberVerifiedSuccessfully": "मोबाइल नंबर सफलतापूर्वक सत्यापित",
+    "consentIsRequiredToProceedWith": "पहचान सत्यापन के साथ आगे बढ़ने के लिए सहमति आवश्यक है",
+    "otpSentToYourAadhaarlinkedMobile": "आपके आधार से जुड़े मोबाइल पर OTP भेजा गया",
+    "pleaseEnter6digitOtp": "कृपया 6 अंकों का OTP दर्ज करें",
+    "identityVerifiedViaAuthorizedGateway": "अधिकृत गेटवे के माध्यम से पहचान सत्यापित",
+    "pleaseFillAllRequiredAddressFields": "कृपया सभी आवश्यक पता फ़ील्ड भरें",
+    "addressDetailsVerified": "पता विवरण सत्यापित",
+    "pleaseFillAllRequiredBusinessIdentity": "कृपया सभी आवश्यक व्यवसाय पहचान फ़ील्ड भरें",
+    "businessIdentityVerified": "व्यावसायिक पहचान सत्यापित",
+    "pleaseEnterAValid10characterPan": "Please enter a valid 10-character PAN number (e.g. ABCDE1234F) प्रोटोकॉल",
+    "businessPanVerifiedSuccessfully": "व्यावसायिक पैन सफलतापूर्वक सत्यापित",
+    "gstinMarkedAsNotApplicable": "GSTIN लागू नहीं के रूप में चिह्नित किया गया",
+    "failedToUpdateGstinStatus": "GSTIN स्थिति अपडेट करने में विफल",
+    "pleaseEnterAValid15characterGstin": "कृपया वैध 15 अक्षरों का GSTIN नंबर दर्ज करें",
+    "gstinVerifiedSuccessfully": "GSTIN सफलतापूर्वक सत्यापित",
+    "pleaseEnterRegistrationNumberIdentifier": "कृपया पंजीकरण संख्या / पहचानकर्ता दर्ज करें",
+    "pleaseEnterRepresentativeNameAndDesignation": "कृपया प्रतिनिधि का नाम और पद दर्ज करें",
+    "pleaseEnterValidMobileNumber": "कृपया वैध मोबाइल नंबर दर्ज करें",
+    "otpSentToRepresentativeMobile": "प्रतिनिधि के मोबाइल पर OTP भेजा गया",
+    "failedToSendOtp": "OTP भेजने में विफल",
+    "authorizedRepresentativeVerified": "अधिकृत प्रतिनिधि सत्यापित",
+    "pleaseFillAllRequiredBankAccount": "कृपया सभी आवश्यक बैंक खाता फ़ील्ड भरें",
+    "accountNumbersDoNotMatch": "खाता संख्या मेल नहीं खाती",
+    "bankAccountVerifiedSuccessfully": "बैंक खाता सफलतापूर्वक सत्यापित",
+    "udyamRegistrationMarkedAsNotApplicable": "उद्यम पंजीकरण लागू नहीं के रूप में चिह्नित किया गया",
+    "failedToUpdateUdyamStatus": "उद्यम स्थिति अपडेट करने में विफल",
+    "pleaseEnterValidUdyamRegistrationNumber": "कृपया वैध उद्यम पंजीकरण नंबर दर्ज करें",
+    "udyamRegistrationVerified": "उद्यम पंजीकरण सत्यापित",
+    "fssaiLicenseMarkedAsNotApplicable": "FSSAI / License marked as Not Applicable प्रोटोकॉल",
+    "failedToUpdateLicenseStatus": "लाइसेंस स्थिति अपडेट करने में विफल",
+    "pleaseEnterValidFssaiLicenseRegistration": "Please enter valid FSSAI / License registration number प्रोटोकॉल",
+    "fssaiLicenseVerified": "FSSAI / License verified प्रोटोकॉल",
+    "documentsRecordedAndVerified": "दस्तावेज रिकॉर्ड और सत्यापित किए गए",
+    "thisStepIsRequiredAndCannot": "यह चरण आवश्यक है और इसे छोड़ा नहीं जा सकता",
+    "step": "Step प्रोटोकॉल",
+    "failedToSkipStep": "Failed to skip step प्रोटोकॉल",
+    "verificationDetailsSaved": "सत्यापन विवरण सहेजे गए!",
+    "couldNotCompleteVerification": "सत्यापन पूरा नहीं किया जा सका",
+    "loadingOfficialVerificationPortal": "Loading Official Verification Portal... प्रोटोकॉल",
+    "officialIdentityComplianceGateway": "आधिकारिक पहचान एवं अनुपालन गेटवे",
+    "saveExitToDashboard": "सहेजें और डैशबोर्ड पर जाएं",
+    "textslate900": "text-slate-900 प्रोटोकॉल",
+    "textslate700": "text-slate-700 प्रोटोकॉल",
+    "required": "(Required) प्रोटोकॉल",
+    "optional": "(Optional) प्रोटोकॉल",
+    "stepCurrentstepOfStepslength": "Step {currentStep} of {steps.length} प्रोटोकॉल",
+    "mandatoryVerification": "अनिवार्य सत्यापन",
+    "optionalCheck": "वैकल्पिक जांच",
+    "mobileAuthenticationProtocol": "Mobile Authentication प्रोटोकॉल",
+    "enterYour10digitMobileNumberTo": "Enter your 10-digit mobile number to receive a secure One-Time Password (OTP). OTP will not be stored permanently. प्रोटोकॉल",
+    "enter10digitMobileNumber": "10 अंकों का मोबाइल नंबर दर्ज करें",
+    "enter6digitOtp": "6 अंकों का OTP दर्ज करें",
+    "otpSentTo91xxxxxmobileformmobilenumberslice4": "OTP sent to +91-XXXXX{mobileForm.mobileNumber.slice(-4)} प्रोटोकॉल",
+    "back": "Back प्रोटोकॉल",
+    "verifyOtpContinue": "OTP सत्यापित करें और आगे बढ़ें",
+    "getMobileOtp": "मोबाइल OTP प्राप्त करें",
+    "authorizedIdentityVerification": "Authorized Identity Verification प्रोटोकॉल",
+    "identityIsValidatedSecurelyViaAuthorized": "Identity is validated securely via authorized verification reference. Full raw identity document numbers are never permanently stored. प्रोटोकॉल",
+    "aadhaarbasedAuthorizedVerification": "Aadhaar-based Authorized Verification प्रोटोकॉल",
+    "panbasedIdentityVerification": "PAN-based Identity Verification प्रोटोकॉल",
+    "voterIdNationalPortalVerification": "Voter ID / National Portal Verification प्रोटोकॉल",
+    "verifyIdentityContinue": "पहचान सत्यापित करें और आगे बढ़ें",
+    "sendIdentityOtp": "पहचान OTP भेजें",
+    "flatHouseNoBuildingStreetArea": "फ्लैट, मकान नं., भवन, गली, क्षेत्र",
+    "districtName": "जिले का नाम",
+    "cityOrTown": "शहर या कस्बा",
+    "6digitPinCode": "6 अंकों का पिन कोड",
+    "verifyAddressContinue": "पता सत्यापित करें और आगे बढ़ें",
+    "asRegisteredInMcaGstPan": "As registered in MCA / GST / PAN प्रोटोकॉल",
+    "brandOrTradeNameOptional": "ब्रांड या व्यापार नाम (वैकल्पिक)",
+    "retailerAgribusinessDealer": "Retailer / Agribusiness Dealer प्रोटोकॉल",
+    "wholesalerTrader": "Wholesaler / Trader प्रोटोकॉल",
+    "foodProcessorMill": "Food Processor / Mill प्रोटोकॉल",
+    "exporterInstitutionalBuyer": "Exporter / Institutional Buyer प्रोटोकॉल",
+    "proprietorshipFirm": "Proprietorship Firm प्रोटोकॉल",
+    "partnershipFirm": "Partnership Firm प्रोटोकॉल",
+    "privateLimitedCompany": "Private Limited Company प्रोटोकॉल",
+    "registeredOfficeTradePremisesAddress": "पंजीकृत कार्यालय / व्यापार परिसर का पता",
+    "district": "जिला",
+    "6digitPincode": "6 अंकों का पिनकोड",
+    "verifyBusinessIdentity": "Verify Business Identity प्रोटोकॉल",
+    "incomeTaxDepartmentPanVerification": "Income Tax Department PAN Verification प्रोटोकॉल",
+    "enterThe10characterPermanentAccountNumber": "Enter the 10-character Permanent Account Number issued in the legal name of the entity. प्रोटोकॉल",
+    "egAbcde1234f": "e.g. ABCDE1234F प्रोटोकॉल",
+    "legalEntityName": "कानूनी संस्था का नाम",
+    "verifyBusinessPan": "Verify Business PAN प्रोटोकॉल",
+    "goodsAndServicesTaxIdentificationGstin": "Goods and Services Tax Identification (GSTIN) प्रोटोकॉल",
+    "gstinVerificationIsConditionalSmallTraders": "GSTIN verification is conditional. Small traders or exempt agricultural businesses can select \"GSTIN Not Applicable\". प्रोटोकॉल",
+    "eg27aaaaa0000a1z5": "e.g. 27AAAAA0000A1Z5 प्रोटोकॉल",
+    "gstinNotApplicable": "GSTIN Not Applicable प्रोटोकॉल",
+    "verifyGstinContinue": "GSTIN सत्यापित करें और आगे बढ़ें",
+    "privatePublicLimitedCompanyCin": "Private / Public Limited Company (CIN) प्रोटोकॉल",
+    "limitedLiabilityPartnershipLlpin": "Limited Liability Partnership (LLPIN) प्रोटोकॉल",
+    "registeredPartnershipFirm": "Registered Partnership Firm प्रोटोकॉल",
+    "registeredSoleProprietorship": "Registered Sole Proprietorship प्रोटोकॉल",
+    "cooperativeSocietyFarmerFederation": "Cooperative Society / Farmer Federation प्रोटोकॉल",
+    "egU01100mh2020ptc123456": "e.g. U01100MH2020PTC123456 प्रोटोकॉल",
+    "verifyRegistration": "Verify Registration प्रोटोकॉल",
+    "fullName": "पूरा नाम",
+    "ownerProprietor": "Owner / Proprietor प्रोटोकॉल",
+    "partner": "Partner प्रोटोकॉल",
+    "director": "Director प्रोटोकॉल",
+    "ceoManagingDirector": "CEO / Managing Director प्रोटोकॉल",
+    "managerProcurementOfficer": "Manager / Procurement Officer प्रोटोकॉल",
+    "authorizedSignatory": "Authorized Signatory प्रोटोकॉल",
+    "10digitMobile": "10 अंकों का मोबाइल",
+    "6digitOtp": "6 अंकों का OTP",
+    "iConfirmIPossessOfficialBoard": "I confirm I possess official board authorization / power of attorney to act as authorized buyer representative. प्रोटोकॉल",
+    "verifyRepresentativeOtp": "प्रतिनिधि OTP सत्यापित करें",
+    "sendRepresentativeOtp": "प्रतिनिधि OTP भेजें",
+    "nameAsPerBankPassbook": "बैंक पासबुक के अनुसार नाम",
+    "branchName": "शाखा का नाम",
+    "egSbin0001234": "e.g. SBIN0001234 प्रोटोकॉल",
+    "accountNumber": "खाता संख्या",
+    "reenterAccountNumber": "खाता संख्या पुन: दर्ज करें",
+    "verifyBankAccount": "Verify Bank Account प्रोटोकॉल",
+    "udyamMsmeRegistration": "Udyam MSME Registration प्रोटोकॉल",
+    "conditionalCheckEnterYourUdyamRegistration": "Conditional check. Enter your Udyam Registration Number if registered as MSME enterprise, or select \"Udyam Not Applicable\". प्रोटोकॉल",
+    "egUdyammh000000000": "e.g. UDYAM-MH-00-0000000 प्रोटोकॉल",
+    "udyamNotApplicable": "Udyam Not Applicable प्रोटोकॉल",
+    "verifyUdyamContinue": "उद्यम सत्यापित करें और आगे बढ़ें",
+    "fssaiCommodityTradeLicense": "FSSAI / Commodity Trade License प्रोटोकॉल",
+    "showThisOnlyWhereBuyerActivity": "Show this only where buyer activity requires food safety/commodity trading permits. Select \"Not Applicable\" if non-food operations. प्रोटोकॉल",
+    "fssaiRegistrationLicense": "FSSAI Registration / License प्रोटोकॉल",
+    "apmcMandiTradeLicense": "APMC / Mandi Trade License प्रोटोकॉल",
+    "agriculturalCommodityTradeLicense": "Agricultural Commodity Trade License प्रोटोकॉल",
+    "eg10020021000123": "e.g. 10020021000123",
+    "licenseNotApplicable": "License Not Applicable प्रोटोकॉल",
+    "verifyLicenseContinue": "लाइसेंस सत्यापित करें और आगे बढ़ें",
+    "documentUploadComplianceAudit": "दस्तावेज़ अपलोड और अनुपालन ऑडिट",
+    "uploadClearScanOrPdfCopies": "Upload clear scan or PDF copies of required business certificates. Max file size: 5MB. प्रोटोकॉल",
+    "businessRegistrationIncorporationCertificate": "व्यावसायिक पंजीकरण / निगमन प्रमाण पत्र",
+    "businessPanDocument": "व्यावसायिक पैन दस्तावेज़",
+    "bankAccountProofCancelledCheque": "बैंक खाता प्रमाण / रद्द किया गया चेक",
+    "boardOwnerAuthorizationDocument": "बोर्ड / मालिक प्राधिकरण दस्तावेज़",
+    "gstCertificateIfApplicable": "जीएसटी प्रमाण पत्र (यदि लागू हो)",
+    "udyamRegistrationCertificateIfApplicable": "उद्यम पंजीकरण प्रमाण पत्र (यदि लागू हो)",
+    "fssaiMandiLicenseDocumentIfApplicable": "FSSAI / Mandi License Document (if applicable) प्रोटोकॉल",
+    "requiredDocument": "आवश्यक दस्तावेज़",
+    "conditionalDocument": "सशर्त दस्तावेज़",
+    "verified_uploaded": "✓ अपलोड किया गया",
+    "uploadDocument": "दस्तावेज़ अपलोड करें",
+    "invalidDocumentFileFormatExtAllowed": "Invalid document file format (${ext}). Allowed formats: PDF, JPG, PNG, WEBP. प्रोटोकॉल",
+    "uploadedDoctitle": "Uploaded ${doc.title} प्रोटोकॉल",
+    "submitDocumentsProceed": "दस्तावेज जमा करें और आगे बढ़ें",
+    "backToReview": "Back to Review प्रोटोकॉल",
+    "finalizeBuyerVerification": "Finalize Buyer Verification प्रोटोकॉल",
+    "yourInformationIsSecurelyProcessedSensitive": "आपकी जानकारी सुरक्षित रूप से संसाधित की जाती है। संवेदनशील पहचान और वित्तीय जानकारी जहां लागू हो, छिपा दी जाएगी।"
+  },
+  "farmerVerification": {
+    "aadhaarTitle": "पहचान सत्यापन (आधार)",
+    "aadhaarDesc": "Authorized UIDAI identity verification प्रोटोकॉल",
+    "farmerRegistryTitle": "किसान आईडी / रजिस्ट्री",
+    "farmerRegistryDesc": "राज्य / राष्ट्रीय किसान एग्रीस्टैक डेटाबेस रिकॉर्ड",
+    "landRecordTitle": "भूमि रिकॉर्ड / पट्टा",
+    "landRecordDesc": "कृषि भूमि जोत या खेती रिकॉर्ड",
+    "bankAccountTitle": "बैंक खाता सत्यापन",
+    "bankAccountDesc": "प्रत्यक्ष भुगतान के लिए निपटान बैंक खाता",
+    "panTitle": "पैन कार्ड सत्यापन",
+    "panDesc": "पहचान और भुगतान के लिए स्थायी खाता संख्या",
+    "pmKisanTitle": "PM-KISAN सत्यापन (वैकल्पिक)",
+    "pmKisanDesc": "PM-KISAN लाभार्थी पंजीकरण संदर्भ",
+    "orgIdentityTitle": "अपने संगठन को सत्यापित करें",
+    "orgIdentityDesc": "कानूनी संगठन पंजीकरण, सीआईएन और राज्य का पता",
+    "orgPanTitle": "संगठन पैन सत्यापित करें",
+    "orgPanDesc": "कानूनी संगठन के नाम पर जारी स्थायी खाता संख्या",
+    "gstinTitle": "व्यावसायिक विवरण सत्यापित करें (GSTIN)",
+    "gstinDesc": "जीएसटीआईएन पंजीकरण (वैकल्पिक / सशर्त)",
+    "representativeTitle": "अधिकृत प्रतिनिधि को सत्यापित करें",
+    "representativeDesc": "प्रबंध अधिकारी की पहचान और पद",
+    "orgBankTitle": "संगठन बैंक खाता सत्यापित करें",
+    "orgBankDesc": "निपटान के लिए संगठन का बैंक खाता",
+    "orgDocumentsTitle": "संगठन के दस्तावेज",
+    "orgDocumentsDesc": "पंजीकरण प्रमाण पत्र, पैन दस्तावेज, बैंक प्रमाण और प्राधिकरण पत्र अपलोड करें",
+    "verifiedFpoBadge": "✓ सत्यापित FPO",
+    "verifiedFarmerBadge": "✓ सत्यापित किसान",
+    "loadingVerificationDashboard": "सत्यापन डैशबोर्ड लोड हो रहा है...",
+    "all5RequiredChecksActive": "सभी 5 आवश्यक जांच सक्रिय हैं",
+    "overallProgress": "समग्र प्रगति",
+    "verificationChecksBreakdown": "सत्यापन जांच का विवरण",
+    "verificationStatusHeading": "सत्यापन स्थिति और साख",
+    "centralDashboardAgri": "अपनी कृषि साख, प्रगति और आधिकारिक स्थिति देखने के लिए केंद्रीय डैशबोर्ड।",
+    "centralDashboardOrg": "अपनी संगठन साख, प्रगति और आधिकारिक स्थिति देखने के लिए केंद्रीय डैशबोर्ड।",
+    "verifiedStat": "{{count}} सत्यापित",
+    "skippedStat": "{{count}} छोड़ा गया",
+    "pendingStat": "{{count}} आवश्यक लंबित",
+    "congratulationsVerifiedMsg": "बधाई हो! सभी आवश्यक पहचान और संगठन साख पूरी तरह से सत्यापित हैं। आपकी उपज लिस्टिंग अब आधिकारिक सत्यापित बैज दिखाती है।",
+    "requiredCheck": "आवश्यक जांच",
+    "optionalCheck": "वैकल्पिक जांच",
+    "statusActive": "स्थिति: सक्रिय",
+    "statusNotApplicable": "स्थिति: लागू नहीं",
+    "statusSkipped": "स्थिति: छोड़ा गया",
+    "statusNotStarted": "स्थिति: शुरू नहीं हुआ",
+    "viewEdit": "देखें / संपादित करें",
+    "completeInWizard": "विज़ार्ड में पूरा करें",
+    "reviewUpdateCredentials": "साख की समीक्षा / अद्यतन करें"
+  },
+  "paymentSettlementCard": {
+    "bank": "बैंक:",
+    "account": "खाता:",
+    "ifsc": "IFSC:",
+    "linkedAccount": "लिंक किया गया खाता:",
+    "settlement": "निपटान:",
+    "lastSynced": "अंतिम बार सिंक किया गया:",
+    "governmentSettlementPortal": "सरकारी निपटान पोर्टल",
+    "paymentAndSettlement": "भुगतान और निपटान",
+    "notConnectedBadge": "भुगतान खाता जुड़ा नहीं है",
+    "setupHeadline": "भुगतान और निपटान सेटअप",
+    "setupDescription": "बाजार के ऑर्डर के लिए सीधे भुगतान प्राप्त करने के लिए अपना खाता जोड़ें।",
+    "connectAccount": "भुगतान खाता जोड़ें",
+    "onboardingBadge": "खाता सेटअप जारी है",
+    "onboardingHeadline": "निपटान सत्यापन जारी है",
+    "onboardingDescription": "रेजरपे आपके खाते के विवरण की समीक्षा कर रहा है।",
+    "continueSetup": "सेटअप जारी रखें",
+    "pendingBadge": "रेजरपे सत्यापन लंबित",
+    "pendingHeadline": "रेजरपे सत्यापन प्रगति पर",
+    "pendingDescription": "खाता जानकारी जमा कर दी गई है। सत्यापन लंबित है।",
+    "checkStatus": "स्थिति ताज़ा करें",
+    "activeBadge": "✓ भुगतान खाता जुड़ा हुआ है",
+    "activeHeadline": "निपटान खाता सक्रिय है",
+    "activeDescription": "आपका खाता सक्रिय है। बिक्री का भुगतान स्वचालित रूप से होगा।",
+    "accountConnected": "भुगतान खाता जुड़ा हुआ है",
+    "rejectedBadge": "रेजरपे सत्यापन / समीक्षा आवश्यक",
+    "rejectedHeadline": "सत्यापन समीक्षा आवश्यक",
+    "rejectedDescription": "अतिरिक्त दस्तावेज़ या समीक्षा आवश्यक है।",
+    "resolveVerification": "सत्यापन हल करें",
+    "suspendedBadge": "भुगतान निपटान अस्थायी रूप से अनुपलब्ध",
+    "suspendedHeadline": "निपटान निलंबित",
+    "suspendedDescription": "इस खाते के लिए भुगतान निपटान अस्थायी रूप से अनुपलब्ध है। सहायता से संपर्क करें।",
+    "contactSupport": "सहायता से संपर्क करें",
+    "settlementPendingNotice": "बाजार निपटान सेटअप रेजरपे सक्रियण के लिए लंबित है।",
+    "refreshStatus": "स्थिति ताज़ा करें",
+    "failedToLoadStatus": "भुगतान निपटान स्थिति लोड करने में विफल।",
+    "statusUpdated": "स्थिति अपडेट हो गई!",
+    "contactSupportToast": "Please contact AgriBazaar support at support@agribazaar.org",
+    "actionFailed": "कार्रवाई विफल हुई।"
+  },
+  "about": {
+    "ourPurpose": "हमारा उद्देश्य",
+    "aboutAgribazaar": "एग्रीबाजार के बारे में",
+    "corePillar": "मुख्य स्तंभ",
+    "ourMission": "हमारा मिशन",
+    "futureready": "भविष्य के लिए तैयार",
+    "ourVision": "हमारा दृष्टिकोण"
+  },
+  "admin": {
+    "noAnalyticsDataRecordedYet": "अभी तक कोई विश्लेषण डेटा दर्ज नहीं किया गया है।",
+    "platformIntelligence": "इंटेलिजेंस प्लेटफॉर्म",
+    "platformAnalytics": "प्लेटफ़ॉर्म विश्लेषण",
+    "deepDiveIntoTradeRevenuesSeller": "व्यापार राजस्व, विक्रेता पंजीकरण गति और श्रेणी मात्रा का विस्तृत विश्लेषण।",
+    "account": "खाता:",
+    "ifsc": "आईएफएससी:",
+    "razorpayRouteCapabilityIsPendingActivation": "रेजरपे रूट क्षमता सक्रियण लंबित है",
+    "isActiveNormalBuyerCheckoutPayments": "सक्रिय है। सामान्य खरीदार चेकआउट भुगतान ठीक से काम करते हैं।",
+    "pending": "लंबित",
+    "userDirectory": "उपयोगकर्ता निर्देशिका",
+    "platformUserManagement": "प्लेटफ़ॉर्म उपयोगकर्ता प्रबंधन",
+    "viewUserRolesAccessStatusesAnd": "उपयोगकर्ता भूमिकाएं, पहुंच स्थितियां देखें और प्लेटफॉर्म अनुमतियां प्रबंधित करें।",
+    "users": "उपयोगकर्ता",
+    "farmers": "किसान / एफपीओ",
+    "settlements": "भुगतान निपटान",
+    "payments": "भुगतान",
+    "blockchain": "ब्लॉकचेन ऑडिट",
+    "disputes": "विवाद समाधान",
+    "analytics": "विश्लेषण"
+  },
+  "buyerDashboard": {
+    "buyerPortal": "खरीदार पोर्टल",
+    "buyerDashboard": "खरीदार डैशबोर्ड",
+    "trackYourOrdersSpendingAndFresh": "अपने ऑर्डर, खर्च और ताज़ा फसलों को ट्रैक करें।",
+    "buyerVerificationStatus": "खरीदार सत्यापन स्थिति",
+    "viewVerificationDetails": "सत्यापन विवरण देखें",
+    "recentOrders": "हाल के ऑर्डर",
+    "noOrdersPlacedYet": "अभी तक कोई ऑर्डर नहीं दिया गया।",
+    "browseMarketplace": "मार्केटप्लेस देखें",
+    "recommendedProduce": "अनुशंसित फसलें",
+    "totalOrders": "कुल ऑर्डर",
+    "activeOrders": "सक्रिय ऑर्डर",
+    "completed": "पूरा हुआ",
+    "totalSpent": "कुल खर्च",
+    "accountHashCopied": "खरीदार खाता हैश कॉपी हो गया!",
+    "failedToLoad": "डैशबोर्ड लोड करने में विफल।",
+    "viewAllOrders": "सभी ऑर्डर देखें →",
+    "startVerification": "सत्यापन शुरू करें",
+    "continueVerification": "सत्यापन जारी रखें"
+  },
+  "buyerOrders": {
+    "viewCrop": "फसल देखें",
+    "orderTracking": "ऑर्डर ट्रैकिंग",
+    "myOrders": "मेरे ऑर्डर",
+    "viewShipmentProgressAndPurchaseHistory": "सभी विक्रेताओं में शिपमेंट प्रगति और खरीद इतिहास देखें।",
+    "browseProduce": "उत्पाद देखें",
+    "colProduceItem": "उत्पाद वस्तु",
+    "colFarmerProducer": "किसान / उत्पादक",
+    "colQuantity": "मात्रा",
+    "colTotalPrice": "कुल मूल्य",
+    "colOrderStatus": "ऑर्डर स्थिति",
+    "colBlockchainAudit": "ब्लॉकचेन ऑडिट",
+    "colAction": "कार्रवाई",
+    "noOrdersFound": "कोई ऑर्डर नहीं मिला",
+    "noOrdersDesc": "आपके द्वारा दिए गए ऑर्डर यहां दिखाई देंगे।",
+    "failedToLoadOrders": "ऑर्डर लोड करने में विफल।"
+  },
+  "buyerProfile": {
+    "buyerAccount": "खरीदार खाता",
+    "buyerProfile": "खरीदार प्रोफ़ाइल",
+    "manageYourPersonalDetailsAndDefault": "अपने व्यक्तिगत विवरण और डिफ़ॉल्ट शिपिंग पते को प्रबंधित करें।",
+    "fullName": "पूरा नाम",
+    "emailAddress": "ईमेल पता",
+    "mobileNumber": "मोबाइल नंबर",
+    "deliveryAddress": "वितरण का पता",
+    "city": "शहर",
+    "state": "राज्य",
+    "pincode": "पिनकोड",
+    "buyerAccountType": "खरीदार खाता प्रकार",
+    "profileUpdatedToast": "खरीदार प्रोफ़ाइल अपडेट हो गई!",
+    "accountHashCopiedToast": "खाता हैश कॉपी हो गया!"
+  },
+  "buyerVerification": {
+    "loadingBuyerVerificationStatus": "खरीदार सत्यापन स्थिति लोड हो रही है...",
+    "status": "स्थिति",
+    "overallStatus": "कुल स्थिति",
+    "progress": "प्रगति",
+    "viewVerificationDetails": "सत्यापन विवरण देखें",
+    "officialPortal": "• आधिकारिक सत्यापन पोर्टल",
+    "continueVerification": "सत्यापन जारी रखें",
+    "startVerification": "सत्यापन शुरू करें",
+    "failedToLoad": "सत्यापन स्थिति लोड करने में विफल।",
+    "title": "खरीदार सत्यापन स्थिति",
+    "subtitle": "एग्रीबाजार पर पहचान, व्यावसायिक अनुपालन और नियामक क्रेडेंशियल प्रबंधित करें।",
+    "completedCountOfTotal": "{{total}} में से {{count}} पूरा हुआ",
+    "checklistHeading": "सत्यापन चेकलिस्ट",
+    "wizardCardHeading": "अपना सत्यापन विज़ार्ड पूरा करें",
+    "wizardCardDesc": "किसानों के साथ विश्वास बनाने और सत्यापित खरीदार बैज अनलॉक करने के लिए सभी आवश्यक पहचान, कर, बैंक और दस्तावेज़ीकरण जांच पूरी करें।"
+  },
+  "farmerAddProduct": {
+    "cropPreview": "फसल पूर्वावलोकन",
+    "price": "मूल्य:",
+    "stock": "स्टॉक:",
+    "location": "स्थान:",
+    "harvest": "कटाई:",
+    "newCropListing": "नई फसल लिस्टिंग",
+    "addNewProduct": "नया उत्पाद जोड़ें",
+    "createAVerifiedProduceListingTo": "सीधे बेचने के लिए एक सत्यापित फसल लिस्टिंग बनाएं।",
+    "productCropNameLabel": "उत्पाद / फसल का नाम *",
+    "placeholderProductName": "जैसे ऑर्गेनिक बासमती चावल",
+    "cropCategoryLabel": "फसल की श्रेणी *",
+    "measurementUnitLabel": "माप की इकाई *",
+    "produceDescriptionLabel": "उत्पाद का विवरण",
+    "placeholderDescription": "खेती की तकनीकों, किस्म या पैकेजिंग का विवरण दें...",
+    "availableQuantityLabel": "उपलब्ध मात्रा *",
+    "placeholderQuantity": "जैसे 500",
+    "pricePerUnitLabel": "PRICE PER {{unit}} (₹) *",
+    "placeholderPrice": "जैसे 85",
+    "farmLocationLabel": "खेत का स्थान (शहर, राज्य) *",
+    "placeholderLocation": "जैसे नासिक, महाराष्ट्र",
+    "harvestDateLabel": "कटाई की तारीख",
+    "availableFromLabel": "से उपलब्ध",
+    "uploadImageLabel": "फसल की छवि अपलोड करें *",
+    "uploadImageDesc": "उच्च गुणवत्ता वाली JPG, PNG, या WEBP छवि (PDF की अनुमति नहीं है)",
+    "saveDraft": "ड्राफ्ट सहेजें",
+    "previewListing": "पूर्वावलोकन देखें",
+    "publishListing": "लिस्टिंग प्रकाशित करें",
+    "publishing": "प्रकाशित हो रहा है...",
+    "backToEdit": "संपादन पर वापस जाएं",
+    "nameRequired": "उत्पाद का नाम आवश्यक है।",
+    "categoryRequired": "श्रेणी आवश्यक है।",
+    "quantityGreaterThanZero": "मात्रा 0 से अधिक होनी चाहिए।",
+    "priceGreaterThanZero": "मूल्य 0 से अधिक होना चाहिए।",
+    "locationRequired": "स्थान आवश्यक है।",
+    "savedAsDraft": "उत्पाद ड्राफ्ट के रूप में सहेजा गया।",
+    "publishedSuccess": "उत्पाद सफलतापूर्वक प्रकाशित हुआ!",
+    "failedToCreate": "उत्पाद बनाने में विफल।",
+    "createVerifiedListingDesc": "खरीदारों को सीधे बेचने के लिए सत्यापित उपज लिस्टिंग बनाएं।",
+    "productCropName": "उत्पाद / फसल का नाम",
+    "cropCategory": "फसल श्रेणी",
+    "measurementUnit": "माप इकाई",
+    "unitPriceInr": "इकाई मूल्य (₹)",
+    "availableStockQuantity": "उपलब्ध स्टॉक मात्रा",
+    "minimumOrderQuantity": "न्यूनतम ऑर्डर मात्रा",
+    "harvestDate": "कटाई की तारीख",
+    "farmLocationOrigin": "खेत का स्थान / उत्पत्ति",
+    "cropDescription": "फसल विवरण और गुणवत्ता",
+    "organicCertified": "जैविक / प्रमाणित उपज",
+    "cancel": "रद्द करें"
+  },
+  "farmerDashboard": {
+    "manageYourAgriculturalProductsIncomingOrders": "अपने कृषि उत्पादों, आने वाले ऑर्डर और राजस्व का प्रबंधन करें।",
+    "recentOrders": "हाल के ऑर्डर",
+    "noOrdersReceivedYet": "अभी तक कोई ऑर्डर प्राप्त नहीं हुआ है।",
+    "activeListings": "सक्रिय लिस्टिंग",
+    "noActiveListings": "कोई सक्रिय लिस्टिंग नहीं है।",
+    "fpoSellerDashboard": "एफपीओ / एफपीसी विक्रेता डैशबोर्ड",
+    "sellerDashboard": "विक्रेता डैशबोर्ड",
+    "fpoOverview": "एफपीओ अवलोकन",
+    "farmerOverview": "किसान अवलोकन",
+    "addNewListing": "नया उत्पाद जोड़ें",
+    "sellerCryptographicAccountHash": "विक्रेता क्रिप्टोग्राफिक खाता हैश (ऑन-चेन पहचान)",
+    "copyHash": "हैश कॉपी करें",
+    "accountHashCopied": "विक्रेता खाता हैश कॉपी हो गया!",
+    "verifiedFpoBadge": "✓ सत्यापित एफपीओ",
+    "verifiedFarmerBadge": "✓ सत्यापित किसान",
+    "completeYourVerification": "अपना सत्यापन पूरा करें",
+    "activeBadge": "सक्रिय बैज",
+    "checksCompletedCount": "आवश्यक 5 में से {{count}} जांच पूरी हुई",
+    "allRequiredVerificationActive": "सभी आवश्यक सत्यापन सक्रिय हैं",
+    "verificationIncomplete": "सत्यापन अधूरा",
+    "updateVerification": "सत्यापन अपडेट करें",
+    "continueVerification": "सत्यापन जारी रखें",
+    "totalProducts": "कुल उत्पाद",
+    "activeListingsLabel": "सक्रिय लिस्टिंग",
+    "pendingOrders": "लंबित ऑर्डर",
+    "totalSales": "कुल बिक्री",
+    "viewAll": "सभी देखें →",
+    "addProductButton": "+ उत्पाद जोड़ें"
+  },
+  "farmerProducts": {
+    "cropInventory": "फसल सूची",
+    "myProducts": "मेरे उत्पाद",
+    "colProduceDetails": "उत्पाद विवरण",
+    "colCategory": "फसल श्रेणी",
+    "colPriceUnit": "मूल्य / इकाई",
+    "colStockQuantity": "स्टॉक मात्रा",
+    "colStatus": "स्थिति",
+    "colActions": "कार्रवाइयां",
+    "noProductsListed": "अभी तक कोई उत्पाद सूचीबद्ध नहीं है",
+    "noProductsDesc": "अपनी पहली लिस्टिंग बनाकर बेचना शुरू करें।",
+    "addProductBtn": "+ उत्पाद जोड़ें",
+    "manageListingsDesc": "अपनी सक्रिय, ड्राफ्ट और आउट ऑफ स्टॉक उपज लिस्टिंग प्रबंधित करें (कुल {{count}})।",
+    "addNewProduct": "नया उत्पाद जोड़ें",
+    "searchPlaceholder": "फसल लिस्टिंग खोजें...",
+    "colProduct": "उत्पाद",
+    "colAvailableStock": "उपलब्ध स्टॉक",
+    "pauseBtn": "रोकें",
+    "activateBtn": "सक्रिय करें"
+  },
+  "farmerOrders": {
+    "orderManagement": "ऑर्डर प्रबंधन",
+    "incomingProduceOrders": "आने वाले उत्पाद ऑर्डर",
+    "fulfillPurchaseOrdersReceivedFromRetail": "खुदरा और थोक खरीदारों से प्राप्त ऑर्डर पूरे करें।",
+    "colProduceItems": "उपज वस्तुएं",
+    "colBuyerInfo": "खरीदार की जानकारी",
+    "colQuantity": "मात्रा",
+    "colTotalValue": "कुल मूल्य",
+    "colOrderStatus": "ऑर्डर स्थिति",
+    "colAuditProvenance": "ऑडिट उत्पत्ति",
+    "colActions": "कार्रवाइयां",
+    "allOrdersTab": "सभी ऑर्डर",
+    "standardDelivery": "मानक डिलीवरी",
+    "confirmBtn": "पुष्टि करें",
+    "cancelBtn": "रद्द करें",
+    "dispatchBtn": "भेजें",
+    "markDeliveredBtn": "डिलीवर के रूप में चिह्नित करें",
+    "noOrdersInStatus": "इस स्थिति में कोई ऑर्डर नहीं",
+    "noOrdersDescription": "जब खरीदार ऑर्डर देंगे, तो वे यहां दिखाई देंगे।",
+    "statusUpdatedToast": "ऑर्डर स्थिति {{status}} पर अद्यतन की गई।",
+    "failedToLoadOrders": "ऑर्डर लोड करने में विफल।",
+    "failedToUpdateStatus": "ऑर्डर की स्थिति अपडेट करने में विफल।"
+  },
+  "farmerProfile": {
+    "sellerIdentity": "विक्रेता पहचान",
+    "farmerProfile": "किसान प्रोफ़ाइल",
+    "manageYourAgriculturalCredentialsFarmLocation": "अपनी कृषि साख, फार्म के स्थान और संपर्क जानकारी को प्रबंधित करें।",
+    "fullName": "पूरा नाम",
+    "farmFpoName": "फार्म / एफपीओ नाम",
+    "emailAddress": "ईमेल पता",
+    "mobileNumber": "मोबाइल नंबर",
+    "location": "स्थान",
+    "address": "पता",
+    "sellerType": "विक्रेता का प्रकार",
+    "verificationStatus": "सत्यापन स्थिति",
+    "editProfile": "प्रोफ़ाइल संपादित करें",
+    "onChainCryptographicAccountHash": "ऑन-चेन क्रिप्टोग्राफिक खाता हैश",
+    "copyHash": "हैश कॉपी करें",
+    "accountHashCopiedToast": "खाता हैश कॉपी हो गया!",
+    "profileAvatarPhotoLabel": "प्रोफ़ाइल अवतार फोटो",
+    "profileAvatarPhotoDesc": "प्रोफ़ाइल अवतार फोटो अपलोड करें (JPG, PNG, WEBP)",
+    "updatedSuccessToast": "किसान प्रोफ़ाइल अपडेट हो गई!",
+    "updatedFailedToast": "प्रोफ़ाइल अपडेट करने में विफल।",
+    "sellerProfileCredentials": "विक्रेता प्रोफ़ाइल और साख",
+    "manageYourAgriculturalCredentials": "अपनी कृषि साख, खेत के स्थान और संपर्क जानकारी का प्रबंधन करें।",
+    "onChainHashTitle": "🛡️ ऑन-चेन क्रिप्टोग्राफिक खाता हैश"
+  },
+  "farmerSales": {
+    "salesAnalyticsComingSoon": "बिक्री विश्लेषण जल्द ही आ रहा है।",
+    "financialInsights": "वित्तीय जानकारी",
+    "salesAnalytics": "बिक्री विश्लेषण",
+    "trackYourMonthlyRevenueGrowthAverage": "अपनी मासिक राजस्व वृद्धि और बिक्री प्रदर्शन को ट्रैक करें।",
+    "totalRevenue": "कुल राजस्व",
+    "avgOrderValue": "औसत ऑर्डर मूल्य",
+    "fulfilledOrders": "पूरे किए गए ऑर्डर",
+    "activeCustomers": "सक्रिय ग्राहक"
+  },
+  "register": {
+    "agri": "एग्री",
+    "bazaar": "बाजार",
+    "joinAgribazaar": "AgriBazaar में शामिल हों",
+    "selectYourAccountTypeToGet": "शुरू करने के लिए अपना खाता प्रकार चुनें",
+    "farmerFpo": "किसान / एफपीओ",
+    "sellYourProduceDirectlyToBuyers": "अपनी उपज सीधे खरीदारों को उचित मूल्य पर बेचें।",
+    "buyer": "खरीदार",
+    "sourceFreshAgriculturalProduceDirectlyFrom": "सत्यापित किसानों से सीधे ताज़ा कृषि उत्पाद प्राप्त करें।",
+    "signIn": "साइन इन करें",
+    "farmerRegistration": "किसान पंजीकरण",
+    "createYourSellerProfileToList": "उपज सूचीबद्ध करने के लिए अपना विक्रेता प्रोफ़ाइल बनाएं",
+    "individualFarmer": "व्यक्तिगत किसान",
+    "farmerProducerOrganizationFpo": "किसान उत्पादक संगठन (एफपीओ)",
+    "fullFarmAddress": "पूरा फार्म का पता",
+    "buyerRegistration": "खरीदार पंजीकरण",
+    "createYourAccountToPurchaseProduce": "उपज खरीदने के लिए अपना खाता बनाएं",
+    "individualConsumer": "व्यक्तिगत उपभोक्ता",
+    "businessRetailer": "व्यवसाय / खुदरा विक्रेता",
+    "wholesaleBulkBuyer": "थोक खरीदार",
+    "deliveryAddress": "वितरण का पता"
+  },
+  "roles": {
+    "farmer": "किसान",
+    "fpo": "किसान उत्पादक संगठन (FPO)",
+    "individual": "व्यक्तिगत उपभोक्ता",
+    "business": "व्यवसाय / खुदरा विक्रेता",
+    "bulkBuyer": "थोक खरीदार",
+    "retailBuyer": "खुदरा खरीदार",
+    "wholesaler": "थोक व्यापारी",
+    "buyer": "खरीदार",
+    "seller": "विक्रेता",
+    "admin": "प्रशासक"
+  },
+  "categories": {
+    "fruits": "फल",
+    "vegetables": "सब्जियां",
+    "grains": "अनाज और चावल",
+    "pulses": "दालें",
+    "spices": "मसाले",
+    "millets": "बाजरा / मोटा अनाज",
+    "dairy": "डेयरी उत्पाद",
+    "other": "अन्य फसलें"
+  },
+  "units": {
+    "kg": "किलोग्राम (KG)",
+    "quintal": "क्विंटल (100 KG)",
+    "ton": "मीट्रिक टन",
+    "litre": "लीटर",
+    "piece": "पीस / बंडल"
+  },
+  "adminDashboard": {
+    "colProductName": "उत्पाद का नाम",
+    "colBuyer": "खरीदार",
+    "colFarmerFpo": "किसान / एफपीओ",
+    "colAmount": "राशि",
+    "colStatus": "स्थिति",
+    "totalUsers": "कुल उपयोगकर्ता",
+    "farmersFpos": "किसान / एफपीओ",
+    "pendingVerifications": "लंबित सत्यापन",
+    "activeProducts": "सक्रिय उत्पाद",
+    "totalOrders": "कुल ऑर्डर",
+    "completedOrders": "पूरे किए गए ऑर्डर",
+    "totalRevenue": "कुल राजस्व",
+    "totalBuyers": "कुल खरीदार",
+    "monthlyOrderVolumeTitle": "मासिक ऑर्डर की मात्रा",
+    "monthlyOrderVolumeDesc": "महीने के अनुसार पूरे किए गए ऑर्डर की संख्या।",
+    "categoryDistributionTitle": "उत्पाद श्रेणी वितरण",
+    "categoryDistributionDesc": "श्रेणियों में सक्रिय फसल लिस्टिंग।",
+    "noPlatformOrders": "कोई प्लेटफॉर्म ऑर्डर नहीं"
+  },
+  "adminOrders": {
+    "colOrderRef": "ऑर्डर संदर्भ",
+    "colProduceItem": "उत्पाद वस्तु",
+    "colBuyer": "खरीदार",
+    "colFarmerFpo": "किसान / एफपीओ",
+    "colTotalValue": "कुल मूल्य",
+    "colPaymentStatus": "भुगतान स्थिति",
+    "colOrderStatus": "ऑर्डर स्थिति",
+    "noOrdersFound": "कोई ऑर्डर नहीं मिला",
+    "allOrders": "सभी ऑर्डर"
+  },
+  "adminDisputes": {
+    "colComplainant": "शिकायतकर्ता",
+    "colReason": "विवाद का कारण",
+    "colStatus": "स्थिति",
+    "colActions": "कार्रवाइयां",
+    "noDisputes": "कोई खुला विवाद नहीं",
+    "noDisputesDesc": "0 खुले दावों के साथ प्लेटफॉर्म व्यापार सुचारू रूप से चल रहा है।",
+    "placeholderResponse": "एडमिन प्रतिक्रिया विवरण...",
+    "resolveIssue": "समस्या का समाधान करें",
+    "rejectClaim": "दावा अस्वीकार करें",
+    "resolveClaim": "दावे का समाधान करें"
+  },
+  "adminFarmers": {
+    "colFarmerName": "किसान / एफपीओ नाम",
+    "colVerification": "सत्यापन",
+    "colAuditProvenance": "ऑडिट स्रोत",
+    "approvalHeadline": "किसान और एफपीओ स्वीकृति",
+    "noVerificationApps": "कोई सत्यापन आवेदन नहीं मिला",
+    "placeholderRejection": "अस्वीकृति का कारण प्रदान करें...",
+    "allApplications": "सभी आवेदन",
+    "approveVerification": "सत्यापन स्वीकार करें",
+    "rejectFarmerModalTitle": "क्या {{name}} को अस्वीकार करना चाहते हैं?",
+    "rejectFarmerBtn": "किसान को अस्वीकार करें",
+    "colSellerType": "विक्रेता का प्रकार",
+    "colContactInfo": "संपर्क जानकारी",
+    "colLocation": "स्थान",
+    "colActions": "कार्रवाइयां"
+  },
+  "adminPayments": {
+    "colTxRef": "भुगतान लेनदेन संदर्भ",
+    "colAmount": "राशि",
+    "colStatus": "स्थिति",
+    "colDate": "तिथि",
+    "noPaymentRecords": "कोई भुगतान रिकॉर्ड नहीं मिला",
+    "noPaymentRecordsDesc": "खरीदार के ऑर्डर संसाधित होने पर लेनदेन यहां दर्ज किए जाएंगे।",
+    "viewOnChainAudit": "ऑन-चेन ब्लॉकचेन ऑडिट देखें"
+  },
+  "adminProducts": {
+    "colCropListing": "फसल लिस्टिंग",
+    "colFarmerFpo": "किसान / एफपीओ",
+    "colListingStatus": "लिस्टिंग स्थिति",
+    "allListings": "सभी लिस्टिंग",
+    "disableListing": "लिस्टिंग को अक्षम करें",
+    "enableListing": "लिस्टिंग को सक्षम करें",
+    "colCategory": "श्रेणी",
+    "colPriceUnit": "मूल्य / इकाई",
+    "colActions": "कार्रवाइयां",
+    "noProduceListingsFound": "कोई फसल लिस्टिंग नहीं मिली"
+  },
+  "adminSettlements": {
+    "colFarmerProducer": "किसान / उत्पादक",
+    "colVerification": "एग्रीबाजार सत्यापन",
+    "colRazorpayStatus": "रेजरपे विक्रेता स्थिति",
+    "colSettlementAccount": "सैटलमेंट खाता",
+    "colTotalSettled": "कुल निपटाया गया",
+    "colPendingSettlement": "लंबित सैटलमेंट",
+    "colAuditProvenance": "ऑडिट स्रोत",
+    "noSettlementRecords": "कोई विक्रेता निपटान रिकॉर्ड नहीं",
+    "noSettlementDesc": "किसान निपटान स्थिति यहां दिखाई देगी।",
+    "financialControlBadge": "मार्केटप्लेस वित्तीय नियंत्रण",
+    "headline": "भुगतान और सैटलमेंट अवलोकन",
+    "subtitle": "किसानों के बीच रेजरपे विक्रेता खाता ऑनबोर्डिंग और निपटान को ट्रैक करें।",
+    "refreshSettlements": "सैटलमेंट रिफ्रेश करें",
+    "allFarmers": "सभी किसान",
+    "razorpayRoutePendingTitle": "रेजरपे रूट क्षमता सक्रियण लंबित है (परीक्षण मोड)",
+    "razorpayRoutePendingDesc": "पर्यावरण ध्वज RAZORPAY_ROUTE_ENABLED=false सक्रिय है। सामान्य खरीदार चेकआउट भुगतान ठीक से कार्य करते हैं।"
+  },
+  "adminUsers": {
+    "colUserName": "उपयोगकर्ता नाम",
+    "colEmail": "ईमेल पता",
+    "colAccountHash": "ऑन-चेन खाता हैश",
+    "colAccountRole": "खाता भूमिका",
+    "suspendAccount": "खाता निलंबित करें",
+    "activateAccount": "खाता सक्रिय करें",
+    "allRoles": "सभी भूमिकाएं",
+    "colAccountStatus": "खाता स्थिति",
+    "colActions": "कार्रवाइयां",
+    "noRegisteredUsersFound": "कोई पंजीकृत उपयोगकर्ता नहीं मिला"
+  },
+  "adminAnalytics": {
+    "monthlyRevenueTrend": "मासिक राजस्व प्रवृत्ति",
+    "grossVolumeDesc": "माह के अनुसार सकल व्यापार मूल्य।",
+    "orderStatusBreakdown": "ऑर्डर स्थिति विवरण",
+    "orderRatioDesc": "लंबित, सक्रिय और पूर्ण किए गए आदेशों का अनुपात।",
+    "farmerRegistrations": "किसान और एफपीओ पंजीकरण",
+    "registrationVelocityDesc": "समय के साथ पंजीकरण की गति।",
+    "categoryListingVolume": "श्रेणी लिस्टिंग मात्रा",
+    "categoryListingsDesc": "प्रति उपज श्रेणी सक्रिय लिस्टिंग की संख्या।"
+  },
+  "r": {
+    "o": {
+      "l": {
+        "e": {
+          "s": {
+            ".": {
+              "i": {
+                "n": {
+                  "d": {
+                    "i": {
+                      "v": {
+                        "i": {
+                          "d": {
+                            "u": {
+                              "a": {
+                                "l": "व्यक्तिगत खरीदार"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "b": {
+                "u": {
+                  "s": {
+                    "i": {
+                      "n": {
+                        "e": {
+                          "s": {
+                            "s": "व्यवसाय / खुदरा विक्रेता"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "l": {
+                    "k": {
+                      "B": {
+                        "u": {
+                          "y": {
+                            "e": {
+                              "r": "थोक खरीदार"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "f": {
+                "a": {
+                  "r": {
+                    "m": {
+                      "e": {
+                        "r": "व्यक्तिगत किसान"
+                      }
+                    }
+                  }
+                },
+                "p": {
+                  "o": "किसान उत्पादक संगठन (एफपीओ)"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "c": {
+    "a": {
+      "t": {
+        "e": {
+          "g": {
+            "o": {
+              "r": {
+                "i": {
+                  "e": {
+                    "s": {
+                      ".": {
+                        "f": {
+                          "r": {
+                            "u": {
+                              "i": {
+                                "t": {
+                                  "s": "फल"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "v": {
+                          "e": {
+                            "g": {
+                              "e": {
+                                "t": {
+                                  "a": {
+                                    "b": {
+                                      "l": {
+                                        "e": {
+                                          "s": "सब्जियां"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "g": {
+                          "r": {
+                            "a": {
+                              "i": {
+                                "n": {
+                                  "s": "अनाज और चावल"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "p": {
+                          "u": {
+                            "l": {
+                              "s": {
+                                "e": {
+                                  "s": "दालें"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "s": {
+                          "p": {
+                            "i": {
+                              "c": {
+                                "e": {
+                                  "s": "मसाले"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "m": {
+                          "i": {
+                            "l": {
+                              "l": {
+                                "e": {
+                                  "t": {
+                                    "s": "बाजरा"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "d": {
+                          "a": {
+                            "i": {
+                              "r": {
+                                "y": "डेयरी उत्पाद"
+                              }
+                            }
+                          }
+                        },
+                        "o": {
+                          "t": {
+                            "h": {
+                              "e": {
+                                "r": "अन्य फसल उत्पाद"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "o": {
+      "m": {
+        "m": {
+          "o": {
+            "n": {
+              ".": {
+                "a": {
+                  "l": {
+                    "l": {
+                      "O": {
+                        "r": {
+                          "d": {
+                            "e": {
+                              "r": {
+                                "s": "सभी ऑर्डर"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "p": {
+                  "a": {
+                    "y": {
+                      "N": {
+                        "o": {
+                          "w": "अभी भुगतान करें"
+                        }
+                      }
+                    }
+                  }
+                },
+                "e": {
+                  "d": {
+                    "i": {
+                      "t": {
+                        "P": {
+                          "r": {
+                            "o": {
+                              "f": {
+                                "i": {
+                                  "l": {
+                                    "e": "प्रोफ़ाइल संपादित करें"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "s": {
+                  "a": {
+                    "v": {
+                      "e": {
+                        "C": {
+                          "h": {
+                            "a": {
+                              "n": {
+                                "g": {
+                                  "e": {
+                                    "s": "परिवर्तन सहेजें"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "c": {
+                  "o": {
+                    "p": {
+                      "y": {
+                        "H": {
+                          "a": {
+                            "s": {
+                              "h": "हैश कॉपी करें"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "b": {
+    "u": {
+      "y": {
+        "e": {
+          "r": {
+            "V": {
+              "e": {
+                "r": {
+                  "i": {
+                    "f": {
+                      "i": {
+                        "c": {
+                          "a": {
+                            "t": {
+                              "i": {
+                                "o": {
+                                  "n": {
+                                    ".": {
+                                      "b": {
+                                        "u": {
+                                          "y": {
+                                            "e": {
+                                              "r": {
+                                                "L": {
+                                                  "a": {
+                                                    "b": {
+                                                      "e": {
+                                                        "l": "खरीदार"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "t": {
+                                        "i": {
+                                          "t": {
+                                            "l": {
+                                              "e": "खरीदार सत्यापन स्थिति"
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "s": {
+                                        "u": {
+                                          "b": {
+                                            "t": {
+                                              "i": {
+                                                "t": {
+                                                  "l": {
+                                                    "e": "एग्रीबाजार पर पहचान, व्यावसायिक अनुपालन और नियामक क्रेडेंशियल प्रबंधित करें।"
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "c": {
+                                        "h": {
+                                          "e": {
+                                            "c": {
+                                              "k": {
+                                                "l": {
+                                                  "i": {
+                                                    "s": {
+                                                      "t": {
+                                                        "H": {
+                                                          "e": {
+                                                            "a": {
+                                                              "d": {
+                                                                "i": {
+                                                                  "n": {
+                                                                    "g": "सत्यापन जांच सूची"
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "o": {
+                                          "m": {
+                                            "p": {
+                                              "l": {
+                                                "e": {
+                                                  "t": {
+                                                    "e": {
+                                                      "d": {
+                                                        "C": {
+                                                          "o": {
+                                                            "u": {
+                                                              "n": {
+                                                                "t": {
+                                                                  "O": {
+                                                                    "f": {
+                                                                      "T": {
+                                                                        "o": {
+                                                                          "t": {
+                                                                            "a": {
+                                                                              "l": "{{total}} में से {{count}} पूरा हुआ"
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "w": {
+                                        "i": {
+                                          "z": {
+                                            "a": {
+                                              "r": {
+                                                "d": {
+                                                  "C": {
+                                                    "a": {
+                                                      "r": {
+                                                        "d": {
+                                                          "H": {
+                                                            "e": {
+                                                              "a": {
+                                                                "d": {
+                                                                  "i": {
+                                                                    "n": {
+                                                                      "g": "अपना सत्यापन विज़ार्ड पूरा करें"
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          },
+                                                          "D": {
+                                                            "e": {
+                                                              "s": {
+                                                                "c": "किसानों के साथ विश्वास बनाने और सत्यापित खरीदार बैज अनलॉक करने के लिए सभी जांच पूरी करें।"
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "o": {
+                                        "f": {
+                                          "f": {
+                                            "i": {
+                                              "c": {
+                                                "i": {
+                                                  "a": {
+                                                    "l": {
+                                                      "P": {
+                                                        "o": {
+                                                          "r": {
+                                                            "t": {
+                                                              "a": {
+                                                                "l": "• आधिकारिक सत्यापन पोर्टल"
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "a": {
+                                        "l": {
+                                          "l": {
+                                            "C": {
+                                              "h": {
+                                                "e": {
+                                                  "c": {
+                                                    "k": {
+                                                      "s": {
+                                                        "C": {
+                                                          "o": {
+                                                            "m": {
+                                                              "p": {
+                                                                "l": {
+                                                                  "e": {
+                                                                    "t": {
+                                                                      "e": {
+                                                                        "d": {
+                                                                          "D": {
+                                                                            "e": {
+                                                                              "s": {
+                                                                                "c": "सभी आवश्यक सत्यापन जांच सफलतापूर्वक पूरी हो गई हैं और उनका ऑडिट किया गया है।"
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "v": {
+                                        "e": {
+                                          "r": {
+                                            "i": {
+                                              "f": {
+                                                "i": {
+                                                  "e": {
+                                                    "d": {
+                                                      "O": {
+                                                        "n": "सत्यापित तिथि:"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "C": {
+                                      "o": {
+                                        "n": {
+                                          "f": {
+                                            "i": {
+                                              "g": {
+                                                ".": {
+                                                  "I": {
+                                                    "N": {
+                                                      "D": {
+                                                        "I": {
+                                                          "V": {
+                                                            "I": {
+                                                              "D": {
+                                                                "U": {
+                                                                  "A": {
+                                                                    "L": {
+                                                                      ".": {
+                                                                        "p": {
+                                                                          "o": {
+                                                                            "r": {
+                                                                              "t": {
+                                                                                "a": {
+                                                                                  "l": {
+                                                                                    "T": {
+                                                                                      "i": {
+                                                                                        "t": {
+                                                                                          "l": {
+                                                                                            "e": "व्यक्तिगत खरीदार सत्यापन पोर्टल"
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          },
+                                                                          "a": {
+                                                                            "g": {
+                                                                              "e": {
+                                                                                "T": {
+                                                                                  "i": {
+                                                                                    "t": {
+                                                                                      "l": {
+                                                                                        "e": "व्यक्तिगत खरीदार अनुपालन और सत्यापन"
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "b": {
+                                                                          "a": {
+                                                                            "d": {
+                                                                              "g": {
+                                                                                "e": {
+                                                                                  "T": {
+                                                                                    "e": {
+                                                                                      "x": {
+                                                                                        "t": "सत्यापित व्यक्तिगत खरीदार"
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "i": {
+                                                                          "n": {
+                                                                            "c": {
+                                                                              "o": {
+                                                                                "m": {
+                                                                                  "p": {
+                                                                                    "l": {
+                                                                                      "e": {
+                                                                                        "t": {
+                                                                                          "e": {
+                                                                                            "B": {
+                                                                                              "a": {
+                                                                                                "d": {
+                                                                                                  "g": {
+                                                                                                    "e": {
+                                                                                                      "T": {
+                                                                                                        "e": {
+                                                                                                          "x": {
+                                                                                                            "t": "सत्यापन लंबित"
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "s": {
+                                                                          "t": {
+                                                                            "e": {
+                                                                              "p": {
+                                                                                "s": {
+                                                                                  ".": {
+                                                                                    "m": {
+                                                                                      "o": {
+                                                                                        "b": {
+                                                                                          "i": {
+                                                                                            "l": {
+                                                                                              "e": {
+                                                                                                ".": {
+                                                                                                  "s": {
+                                                                                                    "h": {
+                                                                                                      "o": {
+                                                                                                        "r": {
+                                                                                                          "t": {
+                                                                                                            "L": {
+                                                                                                              "a": {
+                                                                                                                "b": {
+                                                                                                                  "e": {
+                                                                                                                    "l": "मोबाइल ओटीपी"
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  },
+                                                                                                  "n": {
+                                                                                                    "a": {
+                                                                                                      "m": {
+                                                                                                        "e": "मोबाइल नंबर सत्यापन"
+                                                                                                      }
+                                                                                                    }
+                                                                                                  },
+                                                                                                  "d": {
+                                                                                                    "e": {
+                                                                                                      "s": {
+                                                                                                        "c": {
+                                                                                                          "r": {
+                                                                                                            "i": {
+                                                                                                              "p": {
+                                                                                                                "t": {
+                                                                                                                  "i": {
+                                                                                                                    "o": {
+                                                                                                                      "n": "एसएमएस ओटीपी के माध्यम से मोबाइल नंबर सत्यापित करें।"
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    },
+                                                                                    "i": {
+                                                                                      "d": {
+                                                                                        "e": {
+                                                                                          "n": {
+                                                                                            "t": {
+                                                                                              "i": {
+                                                                                                "t": {
+                                                                                                  "y": {
+                                                                                                    ".": {
+                                                                                                      "s": {
+                                                                                                        "h": {
+                                                                                                          "o": {
+                                                                                                            "r": {
+                                                                                                              "t": {
+                                                                                                                "L": {
+                                                                                                                  "a": {
+                                                                                                                    "b": {
+                                                                                                                      "e": {
+                                                                                                                        "l": "सरकारी पहचान"
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      },
+                                                                                                      "n": {
+                                                                                                        "a": {
+                                                                                                          "m": {
+                                                                                                            "e": "आधार / पासपोर्ट / मतदाता पहचान पत्र"
+                                                                                                          }
+                                                                                                        }
+                                                                                                      },
+                                                                                                      "d": {
+                                                                                                        "e": {
+                                                                                                          "s": {
+                                                                                                            "c": {
+                                                                                                              "r": {
+                                                                                                                "i": {
+                                                                                                                  "p": {
+                                                                                                                    "t": {
+                                                                                                                      "i": {
+                                                                                                                        "o": {
+                                                                                                                          "n": "सरकारी पहचान पत्र के साथ सत्यापन।"
+                                                                                                                        }
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    },
+                                                                                    "a": {
+                                                                                      "d": {
+                                                                                        "d": {
+                                                                                          "r": {
+                                                                                            "e": {
+                                                                                              "s": {
+                                                                                                "s": {
+                                                                                                  ".": {
+                                                                                                    "s": {
+                                                                                                      "h": {
+                                                                                                        "o": {
+                                                                                                          "r": {
+                                                                                                            "t": {
+                                                                                                              "L": {
+                                                                                                                "a": {
+                                                                                                                  "b": {
+                                                                                                                    "e": {
+                                                                                                                      "l": "शिपिंग पता"
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    },
+                                                                                                    "n": {
+                                                                                                      "a": {
+                                                                                                        "m": {
+                                                                                                          "e": "डिलीवरी और आवासीय पता"
+                                                                                                        }
+                                                                                                      }
+                                                                                                    },
+                                                                                                    "d": {
+                                                                                                      "e": {
+                                                                                                        "s": {
+                                                                                                          "c": {
+                                                                                                            "r": {
+                                                                                                              "i": {
+                                                                                                                "p": {
+                                                                                                                  "t": {
+                                                                                                                    "i": {
+                                                                                                                      "o": {
+                                                                                                                        "n": "उपज प्रेषण के लिए वैध आवासीय पता।"
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    },
+                                                                                    "s": {
+                                                                                      "u": {
+                                                                                        "m": {
+                                                                                          "m": {
+                                                                                            "a": {
+                                                                                              "r": {
+                                                                                                "y": {
+                                                                                                  ".": {
+                                                                                                    "s": {
+                                                                                                      "h": {
+                                                                                                        "o": {
+                                                                                                          "r": {
+                                                                                                            "t": {
+                                                                                                              "L": {
+                                                                                                                "a": {
+                                                                                                                  "b": {
+                                                                                                                    "e": {
+                                                                                                                      "l": "समीक्षा और सबमिट करें"
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    },
+                                                                                                    "n": {
+                                                                                                      "a": {
+                                                                                                        "m": {
+                                                                                                          "e": "सत्यापन समीक्षा"
+                                                                                                        }
+                                                                                                      }
+                                                                                                    },
+                                                                                                    "d": {
+                                                                                                      "e": {
+                                                                                                        "s": {
+                                                                                                          "c": {
+                                                                                                            "r": {
+                                                                                                              "i": {
+                                                                                                                "p": {
+                                                                                                                  "t": {
+                                                                                                                    "i": {
+                                                                                                                      "o": {
+                                                                                                                        "n": "सबमिट किए गए क्रेडेंशियल्स की अंतिम समीक्षा।"
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "m": {
+    "a": {
+      "r": {
+        "k": {
+          "e": {
+            "t": {
+              "p": {
+                "l": {
+                  "a": {
+                    "c": {
+                      "e": {
+                        ".": {
+                          "n": {
+                            "e": {
+                              "w": {
+                                "e": {
+                                  "s": {
+                                    "t": {
+                                      "F": {
+                                        "i": {
+                                          "r": {
+                                            "s": {
+                                              "t": "नवीनतम पहले"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "p": {
+                            "r": {
+                              "i": {
+                                "c": {
+                                  "e": {
+                                    "L": {
+                                      "o": {
+                                        "w": {
+                                          "T": {
+                                            "o": {
+                                              "H": {
+                                                "i": {
+                                                  "g": {
+                                                    "h": "मूल्य: कम से अधिक"
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "H": {
+                                      "i": {
+                                        "g": {
+                                          "h": {
+                                            "T": {
+                                              "o": {
+                                                "L": {
+                                                  "o": {
+                                                    "w": "मूल्य: अधिक से कम"
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "m": {
+                            "o": {
+                              "s": {
+                                "t": {
+                                  "P": {
+                                    "o": {
+                                      "p": {
+                                        "u": {
+                                          "l": {
+                                            "a": {
+                                              "r": "सबसे लोकप्रिय"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "p": {
+    "r": {
+      "o": {
+        "d": {
+          "u": {
+            "c": {
+              "t": {
+                "D": {
+                  "e": {
+                    "t": {
+                      "a": {
+                        "i": {
+                          "l": {
+                            "s": {
+                              ".": {
+                                "a": {
+                                  "v": {
+                                    "a": {
+                                      "i": {
+                                        "l": {
+                                          "a": {
+                                            "b": {
+                                              "l": {
+                                                "e": {
+                                                  "I": {
+                                                    "n": {
+                                                      "S": {
+                                                        "t": {
+                                                          "o": {
+                                                            "c": {
+                                                              "k": "{{count}} {{unit}} स्टॉक में उपलब्ध"
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "F": {
+                                                    "r": {
+                                                      "o": {
+                                                        "m": {
+                                                          "L": {
+                                                            "a": {
+                                                              "b": {
+                                                                "e": {
+                                                                  "l": "उपलब्धता: {{date}}"
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "b": {
+                                    "o": {
+                                      "u": {
+                                        "t": {
+                                          "F": {
+                                            "a": {
+                                              "r": {
+                                                "m": {
+                                                  "e": {
+                                                    "r": {
+                                                      "T": {
+                                                        "i": {
+                                                          "t": {
+                                                            "l": {
+                                                              "e": "किसान / उत्पादक के बारे में"
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "h": {
+                                  "a": {
+                                    "r": {
+                                      "v": {
+                                        "e": {
+                                          "s": {
+                                            "t": {
+                                              "D": {
+                                                "a": {
+                                                  "t": {
+                                                    "e": {
+                                                      "L": {
+                                                        "a": {
+                                                          "b": {
+                                                            "e": {
+                                                              "l": "कटाई: {{date}}"
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "q": {
+                                  "u": {
+                                    "a": {
+                                      "n": {
+                                        "t": {
+                                          "i": {
+                                            "t": {
+                                              "y": {
+                                                "L": {
+                                                  "a": {
+                                                    "b": {
+                                                      "e": {
+                                                        "l": "मात्रा ({{unit}}):"
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "buyerVerificationConfig": {
+    "INDIVIDUAL": {
+      "portalTitle": "व्यक्तिगत खरीदार सत्यापन",
+      "pageTitle": "खरीदार सत्यापन स्थिति",
+      "badgeText": "सत्यापित व्यक्तिगत खरीदार",
+      "incompleteBadgeText": "सत्यापन लंबित",
+      "steps": {
+        "mobile": {
+          "shortLabel": "मोबाइल",
+          "name": "मोबाइल सत्यापन",
+          "description": "अधिसूचना और अलर्ट एक्सेस के लिए मोबाइल नंबर सत्यापित करें।"
+        },
+        "identity": {
+          "shortLabel": "पहचान",
+          "name": "आधार / पहचान प्रमाण",
+          "description": "सरकारी पहचान प्रमाण की फ्रंट और बैक कॉपी अपलोड करें।"
+        },
+        "address": {
+          "shortLabel": "पता",
+          "name": "पता सत्यापन",
+          "description": "सत्यापित डिलीवरी और बिलिंग पते का विवरण प्रदान करें।"
+        },
+        "summary": {
+          "shortLabel": "सारांश",
+          "name": "सत्यापन सारांश",
+          "description": "अपने व्यक्तिगत सत्यापन आवेदन की समीक्षा करें और जमा करें।"
+        }
+      }
+    },
+    "BUSINESS": {
+      "portalTitle": "व्यावसायिक खरीदार सत्यापन",
+      "pageTitle": "कॉर्पोरेट सत्यापन स्थिति",
+      "badgeText": "सत्यापित व्यावसायिक खरीदार",
+      "incompleteBadgeText": "व्यावसायिक सत्यापन लंबित",
+      "steps": {
+        "business": {
+          "shortLabel": "व्यवसाय",
+          "name": "व्यावसायिक विवरण",
+          "description": "कानूनी संस्था का नाम, प्रकार और पंजीकृत पता दर्ज करें।"
+        },
+        "pan": {
+          "shortLabel": "पैन",
+          "name": "व्यावसायिक पैन कार्ड",
+          "description": "पंजीकृत कंपनी या फर्म के पैन विवरण प्रदान करें।"
+        },
+        "gstin": {
+          "shortLabel": "जीएसटीआईएन",
+          "name": "जीएसटीआईएन पंजीकरण",
+          "description": "वस्तु एवं सेवा कर पहचान संख्या प्रदान करें।"
+        },
+        "businessRegistration": {
+          "shortLabel": "पंजीकरण",
+          "name": "निगमन / पंजीकरण प्रमाणपत्र",
+          "description": "आधिकारिक व्यवसाय पंजीकरण प्रमाणपत्र अपलोड करें।"
+        },
+        "representative": {
+          "shortLabel": "प्रतिनिधि",
+          "name": "अधिकृत प्रतिनिधि",
+          "description": "प्रबंधक या अधिकृत हस्ताक्षरकर्ता का विवरण प्रदान करें।"
+        },
+        "bank": {
+          "shortLabel": "बैंक",
+          "name": "बैंक खाता विवरण",
+          "description": "बिलिंग के लिए व्यावसायिक बैंक खाता विवरण प्रदान करें।"
+        },
+        "documents": {
+          "shortLabel": "दस्तावेज़",
+          "name": "सहायक दस्तावेज़",
+          "description": "अतिरिक्त व्यवसाय सत्यापन दस्तावेज़ अपलोड करें।"
+        },
+        "summary": {
+          "shortLabel": "सारांश",
+          "name": "सत्यापन समीक्षा",
+          "description": "आवेदन जमा करने से पहले कंपनी के विवरण की समीक्षा करें।"
+        }
+      }
+    },
+    "BULK_BUYER": {
+      "portalTitle": "थोक खरीदार सत्यापन",
+      "pageTitle": "थोक लाइसेंस सत्यापन",
+      "badgeText": "सत्यापित थोक खरीदार",
+      "incompleteBadgeText": "थोक सत्यापन लंबित",
+      "steps": {
+        "business": {
+          "shortLabel": "व्यवसाय",
+          "name": "थोक उद्यम विवरण",
+          "description": "थोक कंपनी का नाम, संचालन क्षेत्र और पता दर्ज करें।"
+        },
+        "pan": {
+          "shortLabel": "पैन",
+          "name": "उद्यम पैन",
+          "description": "उद्यम पैन दस्तावेज़ प्रदान करें।"
+        },
+        "gstin": {
+          "shortLabel": "जीएसटीआईएन",
+          "name": "थोक जीएसटीआईएन",
+          "description": "पंजीकृत जीएसटीआईएन विवरण प्रदान करें।"
+        },
+        "businessRegistration": {
+          "shortLabel": "पंजीकरण",
+          "name": "व्यापार / पंजीकरण प्रमाणपत्र",
+          "description": "व्यावसायिक व्यापार लाइसेंस या पंजीकरण प्रमाणपत्र अपलोड करें।"
+        },
+        "udyam": {
+          "shortLabel": "उद्यम",
+          "name": "उद्यम एमएसएमई पंजीकरण",
+          "description": "एमएसएमई उद्यम पंजीकरण प्रमाणपत्र प्रदान करें।"
+        },
+        "representative": {
+          "shortLabel": "प्रतिनिधि",
+          "name": "थोक संपर्क व्यक्ति",
+          "description": "प्राथमिक संपर्क और अधिकृत प्रतिनिधि जानकारी प्रदान करें।"
+        },
+        "bank": {
+          "shortLabel": "बैंक",
+          "name": "निपटान बैंक खाता",
+          "description": "उच्च-मात्रा व्यापार निपटान के लिए बैंक विवरण प्रदान करें।"
+        },
+        "fssai": {
+          "shortLabel": "एफएसएसएआई",
+          "name": "एफएसएसएआई खाद्य सुरक्षा लाइसेंस",
+          "description": "खाद्य वस्तुओं में व्यापार करने पर एफएसएसएआई लाइसेंस प्रदान करें।"
+        },
+        "documents": {
+          "shortLabel": "दस्तावेज़",
+          "name": "थोक लाइसेंस और परमिट",
+          "description": "व्यापार परमिट, मंडी लाइसेंस और कर दस्तावेज़ अपलोड करें।"
+        },
+        "summary": {
+          "shortLabel": "सारांश",
+          "name": "अंतिम थोक समीक्षा",
+          "description": "जमा करने से पहले सभी थोक दस्तावेजों की समीक्षा करें।"
+        }
+      }
+    }
+  },
+  "productDetails": {
+    "availableInStock": "स्टॉक में {{count}} {{unit}} उपलब्ध है",
+    "harvestDateLabel": "कटाई: {{date}}",
+    "availableFromLabel": "उपलब्ध: {{date}}",
+    "quantityLabel": "मात्रा ({{unit}}):",
+    "aboutFarmerTitle": "किसान / उत्पादक के बारे में"
   }
 }

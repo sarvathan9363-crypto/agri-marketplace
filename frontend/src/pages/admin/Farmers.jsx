@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+import { translateStatus } from '../../utils/enumTranslations';
 import { useState, useEffect } from 'react';
 import DataTable from '../../components/ui/DataTable';
 import Button from '../../components/ui/Button';
@@ -8,6 +10,7 @@ import adminService from '../../services/adminService';
 import toast from 'react-hot-toast';
 
 export default function AdminFarmers() {
+  const { t } = useTranslation();
   const [farmers, setFarmers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('');
@@ -40,7 +43,7 @@ export default function AdminFarmers() {
 
   const columns = [
     {
-      header: 'Farmer / FPO Name',
+      header: t('adminFarmers.colFarmerName', { defaultValue: 'FARMER / FPO NAME' }),
       key: 'fullName',
       render: (f) => (
         <div>
@@ -49,9 +52,9 @@ export default function AdminFarmers() {
         </div>
       )
     },
-    { header: 'Seller Type', key: 'farmerType' },
+    { header: t('adminFarmers.colSellerType', { defaultValue: 'SELLER TYPE' }), key: 'farmerType' },
     {
-      header: 'Contact Info',
+      header: t('adminFarmers.colContactInfo', { defaultValue: 'CONTACT INFO' }),
       key: 'contact',
       render: (f) => (
         <div className="text-xs font-sans">
@@ -60,15 +63,15 @@ export default function AdminFarmers() {
         </div>
       )
     },
-    { header: 'Location', key: 'location' },
-    { header: 'Verification', key: 'verificationStatus', type: 'status' },
+    { header: t('adminFarmers.colLocation', { defaultValue: 'LOCATION' }), key: 'location' },
+    { header: t('adminFarmers.colVerification', { defaultValue: 'VERIFICATION' }), key: 'verificationStatus', type: 'status' },
     {
-      header: 'Audit Provenance',
+      header: t('adminFarmers.colAuditProvenance', { defaultValue: 'AUDIT PROVENANCE' }),
       key: 'audit',
       render: (f) => <BlockchainAuditBadge entityType="FARMER" entityId={f._id} compact={true} />
     },
     {
-      header: 'Actions',
+      header: t('adminFarmers.colActions', { defaultValue: 'ACTIONS' }),
       key: 'actions',
       headerClassName: 'text-right',
       render: (f) => (
@@ -76,16 +79,16 @@ export default function AdminFarmers() {
           {f.verificationStatus === 'PENDING_VERIFICATION' && (
             <>
               <Button variant="primary" size="sm" onClick={() => handleVerify(f._id, 'VERIFIED')}>
-                Verify
+                {t('common.verify', { defaultValue: 'Verify' })}
               </Button>
               <Button variant="danger" size="sm" onClick={() => setVerifyModal(f)}>
-                Reject
+                {t('common.reject', { defaultValue: 'Reject' })}
               </Button>
             </>
           )}
           {f.verificationStatus === 'REJECTED' && (
             <Button variant="primary" size="sm" onClick={() => handleVerify(f._id, 'VERIFIED')}>
-              Approve Verification
+              {t('adminFarmers.approveVerification', { defaultValue: 'Approve Verification' })}
             </Button>
           )}
         </div>
@@ -96,9 +99,9 @@ export default function AdminFarmers() {
   return (
     <div className="space-y-6">
       <div>
-        <span className="text-[#00684a] font-extrabold text-xs tracking-widest uppercase font-display bg-[#00ed64]/20 px-3 py-1 rounded-full">KYC Verification Pipeline</span>
-        <h1 className="text-3xl font-black text-[#001e2b] font-display mt-2">Farmers & FPOs Approval</h1>
-        <p className="text-sm text-gray-600 mt-1 font-sans">Review farm registrations, verify identity, and grant active seller privileges.</p>
+        <span className="text-[#00684a] font-extrabold text-xs tracking-widest uppercase font-display bg-[#00ed64]/20 px-3 py-1 rounded-full">{t('common.kycVerificationPipeline')}</span>
+        <h1 className="text-3xl font-black text-[#001e2b] font-display mt-2">{t('adminFarmers.approvalHeadline', { defaultValue: 'Farmers & FPOs Approval' })}</h1>
+        <p className="text-sm text-gray-600 mt-1 font-sans">{t('common.reviewFarmRegistrationsVerifyIdentityAnd')}</p>
       </div>
 
       <div className="flex gap-2 flex-wrap bg-white p-3 rounded-3xl border border-[#e8eddb] shadow-sm">
@@ -110,7 +113,7 @@ export default function AdminFarmers() {
               filter === s ? 'bg-[#001e2b] text-[#00ed64]' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
             }`}
           >
-            {s ? s.replace(/_/g, ' ') : 'All Applications'}
+            {s ? translateStatus(t, s) : t('adminFarmers.allApplications', { defaultValue: 'All Applications' })}
           </button>
         ))}
       </div>
@@ -119,26 +122,26 @@ export default function AdminFarmers() {
         columns={columns}
         data={farmers}
         loading={loading}
-        emptyTitle="No verification applications found"
+        emptyTitle={t('adminFarmers.noVerificationApps', { defaultValue: 'No verification applications found' })}
       />
 
       {/* Reject Modal */}
       {verifyModal && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-3xl border border-[#e8eddb] shadow-2xl p-8 max-w-md w-full space-y-4">
-            <h3 className="text-xl font-extrabold text-[#001e2b] font-display">Reject {verifyModal.fullName}?</h3>
+            <h3 className="text-xl font-extrabold text-[#001e2b] font-display">{t('adminFarmers.rejectFarmerModalTitle', { name: verifyModal.fullName, defaultValue: `Reject ${verifyModal.fullName}?` })}</h3>
             <TextArea
               rows={3}
-              placeholder="Provide reason for verification rejection..."
+              placeholder={t('adminFarmers.placeholderRejection', { defaultValue: 'Provide reason for verification rejection...' })}
               value={notes}
               onChange={e => setNotes(e.target.value)}
             />
             <div className="flex justify-end gap-3 pt-2">
               <Button variant="ghost" size="md" onClick={() => { setVerifyModal(null); setNotes(''); }}>
-                Cancel
+                {t('common.cancel', { defaultValue: 'Cancel' })}
               </Button>
               <Button variant="danger" size="md" onClick={() => handleVerify(verifyModal._id, 'REJECTED')}>
-                Reject Farmer
+                {t('adminFarmers.rejectFarmerBtn', { defaultValue: 'Reject Farmer' })}
               </Button>
             </div>
           </div>

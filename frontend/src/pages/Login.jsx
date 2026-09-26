@@ -42,7 +42,7 @@ export default function Login() {
             <div className="w-12 h-12 bg-[#00E676] text-[#002B36] rounded-full flex items-center justify-center shadow-md">
               <Leaf className="w-7 h-7" />
             </div>
-            <span className="text-3xl font-black text-[#002B36]">Agri<span className="text-[#00C853]">Bazaar</span></span>
+            <span className="text-3xl font-black text-[#002B36]">{t('auth.agri')}<span className="text-[#00C853]">{t('auth.bazaar')}</span></span>
           </Link>
           <h1 className="text-3xl font-black text-[#082B36]">{t('auth.welcomeBack')}</h1>
           <p className="mt-1 text-sm text-slate-600 font-medium">{t('navigation.signIn')} AgriBazaar</p>
@@ -57,7 +57,7 @@ export default function Login() {
                 <input
                   type="email"
                   required
-                  placeholder="you@example.com"
+                  placeholder={t('auth.placeholderEmail', { defaultValue: 'you@example.com' })}
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
                   className="w-full pl-11 pr-4 py-3 bg-white border border-[#E2E8E5] rounded-xl text-sm text-[#082B36] focus:outline-none focus:border-[#00E676] focus:ring-4 focus:ring-[#00E676]/15"
@@ -72,7 +72,7 @@ export default function Login() {
                 <input
                   type={showPass ? 'text' : 'password'}
                   required
-                  placeholder="Enter your password"
+                  placeholder={t('auth.placeholderPassword', { defaultValue: 'Enter your password' })}
                   value={form.password}
                   onChange={(e) => setForm({ ...form, password: e.target.value })}
                   className="w-full pl-11 pr-12 py-3 bg-white border border-[#E2E8E5] rounded-xl text-sm text-[#082B36] focus:outline-none focus:border-[#00E676] focus:ring-4 focus:ring-[#00E676]/15"
@@ -113,7 +113,7 @@ export default function Login() {
         </div>
 
         <div className="mt-6 bg-[#002B36] text-white p-4 rounded-2xl text-center border border-[#E2E8E5]/20 shadow-sm">
-          <p className="text-xs font-bold uppercase tracking-wider text-[#00E676] mb-1">Demo Credentials</p>
+          <p className="text-xs font-bold uppercase tracking-wider text-[#00E676] mb-1">{t('auth.demoCredentials')}</p>
           <p className="text-xs text-slate-300 leading-relaxed">
             Admin: <code className="text-[#00E676]">admin@agribazaar.com</code> / admin123<br />
             Farmer: <code className="text-[#00E676]">farmer@agribazaar.com</code> / farmer123<br />

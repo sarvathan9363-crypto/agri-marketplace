@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import toast from 'react-hot-toast';
 import {
   ShieldCheck,
@@ -28,7 +29,7 @@ import {
 } from 'lucide-react';
 import buyerService from '../../services/buyerService';
 import { useAuth } from '../../context/AuthContext';
-import { buyerVerificationConfig } from '../../config/buyerVerificationConfig';
+import { getBuyerVerificationConfig } from '../../config/buyerVerificationConfig';
 
 const INDIAN_STATES = [
   'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh',
@@ -54,11 +55,13 @@ const MAJOR_BANKS = [
 ];
 
 export default function BuyerVerificationWizard() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const { profile } = useAuth();
 
   const rawBuyerType = profile?.buyerType || 'INDIVIDUAL';
-  const config = buyerVerificationConfig[rawBuyerType] || buyerVerificationConfig.INDIVIDUAL;
+  const allConfigs = getBuyerVerificationConfig(t);
+  const config = allConfigs[rawBuyerType] || allConfigs.INDIVIDUAL;
   const steps = config.steps;
 
   const [currentStep, setCurrentStep] = useState(1);
@@ -199,7 +202,7 @@ export default function BuyerVerificationWizard() {
       }
     } catch (err) {
       console.error('Error fetching buyer verification:', err);
-      toast.error('Could not load verification status');
+      toast.error(t('buyerVerificationWizard.couldNotLoadVerificationStatus'));
     } finally {
       setLoading(false);
     }
@@ -210,21 +213,21 @@ export default function BuyerVerificationWizard() {
   // Generic Step Status Helper
   const getStepStatus = (key) => {
     if (key === 'summary') {
-      return verification.overallStatus === 'verified' ? 'VERIFIED' : 'PENDING';
+      return verification.overallStatus === 'verified' ? t('buyerVerificationWizard.verified') : t('buyerVerificationWizard.pending');
     }
     const status = verification[key]?.status;
-    if (status === 'verified') return 'VERIFIED';
+    if (status === 'verified') return t('buyerVerificationWizard.verified');
     if (status === 'not_applicable') return 'NOT_APPLICABLE';
     if (status === 'failed') return 'FAILED';
     if (status === 'skipped') return 'SKIPPED';
-    return 'PENDING';
+    return t('buyerVerificationWizard.pending');
   };
 
   // Step Handler Functions
   const handleMobileSubmit = async () => {
     if (!mobileForm.otpSent) {
       if (!mobileForm.mobileNumber || mobileForm.mobileNumber.length < 10) {
-        toast.error('Please enter a valid 10-digit mobile number');
+        toast.error(t('buyerVerificationWizard.pleaseEnterAValid10digitMobile'));
         return;
       }
       setSubmitting(true);
@@ -232,7 +235,7 @@ export default function BuyerVerificationWizard() {
         const res = await buyerService.sendMobileOtp({ mobileNumber: mobileForm.mobileNumber });
         if (res.success) {
           setMobileForm((prev) => ({ ...prev, otpSent: true }));
-          toast.success('OTP sent to your mobile number');
+          toast.success(t('buyerVerificationWizard.otpSentToYourMobileNumber'));
         }
       } catch (err) {
         toast.error(err.response?.data?.message || 'Failed to send OTP');
@@ -241,7 +244,7 @@ export default function BuyerVerificationWizard() {
       }
     } else {
       if (!mobileForm.otp || mobileForm.otp.length !== 6) {
-        toast.error('Please enter 6-digit OTP code');
+        toast.error(t('buyerVerificationWizard.pleaseEnter6digitOtpCode'));
         return;
       }
       setSubmitting(true);
@@ -249,7 +252,7 @@ export default function BuyerVerificationWizard() {
         const res = await buyerService.verifyMobileOtp({ otp: mobileForm.otp });
         if (res.success) {
           setVerification(res.verification);
-          toast.success('Mobile number verified successfully');
+          toast.success(t('buyerVerificationWizard.mobileNumberVerifiedSuccessfully'));
           nextStep();
         }
       } catch (err) {
@@ -262,7 +265,7 @@ export default function BuyerVerificationWizard() {
 
   const handleIdentitySubmit = async () => {
     if (!identityForm.consent) {
-      toast.error('Consent is required to proceed with identity verification');
+      toast.error(t('buyerVerificationWizard.consentIsRequiredToProceedWith'));
       return;
     }
     if (!identityForm.otpSent) {
@@ -270,11 +273,11 @@ export default function BuyerVerificationWizard() {
       setTimeout(() => {
         setIdentityForm((prev) => ({ ...prev, otpSent: true }));
         setSubmitting(false);
-        toast.success('OTP sent to your Aadhaar-linked mobile');
+        toast.success(t('buyerVerificationWizard.otpSentToYourAadhaarlinkedMobile'));
       }, 1000);
     } else {
       if (!identityForm.otp || identityForm.otp.length !== 6) {
-        toast.error('Please enter 6-digit OTP');
+        toast.error(t('buyerVerificationWizard.pleaseEnter6digitOtp'));
         return;
       }
       setSubmitting(true);
@@ -286,7 +289,7 @@ export default function BuyerVerificationWizard() {
         });
         if (res.success) {
           setVerification(res.verification);
-          toast.success('Identity verified via authorized gateway');
+          toast.success(t('buyerVerificationWizard.identityVerifiedViaAuthorizedGateway'));
           nextStep();
         }
       } catch (err) {
@@ -299,7 +302,7 @@ export default function BuyerVerificationWizard() {
 
   const handleAddressSubmit = async () => {
     if (!addressForm.address || !addressForm.district || !addressForm.city || !addressForm.pincode) {
-      toast.error('Please fill all required address fields');
+      toast.error(t('buyerVerificationWizard.pleaseFillAllRequiredAddressFields'));
       return;
     }
     setSubmitting(true);
@@ -307,7 +310,7 @@ export default function BuyerVerificationWizard() {
       const res = await buyerService.verifyAddress(addressForm);
       if (res.success) {
         setVerification(res.verification);
-        toast.success('Address details verified');
+        toast.success(t('buyerVerificationWizard.addressDetailsVerified'));
         nextStep();
       }
     } catch (err) {
@@ -319,7 +322,7 @@ export default function BuyerVerificationWizard() {
 
   const handleBusinessSubmit = async () => {
     if (!businessForm.legalName || !businessForm.businessType || !businessForm.address || !businessForm.district || !businessForm.city || !businessForm.pincode) {
-      toast.error('Please fill all required business identity fields');
+      toast.error(t('buyerVerificationWizard.pleaseFillAllRequiredBusinessIdentity'));
       return;
     }
     setSubmitting(true);
@@ -327,7 +330,7 @@ export default function BuyerVerificationWizard() {
       const res = await buyerService.verifyBusiness(businessForm);
       if (res.success) {
         setVerification(res.verification);
-        toast.success('Business identity verified');
+        toast.success(t('buyerVerificationWizard.businessIdentityVerified'));
         nextStep();
       }
     } catch (err) {
@@ -340,7 +343,7 @@ export default function BuyerVerificationWizard() {
   const handlePanSubmit = async () => {
     const cleanPan = (panForm.panNumber || '').toUpperCase().trim();
     if (!/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/.test(cleanPan)) {
-      toast.error('Please enter a valid 10-character PAN number (e.g. ABCDE1234F)');
+      toast.error(t('buyerVerificationWizard.pleaseEnterAValid10characterPan'));
       return;
     }
     setSubmitting(true);
@@ -348,7 +351,7 @@ export default function BuyerVerificationWizard() {
       const res = await buyerService.verifyPan({ panNumber: cleanPan, legalName: panForm.legalName });
       if (res.success) {
         setVerification(res.verification);
-        toast.success('Business PAN verified successfully');
+        toast.success(t('buyerVerificationWizard.businessPanVerifiedSuccessfully'));
         nextStep();
       }
     } catch (err) {
@@ -365,11 +368,11 @@ export default function BuyerVerificationWizard() {
         const res = await buyerService.verifyGstin({ isNotApplicable: true });
         if (res.success) {
           setVerification(res.verification);
-          toast.success('GSTIN marked as Not Applicable');
+          toast.success(t('buyerVerificationWizard.gstinMarkedAsNotApplicable'));
           nextStep();
         }
       } catch (err) {
-        toast.error('Failed to update GSTIN status');
+        toast.error(t('buyerVerificationWizard.failedToUpdateGstinStatus'));
       } finally {
         setSubmitting(false);
       }
@@ -377,7 +380,7 @@ export default function BuyerVerificationWizard() {
     }
 
     if (!gstinForm.gstinNumber || gstinForm.gstinNumber.trim().length !== 15) {
-      toast.error('Please enter a valid 15-character GSTIN number');
+      toast.error(t('buyerVerificationWizard.pleaseEnterAValid15characterGstin'));
       return;
     }
     setSubmitting(true);
@@ -385,7 +388,7 @@ export default function BuyerVerificationWizard() {
       const res = await buyerService.verifyGstin({ gstinNumber: gstinForm.gstinNumber });
       if (res.success) {
         setVerification(res.verification);
-        toast.success('GSTIN verified successfully');
+        toast.success(t('buyerVerificationWizard.gstinVerifiedSuccessfully'));
         nextStep();
       }
     } catch (err) {
@@ -397,7 +400,7 @@ export default function BuyerVerificationWizard() {
 
   const handleBusRegSubmit = async () => {
     if (!busRegForm.registrationNumber) {
-      toast.error('Please enter Registration Number / Identifier');
+      toast.error(t('buyerVerificationWizard.pleaseEnterRegistrationNumberIdentifier'));
       return;
     }
     // We update business details or skip to next
@@ -406,12 +409,12 @@ export default function BuyerVerificationWizard() {
 
   const handleRepSubmit = async () => {
     if (!repForm.repName || !repForm.designation) {
-      toast.error('Please enter representative name and designation');
+      toast.error(t('buyerVerificationWizard.pleaseEnterRepresentativeNameAndDesignation'));
       return;
     }
     if (!repForm.otpSent) {
       if (!repForm.mobileNumber || repForm.mobileNumber.length < 10) {
-        toast.error('Please enter valid mobile number');
+        toast.error(t('buyerVerificationWizard.pleaseEnterValidMobileNumber'));
         return;
       }
       setSubmitting(true);
@@ -419,16 +422,16 @@ export default function BuyerVerificationWizard() {
         const res = await buyerService.sendRepOtp({ mobileNumber: repForm.mobileNumber });
         if (res.success) {
           setRepForm((prev) => ({ ...prev, otpSent: true }));
-          toast.success('OTP sent to representative mobile');
+          toast.success(t('buyerVerificationWizard.otpSentToRepresentativeMobile'));
         }
       } catch (err) {
-        toast.error('Failed to send OTP');
+        toast.error(t('buyerVerificationWizard.failedToSendOtp'));
       } finally {
         setSubmitting(false);
       }
     } else {
       if (!repForm.otp || repForm.otp.length !== 6) {
-        toast.error('Please enter 6-digit OTP');
+        toast.error(t('buyerVerificationWizard.pleaseEnter6digitOtp'));
         return;
       }
       setSubmitting(true);
@@ -442,7 +445,7 @@ export default function BuyerVerificationWizard() {
         });
         if (res.success) {
           setVerification(res.verification);
-          toast.success('Authorized Representative verified');
+          toast.success(t('buyerVerificationWizard.authorizedRepresentativeVerified'));
           nextStep();
         }
       } catch (err) {
@@ -455,11 +458,11 @@ export default function BuyerVerificationWizard() {
 
   const handleBankSubmit = async () => {
     if (!bankForm.accountHolderName || !bankForm.bankName || !bankForm.accountNumber || !bankForm.ifsc) {
-      toast.error('Please fill all required bank account fields');
+      toast.error(t('buyerVerificationWizard.pleaseFillAllRequiredBankAccount'));
       return;
     }
     if (bankForm.accountNumber !== bankForm.confirmAccountNumber) {
-      toast.error('Account numbers do not match');
+      toast.error(t('buyerVerificationWizard.accountNumbersDoNotMatch'));
       return;
     }
     setSubmitting(true);
@@ -467,7 +470,7 @@ export default function BuyerVerificationWizard() {
       const res = await buyerService.verifyBank(bankForm);
       if (res.success) {
         setVerification(res.verification);
-        toast.success('Bank account verified successfully');
+        toast.success(t('buyerVerificationWizard.bankAccountVerifiedSuccessfully'));
         nextStep();
       }
     } catch (err) {
@@ -484,11 +487,11 @@ export default function BuyerVerificationWizard() {
         const res = await buyerService.verifyUdyam({ isNotApplicable: true });
         if (res.success) {
           setVerification(res.verification);
-          toast.success('Udyam registration marked as Not Applicable');
+          toast.success(t('buyerVerificationWizard.udyamRegistrationMarkedAsNotApplicable'));
           nextStep();
         }
       } catch (err) {
-        toast.error('Failed to update Udyam status');
+        toast.error(t('buyerVerificationWizard.failedToUpdateUdyamStatus'));
       } finally {
         setSubmitting(false);
       }
@@ -496,7 +499,7 @@ export default function BuyerVerificationWizard() {
     }
 
     if (!udyamForm.udyamNumber) {
-      toast.error('Please enter valid Udyam Registration Number');
+      toast.error(t('buyerVerificationWizard.pleaseEnterValidUdyamRegistrationNumber'));
       return;
     }
     setSubmitting(true);
@@ -504,7 +507,7 @@ export default function BuyerVerificationWizard() {
       const res = await buyerService.verifyUdyam({ udyamNumber: udyamForm.udyamNumber });
       if (res.success) {
         setVerification(res.verification);
-        toast.success('Udyam registration verified');
+        toast.success(t('buyerVerificationWizard.udyamRegistrationVerified'));
         nextStep();
       }
     } catch (err) {
@@ -521,11 +524,11 @@ export default function BuyerVerificationWizard() {
         const res = await buyerService.verifyFssai({ isNotApplicable: true });
         if (res.success) {
           setVerification(res.verification);
-          toast.success('FSSAI / License marked as Not Applicable');
+          toast.success(t('buyerVerificationWizard.fssaiLicenseMarkedAsNotApplicable'));
           nextStep();
         }
       } catch (err) {
-        toast.error('Failed to update License status');
+        toast.error(t('buyerVerificationWizard.failedToUpdateLicenseStatus'));
       } finally {
         setSubmitting(false);
       }
@@ -533,7 +536,7 @@ export default function BuyerVerificationWizard() {
     }
 
     if (!fssaiForm.fssaiNumber) {
-      toast.error('Please enter valid FSSAI / License registration number');
+      toast.error(t('buyerVerificationWizard.pleaseEnterValidFssaiLicenseRegistration'));
       return;
     }
     setSubmitting(true);
@@ -541,7 +544,7 @@ export default function BuyerVerificationWizard() {
       const res = await buyerService.verifyFssai({ fssaiNumber: fssaiForm.fssaiNumber, licenseType: fssaiForm.licenseType });
       if (res.success) {
         setVerification(res.verification);
-        toast.success('FSSAI / License verified');
+        toast.success(t('buyerVerificationWizard.fssaiLicenseVerified'));
         nextStep();
       }
     } catch (err) {
@@ -557,7 +560,7 @@ export default function BuyerVerificationWizard() {
       const res = await buyerService.verifyDocuments(docForm);
       if (res.success) {
         setVerification(res.verification);
-        toast.success('Documents recorded and verified');
+        toast.success(t('buyerVerificationWizard.documentsRecordedAndVerified'));
         nextStep();
       }
     } catch (err) {
@@ -570,7 +573,7 @@ export default function BuyerVerificationWizard() {
   const handleSkipCurrentStep = async () => {
     const key = activeStepObj.key;
     if (activeStepObj.req) {
-      toast.error('This step is required and cannot be skipped');
+      toast.error(t('buyerVerificationWizard.thisStepIsRequiredAndCannot'));
       return;
     }
     setSubmitting(true);
@@ -582,7 +585,7 @@ export default function BuyerVerificationWizard() {
         nextStep();
       }
     } catch (err) {
-      toast.error('Failed to skip step');
+      toast.error(t('buyerVerificationWizard.failedToSkipStep'));
     } finally {
       setSubmitting(false);
     }
@@ -597,12 +600,12 @@ export default function BuyerVerificationWizard() {
         if (res.verificationStatus === 'VERIFIED') {
           toast.success(res.message || 'Verification complete!');
         } else {
-          toast.success('Verification details saved!');
+          toast.success(t('buyerVerificationWizard.verificationDetailsSaved'));
         }
         navigate('/buyer/verification');
       }
     } catch (err) {
-      toast.error('Could not complete verification');
+      toast.error(t('buyerVerificationWizard.couldNotCompleteVerification'));
     } finally {
       setSubmitting(false);
     }
@@ -621,7 +624,7 @@ export default function BuyerVerificationWizard() {
       <div className="min-h-screen bg-slate-50 flex items-center justify-center p-6">
         <div className="text-center">
           <Loader2 className="w-10 h-10 text-emerald-700 animate-spin mx-auto mb-3" />
-          <p className="text-sm font-semibold text-slate-700">Loading Official Verification Portal...</p>
+          <p className="text-sm font-semibold text-slate-700">{t('buyerVerificationWizard.loadingOfficialVerificationPortal')}</p>
         </div>
       </div>
     );
@@ -647,7 +650,7 @@ export default function BuyerVerificationWizard() {
           </div>
           <div className="flex items-center space-x-3 text-xs bg-emerald-950/60 px-3 py-1.5 rounded border border-emerald-800">
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
-            <span>Official Identity & Compliance Gateway</span>
+            <span>{t('buyerVerificationWizard.officialIdentityComplianceGateway')}</span>
           </div>
         </div>
       </header>
@@ -678,7 +681,7 @@ export default function BuyerVerificationWizard() {
             className="self-start md:self-auto inline-flex items-center space-x-1.5 text-xs font-semibold text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-300 px-3 py-2 rounded transition"
           >
             <Save className="w-3.5 h-3.5" />
-            <span>Save & Exit to Dashboard</span>
+            <span>{t('buyerVerificationWizard.saveExitToDashboard')}</span>
           </button>
         </div>
 
@@ -750,11 +753,11 @@ export default function BuyerVerificationWizard() {
                         {st.id}
                       </div>
                       <div>
-                        <p className={`font-semibold ${isCurrent ? 'text-slate-900' : 'text-slate-700'}`}>
+                        <p className={`font-semibold ${isCurrent ? t('buyerVerificationWizard.textslate900') : t('buyerVerificationWizard.textslate700')}`}>
                           {st.name}
                         </p>
                         <p className="text-[11px] text-slate-500 line-clamp-1 mt-0.5">
-                          {st.shortLabel} {st.req ? '(Required)' : '(Optional)'}
+                          {st.shortLabel} {st.req ? t('buyerVerificationWizard.required') : t('buyerVerificationWizard.optional')}
                         </p>
                       </div>
                     </div>
@@ -772,9 +775,9 @@ export default function BuyerVerificationWizard() {
             {/* Step Header */}
             <div className="border-b border-slate-200 pb-4 mb-6">
               <div className="flex items-center space-x-2 text-xs font-bold text-emerald-800 uppercase tracking-wider mb-1">
-                <span>Step {currentStep} of {steps.length}</span>
+                <span>{t('buyerVerificationWizard.stepCurrentstepOfStepslength')}</span>
                 <span>•</span>
-                <span>{activeStepObj.req ? 'Mandatory Verification' : 'Optional Check'}</span>
+                <span>{activeStepObj.req ? t('buyerVerificationWizard.mandatoryVerification') : t('buyerVerificationWizard.optionalCheck')}</span>
               </div>
               <h3 className="text-xl font-bold text-slate-900 flex items-center gap-2">
                 <activeStepObj.icon className="w-6 h-6 text-emerald-700" />
@@ -791,8 +794,8 @@ export default function BuyerVerificationWizard() {
             {activeStepObj.key === 'mobile' && (
               <div className="space-y-4">
                 <div className="bg-slate-50 border border-slate-200 rounded p-4 text-xs text-slate-700 space-y-1">
-                  <p className="font-semibold text-slate-900">Mobile Authentication Protocol</p>
-                  <p>Enter your 10-digit mobile number to receive a secure One-Time Password (OTP). OTP will not be stored permanently.</p>
+                  <p className="font-semibold text-slate-900">{t('buyerVerificationWizard.mobileAuthenticationProtocol')}</p>
+                  <p>{t('buyerVerificationWizard.enterYour10digitMobileNumberTo')}</p>
                 </div>
 
                 <div>
@@ -805,7 +808,7 @@ export default function BuyerVerificationWizard() {
                     disabled={mobileForm.otpSent}
                     value={mobileForm.mobileNumber}
                     onChange={(e) => setMobileForm({ ...mobileForm, mobileNumber: e.target.value })}
-                    placeholder="Enter 10-digit mobile number"
+                    placeholder={t('buyerVerificationWizard.enter10digitMobileNumber')}
                     className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700 focus:outline-none disabled:bg-slate-100"
                   />
                 </div>
@@ -820,10 +823,10 @@ export default function BuyerVerificationWizard() {
                       maxLength={6}
                       value={mobileForm.otp}
                       onChange={(e) => setMobileForm({ ...mobileForm, otp: e.target.value })}
-                      placeholder="Enter 6-digit OTP"
+                      placeholder={t('buyerVerificationWizard.enter6digitOtp')}
                       className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700 focus:outline-none tracking-widest font-mono"
                     />
-                    <p className="text-[11px] text-slate-500 mt-1">OTP sent to +91-XXXXX{mobileForm.mobileNumber.slice(-4)}</p>
+                    <p className="text-[11px] text-slate-500 mt-1">{t('buyerVerificationWizard.otpSentTo91xxxxxmobileformmobilenumberslice4')}</p>
                   </div>
                 )}
 
@@ -834,7 +837,7 @@ export default function BuyerVerificationWizard() {
                     className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded border border-slate-300 disabled:opacity-50"
                   >
                     <ArrowLeft className="w-3.5 h-3.5" />
-                    <span>Back</span>
+                    <span>{t('buyerVerificationWizard.back')}</span>
                   </button>
 
                   <button
@@ -843,7 +846,7 @@ export default function BuyerVerificationWizard() {
                     className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50"
                   >
                     {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                    <span>{mobileForm.otpSent ? 'Verify OTP & Continue' : 'Get Mobile OTP'}</span>
+                    <span>{mobileForm.otpSent ? t('buyerVerificationWizard.verifyOtpContinue') : t('buyerVerificationWizard.getMobileOtp')}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
@@ -854,8 +857,8 @@ export default function BuyerVerificationWizard() {
             {activeStepObj.key === 'identity' && (
               <div className="space-y-4">
                 <div className="bg-slate-50 border border-slate-200 rounded p-4 text-xs text-slate-700 space-y-1">
-                  <p className="font-semibold text-slate-900">Authorized Identity Verification</p>
-                  <p>Identity is validated securely via authorized verification reference. Full raw identity document numbers are never permanently stored.</p>
+                  <p className="font-semibold text-slate-900">{t('buyerVerificationWizard.authorizedIdentityVerification')}</p>
+                  <p>{t('buyerVerificationWizard.identityIsValidatedSecurelyViaAuthorized')}</p>
                 </div>
 
                 <div>
@@ -867,9 +870,9 @@ export default function BuyerVerificationWizard() {
                     onChange={(e) => setIdentityForm({ ...identityForm, method: e.target.value })}
                     className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700 focus:outline-none"
                   >
-                    <option value="aadhaar">Aadhaar-based Authorized Verification</option>
-                    <option value="pan">PAN-based Identity Verification</option>
-                    <option value="voter">Voter ID / National Portal Verification</option>
+                    <option value="aadhaar">{t('buyerVerificationWizard.aadhaarbasedAuthorizedVerification')}</option>
+                    <option value="pan">{t('buyerVerificationWizard.panbasedIdentityVerification')}</option>
+                    <option value="voter">{t('buyerVerificationWizard.voterIdNationalPortalVerification')}</option>
                   </select>
                 </div>
 
@@ -897,7 +900,7 @@ export default function BuyerVerificationWizard() {
                       maxLength={6}
                       value={identityForm.otp}
                       onChange={(e) => setIdentityForm({ ...identityForm, otp: e.target.value })}
-                      placeholder="Enter 6-digit OTP"
+                      placeholder={t('buyerVerificationWizard.enter6digitOtp')}
                       className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700 font-mono tracking-widest"
                     />
                   </div>
@@ -909,7 +912,7 @@ export default function BuyerVerificationWizard() {
                     className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded border border-slate-300"
                   >
                     <ArrowLeft className="w-3.5 h-3.5" />
-                    <span>Back</span>
+                    <span>{t('buyerVerificationWizard.back')}</span>
                   </button>
 
                   <button
@@ -918,7 +921,7 @@ export default function BuyerVerificationWizard() {
                     className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50"
                   >
                     {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                    <span>{identityForm.otpSent ? 'Verify Identity & Continue' : 'Send Identity OTP'}</span>
+                    <span>{identityForm.otpSent ? t('buyerVerificationWizard.verifyIdentityContinue') : t('buyerVerificationWizard.sendIdentityOtp')}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
@@ -937,7 +940,7 @@ export default function BuyerVerificationWizard() {
                       type="text"
                       value={addressForm.address}
                       onChange={(e) => setAddressForm({ ...addressForm, address: e.target.value })}
-                      placeholder="Flat, House no., Building, Street, Area"
+                      placeholder={t('buyerVerificationWizard.flatHouseNoBuildingStreetArea')}
                       className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700"
                     />
                   </div>
@@ -965,7 +968,7 @@ export default function BuyerVerificationWizard() {
                       type="text"
                       value={addressForm.district}
                       onChange={(e) => setAddressForm({ ...addressForm, district: e.target.value })}
-                      placeholder="District Name"
+                      placeholder={t('buyerVerificationWizard.districtName')}
                       className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700"
                     />
                   </div>
@@ -978,7 +981,7 @@ export default function BuyerVerificationWizard() {
                       type="text"
                       value={addressForm.city}
                       onChange={(e) => setAddressForm({ ...addressForm, city: e.target.value })}
-                      placeholder="City or Town"
+                      placeholder={t('buyerVerificationWizard.cityOrTown')}
                       className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700"
                     />
                   </div>
@@ -992,7 +995,7 @@ export default function BuyerVerificationWizard() {
                       maxLength={6}
                       value={addressForm.pincode}
                       onChange={(e) => setAddressForm({ ...addressForm, pincode: e.target.value })}
-                      placeholder="6-digit PIN Code"
+                      placeholder={t('buyerVerificationWizard.6digitPinCode')}
                       className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700 font-mono"
                     />
                   </div>
@@ -1004,7 +1007,7 @@ export default function BuyerVerificationWizard() {
                     className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded border border-slate-300"
                   >
                     <ArrowLeft className="w-3.5 h-3.5" />
-                    <span>Back</span>
+                    <span>{t('buyerVerificationWizard.back')}</span>
                   </button>
 
                   <button
@@ -1013,7 +1016,7 @@ export default function BuyerVerificationWizard() {
                     className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50"
                   >
                     {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                    <span>Verify Address & Continue</span>
+                    <span>{t('buyerVerificationWizard.verifyAddressContinue')}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
@@ -1032,7 +1035,7 @@ export default function BuyerVerificationWizard() {
                       type="text"
                       value={businessForm.legalName}
                       onChange={(e) => setBusinessForm({ ...businessForm, legalName: e.target.value })}
-                      placeholder="As registered in MCA / GST / PAN"
+                      placeholder={t('buyerVerificationWizard.asRegisteredInMcaGstPan')}
                       className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700"
                     />
                   </div>
@@ -1045,7 +1048,7 @@ export default function BuyerVerificationWizard() {
                       type="text"
                       value={businessForm.tradeName}
                       onChange={(e) => setBusinessForm({ ...businessForm, tradeName: e.target.value })}
-                      placeholder="Brand or Trade Name (optional)"
+                      placeholder={t('buyerVerificationWizard.brandOrTradeNameOptional')}
                       className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700"
                     />
                   </div>
@@ -1059,13 +1062,13 @@ export default function BuyerVerificationWizard() {
                       onChange={(e) => setBusinessForm({ ...businessForm, businessType: e.target.value })}
                       className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700"
                     >
-                      <option value="Retailer">Retailer / Agribusiness Dealer</option>
-                      <option value="Wholesaler">Wholesaler / Trader</option>
-                      <option value="Processor">Food Processor / Mill</option>
-                      <option value="Exporter">Exporter / Institutional Buyer</option>
-                      <option value="Proprietorship">Proprietorship Firm</option>
-                      <option value="Partnership">Partnership Firm</option>
-                      <option value="PvtLtd">Private Limited Company</option>
+                      <option value="Retailer">{t('buyerVerificationWizard.retailerAgribusinessDealer')}</option>
+                      <option value="Wholesaler">{t('buyerVerificationWizard.wholesalerTrader')}</option>
+                      <option value="Processor">{t('buyerVerificationWizard.foodProcessorMill')}</option>
+                      <option value="Exporter">{t('buyerVerificationWizard.exporterInstitutionalBuyer')}</option>
+                      <option value="Proprietorship">{t('buyerVerificationWizard.proprietorshipFirm')}</option>
+                      <option value="Partnership">{t('buyerVerificationWizard.partnershipFirm')}</option>
+                      <option value="PvtLtd">{t('buyerVerificationWizard.privateLimitedCompany')}</option>
                     </select>
                   </div>
 
@@ -1092,7 +1095,7 @@ export default function BuyerVerificationWizard() {
                       type="text"
                       value={businessForm.address}
                       onChange={(e) => setBusinessForm({ ...businessForm, address: e.target.value })}
-                      placeholder="Registered Office / Trade Premises Address"
+                      placeholder={t('buyerVerificationWizard.registeredOfficeTradePremisesAddress')}
                       className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700"
                     />
                   </div>
@@ -1105,7 +1108,7 @@ export default function BuyerVerificationWizard() {
                       type="text"
                       value={businessForm.district}
                       onChange={(e) => setBusinessForm({ ...businessForm, district: e.target.value })}
-                      placeholder="District"
+                      placeholder={t('buyerVerificationWizard.district')}
                       className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700"
                     />
                   </div>
@@ -1118,7 +1121,7 @@ export default function BuyerVerificationWizard() {
                       type="text"
                       value={businessForm.city}
                       onChange={(e) => setBusinessForm({ ...businessForm, city: e.target.value })}
-                      placeholder="City or Town"
+                      placeholder={t('buyerVerificationWizard.cityOrTown')}
                       className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700"
                     />
                   </div>
@@ -1132,7 +1135,7 @@ export default function BuyerVerificationWizard() {
                       maxLength={6}
                       value={businessForm.pincode}
                       onChange={(e) => setBusinessForm({ ...businessForm, pincode: e.target.value })}
-                      placeholder="6-digit Pincode"
+                      placeholder={t('buyerVerificationWizard.6digitPincode')}
                       className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700 font-mono"
                     />
                   </div>
@@ -1144,7 +1147,7 @@ export default function BuyerVerificationWizard() {
                     className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded border border-slate-300"
                   >
                     <ArrowLeft className="w-3.5 h-3.5" />
-                    <span>Back</span>
+                    <span>{t('buyerVerificationWizard.back')}</span>
                   </button>
 
                   <button
@@ -1153,7 +1156,7 @@ export default function BuyerVerificationWizard() {
                     className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50"
                   >
                     {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                    <span>Verify Business Identity</span>
+                    <span>{t('buyerVerificationWizard.verifyBusinessIdentity')}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
@@ -1164,8 +1167,8 @@ export default function BuyerVerificationWizard() {
             {activeStepObj.key === 'pan' && (
               <div className="space-y-4">
                 <div className="bg-slate-50 border border-slate-200 rounded p-4 text-xs text-slate-700 space-y-1">
-                  <p className="font-semibold text-slate-900">Income Tax Department PAN Verification</p>
-                  <p>Enter the 10-character Permanent Account Number issued in the legal name of the entity.</p>
+                  <p className="font-semibold text-slate-900">{t('buyerVerificationWizard.incomeTaxDepartmentPanVerification')}</p>
+                  <p>{t('buyerVerificationWizard.enterThe10characterPermanentAccountNumber')}</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -1178,7 +1181,7 @@ export default function BuyerVerificationWizard() {
                       maxLength={10}
                       value={panForm.panNumber}
                       onChange={(e) => setPanForm({ ...panForm, panNumber: e.target.value.toUpperCase() })}
-                      placeholder="e.g. ABCDE1234F"
+                      placeholder={t('buyerVerificationWizard.egAbcde1234f')}
                       className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700 font-mono tracking-widest uppercase"
                     />
                   </div>
@@ -1191,7 +1194,7 @@ export default function BuyerVerificationWizard() {
                       type="text"
                       value={panForm.legalName}
                       onChange={(e) => setPanForm({ ...panForm, legalName: e.target.value })}
-                      placeholder="Legal Entity Name"
+                      placeholder={t('buyerVerificationWizard.legalEntityName')}
                       className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700"
                     />
                   </div>
@@ -1203,7 +1206,7 @@ export default function BuyerVerificationWizard() {
                     className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded border border-slate-300"
                   >
                     <ArrowLeft className="w-3.5 h-3.5" />
-                    <span>Back</span>
+                    <span>{t('buyerVerificationWizard.back')}</span>
                   </button>
 
                   <button
@@ -1212,7 +1215,7 @@ export default function BuyerVerificationWizard() {
                     className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50"
                   >
                     {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                    <span>Verify Business PAN</span>
+                    <span>{t('buyerVerificationWizard.verifyBusinessPan')}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
@@ -1223,8 +1226,8 @@ export default function BuyerVerificationWizard() {
             {activeStepObj.key === 'gstin' && (
               <div className="space-y-4">
                 <div className="bg-slate-50 border border-slate-200 rounded p-4 text-xs text-slate-700 space-y-1">
-                  <p className="font-semibold text-slate-900">Goods and Services Tax Identification (GSTIN)</p>
-                  <p>GSTIN verification is conditional. Small traders or exempt agricultural businesses can select "GSTIN Not Applicable".</p>
+                  <p className="font-semibold text-slate-900">{t('buyerVerificationWizard.goodsAndServicesTaxIdentificationGstin')}</p>
+                  <p>{t('buyerVerificationWizard.gstinVerificationIsConditionalSmallTraders')}</p>
                 </div>
 
                 <div>
@@ -1236,7 +1239,7 @@ export default function BuyerVerificationWizard() {
                     maxLength={15}
                     value={gstinForm.gstinNumber}
                     onChange={(e) => setGstinForm({ ...gstinForm, gstinNumber: e.target.value.toUpperCase() })}
-                    placeholder="e.g. 27AAAAA0000A1Z5"
+                    placeholder={t('buyerVerificationWizard.eg27aaaaa0000a1z5')}
                     className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700 font-mono tracking-wider uppercase"
                   />
                 </div>
@@ -1247,7 +1250,7 @@ export default function BuyerVerificationWizard() {
                     className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded border border-slate-300"
                   >
                     <ArrowLeft className="w-3.5 h-3.5" />
-                    <span>Back</span>
+                    <span>{t('buyerVerificationWizard.back')}</span>
                   </button>
 
                   <div className="flex items-center space-x-3">
@@ -1256,7 +1259,7 @@ export default function BuyerVerificationWizard() {
                       disabled={submitting}
                       className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-200 hover:bg-slate-300 px-4 py-2.5 rounded border border-slate-300"
                     >
-                      <span>GSTIN Not Applicable</span>
+                      <span>{t('buyerVerificationWizard.gstinNotApplicable')}</span>
                     </button>
 
                     <button
@@ -1265,7 +1268,7 @@ export default function BuyerVerificationWizard() {
                       className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50"
                     >
                       {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                      <span>Verify GSTIN & Continue</span>
+                      <span>{t('buyerVerificationWizard.verifyGstinContinue')}</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </button>
                   </div>
@@ -1286,11 +1289,11 @@ export default function BuyerVerificationWizard() {
                       onChange={(e) => setBusRegForm({ ...busRegForm, orgType: e.target.value })}
                       className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700"
                     >
-                      <option value="Company">Private / Public Limited Company (CIN)</option>
-                      <option value="LLP">Limited Liability Partnership (LLPIN)</option>
-                      <option value="Partnership">Registered Partnership Firm</option>
-                      <option value="Proprietorship">Registered Sole Proprietorship</option>
-                      <option value="Cooperative">Cooperative Society / Farmer Federation</option>
+                      <option value="Company">{t('buyerVerificationWizard.privatePublicLimitedCompanyCin')}</option>
+                      <option value="LLP">{t('buyerVerificationWizard.limitedLiabilityPartnershipLlpin')}</option>
+                      <option value="Partnership">{t('buyerVerificationWizard.registeredPartnershipFirm')}</option>
+                      <option value="Proprietorship">{t('buyerVerificationWizard.registeredSoleProprietorship')}</option>
+                      <option value="Cooperative">{t('buyerVerificationWizard.cooperativeSocietyFarmerFederation')}</option>
                     </select>
                   </div>
 
@@ -1302,7 +1305,7 @@ export default function BuyerVerificationWizard() {
                       type="text"
                       value={busRegForm.registrationNumber}
                       onChange={(e) => setBusRegForm({ ...busRegForm, registrationNumber: e.target.value })}
-                      placeholder="e.g. U01100MH2020PTC123456"
+                      placeholder={t('buyerVerificationWizard.egU01100mh2020ptc123456')}
                       className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700 font-mono"
                     />
                   </div>
@@ -1314,14 +1317,14 @@ export default function BuyerVerificationWizard() {
                     className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded border border-slate-300"
                   >
                     <ArrowLeft className="w-3.5 h-3.5" />
-                    <span>Back</span>
+                    <span>{t('buyerVerificationWizard.back')}</span>
                   </button>
 
                   <button
                     onClick={handleBusRegSubmit}
                     className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm"
                   >
-                    <span>Verify Registration</span>
+                    <span>{t('buyerVerificationWizard.verifyRegistration')}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
@@ -1340,7 +1343,7 @@ export default function BuyerVerificationWizard() {
                       type="text"
                       value={repForm.repName}
                       onChange={(e) => setRepForm({ ...repForm, repName: e.target.value })}
-                      placeholder="Full Name"
+                      placeholder={t('buyerVerificationWizard.fullName')}
                       className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700"
                     />
                   </div>
@@ -1354,12 +1357,12 @@ export default function BuyerVerificationWizard() {
                       onChange={(e) => setRepForm({ ...repForm, designation: e.target.value })}
                       className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700"
                     >
-                      <option value="Owner">Owner / Proprietor</option>
-                      <option value="Partner">Partner</option>
-                      <option value="Director">Director</option>
-                      <option value="CEO">CEO / Managing Director</option>
-                      <option value="Manager">Manager / Procurement Officer</option>
-                      <option value="Authorized Signatory">Authorized Signatory</option>
+                      <option value="Owner">{t('buyerVerificationWizard.ownerProprietor')}</option>
+                      <option value="Partner">{t('buyerVerificationWizard.partner')}</option>
+                      <option value="Director">{t('buyerVerificationWizard.director')}</option>
+                      <option value="CEO">{t('buyerVerificationWizard.ceoManagingDirector')}</option>
+                      <option value="Manager">{t('buyerVerificationWizard.managerProcurementOfficer')}</option>
+                      <option value="Authorized Signatory">{t('buyerVerificationWizard.authorizedSignatory')}</option>
                     </select>
                   </div>
 
@@ -1373,7 +1376,7 @@ export default function BuyerVerificationWizard() {
                       disabled={repForm.otpSent}
                       value={repForm.mobileNumber}
                       onChange={(e) => setRepForm({ ...repForm, mobileNumber: e.target.value })}
-                      placeholder="10-digit mobile"
+                      placeholder={t('buyerVerificationWizard.10digitMobile')}
                       className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700 disabled:bg-slate-100"
                     />
                   </div>
@@ -1388,7 +1391,7 @@ export default function BuyerVerificationWizard() {
                         maxLength={6}
                         value={repForm.otp}
                         onChange={(e) => setRepForm({ ...repForm, otp: e.target.value })}
-                        placeholder="6-digit OTP"
+                        placeholder={t('buyerVerificationWizard.6digitOtp')}
                         className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700 font-mono tracking-widest"
                       />
                     </div>
@@ -1403,7 +1406,7 @@ export default function BuyerVerificationWizard() {
                       onChange={(e) => setRepForm({ ...repForm, authDocUploaded: e.target.checked })}
                       className="rounded text-emerald-700 focus:ring-emerald-600"
                     />
-                    <span>I confirm I possess official board authorization / power of attorney to act as authorized buyer representative.</span>
+                    <span>{t('buyerVerificationWizard.iConfirmIPossessOfficialBoard')}</span>
                   </label>
                 </div>
 
@@ -1413,7 +1416,7 @@ export default function BuyerVerificationWizard() {
                     className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded border border-slate-300"
                   >
                     <ArrowLeft className="w-3.5 h-3.5" />
-                    <span>Back</span>
+                    <span>{t('buyerVerificationWizard.back')}</span>
                   </button>
 
                   <button
@@ -1422,7 +1425,7 @@ export default function BuyerVerificationWizard() {
                     className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50"
                   >
                     {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                    <span>{repForm.otpSent ? 'Verify Representative OTP' : 'Send Representative OTP'}</span>
+                    <span>{repForm.otpSent ? t('buyerVerificationWizard.verifyRepresentativeOtp') : t('buyerVerificationWizard.sendRepresentativeOtp')}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
@@ -1441,7 +1444,7 @@ export default function BuyerVerificationWizard() {
                       type="text"
                       value={bankForm.accountHolderName}
                       onChange={(e) => setBankForm({ ...bankForm, accountHolderName: e.target.value })}
-                      placeholder="Name as per Bank Passbook"
+                      placeholder={t('buyerVerificationWizard.nameAsPerBankPassbook')}
                       className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700"
                     />
                   </div>
@@ -1469,7 +1472,7 @@ export default function BuyerVerificationWizard() {
                       type="text"
                       value={bankForm.branchName}
                       onChange={(e) => setBankForm({ ...bankForm, branchName: e.target.value })}
-                      placeholder="Branch Name"
+                      placeholder={t('buyerVerificationWizard.branchName')}
                       className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700"
                     />
                   </div>
@@ -1483,7 +1486,7 @@ export default function BuyerVerificationWizard() {
                       maxLength={11}
                       value={bankForm.ifsc}
                       onChange={(e) => setBankForm({ ...bankForm, ifsc: e.target.value.toUpperCase() })}
-                      placeholder="e.g. SBIN0001234"
+                      placeholder={t('buyerVerificationWizard.egSbin0001234')}
                       className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700 font-mono tracking-widest uppercase"
                     />
                   </div>
@@ -1496,7 +1499,7 @@ export default function BuyerVerificationWizard() {
                       type="password"
                       value={bankForm.accountNumber}
                       onChange={(e) => setBankForm({ ...bankForm, accountNumber: e.target.value })}
-                      placeholder="Account Number"
+                      placeholder={t('buyerVerificationWizard.accountNumber')}
                       className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700 font-mono"
                     />
                   </div>
@@ -1509,7 +1512,7 @@ export default function BuyerVerificationWizard() {
                       type="text"
                       value={bankForm.confirmAccountNumber}
                       onChange={(e) => setBankForm({ ...bankForm, confirmAccountNumber: e.target.value })}
-                      placeholder="Re-enter Account Number"
+                      placeholder={t('buyerVerificationWizard.reenterAccountNumber')}
                       className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700 font-mono"
                     />
                   </div>
@@ -1521,7 +1524,7 @@ export default function BuyerVerificationWizard() {
                     className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded border border-slate-300"
                   >
                     <ArrowLeft className="w-3.5 h-3.5" />
-                    <span>Back</span>
+                    <span>{t('buyerVerificationWizard.back')}</span>
                   </button>
 
                   <button
@@ -1530,7 +1533,7 @@ export default function BuyerVerificationWizard() {
                     className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50"
                   >
                     {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                    <span>Verify Bank Account</span>
+                    <span>{t('buyerVerificationWizard.verifyBankAccount')}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
@@ -1541,8 +1544,8 @@ export default function BuyerVerificationWizard() {
             {activeStepObj.key === 'udyam' && (
               <div className="space-y-4">
                 <div className="bg-slate-50 border border-slate-200 rounded p-4 text-xs text-slate-700 space-y-1">
-                  <p className="font-semibold text-slate-900">Udyam MSME Registration</p>
-                  <p>Conditional check. Enter your Udyam Registration Number if registered as MSME enterprise, or select "Udyam Not Applicable".</p>
+                  <p className="font-semibold text-slate-900">{t('buyerVerificationWizard.udyamMsmeRegistration')}</p>
+                  <p>{t('buyerVerificationWizard.conditionalCheckEnterYourUdyamRegistration')}</p>
                 </div>
 
                 <div>
@@ -1553,7 +1556,7 @@ export default function BuyerVerificationWizard() {
                     type="text"
                     value={udyamForm.udyamNumber}
                     onChange={(e) => setUdyamForm({ ...udyamForm, udyamNumber: e.target.value.toUpperCase() })}
-                    placeholder="e.g. UDYAM-MH-00-0000000"
+                    placeholder={t('buyerVerificationWizard.egUdyammh000000000')}
                     className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700 font-mono"
                   />
                 </div>
@@ -1564,7 +1567,7 @@ export default function BuyerVerificationWizard() {
                     className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded border border-slate-300"
                   >
                     <ArrowLeft className="w-3.5 h-3.5" />
-                    <span>Back</span>
+                    <span>{t('buyerVerificationWizard.back')}</span>
                   </button>
 
                   <div className="flex items-center space-x-3">
@@ -1573,7 +1576,7 @@ export default function BuyerVerificationWizard() {
                       disabled={submitting}
                       className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-200 hover:bg-slate-300 px-4 py-2.5 rounded border border-slate-300"
                     >
-                      <span>Udyam Not Applicable</span>
+                      <span>{t('buyerVerificationWizard.udyamNotApplicable')}</span>
                     </button>
 
                     <button
@@ -1582,7 +1585,7 @@ export default function BuyerVerificationWizard() {
                       className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50"
                     >
                       {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                      <span>Verify Udyam & Continue</span>
+                      <span>{t('buyerVerificationWizard.verifyUdyamContinue')}</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </button>
                   </div>
@@ -1594,8 +1597,8 @@ export default function BuyerVerificationWizard() {
             {activeStepObj.key === 'fssai' && (
               <div className="space-y-4">
                 <div className="bg-slate-50 border border-slate-200 rounded p-4 text-xs text-slate-700 space-y-1">
-                  <p className="font-semibold text-slate-900">FSSAI / Commodity Trade License</p>
-                  <p>Show this only where buyer activity requires food safety/commodity trading permits. Select "Not Applicable" if non-food operations.</p>
+                  <p className="font-semibold text-slate-900">{t('buyerVerificationWizard.fssaiCommodityTradeLicense')}</p>
+                  <p>{t('buyerVerificationWizard.showThisOnlyWhereBuyerActivity')}</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -1608,9 +1611,9 @@ export default function BuyerVerificationWizard() {
                       onChange={(e) => setFssaiForm({ ...fssaiForm, licenseType: e.target.value })}
                       className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700"
                     >
-                      <option value="FSSAI License">FSSAI Registration / License</option>
-                      <option value="APMC License">APMC / Mandi Trade License</option>
-                      <option value="Agri Trade License">Agricultural Commodity Trade License</option>
+                      <option value="FSSAI License">{t('buyerVerificationWizard.fssaiRegistrationLicense')}</option>
+                      <option value="APMC License">{t('buyerVerificationWizard.apmcMandiTradeLicense')}</option>
+                      <option value="Agri Trade License">{t('buyerVerificationWizard.agriculturalCommodityTradeLicense')}</option>
                     </select>
                   </div>
 
@@ -1622,7 +1625,7 @@ export default function BuyerVerificationWizard() {
                       type="text"
                       value={fssaiForm.fssaiNumber}
                       onChange={(e) => setFssaiForm({ ...fssaiForm, fssaiNumber: e.target.value })}
-                      placeholder="e.g. 10020021000123"
+                      placeholder={t('buyerVerificationWizard.eg10020021000123')}
                       className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700 font-mono"
                     />
                   </div>
@@ -1634,7 +1637,7 @@ export default function BuyerVerificationWizard() {
                     className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded border border-slate-300"
                   >
                     <ArrowLeft className="w-3.5 h-3.5" />
-                    <span>Back</span>
+                    <span>{t('buyerVerificationWizard.back')}</span>
                   </button>
 
                   <div className="flex items-center space-x-3">
@@ -1643,7 +1646,7 @@ export default function BuyerVerificationWizard() {
                       disabled={submitting}
                       className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-200 hover:bg-slate-300 px-4 py-2.5 rounded border border-slate-300"
                     >
-                      <span>License Not Applicable</span>
+                      <span>{t('buyerVerificationWizard.licenseNotApplicable')}</span>
                     </button>
 
                     <button
@@ -1652,7 +1655,7 @@ export default function BuyerVerificationWizard() {
                       className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50"
                     >
                       {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                      <span>Verify License & Continue</span>
+                      <span>{t('buyerVerificationWizard.verifyLicenseContinue')}</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </button>
                   </div>
@@ -1664,8 +1667,8 @@ export default function BuyerVerificationWizard() {
             {activeStepObj.key === 'documents' && (
               <div className="space-y-4">
                 <div className="bg-slate-50 border border-slate-200 rounded p-4 text-xs text-slate-700 space-y-1">
-                  <p className="font-semibold text-slate-900">Document Upload & Compliance Audit</p>
-                  <p>Upload clear scan or PDF copies of required business certificates. Max file size: 5MB.</p>
+                  <p className="font-semibold text-slate-900">{t('buyerVerificationWizard.documentUploadComplianceAudit')}</p>
+                  <p>{t('buyerVerificationWizard.uploadClearScanOrPdfCopies')}</p>
                 </div>
 
                 <div className="space-y-3">
@@ -1685,13 +1688,13 @@ export default function BuyerVerificationWizard() {
                           <FolderCheck className="w-4 h-4 text-slate-500" />
                           <div>
                             <p className="font-semibold text-slate-800">{doc.title}</p>
-                            <p className="text-[11px] text-slate-500">{doc.req ? 'Required Document' : 'Conditional Document'}</p>
+                            <p className="text-[11px] text-slate-500">{doc.req ? t('buyerVerificationWizard.requiredDocument') : t('buyerVerificationWizard.conditionalDocument')}</p>
                           </div>
                         </div>
 
                         <label className="cursor-pointer inline-flex items-center space-x-1.5 px-3 py-1.5 border rounded bg-slate-50 hover:bg-slate-100 font-semibold text-slate-700">
                           <Upload className="w-3.5 h-3.5 text-slate-600" />
-                          <span>{isUploaded ? '✓ Uploaded' : 'Upload Document'}</span>
+                          <span>{isUploaded ? t('buyerVerificationWizard.verified_uploaded') : t('buyerVerificationWizard.uploadDocument')}</span>
                           <input
                             type="file"
                             accept=".pdf,.jpg,.jpeg,.png,.webp"
@@ -1721,7 +1724,7 @@ export default function BuyerVerificationWizard() {
                     className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded border border-slate-300"
                   >
                     <ArrowLeft className="w-3.5 h-3.5" />
-                    <span>Back</span>
+                    <span>{t('buyerVerificationWizard.back')}</span>
                   </button>
 
                   <button
@@ -1730,7 +1733,7 @@ export default function BuyerVerificationWizard() {
                     className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50"
                   >
                     {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                    <span>Submit Documents & Proceed</span>
+                    <span>{t('buyerVerificationWizard.submitDocumentsProceed')}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
@@ -1794,7 +1797,7 @@ export default function BuyerVerificationWizard() {
                     className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded border border-slate-300"
                   >
                     <ArrowLeft className="w-3.5 h-3.5" />
-                    <span>Back to Review</span>
+                    <span>{t('buyerVerificationWizard.backToReview')}</span>
                   </button>
 
                   <button
@@ -1804,7 +1807,7 @@ export default function BuyerVerificationWizard() {
                   >
                     {submitting && <Loader2 className="w-4 h-4 animate-spin" />}
                     <ShieldCheck className="w-4 h-4 text-emerald-300" />
-                    <span>Finalize Buyer Verification</span>
+                    <span>{t('buyerVerificationWizard.finalizeBuyerVerification')}</span>
                   </button>
                 </div>
               </div>
@@ -1814,7 +1817,7 @@ export default function BuyerVerificationWizard() {
             <div className="mt-8 pt-4 border-t border-slate-200 text-center">
               <p className="text-[11px] text-slate-500 flex items-center justify-center gap-1.5">
                 <Lock className="w-3.5 h-3.5 text-slate-400" />
-                <span>Your information is securely processed. Sensitive identity & financial information will be masked where applicable.</span>
+                <span>{t('buyerVerificationWizard.yourInformationIsSecurelyProcessedSensitive')}</span>
               </p>
             </div>
           </div>

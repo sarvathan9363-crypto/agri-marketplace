@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { useState, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import farmerService from '../../services/farmerService';
@@ -6,8 +7,10 @@ import { Input, TextArea } from '../../components/ui/Input';
 import { Card, StatusBadge, LoadingState } from '../../components/ui/Components';
 import toast from 'react-hot-toast';
 import SecureFileUpload from '../../components/common/SecureFileUpload';
+import { translateRole } from '../../utils/enumTranslations';
 
 export default function FarmerProfile() {
+  const { t } = useTranslation();
   const { user } = useAuth();
   const [farmer, setFarmer] = useState(null);
   const [editing, setEditing] = useState(false);
@@ -29,8 +32,10 @@ export default function FarmerProfile() {
       const res = await farmerService.updateProfile(form);
       setFarmer(res.farmer);
       setEditing(false);
-      toast.success('Farmer profile updated!');
-    } catch { toast.error('Failed to update profile.'); }
+      toast.success(t('farmerProfile.updatedSuccessToast', { defaultValue: 'Farmer profile updated!' }));
+    } catch {
+      toast.error(t('farmerProfile.updatedFailedToast', { defaultValue: 'Failed to update profile.' }));
+    }
   };
 
   if (loading) return <LoadingState />;
@@ -39,21 +44,21 @@ export default function FarmerProfile() {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <span className="text-[#00684a] font-extrabold text-xs tracking-widest uppercase font-display bg-[#00ed64]/20 px-3 py-1 rounded-full">Seller Identity</span>
-          <h1 className="text-3xl font-black text-[#001e2b] font-display mt-2">Farmer Profile</h1>
-          <p className="text-sm text-gray-600 mt-1 font-sans">Manage your agricultural credentials, farm location, and contact information.</p>
+          <span className="text-[#00684a] font-extrabold text-xs tracking-widest uppercase font-display bg-[#00ed64]/20 px-3 py-1 rounded-full">{t('farmerProfile.sellerIdentity')}</span>
+          <h1 className="text-3xl font-black text-[#001e2b] font-display mt-2">{t('farmerProfile.farmerProfile')}</h1>
+          <p className="text-sm text-gray-600 mt-1 font-sans">{t('farmerProfile.manageYourAgriculturalCredentialsFarmLocation')}</p>
         </div>
         {!editing ? (
           <Button variant="primary" size="md" onClick={() => setEditing(true)}>
-            Edit Profile
+            {t('farmerProfile.editProfile', { defaultValue: 'Edit Profile' })}
           </Button>
         ) : (
           <div className="flex gap-2">
             <Button variant="ghost" size="md" onClick={() => { setEditing(false); setForm(farmer); }}>
-              Cancel
+              {t('common.cancel', { defaultValue: 'Cancel' })}
             </Button>
             <Button variant="primary" size="md" onClick={handleSave}>
-              Save Changes
+              {t('common.saveChanges', { defaultValue: 'Save Changes' })}
             </Button>
           </div>
         )}
@@ -63,15 +68,15 @@ export default function FarmerProfile() {
         <div className="bg-[#001e2b] text-white p-5 rounded-2xl shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3 border border-emerald-900/40">
           <div>
             <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#00ed64] font-display flex items-center gap-1.5">
-              🛡️ On-Chain Cryptographic Account Hash
+              🛡️ {t('farmerProfile.onChainCryptographicAccountHash', { defaultValue: 'On-Chain Cryptographic Account Hash' })}
             </span>
             <p className="font-mono text-xs text-gray-300 mt-1 break-all">{user.accountHash}</p>
           </div>
           <button
-            onClick={() => { navigator.clipboard.writeText(user.accountHash); toast.success('Account Hash copied!'); }}
+            onClick={() => { navigator.clipboard.writeText(user.accountHash); toast.success(t('farmerProfile.accountHashCopiedToast', { defaultValue: 'Account Hash copied!' })); }}
             className="px-4 py-2 bg-[#00ed64] text-[#001e2b] font-bold text-xs rounded-xl hover:bg-[#00c954] transition-colors shrink-0"
           >
-            Copy Hash
+            {t('farmerProfile.copyHash', { defaultValue: 'Copy Hash' })}
           </button>
         </div>
       )}
@@ -85,8 +90,8 @@ export default function FarmerProfile() {
               subCategory="AVATAR"
               entityType="USER"
               acceptedFileTypes=".jpg,.jpeg,.png,.webp"
-              label="Profile Avatar Photo"
-              description="Upload avatar photo (JPG, PNG, WEBP)"
+              label={t('farmerProfile.profileAvatarPhotoLabel', { defaultValue: 'Profile Avatar Photo' })}
+              description={t('farmerProfile.profileAvatarPhotoDesc', { defaultValue: 'Upload avatar photo (JPG, PNG, WEBP)' })}
               existingFile={farmer?.profileImage}
               onUploadSuccess={(fileData) => {
                 setFarmer((prev) => ({ ...prev, profileImage: fileData.secureUrl }));
@@ -94,7 +99,7 @@ export default function FarmerProfile() {
             />
           </div>
           <div>
-            <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">Full Name</label>
+            <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">{t('farmerProfile.fullName')}</label>
             {editing ? (
               <Input value={form.fullName || ''} onChange={(e) => setForm({ ...form, fullName: e.target.value })} />
             ) : (
@@ -103,7 +108,7 @@ export default function FarmerProfile() {
           </div>
 
           <div>
-            <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">Farm / FPO Name</label>
+            <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">{t('farmerProfile.farmFpoName')}</label>
             {editing ? (
               <Input value={form.farmName || ''} onChange={(e) => setForm({ ...form, farmName: e.target.value })} />
             ) : (
@@ -113,17 +118,17 @@ export default function FarmerProfile() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2 border-t border-[#f0f4e8]">
             <div>
-              <label className="block text-xs font-extrabold uppercase tracking-wider text-gray-500 mb-1 font-display">Email Address</label>
+              <label className="block text-xs font-extrabold uppercase tracking-wider text-gray-500 mb-1 font-display">{t('farmerProfile.emailAddress')}</label>
               <p className="text-sm font-semibold text-[#001e2b] font-sans">{farmer?.email}</p>
             </div>
             <div>
-              <label className="block text-xs font-extrabold uppercase tracking-wider text-gray-500 mb-1 font-display">Mobile Number</label>
+              <label className="block text-xs font-extrabold uppercase tracking-wider text-gray-500 mb-1 font-display">{t('farmerProfile.mobileNumber')}</label>
               <p className="text-sm font-semibold text-[#001e2b] font-sans">{farmer?.mobileNumber}</p>
             </div>
           </div>
 
           <div className="pt-2 border-t border-[#f0f4e8]">
-            <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">Location</label>
+            <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">{t('farmerProfile.location')}</label>
             {editing ? (
               <Input value={form.location || ''} onChange={(e) => setForm({ ...form, location: e.target.value })} />
             ) : (
@@ -132,7 +137,7 @@ export default function FarmerProfile() {
           </div>
 
           <div>
-            <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">Address</label>
+            <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">{t('farmerProfile.address')}</label>
             {editing ? (
               <TextArea rows={2} value={form.address || ''} onChange={(e) => setForm({ ...form, address: e.target.value })} />
             ) : (
@@ -142,11 +147,11 @@ export default function FarmerProfile() {
 
           <div className="grid grid-cols-2 gap-6 pt-4 border-t border-[#f0f4e8]">
             <div>
-              <label className="block text-xs font-extrabold uppercase tracking-wider text-gray-500 mb-1 font-display">Seller Type</label>
-              <p className="text-sm font-bold text-[#001e2b] font-display">{farmer?.farmerType}</p>
+              <label className="block text-xs font-extrabold uppercase tracking-wider text-gray-500 mb-1 font-display">{t('farmerProfile.sellerType')}</label>
+              <p className="text-sm font-bold text-[#001e2b] font-display">{translateRole(t, farmer?.farmerType)}</p>
             </div>
             <div>
-              <label className="block text-xs font-extrabold uppercase tracking-wider text-gray-500 mb-1 font-display">Verification Status</label>
+              <label className="block text-xs font-extrabold uppercase tracking-wider text-gray-500 mb-1 font-display">{t('farmerProfile.verificationStatus')}</label>
               <StatusBadge status={farmer?.verificationStatus} />
             </div>
           </div>

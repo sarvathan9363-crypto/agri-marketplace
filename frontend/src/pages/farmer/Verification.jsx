@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
@@ -23,11 +24,11 @@ import {
 import farmerService from '../../services/farmerService';
 
 export default function FarmerVerification() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [farmerType, setFarmerType] = useState('FARMER');
 
-  // Backend verification object
   const [verification, setVerification] = useState({
     aadhaar: { status: 'pending' },
     farmerRegistry: { status: 'pending' },
@@ -59,7 +60,7 @@ export default function FarmerVerification() {
         setFarmerType(res.farmerType);
       }
     } catch {
-      toast.error('Failed to load verification status.');
+      toast.error(t('farmerVerification.failedToLoadStatus', { defaultValue: 'Failed to load verification status.' }));
     } finally {
       setLoading(false);
     }
@@ -85,7 +86,6 @@ export default function FarmerVerification() {
 
   const isFullyVerified = isFpo ? isFpoVerified : isFarmerVerified;
 
-  // Calculate progress counts
   const requiredKeys = isFpo
     ? ['orgIdentity', 'orgPan', 'representative', 'orgBank', 'orgDocuments']
     : ['aadhaar', 'farmerRegistry', 'landRecord', 'bankAccount', 'pan'];
@@ -105,32 +105,32 @@ export default function FarmerVerification() {
     return (
       <div className="flex flex-col items-center justify-center min-h-[60vh] gap-3">
         <Loader2 className="w-10 h-10 text-[#00C853] animate-spin" />
-        <p className="text-sm font-bold text-[#082B36] font-display">Loading verification dashboard...</p>
+        <p className="text-sm font-bold text-[#082B36] font-display">{t('farmerVerification.loadingVerificationDashboard', { defaultValue: 'Loading verification dashboard...' })}</p>
       </div>
     );
   }
 
   const farmerCheckCards = [
-    { key: 'aadhaar', title: 'Identity Verification (Aadhaar)', req: true, icon: Lock, description: 'Authorized UIDAI identity verification', details: verification?.aadhaar?.verifiedName ? `Verified Name: ${verification.aadhaar.verifiedName}` : null },
-    { key: 'farmerRegistry', title: 'Farmer ID / Registry', req: true, icon: Building2, description: 'State / National Farmer Agristack database record', details: verification?.farmerRegistry?.farmerIdMasked ? `Farmer ID: ${verification.farmerRegistry.farmerIdMasked}` : null },
-    { key: 'landRecord', title: 'Land Record / Patta', req: true, icon: Landmark, description: 'Agricultural land holding or cultivation record', details: verification?.landRecord?.pattaNumberMasked ? `Patta: ${verification.landRecord.pattaNumberMasked}` : null },
-    { key: 'bankAccount', title: 'Bank Account Verification', req: true, icon: CreditCard, description: 'Settlement bank account for direct payments', details: verification?.bankAccount?.accountNumberMasked ? `Bank: ${verification.bankAccount.bankName} (${verification.bankAccount.accountNumberMasked})` : null },
-    { key: 'pan', title: 'PAN Card Verification', req: true, icon: FileCheck2, description: 'Permanent Account Number for identity & payouts', details: verification?.pan?.panMasked ? `PAN: ${verification.pan.panMasked}` : null },
-    { key: 'pmKisan', title: 'PM-KISAN Verification (Optional)', req: false, icon: Award, description: 'PM-KISAN beneficiary registration reference', details: verification?.pmKisan?.referenceId ? `Ref: ${verification.pmKisan.referenceId}` : null },
+    { key: 'aadhaar', title: t('farmerVerification.aadhaarTitle', { defaultValue: 'Verify Aadhaar Identity' }), req: true, icon: Lock, description: t('farmerVerification.aadhaarDesc', { defaultValue: 'Official 12-digit Aadhaar card identity check' }), details: verification?.aadhaar?.verifiedName ? `${t('farmerVerification.verifiedNameLabel', { defaultValue: 'Verified Name' })}: ${verification.aadhaar.verifiedName}` : null },
+    { key: 'farmerRegistry', title: t('farmerVerification.farmerRegistryTitle', { defaultValue: 'Verify Farmer Registry ID' }), req: true, icon: Building2, description: t('farmerVerification.farmerRegistryDesc', { defaultValue: 'State or Central Agristack / Farmer ID validation' }), details: verification?.farmerRegistry?.farmerIdMasked ? `${t('farmerVerification.farmerIdLabel', { defaultValue: 'Farmer ID' })}: ${verification.farmerRegistry.farmerIdMasked}` : null },
+    { key: 'landRecord', title: t('farmerVerification.landRecordTitle', { defaultValue: 'Verify Land Record / Patta' }), req: true, icon: Landmark, description: t('farmerVerification.landRecordDesc', { defaultValue: 'Agricultural land ownership or lease agreement check' }), details: verification?.landRecord?.pattaNumberMasked ? `${t('farmerVerification.pattaLabel', { defaultValue: 'Patta' })}: ${verification.landRecord.pattaNumberMasked}` : null },
+    { key: 'bankAccount', title: t('farmerVerification.bankAccountTitle', { defaultValue: 'Verify Bank Account (Penny Drop)' }), req: true, icon: CreditCard, description: t('farmerVerification.bankAccountDesc', { defaultValue: 'Bank account validation for payout settlements' }), details: verification?.bankAccount?.accountNumberMasked ? `${t('farmerVerification.bankLabel', { defaultValue: 'Bank' })}: ${verification.bankAccount.bankName} (${verification.bankAccount.accountNumberMasked})` : null },
+    { key: 'pan', title: t('farmerVerification.panTitle', { defaultValue: 'Verify Individual PAN' }), req: true, icon: FileCheck2, description: t('farmerVerification.panDesc', { defaultValue: 'Tax identification number validation' }), details: verification?.pan?.panMasked ? `PAN: ${verification.pan.panMasked}` : null },
+    { key: 'pmKisan', title: t('farmerVerification.pmKisanTitle', { defaultValue: 'Verify PM-KISAN Beneficiary ID' }), req: false, icon: Award, description: t('farmerVerification.pmKisanDesc', { defaultValue: 'Government farmer scheme beneficiary validation' }), details: verification?.pmKisan?.referenceId ? `Ref: ${verification.pmKisan.referenceId}` : null },
   ];
 
   const fpoCheckCards = [
-    { key: 'orgIdentity', title: 'Verify Your Organization', req: true, icon: Building, description: 'Legal organization registration, CIN, and state address', details: verification?.orgIdentity?.orgName ? `Org: ${verification.orgIdentity.orgName} (${verification.orgIdentity.registrationNumber})` : null },
-    { key: 'orgPan', title: 'Verify Organization PAN', req: true, icon: FileCheck2, description: 'Permanent Account Number issued in legal org name', details: verification?.orgPan?.panMasked ? `PAN: ${verification.orgPan.panMasked}` : null },
-    { key: 'gstin', title: 'Verify Business Details (GSTIN)', req: false, icon: FileText, description: 'GSTIN registration (optional / conditional)', details: verification?.gstin?.status === 'not_applicable' ? 'GSTIN Not Applicable' : verification?.gstin?.gstinNumber ? `GSTIN: ${verification.gstin.gstinNumber}` : null },
-    { key: 'representative', title: 'Verify Authorized Representative', req: true, icon: UserCheck, description: 'Identity & designation of managing official', details: verification?.representative?.repName ? `Rep: ${verification.representative.repName} (${verification.representative.designation})` : null },
-    { key: 'orgBank', title: 'Verify Organization Bank Account', req: true, icon: CreditCard, description: 'Bank account belonging to organization for settlements', details: verification?.orgBank?.accountNumberMasked ? `Bank: ${verification.orgBank.bankName} (${verification.orgBank.accountNumberMasked})` : null },
-    { key: 'orgDocuments', title: 'Organization Documents', req: true, icon: FolderCheck, description: 'Upload registration cert, PAN doc, bank proof, and auth letter', details: verification?.orgDocuments?.status === 'verified' ? 'All Required Documents Verified' : null },
+    { key: 'orgIdentity', title: t('farmerVerification.orgIdentityTitle', { defaultValue: 'Verify FPO / FPC Registration' }), req: true, icon: Building, description: t('farmerVerification.orgIdentityDesc', { defaultValue: 'Incorporation certificate & CIN verification' }), details: verification?.orgIdentity?.orgName ? `Org: ${verification.orgIdentity.orgName} (${verification.orgIdentity.registrationNumber})` : null },
+    { key: 'orgPan', title: t('farmerVerification.orgPanTitle', { defaultValue: 'Verify Organization PAN' }), req: true, icon: FileCheck2, description: t('farmerVerification.orgPanDesc', { defaultValue: 'PAN issued in legal organization name' }), details: verification?.orgPan?.panMasked ? `PAN: ${verification.orgPan.panMasked}` : null },
+    { key: 'gstin', title: t('farmerVerification.gstinTitle', { defaultValue: 'Verify Business Tax (GSTIN)' }), req: false, icon: FileText, description: t('farmerVerification.gstinDesc', { defaultValue: 'GSTIN registration (optional/conditional)' }), details: verification?.gstin?.status === 'not_applicable' ? t('farmerVerification.gstinNotApplicable', { defaultValue: 'GSTIN Not Applicable' }) : verification?.gstin?.gstinNumber ? `GSTIN: ${verification.gstin.gstinNumber}` : null },
+    { key: 'representative', title: t('farmerVerification.representativeTitle', { defaultValue: 'Verify Authorized Representative' }), req: true, icon: UserCheck, description: t('farmerVerification.representativeDesc', { defaultValue: 'Managing officer identity & designation' }), details: verification?.representative?.repName ? `Rep: ${verification.representative.repName} (${verification.representative.designation})` : null },
+    { key: 'orgBank', title: t('farmerVerification.orgBankTitle', { defaultValue: 'Verify Organization Bank Account' }), req: true, icon: CreditCard, description: t('farmerVerification.orgBankDesc', { defaultValue: 'Entity-owned bank account for settlements' }), details: verification?.orgBank?.accountNumberMasked ? `Bank: ${verification.orgBank.bankName} (${verification.orgBank.accountNumberMasked})` : null },
+    { key: 'orgDocuments', title: t('farmerVerification.orgDocumentsTitle', { defaultValue: 'Organization Documents' }), req: true, icon: FolderCheck, description: t('farmerVerification.orgDocumentsDesc', { defaultValue: 'Upload reg certificate, PAN doc, bank proof & auth letter' }), details: verification?.orgDocuments?.status === 'verified' ? t('farmerVerification.allDocsVerified', { defaultValue: 'All Required Documents Verified' }) : null },
   ];
 
   const checkCards = isFpo ? fpoCheckCards : farmerCheckCards;
   const wizardPath = isFpo ? '/fpo/verification/onboarding' : '/farmer/verification/wizard';
-  const badgeTitle = isFpo ? '✓ VERIFIED FPO' : '✓ VERIFIED FARMER';
+  const badgeTitle = isFpo ? t('farmerVerification.verifiedFpoBadge', { defaultValue: '✓ VERIFIED FPO' }) : t('farmerVerification.verifiedFarmerBadge', { defaultValue: '✓ VERIFIED FARMER' });
 
   return (
     <div className="max-w-4xl mx-auto space-y-8 py-4 px-2 sm:px-4">
@@ -138,13 +138,13 @@ export default function FarmerVerification() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E2E8E5] pb-6">
         <div>
           <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-[#00E676]/15 text-[#00C853] border border-[#00E676]/30">
-            <UserCheck className="w-4 h-4" /> {isFpo ? 'FPO / FPC VERIFICATION DASHBOARD' : 'FARMER VERIFICATION DASHBOARD'}
+            <UserCheck className="w-4 h-4" /> {isFpo ? t('farmerVerification.fpoVerificationDashboard', { defaultValue: 'FPO / FPC VERIFICATION DASHBOARD' }) : t('farmerVerification.farmerVerificationDashboard', { defaultValue: 'FARMER VERIFICATION DASHBOARD' })}
           </span>
           <h1 className="text-2xl sm:text-3xl font-black text-[#082B36] font-display mt-2 tracking-tight">
-            Verification Status & Credentials
+            {t('farmerVerification.verificationStatusHeading', { defaultValue: 'Verification Status & Credentials' })}
           </h1>
           <p className="text-xs sm:text-sm text-[#52636A] mt-1 font-sans max-w-xl">
-            Central dashboard to view your {isFpo ? 'organization' : 'agricultural'} credentials, progress, and official status.
+            {isFpo ? t('farmerVerification.centralDashboardOrg', { defaultValue: 'Central dashboard to view your organization credentials, progress, and official status.' }) : t('farmerVerification.centralDashboardAgri', { defaultValue: 'Central dashboard to view your agricultural credentials, progress, and official status.' })}
           </p>
         </div>
 
@@ -153,7 +153,7 @@ export default function FarmerVerification() {
             <CheckCircle2 className="w-6 h-6 text-[#00C853]" />
             <div>
               <p className="text-xs font-black text-[#002B36] tracking-wide">{badgeTitle}</p>
-              <p className="text-[11px] text-emerald-700 font-medium">All 5 required checks active</p>
+              <p className="text-[11px] text-emerald-700 font-medium">{t('farmerVerification.all5RequiredChecksActive', { defaultValue: 'All 5 required checks active' })}</p>
             </div>
           </div>
         ) : (
@@ -163,7 +163,7 @@ export default function FarmerVerification() {
             className="btn-agri-primary text-sm px-6 py-3.5 flex items-center gap-2 font-bold shrink-0"
           >
             <Play className="w-4 h-4 fill-current" />
-            {completedRequiredCount === 0 ? 'Start Verification' : 'Continue Verification'}
+            {completedRequiredCount === 0 ? t('farmerVerification.startVerification', { defaultValue: 'Start Verification' }) : t('farmerVerification.continueVerification', { defaultValue: 'Continue Verification' })}
           </button>
         )}
       </div>
@@ -172,9 +172,9 @@ export default function FarmerVerification() {
       <div className="bg-white rounded-3xl border border-[#E2E8E5] p-6 sm:p-8 shadow-sm space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <h2 className="text-xl font-black text-[#082B36] font-display">Overall Progress</h2>
+            <h2 className="text-xl font-black text-[#082B36] font-display">{t('farmerVerification.overallProgress', { defaultValue: 'Overall Progress' })}</h2>
             <p className="text-xs text-[#52636A] font-sans mt-0.5">
-              {completedRequiredCount} of 5 required checks completed
+              {t('farmerVerification.checksCompletedSummary', { count: completedRequiredCount, defaultValue: `${completedRequiredCount} of 5 required checks completed` })}
             </p>
           </div>
 
@@ -194,23 +194,23 @@ export default function FarmerVerification() {
         </div>
 
         <div className="flex flex-wrap items-center justify-between text-xs font-medium text-gray-500 pt-1">
-          <span>{completedRequiredCount} Verified</span>
-          <span>{skippedCount} Skipped</span>
-          <span>{5 - completedRequiredCount} Pending Required</span>
+          <span>{t('farmerVerification.verifiedStat', { count: completedRequiredCount, defaultValue: `${completedRequiredCount} Verified` })}</span>
+          <span>{t('farmerVerification.skippedStat', { count: skippedCount, defaultValue: `${skippedCount} Skipped` })}</span>
+          <span>{t('farmerVerification.pendingStat', { count: 5 - completedRequiredCount, defaultValue: `${5 - completedRequiredCount} Pending Required` })}</span>
         </div>
 
         {!isFullyVerified && (
           <div className="pt-3 border-t border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <p className="text-xs font-semibold text-amber-800 flex items-center gap-1.5">
               <AlertCircle className="w-4 h-4 text-amber-600 shrink-0" />
-              Verification Incomplete — Complete remaining steps to earn your {badgeTitle} badge.
+              {t('farmerVerification.verificationIncompleteNotice', { badgeTitle, defaultValue: `Verification Incomplete — Complete remaining steps to earn your ${badgeTitle} badge.` })}
             </p>
             <button
               type="button"
               onClick={() => navigate(wizardPath)}
               className="btn-agri-primary text-xs px-5 py-2.5 font-bold flex items-center justify-center gap-1.5 shrink-0"
             >
-              Continue Verification <ArrowRight className="w-3.5 h-3.5" />
+              {t('farmerVerification.continueVerification', { defaultValue: 'Continue Verification' })} <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>
         )}
@@ -226,21 +226,21 @@ export default function FarmerVerification() {
             {badgeTitle}
           </h3>
           <p className="text-xs sm:text-sm text-gray-200 max-w-md mx-auto font-sans">
-            Congratulations! All required identity and organization credentials are fully verified. Your produce listings now show the official verified badge.
+            {t('farmerVerification.congratulationsVerifiedMsg', { defaultValue: 'Congratulations! All required identity and organization credentials are fully verified. Your produce listings now show the official verified badge.' })}
           </p>
           <button
             type="button"
             onClick={() => navigate(wizardPath)}
             className="mt-2 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-xs font-bold text-white border border-white/20"
           >
-            <RotateCcw className="w-3.5 h-3.5" /> Review / Update Credentials
+            <RotateCcw className="w-3.5 h-3.5" /> {t('farmerVerification.reviewUpdateCredentials', { defaultValue: 'Review / Update Credentials' })}
           </button>
         </div>
       )}
 
       {/* STATUS CARDS GRID FOR CHECKS */}
       <div className="space-y-4">
-        <h2 className="text-lg font-black text-[#082B36] font-display">Verification Checks Breakdown</h2>
+        <h2 className="text-lg font-black text-[#082B36] font-display">{t('farmerVerification.verificationChecksBreakdown', { defaultValue: 'Verification Checks Breakdown' })}</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {checkCards.map((item) => {
@@ -276,26 +276,26 @@ export default function FarmerVerification() {
                           <h3 className="text-sm font-extrabold text-[#082B36] font-display">{item.title}</h3>
                         </div>
                         <span className="text-[10px] font-bold text-gray-400 uppercase">
-                          {item.req ? 'Required Check' : 'Optional Check'}
+                          {item.req ? t('farmerVerification.requiredCheck', { defaultValue: 'Required Check' }) : t('farmerVerification.optionalCheck', { defaultValue: 'Optional Check' })}
                         </span>
                       </div>
                     </div>
 
                     {isVerified ? (
                       <span className="text-xs font-black text-[#00C853] bg-emerald-100 px-3 py-1 rounded-full shrink-0">
-                        ✓ Verified
+                        {t('status.verifiedBadge', { defaultValue: '✓ Verified' })}
                       </span>
                     ) : isNotApp ? (
                       <span className="text-xs font-bold text-blue-700 bg-blue-100 px-3 py-1 rounded-full shrink-0">
-                        N/A
+                        {t('status.notApplicable', { defaultValue: 'N/A' })}
                       </span>
                     ) : isSkipped ? (
                       <span className="text-xs font-bold text-amber-700 bg-amber-100 px-3 py-1 rounded-full shrink-0">
-                        ○ Skipped
+                        {t('status.skippedBadge', { defaultValue: '○ Skipped' })}
                       </span>
                     ) : (
                       <span className="text-xs font-bold text-gray-500 bg-gray-100 px-3 py-1 rounded-full shrink-0">
-                        ○ Pending
+                        {t('status.pendingBadge', { defaultValue: '○ Pending' })}
                       </span>
                     )}
                   </div>
@@ -311,14 +311,14 @@ export default function FarmerVerification() {
 
                 <div className="pt-4 mt-2 border-t border-gray-100 flex items-center justify-between">
                   <span className="text-[11px] font-medium text-gray-400">
-                    {isVerified ? 'Status: Active' : isNotApp ? 'Status: Not Applicable' : isSkipped ? 'Status: Skipped' : 'Status: Not Started'}
+                    {isVerified ? t('farmerVerification.statusActive', { defaultValue: 'Status: Active' }) : isNotApp ? t('farmerVerification.statusNotApplicable', { defaultValue: 'Status: Not Applicable' }) : isSkipped ? t('farmerVerification.statusSkipped', { defaultValue: 'Status: Skipped' }) : t('farmerVerification.statusNotStarted', { defaultValue: 'Status: Not Started' })}
                   </span>
                   <button
                     type="button"
                     onClick={() => navigate(wizardPath)}
                     className="text-xs font-bold text-[#00C853] hover:underline flex items-center gap-1"
                   >
-                    {isVerified ? 'View / Edit' : 'Complete in Wizard'} →
+                    {isVerified ? t('farmerVerification.viewEdit', { defaultValue: 'View / Edit' }) : t('farmerVerification.completeInWizard', { defaultValue: 'Complete in Wizard' })} →
                   </button>
                 </div>
               </div>

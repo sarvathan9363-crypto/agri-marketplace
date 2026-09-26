@@ -54,7 +54,9 @@ export function StatusBadge({ status }) {
     AUTHORIZED: 'bg-blue-100 text-blue-800 border-blue-300',
     RESOLVED: 'bg-emerald-100 text-emerald-800 border-emerald-300',
     PENDING: 'bg-amber-100 text-amber-900 border-amber-300',
+    PENDING_PAYMENT: 'bg-amber-100 text-amber-900 border-amber-300',
     PENDING_VERIFICATION: 'bg-amber-100 text-amber-900 border-amber-300',
+    ONBOARDING: 'bg-amber-100 text-amber-900 border-amber-300',
     CREATED: 'bg-blue-100 text-blue-800 border-blue-300',
     OPEN: 'bg-blue-100 text-blue-800 border-blue-300',
     CONFIRMED: 'bg-indigo-100 text-indigo-800 border-indigo-300',
@@ -63,18 +65,17 @@ export function StatusBadge({ status }) {
     CANCELLED: 'bg-red-100 text-red-800 border-red-300',
     REJECTED: 'bg-red-100 text-red-800 border-red-300',
     FAILED: 'bg-red-100 text-red-800 border-red-300',
+    SUSPENDED: 'bg-red-100 text-red-800 border-red-300',
     INACTIVE: 'bg-gray-100 text-gray-700 border-gray-300',
     DRAFT: 'bg-gray-100 text-gray-700 border-gray-300',
     OUT_OF_STOCK: 'bg-orange-100 text-orange-800 border-orange-300',
     REFUNDED: 'bg-purple-100 text-purple-800 border-purple-300',
   };
 
-  const statusKeys = { ACTIVE: 'active', VERIFIED: 'verified', DELIVERED: 'delivered', SUCCESSFUL: 'successful', CAPTURED: 'captured', AUTHORIZED: 'authorized', RESOLVED: 'resolved', PENDING: 'pending', PENDING_VERIFICATION: 'pendingVerification', CREATED: 'created', OPEN: 'open', CONFIRMED: 'confirmed', UNDER_REVIEW: 'underReview', DISPATCHED: 'dispatched', CANCELLED: 'cancelled', REJECTED: 'rejected', FAILED: 'failed', INACTIVE: 'inactive', DRAFT: 'draft', OUT_OF_STOCK: 'outOfStock', REFUNDED: 'refunded' };
-  const rawKey = statusKeys[status];
-  const label = rawKey ? t(`status.${rawKey}`, { defaultValue: status }) : (status || t('ui.unknown'));
+  const label = translateStatus(t, status);
 
   return (
-    <span className={`inline-flex items-center px-3 py-1 text-[11px] font-black uppercase tracking-wider rounded-full border ${styles[status] || 'bg-gray-100 text-gray-700 border-gray-300'} font-display`}>
+    <span className={`inline-flex items-center px-3 py-1 text-[11px] font-black uppercase tracking-wider rounded-full border ${styles[String(status).toUpperCase()] || 'bg-gray-100 text-gray-700 border-gray-300'} font-display`}>
       {label}
     </span>
   );
@@ -125,3 +126,4 @@ export function ErrorState({ message = 'Something went wrong.', onRetry }) {
 }
 
 import { useTranslation } from 'react-i18next';
+import { translateStatus } from '../../utils/enumTranslations';

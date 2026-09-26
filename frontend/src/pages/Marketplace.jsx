@@ -10,6 +10,7 @@ import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
 import toast from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';
+import { translateCategory } from '../utils/enumTranslations';
 
 const categories = ['ALL', 'FRUITS', 'VEGETABLES', 'GRAINS', 'PULSES', 'SPICES', 'MILLETS', 'DAIRY', 'OTHER'];
 export default function Marketplace() {
@@ -18,8 +19,10 @@ export default function Marketplace() {
   const { isAuthenticated, isBuyer } = useAuth();
   const { addToCart } = useCart();
   const sortOptions = [
-    { value: 'newest', label: t('home.marketplace.newest') }, { value: 'price_asc', label: t('home.marketplace.lowPrice') },
-    { value: 'price_desc', label: t('home.marketplace.highPrice') }, { value: 'popular', label: t('home.marketplace.popular') },
+    { value: 'newest', label: t('marketplace.newestFirst', { defaultValue: 'Newest first' }) },
+    { value: 'price_asc', label: t('marketplace.priceLowToHigh', { defaultValue: 'Price: low to high' }) },
+    { value: 'price_desc', label: t('marketplace.priceHighToLow', { defaultValue: 'Price: high to low' }) },
+    { value: 'popular', label: t('marketplace.mostPopular', { defaultValue: 'Most popular' }) },
   ];
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -124,7 +127,7 @@ export default function Marketplace() {
                     : 'bg-white text-slate-700 border border-[#E2E8E5] hover:border-[#00E676]'
                 }`}
               >
-                {cat === 'ALL' ? t('common.all') : t(`categories.${cat}`, { defaultValue: cat.charAt(0) + cat.slice(1).toLowerCase() })}
+                {cat === 'ALL' ? t('common.all') : translateCategory(t, cat)}
               </button>
             );
           })}
