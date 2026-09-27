@@ -631,7 +631,7 @@ export default function BuyerVerificationWizard() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-100 text-slate-800 font-sans pb-12">
+    <div className="buyer-verification-wizard min-h-screen bg-slate-100 text-slate-800 font-sans pb-12">
       {/* Government-Style Official Header Bar */}
       <header className="bg-emerald-900 text-white border-b-4 border-emerald-600 px-4 py-3 shadow-md">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-2">
@@ -641,10 +641,10 @@ export default function BuyerVerificationWizard() {
             </div>
             <div>
               <h1 className="text-base md:text-lg font-bold tracking-tight uppercase">
-                National Agricultural Buyer Verification Service
+                {t('buyerVerificationWizard.goiPortalBannerTitle', { defaultValue: 'National Agricultural Buyer Verification Service' })}
               </h1>
               <p className="text-xs text-emerald-200">
-                Ministry of Agriculture & Farmers Welfare • AgriBazaar Portal
+                {t('buyerVerificationWizard.goiPortalMinistryTag', { defaultValue: 'Ministry of Agriculture & Farmers Welfare • AgriBazaar Portal' })}
               </p>
             </div>
           </div>
@@ -662,17 +662,17 @@ export default function BuyerVerificationWizard() {
           <div>
             <div className="flex items-center space-x-2">
               <span className="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 border border-emerald-300">
-                Buyer Type: {rawBuyerType}
+                {t('buyerVerificationWizard.buyerTypeLabel', { defaultValue: 'Buyer Type' })}: {rawBuyerType === 'BULK_BUYER' ? t('register.wholesaleBulkBuyer', { defaultValue: 'Wholesale Bulk Buyer' }) : rawBuyerType === 'BUSINESS' ? t('register.businessRetailer', { defaultValue: 'Business / Retailer' }) : t('register.individualConsumer', { defaultValue: 'Individual Consumer' })}
               </span>
               <span className="text-xs font-semibold text-slate-500">
-                Ref: ABV-BUYER-{profile?._id?.slice(-6)?.toUpperCase() || 'SYS'}
+                {t('buyerVerificationWizard.referenceTag', { defaultValue: 'Ref' })}: ABV-BUYER-{profile?._id?.slice(-6)?.toUpperCase() || 'SYS'}
               </span>
             </div>
             <h2 className="text-xl md:text-2xl font-bold text-slate-900 mt-1">
               {config.portalTitle}
             </h2>
             <p className="text-xs md:text-sm text-slate-600 mt-0.5">
-              {config.pageTitle} — Complete required verification steps to become a verified buyer.
+              {config.pageTitle} — {t('buyerVerificationWizard.completeStepsNotice', { defaultValue: 'Complete required verification steps to become a verified buyer.' })}
             </p>
           </div>
 
@@ -681,7 +681,7 @@ export default function BuyerVerificationWizard() {
             className="self-start md:self-auto inline-flex items-center space-x-1.5 text-xs font-semibold text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-300 px-3 py-2 rounded transition"
           >
             <Save className="w-3.5 h-3.5" />
-            <span>{t('buyerVerificationWizard.saveExitToDashboard')}</span>
+            <span>{t('buyerVerificationWizard.saveExitToDashboard', { defaultValue: 'Save & Exit to Dashboard' })}</span>
           </button>
         </div>
 
@@ -691,7 +691,7 @@ export default function BuyerVerificationWizard() {
           <div className="lg:col-span-4 bg-white border border-slate-300 rounded-md p-5 shadow-sm h-fit">
             <div className="border-b border-slate-200 pb-3 mb-4 flex items-center justify-between">
               <h3 className="text-sm font-bold uppercase tracking-wide text-slate-800">
-                Verification Steps
+                {t('buyerVerificationWizard.verificationSteps', { defaultValue: 'Verification Steps' })}
               </h3>
               <span className="text-xs font-semibold text-slate-600">
                 Step {currentStep} of {steps.length}
@@ -714,20 +714,20 @@ export default function BuyerVerificationWizard() {
                 const IconComp = st.icon;
 
                 let badgeBg = 'bg-slate-100 text-slate-600 border-slate-300';
-                let badgeLabel = '○ Pending';
+                let badgeLabel = `○ ${t('buyerVerificationWizard.pending', { defaultValue: 'Pending' })}`;
 
                 if (status === 'VERIFIED') {
                   badgeBg = 'bg-emerald-100 text-emerald-800 border-emerald-300';
-                  badgeLabel = '✓ Verified';
+                  badgeLabel = `✓ ${t('buyerVerificationWizard.verified', { defaultValue: 'Verified' })}`;
                 } else if (status === 'NOT_APPLICABLE') {
                   badgeBg = 'bg-blue-100 text-blue-800 border-blue-300';
                   badgeLabel = 'N/A';
                 } else if (status === 'SKIPPED') {
                   badgeBg = 'bg-amber-100 text-amber-800 border-amber-300';
-                  badgeLabel = 'Skipped';
+                  badgeLabel = t('buyerVerificationWizard.skipped', { defaultValue: 'Skipped' });
                 } else if (isCurrent) {
                   badgeBg = 'bg-emerald-600 text-white border-emerald-700';
-                  badgeLabel = '● Active';
+                  badgeLabel = `● ${t('buyerVerificationWizard.active', { defaultValue: 'Active' })}`;
                 }
 
                 return (
@@ -736,7 +736,7 @@ export default function BuyerVerificationWizard() {
                     onClick={() => setCurrentStep(st.id)}
                     className={`w-full text-left p-3 rounded-md border text-xs transition flex items-start justify-between gap-3 ${
                       isCurrent
-                        ? 'border-emerald-700 bg-emerald-50/70 ring-1 ring-emerald-700'
+                        ? 'buyer-verification-step--active border-emerald-700 bg-emerald-50/70 ring-1 ring-emerald-700'
                         : 'border-slate-200 bg-white hover:bg-slate-50'
                     }`}
                   >
@@ -753,7 +753,7 @@ export default function BuyerVerificationWizard() {
                         {st.id}
                       </div>
                       <div>
-                        <p className={`font-semibold ${isCurrent ? t('buyerVerificationWizard.textslate900') : t('buyerVerificationWizard.textslate700')}`}>
+                        <p className={`font-semibold ${isCurrent ? 'text-emerald-950 font-extrabold' : 'text-slate-700'}`}>
                           {st.name}
                         </p>
                         <p className="text-[11px] text-slate-500 line-clamp-1 mt-0.5">
@@ -761,7 +761,7 @@ export default function BuyerVerificationWizard() {
                         </p>
                       </div>
                     </div>
-                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded border shrink-0 ${badgeBg}`}>
+                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded border shrink-0 whitespace-nowrap ${badgeBg}`}>
                       {badgeLabel}
                     </span>
                   </button>
@@ -775,7 +775,7 @@ export default function BuyerVerificationWizard() {
             {/* Step Header */}
             <div className="border-b border-slate-200 pb-4 mb-6">
               <div className="flex items-center space-x-2 text-xs font-bold text-emerald-800 uppercase tracking-wider mb-1">
-                <span>{t('buyerVerificationWizard.stepCurrentstepOfStepslength')}</span>
+                <span>{t('buyerVerificationWizard.stepProgressUpper', { current: currentStep, total: steps.length, defaultValue: `STEP ${currentStep} OF ${steps.length}` })}</span>
                 <span>•</span>
                 <span>{activeStepObj.req ? t('buyerVerificationWizard.mandatoryVerification') : t('buyerVerificationWizard.optionalCheck')}</span>
               </div>
@@ -793,9 +793,9 @@ export default function BuyerVerificationWizard() {
             {/* 1. Mobile Verification */}
             {activeStepObj.key === 'mobile' && (
               <div className="space-y-4">
-                <div className="bg-slate-50 border border-slate-200 rounded p-4 text-xs text-slate-700 space-y-1">
-                  <p className="font-semibold text-slate-900">{t('buyerVerificationWizard.mobileAuthenticationProtocol')}</p>
-                  <p>{t('buyerVerificationWizard.enterYour10digitMobileNumberTo')}</p>
+                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-xs space-y-1">
+                  <p className="font-bold text-[#002b36]">{t('buyerVerificationWizard.mobileAuthenticationProtocol')}</p>
+                  <p className="text-emerald-900 font-sans leading-relaxed">{t('buyerVerificationWizard.enterYour10digitMobileNumberTo')}</p>
                 </div>
 
                 <div>
@@ -837,7 +837,7 @@ export default function BuyerVerificationWizard() {
                     className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded border border-slate-300 disabled:opacity-50"
                   >
                     <ArrowLeft className="w-3.5 h-3.5" />
-                    <span>{t('buyerVerificationWizard.back')}</span>
+                    <span>{t('buyerVerificationWizard.back', { defaultValue: 'Back' })}</span>
                   </button>
 
                   <button
@@ -856,9 +856,9 @@ export default function BuyerVerificationWizard() {
             {/* 2. Identity Verification (Individual) */}
             {activeStepObj.key === 'identity' && (
               <div className="space-y-4">
-                <div className="bg-slate-50 border border-slate-200 rounded p-4 text-xs text-slate-700 space-y-1">
-                  <p className="font-semibold text-slate-900">{t('buyerVerificationWizard.authorizedIdentityVerification')}</p>
-                  <p>{t('buyerVerificationWizard.identityIsValidatedSecurelyViaAuthorized')}</p>
+                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-xs space-y-1">
+                  <p className="font-bold text-[#002b36]">{t('buyerVerificationWizard.authorizedIdentityVerification')}</p>
+                  <p className="text-emerald-900 font-sans leading-relaxed">{t('buyerVerificationWizard.identityIsValidatedSecurelyViaAuthorized')}</p>
                 </div>
 
                 <div>
@@ -885,7 +885,7 @@ export default function BuyerVerificationWizard() {
                       className="mt-0.5 rounded text-emerald-700 focus:ring-emerald-600"
                     />
                     <span>
-                      I provide my explicit consent to AgriBazaar portal to verify my identity details with official identity registries for buyer authentication.
+                      {t('buyerVerificationWizard.explicitConsentNotice', { defaultValue: 'I provide my explicit consent to AgriBazaar portal to verify my identity details with official identity registries for buyer authentication.' })}
                     </span>
                   </label>
                 </div>
@@ -940,7 +940,7 @@ export default function BuyerVerificationWizard() {
                       type="text"
                       value={addressForm.address}
                       onChange={(e) => setAddressForm({ ...addressForm, address: e.target.value })}
-                      placeholder={t('buyerVerificationWizard.flatHouseNoBuildingStreetArea')}
+                      placeholder={t('buyerVerificationWizard.flatHouseNoBuildingStreetArea', { defaultValue: 'Flat, House no., Building, Street, Area' })}
                       className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700"
                     />
                   </div>
@@ -968,7 +968,7 @@ export default function BuyerVerificationWizard() {
                       type="text"
                       value={addressForm.district}
                       onChange={(e) => setAddressForm({ ...addressForm, district: e.target.value })}
-                      placeholder={t('buyerVerificationWizard.districtName')}
+                      placeholder={t('buyerVerificationWizard.districtName', { defaultValue: 'District Name' })}
                       className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700"
                     />
                   </div>
@@ -981,7 +981,7 @@ export default function BuyerVerificationWizard() {
                       type="text"
                       value={addressForm.city}
                       onChange={(e) => setAddressForm({ ...addressForm, city: e.target.value })}
-                      placeholder={t('buyerVerificationWizard.cityOrTown')}
+                      placeholder={t('buyerVerificationWizard.cityOrTown', { defaultValue: 'City or Town' })}
                       className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700"
                     />
                   </div>
@@ -995,7 +995,7 @@ export default function BuyerVerificationWizard() {
                       maxLength={6}
                       value={addressForm.pincode}
                       onChange={(e) => setAddressForm({ ...addressForm, pincode: e.target.value })}
-                      placeholder={t('buyerVerificationWizard.6digitPinCode')}
+                      placeholder={t('buyerVerificationWizard.6digitPinCode', { defaultValue: '6-digit PIN Code' })}
                       className="w-full text-sm p-2.5 border border-slate-300 rounded bg-white focus:ring-2 focus:ring-emerald-700 font-mono"
                     />
                   </div>
@@ -1016,7 +1016,7 @@ export default function BuyerVerificationWizard() {
                     className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50"
                   >
                     {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                    <span>{t('buyerVerificationWizard.verifyAddressContinue')}</span>
+                    <span>{t('buyerVerificationWizard.verifyAddressContinue', { defaultValue: 'Verify Address & Continue' })}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
@@ -1029,7 +1029,7 @@ export default function BuyerVerificationWizard() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
-                      Legal Business Name <span className="text-red-600">*</span>
+                      {t('buyerVerificationWizard.legalBusinessNameLabel', { defaultValue: 'Legal Business Name *' })}
                     </label>
                     <input
                       type="text"
@@ -1042,7 +1042,7 @@ export default function BuyerVerificationWizard() {
 
                   <div>
                     <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
-                      Trade / Business Name
+                      {t('buyerVerificationWizard.tradeBusinessNameLabel', { defaultValue: 'Trade / Business Name' })}
                     </label>
                     <input
                       type="text"
@@ -1055,7 +1055,7 @@ export default function BuyerVerificationWizard() {
 
                   <div>
                     <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
-                      Business Type <span className="text-red-600">*</span>
+                      {t('buyerVerificationWizard.businessTypeLabel', { defaultValue: 'Business Type *' })}
                     </label>
                     <select
                       value={businessForm.businessType}
@@ -1074,7 +1074,7 @@ export default function BuyerVerificationWizard() {
 
                   <div>
                     <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
-                      Registered State <span className="text-red-600">*</span>
+                      {t('buyerVerificationWizard.registeredStateLabel', { defaultValue: 'Registered State *' })}
                     </label>
                     <select
                       value={businessForm.state}
@@ -1089,7 +1089,7 @@ export default function BuyerVerificationWizard() {
 
                   <div className="md:col-span-2">
                     <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
-                      Business Address <span className="text-red-600">*</span>
+                      {t('buyerVerificationWizard.businessAddressLabel', { defaultValue: 'Business Address *' })}
                     </label>
                     <input
                       type="text"
@@ -1156,7 +1156,7 @@ export default function BuyerVerificationWizard() {
                     className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50"
                   >
                     {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                    <span>{t('buyerVerificationWizard.verifyBusinessIdentity')}</span>
+                    <span>{t('buyerVerificationWizard.verifyBusinessIdentity', { defaultValue: 'Verify Business Identity & Continue' })}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
@@ -1166,15 +1166,15 @@ export default function BuyerVerificationWizard() {
             {/* 5. Business PAN */}
             {activeStepObj.key === 'pan' && (
               <div className="space-y-4">
-                <div className="bg-slate-50 border border-slate-200 rounded p-4 text-xs text-slate-700 space-y-1">
-                  <p className="font-semibold text-slate-900">{t('buyerVerificationWizard.incomeTaxDepartmentPanVerification')}</p>
-                  <p>{t('buyerVerificationWizard.enterThe10characterPermanentAccountNumber')}</p>
+                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-xs space-y-1">
+                  <p className="font-bold text-[#002b36]">{t('buyerVerificationWizard.incomeTaxDepartmentPanVerification')}</p>
+                  <p className="text-emerald-900 font-sans leading-relaxed">{t('buyerVerificationWizard.enterThe10characterPermanentAccountNumber')}</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
-                      Business / Entity PAN <span className="text-red-600">*</span>
+                      {t('buyerVerificationWizard.businessPanLabel', { defaultValue: 'Business / Entity PAN *' })}
                     </label>
                     <input
                       type="text"
@@ -1188,7 +1188,7 @@ export default function BuyerVerificationWizard() {
 
                   <div>
                     <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
-                      Legal Name as per PAN
+                      {t('buyerVerificationWizard.legalNameAsPerPanLabel', { defaultValue: 'Legal Name as per PAN' })}
                     </label>
                     <input
                       type="text"
@@ -1215,7 +1215,7 @@ export default function BuyerVerificationWizard() {
                     className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50"
                   >
                     {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                    <span>{t('buyerVerificationWizard.verifyBusinessPan')}</span>
+                    <span>{t('buyerVerificationWizard.verifyBusinessPan', { defaultValue: 'Verify Business PAN & Continue' })}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
@@ -1225,14 +1225,14 @@ export default function BuyerVerificationWizard() {
             {/* 6. GSTIN Verification (Conditional) */}
             {activeStepObj.key === 'gstin' && (
               <div className="space-y-4">
-                <div className="bg-slate-50 border border-slate-200 rounded p-4 text-xs text-slate-700 space-y-1">
-                  <p className="font-semibold text-slate-900">{t('buyerVerificationWizard.goodsAndServicesTaxIdentificationGstin')}</p>
-                  <p>{t('buyerVerificationWizard.gstinVerificationIsConditionalSmallTraders')}</p>
+                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-xs space-y-1">
+                  <p className="font-bold text-[#002b36]">{t('buyerVerificationWizard.goodsAndServicesTaxIdentificationGstin')}</p>
+                  <p className="text-emerald-900 font-sans leading-relaxed">{t('buyerVerificationWizard.gstinVerificationIsConditionalSmallTraders')}</p>
                 </div>
 
                 <div>
                   <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
-                    15-Digit GSTIN Number
+                    {t('buyerVerificationWizard.gstinNumberLabel', { defaultValue: '15-Digit GSTIN Number' })}
                   </label>
                   <input
                     type="text"
@@ -1259,7 +1259,7 @@ export default function BuyerVerificationWizard() {
                       disabled={submitting}
                       className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-200 hover:bg-slate-300 px-4 py-2.5 rounded border border-slate-300"
                     >
-                      <span>{t('buyerVerificationWizard.gstinNotApplicable')}</span>
+                      <span>{t('buyerVerificationWizard.gstinNotApplicable', { defaultValue: 'GSTIN Not Applicable' })}</span>
                     </button>
 
                     <button
@@ -1268,7 +1268,7 @@ export default function BuyerVerificationWizard() {
                       className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50"
                     >
                       {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                      <span>{t('buyerVerificationWizard.verifyGstinContinue')}</span>
+                      <span>{t('buyerVerificationWizard.verifyGstinContinue', { defaultValue: 'Verify GSTIN & Continue' })}</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </button>
                   </div>
@@ -1282,7 +1282,7 @@ export default function BuyerVerificationWizard() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
-                      Organization Structure Type
+                      {t('buyerVerificationWizard.orgStructureTypeLabel', { defaultValue: 'Organization Structure Type' })}
                     </label>
                     <select
                       value={busRegForm.orgType}
@@ -1299,7 +1299,7 @@ export default function BuyerVerificationWizard() {
 
                   <div>
                     <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
-                      Registration Number / Identifier <span className="text-red-600">*</span>
+                      {t('buyerVerificationWizard.registrationNumberLabel', { defaultValue: 'Registration Number / Identifier *' })}
                     </label>
                     <input
                       type="text"
@@ -1324,7 +1324,7 @@ export default function BuyerVerificationWizard() {
                     onClick={handleBusRegSubmit}
                     className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm"
                   >
-                    <span>{t('buyerVerificationWizard.verifyRegistration')}</span>
+                    <span>{t('buyerVerificationWizard.verifyRegistration', { defaultValue: 'Verify Registration & Continue' })}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
@@ -1337,7 +1337,7 @@ export default function BuyerVerificationWizard() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
-                      Representative Full Name <span className="text-red-600">*</span>
+                      {t('buyerVerificationWizard.repFullNameLabel', { defaultValue: 'Representative Full Name *' })}
                     </label>
                     <input
                       type="text"
@@ -1350,7 +1350,7 @@ export default function BuyerVerificationWizard() {
 
                   <div>
                     <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
-                      Designation <span className="text-red-600">*</span>
+                      {t('buyerVerificationWizard.designationLabel', { defaultValue: 'Designation *' })}
                     </label>
                     <select
                       value={repForm.designation}
@@ -1384,7 +1384,7 @@ export default function BuyerVerificationWizard() {
                   {repForm.otpSent && (
                     <div>
                       <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
-                        Representative OTP <span className="text-red-600">*</span>
+                        {t('buyerVerificationWizard.repOtpLabel', { defaultValue: 'Representative OTP *' })}
                       </label>
                       <input
                         type="text"
@@ -1425,7 +1425,7 @@ export default function BuyerVerificationWizard() {
                     className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50"
                   >
                     {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                    <span>{repForm.otpSent ? t('buyerVerificationWizard.verifyRepresentativeOtp') : t('buyerVerificationWizard.sendRepresentativeOtp')}</span>
+                    <span>{repForm.otpSent ? t('buyerVerificationWizard.verifyRepresentativeOtp', { defaultValue: 'Verify Representative & Continue' }) : t('buyerVerificationWizard.sendRepresentativeOtp', { defaultValue: 'Send Representative OTP' })}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
@@ -1438,7 +1438,7 @@ export default function BuyerVerificationWizard() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
-                      Account Holder Name <span className="text-red-600">*</span>
+                      {t('buyerVerificationWizard.accountHolderNameLabel', { defaultValue: 'Account Holder Name *' })}
                     </label>
                     <input
                       type="text"
@@ -1451,7 +1451,7 @@ export default function BuyerVerificationWizard() {
 
                   <div>
                     <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
-                      Bank Name <span className="text-red-600">*</span>
+                      {t('buyerVerificationWizard.bankNameLabel', { defaultValue: 'Bank Name *' })}
                     </label>
                     <select
                       value={bankForm.bankName}
@@ -1466,7 +1466,7 @@ export default function BuyerVerificationWizard() {
 
                   <div>
                     <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
-                      Branch Name
+                      {t('buyerVerificationWizard.branchNameLabel', { defaultValue: 'Branch Name' })}
                     </label>
                     <input
                       type="text"
@@ -1479,7 +1479,7 @@ export default function BuyerVerificationWizard() {
 
                   <div>
                     <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
-                      IFSC Code <span className="text-red-600">*</span>
+                      {t('buyerVerificationWizard.ifscCodeLabel', { defaultValue: 'IFSC Code *' })}
                     </label>
                     <input
                       type="text"
@@ -1493,7 +1493,7 @@ export default function BuyerVerificationWizard() {
 
                   <div>
                     <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
-                      Account Number <span className="text-red-600">*</span>
+                      {t('buyerVerificationWizard.accountNumberLabel', { defaultValue: 'Account Number *' })}
                     </label>
                     <input
                       type="password"
@@ -1506,7 +1506,7 @@ export default function BuyerVerificationWizard() {
 
                   <div>
                     <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
-                      Confirm Account Number <span className="text-red-600">*</span>
+                      {t('buyerVerificationWizard.confirmAccountNumberLabel', { defaultValue: 'Confirm Account Number *' })}
                     </label>
                     <input
                       type="text"
@@ -1533,7 +1533,7 @@ export default function BuyerVerificationWizard() {
                     className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50"
                   >
                     {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                    <span>{t('buyerVerificationWizard.verifyBankAccount')}</span>
+                    <span>{t('buyerVerificationWizard.verifyBankAccount', { defaultValue: 'Verify Bank Account & Continue' })}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
@@ -1543,14 +1543,14 @@ export default function BuyerVerificationWizard() {
             {/* 10. Udyam Registration (Conditional) */}
             {activeStepObj.key === 'udyam' && (
               <div className="space-y-4">
-                <div className="bg-slate-50 border border-slate-200 rounded p-4 text-xs text-slate-700 space-y-1">
-                  <p className="font-semibold text-slate-900">{t('buyerVerificationWizard.udyamMsmeRegistration')}</p>
-                  <p>{t('buyerVerificationWizard.conditionalCheckEnterYourUdyamRegistration')}</p>
+                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-xs space-y-1">
+                  <p className="font-bold text-[#002b36]">{t('buyerVerificationWizard.udyamMsmeRegistration')}</p>
+                  <p className="text-emerald-900 font-sans leading-relaxed">{t('buyerVerificationWizard.conditionalCheckEnterYourUdyamRegistration')}</p>
                 </div>
 
                 <div>
                   <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
-                    Udyam Registration Number
+                    {t('buyerVerificationWizard.udyamNumberLabel', { defaultValue: 'Udyam Registration Number' })}
                   </label>
                   <input
                     type="text"
@@ -1576,7 +1576,7 @@ export default function BuyerVerificationWizard() {
                       disabled={submitting}
                       className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-200 hover:bg-slate-300 px-4 py-2.5 rounded border border-slate-300"
                     >
-                      <span>{t('buyerVerificationWizard.udyamNotApplicable')}</span>
+                      <span>{t('buyerVerificationWizard.udyamNotApplicable', { defaultValue: 'Udyam Not Applicable' })}</span>
                     </button>
 
                     <button
@@ -1585,7 +1585,7 @@ export default function BuyerVerificationWizard() {
                       className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50"
                     >
                       {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                      <span>{t('buyerVerificationWizard.verifyUdyamContinue')}</span>
+                      <span>{t('buyerVerificationWizard.verifyUdyamContinue', { defaultValue: 'Verify Udyam & Continue' })}</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </button>
                   </div>
@@ -1596,15 +1596,15 @@ export default function BuyerVerificationWizard() {
             {/* 11. FSSAI / License Verification (Conditional) */}
             {activeStepObj.key === 'fssai' && (
               <div className="space-y-4">
-                <div className="bg-slate-50 border border-slate-200 rounded p-4 text-xs text-slate-700 space-y-1">
-                  <p className="font-semibold text-slate-900">{t('buyerVerificationWizard.fssaiCommodityTradeLicense')}</p>
-                  <p>{t('buyerVerificationWizard.showThisOnlyWhereBuyerActivity')}</p>
+                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-xs space-y-1">
+                  <p className="font-bold text-[#002b36]">{t('buyerVerificationWizard.fssaiCommodityTradeLicense')}</p>
+                  <p className="text-emerald-900 font-sans leading-relaxed">{t('buyerVerificationWizard.showThisOnlyWhereBuyerActivity')}</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
-                      License Type
+                      {t('buyerVerificationWizard.licenseTypeLabel', { defaultValue: 'License Type' })}
                     </label>
                     <select
                       value={fssaiForm.licenseType}
@@ -1619,7 +1619,7 @@ export default function BuyerVerificationWizard() {
 
                   <div>
                     <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
-                      License / Registration Number
+                      {t('buyerVerificationWizard.licenseNumberLabel', { defaultValue: 'License / Registration Number' })}
                     </label>
                     <input
                       type="text"
@@ -1646,7 +1646,7 @@ export default function BuyerVerificationWizard() {
                       disabled={submitting}
                       className="inline-flex items-center space-x-1 text-xs font-semibold text-slate-700 bg-slate-200 hover:bg-slate-300 px-4 py-2.5 rounded border border-slate-300"
                     >
-                      <span>{t('buyerVerificationWizard.licenseNotApplicable')}</span>
+                      <span>{t('buyerVerificationWizard.licenseNotApplicable', { defaultValue: 'License Not Applicable' })}</span>
                     </button>
 
                     <button
@@ -1655,7 +1655,7 @@ export default function BuyerVerificationWizard() {
                       className="inline-flex items-center space-x-1.5 text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-900 px-5 py-2.5 rounded shadow-sm disabled:opacity-50"
                     >
                       {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
-                      <span>{t('buyerVerificationWizard.verifyLicenseContinue')}</span>
+                      <span>{t('buyerVerificationWizard.verifyLicenseContinue', { defaultValue: 'Verify License & Continue' })}</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </button>
                   </div>
@@ -1666,9 +1666,9 @@ export default function BuyerVerificationWizard() {
             {/* 12. Documents Upload */}
             {activeStepObj.key === 'documents' && (
               <div className="space-y-4">
-                <div className="bg-slate-50 border border-slate-200 rounded p-4 text-xs text-slate-700 space-y-1">
-                  <p className="font-semibold text-slate-900">{t('buyerVerificationWizard.documentUploadComplianceAudit')}</p>
-                  <p>{t('buyerVerificationWizard.uploadClearScanOrPdfCopies')}</p>
+                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-xs space-y-1">
+                  <p className="font-bold text-[#002b36]">{t('buyerVerificationWizard.documentUploadComplianceAudit')}</p>
+                  <p className="text-emerald-900 font-sans leading-relaxed">{t('buyerVerificationWizard.uploadClearScanOrPdfCopies')}</p>
                 </div>
 
                 <div className="space-y-3">

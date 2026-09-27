@@ -21,6 +21,14 @@ const adminService = {
     const res = await api.put(`/admin/farmers/${id}/verify`, data);
     return res.data;
   },
+  getTransporters: async (params = {}) => {
+    const res = await api.get('/admin/transporters', { params });
+    return res.data;
+  },
+  verifyTransporter: async (id, data) => {
+    const res = await api.put(`/admin/transporters/${id}/verify`, data);
+    return res.data;
+  },
   getProducts: async (params = {}) => {
     const res = await api.get('/admin/products', { params });
     return res.data;

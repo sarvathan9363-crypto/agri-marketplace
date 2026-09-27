@@ -1,14 +1,17 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Truck, MapPin, DollarSign, CheckCircle2, ShieldCheck, ArrowRight, Package, UserCheck, Lock } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Truck, MapPin, DollarSign, CheckCircle2, ShieldCheck, ArrowRight, Package, UserCheck, Lock, AlertCircle } from 'lucide-react';
 import transportService from '../../services/transportService';
 import { StatsCard, LoadingState } from '../../components/ui/Components';
 import toast from 'react-hot-toast';
 
 export default function TransporterDashboard() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [requests, setRequests] = useState([]);
   const [profile, setProfile] = useState(null);
+  const [verificationStatus, setVerificationStatus] = useState('NOT_STARTED');
   const [loading, setLoading] = useState(true);
   const [quoteModal, setQuoteModal] = useState(null);
   const [statusModal, setStatusModal] = useState(null);
@@ -45,12 +48,16 @@ export default function TransporterDashboard() {
   const fetchData = async () => {
     try {
       setLoading(true);
-      const [reqData, profData] = await Promise.all([
+      const [reqData, profData, verData] = await Promise.all([
         transportService.getRequests(),
         transportService.getProfile(),
+        transportService.getVerification().catch(() => ({ verificationStatus: 'NOT_STARTED' })),
       ]);
       setRequests(reqData.requests || []);
       setProfile(profData.profile || null);
+      if (verData.verificationStatus) {
+        setVerificationStatus(verData.verificationStatus);
+      }
       if (profData.profile) {
         setProfileForm({
           companyName: profData.profile.companyName || '',
@@ -64,6 +71,10 @@ export default function TransporterDashboard() {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleOpenQuoteModal = (req) => {
+    setQuoteModal(req);
   };
 
   const handleSubmitQuote = async (e) => {
@@ -143,14 +154,61 @@ export default function TransporterDashboard() {
           </p>
         </div>
 
-        <button
-          onClick={() => setProfileModal(true)}
-          className="px-4 py-2.5 bg-white border border-[#e8eddb] hover:border-[#00684a] rounded-2xl text-xs font-black text-[#001e2b] flex items-center gap-2 shadow-sm font-display transition"
-        >
-          <UserCheck className="w-4 h-4 text-[#00684a]" />
-          <span>{profile?.companyName || t('transport.transporterProfile', { defaultValue: 'Transporter Profile' })}</span>
-        </button>
+        <div className="flex items-center gap-3">
+          {verificationStatus === 'VERIFIED' ? (
+            <div className="flex items-center gap-2 bg-[#E8F5E9] border border-[#00E676] px-4 py-2 rounded-2xl text-xs font-black text-[#002B36] font-display">
+              <CheckCircle2 className="w-4 h-4 text-[#00C853]" />
+              <span>{t('transporter.verifiedBadge', { defaultValue: '✓ VERIFIED TRANSPORTER' })}</span>
+            </div>
+          ) : (
+            <button
+              onClick={() => navigate('/transporter/verification/wizard')}
+              className="px-4 py-2.5 bg-amber-500 hover:bg-amber-600 text-white rounded-2xl text-xs font-black flex items-center gap-2 shadow-sm font-display transition"
+            >
+              <ShieldCheck className="w-4 h-4" />
+              <span>{t('transporter.continueVerificationBtn', { defaultValue: 'Continue Verification' })}</span>
+            </button>
+          )}
+
+          <button
+            onClick={() => setProfileModal(true)}
+            className="px-4 py-2.5 bg-white border border-[#e8eddb] hover:border-[#00684a] rounded-2xl text-xs font-black text-[#001e2b] flex items-center gap-2 shadow-sm font-display transition"
+          >
+            <UserCheck className="w-4 h-4 text-[#00684a]" />
+            <span>{profile?.companyName || t('transport.transporterProfile', { defaultValue: 'Transporter Profile' })}</span>
+          </button>
+        </div>
       </div>
+
+      {/* Verification Pending Banner */}
+      {verificationStatus !== 'VERIFIED' && (
+        <div className="bg-gradient-to-r from-amber-50 via-orange-50 to-amber-100/50 border border-amber-300 rounded-3xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 rounded-2xl bg-amber-200/80 text-amber-900 flex items-center justify-center shrink-0 shadow-inner">
+              <AlertCircle className="w-6 h-6 text-amber-700" />
+            </div>
+            <div>
+              <span className="text-[10px] font-black uppercase text-amber-800 bg-amber-200/80 px-2 py-0.5 rounded font-display tracking-wider">
+                {t('transporter.verificationPendingTag', { defaultValue: 'VERIFICATION PENDING' })}
+              </span>
+              <h3 className="text-base font-extrabold text-amber-950 font-display mt-0.5">
+                {t('transporter.completeVerificationTitle', { defaultValue: 'Complete Your Required Transporter Verification' })}
+              </h3>
+              <p className="text-xs text-amber-800 font-sans mt-0.5 max-w-xl">
+                {t('transporter.verificationPendingDesc', { defaultValue: 'Unverified transporters cannot submit freight quotations. Finish required identity, fleet, and bank verification steps to unlock quotation features.' })}
+              </p>
+            </div>
+          </div>
+
+          <button
+            onClick={() => navigate('/transporter/verification/wizard')}
+            className="px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-extrabold text-xs rounded-2xl transition font-display flex items-center gap-1.5 shrink-0 shadow-md"
+          >
+            <span>{t('transporter.startVerificationBtn', { defaultValue: 'Start Verification' })}</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
+      )}
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
         <StatsCard icon={Truck} label={t('transport.openRequests', { defaultValue: 'Open Transport Requests' })} value={openRequests.length} color="amber" />
@@ -214,13 +272,30 @@ export default function TransporterDashboard() {
                     <p><span className="font-bold text-gray-700">{t('transport.delivery', { defaultValue: 'Delivery' })}:</span> {req.deliveryLocation}</p>
                   </div>
 
-                  <button
-                    onClick={() => setQuoteModal(req)}
-                    className="w-full py-2.5 bg-[#001e2b] hover:bg-slate-800 text-[#00ed64] font-extrabold text-xs rounded-xl transition font-display flex items-center justify-center gap-1.5"
-                  >
-                    <span>{t('transport.submitQuote', { defaultValue: 'Submit Freight Quotation' })}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
+                  {req.myQuotation ? (
+                    <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-xl space-y-1">
+                      <div className="flex justify-between items-center text-xs">
+                        <span className="font-extrabold text-[#00684a] font-display">✓ {t('transport.quoteSubmittedBadge', { defaultValue: 'Quotation Submitted' })}</span>
+                        <span className="font-black text-[#001e2b] text-sm font-display">₹{req.myQuotation.totalQuote}</span>
+                      </div>
+                      <p className="text-[11px] text-gray-500 font-sans">
+                        {t('transport.awaitingBuyerSelection', { defaultValue: 'Awaiting buyer selection...' })} · {req.myQuotation.vehicleType}
+                      </p>
+                    </div>
+                  ) : verificationStatus === 'VERIFIED' ? (
+                    <button
+                      onClick={() => handleOpenQuoteModal(req)}
+                      className="w-full py-2.5 bg-[#001e2b] hover:bg-slate-800 text-[#00ed64] font-extrabold text-xs rounded-xl transition font-display flex items-center justify-center gap-1.5 shadow-sm"
+                    >
+                      <span>{t('transport.submitQuote', { defaultValue: 'Submit Freight Quotation' })}</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </button>
+                  ) : (
+                    <div className="flex items-center justify-center gap-2 py-2.5 text-xs font-bold text-amber-700 bg-amber-50 border border-amber-200 rounded-xl">
+                      <Lock className="w-3.5 h-3.5" />
+                      <span>{t('transport.verificationRequiredToQuote', { defaultValue: 'Verification approval required to quote.' })}</span>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -358,9 +433,9 @@ export default function TransporterDashboard() {
                 />
               </div>
 
-              <div className="p-3 bg-emerald-50 rounded-xl border border-emerald-200 flex justify-between items-center">
-                <span className="font-extrabold text-[#001e2b] font-display">{t('transport.totalQuote', { defaultValue: 'Total Quotation Amount' })}:</span>
-                <span className="text-lg font-black text-[#00684a] font-display">
+              <div className="transport-quote-total p-3 bg-emerald-50 rounded-xl border border-emerald-200 flex justify-between items-center">
+                <span className="transport-quote-total__label font-extrabold text-[#001e2b] font-display">{t('transport.totalQuote', { defaultValue: 'Total Quotation Amount' })}:</span>
+                <span className="transport-quote-total__amount text-lg font-black text-[#00684a] font-display">
                   ₹{Number(quoteForm.transportCharge) + Number(quoteForm.loadingCharge) + Number(quoteForm.unloadingCharge) + Number(quoteForm.handlingCharge) + Number(quoteForm.tollCharge)}
                 </span>
               </div>

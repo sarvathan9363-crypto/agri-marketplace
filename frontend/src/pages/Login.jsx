@@ -27,6 +27,7 @@ export default function Login() {
       if (data.user.role === 'FARMER') navigate('/farmer/dashboard');
       else if (data.user.role === 'BUYER') navigate('/buyer/dashboard');
       else if (data.user.role === 'ADMIN') navigate('/admin/dashboard');
+      else if (data.user.role === 'TRANSPORTER') navigate('/transporter/dashboard');
     } catch (err) {
       toast.error(err.response?.data?.message || t('auth.loginFailed', { defaultValue: 'Login failed. Please try again.' }));
     } finally {
@@ -90,7 +91,7 @@ export default function Login() {
             <div className="flex items-center justify-between pt-1">
               <label className="flex items-center gap-2 text-xs font-semibold text-slate-600">
                 <input type="checkbox" className="rounded border-[#E2E8E5] text-[#00C853] focus:ring-[#00E676]" />
-                Remember me
+                {t('auth.rememberMe', { defaultValue: 'Remember me' })}
               </label>
               <Link to="/forgot-password" className="text-xs font-bold text-[#00C853] hover:underline">{t('auth.forgotPassword')}</Link>
             </div>
@@ -106,7 +107,7 @@ export default function Login() {
 
           <div className="mt-6 text-center">
             <p className="text-sm text-slate-600">
-              Don&apos;t have an account?{' '}
+              {t('auth.dontHaveAccount', { defaultValue: "Don't have an account?" })}{' '}
               <Link to="/register" className="text-[#00C853] font-bold hover:underline">{t('auth.createAccount')}</Link>
             </p>
           </div>

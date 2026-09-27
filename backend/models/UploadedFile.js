@@ -9,12 +9,12 @@ const uploadedFileSchema = new mongoose.Schema({
   },
   ownerType: {
     type: String,
-    enum: ['FARMER', 'BUYER', 'ADMIN', 'FPO'],
+    enum: ['FARMER', 'BUYER', 'ADMIN', 'FPO', 'TRANSPORTER'],
     default: 'FARMER',
   },
   category: {
     type: String,
-    enum: ['VERIFICATION', 'PRODUCT', 'PROFILE', 'ORDER'],
+    enum: ['VERIFICATION', 'PRODUCT', 'PROFILE', 'ORDER', 'TRANSPORT'],
     required: [true, 'Category is required'],
     index: true,
   },
@@ -25,6 +25,8 @@ const uploadedFileSchema = new mongoose.Schema({
       'REGISTRATION', 'GST', 'AUTHORIZATION', 'UDYAM', 'FSSAI',
       'ADDRESS', 'BUSINESS', 'REPRESENTATIVE',
       'AVATAR', 'IMAGES', 'DOCUMENTS',
+      'VEHICLE_RC', 'VEHICLE_INSURANCE', 'VEHICLE_FITNESS', 'VEHICLE_PUC', 'VEHICLE_PERMIT',
+      'DRIVER_LICENSE', 'DRIVER_ID', 'CANCELLED_CHEQUE', 'VEHICLE', 'FLEET', 'DRIVER',
     ],
     required: [true, 'SubCategory is required'],
     index: true,
@@ -35,7 +37,7 @@ const uploadedFileSchema = new mongoose.Schema({
   },
   entityType: {
     type: String,
-    enum: ['USER', 'VERIFICATION', 'PRODUCT', 'ORDER'],
+    enum: ['USER', 'VERIFICATION', 'PRODUCT', 'ORDER', 'TRANSPORTER', 'VEHICLE', 'DRIVER'],
     default: 'VERIFICATION',
   },
   entityId: {

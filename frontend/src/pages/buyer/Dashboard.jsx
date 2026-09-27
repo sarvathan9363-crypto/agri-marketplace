@@ -5,6 +5,7 @@ import { ShoppingBag, TrendingUp, DollarSign, Package, ShieldCheck, ArrowRight, 
 import { StatsCard, StatusBadge, LoadingState } from '../../components/ui/Components';
 import ProductCard from '../../components/common/ProductCard';
 import buyerService from '../../services/buyerService';
+import TransportQuoteSelector from '../buyer/TransportQuoteSelector';
 import toast from 'react-hot-toast';
 import { useAuth } from '../../context/AuthContext';
 import { getBuyerVerificationConfig } from '../../config/buyerVerificationConfig';
@@ -18,6 +19,7 @@ export default function BuyerDashboard() {
   const [verification, setVerification] = useState(null);
   const [verStatus, setVerStatus] = useState('PENDING_VERIFICATION');
   const [loading, setLoading] = useState(true);
+  const [selectedTransportReqId, setSelectedTransportReqId] = useState(null);
 
   const rawBuyerType = profile?.buyerType || 'INDIVIDUAL';
   const allConfigs = getBuyerVerificationConfig(t);
@@ -145,10 +147,18 @@ export default function BuyerDashboard() {
         {data.recentOrders?.length > 0 ? (
           <div className="space-y-3">
             {data.recentOrders.map(order => (
-              <div key={order._id} className="flex items-center justify-between p-4 bg-[#fafcf8] border border-[#e8eddb] rounded-2xl">
+              <div key={order._id} className="flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-[#fafcf8] border border-[#e8eddb] rounded-2xl gap-3">
                 <div>
                   <p className="text-sm font-bold text-[#001e2b] font-display">{order.productName}</p>
                   <p className="text-xs text-gray-500 mt-0.5">{order.farmerName} · {order.quantity} {order.unit}</p>
+                  {order.transportRequestId && (
+                    <button
+                      onClick={() => setSelectedTransportReqId(order.transportRequestId._id || order.transportRequestId)}
+                      className="mt-1.5 text-[11px] font-extrabold text-[#00684a] hover:underline flex items-center gap-1 font-display"
+                    >
+                      <span>🚚 {t('transport.viewSelectQuotes', { defaultValue: 'View Transport Quotes' })} →</span>
+                    </button>
+                  )}
                 </div>
                 <div className="text-right">
                   <p className="text-sm font-black text-[#001e2b] font-display">₹{order.totalAmount}</p>
@@ -171,6 +181,22 @@ export default function BuyerDashboard() {
           <h2 className="font-extrabold text-[#001e2b] text-xl mb-4 font-display">{t('buyerDashboard.recommendedProduce')}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {data.recommendedProducts.slice(0, 3).map(p => <ProductCard key={p._id} product={p} />)}
+          </div>
+        </div>
+      )}
+      {selectedTransportReqId && (
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+            <TransportQuoteSelector
+              requestId={selectedTransportReqId}
+              onSelectQuote={() => {
+                setSelectedTransportReqId(null);
+                buyerService.getDashboard().then(dashRes => {
+                  if (dashRes?.dashboard) setData(dashRes.dashboard);
+                });
+              }}
+              onClose={() => setSelectedTransportReqId(null)}
+            />
           </div>
         </div>
       )}

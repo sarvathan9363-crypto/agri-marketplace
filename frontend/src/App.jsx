@@ -41,6 +41,7 @@ import BuyerVerificationWizard from './pages/buyer/BuyerVerificationWizard';
 import AdminDashboard from './pages/admin/Dashboard';
 import AdminUsers from './pages/admin/Users';
 import AdminFarmers from './pages/admin/Farmers';
+import AdminTransporters from './pages/admin/Transporters';
 import AdminSettlements from './pages/admin/Settlements';
 import AdminProducts from './pages/admin/Products';
 import AdminOrders from './pages/admin/Orders';
@@ -53,7 +54,11 @@ import AdminAnalytics from './pages/admin/Analytics';
 import Settings from './pages/Settings';
 
 // Transporter Pages
+import TransporterLayout from './layouts/TransporterLayout';
 import TransporterDashboard from './pages/transporter/Dashboard';
+import TransporterVerification from './pages/transporter/TransporterVerification';
+import TransporterVerificationWizard from './pages/transporter/TransporterVerificationWizard';
+import TransporterProfile from './pages/transporter/Profile';
 
 export default function App() {
   return (
@@ -111,9 +116,13 @@ export default function App() {
           </Route>
 
           {/* Transporter Routes */}
-          <Route path="/transporter" element={<BuyerLayout />}>
+          <Route path="/transporter" element={<TransporterLayout />}>
             <Route index element={<Navigate to="/transporter/dashboard" replace />} />
             <Route path="dashboard" element={<TransporterDashboard />} />
+            <Route path="profile" element={<TransporterProfile />} />
+            <Route path="verification" element={<TransporterVerification />} />
+            <Route path="verification/wizard" element={<TransporterVerificationWizard />} />
+            <Route path="verification/onboarding" element={<TransporterVerificationWizard />} />
             <Route path="settings" element={<Settings />} />
           </Route>
 
@@ -123,6 +132,7 @@ export default function App() {
             <Route path="dashboard" element={<AdminDashboard />} />
             <Route path="users" element={<AdminUsers />} />
             <Route path="farmers" element={<AdminFarmers />} />
+            <Route path="transporters" element={<AdminTransporters />} />
             <Route path="settlements" element={<AdminSettlements />} />
             <Route path="products" element={<AdminProducts />} />
             <Route path="orders" element={<AdminOrders />} />

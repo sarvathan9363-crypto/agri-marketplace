@@ -56,7 +56,18 @@ exports.getDashboard = async (req, res, next) => {
 
     const recentOrders = await Order.find({ buyerId: req.user._id })
       .sort({ createdAt: -1 })
-      .limit(5);
+      .limit(5)
+      .populate({
+        path: 'transportRequestId',
+        populate: { path: 'selectedQuotationId' },
+      });
+
+    // Active Transport Requests
+    const TransportRequest = require('../models/TransportRequest');
+    const activeTransportRequests = await TransportRequest.find({
+      buyerId: req.user._id,
+      status: { $in: ['OPEN', 'QUOTES_RECEIVED', 'QUOTATION_SELECTED', 'CONFIRMED', 'ASSIGNED', 'PICKUP_SCHEDULED', 'PICKED_UP', 'IN_TRANSIT'] },
+    }).sort({ createdAt: -1 }).populate('selectedQuotationId');
 
     // Recommended products (random active products)
     const recommendedProducts = await Product.find({ status: 'ACTIVE' })
@@ -71,6 +82,7 @@ exports.getDashboard = async (req, res, next) => {
         completedOrders,
         totalSpent: buyer.totalSpent || 0,
         recentOrders,
+        activeTransportRequests,
         recommendedProducts,
       },
     });

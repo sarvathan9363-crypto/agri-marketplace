@@ -12,6 +12,8 @@ router.put('/users/:id/status', adminController.toggleUserStatus);
 router.get('/farmers', adminController.getFarmers);
 router.get('/farmers/settlements', adminController.getFarmerSettlements);
 router.put('/farmers/:id/verify', adminController.verifyFarmer);
+router.get('/transporters', adminController.getTransporters);
+router.put('/transporters/:id/verify', adminController.verifyTransporter);
 router.get('/products', adminController.getProducts);
 router.put('/products/:id/status', adminController.updateProductStatus);
 router.get('/orders', adminController.getOrders);

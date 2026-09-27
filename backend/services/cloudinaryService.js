@@ -20,6 +20,12 @@ const getVerificationSubfolder = (subCategory) => {
     ADDRESS: 'address/documents',
     BUSINESS: 'business/documents',
     REPRESENTATIVE: 'representative/documents',
+    VEHICLE_RC: 'vehicles/rc',
+    VEHICLE_INSURANCE: 'vehicles/insurance',
+    VEHICLE_FITNESS: 'vehicles/fitness',
+    VEHICLE_PUC: 'vehicles/puc',
+    VEHICLE_PERMIT: 'vehicles/permit',
+    DRIVER_LICENSE: 'drivers/license',
     OTHER: 'other/documents',
   };
   return map[subCategory?.toUpperCase()] || `${(subCategory || 'other').toLowerCase()}/documents`;
@@ -35,14 +41,23 @@ const getCloudinaryFolder = ({ userId, category, subCategory, entityId }) => {
   }
 
   const baseFolder = `agri_bazaar/users/${userId}`;
+  const subCatUpper = (subCategory || '').toUpperCase();
 
   switch (category?.toUpperCase()) {
     case 'PROFILE':
       return `${baseFolder}/profile/avatar`;
 
     case 'VERIFICATION': {
+      if (subCatUpper.startsWith('VEHICLE')) {
+        const vehId = entityId || 'vehicle';
+        return `${baseFolder}/vehicles/${vehId}/documents`;
+      }
+      if (subCatUpper.startsWith('DRIVER')) {
+        const drvId = entityId || 'driver';
+        return `${baseFolder}/drivers/${drvId}/documents`;
+      }
       const subFolder = getVerificationSubfolder(subCategory);
-      return `${baseFolder}/verification/${subFolder}`;
+      return `${baseFolder}/verification/transporter/${subFolder}`;
     }
 
     case 'PRODUCT': {

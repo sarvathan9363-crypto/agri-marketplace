@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { LayoutDashboard, Users, Tractor, Package, ShoppingBag, CreditCard, ShieldCheck, AlertTriangle, BarChart3, Settings } from 'lucide-react';
+import { LayoutDashboard, Users, Tractor, Truck, Package, ShoppingBag, CreditCard, ShieldCheck, AlertTriangle, BarChart3, Settings } from 'lucide-react';
 import DashboardLayout from './DashboardLayout';
 import { useAuth } from '../context/AuthContext';
 import { useTranslation } from 'react-i18next';
@@ -10,7 +10,9 @@ export default function AdminLayout() {
   const { isAdmin, loading } = useAuth();
   const adminLinks = [
     { to: '/admin/dashboard', label: t('navigation.dashboard'), icon: LayoutDashboard, end: true }, { to: '/admin/users', label: t('admin.users', { defaultValue: 'Users' }), icon: Users },
-    { to: '/admin/farmers', label: t('admin.farmers', { defaultValue: 'Farmers / FPOs' }), icon: Tractor }, { to: '/admin/settlements', label: t('admin.settlements', { defaultValue: 'Settlements' }), icon: CreditCard },
+    { to: '/admin/farmers', label: t('admin.farmers', { defaultValue: 'Farmers / FPOs' }), icon: Tractor },
+    { to: '/admin/transporters', label: t('admin.transporters', { defaultValue: 'Transporters' }), icon: Truck },
+    { to: '/admin/settlements', label: t('admin.settlements', { defaultValue: 'Settlements' }), icon: CreditCard },
     { to: '/admin/products', label: t('navigation.products'), icon: Package }, { to: '/admin/orders', label: t('navigation.orders'), icon: ShoppingBag },
     { to: '/admin/payments', label: t('admin.payments', { defaultValue: 'Payments' }), icon: CreditCard },
     { to: '/admin/blockchain', label: t('admin.blockchain', { defaultValue: 'Blockchain Audit' }), icon: ShieldCheck },

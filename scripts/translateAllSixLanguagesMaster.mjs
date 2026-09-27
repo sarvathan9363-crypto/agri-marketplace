@@ -1,317 +1,652 @@
 import fs from 'fs';
 import path from 'path';
 
-const localesDir = 'c:/Volume D/projects/temp/agri/frontend/src/i18n/locales';
+const basePath = 'c:/Volume D/projects/temp/agri/frontend/src/i18n/locales';
 
 const masterDict = {
-  ta: {
-    // admin & common
-    "common.executiveControls": "நிர்வாகக் கட்டுப்பாடுகள்",
-    "common.adminDashboard": "நிர்வாகி டாஷ்போர்டு",
-    "common.noOrderVolumeDataYet": "இன்னும் ஆர்டர் அளவு தரவு இல்லை",
-    "common.noCategoryDistributionDataYet": "இன்னும் பயிர் வகை தரவு இல்லை",
-    "common.conflictOversight": "சிக்கல் மேலாண்மை",
-    "common.disputeResolution": "புகார் தீர்வாக்கம்",
-    "common.arbitrateBuyerAndFarmerClaimsQuality": "வாங்குபவர் மற்றும் விவசாயி புகார்கள், தரம் மற்றும் கட்டணப் பிடிகளைத் தீர்க்கவும்.",
-    "common.resolveDispute": "புகாரைத் தீர்",
-    "common.kycVerificationPipeline": "KYC சரிபார்ப்பு வரிசை",
-    "common.reviewFarmRegistrationsVerifyIdentityAnd": "பண்ணைப் பதிவுகளை மதிப்பாய்வு செய்து, அடையாளத்தைச் சரிபார்த்து, விற்பனையாளர் உரிமைகளை வழங்கவும்.",
-    "common.platformFulfillment": "தள நிறைவேற்றம்",
-    "common.allPlatformOrders": "தளத்தின் அனைத்து ஆர்டர்களும்",
-    "common.fullOversightOfOrdersFulfillmentStatuses": "ஆர்டர்கள், நிறைவேற்ற நிலைகள் மற்றும் பரிவர்த்தனைகளின் முழு மேற்பார்வை.",
-    "common.financialAudit": "நிதித் தணிக்கை",
-    "common.paymentAuditLogs": "கட்டணத் தணிக்கைப் பதிவுகள்",
-    "common.auditPlatformTransactionSettlementsAndGateway": "தளப் பரிவர்த்தனைத் தீர்வுகள் மற்றும் நுழைவாயில் நிலைப் பதிவுகளைத் தணிக்கை செய்யவும்.",
-    "common.catalogModeration": "பட்டியல் மேலாண்மை",
-    "common.productModeration": "தயாரிப்பு மேலாண்மை",
-    "common.reviewActiveDraftAndPausedCrop": "விவசாயிகளால் வெளியிடப்பட்ட செயலில் உள்ள, வரைவு மற்றும் இடைநிறுத்தப்பட்ட பயிர் பட்டியல்களை மதிப்பாய்வு செய்யவும்.",
-
-    // admin specific
-    "admin.userDirectory": "பயனாளர் கோப்பகம்",
-    "admin.platformUserManagement": "தளப் பயனாளர் நிர்வாகம்",
-    "admin.viewUserRolesAccessStatusesAnd": "பயனாளர் பாத்திரங்கள், அணுகல் நிலைகளைப் பார்த்து கணக்குகளைச் செயல்படுத்தவும் அல்லது இடைநிறுத்தவும்.",
-    "admin.users": "பயனாளர்கள்",
-    "admin.farmers": "விவசாயிகள் / FPOக்கள்",
-    "admin.settlements": "பணத் தீர்வுகள்",
-    "admin.payments": "பணம் செலுத்துதல்கள்",
-    "admin.blockchain": "பிளாக்செயின் தணிக்கை",
-    "admin.disputes": "சிக்கல்கள் / புகார்கள்",
-    "admin.analytics": "பகுப்பாய்வு",
-
-    // adminUsers table column headers
-    "adminUsers.colUserName": "பயனாளர் பெயர்",
-    "adminUsers.colEmail": "மின்னஞ்சல் முகவரி",
-    "adminUsers.colAccountHash": "ஆன்-செயின் கணக்கு ஹேஷ்",
-    "adminUsers.colAccountRole": "கணக்கு பங்கு",
-    "adminUsers.colAccountStatus": "கணக்கு நிலை",
-    "adminUsers.colActions": "செயல்கள்",
-    "adminUsers.suspendAccount": "கணக்கை இடைநீக்கம் செய்",
-    "adminUsers.activateAccount": "கணக்கைச் செயல்படுத்து",
-
-    // settings page
-    "settings.title": "கணக்கு அமைப்புகள்",
-    "settings.description": "உங்கள் கணினி விருப்பத்தேர்வுகள், பாதுகாப்பு மற்றும் அறிவிப்பு சேனல்களை நிர்வகிக்கவும்.",
-    "settings.notificationPreferences": "அறிவிப்பு விருப்பத்தேர்வுகள்",
-    "settings.notificationDescription": "ஆர்டர்கள் மற்றும் இருப்பு மாற்றங்களை AgriBazaar எவ்வாறு அறிவிக்க வேண்டும் என்பதை அமைக்கவும்.",
-    "settings.emailOrders": "மின்னஞ்சல் ஆர்டர் அறிவிப்புகள்",
-    "settings.emailOrdersDescription": "புதிய ஆர்டர்கள் மற்றும் நிலை மாற்றங்களுக்கு மின்னஞ்சல் பெறவும்.",
-    "settings.sms": "SMS அறிவிப்புகள்",
-    "settings.smsDescription": "அனுப்பல் மற்றும் விநியோகத்தில் உடனடி SMS விழிப்பூட்டல்களைப் பெறவும்.",
-    "settings.marketPriceTrendAlerts": "சந்தை விலை போக்கு அறிவிப்புகள்",
-    "settings.marketPriceTrendAlertsDescription": "முக்கிய விவசாய சந்தை விலை மாற்றங்களின் தினசரி சுருக்கம்.",
-    "settings.securityAndAccess": "பாதுகாப்பு & அணுகல்",
-    "settings.securityAndAccessDescription": "கூடுதல் பாதுகாப்பு அடுக்குகளுடன் உங்கள் கணக்கைப் பாதுகாக்கவும்.",
-    "settings.agribazaarPlatform": "AGRIBAZAAR தளம்",
-    "settings.needHelpDescription": "உங்கள் KYC விவரங்கள் அல்லது விவசாயி சரிபார்ப்பைப் புதுப்பிப்பதில் உதவி தேவைப்பட்டால், தள நிர்வாகத்தைத் தொடர்பு கொள்ளவும்."
+  buyerDashboard: {
+    buyerPortal: {
+      en: "BUYER PORTAL",
+      ta: "வாங்குபவர் போர்டல்",
+      hi: "खरीदार पोर्टल",
+      te: "కొనుగోలుదారు పోర్టల్",
+      kn: "ಖರೀದಿದಾರರ ಪೋರ್ಟಲ್",
+      ml: "ബയർ പോർട്ടൽ"
+    },
+    buyerDashboard: {
+      en: "Buyer Dashboard",
+      ta: "வாங்குபவர் டாஷ்போர்டு",
+      hi: "खरीदार डैशबोर्ड",
+      te: "కొనుగోలుదారు డాష్‌బోర్డ్",
+      kn: "ಖರೀದಿದಾರರ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್",
+      ml: "ബയർ ഡാഷ്‌ബോർഡ്"
+    },
+    trackYourOrdersSpendingAndFresh: {
+      en: "Track your orders, spending, and fresh produce recommendations.",
+      ta: "உங்கள் ஆர்டர்கள், செலவு மற்றும் புதிய விளைபொருள் பரிந்துரைகளைக் கண்காணிக்கவும்.",
+      hi: "अपने ऑर्डर, खर्च और ताजा उपज सिफारिशों को ट्रैक करें।",
+      te: "మీ ఆర్డర్‌లు, ఖర్చులు మరియు తాజా ఉత్పత్తి సిఫార్సులను ట్రాక్ చేయండి.",
+      kn: "ನಿಮ್ಮ ಆದೇಶಗಳು, ವೆಚ್ಚ ಮತ್ತು ತಾಜಾ ಉತ್ಪನ್ನದ ಶಿಫಾರಸುಗಳನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡಿ.",
+      ml: "നിങ്ങളുടെ ഓർഡറുകൾ, ചിലവഴിച്ച തുക, പുതിയ കാർഷിക ഉൽപ്പന്ന ശുപാർശകൾ എന്നിവ ട്രാക്ക് ചെയ്യുക."
+    },
+    accountHashTitle: {
+      en: "🛡️ BUYER CRYPTOGRAPHIC ACCOUNT HASH (ON-CHAIN IDENTITY)",
+      ta: "🛡️ வாங்குபவர் கிரிப்டோகிராஃபிக் கணக்கு ஹேஷ் (ஆன்-செயின் அடையாளம்)",
+      hi: "🛡️ खरीदार क्रिप्टोग्राफिक खाता हैश (ऑन-चेन पहचान)",
+      te: "🛡️ కొనుగోలుదారు క్రిప్టోగ్రాఫిక్ ఖాతా హ్యాష్ (ఆన్-చైన్ గుర్తింపు)",
+      kn: "🛡️ ಖರೀದಿದಾರರ ಕ್ರಿಪ್ಟೋಗ್ರಾಫಿಕ್ ಖಾತೆ ಹ್ಯಾಶ್ (ಆನ್-ಚೈನ್ ಗುರುತು)",
+      ml: "🛡️ ബയർ ക്രിപ്റ്റോഗ്രാഫിക് അക്കൗണ്ട് ഹാഷ് (ഓൺ-ചെയിൻ ഐഡന്റിറ്റി)"
+    },
+    accountHashCopied: {
+      en: "Buyer Account Hash copied!",
+      ta: "வாங்குபவர் கணக்கு ஹேஷ் நகலெடுக்கப்பட்டது!",
+      hi: "खरीदार खाता हैश कॉपी किया गया!",
+      te: "కొనుగోలుదారు ఖాతా హ్యాష్ కాపీ చేయబడింది!",
+      kn: "ಖರೀದಿದಾರರ ಖಾತೆ ಹ್ಯಾಶ್ ನಕಲಿಸಲಾಗಿದೆ!",
+      ml: "ബയർ അക്കൗണ്ട് ഹാഷ് കോപ്പി ചെയ്തു!"
+    },
+    buyerVerificationStatus: {
+      en: "Buyer Verification Status",
+      ta: "வாங்குபவர் சரிபார்ப்பு நிலை",
+      hi: "खरीदार सत्यापन स्थिति",
+      te: "కొనుగోలుదారు పరిశీలన స్థితి",
+      kn: "ಖರೀದಿದಾರರ ಪರಿಶೀಲನೆ ಸ್ಥಿತಿ",
+      ml: "ബയർ വെരിഫിക്കേഷൻ സ്റ്റാറ്റസ്"
+    },
+    allRequiredVerificationCompleted: {
+      en: "All required verification checks have been successfully completed.",
+      ta: "தேவையான அனைத்து சரிபார்ப்புகளும் வெற்றிகரமாக முடிவடைந்தன.",
+      hi: "सभी आवश्यक सत्यापन सफलतापूर्वक पूरे हो गए हैं।",
+      te: "అన్ని అవసరమైన పరిశీలనలు విజయవంతంగా పూర్తయ్యాయి.",
+      kn: "ಎಲ್ಲಾ ಅಗತ್ಯ ಪರಿಶೀಲನೆಗಳು ಯಶಸ್ವಿಯಾಗಿ ಪೂರ್ಣಗೊಂಡಿವೆ.",
+      ml: "ആവശ്യമായ എല്ലാ വെരിഫിക്കേഷൻ പരിശോധനകളും വിജയകരമായി പൂർത്തിയായി."
+    },
+    completeVerificationSubtitle: {
+      en: "Complete your required verification steps to unlock verified buyer features.",
+      ta: "சரிபார்க்கப்பட்ட வாங்குபவர் அம்சங்களைத் திறக்க தேவையான சரிபார்ப்பு படிகளை முடிக்கவும்.",
+      hi: "सत्यापित खरीदार सुविधाओं को अनलॉक करने के लिए आवश्यक सत्यापन चरण पूरा करें।",
+      te: "సరిచూసిన కొనుగోలుదారు ఫీచర్‌లను అన్‌లాక్ చేయడానికి అవసరమైన పరిశీలన దశలను పూర్తి చేయండి.",
+      kn: "ಖಚಿತಪಡಿಸಿದ ಖರೀದಿದಾರರ ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ಅನ್‌ಲಾಕ್ ಮಾಡಲು ಅಗತ್ಯವಿರುವ ಪರಿಶೀಲನಾ ಹಂತಗಳನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ.",
+      ml: "സ്ഥിരീകരിച്ച ബയർ ഫീച്ചറുകൾ അൺലോക്ക് ചെയ്യുന്നതിന് ആവശ്യമായ വെരിഫിക്കേഷൻ ഘട്ടങ്ങൾ പൂർത്തിയാക്കുക."
+    },
+    progressText: {
+      en: "Progress: {{count}} of {{total}} completed",
+      ta: "முன்னேற்றம்: {{total}}-இல் {{count}} முடிந்தது",
+      hi: "प्रगति: {{total}} में से {{count}} पूर्ण",
+      te: "పురోగతి: {{total}} లో {{count}} పూర్తయింది",
+      kn: "ಪ್ರಗತಿ: {{total}} ರಲ್ಲಿ {{count}} ಪೂರ್ಣಗೊಂಡಿದೆ",
+      ml: "പുരോഗതി: {{total}}-ൽ {{count}} പൂർത്തിയായി"
+    },
+    viewVerificationDetails: {
+      en: "View Verification Details",
+      ta: "சரிபார்ப்பு விவரங்களைப் பார்க்கவும்",
+      hi: "सत्यापन विवरण देखें",
+      te: "పరిశీలన వివరాలను చూడండి",
+      kn: "ಪರಿಶೀಲನೆ ವಿವರಗಳನ್ನು ವೀಕ್ಷಿಸಿ",
+      ml: "വെരിഫിക്കേഷൻ വിവരങ്ങൾ കാണുക"
+    },
+    continueVerification: {
+      en: "Continue Verification",
+      ta: "சரிபார்ப்பைத் தொடரவும்",
+      hi: "सत्यापन जारी रखें",
+      te: "పరిశీలనను కొనసాగించండి",
+      kn: "ಪರಿಶೀಲನೆಯನ್ನು ಮುಂದುವರಿಸಿ",
+      ml: "വെരിഫിക്കേഷൻ തുടരുക"
+    },
+    startVerification: {
+      en: "Start Verification",
+      ta: "சரிபார்ப்பைத் தொடங்கவும்",
+      hi: "सत्यापन शुरू करें",
+      te: "పరిశీలనను ప్రారంభించండి",
+      kn: "ಪರಿಶೀಲನೆಯನ್ನು ಪ್ರಾರಂಭಿಸಿ",
+      ml: "വെരിഫിക്കേഷൻ ആരംഭിക്കുക"
+    },
+    totalOrders: {
+      en: "Total Orders",
+      ta: "மொத்த ஆர்டர்கள்",
+      hi: "कुल ऑर्डर",
+      te: "మొత్తం ఆర్డర్లు",
+      kn: "ಒಟ್ಟು ಆದೇಶಗಳು",
+      ml: "ആകെ ഓർഡറുകൾ"
+    },
+    activeOrders: {
+      en: "Active Orders",
+      ta: "செயலில் உள்ள ஆர்டர்கள்",
+      hi: "सक्रिय ऑर्डर",
+      te: "యాక్టివ్ ఆర్డర్లు",
+      kn: "ಸಕ್ರಿಯ ಆದೇಶಗಳು",
+      ml: "ആക്ടീവ് ഓർഡറുകൾ"
+    },
+    completed: {
+      en: "Completed",
+      ta: "நிறைவடைந்தது",
+      hi: "पूरा हुआ",
+      te: "పూర్తయింది",
+      kn: "ಪೂರ್ಣಗೊಂಡಿದೆ",
+      ml: "പൂർത്തിയായി"
+    },
+    totalSpent: {
+      en: "Total Spent",
+      ta: "மொத்தம் செலவழித்தது",
+      hi: "कुल खर्च",
+      te: "మొత్తం ఖర్చు",
+      kn: "ಒಟ್ಟು ವೆಚ್ಚ",
+      ml: "ആകെ ചിലവാക്കിയത്"
+    },
+    recentOrders: {
+      en: "Recent Orders",
+      ta: "சமீபத்திய ஆர்டர்கள்",
+      hi: "हाल के ऑर्डर",
+      te: "ఇటీవలి ఆర్డర్లు",
+      kn: "ಇತ್ತೀಚಿನ ಆದೇಶಗಳು",
+      ml: "സമീപകാല ഓർഡറുകൾ"
+    },
+    viewAllOrders: {
+      en: "View All Orders →",
+      ta: "எல்லா ஆர்டர்களையும் காண்க →",
+      hi: "सभी ऑर्डर देखें →",
+      te: "అన్ని ఆర్డర్‌లను చూడండి →",
+      kn: "ಎಲ್ಲಾ ಆದೇಶಗಳನ್ನು ವೀಕ್ಷಿಸಿ →",
+      ml: "എല്ലാ ഓർഡറുകളും കാണുക →"
+    },
+    noOrdersPlacedYet: {
+      en: "No orders placed yet.",
+      ta: "இன்னும் ஆர்டர்கள் எதுவும் செய்யப்படவில்லை.",
+      hi: "अभी तक कोई ऑर्डर नहीं दिया गया है।",
+      te: "ఇంకా ఎటువంటి ఆర్డర్లు చేయలేదు.",
+      kn: "ಇನ್ನೂ ಯಾವುದೇ ಆದೇಶಗಳನ್ನು ಮಾಡಲಾಗಿಲ್ಲ.",
+      ml: "ഇതുവരെ ഓർഡറുകളൊന്നും നൽകിയിട്ടില്ല."
+    },
+    browseMarketplace: {
+      en: "Browse Marketplace",
+      ta: "சந்தையைப் பார்",
+      hi: "मार्केटप्लेस देखें",
+      te: "మార్కెట్‌ప్లేస్‌ను బ్రౌజ్ చేయండి",
+      kn: "ಮಾರುಕಟ್ಟೆಯನ್ನು ವೀಕ್ಷಿಸಿ",
+      ml: "മാർക്കറ്റ് പ്ലേസ് കാണുക"
+    },
+    recommendedProduce: {
+      en: "Recommended Produce",
+      ta: "பரிந்துரைக்கப்பட்ட விளைபொருட்கள்",
+      hi: "अनुशंसित उपज",
+      te: "సిఫార్సు చేసిన ఉత్పత్తులు",
+      kn: "ಶಿಫಾರಸು ಮಾಡಿದ ಉತ್ಪನ್ನಗಳು",
+      ml: "ശുപാർശ ചെയ്യുന്ന ഉൽപ്പന്നങ്ങൾ"
+    },
+    failedToLoad: {
+      en: "Failed to load dashboard.",
+      ta: "டாஷ்போர்டை ஏற்றுவதில் தோல்வி.",
+      hi: "डैशबोर्ड लोड करने में विफल।",
+      te: "డాష్‌బోర్డ్‌ను లోడ్ చేయడం విఫలమైంది.",
+      kn: "ಡ್ಯಾಶ್‌ಬೋರ್ಡ್ ಲೋಡ್ ಮಾಡಲು ವಿಫಲವಾಗಿದೆ.",
+      ml: "ഡാഷ്‌ബോർഡ് ലോഡ് ചെയ്യുന്നതിൽ പരാജയപ്പെട്ടു."
+    }
   },
-  hi: {
-    // admin & common
-    "common.executiveControls": "कार्यकारी नियंत्रण",
-    "common.adminDashboard": "एडमिन डैशबोर्ड",
-    "common.noOrderVolumeDataYet": "अभी तक कोई ऑर्डर मात्रा डेटा नहीं है",
-    "common.noCategoryDistributionDataYet": "अभी तक कोई श्रेणी वितरण डेटा नहीं है",
-    "common.conflictOversight": "विवाद देखरेख",
-    "common.disputeResolution": "विवाद निवारण",
-    "common.arbitrateBuyerAndFarmerClaimsQuality": "खरीदार और किसान के दावों, गुणवत्ता के मुद्दों या भुगतान रोक को हल करें।",
-    "common.resolveDispute": "विवाद हल करें",
-    "common.kycVerificationPipeline": "केवाईसी सत्यापन पाइपलाइन",
-    "common.reviewFarmRegistrationsVerifyIdentityAnd": "खेत पंजीकरण की समीक्षा करें, पहचान सत्यापित करें और सक्रिय विक्रेता अधिकार प्रदान करें।",
-    "common.platformFulfillment": "प्लेटफ़ॉर्म पूर्ति",
-    "common.allPlatformOrders": "सभी प्लेटफ़ॉर्म ऑर्डर",
-    "common.fullOversightOfOrdersFulfillmentStatuses": "ऑर्डर, पूर्ति स्थितियों और लेनदेन की पूरी देखरेख।",
-    "common.financialAudit": "वित्तीय ऑडिट",
-    "common.paymentAuditLogs": "भुगतान ऑडिट लॉग",
-    "common.auditPlatformTransactionSettlementsAndGateway": "प्लेटफ़ॉर्म लेनदेन निपटान और गेटवे स्थिति लॉग का ऑडिट करें।",
-    "common.catalogModeration": "कैटलॉग मॉडरेशन",
-    "common.productModeration": "उत्पाद मॉडरेशन",
-    "common.reviewActiveDraftAndPausedCrop": "किसानों द्वारा प्रकाशित सक्रिय, ड्राफ्ट और रुके हुए फसल लिस्टिंग की समीक्षा करें।",
-
-    // admin specific
-    "admin.userDirectory": "उपयोगकर्ता निर्देशिका",
-    "admin.platformUserManagement": "प्लेटफ़ॉर्म उपयोगकर्ता प्रबंधन",
-    "admin.viewUserRolesAccessStatusesAnd": "उपयोगकर्ता भूमिकाएं, पहुंच स्थितियां देखें और खातों को सक्रिय या निलंबित करें।",
-    "admin.users": "उपयोगकर्ता",
-    "admin.farmers": "किसान / एफपीओ",
-    "admin.settlements": "भुगतान निपटान",
-    "admin.payments": "भुगतान",
-    "admin.blockchain": "ब्लॉकचेन ऑडिट",
-    "admin.disputes": "विवाद समाधान",
-    "admin.analytics": "विश्लेषण",
-
-    // adminUsers table column headers
-    "adminUsers.colUserName": "उपयोगकर्ता का नाम",
-    "adminUsers.colEmail": "ईमेल पता",
-    "adminUsers.colAccountHash": "ऑन-चेन खाता हैश",
-    "adminUsers.colAccountRole": "खाता भूमिका",
-    "adminUsers.colAccountStatus": "खाता स्थिति",
-    "adminUsers.colActions": "कार्रवाइयां",
-    "adminUsers.suspendAccount": "खाता निलंबित करें",
-    "adminUsers.activateAccount": "खाता सक्रिय करें",
-
-    // settings page
-    "settings.title": "खाता सेटिंग्स",
-    "settings.description": "अपनी सिस्टम प्राथमिकताओं, सुरक्षा और अधिसूचना चैनलों का प्रबंधन करें।",
-    "settings.notificationPreferences": "अधिसूचना प्राथमिकताएं",
-    "settings.notificationDescription": "कॉन्फ़िगर करें कि एग्रीबाज़ार आपको ऑर्डर और स्टॉक अपडेट की सूचना कैसे देता है।",
-    "settings.emailOrders": "ईमेल ऑर्डर सूचनाएं",
-    "settings.emailOrdersDescription": "नए ऑर्डर और स्थिति अपडेट के लिए ईमेल प्राप्त करें।",
-    "settings.sms": "एसएमएस सूचनाएं",
-    "settings.smsDescription": "डिस्पैच और डिलीवरी पर त्वरित एसएमएस अलर्ट प्राप्त करें।",
-    "settings.marketPriceTrendAlerts": "बाजार मूल्य प्रवृत्ति अलर्ट",
-    "settings.marketPriceTrendAlertsDescription": "शीर्ष कृषि बाजार मूल्य में बदलाव का दैनिक सारांश।",
-    "settings.securityAndAccess": "सुरक्षा और पहुंच",
-    "settings.securityAndAccessDescription": "अतिरिक्त सुरक्षा परतों के साथ अपने खाते की रक्षा करें।",
-    "settings.agribazaarPlatform": "एग्रीबाज़ार प्लेटफॉर्म",
-    "settings.needHelpDescription": "यदि आपको अपने केवाईसी विवरण या किसान सत्यापन को अद्यतन करने में सहायता की आवश्यकता है, तो प्लेटफ़ॉर्म प्रशासन से संपर्क करें।"
+  buyerVerification: {
+    officialPortal: {
+      en: "• Official Verification Portal",
+      ta: "• அதிகாரப்பூர்வ சரிபார்ப்பு போர்டல்",
+      hi: "• आधिकारिक सत्यापन पोर्टल",
+      te: "• అధికారిక పరిశీలన పోర్టల్",
+      kn: "• ಅಧಿಕೃತ ಪರಿಶೀಲನಾ ಪೋರ್ಟಲ್",
+      ml: "• ഔദ്യോഗിക വെരിഫിക്കേഷൻ പോർട്ടൽ"
+    },
+    title: {
+      en: "Buyer Verification Status",
+      ta: "வாங்குபவர் சரிபார்ப்பு நிலை",
+      hi: "खरीदार सत्यापन स्थिति",
+      te: "కొనుగోలుదారు పరిశీలన స్థితి",
+      kn: "ಖರೀದಿದಾರರ ಪರಿಶೀಲನೆ ಸ್ಥಿತಿ",
+      ml: "ബയർ വെരിഫിക്കേഷൻ സ്റ്റാറ്റസ്"
+    },
+    subtitle: {
+      en: "Manage identity, business compliance, and regulatory credentials on AgriBazaar.",
+      ta: "அக்ரிபஜாரில் அடையாளம், வணிக இணக்கம் மற்றும் ஒழுங்குமுறை சான்றுகளை நிர்வகிக்கவும்.",
+      hi: "एग्रीबाज़ार पर पहचान, व्यावसायिक अनुपालन और नियामक क्रेडेंशियल प्रबंधित करें।",
+      te: "అగ్రిబజార్‌లో గుర్తింపు, వ్యాపార నిబంధనలు మరియు నియంత్రణ వివరాలను నిర్వహించండి.",
+      kn: "ಅಗ್ರಿಬಜಾರ್‌ನಲ್ಲಿ ಗುರುತು, ವ್ಯಾಪಾರ ಅನುಸರಣೆ ಮತ್ತು ನಿಯಂತ್ರಕ ರುಜುವಾತುಗಳನ್ನು ನಿರ್ವಹಿಸಿ.",
+      ml: "അഗ്രിബസാറിലെ ഐഡന്റിറ്റി, ബിസിനസ്സ് അനുമതികൾ, റഗുലേറ്ററി ക്രഡൻഷ്യലുകൾ എന്നിവ കൈകാര്യം ചെയ്യുക."
+    },
+    overallStatus: {
+      en: "Overall Status",
+      ta: "ஒட்டுமொத்த நிலை",
+      hi: "समग्र स्थिति",
+      te: "మొత్తం స్థితి",
+      kn: "ಒಟ್ಟಾರೆ ಸ್ಥಿತಿ",
+      ml: "ആകെ സ്റ്റാറ്റസ്"
+    },
+    progress: {
+      en: "Progress",
+      ta: "முன்னேற்றம்",
+      hi: "प्रगति",
+      te: "పురోగతి",
+      kn: "ಪ್ರಗತಿ",
+      ml: "പുരോഗതി"
+    },
+    completedCountOfTotal: {
+      en: "{{count}} of {{total}} completed",
+      ta: "{{total}}-இல் {{count}} முடிந்தது",
+      hi: "{{total}} में से {{count}} पूर्ण",
+      te: "{{total}} లో {{count}} పూర్తయింది",
+      kn: "{{total}} ರಲ್ಲಿ {{count}} ಪೂರ್ಣಗೊಂಡಿದೆ",
+      ml: "{{total}}-ൽ {{count}} പൂർത്തിയായി"
+    },
+    checklistHeading: {
+      en: "Verification Checklist",
+      ta: "சரிபார்ப்பு சரிபார்ப்பு பட்டியல்",
+      hi: "सत्यापन चेकलिस्ट",
+      te: "పరిశీలన చెక్‌లిస్ట్",
+      kn: "ಪರಿಶೀಲನಾ ಪರಿಶೀಲನಾಪಟ್ಟಿ",
+      ml: "വെരിഫിക്കേഷൻ ചെക്ക്‌ലിസ്റ്റ്"
+    },
+    wizardCardHeading: {
+      en: "Complete Your Verification Wizard",
+      ta: "உங்கள் சரிபார்ப்பு வழிகாட்டியை முடிக்கவும்",
+      hi: "अपना सत्यापन विज़ार्ड पूरा करें",
+      te: "మీ పరిశీలన విజార్డ్‌ను పూర్తి చేయండి",
+      kn: "ನಿಮ್ಮ ಪರಿಶೀಲನಾ ವಿಝಾರ್ಡ್ ಪೂರ್ಣಗೊಳಿಸಿ",
+      ml: "നിങ്ങളുടെ വെരിഫിക്കേഷൻ വിസാർഡ് പൂർത്തിയാക്കുക"
+    },
+    wizardCardDesc: {
+      en: "Finish all required identity, tax, bank, and documentation checks to build trust with farmers and unlock verified buyer badges.",
+      ta: "விவசாயிகளுடன் நம்பிக்கையை வளர்க்கவும், சரிபார்க்கப்பட்ட வாங்குபவர் பேட்ஜ்களைத் திறக்கவும் தேவையான அனைத்து அடையாளம், வரி, வங்கி மற்றும் ஆவணச் சரிபார்ப்புகளை முடிக்கவும்.",
+      hi: "किसानों के साथ विश्वास बनाने और सत्यापित खरीदार बैज अनलॉक करने के लिए सभी आवश्यक पहचान, कर, बैंक और दस्तावेज़ जांच पूरी करें।",
+      te: "రైతులతో నమ్మకాన్ని పెంచుకోవడానికి మరియు వెరిఫైడ్ కొనుగోలుదారు బ్యాడ్జిలను అన్‌లాక్ చేయడానికి అవసరమైన అన్ని గుర్తింపు, పన్ను, బ్యాంక్ తనిఖీలను పూర్తి చేయండి.",
+      kn: "ರೈತರೊಂದಿಗೆ ನಂಬಿಕೆಯನ್ನು ಬೆಳೆಸಲು ಮತ್ತು ಖಚಿತಪಡಿಸಿದ ಖರೀದಿದಾರರ ಬ್ಯಾಡ್ಜ್‌ಗಳನ್ನು ಅನ್‌ಲಾಕ್ ಮಾಡಲು ಅಗತ್ಯವಿರುವ ಎಲ್ಲಾ ಗುರುತು, ತೆರಿಗೆ, ಬ್ಯಾಂಕ್ ಮತ್ತು ದಾಖಲೆಗಳ ತನಿಖೆಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ.",
+      ml: "കർഷകരിൽ വിശ്വസ്തത വളർത്തുന്നതിനും വെരിഫൈഡ് ബയർ ബാഡ്ജുകൾ അൺലോക്ക് ചെയ്യുന്നതിനുമായി ആവശ്യമായ എല്ലാ ഐഡന്റിറ്റി, ടാക്സ്, ബാങ്ക് സംബന്ധിയായ പരിശോധനകളും പൂർത്തിയാക്കുക."
+    },
+    buyerLabel: {
+      en: "BUYER",
+      ta: "வாங்குபவர்",
+      hi: "खरीदार",
+      te: "కొనుగోలుదారు",
+      kn: "ಖರೀದಿದಾರ",
+      ml: "ബയർ"
+    },
+    allChecksCompletedDesc: {
+      en: "All required verification checks have been successfully completed and audited against Indian regulatory standards. You now enjoy priority buyer privileges and direct access to wholesale farmer listings.",
+      ta: "தேவையான அனைத்து சரிபார்ப்புகளும் வெற்றிகரமாக முடிவடைந்து தணிக்கை செய்யப்பட்டுள்ளன. இப்போது உங்களுக்கு முன்னுரிமை வாங்குபவர் சலுகைகளும் மொத்த விற்பனை விவசாயிகளின் பட்டியல்களுக்கு நேரடி அணுகலும் உள்ளது.",
+      hi: "सभी आवश्यक सत्यापन जांच सफलतापूर्वक पूरी हो गई हैं और भारतीय नियामक मानकों के अनुसार ऑडिट की गई हैं।",
+      te: "అన్ని అవసరమైన పరిశీలన తనిఖీలు విజయవంతంగా పూర్తయ్యాయి మరియు భారతీయ నియంత్రణ ప్రమాణాల ప్రకారం ఆడిట్ చేయబడ్డాయి.",
+      kn: "ಎಲ್ಲಾ ಅಗತ್ಯ ಪರಿಶೀಲನಾ ತನಿಖೆಗಳು ಯಶಸ್ವಿಯಾಗಿ ಪೂರ್ಣಗೊಂಡಿವೆ ಮತ್ತು ಭಾರತೀಯ ನಿಯಂತ್ರಕ ಮಾನದಂಡಗಳ ಪ್ರಕಾರ ಆಡಿಟ್ ಮಾಡಲ್ಪಟ್ಟಿವೆ.",
+      ml: "ആവശ്യമായ എല്ലാ വെരിഫിക്കേഷൻ പരിശോധനകളും വിജയകരമായി പൂർത്തിയാക്കി ഇൻഡ്യൻ റഗുലേറ്ററി മാനദണ്ഡങ്ങൾ അനുസരിച്ച് ഓഡിറ്റ് ചെയ്തു."
+    },
+    verifiedOn: {
+      en: "Verified On:",
+      ta: "சரிபார்க்கப்பட்ட தேதி:",
+      hi: "सत्यापित तिथि:",
+      te: "సరిచూసిన తేదీ:",
+      kn: "ಪರಿಶೀಲಿಸಿದ ದಿನಾಂಕ:",
+      ml: "സ്ഥിരീകരിച്ച തീയതി:"
+    },
+    loadingBuyerVerificationStatus: {
+      en: "Loading Buyer Verification Status...",
+      ta: "வாங்குபவர் சரிபார்ப்பு நிலை ஏற்றப்படுகிறது...",
+      hi: "खरीदार सत्यापन स्थिति लोड हो रही है...",
+      te: "కొనుగోలుదారు పరిశీలన స్థితి లోడ్ అవుతోంది...",
+      kn: "ಖರೀದಿದಾರರ ಪರಿಶೀಲನೆ ಸ್ಥಿತಿ ಲೋಡ್ ಆಗುತ್ತಿದೆ...",
+      ml: "ബയർ വെരിഫിക്കേഷൻ സ്റ്റാറ്റസ് ലോഡ് ചെയ്യുന്നു..."
+    },
+    status: {
+      en: "Status",
+      ta: "நிலை",
+      hi: "स्थिति",
+      te: "స్థితి",
+      kn: "ಸ್ಥಿತಿ",
+      ml: "സ്റ്റാറ്റസ്"
+    },
+    viewVerificationDetails: {
+      en: "View Verification Details",
+      ta: "சரிபார்ப்பு விவரங்களைப் பார்க்கவும்",
+      hi: "सत्यापन विवरण देखें",
+      te: "పరిశీలన వివరాలను చూడండి",
+      kn: "ಪರಿಶೀಲನೆ ವಿವರಗಳನ್ನು ವೀಕ್ಷಿಸಿ",
+      ml: "വെരിഫിക്കേഷൻ വിവരങ്ങൾ കാണുക"
+    },
+    continueVerification: {
+      en: "Continue Verification",
+      ta: "சரிபார்ப்பைத் தொடரவும்",
+      hi: "सत्यापन जारी रखें",
+      te: "పరిశీలనను కొనసాగించండి",
+      kn: "ಪರಿಶೀಲನೆಯನ್ನು ಮುಂದುವರಿಸಿ",
+      ml: "വെരിഫിക്കേഷൻ തുടരുക"
+    },
+    startVerification: {
+      en: "Start Verification",
+      ta: "சரிபார்ப்பைத் தொடங்கவும்",
+      hi: "सत्यापन शुरू करें",
+      te: "పరిశీలనను ప్రారంభించండి",
+      kn: "ಪರಿಶೀಲನೆಯನ್ನು ಪ್ರಾರಂಭಿಸಿ",
+      ml: "വെരിഫിക്കേഷൻ ആരംഭിക്കുക"
+    },
+    failedToLoad: {
+      en: "Failed to load verification status.",
+      ta: "சரிபார்ப்பு நிலையை ஏற்றுவதில் தோல்வி.",
+      hi: "सत्यापन स्थिति लोड करने में विफल।",
+      te: "పరిశీలన స్థితిని లోడ్ చేయడం విఫలమైంది.",
+      kn: "ಪರಿಶೀಲನೆ ಸ್ಥಿತಿಯನ್ನು ಲೋಡ್ ಮಾಡಲು ವಿಫಲವಾಗಿದೆ.",
+      ml: "വെരിഫിക്കേഷൻ സ്റ്റാറ്റസ് ലോഡ് ചെയ്യുന്നതിൽ പരാജയപ്പെട്ടു."
+    }
   },
-  te: {
-    "common.executiveControls": "ఎగ్జిక్యూటివ్ నియంత్రణలు",
-    "common.adminDashboard": "అడ్మిన్ డాష్‌బోర్డ్",
-    "common.noOrderVolumeDataYet": "ఇంకా ఆర్డర్ పరిమాణ డేటా లేదు",
-    "common.noCategoryDistributionDataYet": "ఇంకా వర్గం పంపిణీ డేటా లేదు",
-    "common.conflictOversight": "వివాదాల పర్యవేక్షణ",
-    "common.disputeResolution": "వివాదాల పరిష్కారం",
-    "common.arbitrateBuyerAndFarmerClaimsQuality": "కొనుగోలుదారు మరియు రైతు దావాలు, నాణ్యత సమస్యలను పరిష్కరించండి.",
-    "common.resolveDispute": "వివాదాన్ని పరిష్కరించు",
-    "common.kycVerificationPipeline": "KYC పరిశీలన పైప్‌లైన్",
-    "common.reviewFarmRegistrationsVerifyIdentityAnd": "వ్యవసాయ నమోదులను సమీక్షించి, గుర్తింపును పరిశీలించండి.",
-    "common.platformFulfillment": "ప్లాట్‌ఫారమ్ నెరవేర్పు",
-    "common.allPlatformOrders": "అన్ని ప్లాట్‌ఫారమ్ ఆర్డర్లు",
-    "common.fullOversightOfOrdersFulfillmentStatuses": "ఆర్డర్లు మరియు చెల్లింపుల పూర్తి పర్యవేక్షణ.",
-    "common.financialAudit": "ఆర్థిక ఆడిట్",
-    "common.paymentAuditLogs": "చెల్లింపు ఆడిట్ లాగ్‌లు",
-    "common.auditPlatformTransactionSettlementsAndGateway": "లావాదేవీల పరిష్కారాలు మరియు గేట్‌వే లాగ్‌లను ఆడిట్ చేయండి.",
-    "common.catalogModeration": "కేటలాగ్ నియంత్రణ",
-    "common.productModeration": "ఉత్పత్తి నియంత్రణ",
-    "common.reviewActiveDraftAndPausedCrop": "రైతులు ప్రచురించిన పంట జాబితాలను సమీక్షించండి.",
-
-    "admin.userDirectory": "వినియోగదారు డైరెక్టరీ",
-    "admin.platformUserManagement": "ప్లాట్‌ఫారమ్ వినియోగదారు నిర్వహణ",
-    "admin.viewUserRolesAccessStatusesAnd": "వినియోగదారు పాత్రలు, ప్రాప్యత స్థితులను చూడండి మరియు ఖాతాలను నిర్వహించండి.",
-    "admin.users": "వినియోగదారులు",
-    "admin.farmers": "రైతులు / FPOలు",
-    "admin.settlements": "పరిష్కారాలు",
-    "admin.payments": "చెల్లింపులు",
-    "admin.blockchain": "బ్లాక్‌చైన్ ఆడిట్",
-    "admin.disputes": "వివాదాలు",
-    "admin.analytics": "విశ్లేషణలు",
-
-    "adminUsers.colUserName": "వినియోగదారు పేరు",
-    "adminUsers.colEmail": "ఈమెయిల్ చిరునామా",
-    "adminUsers.colAccountHash": "ఆన్-చైన్ ఖాతా హ్యాష్",
-    "adminUsers.colAccountRole": "ఖాతా పాత్ర",
-    "adminUsers.colAccountStatus": "ఖాతా స్థితి",
-    "adminUsers.colActions": "చర్యలు",
-    "adminUsers.suspendAccount": "ఖాతాను నిలిపివేయి",
-    "adminUsers.activateAccount": "ఖాతాను సక్రియం చేయి",
-
-    "settings.title": "ఖాతా అమరికలు",
-    "settings.description": "మీ సిస్టమ్ ప్రాధాన్యతలు, భద్రత మరియు నోటిఫికేషన్ ఛానెల్‌లను నిర్వహించండి.",
-    "settings.notificationPreferences": "నోటిఫికేషన్ ప్రాధాన్యతలు",
-    "settings.notificationDescription": "ఆర్డర్లు మరియు స్టాక్ నవీకరణల గురించి నోటిఫికేషన్‌లను అమర్చండి.",
-    "settings.emailOrders": "ఈమెయిల్ ఆర్డర్ నోటిఫికేషన్‌లు",
-    "settings.emailOrdersDescription": "కొత్త ఆర్డర్‌లు మరియు స్థితి నవీకరణల కోసం ఈమెయిల్‌లను పొందండి.",
-    "settings.sms": "SMS నోటిఫికేషన్‌లు",
-    "settings.smsDescription": "తక్షణ SMS హెచ్చరికలను పొందండి.",
-    "settings.marketPriceTrendAlerts": "మార్కెట్ ధరల ట్రెండ్ హెచ్చరికలు",
-    "settings.marketPriceTrendAlertsDescription": "ప్రధాన వ్యవసాయ మార్కెట్ ధర మార్పుల రోజువారీ సారాంశం.",
-    "settings.securityAndAccess": "భద్రత మరియు ప్రాప్యత",
-    "settings.securityAndAccessDescription": "అదనపు భద్రతా పొరలతో మీ ఖాతాను రక్షించుకోండి.",
-    "settings.agribazaarPlatform": "అగ్రిబజార్ ప్లాట్‌ఫారమ్",
-    "settings.needHelpDescription": "మీ KYC వివరాలు లేదా రైతు పరిశీలనను నవీకరించడంలో సహాయం కావాలంటే ప్లాట్‌ఫారమ్ పరిపాలనను సంప్రదించండి."
+  buyerOrders: {
+    orderTracking: {
+      en: "ORDER TRACKING & FULFILLMENT",
+      ta: "ஆர்டர் கண்காணிப்பு & நிறைவேற்றம்",
+      hi: "ऑर्डर ट्रैकिंग और पूर्ति",
+      te: "ఆర్డర్ ట్రాకింగ్ & నెరవేర్పు",
+      kn: "ಆದೇಶ ಟ್ರ್ಯಾಕಿಂಗ್ ಮತ್ತು ಪೂರೈಕೆ",
+      ml: "ഓർഡർ ട്രാക്കിംഗും പൂർത്തീകരണവും"
+    },
+    myOrders: {
+      en: "My Orders",
+      ta: "எனது ஆர்டர்கள்",
+      hi: "मेरे आदेश",
+      te: "నా ఆర్డర్‌లు",
+      kn: "ನನ್ನ ಆದೇಶಗಳು",
+      ml: "എന്റെ ഓർഡറുകൾ"
+    },
+    orderLevelDesc: {
+      en: "Manage order-level cargo transport requests, transporter quotations, and payment settlements.",
+      ta: "ஆர்டர் அளவிலான சரக்கு போக்குவரத்து கோரிக்கைகள், மேற்கோள்கள் மற்றும் செலுத்துதல்களை நிர்வகிக்கவும்.",
+      hi: "ऑर्डर स्तर के माल परिवहन अनुरोधों, कोटेशन और भुगतान बस्तियों को प्रबंधित करें।",
+      te: "ఆర్డర్ స్థాయి రవాణా అభ్యర్థనలు, కోటేషన్‌లు మరియు చెల్లింపు నిష్పత్తులను నిర్వహించండి.",
+      kn: "ಆದೇಶ ಮಟ್ಟದ ಸರಕು ಸಾಗಣೆ ವಿನಂತಿಗಳು, ಉಲ್ಲೇಖಗಳು ಮತ್ತು ಪಾವತಿಗಳನ್ನು ನಿರ್ವಹಿಸಿ.",
+      ml: "ഓർഡർ തലത്തിലുള്ള കാർഗോ ഗതാഗത അഭ്യർത്ഥനകൾ, കൊട്ടേഷനുകൾ, പേയ്‌മെന്റുകൾ എന്നിവ കൈകാര്യം ചെയ്യുക."
+    },
+    browseProduce: {
+      en: "Browse Produce",
+      ta: "விளைபொருட்களைப் பார்",
+      hi: "उपज ब्राउज़ करें",
+      te: "ఉత్పత్తులను బ్రౌజ్ చేయండి",
+      kn: "ಉತ್ಪನ್ನಗಳನ್ನು ವೀಕ್ಷಿಸಿ",
+      ml: "ഉൽപ്പന്നങ്ങൾ കാണുക"
+    },
+    includedProducts: {
+      en: "Included Produce Items",
+      ta: "சேர்க்கப்பட்ட விளைபொருட்கள்",
+      hi: "शामिल उपज आइटम",
+      te: "చేర్చబడిన ఉత్పత్తులు",
+      kn: "ಸೇರಿಸಲಾದ ಉತ್ಪನ್ನಗಳು",
+      ml: "ഉൾപ്പെടുത്തിയ ഉൽപ്പന്നങ്ങൾ"
+    },
+    transportFreightStatus: {
+      en: "Transport Status",
+      ta: "போக்குவரத்து நிலை",
+      hi: "परिवहन स्थिति",
+      te: "రవాణా స్థితి",
+      kn: "ಸಾರಿಗೆ ಸ್ಥಿತಿ",
+      ml: "ഗതാഗത സ്റ്റാറ്റസ്"
+    },
+    totalPayable: {
+      en: "Total Payable",
+      ta: "செலுத்த வேண்டிய மொத்தம்",
+      hi: "कुल देय",
+      te: "మొత్తం చెల్లించవలసినది",
+      kn: "ಒಟ್ಟು ಪಾವತಿಸಬೇಕಾದದ್ದು",
+      ml: "ആകെ നൽകേണ്ട തുക"
+    },
+    viewOrder: {
+      en: "View Order",
+      ta: "ஆர்டரைப் பார்",
+      hi: "ऑर्डर देखें",
+      te: "ఆర్డర్‌ను చూడండి",
+      kn: "ಆದೇಶವನ್ನು ವೀಕ್ಷಿಸಿ",
+      ml: "ഓർഡർ കാണുക"
+    },
+    orderDetails: {
+      en: "Order Details",
+      ta: "ஆர்டர் விவரங்கள்",
+      hi: "ऑर्डर विवरण",
+      te: "ఆర్డర్ వివరాలు",
+      kn: "ಆದೇಶದ ವಿವರಗಳು",
+      ml: "ഓർഡർ വിവരങ്ങൾ"
+    },
+    placedOn: {
+      en: "Placed on",
+      ta: "இடப்பட்ட தேதி",
+      hi: "दिनांक को दिया गया",
+      te: "చేసిన తేదీ",
+      kn: "ಮಾಡಿದ ದಿನಾಂಕ",
+      ml: "നൽകിയ തീയതി"
+    },
+    orderProducts: {
+      en: "Order Products",
+      ta: "ஆர்டர் பொருட்கள்",
+      hi: "ऑर्डर के उत्पाद",
+      te: "ఆర్డర్ ఉత్పత్తులు",
+      kn: "ಆದೇಶದ ಉತ್ಪನ್ನಗಳು",
+      ml: "ഓർഡർ ഉൽപ്പന്നങ്ങൾ"
+    },
+    products: {
+      en: "Products",
+      ta: "பொருட்கள்",
+      hi: "उत्पाद",
+      te: "ఉత్పత్తులు",
+      kn: "ಉತ್ಪನ್ನಗಳು",
+      ml: "ഉൽപ്പന്നങ്ങൾ"
+    },
+    farmers: {
+      en: "Farmers",
+      ta: "விவசாயிகள்",
+      hi: "किसान",
+      te: "రైతులు",
+      kn: "ರೈತರು",
+      ml: "കർഷകർ"
+    }
   },
-  kn: {
-    "common.executiveControls": "ಕಾರ್ಯನಿರ್ವಾಹಕ ನಿಯಂತ್ರಣಗಳು",
-    "common.adminDashboard": "ಅಡ್ಮಿನ್ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್",
-    "common.noOrderVolumeDataYet": "ಇನ್ನೂ ಯಾವುದೇ ಆರ್ಡರ್ ಪ್ರಮಾಣದ ಡೇಟಾ ಇಲ್ಲ",
-    "common.noCategoryDistributionDataYet": "ಇನ್ನೂ ಯಾವುದೇ ವರ್ಗ ವಿತರಣಾ ಡೇಟಾ ಇಲ್ಲ",
-    "common.conflictOversight": "ಸಂಘರ್ಷ ಮೇಲ್ವಿಚಾರಣೆ",
-    "common.disputeResolution": "ವಿವಾದ ಪರಿಹಾರ",
-    "common.arbitrateBuyerAndFarmerClaimsQuality": "ಖರೀದಿದಾರ ಮತ್ತು ರೈತರ ಹಕ್ಕುಗಳು ಮತ್ತು ಗುಣಮಟ್ಟದ ಸಮಸ್ಯೆಗಳನ್ನು ಪರಿಹರಿಸಿ.",
-    "common.resolveDispute": "ವಿವಾದ ಪರಿಹರಿಸಿ",
-    "common.kycVerificationPipeline": "KYC ಪರಿಶೀಲನಾ ಸಾಲು",
-    "common.reviewFarmRegistrationsVerifyIdentityAnd": "ಜಮೀನು ನೋಂದಣಿಗಳನ್ನು ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಸಕ್ರಿಯ ಮಾರಾಟಗಾರರ ಹಕ್ಕುಗಳನ್ನು ನೀಡಿ.",
-    "common.platformFulfillment": "ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ಪೂರೈಕೆ",
-    "common.allPlatformOrders": "ಎಲ್ಲಾ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ಆರ್ಡರ್‌ಗಳು",
-    "common.fullOversightOfOrdersFulfillmentStatuses": "ಆರ್ಡರ್‌ಗಳು ಮತ್ತು ಪಾವತಿಗಳ ಸಂಪೂರ್ಣ ಮೇಲ್ವಿಚಾರಣೆ.",
-    "common.financialAudit": "ಹಣಕಾಸು ಆಡಿಟ್",
-    "common.paymentAuditLogs": "ಪಾವತಿ ಆಡಿಟ್ ಲಾಗ್‌ಗಳು",
-    "common.auditPlatformTransactionSettlementsAndGateway": "ವಹಿವಾಟು ಇತ್ಯರ್ಥಗಳು ಮತ್ತು ಗೇಟ್‌ವೇ ಲಾಗ್‌ಗಳನ್ನು ಪರಿಶೀಲಿಸಿ.",
-    "common.catalogModeration": "ಕ್ಯಾಟಲಾಗ್ ನಿಯಂತ್ರಣ",
-    "common.productModeration": "ಉತ್ಪನ್ನ ನಿಯಂತ್ರಣ",
-    "common.reviewActiveDraftAndPausedCrop": "ರೈತರು ಪ್ರಕಟಿಸಿದ ಬೆಳೆ ಪಟ್ಟಿಗಳನ್ನು ಪರಿಶೀಲಿಸಿ.",
-
-    "admin.userDirectory": "ಬಳಕೆದಾರರ ಡೈರೆಕ್ಟರಿ",
-    "admin.platformUserManagement": "ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ಬಳಕೆದಾರರ ನಿರ್ವಹಣೆ",
-    "admin.viewUserRolesAccessStatusesAnd": "ಬಳಕೆದಾರರ ಪಾತ್ರಗಳು ಮತ್ತು ಸ್ಥಿತಿಗಳನ್ನು ನೋಡಿ ಖಾತೆಗಳನ್ನು ನಿರ್ವಹಿಸಿ.",
-    "admin.users": "ಬಳಕೆದಾರರು",
-    "admin.farmers": "ರೈತರು / FPOಗಳು",
-    "admin.settlements": "ಇತ್ಯರ್ಥಗಳು",
-    "admin.payments": "ಪಾವತಿಗಳು",
-    "admin.blockchain": "ಬ್ಲಾಕ್‌ಚೈನ್ ಆಡಿಟ್",
-    "admin.disputes": "ವಿವಾದಗಳು",
-    "admin.analytics": "ವಿಶ್ಲೇಷಣೆಗಳು",
-
-    "adminUsers.colUserName": "ಬಳಕೆದಾರರ ಹೆಸರು",
-    "adminUsers.colEmail": "ಇಮೇಲ್ ವಿಳಾಸ",
-    "adminUsers.colAccountHash": "ಆನ್-ಚೈನ್ ಖಾತೆ ಹ್ಯಾಶ್",
-    "adminUsers.colAccountRole": "ಖಾತೆ ಪಾತ್ರ",
-    "adminUsers.colAccountStatus": "ಖಾತೆ ಸ್ಥಿತಿ",
-    "adminUsers.colActions": "ಕ್ರಿಯೆಗಳು",
-    "adminUsers.suspendAccount": "ಖಾತೆಯನ್ನು ಅಮಾನತುಗೊಳಿಸಿ",
-    "adminUsers.activateAccount": "ಖಾತೆಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ",
-
-    "settings.title": "ಖಾತೆ ಸಂಯೋಜನೆಗಳು",
-    "settings.description": "ನಿಮ್ಮ ಸಿಸ್ಟಮ್ ಆದ್ಯತೆಗಳು, ಭದ್ರತೆ ಮತ್ತು ಅಧಿಸೂಚನೆ ಚಾನಲ್‌ಗಳನ್ನು ನಿರ್ವಹಿಸಿ.",
-    "settings.notificationPreferences": "ಅಧಿಸೂಚನೆ ಆದ್ಯತೆಗಳು",
-    "settings.notificationDescription": "ಆರ್ಡರ್‌ಗಳು ಮತ್ತು ಸ್ಟಾಕ್ ನವೀಕರಣಗಳ ಕುರಿತು ಅಧಿಸೂಚನೆಗಳನ್ನು ಸಂಯೋಜಿಸಿ.",
-    "settings.emailOrders": "ಇಮೇಲ್ ಆರ್ಡರ್ ಅಧಿಸೂಚನೆಗಳು",
-    "settings.emailOrdersDescription": "ಹೊಸ ಆರ್ಡರ್‌ಗಳಿಗಾಗಿ ಇಮೇಲ್ ಪಡೆಯಿರಿ.",
-    "settings.sms": "SMS ಅಧಿಸೂಚನೆಗಳು",
-    "settings.smsDescription": "ತಕ್ಷಣದ SMS ಎಚ್ಚರಿಕೆಗಳನ್ನು ಪಡೆಯಿರಿ.",
-    "settings.marketPriceTrendAlerts": "ಮಾರುಕಟ್ಟೆ ಬೆಲೆ ಪ್ರವೃತ್ತಿ ಎಚ್ಚರಿಕೆಗಳು",
-    "settings.marketPriceTrendAlertsDescription": "ಪ್ರಮುಖ ಕೃಷಿ ಮಾರುಕಟ್ಟೆ ಬೆಲೆ ಬದಲಾವಣೆಗಳ ದೈನಂದಿನ ಸಾರಾಂಶ.",
-    "settings.securityAndAccess": "ಭದ್ರತೆ ಮತ್ತು ಪ್ರವೇಶ",
-    "settings.securityAndAccessDescription": "ಹೆಚ್ಚುವರಿ ಭದ್ರತಾ ಪದರಗಳೊಂದಿಗೆ ನಿಮ್ಮ ಖಾತೆಯನ್ನು ರಕ್ಷಿಸಿ.",
-    "settings.agribazaarPlatform": "ಅಗ್ರಿಬಜಾರ್ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್",
-    "settings.needHelpDescription": "ನಿಮ್ಮ KYC ವಿವರಗಳು ಅಥವಾ ರೈತರ ಪರಿಶೀಲನೆಯನ್ನು ನವೀಕರಿಸಲು ನೆರವು ಬೇಕಾದರೆ, ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ಆಡಳಿತವನ್ನು ಸಂಪರ್ಕಿಸಿ."
+  buyerProfile: {
+    buyerAccount: {
+      en: "Buyer Account",
+      ta: "வாங்குபவர் கணக்கு",
+      hi: "खरीदार खाता",
+      te: "కొనుగోలుదారు ఖాతా",
+      kn: "ಖರೀದಿದಾರರ ಖಾತೆ",
+      ml: "ബയർ അക്കൗണ്ട്"
+    },
+    buyerProfile: {
+      en: "Buyer Profile",
+      ta: "வாங்குபவர் சுயவிவரம்",
+      hi: "खरीदार प्रोफ़ाइल",
+      te: "కొనుగోలుదారు ప్రొఫైల్",
+      kn: "ಖರೀದಿದಾರರ ಪ್ರೊಫೈಲ್",
+      ml: "ബയർ പ്രൊഫൈൽ"
+    },
+    manageYourPersonalDetailsAndDefault: {
+      en: "Manage your personal details and default shipping address.",
+      ta: "உங்கள் தனிப்பட்ட விவரங்கள் மற்றும் இயல்புநிலை விநியோக முகவரியை நிர்வகிக்கவும்.",
+      hi: "अपने व्यक्तिगत विवरण और डिफ़ॉल्ट शिपिंग पते को प्रबंधित करें।",
+      te: "మీ వ్యక్తిగత వివరాలు మరియు డిఫాల్ట్ షిప్పింగ్ చిరునామాను నిర్వహించండి.",
+      kn: "ನಿಮ್ಮ ವೈಯಕ್ತಿಕ ವಿವರಗಳು ಮತ್ತು ರವಾನೆ ವಿಳಾಸವನ್ನು ನಿರ್ವಹಿಸಿ.",
+      ml: "നിങ്ങളുടെ വ്യക്തിഗത വിവരങ്ങളും ഡിഫോൾട്ട് ഷിപ്പിംഗ് വിലാസവും കൈകാര്യം ചെയ്യുക."
+    },
+    fullName: {
+      en: "Full Name",
+      ta: "முழு பெயர்",
+      hi: "पूरा नाम",
+      te: "పూర్తి పేరు",
+      kn: "ಪೂರ್ಣ ಹೆಸರು",
+      ml: "പൂർണ്ണ പേര്"
+    },
+    emailAddress: {
+      en: "Email Address",
+      ta: "மின்னஞ்சல் முகவரி",
+      hi: "ईमेल पता",
+      te: "ఈమెయిల్ చిరునామా",
+      kn: "ಇಮೇಲ್ ವಿಳಾಸ",
+      ml: "ഇമെയിൽ വിലാസം"
+    },
+    mobileNumber: {
+      en: "Mobile Number",
+      ta: "கைபேசி எண்",
+      hi: "मोबाइल नंबर",
+      te: "మొబైల్ నంబరు",
+      kn: "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ",
+      ml: "മൊബൈൽ നമ്പർ"
+    },
+    deliveryAddress: {
+      en: "Delivery Address",
+      ta: "விநியோக முகவரி",
+      hi: "डिलीवरी का पता",
+      te: "డెలివరీ చిరునామా",
+      kn: "ವಿತರಣಾ ವಿಳಾಸ",
+      ml: "ഡെലിവറി വിലാസം"
+    },
+    city: {
+      en: "City",
+      ta: "நகரம்",
+      hi: "शहर",
+      te: "నగరం",
+      kn: "ನಗರ",
+      ml: "നഗരം"
+    },
+    state: {
+      en: "State",
+      ta: "மாநிலம்",
+      hi: "राज्य",
+      te: "రాష్ట్రం",
+      kn: "ರಾಜ್ಯ",
+      ml: "സംസ്ഥാനം"
+    },
+    pincode: {
+      en: "Pincode",
+      ta: "அஞ்சல் குறியீடு",
+      hi: "पिनकोड",
+      te: "పిన్‌కోడ్",
+      kn: "ಪಿನ್‌ಕೋಡ್",
+      ml: "പിൻകോഡ്"
+    },
+    buyerAccountType: {
+      en: "Buyer Account Type",
+      ta: "வாங்குபவர் கணக்கு வகை",
+      hi: "खरीदार खाता प्रकार",
+      te: "కొనుగోలుదారు ఖాతా రకం",
+      kn: "ಖರೀದಿದಾರರ ಖಾತೆ ಪ್ರಕಾರ",
+      ml: "ബയർ അക്കൗണ്ട് തരം"
+    },
+    profileUpdatedToast: {
+      en: "Buyer profile updated!",
+      ta: "வாங்குபவர் சுயவிவரம் புதுப்பிக்கப்பட்டது!",
+      hi: "खरीदार प्रोफ़ाइल अपडेट की गई!",
+      te: "కొనుగోలుదారు ప్రొఫైల్ అప్‌డేట్ చేయబడింది!",
+      kn: "ಖರೀದಿದಾರರ ಪ್ರೊಫೈಲ್ ಅಪ್‌ಡೇಟ್ ಮಾಡಲಾಗಿದೆ!",
+      ml: "ബയർ പ്രൊഫൈൽ പുതുക്കി!"
+    },
+    accountHashCopiedToast: {
+      en: "Account Hash copied!",
+      ta: "கணக்கு ஹேஷ் நகலெடுக்கப்பட்டது!",
+      hi: "खाता हैश कॉपी किया गया!",
+      te: "ఖాతా హ్యాష్ కాపీ చేయబడింది!",
+      kn: "ಖಾತೆ ಹ್ಯಾಶ್ ನಕಲಿಸಲಾಗಿದೆ!",
+      ml: "അക്കൗണ്ട് ഹാഷ് കോപ്പി ചെയ്തു!"
+    }
   },
-  ml: {
-    "common.executiveControls": "എക്സിക്യൂട്ടീവ് നിയന്ത്രണങ്ങൾ",
-    "common.adminDashboard": "അഡ്മിൻ ഡാഷ്‌ബോർഡ്",
-    "common.noOrderVolumeDataYet": "ഇതുവരെ ഓർഡർ വ്യാപ്തി ഡാറ്റയില്ല",
-    "common.noCategoryDistributionDataYet": "ഇതുവരെ വിഭാഗ വിതരണ ഡാറ്റയില്ല",
-    "common.conflictOversight": "തർക്ക മേൽനോട്ടം",
-    "common.disputeResolution": "തർക്ക പരിഹാരം",
-    "common.arbitrateBuyerAndFarmerClaimsQuality": "വാങ്ങുന്നയാളുടെയും കർഷകന്റെയും അവകാശവാദങ്ങളും ഗുണനിലവാര പ്രശ്നങ്ങളും പരിഹരിക്കുക.",
-    "common.resolveDispute": "തർക്കം പരിഹരിക്കുക",
-    "common.kycVerificationPipeline": "KYC സ്ഥിരീകരണ പൈപ്പ്‌ലൈൻ",
-    "common.reviewFarmRegistrationsVerifyIdentityAnd": "ഫാം രജിസ്ട്രേഷനുകൾ അവലോകനം ചെയ്യുകയും കർഷകർക്ക് അനുമതി നൽകുകയും ചെയ്യുക.",
-    "common.platformFulfillment": "പ്ലാറ്റ്‌ഫോം നിർവ്വഹണം",
-    "common.allPlatformOrders": "എല്ലാ പ്ലാറ്റ്‌ഫോം ഓർഡറുകളും",
-    "common.fullOversightOfOrdersFulfillmentStatuses": "ഓർഡറുകളുടെയും ഇടപാടുകളുടെയും പൂർണ്ണ മേൽനോട്ടം.",
-    "common.financialAudit": "സാമ്പത്തിക ഓഡിറ്റ്",
-    "common.paymentAuditLogs": "പേയ്‌മെന്റ് ഓഡിറ്റ് ലോഗുകൾ",
-    "common.auditPlatformTransactionSettlementsAndGateway": "ഇടപാട് തീർപ്പുകളും ഗേറ്റ്‌വേ ലോഗുകളും ഓഡിറ്റ് ചെയ്യുക.",
-    "common.catalogModeration": "കാറ്റലോഗ് മോഡറേഷൻ",
-    "common.productModeration": "ഉൽപ്പന്ന മോഡറേഷൻ",
-    "common.reviewActiveDraftAndPausedCrop": "കർഷകർ പ്രസിദ്ധീകരിച്ച വിള ലിസ്റ്റിംഗുകൾ പരിശോധിക്കുക.",
-
-    "admin.userDirectory": "ഉപയോക്തൃ ഡയറക്ടറി",
-    "admin.platformUserManagement": "പ്ലാറ്റ്‌ഫോം ഉപയോക്തൃ മാനേജ്‌മെന്റ്",
-    "admin.viewUserRolesAccessStatusesAnd": "ഉപയോക്തൃ ചുമതലകളും സ്ഥിതിയും കാണുകയും അക്കൗണ്ടുകൾ കൈകാര്യം ചെയ്യുകയും ചെയ്യുക.",
-    "admin.users": "ഉപയോക്താക്കൾ",
-    "admin.farmers": "കർഷകർ / FPO കൾ",
-    "admin.settlements": "തീർപ്പുകൾ",
-    "admin.payments": "പേയ്‌മെന്റുകൾ",
-    "admin.blockchain": "ബ്ലോക്ക്ചെയിൻ ഓഡിറ്റ്",
-    "admin.disputes": "തർക്കങ്ങൾ",
-    "admin.analytics": "വിശകലനം",
-
-    "adminUsers.colUserName": "ഉപയോക്തൃ നാമം",
-    "adminUsers.colEmail": "ഇമെയിൽ വിലാസം",
-    "adminUsers.colAccountHash": "ഓൺ-ചെയിൻ അക്കൗണ്ട് ഹാഷ്",
-    "adminUsers.colAccountRole": "അക്കൗണ്ട് ചുമതല",
-    "adminUsers.colAccountStatus": "അക്കൗണ്ട് നില",
-    "adminUsers.colActions": "നടപടികൾ",
-    "adminUsers.suspendAccount": "അക്കൗണ്ട് സസ്പെൻഡ് ചെയ്യുക",
-    "adminUsers.activateAccount": "അക്കൗണ്ട് സജീവമാക്കുക",
-
-    "settings.title": "അക്കൗണ്ട് ക്രമീകരണങ്ങൾ",
-    "settings.description": "നിങ്ങളുടെ സിസ്റ്റം മുൻഗണനകളും സുരക്ഷയും അറിയിപ്പ് ചാനലുകളും നിയന്ത്രിക്കുക.",
-    "settings.notificationPreferences": "അറിയിപ്പ് മുൻഗണനകൾ",
-    "settings.notificationDescription": "ഓർഡറുകളും സ്റ്റോക്ക് അപ്‌ഡേറ്റുകളും എങ്ങനെ അറിയിക്കണമെന്ന് ക്രമീകരിക്കുക.",
-    "settings.emailOrders": "ഇമെയിൽ ഓർഡർ അറിയിപ്പുകൾ",
-    "settings.emailOrdersDescription": "പുതിയ ഓർഡറുകൾക്കും സ്ഥിതി മാറ്റങ്ങൾക്കും ഇമെയിൽ നേടുക.",
-    "settings.sms": "SMS അറിയിപ്പുകൾ",
-    "settings.smsDescription": "ഉടനടി SMS മുന്നറിയിപ്പുകൾ നേടുക.",
-    "settings.marketPriceTrendAlerts": "വിപണി വില ട്രെൻഡ് മുന്നറിയിപ്പുകൾ",
-    "settings.marketPriceTrendAlertsDescription": "പ്രധാന കമ്പോള വില മാറ്റങ്ങളുടെ ദിനാന്തരീക്ഷ സംഗ്രഹം.",
-    "settings.securityAndAccess": "സുരക്ഷയും പ്രവേശനവും",
-    "settings.securityAndAccessDescription": "കൂടുതൽ സുരക്ഷാ പാളികൾ ഉപയോഗിച്ച് നിങ്ങളുടെ അക്കൗണ്ട് സംരക്ഷിക്കുക.",
-    "settings.agribazaarPlatform": "അഗ്രിബസാർ പ്ലാറ്റ്‌ഫോം",
-    "settings.needHelpDescription": "നിങ്ങളുടെ KYC വിവരങ്ങളോ കർഷക സ്ഥിരീകരണമോ അപ്‌ഡേറ്റ് ചെയ്യാൻ സഹായം വേണമെങ്കിൽ പ്ലാറ്റ്‌ഫോം അഡ്മിനിസ്ട്രേഷനുമായി ബന്ധപ്പെടുക."
+  portals: {
+    buyer: {
+      en: "Buyer Portal",
+      ta: "வாங்குபவர் போர்டல்",
+      hi: "खरीदार पोर्टल",
+      te: "కొనుగోలుదారు పోర్టల్",
+      kn: "ಖರೀದಿದாரರ ಪೋರ್ಟಲ್",
+      ml: "ബയർ പോർട്ടൽ"
+    },
+    farmer: {
+      en: "Farmer Portal",
+      ta: "விவசாயி போர்டல்",
+      hi: "किसान पोर्टल",
+      te: "రైతు పోర్టల్",
+      kn: "ರೈತರ ಪೋರ್ಟಲ್",
+      ml: "ഫാർമർ പോർട്ടൽ"
+    },
+    transporter: {
+      en: "Transporter Portal",
+      ta: "போக்குவரத்து போர்டல்",
+      hi: "ट्रांसपोर्टर पोर्टल",
+      te: "ట్రాన్స్‌పోర్టర్ పోర్టల్",
+      kn: "ಸಾರಿಗೆದಾರರ ಪೋರ್ಟಲ್",
+      ml: "ട്രാൻസ്പോർട്ടർ പോർട്ടൽ"
+    },
+    admin: {
+      en: "Admin Portal",
+      ta: "நிர்வாகி போர்டல்",
+      hi: "एडमिन पोर्टल",
+      te: "అడ్మిన్ పోర్టల్",
+      kn: "ಆಡಳಿತ ಪೋರ್ಟಲ್",
+      ml: "അഡ്മിൻ പോർട്ടൽ"
+    }
+  },
+  common: {
+    copyHash: {
+      en: "📋 Copy Hash",
+      ta: "📋 ஹேஷை நகலெடு",
+      hi: "📋 हैश कॉपी करें",
+      te: "📋 హ్యాష్ కాపీ చేయండి",
+      kn: "📋 ಹ್ಯಾಶ್ ನಕಲಿಸಿ",
+      ml: "📋 കോപ്പി ഹാഷ്"
+    },
+    allOrders: {
+      en: "All Orders",
+      ta: "அனைத்து ஆர்டர்கள்",
+      hi: "सभी आदेश",
+      te: "అన్ని ఆర్డర్లు",
+      kn: "ಎಲ್ಲಾ ಆದೇಶಗಳು",
+      ml: "എല്ലാ ഓർഡറുകളും"
+    },
+    editProfile: {
+      en: "Edit Profile",
+      ta: "சுயவிவரத்தைத் திருத்து",
+      hi: "प्रोफ़ाइल संपादित करें",
+      te: "ప్రొఫైల్ ఎడిట్ చేయండి",
+      kn: "ಪ್ರೊಫೈಲ್ ತಿದ್ದಿ",
+      ml: "പ്രൊഫൈൽ എഡിറ്റ് ചെയ്യുക"
+    },
+    saveChanges: {
+      en: "Save Changes",
+      ta: "மாற்றங்களைச் சேமிக்கவும்",
+      hi: "परिवर्तन सहेजें",
+      te: "మార్పులను సేవ్ చేయండి",
+      kn: "ಬದಲಾವಣೆಗಳನ್ನು ಉಳಿಸಿ",
+      ml: "മാറ്റങ്ങൾ സേവ് ചെയ്യുക"
+    }
   }
 };
 
-function setDeepValue(obj, keyPath, value) {
-  const parts = keyPath.split('.');
-  let curr = obj;
-  for (let i = 0; i < parts.length - 1; i++) {
-    if (!curr[parts[i]]) curr[parts[i]] = {};
-    curr = curr[parts[i]];
-  }
-  curr[parts[parts.length - 1]] = value;
-}
+const locales = ['en', 'ta', 'hi', 'te', 'kn', 'ml'];
 
-for (const [lang, dict] of Object.entries(masterDict)) {
-  const filePath = path.join(localesDir, lang, 'translation.json');
+locales.forEach((loc) => {
+  const filePath = path.join(basePath, loc, 'translation.json');
+  let data = {};
   if (fs.existsSync(filePath)) {
-    const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-    for (const [keyPath, val] of Object.entries(dict)) {
-      setDeepValue(data, keyPath, val);
-    }
-    fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
-    console.log(`Successfully updated ${lang}/translation.json with master dictionary.`);
+    data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
   }
-}
+
+  // Merge masterDict into data
+  Object.keys(masterDict).forEach((sec) => {
+    if (!data[sec]) data[sec] = {};
+    Object.keys(masterDict[sec]).forEach((key) => {
+      const translationVal = masterDict[sec][key][loc] || masterDict[sec][key].en;
+      data[sec][key] = translationVal;
+    });
+  });
+
+  // Also recursively fallback missing keys from 'en' if any are missing
+  const enFilePath = path.join(basePath, 'en', 'translation.json');
+  const enData = JSON.parse(fs.readFileSync(enFilePath, 'utf8'));
+
+  function fillMissing(source, target) {
+    Object.keys(source).forEach((k) => {
+      if (typeof source[k] === 'object' && source[k] !== null && !Array.isArray(source[k])) {
+        if (!target[k] || typeof target[k] !== 'object') target[k] = {};
+        fillMissing(source[k], target[k]);
+      } else {
+        if (!target[k]) {
+          target[k] = source[k];
+        }
+      }
+    });
+  }
+
+  fillMissing(enData, data);
+
+  fs.writeFileSync(filePath, JSON.stringify(data, null, 2) + '\n', 'utf8');
+  console.log(`Successfully updated ${loc}/translation.json with all master translations.`);
+});

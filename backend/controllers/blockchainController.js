@@ -54,6 +54,9 @@ exports.getAuditStatus = async (req, res, next) => {
         paymentIdHash: event.paymentIdHash,
         orderIdHash: event.orderIdHash,
         buyerIdHash: event.buyerIdHash,
+        transporterIdHash: event.transporterIdHash || '',
+        transportAmountRupees: event.transportAmountRupees ? Number(event.transportAmountRupees).toFixed(2) : (Number(event.transportAmountPaise || 0) / 100).toFixed(2),
+        transportAmountPaise: Number(event.transportAmountPaise || 0),
         sellerIdHashes: Array.from(event.sellerSplits || []).map(s => s.sellerIdHash),
         sellerSplits: Array.from(event.sellerSplits || []).map(s => ({
           sellerIdHash: s.sellerIdHash,

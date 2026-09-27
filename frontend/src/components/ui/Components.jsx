@@ -1,11 +1,11 @@
 export function Card({ children, className = '', title, subtitle, action }) {
   return (
-    <div className={`bg-white rounded-2xl border border-[#E2E8E5] p-6 lg:p-8 shadow-sm ${className}`}>
+    <div className={`agri-card bg-[var(--surface)] border-[var(--border)] rounded-[var(--radius-lg)] p-6 lg:p-8 ${className}`}>
       {(title || subtitle || action) && (
-        <div className="flex items-center justify-between mb-6 pb-4 border-b border-[#E2E8E5]">
+        <div className="flex items-center justify-between mb-6 pb-4 border-b border-[var(--border)]">
           <div>
-            {title && <h2 className="text-xl font-extrabold text-[#082B36] font-display">{title}</h2>}
-            {subtitle && <p className="text-xs text-gray-500 mt-1 font-sans">{subtitle}</p>}
+            {title && <h2 className="text-xl font-extrabold text-[var(--text-primary)] font-display">{title}</h2>}
+            {subtitle && <p className="text-xs text-[var(--text-secondary)] mt-1 font-sans">{subtitle}</p>}
           </div>
           {action && <div>{action}</div>}
         </div>
@@ -17,8 +17,8 @@ export function Card({ children, className = '', title, subtitle, action }) {
 
 export function StatsCard({ icon: Icon, label, value, trend, color = 'primary' }) {
   const iconColors = {
-    primary: 'bg-[#00E676] text-[#002B36]',
-    emerald: 'bg-[#00C853] text-white',
+    primary: 'bg-[var(--primary)] text-[var(--primary-contrast)]',
+    emerald: 'bg-[var(--success)] text-white',
     amber: 'bg-amber-100 text-amber-800',
     blue: 'bg-blue-100 text-blue-800',
     rose: 'bg-rose-100 text-rose-800',
@@ -26,12 +26,12 @@ export function StatsCard({ icon: Icon, label, value, trend, color = 'primary' }
   };
 
   return (
-    <div className="bg-white rounded-2xl border border-[#E2E8E5] p-6 shadow-sm hover:shadow-md hover:border-[#00E676] transition-all">
+    <div className="agri-card agri-card--interactive bg-[var(--surface)] border-[var(--border)] rounded-[var(--radius-lg)] p-6">
       <div className="flex items-start justify-between">
         <div>
-          <p className="text-xs font-bold text-gray-500 uppercase tracking-wider font-display">{label}</p>
-          <p className="text-3xl font-black text-[#082B36] mt-2 font-display">{value}</p>
-          {trend && <p className="text-xs font-bold text-[#00C853] mt-2 font-display">{trend}</p>}
+          <p className="text-xs font-bold text-[var(--text-secondary)] uppercase tracking-wider font-display">{label}</p>
+          <p className="text-3xl font-black text-[var(--text-primary)] mt-2 font-display">{value}</p>
+          {trend && <p className="text-xs font-bold text-[var(--success)] mt-2 font-display">{trend}</p>}
         </div>
         {Icon && (
           <div className={`w-12 h-12 rounded-xl flex items-center justify-center font-bold shrink-0 ${iconColors[color] || iconColors.primary}`}>
@@ -46,8 +46,8 @@ export function StatsCard({ icon: Icon, label, value, trend, color = 'primary' }
 export function StatusBadge({ status }) {
   const { t } = useTranslation();
   const styles = {
-    ACTIVE: 'bg-[#00E676]/20 text-[#00C853] border-[#00E676]',
-    VERIFIED: 'bg-[#00C853] text-white border-[#00C853]',
+    ACTIVE: 'bg-[var(--primary)]/15 text-[var(--success)] border-[var(--primary)]',
+    VERIFIED: 'bg-[var(--success)] text-white border-[var(--success)]',
     DELIVERED: 'bg-emerald-100 text-emerald-800 border-emerald-300',
     SUCCESSFUL: 'bg-emerald-100 text-emerald-800 border-emerald-300',
     CAPTURED: 'bg-emerald-100 text-emerald-800 border-emerald-300',
@@ -85,8 +85,8 @@ export function LoadingState({ message = 'Loading content...' }) {
   const { t } = useTranslation();
   return (
     <div className="flex flex-col items-center justify-center py-20 text-center">
-      <div className="w-12 h-12 border-4 border-gray-200 border-t-[#00E676] rounded-full animate-spin" />
-      <p className="mt-4 text-sm font-bold text-[#082B36] font-display">{message === 'Loading content...' ? t('ui.loadingContent') : message}</p>
+      <div className="w-12 h-12 border-4 border-[var(--border)] border-t-[var(--primary)] rounded-full animate-spin" />
+      <p className="mt-4 text-sm font-bold text-[var(--text-primary)] font-display">{message === 'Loading content...' ? t('ui.loadingContent') : message}</p>
     </div>
   );
 }
@@ -94,14 +94,14 @@ export function LoadingState({ message = 'Loading content...' }) {
 export function EmptyState({ icon: Icon, title = 'No items found', description, action }) {
   const { t } = useTranslation();
   return (
-    <div className="flex flex-col items-center justify-center py-20 px-4 text-center bg-white rounded-2xl border border-[#E2E8E5]">
+    <div className="agri-surface flex flex-col items-center justify-center py-20 px-4 text-center">
       {Icon && (
-        <div className="w-16 h-16 bg-[#E8F5E9] text-[#00C853] rounded-2xl flex items-center justify-center mb-4">
+        <div className="w-16 h-16 bg-[var(--surface-elevated)] text-[var(--success)] rounded-[var(--radius-md)] flex items-center justify-center mb-4">
           <Icon className="w-8 h-8" />
         </div>
       )}
-      <h3 className="text-xl font-extrabold text-[#082B36] font-display">{title === 'No items found' ? t('ui.noItems') : title}</h3>
-      {description && <p className="text-sm text-gray-500 mt-2 max-w-md font-sans">{description}</p>}
+      <h3 className="text-xl font-extrabold text-[var(--text-primary)] font-display">{title === 'No items found' ? t('ui.noItems') : title}</h3>
+      {description && <p className="text-sm text-[var(--text-secondary)] mt-2 max-w-md font-sans">{description}</p>}
       {action && <div className="mt-6">{action}</div>}
     </div>
   );

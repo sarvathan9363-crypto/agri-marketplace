@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useState, useEffect } from 'react';
-import { Database, RefreshCw, ExternalLink, ShieldCheck, CheckCircle2, XCircle, Search, Layers, Coins, UserCheck, User, Tractor, Mail, Phone, X } from 'lucide-react';
+import { Database, RefreshCw, ExternalLink, ShieldCheck, CheckCircle2, XCircle, Search, Layers, Coins, UserCheck, User, Tractor, Truck, Mail, Phone, X } from 'lucide-react';
 import adminService from '../../services/adminService';
 import toast from 'react-hot-toast';
 
@@ -275,9 +275,46 @@ export default function AdminBlockchainAudit() {
                         </button>
                       </div>
 
+                      {/* Transporter ID Hash Card */}
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 bg-emerald-950/50 border border-emerald-500/30 p-3 rounded-xl">
+                        <div className="min-w-0 flex-1 space-y-0.5">
+                          <span className="text-emerald-300 font-sans font-bold text-xs block">
+                            🚚 {t('blockchain.transporterAccountHashLabel', { defaultValue: 'Transporter Cryptographic Account Hash:' })}
+                          </span>
+                          <div className="flex items-center gap-1.5">
+                            <span className="font-mono text-[11px] text-emerald-100 truncate block max-w-[220px] sm:max-w-xs" title={verifyResult.event.transporterIdHash || '0x0000000000000000000000000000000000000000000000000000000000000000'}>
+                              {verifyResult.event.transporterIdHash && verifyResult.event.transporterIdHash !== '0x0000000000000000000000000000000000000000000000000000000000000000'
+                                ? verifyResult.event.transporterIdHash
+                                : t('blockchain.unassignedTransporterHash', { defaultValue: '0x00000000... (Direct Pickup / Unassigned)' })}
+                            </span>
+                            {verifyResult.event.transporterIdHash && verifyResult.event.transporterIdHash !== '0x0000000000000000000000000000000000000000000000000000000000000000' && (
+                              <button
+                                onClick={() => copyToClipboard(verifyResult.event.transporterIdHash)}
+                                className="text-emerald-300 hover:text-white p-0.5 shrink-0"
+                                title="Copy Transporter Hash"
+                              >
+                                📋
+                              </button>
+                            )}
+                          </div>
+                          <span className="text-[11px] font-sans text-emerald-200/90 font-medium block">
+                            {t('blockchain.freightSplitLabel', { defaultValue: 'Freight Split:' })} ₹{verifyResult.event.transportAmountRupees || (Number(verifyResult.event.transportAmountPaise || 0) / 100).toFixed(2)}
+                          </span>
+                        </div>
+                        {verifyResult.event.transporterIdHash && verifyResult.event.transporterIdHash !== '0x0000000000000000000000000000000000000000000000000000000000000000' && (
+                          <button
+                            onClick={() => handleLookupAccount(verifyResult.event.transporterIdHash)}
+                            className="px-3.5 py-1.5 text-xs bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-sans font-bold shadow-md transition-all shrink-0 flex items-center justify-center gap-1.5 mt-1 sm:mt-0"
+                          >
+                            <Truck className="w-3.5 h-3.5" />
+                            {t('blockchain.lookupTransporterBtn', { defaultValue: 'Lookup Transporter' })}
+                          </button>
+                        )}
+                      </div>
+
                       {/* Seller ID Hashes & Split Breakdown Card */}
                       <div className="flex flex-col gap-2.5 bg-amber-950/50 border border-amber-500/30 p-3 rounded-xl">
-                        <span className="text-amber-300 font-sans font-bold text-xs block">🌾 Per-Seller Items & Payout Splits:</span>
+                        <span className="text-amber-300 font-sans font-bold text-xs block">🌾 {t('blockchain.perSellerPayoutSplitsLabel', { defaultValue: 'Per-Seller & Transporter Payout Splits:' })}</span>
                         {verifyResult.event.sellerSplits && verifyResult.event.sellerSplits.length > 0 ? (
                           verifyResult.event.sellerSplits.map((split, sIdx) => (
                             <div key={sIdx} className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 bg-black/50 p-3 rounded-xl border border-amber-500/20">
@@ -341,6 +378,42 @@ export default function AdminBlockchainAudit() {
                           ))
                         ) : (
                           <span className="text-xs text-amber-200/60 font-sans italic">{t('blockchain.noSellerSplitHashesRecordedFor')}</span>
+                        )}
+                        {/* Transporter Freight Split Row (Inside Breakdown) */}
+                        {verifyResult.event.transporterIdHash && verifyResult.event.transporterIdHash !== '0x0000000000000000000000000000000000000000000000000000000000000000' && (
+                          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 bg-black/60 p-3 rounded-xl border border-emerald-500/30 mt-1">
+                            <div className="space-y-1 min-w-0 flex-1">
+                              <div className="flex items-center gap-1.5">
+                                <span className="font-mono text-[11px] text-emerald-100 truncate block max-w-[200px] sm:max-w-xs" title={verifyResult.event.transporterIdHash}>
+                                  {verifyResult.event.transporterIdHash}
+                                </span>
+                                <button
+                                  onClick={() => copyToClipboard(verifyResult.event.transporterIdHash)}
+                                  className="text-emerald-300 hover:text-white p-0.5 shrink-0"
+                                  title="Copy Transporter Hash"
+                                >
+                                  📋
+                                </button>
+                              </div>
+                              <div className="text-[11px] font-sans text-emerald-200/90 font-medium flex items-center gap-1">
+                                <Truck className="w-3 h-3 text-emerald-400" />
+                                {t('blockchain.transporterFreightSplitTitle', { defaultValue: 'Logistics & Freight Payout' })}
+                              </div>
+                            </div>
+
+                            <div className="flex items-center gap-3 shrink-0 self-end sm:self-center">
+                              <span className="text-emerald-400 font-display font-extrabold text-sm">
+                                ₹{verifyResult.event.transportAmountRupees || (Number(verifyResult.event.transportAmountPaise || 0) / 100).toFixed(2)}
+                              </span>
+                              <button
+                                onClick={() => handleLookupAccount(verifyResult.event.transporterIdHash)}
+                                className="px-3 py-1.5 text-xs bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-sans font-bold shadow-md transition-all flex items-center gap-1"
+                              >
+                                <Truck className="w-3.5 h-3.5" />
+                                {t('blockchain.lookupTransporterBtn', { defaultValue: 'Lookup Transporter' })}
+                              </button>
+                            </div>
+                          </div>
                         )}
                       </div>
 
@@ -442,6 +515,7 @@ export default function AdminBlockchainAudit() {
                     <th className="py-3 px-3">{t('blockchain.itemsPurchased')}</th>
                     <th className="py-3 px-3">{t('blockchain.buyerHashIdentity', { defaultValue: 'Buyer Hash & Identity' })}</th>
                     <th className="py-3 px-3">{t('blockchain.sellerSplitHashes')}</th>
+                    <th className="py-3 px-3">{t('blockchain.transporterHashHeader', { defaultValue: 'TRANSPORTER HASH' })}</th>
                     <th className="py-3 px-3">{t('blockchain.amountRupees', { defaultValue: 'Amount (₹)' })}</th>
                     <th className="py-3 px-3">{t('blockchain.onchainStatus')}</th>
                     <th className="py-3 px-3">{t('blockchain.recordedAt')}</th>
@@ -494,6 +568,21 @@ export default function AdminBlockchainAudit() {
                             </button>
                           ))}
                         </div>
+                      </td>
+
+                      <td className="py-3.5 px-3 font-mono">
+                        {evt.transporterIdHash && evt.transporterIdHash !== '0x0000000000000000000000000000000000000000000000000000000000000000' ? (
+                          <button
+                            onClick={() => handleLookupAccount(evt.transporterIdHash)}
+                            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-900 font-bold border border-emerald-200 transition-colors text-xs"
+                            title="Click to lookup Transporter identity"
+                          >
+                            <Truck className="w-3.5 h-3.5 text-emerald-600" />
+                            <span>{`${evt.transporterIdHash.slice(0, 8)}...`}</span>
+                          </button>
+                        ) : (
+                          <span className="text-gray-400 text-xs italic">{t('blockchain.notAvailable', { defaultValue: 'N/A' })}</span>
+                        )}
                       </td>
 
                       <td className="py-3.5 px-3 font-bold text-gray-900 font-display text-sm">
@@ -659,6 +748,29 @@ export default function AdminBlockchainAudit() {
                         <span className="font-bold text-emerald-700">{accountModal.data.farmer.verificationStatus}</span>
                       </div>
                     </>
+                  ) : accountModal.data.transporter ? (
+                    <>
+                      <div className="flex justify-between border-b pb-2">
+                        <span className="text-gray-500 flex items-center gap-1.5"><User className="w-4 h-4 text-gray-400" />{t('blockchain.fullName')}</span>
+                        <span className="font-bold text-gray-900">{accountModal.data.transporter.companyName || accountModal.data.user?.fullName}</span>
+                      </div>
+                      <div className="flex justify-between border-b pb-2">
+                        <span className="text-gray-500 flex items-center gap-1.5"><Truck className="w-4 h-4 text-gray-400" />{t('blockchain.vehicleType', { defaultValue: 'Vehicle Details' })}</span>
+                        <span className="font-bold text-gray-900">{accountModal.data.transporter.vehicleType || 'Logistics Partner'} ({accountModal.data.transporter.vehicleNumber || 'Registered'})</span>
+                      </div>
+                      <div className="flex justify-between border-b pb-2">
+                        <span className="text-gray-500 flex items-center gap-1.5"><Mail className="w-4 h-4 text-gray-400" />{t('blockchain.email')}</span>
+                        <span className="font-mono text-gray-900">{accountModal.data.user?.email || 'N/A'}</span>
+                      </div>
+                      <div className="flex justify-between border-b pb-2">
+                        <span className="text-gray-500 flex items-center gap-1.5"><Phone className="w-4 h-4 text-gray-400" />{t('blockchain.mobile')}</span>
+                        <span className="font-mono text-gray-900">{accountModal.data.transporter.phone || accountModal.data.user?.mobileNumber || 'N/A'}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-500">{t('blockchain.operatingState', { defaultValue: 'Operating Region' })}</span>
+                        <span className="font-bold text-emerald-700">{accountModal.data.transporter.operatingState || 'Active Transporter'}</span>
+                      </div>
+                    </>
                   ) : (
                     <>
                       <div className="flex justify-between border-b pb-2">
@@ -694,7 +806,7 @@ export default function AdminBlockchainAudit() {
             <div className="pt-2 flex justify-end">
               <button
                 onClick={() => setAccountModal({ open: false, loading: false, data: null })}
-                className="px-5 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold text-sm rounded-xl transition-colors"
+                className="blockchain-modal-close px-5 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold text-sm rounded-xl transition-colors"
               >
                 Close
               </button>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { MapPin, CreditCard, CheckCircle, Truck } from 'lucide-react';
 import PageContainer from '../../components/ui/PageContainer';
 import Button from '../../components/ui/Button';
@@ -27,15 +27,139 @@ export default function Checkout() {
   const [transportRequestId, setTransportRequestId] = useState(null);
   const [showTransportModal, setShowTransportModal] = useState(false);
   const [creatingTransportReq, setCreatingTransportReq] = useState(false);
+  const [createdOrderGroupId, setCreatedOrderGroupId] = useState(null);
 
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const paramOrderGroupId = location.state?.orderGroupId || searchParams.get('orderGroupId');
+
+    if (paramOrderGroupId) {
+      setLoading(true);
+      orderService.getOrder(paramOrderGroupId).then(res => {
+        if (res.success && res.order && res.order.items?.length) {
+          const ord = res.order;
+          setCart({
+            items: ord.items || [],
+            totalAmount: ord.totalProductAmount || 0,
+          });
+          setAddress({
+            deliveryAddress: ord.deliveryAddress || user?.address || '',
+            deliveryCity: ord.deliveryCity || user?.city || '',
+            deliveryState: ord.deliveryState || user?.state || '',
+            deliveryPincode: ord.deliveryPincode || user?.pincode || '',
+          });
+          setCreatedOrderGroupId(ord.orderGroupId || paramOrderGroupId);
+
+          if (ord.transportRequestId) {
+            const trId = typeof ord.transportRequestId === 'object' ? ord.transportRequestId._id : ord.transportRequestId;
+            setTransportRequestId(trId);
+            if (ord.selectedQuote) {
+              setSelectedQuote(ord.selectedQuote);
+            } else if (typeof ord.transportRequestId === 'object' && ord.transportRequestId.selectedQuotationId) {
+              setSelectedQuote(ord.transportRequestId.selectedQuotationId);
+            }
+          }
+        } else {
+          // Fallback check in buyer orders list if getOrder didn't return items
+          orderService.getBuyerOrders().then(bRes => {
+            const match = bRes.orders?.find(o => String(o.orderGroupId) === String(paramOrderGroupId) || String(o._id) === String(paramOrderGroupId));
+            if (match && match.items?.length) {
+              setCart({
+                items: match.items,
+                totalAmount: match.totalProductAmount || 0,
+              });
+              setAddress({
+                deliveryAddress: match.deliveryAddress || user?.address || '',
+                deliveryCity: match.deliveryCity || user?.city || '',
+                deliveryState: match.deliveryState || user?.state || '',
+                deliveryPincode: match.deliveryPincode || user?.pincode || '',
+              });
+              setCreatedOrderGroupId(match.orderGroupId || match._id);
+              if (match.transportRequestId) {
+                const trId = typeof match.transportRequestId === 'object' ? match.transportRequestId._id : match.transportRequestId;
+                setTransportRequestId(trId);
+                if (typeof match.transportRequestId === 'object' && match.transportRequestId.selectedQuotationId) {
+                  setSelectedQuote(match.transportRequestId.selectedQuotationId);
+                }
+              }
+            } else {
+              setCart({ items: [], totalAmount: 0 });
+            }
+          }).catch(() => setCart({ items: [], totalAmount: 0 }));
+        }
+      }).catch(() => {
+        orderService.getBuyerOrders().then(bRes => {
+          const match = bRes.orders?.find(o => String(o.orderGroupId) === String(paramOrderGroupId) || String(o._id) === String(paramOrderGroupId));
+          if (match && match.items?.length) {
+            setCart({
+              items: match.items,
+              totalAmount: match.totalProductAmount || 0,
+            });
+            setAddress({
+              deliveryAddress: match.deliveryAddress || user?.address || '',
+              deliveryCity: match.deliveryCity || user?.city || '',
+              deliveryState: match.deliveryState || user?.state || '',
+              deliveryPincode: match.deliveryPincode || user?.pincode || '',
+            });
+            setCreatedOrderGroupId(match.orderGroupId || match._id);
+          } else {
+            setCart({ items: [], totalAmount: 0 });
+          }
+        }).catch(() => setCart({ items: [], totalAmount: 0 }));
+      }).finally(() => {
+        setLoading(false);
+      });
+    } else {
+      loadCartFromService();
+    }
+  }, [location]);
+
+  const loadCartFromService = () => {
     cartService.getCart().then(r => {
-      setCart(r.cart);
-      if (!r.cart?.items?.length) navigate('/buyer/cart');
+      const currentCart = r.cart;
+      setCart(currentCart);
+      if (!currentCart?.items?.length) {
+        navigate('/buyer/cart');
+        return;
+      }
+
+      const areItemsMatchingCart = (snapshot, cartItems) => {
+        if (!snapshot || !cartItems || snapshot.length !== cartItems.length) return false;
+        return snapshot.every((s, idx) => {
+          const c = cartItems[idx];
+          return String(s.productId || s.productName) === String(c.productId || c.productName) && Number(s.quantity) === Number(c.quantity);
+        });
+      };
+
+      // Automatically restore active transport request for buyer ONLY if items match current cart
+      transportService.getRequests().then(res => {
+        if (res.requests?.length && currentCart.items.length) {
+          const activeReq = res.requests.find(req =>
+            ['OPEN', 'QUOTES_RECEIVED', 'QUOTATION_SELECTED'].includes(req.status) &&
+            !req.orderId &&
+            areItemsMatchingCart(req.itemsSnapshot, currentCart.items)
+          );
+          if (activeReq) {
+            setTransportRequestId(activeReq._id);
+            if (activeReq.selectedQuotationId) {
+              if (typeof activeReq.selectedQuotationId === 'object' && activeReq.selectedQuotationId.totalQuote) {
+                setSelectedQuote(activeReq.selectedQuotationId);
+              } else {
+                transportService.getRequestById(activeReq._id).then(detail => {
+                  if (detail.request?.selectedQuotationId) {
+                    setSelectedQuote(detail.request.selectedQuotationId);
+                  }
+                }).catch(() => {});
+              }
+            }
+          }
+        }
+      }).catch(() => {});
     });
-  }, []);
+  };
 
   const loadRazorpay = () => new Promise((resolve, reject) => {
     if (window.Razorpay) return resolve();
@@ -176,16 +300,53 @@ export default function Checkout() {
     }
     try {
       setCreatingTransportReq(true);
+      const firstItem = cart?.items?.[0];
+      const pickupLoc = firstItem?.farmerCity || firstItem?.farmerAddress || 'Farm Location';
+      const deliveryLoc = [address.deliveryAddress, address.deliveryCity, address.deliveryState, address.deliveryPincode].filter(Boolean).join(', ') || 'Buyer Address';
+      const crops = cart?.items?.map(i => i.productName).join(', ') || 'Agricultural Produce';
+      const totalQty = cart?.items?.reduce((acc, i) => acc + (Number(i.quantity) || 1), 0) || 1;
+      
+      const itemsList = cart?.items?.map(i => ({
+        productId: i.productId,
+        productName: i.productName,
+        quantity: i.quantity,
+        unit: i.unit || 'KG',
+        weightKg: Number(i.quantity) || 10
+      })) || [];
+
       const res = await transportService.createRequest({
-        pickupAddress: cart?.items?.[0]?.farmerCity || 'Farm Gate Pickup',
-        deliveryAddress: address.deliveryAddress || 'Buyer Address',
+        pickupLocation: pickupLoc,
+        deliveryLocation: deliveryLoc,
         deliveryCity: address.deliveryCity || '',
         deliveryState: address.deliveryState || '',
         deliveryPincode: address.deliveryPincode || '',
-        itemDescription: cart?.items?.map(i => `${i.productName} (${i.quantity} ${i.unit})`).join(', ') || 'Agricultural Produce',
-        estimatedWeightKg: 100,
+        cropName: crops,
+        quantity: totalQty,
+        unit: firstItem?.unit || 'KG',
+        estimatedWeightKg: totalQty * 10,
+        items: itemsList,
+        specialRequirements: 'Standard Produce Transport',
       });
       setTransportRequestId(res.request._id);
+
+      // Save order record immediately in MongoDB so it is accessible on My Orders page
+      if (cart?.items?.length) {
+        const items = cart.items.map(i => ({ productId: i.productId, quantity: i.quantity }));
+        const deliveryAddressVal = address.deliveryAddress || user?.address || 'Buyer Delivery Location';
+        const createdRes = await orderService.createOrder({
+          items,
+          deliveryAddress: deliveryAddressVal,
+          deliveryCity: address.deliveryCity || '',
+          deliveryState: address.deliveryState || '',
+          deliveryPincode: address.deliveryPincode || '',
+          transportRequestId: res.request._id,
+          orderStatus: 'CREATED',
+        });
+        if (createdRes.orderGroupId) {
+          setCreatedOrderGroupId(createdRes.orderGroupId);
+        }
+      }
+      toast.success(t('transport.requestCreated', { defaultValue: 'Transport request sent! Transporters will submit quotations.' }));
       setShowTransportModal(true);
     } catch (err) {
       toast.error(err.response?.data?.message || t('transport.failedToCreateRequest', { defaultValue: 'Could not initialize transport request.' }));
@@ -196,18 +357,29 @@ export default function Checkout() {
 
   const handleOrder = async () => {
     if (!address.deliveryAddress) { toast.error(t('checkout.enterAddress')); return; }
+
+    if (transportRequestId && !selectedQuote) {
+      toast.error(t('transport.selectQuoteBeforePayment', { defaultValue: 'Please select a transporter quotation to finalize transport before completing payment.' }));
+      setShowTransportModal(true);
+      return;
+    }
+
     setLoading(true);
     try {
-      const items = cart.items.map(i => ({ productId: i.productId, quantity: i.quantity }));
+      let targetId = createdOrderGroupId;
       setPaymentError('');
-      const created = await orderService.createOrder({
-        items,
-        ...address,
-        quotationId: selectedQuote?._id || null,
-        transportRequestId: transportRequestId || null,
-      });
+      if (!targetId) {
+        const items = cart.items.map(i => ({ productId: i.productId, quantity: i.quantity }));
+        const created = await orderService.createOrder({
+          items,
+          ...address,
+          quotationId: selectedQuote?._id || null,
+          transportRequestId: transportRequestId || null,
+        });
+        targetId = created.orderGroupId || created.orders?.[0]?._id;
+        setCreatedOrderGroupId(targetId);
+      }
       await loadRazorpay();
-      const targetId = created.orderGroupId || created.orders?.[0]?._id;
       const checkout = await paymentService.createPaymentOrder(targetId);
       await openCheckout(checkout);
       toast.success(t('checkout.paymentVerified'));
@@ -223,7 +395,30 @@ export default function Checkout() {
     } finally { setLoading(false); }
   };
 
-  if (!cart) return null;
+  if (!cart) {
+    return (
+      <div className="min-h-[calc(100vh-var(--app-header-height))] bg-[#fafcf8] py-16 text-center">
+        <PageContainer className="max-w-md">
+          <p className="text-sm font-bold text-gray-500">{t('common.loading', { defaultValue: 'Loading checkout details...' })}</p>
+        </PageContainer>
+      </div>
+    );
+  }
+
+  if (!cart.items || cart.items.length === 0) {
+    return (
+      <div className="min-h-[calc(100vh-var(--app-header-height))] bg-[#fafcf8] py-16 text-center">
+        <PageContainer className="max-w-md space-y-4 bg-white p-8 rounded-3xl border border-[#e8eddb] shadow-sm">
+          <Truck className="w-12 h-12 text-gray-300 mx-auto" />
+          <h2 className="text-xl font-extrabold text-[#001e2b] font-display">{t('checkout.noOrderDetails', { defaultValue: 'No active order details found' })}</h2>
+          <p className="text-xs text-gray-500 font-sans">{t('checkout.returnToOrdersDesc', { defaultValue: 'Please return to your orders page to view or continue checkout.' })}</p>
+          <Button variant="primary" size="md" onClick={() => navigate('/buyer/orders')}>
+            {t('checkout.returnToOrders', { defaultValue: 'Return to My Orders' })}
+          </Button>
+        </PageContainer>
+      </div>
+    );
+  }
 
   const transportCharge = selectedQuote ? Number(selectedQuote.totalQuote || 0) : 0;
   const grandTotal = cart.totalAmount + transportCharge;
@@ -356,15 +551,20 @@ export default function Checkout() {
                   </div>
                   {selectedQuote ? (
                     <span className="font-bold text-[#00684a] font-display">₹{selectedQuote.totalQuote}</span>
+                  ) : transportRequestId ? (
+                    <span className="text-amber-600 text-xs font-semibold">{t('transport.requestPending', { defaultValue: 'Request Broadcasted (Awaiting Quotes)' })}</span>
                   ) : (
-                    <span className="text-gray-400 text-xs italic">{t('transport.notSelected', { defaultValue: 'Not selected (₹0)' })}</span>
+                    <span className="text-gray-400 text-xs italic">{t('transport.notSelected', { defaultValue: 'Not requested (₹0)' })}</span>
                   )}
                 </div>
 
                 {selectedQuote && (
-                  <div className="text-xs text-[#00684a] bg-emerald-50 px-3 py-1.5 rounded-lg flex justify-between items-center">
-                    <span className="font-medium">{selectedQuote.transporterCompany || selectedQuote.transporterName}</span>
-                    <button type="button" onClick={() => setSelectedQuote(null)} className="text-red-500 font-bold hover:underline ml-2">
+                  <div className="text-xs text-[#00684a] bg-emerald-50 border border-emerald-200 p-3 rounded-xl flex justify-between items-center">
+                    <div>
+                      <p className="font-bold text-[#001e2b]">{selectedQuote.transporterCompany || selectedQuote.transporterName}</p>
+                      <p className="text-[11px] text-gray-500">{selectedQuote.vehicleType} ({selectedQuote.vehicleNumber})</p>
+                    </div>
+                    <button type="button" onClick={() => setSelectedQuote(null)} className="text-red-500 font-bold hover:underline ml-2 text-xs">
                       {t('common.remove', { defaultValue: 'Remove' })}
                     </button>
                   </div>
@@ -372,18 +572,34 @@ export default function Checkout() {
 
                 <div className="pt-1">
                   <Button
-                    variant="outline"
+                    variant={selectedQuote ? "outline" : "primary"}
                     size="sm"
                     fullWidth
                     loading={creatingTransportReq}
                     onClick={handleOpenTransport}
-                    className="text-xs font-display"
+                    className="text-xs font-display flex items-center justify-center gap-2 py-2.5"
                   >
-                    <Truck className="w-3.5 h-3.5 mr-1.5" />
+                    <Truck className="w-4 h-4" />
                     {selectedQuote
                       ? t('transport.changeTransporter', { defaultValue: 'Change Transporter / Quote' })
-                      : t('transport.selectTransporter', { defaultValue: 'Select Transporter & Get Quotes' })}
+                      : transportRequestId
+                      ? t('transport.viewQuotations', { defaultValue: 'View & Select Transporter Quotations' })
+                      : t('transport.requestTransportBtn', { defaultValue: 'Request Transport & Get Quotes' })}
                   </Button>
+                  {transportRequestId && !selectedQuote && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setTransportRequestId(null);
+                        setSelectedQuote(null);
+                        setCreatedOrderGroupId(null);
+                        toast.success(t('transport.proceededWithoutTransport', { defaultValue: 'Transport request removed. You can pay for produce total now.' }));
+                      }}
+                      className="text-[11px] font-bold text-gray-500 hover:text-[#00684a] hover:underline block text-center w-full mt-2"
+                    >
+                      {t('transport.proceedWithoutTransport', { defaultValue: 'Proceed Without Transport (Self Pickup / Direct)' })}
+                    </button>
+                  )}
                 </div>
 
                 <div className="flex justify-between text-xl font-black text-[#001e2b] border-t border-[#f0f4e8] pt-3 mt-3 font-display">

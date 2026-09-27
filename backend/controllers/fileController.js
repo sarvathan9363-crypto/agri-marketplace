@@ -2,6 +2,7 @@ const multer = require('multer');
 const UploadedFile = require('../models/UploadedFile');
 const Farmer = require('../models/Farmer');
 const Buyer = require('../models/Buyer');
+const Transporter = require('../models/Transporter');
 const Product = require('../models/Product');
 const User = require('../models/User');
 const {
@@ -44,6 +45,15 @@ const ALLOWED_DOCUMENT_TYPES = [
   'ADDRESS_PROOF',
   'BUSINESS_CERT',
   'REPRESENTATIVE_AUTH',
+  // Transporter documents
+  'CANCELLED_CHEQUE',
+  'VEHICLE_RC',
+  'VEHICLE_INSURANCE',
+  'VEHICLE_FITNESS',
+  'VEHICLE_PUC',
+  'VEHICLE_PERMIT',
+  'DRIVER_LICENSE',
+  'DRIVER_ID',
   // Common / Product / Profile
   'AVATAR_IMAGE',
   'PRODUCT_IMAGE',
@@ -121,6 +131,32 @@ const updateLinkedEntity = async (user, uploadedFile) => {
         if (subCategory === 'UDYAM') buyer.verification.documents.udyamCert = true;
         if (subCategory === 'FSSAI') buyer.verification.documents.fssaiCert = true;
         await buyer.save();
+      }
+    }
+
+    // 5. Verification Document Flags for Transporters
+    if (category === 'VERIFICATION' && user.role === 'TRANSPORTER') {
+      const transporter = await Transporter.findOne({ userId: user._id });
+      if (transporter) {
+        if (!transporter.verification) transporter.verification = {};
+        const url = secureUrl;
+        if (subCategory === 'PAN') {
+          transporter.verification.identity = transporter.verification.identity || {};
+          transporter.verification.identity.panDocUrl = url;
+        }
+        if (subCategory === 'GST' || subCategory === 'REGISTRATION') {
+          transporter.verification.businessRegistration = transporter.verification.businessRegistration || {};
+          if (subCategory === 'GST') transporter.verification.businessRegistration.gstDocUrl = url;
+          if (subCategory === 'REGISTRATION') transporter.verification.businessRegistration.regCertDocUrl = url;
+        }
+        if (subCategory === 'BANK') {
+          transporter.verification.bankAccount = transporter.verification.bankAccount || {};
+          transporter.verification.bankAccount.cancelledChequeDocUrl = url;
+        }
+        if (['incomplete', 'NOT_STARTED', 'pending'].includes(transporter.verification.overallStatus || 'incomplete')) {
+          transporter.verification.overallStatus = 'SUBMITTED';
+        }
+        await transporter.save();
       }
     }
   } catch (err) {

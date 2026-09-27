@@ -9,6 +9,7 @@ import kn from './locales/kn/translation.json';
 import ml from './locales/ml/translation.json';
 import productDetails from './productDetails';
 import uploadLocales from './uploadLocales';
+import transporterVerificationLocales from './transporterVerificationLocales';
 
 export const LANGUAGE_STORAGE_KEY = 'agri_language';
 export const SUPPORTED_LANGUAGES = ['en-IN', 'ta-IN', 'hi-IN', 'te-IN', 'kn-IN', 'ml-IN'];
@@ -20,8 +21,12 @@ if (!localStorage.getItem(LANGUAGE_STORAGE_KEY) && legacyLanguage) {
 
 i18n.use(LanguageDetector).use(initReactI18next).init({
   resources: {
-    'en-IN': { translation: en }, 'ta-IN': { translation: ta }, 'hi-IN': { translation: hi },
-    'te-IN': { translation: te }, 'kn-IN': { translation: kn }, 'ml-IN': { translation: ml },
+    'en-IN': { translation: en }, 'en': { translation: en },
+    'ta-IN': { translation: ta }, 'ta': { translation: ta },
+    'hi-IN': { translation: hi }, 'hi': { translation: hi },
+    'te-IN': { translation: te }, 'te': { translation: te },
+    'kn-IN': { translation: kn }, 'kn': { translation: kn },
+    'ml-IN': { translation: ml }, 'ml': { translation: ml },
   },
   fallbackLng: 'en-IN',
   supportedLngs: SUPPORTED_LANGUAGES,
@@ -36,6 +41,7 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
 
 Object.entries(productDetails).forEach(([language, resources]) => i18n.addResourceBundle(language, 'translation', resources, true, true));
 Object.entries(uploadLocales).forEach(([language, resources]) => i18n.addResourceBundle(language, 'translation', resources, true, true));
+Object.entries(transporterVerificationLocales).forEach(([language, resources]) => i18n.addResourceBundle(language, 'translation', resources, true, true));
 
 const applyLanguageAttributes = (language) => {
   document.documentElement.lang = language;

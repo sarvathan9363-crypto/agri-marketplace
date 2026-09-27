@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import {
@@ -23,7 +24,7 @@ import {
 } from 'lucide-react';
 import farmerService from '../../services/farmerService';
 import { useAuth } from '../../context/AuthContext';
-import { verificationConfigs } from '../../config/verificationConfigs';
+import { getVerificationConfigs } from '../../config/verificationConfigs';
 import SecureFileUpload from '../../components/common/SecureFileUpload';
 
 const INDIAN_STATES = [
@@ -50,6 +51,7 @@ const MAJOR_BANKS = [
 ];
 
 export default function VerificationWizard({ accountType: propAccountType }) {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const { profile } = useAuth();
 
@@ -59,7 +61,8 @@ export default function VerificationWizard({ accountType: propAccountType }) {
     (profile?.farmerType === 'FPO' ? 'fpo' : 'farmer')
   ).toLowerCase();
 
-  const config = verificationConfigs[resolvedAccountType] || verificationConfigs.farmer;
+  const configs = getVerificationConfigs(t);
+  const config = configs[resolvedAccountType] || configs.farmer;
 
   const [currentStep, setCurrentStep] = useState(1);
   const [loading, setLoading] = useState(true);
@@ -491,10 +494,10 @@ export default function VerificationWizard({ accountType: propAccountType }) {
               <h1 className="text-base md:text-lg font-bold tracking-tight uppercase">
                 {resolvedAccountType === 'fpo'
                   ? 'National FPO / FPC Verification Service'
-                  : 'National Agricultural Farmer Verification Service'}
+                  : t('farmerVerificationWizard.goiPortalBannerTitle', { defaultValue: 'National Agricultural Farmer Verification Service' })}
               </h1>
               <p className="text-xs text-emerald-200">
-                Ministry of Agriculture & Farmers Welfare • AgriBazaar Portal
+                {t('farmerVerificationWizard.goiPortalMinistryTag', { defaultValue: 'Ministry of Agriculture & Farmers Welfare • AgriBazaar Portal' })}
               </p>
             </div>
           </div>
@@ -522,7 +525,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
               {config.portalTitle}
             </h2>
             <p className="text-xs md:text-sm text-slate-600 mt-0.5">
-              {config.pageTitle} — Complete required verification steps to become a verified seller.
+              {config.pageTitle} — {t('farmerVerificationWizard.completeSellerStepsNotice', { defaultValue: 'Complete required verification steps to become a verified seller.' })}
             </p>
           </div>
 
@@ -541,7 +544,7 @@ export default function VerificationWizard({ accountType: propAccountType }) {
           <div className="lg:col-span-4 bg-white border border-slate-300 rounded-md p-5 shadow-sm h-fit">
             <div className="border-b border-slate-200 pb-3 mb-4 flex items-center justify-between">
               <h3 className="text-sm font-bold uppercase tracking-wide text-slate-800">
-                Verification Steps
+                {t('farmerVerificationWizard.verificationSteps', { defaultValue: 'Verification Steps' })}
               </h3>
               <span className="text-xs font-semibold text-slate-600">
                 Step {currentStep} of {totalStepsCount}

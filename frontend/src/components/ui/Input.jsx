@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 export const FormGroup = ({ label, error, required, children, className = '' }) => (
   <div className={`space-y-2 ${className}`}>
     {label && (
-      <label className="block text-xs font-bold uppercase tracking-wider text-[#082B36] font-display">
+      <label className="block text-xs font-bold uppercase tracking-wider text-[var(--text-primary)] font-display">
         {label} {required && <span className="text-red-500">*</span>}
       </label>
     )}
@@ -31,10 +31,10 @@ export const Input = forwardRef(({
         type={type}
         required={required}
         className={`
-          w-full block bg-white border border-[#E2E8E5] rounded-xl text-sm text-[#082B36] placeholder-gray-400
+          w-full block bg-[var(--surface)] border border-[var(--border)] rounded-[var(--radius-sm)] text-sm text-[var(--text-primary)] placeholder-[var(--text-secondary)]
           h-11 px-4 ${Icon ? 'pl-11' : ''}
-          focus:outline-none focus:border-[#00E676] focus:ring-4 focus:ring-[#00E676]/15 transition-all
-          disabled:bg-gray-50 disabled:opacity-60
+          focus:outline-none focus:border-[var(--primary)] focus:ring-4 focus:ring-[var(--focus-ring)] transition-all
+          disabled:bg-[var(--surface-elevated)] disabled:opacity-60
           ${error ? 'border-red-500 focus:border-red-500 focus:ring-red-500/10' : ''}
           ${className}
         `}
@@ -66,9 +66,9 @@ export const Select = forwardRef(({
       ref={ref}
       required={required}
       className={`
-        w-full block bg-white border border-[#E2E8E5] rounded-xl text-sm text-[#082B36] font-medium
-        h-11 px-4 focus:outline-none focus:border-[#00E676] focus:ring-4 focus:ring-[#00E676]/15 transition-all
-        disabled:bg-gray-50 disabled:opacity-60
+        w-full block bg-[var(--surface)] border border-[var(--border)] rounded-[var(--radius-sm)] text-sm text-[var(--text-primary)] font-medium
+        h-11 px-4 focus:outline-none focus:border-[var(--primary)] focus:ring-4 focus:ring-[var(--focus-ring)] transition-all
+        disabled:bg-[var(--surface-elevated)] disabled:opacity-60
         ${error ? 'border-red-500 focus:border-red-500 focus:ring-red-500/10' : ''}
         ${className}
       `}
@@ -107,9 +107,9 @@ export const TextArea = forwardRef(({
       rows={rows}
       required={required}
       className={`
-        w-full block bg-white border border-[#E2E8E5] rounded-xl text-sm text-[#082B36] placeholder-gray-400
-        p-4 focus:outline-none focus:border-[#00E676] focus:ring-4 focus:ring-[#00E676]/15 transition-all resize-none
-        disabled:bg-gray-50 disabled:opacity-60
+        w-full block bg-[var(--surface)] border border-[var(--border)] rounded-[var(--radius-sm)] text-sm text-[var(--text-primary)] placeholder-[var(--text-secondary)]
+        p-4 focus:outline-none focus:border-[var(--primary)] focus:ring-4 focus:ring-[var(--focus-ring)] transition-all resize-none
+        disabled:bg-[var(--surface-elevated)] disabled:opacity-60
         ${error ? 'border-red-500 focus:border-red-500 focus:ring-red-500/10' : ''}
         ${className}
       `}

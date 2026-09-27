@@ -26,11 +26,16 @@ export default function SecureFileUpload({
   label,
   description,
   existingFile = null,
-  onUploadSuccess = () => {},
+  onUploadSuccess,
+  onSuccess,
   onUploadError = () => {},
   onFileRemove = () => {},
 }) {
   const { t, i18n } = useTranslation();
+  const handleSuccess = (fileAsset) => {
+    if (typeof onSuccess === 'function') onSuccess(fileAsset);
+    if (typeof onUploadSuccess === 'function') onUploadSuccess(fileAsset);
+  };
   const isImageOnly =
     documentType === 'PRODUCT_IMAGE' ||
     documentType === 'AVATAR_IMAGE' ||
@@ -56,7 +61,7 @@ export default function SecureFileUpload({
   const [fileAsset, setFileAsset] = useState(null);
   const [errorMessage, setErrorMessage] = useState('');
 
-  // Synchronize initial existingFile prop
+  // Synchronize initial and updated existingFile prop
   useEffect(() => {
     if (existingFile) {
       if (typeof existingFile === 'string') {
@@ -68,8 +73,10 @@ export default function SecureFileUpload({
       } else {
         setFileAsset(existingFile);
       }
+    } else {
+      setFileAsset(null);
     }
-  }, [existingFile]);
+  }, [existingFile, t]);
 
   // Handle Drag events
   const handleDrag = (e) => {
@@ -148,7 +155,7 @@ export default function SecureFileUpload({
         setUploadProgress(100);
         setFileAsset(response.file);
         toast.success(t('messages.fileUploaded'));
-        onUploadSuccess(response.file);
+        handleSuccess(response.file);
       } else {
         throw new Error(response.message || 'Upload failed');
       }

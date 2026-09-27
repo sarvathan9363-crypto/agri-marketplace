@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs');
 const User = require('../models/User');
 const Farmer = require('../models/Farmer');
 const Buyer = require('../models/Buyer');
+const Transporter = require('../models/Transporter');
 const Product = require('../models/Product');
 const Notification = require('../models/Notification');
 
@@ -127,6 +128,30 @@ const seedData = async () => {
       pincode: '400001',
     });
     console.log('✓ Bulk Buyer created: bulk@agribazaar.com / bulk1234');
+
+    // --- Create Demo Transporter ---
+    await Transporter.deleteMany({});
+    const transporterUser = await User.create({
+      fullName: 'Vanguard Express Logistics',
+      email: 'transporter@agribazaar.com',
+      mobileNumber: '9000000006',
+      password: 'transporter123',
+      role: 'TRANSPORTER',
+    });
+
+    await Transporter.create({
+      userId: transporterUser._id,
+      companyName: 'Vanguard Express Logistics',
+      transporterIdCode: `AGR-T-${transporterUser._id.toString().slice(-5).toUpperCase()}`,
+      contactPerson: 'Vanguard Express Logistics',
+      email: 'transporter@agribazaar.com',
+      mobileNumber: '9000000006',
+      vehicleType: 'Refrigerated LCV (3.5T)',
+      vehicleNumber: 'MH-12-AG-4589',
+      verificationStatus: 'VERIFIED',
+      verifiedAt: new Date(),
+    });
+    console.log('✓ Transporter created: transporter@agribazaar.com / transporter123');
 
     // --- Create Demo Products ---
     const products = [

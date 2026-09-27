@@ -48,7 +48,8 @@
     "resolve": "Resolve",
     "allOrders": "All Orders",
     "editProfile": "Edit Profile",
-    "copyHash": "📋 Copy Hash"
+    "copyHash": "📋 Copy Hash",
+    "saveChanges": "Save Changes"
   },
   "navigation": {
     "home": "Home",
@@ -69,38 +70,47 @@
     "sales": "Sales",
     "verification": "Verification",
     "language": "Language",
-    "searchMarketplace": "Search marketplace"
+    "searchMarketplace": "Search marketplace",
+    "account": "Account",
+    "wishlist": "Wishlist"
   },
   "header": {
     "new": "New",
     "tagline": "Direct Farm-to-Buyer Marketplace — 0% Commission Platform",
     "markAllRead": "Mark all read",
-    "noNotifications": "No notifications"
+    "noNotifications": "No notifications",
+    "freeShipping": "Free Shipping on Orders Above ₹999",
+    "easyReturns": "Easy Returns",
+    "securePayments": "Secure Payments",
+    "premiumQuality": "Premium Quality",
+    "customerSupport": "Customer Support",
+    "allCategories": "All Categories",
+    "searchPlaceholder": "Search for fresh produce, grains, and more..."
   },
   "footer": {
     "marketplace": "Marketplace",
-    "browseCrops": "Browse All Crops",
+    "browseCrops": "Browse Crops",
     "freshFruits": "Fresh Fruits",
     "organicVegetables": "Organic Vegetables",
     "grainsRice": "Grains & Rice",
     "pureSpices": "Pure Spices",
-    "portals": "Portals",
-    "farmerPortal": "Farmer / FPO Portal",
+    "portals": "Platform Portals",
+    "farmerPortal": "Farmer Portal",
     "buyerPortal": "Buyer Portal",
     "platformSignIn": "Platform Sign In",
-    "support": "Support",
+    "support": "Support & Compliance",
     "verificationProcess": "Verification Process",
-    "terms": "Terms of Trade",
-    "contact": "Contact Administration",
+    "terms": "Terms & Conditions",
+    "contact": "Contact Platform",
     "engine": "Direct Farm Commerce Engine",
-    "brandDescription": "Connecting farmers to better markets. Buy fresh agricultural produce directly from trusted farmers and FPOs with full transparency.",
+    "brandDescription": "Empowering Indian farmers through direct decentralized agricultural commerce.",
     "location": "Nashik & Mumbai, India",
     "allRightsReserved": "All rights reserved."
   },
   "auth": {
     "login": "Login",
     "register": "Register",
-    "email": "Email address",
+    "email": "Email",
     "password": "Password",
     "fullName": "Full name",
     "forgotPassword": "Forgot password?",
@@ -135,7 +145,10 @@
     "placeholderAddress": "Street, Village, Pincode",
     "registerAsTransporterBtn": "Register as Transporter →",
     "registerAsTransporter": "Register as Transporter",
-    "transporterRegistration": "Transporter Registration"
+    "transporterRegistration": "Transporter Registration",
+    "rememberMe": "Remember me",
+    "dontHaveAccount": "Don't have an account?",
+    "alreadyHaveAccount": "Already have an account?"
   },
   "marketplace": {
     "title": "Marketplace",
@@ -236,18 +249,28 @@
     "fileRemoved": "Document removed."
   },
   "landing": {
-    "heroEyebrow": "Fresher. Fairer. Together.",
+    "heroEyebrow": "FRESHER. FAIRER. TOGETHER.",
     "heroTitle": "Connecting farmers to",
     "heroHighlight": "better markets.",
     "heroDescription": "Empowering Indian agriculture with a direct digital marketplace. Buy and sell fresh produce with verified quality, zero commission markups, and transparent delivery tracking.",
     "exploreMarketplace": "Explore Marketplace",
     "joinFarmer": "Join as Farmer / FPO",
-    "heroImageAlt": "Indian farmer in a farm field",
-    "verifiedFresh": "Verified Fresh Produce",
+    "heroImageAlt": "Indian farmer in a farm field holding fresh produce",
+    "verifiedFresh": "VERIFIED FRESH PRODUCE",
     "directSourcing": "Direct Farm Sourcing",
-    "zeroCommission": "0% Commission Markups",
+    "zeroCommission": "0% Commission",
     "farmToMarket": "Farm to Market",
-    "fasterFairer": "Faster & Fairer"
+    "fasterFairer": "Faster & Fairer",
+    "zeroCommissionSub": "Markups",
+    "verifiedFarmersTitle": "Verified Farmers",
+    "verifiedFarmersDesc": "Buy directly from verified farmers and FPOs with complete transparency.",
+    "fastDeliveryTitle": "Fast & Reliable Delivery",
+    "fastDeliveryDesc": "Fresh produce delivered to your doorstep with real-time tracking.",
+    "securePaymentsTitle": "Safe & Secure Payments",
+    "securePaymentsDesc": "100% secure payments with direct settlement to farmers.",
+    "metricFarmers": "VERIFIED FARMERS",
+    "metricVolume": "TRADE VOLUME",
+    "metricSettlement": "DIRECT SETTLEMENT"
   },
   "cart": {
     "empty": "Your shopping cart is empty",
@@ -392,19 +415,19 @@
       "Successful orders",
       "Crop categories"
     ],
-    "workflow": "Simple workflow",
+    "workflow": "Platform Workflow",
     "workflowTitle": "How AgriBazaar Works",
-    "workflowDescription": "A direct connection between agricultural producers and buyers.",
-    "farmers": "For farmers and FPOs",
-    "buyers": "For individual and wholesale buyers",
+    "workflowDescription": "Streamlined direct commerce for farmers and commercial buyers across India.",
+    "farmers": "For Farmers & FPOs",
+    "buyers": "For Commercial Buyers",
     "glance": "Platform at a glance",
     "glanceDescription": "Empowering agricultural commerce with digital infrastructure",
-    "testimonials": "What our users say",
-    "testimonialsDescription": "Trusted by farmers, commercial buyers and FPOs across India",
+    "testimonials": "Trusted Across Agriculture",
+    "testimonialsDescription": "Hear from verified farmers, FPOs, and commercial buyers using AgriBazaar.",
     "finalTitle": "Ready to trade on AgriBazaar?",
     "finalDescription": "Join verified farmers, FPOs and buyers transforming direct agricultural commerce across India.",
     "createAccount": "Create free account",
-    "browse": "Browse marketplace",
+    "browse": "Browse All Crops",
     "heroLabels": [
       "Verified farmers",
       "Trade volume",
@@ -419,7 +442,19 @@
       "highPrice": "Price: high to low",
       "popular": "Most popular",
       "available": "{{count}} {{unit}} available"
-    }
+    },
+    "farmerStep1": "Register & Complete Identity Verification",
+    "farmerStep2": "List Produce with Transparent Pricing",
+    "farmerStep3": "Receive Direct Orders & Instant Payouts",
+    "buyerStep1": "Browse Verified Fresh Farm Produce",
+    "buyerStep2": "Place Direct Orders with 0% Markup",
+    "buyerStep3": "Track Doorstep Delivery & Quality",
+    "testimonial1": "AgriBazaar helped me get better prices for my produce and reach buyers directly. Truly a game changer for our regional farm community!",
+    "testimonial2": "Fresh quality produce straight from verified farms, transparent pricing and smooth delivery. Highly recommended for commercial sourcing!",
+    "testimonial3": "A reliable platform that supports farmers directly and brings real transparency to the entire agricultural marketplace.",
+    "roleFarmer": "Farmer, Maharashtra",
+    "roleBuyer": "Restaurant Owner, Mumbai",
+    "roleFpo": "FPO Member, Gujarat"
   },
   "farmerVerificationWizard": {
     "fpo": "fpo",
@@ -459,7 +494,7 @@
     "verificationSummary": "Verification Summary",
     "reviewYourOverallVerificationStatusAnd": "Review your overall verification status and finalized badge audit.",
     "verified": "Verified",
-    "pending": "PENDING",
+    "pending": "Pending",
     "officialIdentityComplianceGateway": "Official Identity & Compliance Gateway",
     "fpoFpc": "FPO / FPC",
     "saveExitToDashboard": "Save & Exit to Dashboard",
@@ -595,12 +630,19 @@
     "submitDocumentsProceed": "Submit Documents & Proceed",
     "backToReview": "Back to Review",
     "returnToDashboard": "Return to Dashboard",
-    "yourInformationIsSecurelyProcessedSensitive": "Your information is securely processed. Sensitive identity & financial information will be masked where applicable."
+    "yourInformationIsSecurelyProcessedSensitive": "Your information is securely processed. Sensitive identity & financial information will be masked where applicable.",
+    "goiPortalBannerTitle": "GOI National Agricultural Farmer Verification Service",
+    "goiPortalMinistryTag": "Ministry of Agriculture & Farmers Welfare • AgriBazaar Portal",
+    "completeSellerStepsNotice": "Complete required verification steps to become a verified seller.",
+    "verificationSteps": "Verification Steps",
+    "stepProgress": "Step {{current}} of {{total}}",
+    "skipped": "Skipped",
+    "active": "Active"
   },
   "buyerVerificationWizard": {
     "couldNotLoadVerificationStatus": "Could not load verification status",
-    "verified": "VERIFIED",
-    "pending": "PENDING",
+    "verified": "Verified",
+    "pending": "Pending",
     "pleaseEnterAValid10digitMobile": "Please enter a valid 10-digit mobile number",
     "otpSentToYourMobileNumber": "OTP sent to your mobile number",
     "pleaseEnter6digitOtpCode": "Please enter 6-digit OTP code",
@@ -650,16 +692,16 @@
     "required": "(Required)",
     "optional": "(Optional)",
     "stepCurrentstepOfStepslength": "Step {currentStep} of {steps.length}",
-    "mandatoryVerification": "Mandatory Verification",
-    "optionalCheck": "Optional Check",
-    "mobileAuthenticationProtocol": "Mobile Authentication Protocol",
+    "mandatoryVerification": "MANDATORY VERIFICATION",
+    "optionalCheck": "OPTIONAL VERIFICATION",
+    "mobileAuthenticationProtocol": "Mobile Number Authentication Protocol",
     "enterYour10digitMobileNumberTo": "Enter your 10-digit mobile number to receive a secure One-Time Password (OTP). OTP will not be stored permanently.",
     "enter10digitMobileNumber": "Enter 10-digit mobile number",
-    "enter6digitOtp": "Enter 6-digit OTP",
+    "enter6digitOtp": "Enter 6-digit OTP code",
     "otpSentTo91xxxxxmobileformmobilenumberslice4": "OTP sent to +91-XXXXX{mobileForm.mobileNumber.slice(-4)}",
     "back": "Back",
     "verifyOtpContinue": "Verify OTP & Continue",
-    "getMobileOtp": "Get Mobile OTP",
+    "getMobileOtp": "Send Mobile OTP",
     "authorizedIdentityVerification": "Authorized Identity Verification",
     "identityIsValidatedSecurelyViaAuthorized": "Identity is validated securely via authorized verification reference. Full raw identity document numbers are never permanently stored.",
     "aadhaarbasedAuthorizedVerification": "Aadhaar-based Authorized Verification",
@@ -684,12 +726,12 @@
     "registeredOfficeTradePremisesAddress": "Registered Office / Trade Premises Address",
     "district": "District",
     "6digitPincode": "6-digit Pincode",
-    "verifyBusinessIdentity": "Verify Business Identity",
+    "verifyBusinessIdentity": "Verify Business Identity & Continue",
     "incomeTaxDepartmentPanVerification": "Income Tax Department PAN Verification",
     "enterThe10characterPermanentAccountNumber": "Enter the 10-character Permanent Account Number issued in the legal name of the entity.",
     "egAbcde1234f": "e.g. ABCDE1234F",
     "legalEntityName": "Legal Entity Name",
-    "verifyBusinessPan": "Verify Business PAN",
+    "verifyBusinessPan": "Verify Business PAN & Continue",
     "goodsAndServicesTaxIdentificationGstin": "Goods and Services Tax Identification (GSTIN)",
     "gstinVerificationIsConditionalSmallTraders": "GSTIN verification is conditional. Small traders or exempt agricultural businesses can select \"GSTIN Not Applicable\".",
     "eg27aaaaa0000a1z5": "e.g. 27AAAAA0000A1Z5",
@@ -701,7 +743,7 @@
     "registeredSoleProprietorship": "Registered Sole Proprietorship",
     "cooperativeSocietyFarmerFederation": "Cooperative Society / Farmer Federation",
     "egU01100mh2020ptc123456": "e.g. U01100MH2020PTC123456",
-    "verifyRegistration": "Verify Registration",
+    "verifyRegistration": "Verify Registration & Continue",
     "fullName": "Full Name",
     "ownerProprietor": "Owner / Proprietor",
     "partner": "Partner",
@@ -712,14 +754,14 @@
     "10digitMobile": "10-digit mobile",
     "6digitOtp": "6-digit OTP",
     "iConfirmIPossessOfficialBoard": "I confirm I possess official board authorization / power of attorney to act as authorized buyer representative.",
-    "verifyRepresentativeOtp": "Verify Representative OTP",
+    "verifyRepresentativeOtp": "Verify Representative & Continue",
     "sendRepresentativeOtp": "Send Representative OTP",
     "nameAsPerBankPassbook": "Name as per Bank Passbook",
     "branchName": "Branch Name",
     "egSbin0001234": "e.g. SBIN0001234",
     "accountNumber": "Account Number",
     "reenterAccountNumber": "Re-enter Account Number",
-    "verifyBankAccount": "Verify Bank Account",
+    "verifyBankAccount": "Verify Bank Account & Continue",
     "udyamMsmeRegistration": "Udyam MSME Registration",
     "conditionalCheckEnterYourUdyamRegistration": "Conditional check. Enter your Udyam Registration Number if registered as MSME enterprise, or select \"Udyam Not Applicable\".",
     "egUdyammh000000000": "e.g. UDYAM-MH-00-0000000",
@@ -751,7 +793,51 @@
     "submitDocumentsProceed": "Submit Documents & Proceed",
     "backToReview": "Back to Review",
     "finalizeBuyerVerification": "Finalize Buyer Verification",
-    "yourInformationIsSecurelyProcessedSensitive": "Your information is securely processed. Sensitive identity & financial information will be masked where applicable."
+    "yourInformationIsSecurelyProcessedSensitive": "Your information is securely processed. Sensitive identity & financial information will be masked where applicable.",
+    "completeStepsNotice": "Complete required verification steps to become a verified buyer.",
+    "verificationSteps": "Verification Steps",
+    "stepProgress": "Step {{current}} of {{total}}",
+    "stepProgressUpper": "STEP {{current}} OF {{total}}",
+    "skipped": "Skipped",
+    "active": "Active",
+    "mobileNumberLabel": "Mobile Number *",
+    "enter6DigitOtpLabel": "Enter 6-Digit OTP *",
+    "identityVerificationMethod": "Identity Verification Method",
+    "explicitConsentNotice": "I provide my explicit consent to AgriBazaar portal to verify my identity details with official identity registries for buyer authentication.",
+    "enterIdentityGatewayOtpLabel": "Enter Identity Gateway OTP *",
+    "streetAddressLabel": "Street Address / Premises *",
+    "stateLabel": "State *",
+    "districtLabel": "District *",
+    "cityTownLabel": "City / Town *",
+    "pincodeLabel": "Pincode *",
+    "allChecksAuditedNotice": "All required verification checks have been audited and updated in the official buyer registry.",
+    "checklistAuditStatus": "Verification Checklist Audit Status",
+    "legalBusinessNameLabel": "Legal Business Name *",
+    "tradeBusinessNameLabel": "Trade / Business Name",
+    "businessTypeLabel": "Business Type *",
+    "registeredStateLabel": "Registered State *",
+    "businessAddressLabel": "Business Address *",
+    "businessPanLabel": "Business / Entity PAN *",
+    "legalNameAsPerPanLabel": "Legal Name as per PAN",
+    "gstinNumberLabel": "15-Digit GSTIN Number",
+    "orgStructureTypeLabel": "Organization Structure Type",
+    "registrationNumberLabel": "Registration Number / Identifier *",
+    "repFullNameLabel": "Representative Full Name *",
+    "designationLabel": "Designation *",
+    "repOtpLabel": "Representative OTP *",
+    "accountHolderNameLabel": "Account Holder Name *",
+    "bankNameLabel": "Bank Name *",
+    "branchNameLabel": "Branch Name",
+    "ifscCodeLabel": "IFSC Code *",
+    "accountNumberLabel": "Account Number *",
+    "confirmAccountNumberLabel": "Confirm Account Number *",
+    "udyamNumberLabel": "Udyam Registration Number",
+    "licenseTypeLabel": "License Type",
+    "licenseNumberLabel": "License / Registration Number",
+    "goiPortalBannerTitle": "National Agricultural Buyer Verification Service",
+    "goiPortalMinistryTag": "Ministry of Agriculture & Farmers Welfare • AgriBazaar Portal",
+    "buyerTypeLabel": "Buyer Type",
+    "referenceTag": "Ref"
   },
   "farmerVerification": {
     "aadhaarTitle": "Identity Verification (Aadhaar)",
@@ -848,7 +934,7 @@
     "viewUserRolesAccessStatusesAnd": "View user roles, access statuses, and manage platform permissions."
   },
   "buyerDashboard": {
-    "buyerPortal": "Buyer Portal",
+    "buyerPortal": "BUYER PORTAL",
     "buyerDashboard": "Buyer Dashboard",
     "trackYourOrdersSpendingAndFresh": "Track your orders, spending, and fresh produce recommendations.",
     "buyerVerificationStatus": "Buyer Verification Status",
@@ -865,11 +951,15 @@
     "failedToLoad": "Failed to load dashboard.",
     "viewAllOrders": "View All Orders →",
     "startVerification": "Start Verification",
-    "continueVerification": "Continue Verification"
+    "continueVerification": "Continue Verification",
+    "accountHashTitle": "🛡️ BUYER CRYPTOGRAPHIC ACCOUNT HASH (ON-CHAIN IDENTITY)",
+    "allRequiredVerificationCompleted": "All required verification checks have been successfully completed.",
+    "completeVerificationSubtitle": "Complete your required verification steps to unlock verified buyer features.",
+    "progressText": "Progress: {{count}} of {{total}} completed"
   },
   "buyerOrders": {
     "viewCrop": "View Crop",
-    "orderTracking": "Order Tracking",
+    "orderTracking": "ORDER TRACKING & FULFILLMENT",
     "myOrders": "My Orders",
     "viewShipmentProgressAndPurchaseHistory": "View shipment progress and purchase history across all sellers.",
     "browseProduce": "Browse Produce",
@@ -882,7 +972,19 @@
     "colAction": "ACTION",
     "noOrdersFound": "No orders found",
     "noOrdersDesc": "Your placed produce orders will appear here.",
-    "failedToLoadOrders": "Failed to load orders."
+    "failedToLoadOrders": "Failed to load orders.",
+    "orderLevelDesc": "Manage order-level cargo transport requests, transporter quotations, and payment settlements.",
+    "includedProducts": "Included Produce Items",
+    "transportFreightStatus": "Transport Status",
+    "totalPayable": "Total Payable",
+    "viewOrder": "View Order",
+    "orderDetails": "Order Details",
+    "placedOn": "Placed on",
+    "orderProducts": "Order Products",
+    "products": "Products",
+    "farmers": "Farmers",
+    "produceLabel": "Produce",
+    "transportLabel": "Transport"
   },
   "buyerProfile": {
     "buyerAccount": "Buyer Account",
@@ -914,7 +1016,10 @@
     "completedCountOfTotal": "{{count}} of {{total}} completed",
     "checklistHeading": "Verification Checklist",
     "wizardCardHeading": "Complete Your Verification Wizard",
-    "wizardCardDesc": "Finish all required identity, tax, bank, and documentation checks to build trust with farmers and unlock verified buyer badges."
+    "wizardCardDesc": "Finish all required identity, tax, bank, and documentation checks to build trust with farmers and unlock verified buyer badges.",
+    "buyerLabel": "BUYER",
+    "allChecksCompletedDesc": "All required verification checks have been successfully completed and audited against Indian regulatory standards. You now enjoy priority buyer privileges and direct access to wholesale farmer listings.",
+    "verifiedOn": "Verified On:"
   },
   "farmerAddProduct": {
     "cropPreview": "Crop Preview",
@@ -1073,7 +1178,14 @@
     "individualConsumer": "Individual Consumer",
     "businessRetailer": "Business / Retailer",
     "wholesaleBulkBuyer": "Wholesale Bulk Buyer",
-    "deliveryAddress": "Delivery Address"
+    "deliveryAddress": "Delivery Address",
+    "transporterDesc": "Manage agricultural freight requests, submit locked quotes, and track crop shipments.",
+    "backToRoleSelection": "Back to role selection",
+    "accountCreatedSuccessfully": "Account Created Successfully",
+    "completeBuyerVerification": "Complete Buyer Verification",
+    "verifyBuyerDetailsNoticePrefix": "Verify your details to unlock verified buyer features, build trust on AgriBazaar, and earn your",
+    "verifyBuyerDetailsNoticeSuffix": "badge.",
+    "skippingBuyerVerificationNotice": "Skipping verification does NOT mean verified. Status will remain PENDING_VERIFICATION until completed."
   },
   "roles": {
     "farmer": "Farmer",
@@ -1223,1233 +1335,6 @@
     "registrationVelocityDesc": "Registration velocity over time.",
     "categoryListingVolume": "Category Listing Volume",
     "categoryListingsDesc": "Number of active listings per produce category."
-  },
-  "r": {
-    "o": {
-      "l": {
-        "e": {
-          "s": {
-            ".": {
-              "i": {
-                "n": {
-                  "d": {
-                    "i": {
-                      "v": {
-                        "i": {
-                          "d": {
-                            "u": {
-                              "a": {
-                                "l": "Individual Buyer"
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              },
-              "b": {
-                "u": {
-                  "s": {
-                    "i": {
-                      "n": {
-                        "e": {
-                          "s": {
-                            "s": "Business / Retailer"
-                          }
-                        }
-                      }
-                    }
-                  },
-                  "l": {
-                    "k": {
-                      "B": {
-                        "u": {
-                          "y": {
-                            "e": {
-                              "r": "Wholesale Bulk Buyer"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              },
-              "f": {
-                "a": {
-                  "r": {
-                    "m": {
-                      "e": {
-                        "r": "Individual Farmer"
-                      }
-                    }
-                  }
-                },
-                "p": {
-                  "o": "Farmer Producer Organization (FPO)"
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  },
-  "c": {
-    "a": {
-      "t": {
-        "e": {
-          "g": {
-            "o": {
-              "r": {
-                "i": {
-                  "e": {
-                    "s": {
-                      ".": {
-                        "f": {
-                          "r": {
-                            "u": {
-                              "i": {
-                                "t": {
-                                  "s": "Fruits"
-                                }
-                              }
-                            }
-                          }
-                        },
-                        "v": {
-                          "e": {
-                            "g": {
-                              "e": {
-                                "t": {
-                                  "a": {
-                                    "b": {
-                                      "l": {
-                                        "e": {
-                                          "s": "Vegetables"
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        },
-                        "g": {
-                          "r": {
-                            "a": {
-                              "i": {
-                                "n": {
-                                  "s": "Grains & Rice"
-                                }
-                              }
-                            }
-                          }
-                        },
-                        "p": {
-                          "u": {
-                            "l": {
-                              "s": {
-                                "e": {
-                                  "s": "Pulses & Dal"
-                                }
-                              }
-                            }
-                          }
-                        },
-                        "s": {
-                          "p": {
-                            "i": {
-                              "c": {
-                                "e": {
-                                  "s": "Pure Spices"
-                                }
-                              }
-                            }
-                          }
-                        },
-                        "m": {
-                          "i": {
-                            "l": {
-                              "l": {
-                                "e": {
-                                  "t": {
-                                    "s": "Millets"
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        },
-                        "d": {
-                          "a": {
-                            "i": {
-                              "r": {
-                                "y": "Dairy & Agro"
-                              }
-                            }
-                          }
-                        },
-                        "o": {
-                          "t": {
-                            "h": {
-                              "e": {
-                                "r": "Other Crop Produce"
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "o": {
-      "m": {
-        "m": {
-          "o": {
-            "n": {
-              ".": {
-                "a": {
-                  "l": {
-                    "l": {
-                      "O": {
-                        "r": {
-                          "d": {
-                            "e": {
-                              "r": {
-                                "s": "All Orders"
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                },
-                "p": {
-                  "a": {
-                    "y": {
-                      "N": {
-                        "o": {
-                          "w": "Pay Now"
-                        }
-                      }
-                    }
-                  }
-                },
-                "e": {
-                  "d": {
-                    "i": {
-                      "t": {
-                        "P": {
-                          "r": {
-                            "o": {
-                              "f": {
-                                "i": {
-                                  "l": {
-                                    "e": "Edit Profile"
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                },
-                "s": {
-                  "a": {
-                    "v": {
-                      "e": {
-                        "C": {
-                          "h": {
-                            "a": {
-                              "n": {
-                                "g": {
-                                  "e": {
-                                    "s": "Save Changes"
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                },
-                "c": {
-                  "o": {
-                    "p": {
-                      "y": {
-                        "H": {
-                          "a": {
-                            "s": {
-                              "h": "Copy Hash"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  },
-  "b": {
-    "u": {
-      "y": {
-        "e": {
-          "r": {
-            "V": {
-              "e": {
-                "r": {
-                  "i": {
-                    "f": {
-                      "i": {
-                        "c": {
-                          "a": {
-                            "t": {
-                              "i": {
-                                "o": {
-                                  "n": {
-                                    ".": {
-                                      "b": {
-                                        "u": {
-                                          "y": {
-                                            "e": {
-                                              "r": {
-                                                "L": {
-                                                  "a": {
-                                                    "b": {
-                                                      "e": {
-                                                        "l": "BUYER"
-                                                      }
-                                                    }
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        }
-                                      },
-                                      "t": {
-                                        "i": {
-                                          "t": {
-                                            "l": {
-                                              "e": "Buyer Verification Status"
-                                            }
-                                          }
-                                        }
-                                      },
-                                      "s": {
-                                        "u": {
-                                          "b": {
-                                            "t": {
-                                              "i": {
-                                                "t": {
-                                                  "l": {
-                                                    "e": "Manage identity, business compliance, and regulatory credentials on AgriBazaar."
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        }
-                                      },
-                                      "c": {
-                                        "h": {
-                                          "e": {
-                                            "c": {
-                                              "k": {
-                                                "l": {
-                                                  "i": {
-                                                    "s": {
-                                                      "t": {
-                                                        "H": {
-                                                          "e": {
-                                                            "a": {
-                                                              "d": {
-                                                                "i": {
-                                                                  "n": {
-                                                                    "g": "Verification Checklist"
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      }
-                                                    }
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        },
-                                        "o": {
-                                          "m": {
-                                            "p": {
-                                              "l": {
-                                                "e": {
-                                                  "t": {
-                                                    "e": {
-                                                      "d": {
-                                                        "C": {
-                                                          "o": {
-                                                            "u": {
-                                                              "n": {
-                                                                "t": {
-                                                                  "O": {
-                                                                    "f": {
-                                                                      "T": {
-                                                                        "o": {
-                                                                          "t": {
-                                                                            "a": {
-                                                                              "l": "{{count}} of {{total}} completed"
-                                                                            }
-                                                                          }
-                                                                        }
-                                                                      }
-                                                                    }
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      }
-                                                    }
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        }
-                                      },
-                                      "w": {
-                                        "i": {
-                                          "z": {
-                                            "a": {
-                                              "r": {
-                                                "d": {
-                                                  "C": {
-                                                    "a": {
-                                                      "r": {
-                                                        "d": {
-                                                          "H": {
-                                                            "e": {
-                                                              "a": {
-                                                                "d": {
-                                                                  "i": {
-                                                                    "n": {
-                                                                      "g": "Complete Your Verification Wizard"
-                                                                    }
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          },
-                                                          "D": {
-                                                            "e": {
-                                                              "s": {
-                                                                "c": "Finish all required identity, tax, bank, and documentation checks to build trust with farmers and unlock verified buyer badges."
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      }
-                                                    }
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        }
-                                      },
-                                      "o": {
-                                        "f": {
-                                          "f": {
-                                            "i": {
-                                              "c": {
-                                                "i": {
-                                                  "a": {
-                                                    "l": {
-                                                      "P": {
-                                                        "o": {
-                                                          "r": {
-                                                            "t": {
-                                                              "a": {
-                                                                "l": "• Official Verification Portal"
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      }
-                                                    }
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        }
-                                      },
-                                      "a": {
-                                        "l": {
-                                          "l": {
-                                            "C": {
-                                              "h": {
-                                                "e": {
-                                                  "c": {
-                                                    "k": {
-                                                      "s": {
-                                                        "C": {
-                                                          "o": {
-                                                            "m": {
-                                                              "p": {
-                                                                "l": {
-                                                                  "e": {
-                                                                    "t": {
-                                                                      "e": {
-                                                                        "d": {
-                                                                          "D": {
-                                                                            "e": {
-                                                                              "s": {
-                                                                                "c": "All required verification checks have been successfully completed and audited against Indian regulatory standards."
-                                                                              }
-                                                                            }
-                                                                          }
-                                                                        }
-                                                                      }
-                                                                    }
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      }
-                                                    }
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        }
-                                      },
-                                      "v": {
-                                        "e": {
-                                          "r": {
-                                            "i": {
-                                              "f": {
-                                                "i": {
-                                                  "e": {
-                                                    "d": {
-                                                      "O": {
-                                                        "n": "Verified On:"
-                                                      }
-                                                    }
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        }
-                                      }
-                                    },
-                                    "C": {
-                                      "o": {
-                                        "n": {
-                                          "f": {
-                                            "i": {
-                                              "g": {
-                                                ".": {
-                                                  "I": {
-                                                    "N": {
-                                                      "D": {
-                                                        "I": {
-                                                          "V": {
-                                                            "I": {
-                                                              "D": {
-                                                                "U": {
-                                                                  "A": {
-                                                                    "L": {
-                                                                      ".": {
-                                                                        "p": {
-                                                                          "o": {
-                                                                            "r": {
-                                                                              "t": {
-                                                                                "a": {
-                                                                                  "l": {
-                                                                                    "T": {
-                                                                                      "i": {
-                                                                                        "t": {
-                                                                                          "l": {
-                                                                                            "e": "Individual Buyer Verification Portal"
-                                                                                          }
-                                                                                        }
-                                                                                      }
-                                                                                    }
-                                                                                  }
-                                                                                }
-                                                                              }
-                                                                            }
-                                                                          },
-                                                                          "a": {
-                                                                            "g": {
-                                                                              "e": {
-                                                                                "T": {
-                                                                                  "i": {
-                                                                                    "t": {
-                                                                                      "l": {
-                                                                                        "e": "Individual Buyer Compliance & Verification"
-                                                                                      }
-                                                                                    }
-                                                                                  }
-                                                                                }
-                                                                              }
-                                                                            }
-                                                                          }
-                                                                        },
-                                                                        "b": {
-                                                                          "a": {
-                                                                            "d": {
-                                                                              "g": {
-                                                                                "e": {
-                                                                                  "T": {
-                                                                                    "e": {
-                                                                                      "x": {
-                                                                                        "t": "VERIFIED INDIVIDUAL BUYER"
-                                                                                      }
-                                                                                    }
-                                                                                  }
-                                                                                }
-                                                                              }
-                                                                            }
-                                                                          }
-                                                                        },
-                                                                        "i": {
-                                                                          "n": {
-                                                                            "c": {
-                                                                              "o": {
-                                                                                "m": {
-                                                                                  "p": {
-                                                                                    "l": {
-                                                                                      "e": {
-                                                                                        "t": {
-                                                                                          "e": {
-                                                                                            "B": {
-                                                                                              "a": {
-                                                                                                "d": {
-                                                                                                  "g": {
-                                                                                                    "e": {
-                                                                                                      "T": {
-                                                                                                        "e": {
-                                                                                                          "x": {
-                                                                                                            "t": "Verification Pending"
-                                                                                                          }
-                                                                                                        }
-                                                                                                      }
-                                                                                                    }
-                                                                                                  }
-                                                                                                }
-                                                                                              }
-                                                                                            }
-                                                                                          }
-                                                                                        }
-                                                                                      }
-                                                                                    }
-                                                                                  }
-                                                                                }
-                                                                              }
-                                                                            }
-                                                                          }
-                                                                        },
-                                                                        "s": {
-                                                                          "t": {
-                                                                            "e": {
-                                                                              "p": {
-                                                                                "s": {
-                                                                                  ".": {
-                                                                                    "m": {
-                                                                                      "o": {
-                                                                                        "b": {
-                                                                                          "i": {
-                                                                                            "l": {
-                                                                                              "e": {
-                                                                                                ".": {
-                                                                                                  "s": {
-                                                                                                    "h": {
-                                                                                                      "o": {
-                                                                                                        "r": {
-                                                                                                          "t": {
-                                                                                                            "L": {
-                                                                                                              "a": {
-                                                                                                                "b": {
-                                                                                                                  "e": {
-                                                                                                                    "l": "Mobile OTP"
-                                                                                                                  }
-                                                                                                                }
-                                                                                                              }
-                                                                                                            }
-                                                                                                          }
-                                                                                                        }
-                                                                                                      }
-                                                                                                    }
-                                                                                                  },
-                                                                                                  "n": {
-                                                                                                    "a": {
-                                                                                                      "m": {
-                                                                                                        "e": "Mobile Number Verification"
-                                                                                                      }
-                                                                                                    }
-                                                                                                  },
-                                                                                                  "d": {
-                                                                                                    "e": {
-                                                                                                      "s": {
-                                                                                                        "c": {
-                                                                                                          "r": {
-                                                                                                            "i": {
-                                                                                                              "p": {
-                                                                                                                "t": {
-                                                                                                                  "i": {
-                                                                                                                    "o": {
-                                                                                                                      "n": "Verify 10-digit mobile number via instant SMS OTP."
-                                                                                                                    }
-                                                                                                                  }
-                                                                                                                }
-                                                                                                              }
-                                                                                                            }
-                                                                                                          }
-                                                                                                        }
-                                                                                                      }
-                                                                                                    }
-                                                                                                  }
-                                                                                                }
-                                                                                              }
-                                                                                            }
-                                                                                          }
-                                                                                        }
-                                                                                      }
-                                                                                    },
-                                                                                    "i": {
-                                                                                      "d": {
-                                                                                        "e": {
-                                                                                          "n": {
-                                                                                            "t": {
-                                                                                              "i": {
-                                                                                                "t": {
-                                                                                                  "y": {
-                                                                                                    ".": {
-                                                                                                      "s": {
-                                                                                                        "h": {
-                                                                                                          "o": {
-                                                                                                            "r": {
-                                                                                                              "t": {
-                                                                                                                "L": {
-                                                                                                                  "a": {
-                                                                                                                    "b": {
-                                                                                                                      "e": {
-                                                                                                                        "l": "Govt Identity"
-                                                                                                                      }
-                                                                                                                    }
-                                                                                                                  }
-                                                                                                                }
-                                                                                                              }
-                                                                                                            }
-                                                                                                          }
-                                                                                                        }
-                                                                                                      },
-                                                                                                      "n": {
-                                                                                                        "a": {
-                                                                                                          "m": {
-                                                                                                            "e": "Aadhaar / Passport / Voter ID"
-                                                                                                          }
-                                                                                                        }
-                                                                                                      },
-                                                                                                      "d": {
-                                                                                                        "e": {
-                                                                                                          "s": {
-                                                                                                            "c": {
-                                                                                                              "r": {
-                                                                                                                "i": {
-                                                                                                                  "p": {
-                                                                                                                    "t": {
-                                                                                                                      "i": {
-                                                                                                                        "o": {
-                                                                                                                          "n": "Identity verification with government issued ID photo."
-                                                                                                                        }
-                                                                                                                      }
-                                                                                                                    }
-                                                                                                                  }
-                                                                                                                }
-                                                                                                              }
-                                                                                                            }
-                                                                                                          }
-                                                                                                        }
-                                                                                                      }
-                                                                                                    }
-                                                                                                  }
-                                                                                                }
-                                                                                              }
-                                                                                            }
-                                                                                          }
-                                                                                        }
-                                                                                      }
-                                                                                    },
-                                                                                    "a": {
-                                                                                      "d": {
-                                                                                        "d": {
-                                                                                          "r": {
-                                                                                            "e": {
-                                                                                              "s": {
-                                                                                                "s": {
-                                                                                                  ".": {
-                                                                                                    "s": {
-                                                                                                      "h": {
-                                                                                                        "o": {
-                                                                                                          "r": {
-                                                                                                            "t": {
-                                                                                                              "L": {
-                                                                                                                "a": {
-                                                                                                                  "b": {
-                                                                                                                    "e": {
-                                                                                                                      "l": "Shipping Address"
-                                                                                                                    }
-                                                                                                                  }
-                                                                                                                }
-                                                                                                              }
-                                                                                                            }
-                                                                                                          }
-                                                                                                        }
-                                                                                                      }
-                                                                                                    },
-                                                                                                    "n": {
-                                                                                                      "a": {
-                                                                                                        "m": {
-                                                                                                          "e": "Delivery & Residential Address"
-                                                                                                        }
-                                                                                                      }
-                                                                                                    },
-                                                                                                    "d": {
-                                                                                                      "e": {
-                                                                                                        "s": {
-                                                                                                          "c": {
-                                                                                                            "r": {
-                                                                                                              "i": {
-                                                                                                                "p": {
-                                                                                                                  "t": {
-                                                                                                                    "i": {
-                                                                                                                      "o": {
-                                                                                                                        "n": "Valid residential address for produce deliveries."
-                                                                                                                      }
-                                                                                                                    }
-                                                                                                                  }
-                                                                                                                }
-                                                                                                              }
-                                                                                                            }
-                                                                                                          }
-                                                                                                        }
-                                                                                                      }
-                                                                                                    }
-                                                                                                  }
-                                                                                                }
-                                                                                              }
-                                                                                            }
-                                                                                          }
-                                                                                        }
-                                                                                      }
-                                                                                    },
-                                                                                    "s": {
-                                                                                      "u": {
-                                                                                        "m": {
-                                                                                          "m": {
-                                                                                            "a": {
-                                                                                              "r": {
-                                                                                                "y": {
-                                                                                                  ".": {
-                                                                                                    "s": {
-                                                                                                      "h": {
-                                                                                                        "o": {
-                                                                                                          "r": {
-                                                                                                            "t": {
-                                                                                                              "L": {
-                                                                                                                "a": {
-                                                                                                                  "b": {
-                                                                                                                    "e": {
-                                                                                                                      "l": "Review & Submit"
-                                                                                                                    }
-                                                                                                                  }
-                                                                                                                }
-                                                                                                              }
-                                                                                                            }
-                                                                                                          }
-                                                                                                        }
-                                                                                                      }
-                                                                                                    },
-                                                                                                    "n": {
-                                                                                                      "a": {
-                                                                                                        "m": {
-                                                                                                          "e": "Verification Review"
-                                                                                                        }
-                                                                                                      }
-                                                                                                    },
-                                                                                                    "d": {
-                                                                                                      "e": {
-                                                                                                        "s": {
-                                                                                                          "c": {
-                                                                                                            "r": {
-                                                                                                              "i": {
-                                                                                                                "p": {
-                                                                                                                  "t": {
-                                                                                                                    "i": {
-                                                                                                                      "o": {
-                                                                                                                        "n": "Final review of submitted individual credentials."
-                                                                                                                      }
-                                                                                                                    }
-                                                                                                                  }
-                                                                                                                }
-                                                                                                              }
-                                                                                                            }
-                                                                                                          }
-                                                                                                        }
-                                                                                                      }
-                                                                                                    }
-                                                                                                  }
-                                                                                                }
-                                                                                              }
-                                                                                            }
-                                                                                          }
-                                                                                        }
-                                                                                      }
-                                                                                    }
-                                                                                  }
-                                                                                }
-                                                                              }
-                                                                            }
-                                                                          }
-                                                                        }
-                                                                      }
-                                                                    }
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      }
-                                                    }
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  },
-  "m": {
-    "a": {
-      "r": {
-        "k": {
-          "e": {
-            "t": {
-              "p": {
-                "l": {
-                  "a": {
-                    "c": {
-                      "e": {
-                        ".": {
-                          "n": {
-                            "e": {
-                              "w": {
-                                "e": {
-                                  "s": {
-                                    "t": {
-                                      "F": {
-                                        "i": {
-                                          "r": {
-                                            "s": {
-                                              "t": "Newest first"
-                                            }
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          },
-                          "p": {
-                            "r": {
-                              "i": {
-                                "c": {
-                                  "e": {
-                                    "L": {
-                                      "o": {
-                                        "w": {
-                                          "T": {
-                                            "o": {
-                                              "H": {
-                                                "i": {
-                                                  "g": {
-                                                    "h": "Price: low to high"
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        }
-                                      }
-                                    },
-                                    "H": {
-                                      "i": {
-                                        "g": {
-                                          "h": {
-                                            "T": {
-                                              "o": {
-                                                "L": {
-                                                  "o": {
-                                                    "w": "Price: high to low"
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          },
-                          "m": {
-                            "o": {
-                              "s": {
-                                "t": {
-                                  "P": {
-                                    "o": {
-                                      "p": {
-                                        "u": {
-                                          "l": {
-                                            "a": {
-                                              "r": "Most popular"
-                                            }
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  },
-  "p": {
-    "r": {
-      "o": {
-        "d": {
-          "u": {
-            "c": {
-              "t": {
-                "D": {
-                  "e": {
-                    "t": {
-                      "a": {
-                        "i": {
-                          "l": {
-                            "s": {
-                              ".": {
-                                "a": {
-                                  "v": {
-                                    "a": {
-                                      "i": {
-                                        "l": {
-                                          "a": {
-                                            "b": {
-                                              "l": {
-                                                "e": {
-                                                  "I": {
-                                                    "n": {
-                                                      "S": {
-                                                        "t": {
-                                                          "o": {
-                                                            "c": {
-                                                              "k": "{{count}} {{unit}} available in stock"
-                                                            }
-                                                          }
-                                                        }
-                                                      }
-                                                    }
-                                                  },
-                                                  "F": {
-                                                    "r": {
-                                                      "o": {
-                                                        "m": {
-                                                          "L": {
-                                                            "a": {
-                                                              "b": {
-                                                                "e": {
-                                                                  "l": "Available: {{date}}"
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      }
-                                                    }
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        }
-                                      }
-                                    }
-                                  },
-                                  "b": {
-                                    "o": {
-                                      "u": {
-                                        "t": {
-                                          "F": {
-                                            "a": {
-                                              "r": {
-                                                "m": {
-                                                  "e": {
-                                                    "r": {
-                                                      "T": {
-                                                        "i": {
-                                                          "t": {
-                                                            "l": {
-                                                              "e": "About the Farmer / Producer"
-                                                            }
-                                                          }
-                                                        }
-                                                      }
-                                                    }
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                },
-                                "h": {
-                                  "a": {
-                                    "r": {
-                                      "v": {
-                                        "e": {
-                                          "s": {
-                                            "t": {
-                                              "D": {
-                                                "a": {
-                                                  "t": {
-                                                    "e": {
-                                                      "L": {
-                                                        "a": {
-                                                          "b": {
-                                                            "e": {
-                                                              "l": "Harvest: {{date}}"
-                                                            }
-                                                          }
-                                                        }
-                                                      }
-                                                    }
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                },
-                                "q": {
-                                  "u": {
-                                    "a": {
-                                      "n": {
-                                        "t": {
-                                          "i": {
-                                            "t": {
-                                              "y": {
-                                                "L": {
-                                                  "a": {
-                                                    "b": {
-                                                      "e": {
-                                                        "l": "Quantity ({{unit}}):"
-                                                      }
-                                                    }
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
   },
   "buyerVerificationConfig": {
     "INDIVIDUAL": {
@@ -2672,7 +1557,10 @@
     "statusUpdated": "Shipment status updated successfully!",
     "updateStatusFailed": "Failed to update shipment status.",
     "profileUpdated": "Transporter profile updated successfully!",
-    "profileUpdateFailed": "Failed to update profile."
+    "profileUpdateFailed": "Failed to update profile.",
+    "quotations": "Quotations",
+    "quotationsAvailableSelectionRequired": "{{count}} Quotations Available - Selection Required",
+    "awaitingTransporterQuotations": "Awaiting Transporter Quotations"
   },
   "shipment": {
     "assigned": "Shipment Assigned",
@@ -2685,5 +1573,146 @@
     "transportChargeIncluded": "Transport charge included",
     "transportPayment": "Transport Payment",
     "totalIncludingTransport": "Total Amount (Including Freight)"
+  },
+  "transporterProfile": {
+    "logisticsBadge": "Verified Logistics Partner",
+    "title": "Transporter Fleet Profile",
+    "subtitle": "Manage your commercial freight details, contact information, and service regions.",
+    "editBtn": "Edit Profile",
+    "accountHashLabel": "On-Chain Transporter Identity Hash",
+    "companyName": "Company / Transporter Name",
+    "contactPerson": "Primary Contact Person",
+    "email": "Email Address",
+    "mobile": "Mobile Number",
+    "address": "Business Address",
+    "serviceAreas": "Operating States / Routes",
+    "registeredVehicles": "Registered Vehicles",
+    "activeDrivers": "Active Drivers",
+    "updatedSuccess": "Transporter profile updated successfully!",
+    "updateFailed": "Failed to update profile.",
+    "failedToLoad": "Failed to load transporter profile.",
+    "hashCopied": "Account Hash copied to clipboard!"
+  },
+  "portals": {
+    "buyer": "Buyer Portal",
+    "farmer": "Farmer Portal",
+    "transporter": "Transporter Portal",
+    "admin": "Admin Portal"
+  },
+  "verificationConfigs": {
+    "farmer": {
+      "portalTitle": "GOI National Agricultural Farmer Verification Service",
+      "pageTitle": "Official Identity & Compliance Gateway",
+      "badgeText": "✓ VERIFIED FARMER",
+      "incompleteBadgeText": "You can return anytime to complete pending checks and unlock your verified seller badge.",
+      "steps": {
+        "aadhaar": {
+          "shortLabel": "Aadhaar Auth",
+          "name": "Aadhaar Authentication Protocol",
+          "description": "Enter your 12-digit Aadhaar number to receive a One-Time Password (OTP) via UIDAI authorized gateway."
+        },
+        "farmerRegistry": {
+          "shortLabel": "Farmer Registry",
+          "name": "Farmer Database Protocol",
+          "description": "Enter your official Farmer / Agristack ID along with state and district to verify active agricultural registry status."
+        },
+        "landRecord": {
+          "shortLabel": "Land Record",
+          "name": "Land Holding Protocol",
+          "description": "Enter state, district, taluk, village, Patta / 7-12 number, survey number, and total acreage."
+        },
+        "bankAccount": {
+          "shortLabel": "Bank Account",
+          "name": "Bank Settlement Protocol",
+          "description": "Link your active bank account for direct payments and automated sales settlements."
+        },
+        "pan": {
+          "shortLabel": "PAN Verification",
+          "name": "PAN Verification Protocol",
+          "description": "Enter your 10-character Permanent Account Number for statutory tax compliance & payouts."
+        },
+        "pmKisan": {
+          "shortLabel": "PM-KISAN",
+          "name": "PM-KISAN Scheme Protocol",
+          "description": "Optionally link PM-KISAN Beneficiary Reference for added seller credibility on the marketplace."
+        }
+      }
+    },
+    "fpo": {
+      "portalTitle": "National FPO Compliance & Governance Service",
+      "pageTitle": "FPO Identity & Statutory Verification Gateway",
+      "badgeText": "✓ VERIFIED FPO ORGANISATION",
+      "incompleteBadgeText": "Complete FPO compliance steps to issue bulk agricultural listings.",
+      "steps": {
+        "orgIdentity": {
+          "shortLabel": "FPO Certificate",
+          "name": "FPO Incorporation & Registration Protocol",
+          "description": "Upload MCA Incorporation Certificate, Co-operative Registration, or Society Registration document."
+        },
+        "orgPan": {
+          "shortLabel": "FPO PAN Card",
+          "name": "FPO Corporate PAN Protocol",
+          "description": "Provide official 10-character PAN number and card scan issued to the FPO entity."
+        },
+        "gstin": {
+          "shortLabel": "GSTIN Tax Reg",
+          "name": "GSTIN Registration Protocol",
+          "description": "Provide 15-digit Goods & Services Tax Identification Number for commercial bulk billing."
+        },
+        "representative": {
+          "shortLabel": "Authorized Signatory",
+          "name": "CEO / Director Identity Verification",
+          "description": "Verify identity of authorized signatory (CEO, Chairman, or Managing Director)."
+        },
+        "orgBank": {
+          "shortLabel": "FPO Bank Account",
+          "name": "Institutional Settlement Account Protocol",
+          "description": "Link active current bank account registered under the official FPO organization name."
+        },
+        "orgDocuments": {
+          "shortLabel": "Board Resolution",
+          "name": "Board Resolution & Audit Compliance Protocol",
+          "description": "Upload board resolution authorizing trading activities & recent audited financial report."
+        }
+      }
+    },
+    "transporter": {
+      "portalTitle": "Transporter Verification Gateway",
+      "pageTitle": "Transporter Onboarding & Verification",
+      "badgeText": "✓ VERIFIED TRANSPORTER",
+      "incompleteBadgeText": "Complete transporter verification steps to start accepting freight quotes.",
+      "steps": {
+        "basicDetails": {
+          "shortLabel": "Basic Details",
+          "name": "Basic Transporter & Company Details",
+          "description": "Company name, contact person, mobile, email, and service areas."
+        },
+        "identity": {
+          "shortLabel": "Identity Verification",
+          "name": "Identity Verification (Aadhaar / PAN)",
+          "description": "Identity check of proprietor or authorized business owner."
+        },
+        "businessRegistration": {
+          "shortLabel": "Business Reg",
+          "name": "Business Registration & Tax (GST / Udyam)",
+          "description": "Optional business incorporation certificate or GST registration."
+        },
+        "bankAccount": {
+          "shortLabel": "Bank Payout",
+          "name": "Bank Account Verification",
+          "description": "Verified bank account details for direct freight payout settlement."
+        },
+        "vehiclesStep": {
+          "shortLabel": "Fleet RC",
+          "name": "Vehicle Fleet & Document Verification",
+          "description": "Registered transport vehicles with RC, Insurance, Fitness, and PUC certificates."
+        },
+        "driversStep": {
+          "shortLabel": "Driver Roster",
+          "name": "Driver Roster & License Verification",
+          "description": "Driver credentials and valid commercial driving license verification."
+        }
+      }
+    }
   }
 }

@@ -15,8 +15,49 @@
 }
 
 :root {
+  /* Reference Design System — Semantic Color System */
+  --background: #F4F2E6;
+  --surface: #FAFAF5;
+  --surface-elevated: #E8EFE6;
+  --text-primary: #0C2B24;
+  --text-secondary: #4A5568;
+  --border: #DDE6DA;
+  --primary: #007A52;
+  --primary-hover: #005E3F;
+  --primary-contrast: #FFFFFF;
+  --accent: #B86B14;
+  --success: #007A52;
+  --warning: #B86B14;
+  --danger: #C93C3C;
+  --focus-ring: rgba(0, 122, 82, 0.24);
+  --shadow-sm: 0 4px 14px rgba(12, 43, 36, 0.06);
+  --shadow-md: 0 12px 32px rgba(12, 43, 36, 0.09);
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-hero: 32px;
+  --container-max: 1400px;
   --app-header-height: 6rem;
   --page-gutter: 1rem;
+}
+
+[data-theme="dark"] {
+  --background: #011714;
+  --surface: #03241D;
+  --surface-elevated: #042B22;
+  --text-primary: #FFFFFF;
+  --text-secondary: #A0AEC0;
+  --border: rgba(255, 255, 255, 0.1);
+  --primary: #00ED64;
+  --primary-hover: #00D057;
+  --primary-contrast: #001E17;
+  --accent: #F3B927;
+  --success: #00ED64;
+  --warning: #F3B927;
+  --danger: #FB7185;
+  --focus-ring: rgba(0, 237, 100, 0.28);
+  --shadow-sm: none;
+  --shadow-md: none;
 }
 
 /* Tailwind v4 includes its own preflight — only keep box-sizing */
@@ -27,8 +68,8 @@
 html, body {
   font-family: 'Inter', 'Noto Sans Tamil', 'Noto Sans Devanagari', 'Noto Sans Telugu', 'Noto Sans Kannada', 'Noto Sans Malayalam', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
-  background-color: #F7F9F3;
-  color: #082B36;
+  background-color: var(--background);
+  color: var(--text-primary);
   min-width: 320px;
   min-height: 100%;
   transition: background-color 0.2s ease, color 0.2s ease;
@@ -55,14 +96,45 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Plus Jakarta Sans', 'Noto Sans Tamil', 'Noto Sans Devanagari', 'Noto Sans Telugu', 'Noto Sans Kannada', 'Noto Sans Malayalam', system-ui, sans-serif;
 }
 
+/* Global geometry and accessible interaction language. */
+:where(button, a, input, select, textarea):focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.agri-surface {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.agri-surface--elevated { background: var(--surface-elevated); }
+
+.agri-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+@media (hover: hover) {
+  .agri-card--interactive:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary);
+    box-shadow: var(--shadow-md);
+  }
+}
+
 /* AgriBazaar Reference Button Styles */
 .btn-agri-primary, .btn-mongo-primary {
-  background-color: #00E676;
-  color: #002B36;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--primary);
+  color: var(--primary-contrast);
+  font-family: var(--font-display);
   font-weight: 700;
   padding: 0.75rem 1.75rem;
-  border-radius: 9999px;
+  border-radius: var(--radius-md);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -75,19 +147,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-agri-primary:hover, .btn-mongo-primary:hover {
-  background-color: #00C853;
+  background-color: var(--primary-hover);
   transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(0, 230, 118, 0.35);
+  box-shadow: var(--shadow-md);
 }
 
 .btn-agri-secondary, .btn-mongo-secondary {
-  background-color: #FFFFFF;
-  color: #002B36;
-  border: 1.5px solid #E2E8E5;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  font-family: var(--font-display);
   font-weight: 700;
   padding: 0.75rem 1.75rem;
-  border-radius: 9999px;
+  border-radius: var(--radius-md);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -99,18 +171,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-agri-secondary:hover, .btn-mongo-secondary:hover {
-  border-color: #002B36;
-  background-color: #F7F9F3;
+  border-color: var(--primary);
+  background-color: var(--surface-elevated);
 }
 
 .btn-agri-outline, .btn-mongo-outline {
   background-color: transparent;
-  color: #FFFFFF;
-  border: 1.5px solid rgba(255, 255, 255, 0.4);
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  font-family: var(--font-display);
   font-weight: 700;
   padding: 0.75rem 1.75rem;
-  border-radius: 9999px;
+  border-radius: var(--radius-md);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -122,8 +194,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-agri-outline:hover, .btn-mongo-outline:hover {
-  border-color: #FFFFFF;
-  background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--primary);
+  background-color: var(--surface-elevated);
 }
 
 /* Input Fields */
@@ -131,19 +203,19 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   display: block;
   padding: 0.875rem 1rem 0.875rem 2.75rem;
-  background-color: #ffffff;
-  border: 1.5px solid #E2E8E5;
-  border-radius: 0.75rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
   font-size: 0.95rem;
-  color: #082B36;
+  color: var(--text-primary);
   transition: all 0.15s ease;
   line-height: 1.4;
 }
 
 .input-mongo:focus, .input-agri:focus {
   outline: none;
-  border-color: #00E676;
-  box-shadow: 0 0 0 4px rgba(0, 230, 118, 0.15);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px var(--focus-ring);
 }
 
 /* Custom scrollbar */
@@ -151,10 +223,10 @@ h1, h2, h3, h4, h5, h6 {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #F7F9F3;
+  background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
-  background: #002B36;
+  background: var(--text-secondary);
   border-radius: 3px;
 }
 
@@ -164,13 +236,13 @@ h1, h2, h3, h4, h5, h6 {
 
 [data-theme="dark"], html.dark {
   color-scheme: dark;
-  background-color: #07151e;
-  color: #f1f5f9;
+  background-color: var(--background);
+  color: var(--text-primary);
 }
 
 [data-theme="dark"] body {
-  background-color: #07151e;
-  color: #f1f5f9;
+  background-color: var(--background);
+  color: var(--text-primary);
 }
 
 [data-theme="dark"] .bg-\[\#fafcf8\],
@@ -194,8 +266,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 [data-theme="dark"] .text-gray-600,
-[data-theme="dark"] .text-gray-500 {
+[data-theme="dark"] .text-gray-500,
+[data-theme="dark"] .text-slate-600,
+[data-theme="dark"] .text-slate-500 {
   color: #94a3b8 !important;
+}
+
+/* Gray 700 is a readable label colour on light surfaces, but is too dark on the dark app panels. */
+[data-theme="dark"] .text-gray-700,
+[data-theme="dark"] .text-slate-700,
+[data-theme="dark"] .text-slate-800,
+[data-theme="dark"] .text-slate-900 {
+  color: #d8e5eb !important;
 }
 
 [data-theme="dark"] .border-\[\#e8eddb\],
@@ -220,15 +302,124 @@ h1, h2, h3, h4, h5, h6 {
 [data-theme="dark"] input[type="number"],
 [data-theme="dark"] textarea,
 [data-theme="dark"] select {
-  background-color: #0f2b3d !important;
-  color: #f8fafc !important;
-  border-color: #1e3a4e !important;
+  background-color: var(--surface) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border) !important;
 }
 
 [data-theme="dark"] ::-webkit-scrollbar-track {
-  background: #07151e;
+  background: var(--background);
 }
 
 [data-theme="dark"] ::-webkit-scrollbar-thumb {
-  background: #00E676;
+  background: var(--primary);
+}
+
+/* Keep row hover states dark enough for the light table text used in dark mode. */
+.data-table-row:hover {
+  background-color: #f9fbef;
+}
+
+[data-theme="dark"] .data-table-row:hover {
+  background-color: #163441 !important;
+}
+
+/* Trust cards must use a dark surface when their text switches to the dark-theme palette. */
+[data-theme="dark"] .trust-feature-card,
+[data-theme="dark"] .trust-feature-card:hover {
+  background-color: var(--surface) !important;
+  border-color: var(--border) !important;
+}
+
+/* Landing page: deliberately layered forest-green surfaces instead of a
+   blanket black inversion.  These selectors also cover arbitrary Tailwind
+   colour utilities used by the public composition. */
+[data-theme="dark"] .landing-page,
+[data-theme="dark"] .landing-hero,
+[data-theme="dark"] .landing-products {
+  background-color: #031a16 !important;
+  color: #f5fff9;
+}
+
+[data-theme="dark"] .landing-hero {
+  background-image: radial-gradient(circle at 75% 18%, rgba(0, 230, 118, .12), transparent 30%), radial-gradient(circle at 15% 85%, rgba(22, 101, 52, .22), transparent 33%);
+}
+
+[data-theme="dark"] .landing-page .bg-white,
+[data-theme="dark"] .landing-page .bg-\[\#FBFCF9\] {
+  background-color: #092f26 !important;
+  border-color: rgba(255, 255, 255, .10) !important;
+}
+
+[data-theme="dark"] .landing-page .bg-\[\#F7F9F3\] {
+  background-color: #06221c !important;
+}
+
+[data-theme="dark"] .landing-page .bg-\[\#002B36\] {
+  background-color: #062b22 !important;
+}
+
+[data-theme="dark"] .landing-page .text-\[\#082B36\],
+[data-theme="dark"] .landing-page .text-\[\#52636A\],
+[data-theme="dark"] .landing-page .text-\[\#63747A\],
+[data-theme="dark"] .landing-page .text-\[\#6B7A80\],
+[data-theme="dark"] .landing-page .text-\[\#718087\] {
+  color: #f5fff9 !important;
+}
+
+[data-theme="dark"] .landing-page .text-gray-300,
+[data-theme="dark"] .landing-page .text-gray-200 {
+  color: #b7cdc2 !important;
+}
+
+[data-theme="dark"] .landing-page .border-\[\#E2E8E5\],
+[data-theme="dark"] .landing-page .border-\[\#DCE5E1\] {
+  border-color: rgba(255, 255, 255, .10) !important;
+}
+
+/* The metrics are presented once as the floating trust bar below the hero. */
+.hero-inline-metrics { display: none; }
+
+/* Public navigation participates in the same theme system. */
+[data-theme="dark"] .app-header > .bg-\[\#F7F9F3\],
+[data-theme="dark"] .app-header .bg-\[\#F7F9F3\] {
+  background-color: #06221c !important;
+  color: #f5fff9 !important;
+}
+
+/* The hero image badge intentionally remains white in both themes. */
+[data-theme="dark"] .hero-verified-badge__label {
+  color: #082B36 !important;
+}
+
+/* Buyer verification uses several light semantic surfaces; keep the entire workflow cohesive in dark mode. */
+[data-theme="dark"] .buyer-verification-wizard {
+  background-color: #07151e !important;
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] .buyer-verification-step--active {
+  background-color: #163441 !important;
+  border-color: #00b95c !important;
+}
+
+/* Quote totals use a green semantic surface; retain its contrast in dark mode. */
+[data-theme="dark"] .transport-quote-total {
+  background-color: #073d33 !important;
+  border-color: #078b65 !important;
+}
+
+[data-theme="dark"] .transport-quote-total__label {
+  color: #ecfdf5 !important;
+}
+
+[data-theme="dark"] .transport-quote-total__amount {
+  color: #5eead4 !important;
+}
+
+/* The blockchain-modal dismiss button needs a dark surface behind its light dark-mode label. */
+[data-theme="dark"] .blockchain-modal-close,
+[data-theme="dark"] .blockchain-modal-close:hover {
+  background-color: #284452 !important;
+  color: #f8fafc !important;
 }

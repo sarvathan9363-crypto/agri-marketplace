@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Truck, Star, ShieldCheck, CheckCircle, ArrowRight, Clock, Award } from 'lucide-react';
+import { Truck, Star, ShieldCheck, CheckCircle, ArrowRight, Clock, Award, RotateCw } from 'lucide-react';
 import transportService from '../../services/transportService';
 import toast from 'react-hot-toast';
 
@@ -9,22 +9,28 @@ export default function TransportQuoteSelector({ requestId, onSelectQuote, onClo
   const [request, setRequest] = useState(null);
   const [quotations, setQuotations] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
   const [selecting, setSelecting] = useState(null);
 
   useEffect(() => {
     if (requestId) fetchQuotes();
   }, [requestId]);
 
-  const fetchQuotes = async () => {
+  const fetchQuotes = async (isManualRefresh = false) => {
     try {
-      setLoading(true);
+      if (isManualRefresh) setRefreshing(true);
+      else setLoading(true);
       const data = await transportService.getRequestById(requestId);
       setRequest(data.request);
       setQuotations(data.quotations || []);
+      if (isManualRefresh) {
+        toast.success(t('transport.quotesRefreshed', { defaultValue: 'Quotations updated.' }));
+      }
     } catch {
       toast.error(t('transport.failedToLoadQuotes', { defaultValue: 'Failed to load transport quotations.' }));
     } finally {
       setLoading(false);
+      setRefreshing(false);
     }
   };
 
@@ -53,25 +59,50 @@ export default function TransportQuoteSelector({ requestId, onSelectQuote, onClo
     <div className="bg-white rounded-3xl border border-[#e8eddb] p-6 shadow-xl space-y-6 max-w-3xl mx-auto">
       <div className="flex items-center justify-between border-b border-[#f0f4e8] pb-4">
         <div>
-          <span className="text-xs font-extrabold uppercase tracking-widest text-[#00684a] bg-[#00ed64]/20 px-3 py-1 rounded-full font-display">
-            {t('transport.quotationComparison', { defaultValue: 'Transporter Quotation Comparison' })}
-          </span>
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-[#00684a] bg-[#00ed64]/20 px-3 py-1 rounded-full font-display">
+              {t('transport.quotationComparison', { defaultValue: 'Transporter Quotation Comparison' })}
+            </span>
+            {request?.requestNumber && (
+              <span className="text-xs font-mono font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded">
+                {request.requestNumber}
+              </span>
+            )}
+          </div>
           <h2 className="text-xl font-black text-[#001e2b] font-display mt-2">
             {t('transport.selectTransporter', { defaultValue: 'Select Transporter & Freight Quote' })}
           </h2>
         </div>
-        {onClose && (
-          <button onClick={onClose} className="text-xs font-bold text-gray-400 hover:text-gray-600 px-3 py-1.5 rounded-xl border border-gray-200">
-            ✕ {t('common.close', { defaultValue: 'Close' })}
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => fetchQuotes(true)}
+            disabled={refreshing}
+            className="text-xs font-bold text-[#00684a] hover:bg-emerald-50 px-3 py-1.5 rounded-xl border border-emerald-200 flex items-center gap-1 transition"
+          >
+            <RotateCw className={`w-3.5 h-3.5 ${refreshing ? 'animate-spin' : ''}`} />
+            <span>{t('common.refresh', { defaultValue: 'Refresh Quotes' })}</span>
           </button>
-        )}
+          {onClose && (
+            <button onClick={onClose} className="text-xs font-bold text-gray-400 hover:text-gray-600 px-3 py-1.5 rounded-xl border border-gray-200">
+              ✕ {t('common.close', { defaultValue: 'Close' })}
+            </button>
+          )}
+        </div>
       </div>
 
       {quotations.length === 0 ? (
-        <div className="text-center py-10 bg-[#fafcf8] rounded-2xl border border-[#e8eddb] p-6">
-          <Truck className="w-12 h-12 text-[#00684a] mx-auto mb-3 opacity-60" />
-          <p className="text-sm font-bold text-[#001e2b]">{t('transport.noQuotesYet', { defaultValue: 'No transporter quotations received yet.' })}</p>
-          <p className="text-xs text-gray-500 mt-1">{t('transport.transportersNotified', { defaultValue: 'Registered transporters in your region have been notified to submit quotes.' })}</p>
+        <div className="text-center py-10 bg-[#fafcf8] rounded-2xl border border-[#e8eddb] p-6 space-y-3">
+          <Truck className="w-12 h-12 text-[#00684a] mx-auto mb-1 opacity-60" />
+          <p className="text-base font-extrabold text-[#001e2b]">{t('transport.noQuotesYet', { defaultValue: 'No transporter quotations received yet.' })}</p>
+          <p className="text-xs text-gray-500 max-w-md mx-auto">{t('transport.transportersNotified', { defaultValue: 'Registered transporters in your region have been notified. Once they submit quotes from their dashboard, they will appear here.' })}</p>
+          <button
+            onClick={() => fetchQuotes(true)}
+            disabled={refreshing}
+            className="mt-2 inline-flex items-center gap-2 px-4 py-2 bg-[#00684a] text-white text-xs font-bold rounded-xl hover:bg-[#00523a] transition shadow-sm"
+          >
+            <RotateCw className={`w-3.5 h-3.5 ${refreshing ? 'animate-spin' : ''}`} />
+            <span>{t('transport.checkLatestQuotes', { defaultValue: 'Check for New Quotes' })}</span>
+          </button>
         </div>
       ) : (
         <div className="space-y-4">

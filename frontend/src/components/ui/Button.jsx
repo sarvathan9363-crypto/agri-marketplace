@@ -13,20 +13,20 @@ const Button = forwardRef(({
   onClick,
   ...props
 }, ref) => {
-  const baseStyles = 'inline-flex items-center justify-center font-display font-bold transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed select-none';
+  const baseStyles = 'inline-flex items-center justify-center font-display font-bold transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed select-none focus-visible:outline-none';
 
   const variants = {
-    primary: 'bg-[#00ed64] hover:bg-[#00d659] text-[#001e2b] shadow-md hover:shadow-lg hover:shadow-[#00ed64]/20 border border-transparent',
-    secondary: 'bg-[#001e2b] hover:bg-[#001722] text-white border border-emerald-900/40 shadow-sm',
-    outline: 'bg-transparent hover:bg-[#001e2b] text-[#001e2b] hover:text-white border-2 border-[#001e2b]',
-    ghost: 'bg-transparent hover:bg-[#00684a]/10 text-[#001e2b] border border-transparent',
-    danger: 'bg-red-600 hover:bg-red-700 text-white shadow-sm border border-transparent',
+    primary: 'bg-[var(--primary)] hover:bg-[var(--primary-hover)] text-[var(--primary-contrast)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] border border-transparent',
+    secondary: 'bg-[var(--surface-elevated)] hover:bg-[var(--surface)] text-[var(--text-primary)] border border-[var(--border)] shadow-[var(--shadow-sm)]',
+    outline: 'bg-transparent hover:bg-[var(--surface-elevated)] text-[var(--text-primary)] border border-[var(--border)] hover:border-[var(--primary)]',
+    ghost: 'bg-transparent hover:bg-[var(--surface-elevated)] text-[var(--text-primary)] border border-transparent',
+    danger: 'bg-[var(--danger)] hover:brightness-95 text-white shadow-[var(--shadow-sm)] border border-transparent',
   };
 
   const sizes = {
-    sm: 'text-xs px-3.5 py-2 rounded-xl gap-1.5',
-    md: 'text-sm px-5 py-2.5 rounded-2xl gap-2',
-    lg: 'text-base px-7 py-3.5 rounded-full gap-2.5',
+    sm: 'text-xs px-3.5 py-2 rounded-[var(--radius-sm)] gap-1.5',
+    md: 'text-sm px-5 py-2.5 rounded-[var(--radius-md)] gap-2',
+    lg: 'text-base px-7 py-3.5 rounded-[var(--radius-md)] gap-2.5',
   };
 
   return (

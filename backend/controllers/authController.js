@@ -33,8 +33,8 @@ exports.registerFarmer = async (req, res, next) => {
     // Create user
     const user = await User.create({
       fullName,
-      email,
-      mobileNumber,
+      email: cleanEmail,
+      mobileNumber: cleanMobile,
       password,
       role: 'FARMER',
     });
@@ -115,8 +115,8 @@ exports.registerBuyer = async (req, res, next) => {
 
     const user = await User.create({
       fullName,
-      email,
-      mobileNumber,
+      email: cleanEmail,
+      mobileNumber: cleanMobile,
       password,
       role: 'BUYER',
     });
@@ -186,8 +186,8 @@ exports.registerTransporter = async (req, res, next) => {
 
     const user = await User.create({
       fullName,
-      email,
-      mobileNumber,
+      email: cleanEmail,
+      mobileNumber: cleanMobile,
       password,
       role: 'TRANSPORTER',
     });
@@ -200,7 +200,7 @@ exports.registerTransporter = async (req, res, next) => {
       vehicleType: vehicleType || 'Refrigerated LCV (3.5T)',
       vehicleNumber: vehicleNumber || 'MH-12-AG-4589',
       operatingStates: operatingStates ? (Array.isArray(operatingStates) ? operatingStates : [operatingStates]) : ['Maharashtra'],
-      verificationStatus: 'VERIFIED',
+      verificationStatus: 'NOT_STARTED',
     });
 
     await Notification.create({
@@ -250,7 +250,7 @@ exports.login = async (req, res, next) => {
       });
     }
 
-    const user = await User.findOne({ email }).select('+password');
+    const user = await User.findOne({ email: String(email).toLowerCase().trim() }).select('+password');
     if (!user) {
       return res.status(401).json({
         success: false,
@@ -276,15 +276,18 @@ exports.login = async (req, res, next) => {
     const token = generateToken(user._id);
 
     // Get role-specific profile
+    const Transporter = require('../models/Transporter');
     let profile = null;
     if (user.role === 'FARMER') {
       profile = await Farmer.findOne({ userId: user._id });
     } else if (user.role === 'BUYER') {
       profile = await Buyer.findOne({ userId: user._id });
+    } else if (user.role === 'TRANSPORTER') {
+      profile = await Transporter.findOne({ userId: user._id });
     }
 
     const { hashId } = require('../blockchain/blockchain.utils');
-    const prefix = user.role === 'FARMER' ? 'AGR-F-' : user.role === 'BUYER' ? 'AGR-B-' : 'AGR-A-';
+    const prefix = user.role === 'FARMER' ? 'AGR-F-' : user.role === 'BUYER' ? 'AGR-B-' : user.role === 'TRANSPORTER' ? 'AGR-T-' : 'AGR-A-';
     const accountHash = hashId(`${prefix}${user._id.toString()}`);
 
     res.json({
@@ -312,6 +315,7 @@ exports.login = async (req, res, next) => {
 exports.getMe = async (req, res, next) => {
   try {
     const { hashId } = require('../blockchain/blockchain.utils');
+    const Transporter = require('../models/Transporter');
     const user = req.user;
 
     let profile = null;
@@ -322,6 +326,9 @@ exports.getMe = async (req, res, next) => {
     } else if (user.role === 'BUYER') {
       profile = await Buyer.findOne({ userId: user._id });
       accountHash = hashId(`AGR-B-${user._id.toString()}`);
+    } else if (user.role === 'TRANSPORTER') {
+      profile = await Transporter.findOne({ userId: user._id });
+      accountHash = hashId(`AGR-T-${user._id.toString()}`);
     } else {
       accountHash = hashId(`AGR-A-${user._id.toString()}`);
     }

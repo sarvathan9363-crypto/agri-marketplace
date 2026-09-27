@@ -44,6 +44,12 @@ const transportRequestSchema = new mongoose.Schema({
     unit: { type: String, default: 'KG' },
     weightKg: { type: Number, default: 0 },
   }],
+  pickupLocations: [{
+    farmerId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    farmerName: { type: String, default: '' },
+    address: { type: String, default: '' },
+    items: [{ type: String }],
+  }],
   pickupLocation: {
     type: String,
     required: true,
@@ -98,6 +104,7 @@ const transportRequestSchema = new mongoose.Schema({
       'OPEN',
       'QUOTES_RECEIVED',
       'QUOTATION_SELECTED',
+      'CONFIRMED',
       'ASSIGNED',
       'PICKUP_SCHEDULED',
       'PICKED_UP',

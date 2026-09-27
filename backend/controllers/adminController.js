@@ -1,6 +1,7 @@
 const User = require('../models/User');
 const Farmer = require('../models/Farmer');
 const Buyer = require('../models/Buyer');
+const Transporter = require('../models/Transporter');
 const Product = require('../models/Product');
 const Order = require('../models/Order');
 const Payment = require('../models/Payment');
@@ -527,10 +528,39 @@ exports.lookupAccountByHash = async (req, res, next) => {
       }
     }
 
+    // Search Transporters
+    const Transporter = require('../models/Transporter');
+    const transporters = await Transporter.find().populate('userId', 'fullName email mobileNumber role profileImage active');
+    for (const t of transporters) {
+      const uId = t.userId?._id?.toString() || t.userId?.toString() || t._id.toString();
+      const tHash = hashId(`AGR-T-${uId}`).toLowerCase();
+      const tAltHash = hashId(`AGR-T-${t._id.toString()}`).toLowerCase();
+
+      if (cleanHash === tHash || cleanHash === tAltHash) {
+        return res.json({
+          success: true,
+          matched: true,
+          accountType: 'TRANSPORTER',
+          accountHash,
+          user: t.userId,
+          transporter: {
+            id: t._id,
+            companyName: t.companyName,
+            contactPerson: t.contactPerson,
+            email: t.email,
+            mobileNumber: t.mobileNumber,
+            vehicleType: t.vehicleType,
+            vehicleNumber: t.vehicleNumber,
+            verificationStatus: t.verificationStatus,
+          },
+        });
+      }
+    }
+
     // Search all Users directly as fallback
     const users = await User.find();
     for (const u of users) {
-      const prefix = u.role === 'FARMER' ? 'AGR-F-' : u.role === 'BUYER' ? 'AGR-B-' : 'AGR-A-';
+      const prefix = u.role === 'FARMER' ? 'AGR-F-' : u.role === 'BUYER' ? 'AGR-B-' : u.role === 'TRANSPORTER' ? 'AGR-T-' : 'AGR-A-';
       const uHash = hashId(`${prefix}${u._id.toString()}`).toLowerCase();
       if (cleanHash === uHash) {
         return res.json({
@@ -553,8 +583,100 @@ exports.lookupAccountByHash = async (req, res, next) => {
     res.json({
       success: true,
       matched: false,
-      message: 'No registered user or farmer found matching this account hash.',
+      message: 'No registered user, farmer, or transporter found matching this account hash.',
       accountHash,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+// @desc    Get all transporters for admin review
+// @route   GET /api/admin/transporters
+exports.getTransporters = async (req, res, next) => {
+  try {
+    const { hashId } = require('../blockchain/blockchain.utils');
+    const { verificationStatus, search, page = 1, limit = 20 } = req.query;
+    const query = {};
+
+    if (verificationStatus) query.verificationStatus = verificationStatus;
+    if (search) {
+      query.$or = [
+        { companyName: { $regex: search, $options: 'i' } },
+        { contactPerson: { $regex: search, $options: 'i' } },
+        { contactMobile: { $regex: search, $options: 'i' } },
+        { mobileNumber: { $regex: search, $options: 'i' } },
+        { contactEmail: { $regex: search, $options: 'i' } },
+        { email: { $regex: search, $options: 'i' } },
+      ];
+    }
+
+    const skip = (Number(page) - 1) * Number(limit);
+    const total = await Transporter.countDocuments(query);
+    const transporters = await Transporter.find(query)
+      .sort({ createdAt: -1 })
+      .skip(skip)
+      .limit(Number(limit));
+
+    const items = transporters.map(t => ({
+      ...t.toObject(),
+      accountHash: hashId(`AGR-T-${(t.userId || t._id).toString()}`),
+    }));
+
+    res.json({
+      success: true,
+      transporters: items,
+      pagination: { page: Number(page), limit: Number(limit), total, pages: Math.ceil(total / Number(limit)) },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+// @desc    Verify or reject transporter (Admin)
+// @route   PUT /api/admin/transporters/:id/verify
+exports.verifyTransporter = async (req, res, next) => {
+  try {
+    const { status, notes } = req.body; // VERIFIED, REJECTED, ACTION_REQUIRED, SUSPENDED
+    const transporter = await Transporter.findById(req.params.id);
+
+    if (!transporter) return res.status(404).json({ success: false, message: 'Transporter not found.' });
+
+    const validStatuses = ['VERIFIED', 'REJECTED', 'ACTION_REQUIRED', 'UNDER_REVIEW', 'SUSPENDED'];
+    if (!validStatuses.includes(status)) {
+      return res.status(400).json({ success: false, message: 'Invalid verification status.' });
+    }
+
+    transporter.verificationStatus = status;
+    transporter.verificationNotes = notes || '';
+    if (!transporter.verification) transporter.verification = {};
+    transporter.verification.overallStatus = status;
+
+    if (status === 'VERIFIED') {
+      transporter.verifiedAt = new Date();
+    }
+
+    await transporter.save();
+
+    // Create Notification for Transporter User
+    const title = status === 'VERIFIED' ? 'Transporter Account Verified!' : 'Transporter Verification Update';
+    const message = status === 'VERIFIED'
+      ? 'Congratulations! Your transporter account is now verified. You can now submit transport quotations on AgriBazaar.'
+      : status === 'ACTION_REQUIRED'
+      ? `Action Required for Transporter Verification: ${notes || 'Please update your verification details.'}`
+      : `Your transporter verification status is now ${status}. ${notes || ''}`;
+
+    await Notification.create({
+      userId: transporter.userId,
+      title,
+      message,
+      type: 'VERIFICATION',
+    });
+
+    res.json({
+      success: true,
+      message: `Transporter status updated to ${status}.`,
+      transporter,
     });
   } catch (error) {
     next(error);

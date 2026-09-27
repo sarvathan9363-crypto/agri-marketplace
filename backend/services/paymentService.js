@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const crypto = require('crypto');
 const Payment = require('../models/Payment');
 const Order = require('../models/Order');
@@ -72,35 +73,59 @@ class PaymentService {
     if (!orders || orders.length === 0) throw fail('Order not found.', 404);
 
     // Validate ownership and status & retrieve authoritative transport charge from DB
-    let totalTransportCharge = 0;
-    for (const order of orders) {
+    let groupTransportCharge = 0;
+    let foundActiveTr = null;
+
+    for (let index = 0; index < orders.length; index++) {
+      const order = orders[index];
       if (order.buyerId.toString() !== buyerId.toString()) throw fail('Not authorized.', 403);
       if (order.paymentStatus === 'CAPTURED') throw fail('This order has already been paid.', 409);
       if (order.orderStatus === 'CANCELLED') throw fail('This order has been cancelled.', 409);
 
-      let tCharge = Number(order.transportCharge || 0);
-      if (tCharge <= 0 && (order.transportRequestId || orderGroupId)) {
-        const tr = await TransportRequest.findOne({
+      // Strict backend payment eligibility check (Requirement #15 & #16)
+      if (order.transportRequestId) {
+        const tr = await TransportRequest.findById(order.transportRequestId);
+        if (tr && !['SUPERSEDED', 'CANCELLED', 'EXPIRED'].includes(tr.status)) {
+          const validPaymentTransportStatuses = ['QUOTATION_SELECTED', 'CONFIRMED', 'ASSIGNED', 'PICKUP_SCHEDULED', 'PICKED_UP', 'IN_TRANSIT', 'DELIVERED'];
+          if (!validPaymentTransportStatuses.includes(tr.status) || !tr.selectedQuotationId) {
+            throw fail('Payment cannot be initiated until transport quotation is selected and finalized.', 400);
+          }
+        }
+      }
+
+      // Authoritative transport charge resolution from selected quotation
+      if (!foundActiveTr && (order.transportRequestId || orderGroupId)) {
+        foundActiveTr = await TransportRequest.findOne({
           $or: [
             { _id: order.transportRequestId },
             { orderGroupId: orderGroupId },
             { orderId: order._id }
           ],
-          status: { $in: ['ACCEPTED', 'TRANSPORTER_SELECTED', 'COMPLETED'] }
-        });
-        if (tr && tr.confirmedTransportCharge > 0) {
-          tCharge = tr.confirmedTransportCharge;
-          order.transportCharge = tCharge;
-          if (tr.confirmedTransporterId) order.transporterId = tr.confirmedTransporterId;
-          order.transportRequestId = tr._id;
-          await order.save();
-        }
+          status: { $in: ['QUOTATION_SELECTED', 'CONFIRMED', 'ASSIGNED', 'PICKUP_SCHEDULED', 'PICKED_UP', 'IN_TRANSIT', 'DELIVERED', 'COMPLETED'] }
+        }).populate('selectedQuotationId');
       }
-      totalTransportCharge += tCharge;
+
+      if (foundActiveTr) {
+        if (foundActiveTr.selectedQuotationId?.totalQuote > 0) {
+          groupTransportCharge = Number(foundActiveTr.selectedQuotationId.totalQuote);
+        } else if (foundActiveTr.confirmedTransportCharge > 0) {
+          groupTransportCharge = Number(foundActiveTr.confirmedTransportCharge);
+        }
+      } else if (index === 0 && order.transportCharge > 0) {
+        groupTransportCharge = Number(order.transportCharge);
+      }
+
+      // Assign transport charge ONLY to the primary order in the group (index === 0)
+      order.transportCharge = index === 0 ? groupTransportCharge : 0;
+      if (foundActiveTr) {
+        if (foundActiveTr.transporterId) order.transporterId = foundActiveTr.transporterId;
+        order.transportRequestId = foundActiveTr._id;
+      }
+      await order.save();
     }
 
     const productSubtotalRupees = orders.reduce((sum, o) => sum + Number(o.totalAmount || 0), 0);
-    const totalRupees = productSubtotalRupees + totalTransportCharge;
+    const totalRupees = productSubtotalRupees + groupTransportCharge;
     const amountPaise = Math.round(totalRupees * 100);
     if (!Number.isSafeInteger(amountPaise) || amountPaise < 100) throw fail('Invalid order total amount.');
 
@@ -111,8 +136,13 @@ class PaymentService {
       status: { $in: ['CREATED', 'PENDING', 'AUTHORIZED'] }
     });
 
-    if (existing && existing.amount === amountPaise) {
-      return this.checkoutResponse(orders[0], existing);
+    if (existing) {
+      if (existing.amount === amountPaise) {
+        return this.checkoutResponse(orders[0], existing);
+      } else {
+        existing.status = 'CANCELLED';
+        await existing.save();
+      }
     }
 
     console.log(`[PaymentService] Creating Unified Razorpay order for ${orders.length} order(s): group=${orderGroupId}, total=₹${totalRupees} (${amountPaise} paise)`);
@@ -385,7 +415,14 @@ class PaymentService {
   }
 
   async getPaymentByOrder(orderId) {
-    return Payment.findOne({ orderId }).sort({ createdAt: -1 });
+    if (!orderId) return null;
+    const isObjId = mongoose.isValidObjectId(orderId);
+    return Payment.findOne({
+      $or: [
+        { orderGroupId: String(orderId) },
+        ...(isObjId ? [{ orderId }] : [])
+      ]
+    }).sort({ createdAt: -1 });
   }
 
   validWebhook(raw, signature) {

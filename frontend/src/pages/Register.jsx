@@ -108,8 +108,8 @@ export default function Register() {
   if (step === 'farmer_verification_prompt') {
     const isFpoReg = farmerForm.farmerType === 'FPO';
     const onboardingPath = isFpoReg ? '/fpo/verification/onboarding' : '/farmer/verification/wizard';
-    const badgeText = isFpoReg ? '✓ VERIFIED FPO' : '✓ VERIFIED FARMER';
-    const regTitle = isFpoReg ? 'Complete Your FPO Verification' : 'Complete Your Farmer Verification';
+    const badgeText = isFpoReg ? t('farmerVerification.verifiedFpoBadge', { defaultValue: '✓ VERIFIED FPO' }) : t('farmerVerification.verifiedFarmerBadge', { defaultValue: '✓ VERIFIED FARMER' });
+    const regTitle = isFpoReg ? t('register.completeFpoVerification', { defaultValue: 'Complete Your FPO Verification' }) : t('register.completeFarmerVerification', { defaultValue: 'Complete Your Farmer Verification' });
 
     return (
       <div className="app-auth-page bg-[#fafcf8] flex items-center justify-center p-4 py-12">
@@ -121,13 +121,13 @@ export default function Register() {
 
             <div>
               <span className="text-[11px] font-black uppercase tracking-widest text-[#00684a] bg-[#f0fdf4] px-3 py-1 rounded-full border border-[#bbf7d0]">
-                Registration Successful
+                {t('register.registrationSuccessful', { defaultValue: 'Registration Successful' })}
               </span>
               <h1 className="text-2xl sm:text-3xl font-black text-[#001e2b] font-display mt-3">
                 {regTitle}
               </h1>
               <p className="text-xs sm:text-sm text-gray-600 mt-2 font-sans leading-relaxed">
-                Verify your credentials and bank account to unlock your <strong className="text-[#001e2b]">{badgeText}</strong> badge and sell produce on AgriBazaar.
+                {t('register.verifyCredentialsNoticePrefix', { defaultValue: 'Verify your credentials and bank account to unlock your' })} <strong className="text-[#001e2b]">{badgeText}</strong> {t('register.verifyCredentialsNoticeSuffix', { defaultValue: 'badge and sell produce on AgriBazaar.' })}
               </p>
             </div>
 
@@ -137,7 +137,7 @@ export default function Register() {
                 onClick={() => navigate(onboardingPath)}
                 className="btn-mongo-primary w-full sm:w-auto px-6 py-3.5 text-sm font-bold flex items-center justify-center gap-2"
               >
-                <Play className="w-4 h-4 fill-current" /> Start Verification
+                <Play className="w-4 h-4 fill-current" /> {t('register.startVerificationBtn', { defaultValue: 'Start Verification' })}
               </button>
 
               <button
@@ -145,12 +145,12 @@ export default function Register() {
                 onClick={() => navigate('/farmer/dashboard')}
                 className="w-full sm:w-auto px-6 py-3.5 border-2 border-[#d0d7de] rounded-xl text-sm font-bold text-gray-700 hover:bg-gray-50 flex items-center justify-center gap-2"
               >
-                Skip for Now
+                {t('register.skipForNowBtn', { defaultValue: 'Skip for Now' })}
               </button>
             </div>
 
             <p className="text-[11px] text-gray-400">
-              You can complete verification anytime later from your Seller Dashboard.
+              {t('register.canCompleteLaterNotice', { defaultValue: 'You can complete verification anytime later from your Seller Dashboard.' })}
             </p>
           </div>
         </motion.div>
@@ -161,7 +161,11 @@ export default function Register() {
   // Post-registration Buyer Verification prompt
   if (step === 'buyer_verification_prompt') {
     const rawType = buyerForm.buyerType || 'INDIVIDUAL';
-    const badgeText = rawType === 'BULK_BUYER' ? '✓ VERIFIED WHOLESALE BUYER' : rawType === 'BUSINESS' ? '✓ VERIFIED BUSINESS BUYER' : '✓ VERIFIED BUYER';
+    const badgeText = rawType === 'BULK_BUYER' 
+      ? t('buyerVerificationConfig.BULK_BUYER.badgeText', { defaultValue: '✓ VERIFIED WHOLESALE BUYER' }) 
+      : rawType === 'BUSINESS' 
+      ? t('buyerVerificationConfig.BUSINESS.badgeText', { defaultValue: '✓ VERIFIED BUSINESS BUYER' }) 
+      : t('buyerVerificationConfig.INDIVIDUAL.badgeText', { defaultValue: '✓ VERIFIED BUYER' });
 
     return (
       <div className="app-auth-page bg-[#fafcf8] flex items-center justify-center p-4 py-12">
@@ -173,13 +177,13 @@ export default function Register() {
 
             <div>
               <span className="text-[11px] font-black uppercase tracking-widest text-[#00684a] bg-[#f0fdf4] px-3 py-1 rounded-full border border-[#bbf7d0]">
-                Account Created Successfully
+                {t('register.accountCreatedSuccessfully', { defaultValue: 'Account Created Successfully' })}
               </span>
               <h1 className="text-2xl sm:text-3xl font-black text-[#001e2b] font-display mt-3">
-                Complete Buyer Verification
+                {t('register.completeBuyerVerification', { defaultValue: 'Complete Buyer Verification' })}
               </h1>
               <p className="text-xs sm:text-sm text-gray-600 mt-2 font-sans leading-relaxed">
-                Verify your details to unlock verified buyer features, build trust on AgriBazaar, and earn your <strong className="text-[#001e2b]">{badgeText}</strong> badge.
+                {t('register.verifyBuyerDetailsNoticePrefix', { defaultValue: 'Verify your details to unlock verified buyer features, build trust on AgriBazaar, and earn your' })} <strong className="text-[#001e2b]">{badgeText}</strong> {t('register.verifyBuyerDetailsNoticeSuffix', { defaultValue: 'badge.' })}
               </p>
             </div>
 
@@ -189,7 +193,7 @@ export default function Register() {
                 onClick={() => navigate('/buyer/verification/wizard')}
                 className="btn-mongo-primary w-full sm:w-auto px-6 py-3.5 text-sm font-bold flex items-center justify-center gap-2"
               >
-                <Play className="w-4 h-4 fill-current" /> Start Verification
+                <Play className="w-4 h-4 fill-current" /> {t('register.startVerificationBtn', { defaultValue: 'Start Verification' })}
               </button>
 
               <button
@@ -197,12 +201,12 @@ export default function Register() {
                 onClick={() => navigate('/buyer/dashboard')}
                 className="w-full sm:w-auto px-6 py-3.5 border-2 border-[#d0d7de] rounded-xl text-sm font-bold text-gray-700 hover:bg-gray-50 flex items-center justify-center gap-2"
               >
-                Skip for Now
+                {t('register.skipForNowBtn', { defaultValue: 'Skip for Now' })}
               </button>
             </div>
 
             <p className="text-[11px] text-gray-400">
-              Skipping verification does NOT mean verified. Status will remain PENDING_VERIFICATION until completed.
+              {t('register.skippingBuyerVerificationNotice', { defaultValue: 'Skipping verification does NOT mean verified. Status will remain PENDING_VERIFICATION until completed.' })}
             </p>
           </div>
         </motion.div>
@@ -250,13 +254,14 @@ export default function Register() {
                 <Truck className="w-7 h-7 text-[#00684a] group-hover:text-[#001e2b]" />
               </div>
               <h3 className="text-xl font-extrabold text-[#001e2b] font-display">{t('roles.transporter', { defaultValue: 'Transporter / Freight Carrier' })}</h3>
-              <p className="mt-1.5 text-xs text-gray-500 font-medium leading-relaxed">{t('transport.dashboardSubtitle', { defaultValue: 'Provide agricultural freight transport services & bid on open requests.' })}</p>
+              <p className="mt-1.5 text-xs text-gray-500 font-medium leading-relaxed">{t('register.transporterDesc', { defaultValue: 'Manage agricultural freight requests, submit locked quotes, and track crop shipments.' })}</p>
               <span className="inline-block mt-4 text-xs font-bold text-[#00684a] group-hover:underline">{t('auth.registerAsTransporterBtn', { defaultValue: 'Register as Transporter →' })}</span>
             </button>
           </div>
 
           <p className="mt-8 text-center text-sm text-gray-600">
-            Already have an account? <Link to="/login" className="text-[#00684a] font-bold hover:underline">{t('register.signIn')}</Link>
+            {t('auth.alreadyHaveAccount', { defaultValue: 'Already have an account?' })}{' '}
+            <Link to="/login" className="text-[#00684a] font-bold hover:underline">{t('register.signIn')}</Link>
           </p>
         </motion.div>
       </div>
@@ -434,162 +439,164 @@ export default function Register() {
   }
 
   // Buyer registration form
-  return (
-    <div className="app-auth-page bg-[#fafcf8] flex items-center justify-center p-4 py-12">
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-xl">
-        <div className="text-center mb-6">
-          <h1 className="text-3xl font-black text-[#001e2b] font-display">{t('register.buyerRegistration')}</h1>
-          <p className="text-sm text-gray-600 mt-1">{t('register.createYourAccountToPurchaseProduce')}</p>
-        </div>
+  if (step === 'buyer') {
+    return (
+      <div className="app-auth-page bg-[#fafcf8] flex items-center justify-center p-4 py-12">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-xl">
+          <div className="text-center mb-6">
+            <h1 className="text-3xl font-black text-[#001e2b] font-display">{t('register.buyerRegistration')}</h1>
+            <p className="text-sm text-gray-600 mt-1">{t('register.createYourAccountToPurchaseProduce')}</p>
+          </div>
 
-        <div className="bg-white rounded-3xl border border-[#e8eddb] p-8 shadow-xl">
-          <form onSubmit={handleBuyerSubmit} className="space-y-4">
-            <div>
-              <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">Full Name *</label>
-              <div className="relative">
-                <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+          <div className="bg-white rounded-3xl border border-[#e8eddb] p-8 shadow-xl">
+            <form onSubmit={handleBuyerSubmit} className="space-y-4">
+              <div>
+                <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">{t('auth.fullNameLabel', { defaultValue: 'Full Name *' })}</label>
+                <div className="relative">
+                  <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <input
+                    type="text"
+                    required
+                    placeholder={t('auth.placeholderFullName', { defaultValue: 'Enter full name' })}
+                    value={buyerForm.fullName}
+                    onChange={(e) => setBuyerForm({ ...buyerForm, fullName: e.target.value })}
+                    className="input-mongo"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">{t('auth.emailAddressLabel', { defaultValue: 'Email Address *' })}</label>
+                  <div className="relative">
+                    <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                    <input
+                      type="email"
+                      required
+                      placeholder="buyer@example.com"
+                      value={buyerForm.email}
+                      onChange={(e) => setBuyerForm({ ...buyerForm, email: e.target.value })}
+                      className="input-mongo"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">{t('auth.mobileNumberLabel', { defaultValue: 'Mobile Number *' })}</label>
+                  <div className="relative">
+                    <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                    <input
+                      type="tel"
+                      required
+                      placeholder="9876543210"
+                      value={buyerForm.mobileNumber}
+                      onChange={(e) => setBuyerForm({ ...buyerForm, mobileNumber: e.target.value })}
+                      className="input-mongo"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">{t('auth.passwordLabel', { defaultValue: 'Password *' })}</label>
+                  <div className="relative">
+                    <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                    <input
+                      type="password"
+                      required
+                      placeholder={t('auth.placeholderMinChars', { defaultValue: 'At least 6 chars' })}
+                      value={buyerForm.password}
+                      onChange={(e) => setBuyerForm({ ...buyerForm, password: e.target.value })}
+                      className="input-mongo"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">{t('auth.confirmPasswordLabel', { defaultValue: 'Confirm Password *' })}</label>
+                  <div className="relative">
+                    <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                    <input
+                      type="password"
+                      required
+                      placeholder={t('auth.placeholderReEnterPassword', { defaultValue: 'Re-enter password' })}
+                      value={buyerForm.confirmPassword}
+                      onChange={(e) => setBuyerForm({ ...buyerForm, confirmPassword: e.target.value })}
+                      className="input-mongo"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">{t('auth.buyerTypeLabel', { defaultValue: 'Buyer Type *' })}</label>
+                <select
+                  value={buyerForm.buyerType}
+                  onChange={(e) => setBuyerForm({ ...buyerForm, buyerType: e.target.value })}
+                  className="w-full py-3.5 px-4 bg-white border border-[#d0d7de] rounded-xl text-sm text-[#001e2b] font-medium focus:outline-none focus:border-[#00684a]"
+                >
+                  <option value="INDIVIDUAL">{t('register.individualConsumer')}</option>
+                  <option value="BUSINESS">{t('register.businessRetailer')}</option>
+                  <option value="BULK_BUYER">{t('register.wholesaleBulkBuyer')}</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">{t('register.deliveryAddress')}</label>
+                <div className="relative">
+                  <MapPin className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <input
+                    type="text"
+                    placeholder={t('auth.placeholderAddress', { defaultValue: 'Street address' })}
+                    value={buyerForm.address}
+                    onChange={(e) => setBuyerForm({ ...buyerForm, address: e.target.value })}
+                    className="input-mongo"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-3 gap-3">
                 <input
-                  type="text"
-                  required
-                  placeholder="Enter full name"
-                  value={buyerForm.fullName}
-                  onChange={(e) => setBuyerForm({ ...buyerForm, fullName: e.target.value })}
-                  className="input-mongo"
+                  placeholder={t('checkout.cityDistrict', { defaultValue: 'City' })}
+                  value={buyerForm.city}
+                  onChange={(e) => setBuyerForm({ ...buyerForm, city: e.target.value })}
+                  className="w-full px-3 py-3 bg-white border border-[#d0d7de] rounded-xl text-sm text-[#001e2b]"
+                />
+                <input
+                  placeholder={t('checkout.stateLabel', { defaultValue: 'State' })}
+                  value={buyerForm.state}
+                  onChange={(e) => setBuyerForm({ ...buyerForm, state: e.target.value })}
+                  className="w-full px-3 py-3 bg-white border border-[#d0d7de] rounded-xl text-sm text-[#001e2b]"
+                />
+                <input
+                  placeholder={t('checkout.pincodeLabel', { defaultValue: 'Pincode' })}
+                  value={buyerForm.pincode}
+                  onChange={(e) => setBuyerForm({ ...buyerForm, pincode: e.target.value })}
+                  className="w-full px-3 py-3 bg-white border border-[#d0d7de] rounded-xl text-sm text-[#001e2b]"
                 />
               </div>
-            </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">{t('auth.emailAddressLabel', { defaultValue: 'Email Address *' })}</label>
-                <div className="relative">
-                  <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <input
-                    type="email"
-                    required
-                    placeholder="buyer@example.com"
-                    value={buyerForm.email}
-                    onChange={(e) => setBuyerForm({ ...buyerForm, email: e.target.value })}
-                    className="input-mongo"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">{t('auth.mobileNumberLabel', { defaultValue: 'Mobile Number *' })}</label>
-                <div className="relative">
-                  <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <input
-                    type="tel"
-                    required
-                    placeholder="9876543210"
-                    value={buyerForm.mobileNumber}
-                    onChange={(e) => setBuyerForm({ ...buyerForm, mobileNumber: e.target.value })}
-                    className="input-mongo"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">{t('auth.passwordLabel', { defaultValue: 'Password *' })}</label>
-                <div className="relative">
-                  <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <input
-                    type="password"
-                    required
-                    placeholder="At least 6 chars"
-                    value={buyerForm.password}
-                    onChange={(e) => setBuyerForm({ ...buyerForm, password: e.target.value })}
-                    className="input-mongo"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">{t('auth.confirmPasswordLabel', { defaultValue: 'Confirm Password *' })}</label>
-                <div className="relative">
-                  <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <input
-                    type="password"
-                    required
-                    placeholder="Re-enter password"
-                    value={buyerForm.confirmPassword}
-                    onChange={(e) => setBuyerForm({ ...buyerForm, confirmPassword: e.target.value })}
-                    className="input-mongo"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">{t('auth.buyerTypeLabel', { defaultValue: 'Buyer Type *' })}</label>
-              <select
-                value={buyerForm.buyerType}
-                onChange={(e) => setBuyerForm({ ...buyerForm, buyerType: e.target.value })}
-                className="w-full py-3.5 px-4 bg-white border border-[#d0d7de] rounded-xl text-sm text-[#001e2b] font-medium focus:outline-none focus:border-[#00684a]"
+              <button
+                type="submit"
+                disabled={loading}
+                className="btn-mongo-primary w-full py-4 text-base mt-2"
               >
-                <option value="INDIVIDUAL">{t('register.individualConsumer')}</option>
-                <option value="BUSINESS">{t('register.businessRetailer')}</option>
-                <option value="BULK_BUYER">{t('register.wholesaleBulkBuyer')}</option>
-              </select>
-            </div>
-
-            <div>
-              <label className="block text-xs font-extrabold uppercase tracking-wider text-[#001e2b] mb-1 font-display">{t('register.deliveryAddress')}</label>
-              <div className="relative">
-                <MapPin className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-                <input
-                  type="text"
-                  placeholder="Street address"
-                  value={buyerForm.address}
-                  onChange={(e) => setBuyerForm({ ...buyerForm, address: e.target.value })}
-                  className="input-mongo"
-                />
-              </div>
-            </div>
-
-            <div className="grid grid-cols-3 gap-3">
-              <input
-                placeholder="City"
-                value={buyerForm.city}
-                onChange={(e) => setBuyerForm({ ...buyerForm, city: e.target.value })}
-                className="w-full px-3 py-3 bg-white border border-[#d0d7de] rounded-xl text-sm text-[#001e2b]"
-              />
-              <input
-                placeholder="State"
-                value={buyerForm.state}
-                onChange={(e) => setBuyerForm({ ...buyerForm, state: e.target.value })}
-                className="w-full px-3 py-3 bg-white border border-[#d0d7de] rounded-xl text-sm text-[#001e2b]"
-              />
-              <input
-                placeholder="Pincode"
-                value={buyerForm.pincode}
-                onChange={(e) => setBuyerForm({ ...buyerForm, pincode: e.target.value })}
-                className="w-full px-3 py-3 bg-white border border-[#d0d7de] rounded-xl text-sm text-[#001e2b]"
-              />
-            </div>
+                {loading ? t('auth.creatingAccount', { defaultValue: 'Creating Account...' }) : t('auth.registerAsBuyer', { defaultValue: 'Register as Buyer' })}
+              </button>
+            </form>
 
             <button
-              type="submit"
-              disabled={loading}
-              className="btn-mongo-primary w-full py-4 text-base mt-2"
+              onClick={() => setStep('select')}
+              className="w-full mt-4 text-sm font-bold text-gray-500 hover:text-[#001e2b] text-center block"
             >
-              {loading ? t('auth.creatingAccount', { defaultValue: 'Creating Account...' }) : t('auth.registerAsBuyer', { defaultValue: 'Register as Buyer' })}
+              ← {t('register.backToRoleSelection', { defaultValue: 'Back to role selection' })}
             </button>
-          </form>
-
-          <button
-            onClick={() => setStep('select')}
-            className="w-full mt-4 text-sm font-bold text-gray-500 hover:text-[#001e2b] text-center block"
-          >
-            ← Back to role selection
-          </button>
-        </div>
-      </motion.div>
-    </div>
-  );
+          </div>
+        </motion.div>
+      </div>
+    );
+  }
 
   // Transporter registration form
   if (step === 'transporter') {
@@ -735,11 +742,13 @@ export default function Register() {
               onClick={() => setStep('select')}
               className="w-full mt-4 text-sm font-bold text-gray-500 hover:text-[#001e2b] text-center block"
             >
-              ← Back to role selection
+              ← {t('register.backToRoleSelection', { defaultValue: 'Back to role selection' })}
             </button>
           </div>
         </motion.div>
       </div>
     );
   }
+
+  return null;
 }
