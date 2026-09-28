@@ -25,6 +25,7 @@ import FarmerOrders from './pages/farmer/Orders';
 import FarmerSales from './pages/farmer/Sales';
 import FarmerProfile from './pages/farmer/Profile';
 import FarmerVerification from './pages/farmer/Verification';
+import MarketInsights from './pages/farmer/MarketInsights';
 
 // Buyer Pages
 import BuyerDashboard from './pages/buyer/Dashboard';
@@ -69,6 +70,7 @@ export default function App() {
           <Route path="/farmer" element={<FarmerLayout />}>
             <Route index element={<Navigate to="/farmer/dashboard" replace />} />
             <Route path="dashboard" element={<FarmerDashboard />} />
+            <Route path="market-insights" element={<MarketInsights />} />
             <Route path="products" element={<MyProducts />} />
             <Route path="products/add" element={<AddProduct />} />
             <Route path="orders" element={<FarmerOrders />} />

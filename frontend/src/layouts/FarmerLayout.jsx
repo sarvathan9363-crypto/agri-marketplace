@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { LayoutDashboard, Package, PlusCircle, ShoppingBag, TrendingUp, User, Shield, Settings } from 'lucide-react';
+import { LayoutDashboard, Package, PlusCircle, ShoppingBag, TrendingUp, User, Shield, Settings, Sparkles } from 'lucide-react';
 import DashboardLayout from './DashboardLayout';
 import { useAuth } from '../context/AuthContext';
 
 const farmerLinks = [
   { to: '/farmer/dashboard', label: 'Dashboard', icon: LayoutDashboard, end: true },
+  { to: '/farmer/market-insights', label: 'Market Insights (ML)', icon: Sparkles },
   { to: '/farmer/products', label: 'My Products', icon: Package },
   { to: '/farmer/products/add', label: 'Add Product', icon: PlusCircle },
   { to: '/farmer/orders', label: 'Orders', icon: ShoppingBag },

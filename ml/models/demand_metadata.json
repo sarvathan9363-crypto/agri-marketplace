@@ -1,0 +1,102 @@
+{
+  "model": "XGBoost Regressor",
+  "version": "1.0",
+  "target": "future_quantity_demand",
+  "forecastHorizon": 7,
+  "horizonUnit": "days",
+  "unit": "KG",
+  "trainingDate": "2026-09-28T19:59:49.384962",
+  "trainingRows": 3552,
+  "validationRows": 768,
+  "testingRows": 816,
+  "catFeatures": [
+    "product",
+    "location",
+    "season"
+  ],
+  "numFeatures": [
+    "current_demand",
+    "lag_1",
+    "lag_3",
+    "lag_7",
+    "lag_14",
+    "lag_28",
+    "previous_week_demand",
+    "previous_month_demand",
+    "rolling_mean_7",
+    "rolling_mean_14",
+    "rolling_mean_28",
+    "rolling_std_7",
+    "average_price",
+    "price_change",
+    "number_of_orders",
+    "average_order_quantity",
+    "month",
+    "week",
+    "day_of_week",
+    "quarter",
+    "year"
+  ],
+  "allFeatures": [
+    "product",
+    "location",
+    "season",
+    "current_demand",
+    "lag_1",
+    "lag_3",
+    "lag_7",
+    "lag_14",
+    "lag_28",
+    "previous_week_demand",
+    "previous_month_demand",
+    "rolling_mean_7",
+    "rolling_mean_14",
+    "rolling_mean_28",
+    "rolling_std_7",
+    "average_price",
+    "price_change",
+    "number_of_orders",
+    "average_order_quantity",
+    "month",
+    "week",
+    "day_of_week",
+    "quarter",
+    "year"
+  ],
+  "metrics": {
+    "mae": 66.8987,
+    "rmse": 107.8594,
+    "mape": 11.7874,
+    "r2": 0.9529
+  },
+  "baselineMetrics": {
+    "mae": 96.0375,
+    "rmse": 148.4085,
+    "mape": 15.7156,
+    "r2": 0.9108
+  },
+  "dataSource": "Demo/Bootstrap",
+  "isBootstrap": true,
+  "dateRange": {
+    "start": "2026-06-07 00:00:00",
+    "end": "2026-09-21 00:00:00"
+  },
+  "availableProducts": [
+    "Banana",
+    "Brinjal",
+    "Green Chilli",
+    "Onion",
+    "Paddy",
+    "Potato",
+    "Tomato",
+    "Wheat"
+  ],
+  "availableLocations": [
+    "Bengaluru",
+    "Coimbatore",
+    "Indore",
+    "Karnal",
+    "Nashik",
+    "Pune"
+  ]
+}

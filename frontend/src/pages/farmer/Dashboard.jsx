@@ -1,16 +1,19 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Package, ShoppingBag, TrendingUp, AlertCircle, DollarSign, PlusCircle } from 'lucide-react';
-import { StatsCard, StatusBadge, LoadingState } from '../../components/ui/Components';
+import { Package, ShoppingBag, TrendingUp, AlertCircle, DollarSign, PlusCircle, Sparkles, ArrowUpRight, ArrowDownRight } from 'lucide-react';
+import { StatsCard, StatusBadge, LoadingState, Card } from '../../components/ui/Components';
 import farmerService from '../../services/farmerService';
+import mlService from '../../services/mlService';
 import toast from 'react-hot-toast';
 
 export default function FarmerDashboard() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [mlData, setMlData] = useState(null);
 
   useEffect(() => {
     fetchDashboard();
+    fetchMLPreview();
   }, []);
 
   const fetchDashboard = async () => {
@@ -21,6 +24,21 @@ export default function FarmerDashboard() {
       toast.error('Failed to load dashboard.');
     } finally {
       setLoading(false);
+    }
+  };
+
+  const fetchMLPreview = async () => {
+    try {
+      const res = await mlService.predictPrice({
+        commodity: 'Tomato',
+        state: 'Tamil Nadu',
+        district: 'Coimbatore',
+        market: 'Mettupalayam',
+        horizonDays: 7,
+      });
+      if (res.success) setMlData(res);
+    } catch {
+      // Non-blocking fallback
     }
   };
 
@@ -58,6 +76,41 @@ export default function FarmerDashboard() {
         <StatsCard icon={ShoppingBag} label="Pending Orders" value={data.pendingOrders} color="amber" />
         <StatsCard icon={DollarSign} label="Total Sales" value={`₹${(data.totalSales || 0).toLocaleString()}`} color="blue" />
       </div>
+
+      {/* ML Market Intelligence Banner Card */}
+      {mlData && (
+        <div className="bg-gradient-to-r from-[#001e2b] to-[#082B36] rounded-3xl p-6 sm:p-8 text-white relative overflow-hidden shadow-sm border border-[#00684a]/30">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2">
+                <span className="bg-[#00ed64]/20 text-[#00ed64] border border-[#00ed64]/40 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider font-display flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5" /> Mandi Price Intelligence
+                </span>
+                <span className="text-xs text-gray-400 font-sans">7-Day Machine Learning Forecast</span>
+              </div>
+              <h2 className="text-2xl font-black font-display text-white">
+                {mlData.commodity} Mandi Price: <span className="text-[#00ed64]">₹{mlData.predictedPrice.toLocaleString()}</span> / {mlData.unit}
+              </h2>
+              <p className="text-xs text-gray-300 font-sans max-w-xl">
+                Current reference in {mlData.market || mlData.location}: ₹{mlData.currentPrice.toLocaleString()}. Predicted 7-day modal price trajectory based on historical Agmarknet market arrivals and seasonal patterns.
+              </p>
+            </div>
+
+            <div className="flex items-center gap-4 shrink-0">
+              <div className="p-4 bg-white/5 border border-white/10 rounded-2xl text-center">
+                <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Target Date</p>
+                <p className="text-sm font-black text-white font-display mt-0.5">{mlData.forecastDate}</p>
+              </div>
+              <Link
+                to="/farmer/market-insights"
+                className="btn-mongo-primary text-xs px-5 py-3 whitespace-nowrap flex items-center gap-2 shadow-lg"
+              >
+                View Full Predictions & Demand <ArrowUpRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Tables Grid */}
       <div className="grid lg:grid-cols-2 gap-8">

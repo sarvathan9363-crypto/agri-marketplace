@@ -38,6 +38,13 @@ app.use('/api/admin', require('./routes/admin'));
 app.use('/api/notifications', require('./routes/notifications'));
 app.use('/api/disputes', require('./routes/disputes'));
 app.use('/api/payments', require('./routes/payments'));
+// AgriVoice telephony and voice routes
+app.use('/api/voice', require('./routes/voice'));
+app.use('/api/exotel', require('./routes/exotel'));
+app.use('/api/voice/test', require('./routes/voiceTest'));
+
+// Machine Learning routes (Price Prediction & Demand Forecasting)
+app.use('/api/ml', require('./routes/ml'));
 
 // 404 handler
 app.use((req, res) => {
@@ -49,9 +56,12 @@ app.use(errorHandler);
 
 const PORT = process.env.PORT || 8080;
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`\n🌾 AgriBazaar API Server running on port ${PORT}`);
   console.log(`   Environment: ${process.env.NODE_ENV || 'development'}`);
   console.log(`   API: http://localhost:${PORT}/api`);
   console.log(`   Health: http://localhost:${PORT}/api/health\n`);
 });
+
+const { initExotelWebSocket } = require('./telephony/exotel/exotelWebSocket');
+initExotelWebSocket(server);

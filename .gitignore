@@ -6,6 +6,10 @@ node_modules/
 .env
 .env.*
 !.env.example
+secrets/
+*.key
+*.pem
+secrets/*.json
 
 # Build output
 dist/
@@ -16,3 +20,17 @@ build/
 .vscode/
 .idea/
 *.log
+
+# Python & ML
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+venv/
+ENV/
+ml/data/**/*.csv
+ml/data/*.csv
+dataset/*.zip
+dataset/*.csv
+*.tmp
