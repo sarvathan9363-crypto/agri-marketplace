@@ -73,57 +73,57 @@ export default function PaymentSettlementCard() {
 
   const statusConfigs = {
     NOT_STARTED: {
-      badgeBg: 'bg-gray-100 text-gray-700 border-gray-300',
+      badgeBg: 'bg-gray-100 dark:bg-white/10 text-gray-800 dark:text-gray-100 border-gray-300 dark:border-gray-600',
       badgeText: t('paymentSettlementCard.notConnectedBadge', { defaultValue: 'Payment account not connected' }),
       headline: t('paymentSettlementCard.setupHeadline', { defaultValue: 'Payment & Settlement Setup' }),
       description: t('paymentSettlementCard.setupDescription', { defaultValue: 'Connect your payment settlement account to receive direct payouts for marketplace produce orders.' }),
       buttonText: t('paymentSettlementCard.connectAccount', { defaultValue: 'Connect Payment Account' }),
-      buttonVariant: 'bg-[#001e2b] text-[#00ed64] hover:bg-[#002b3d]',
+      buttonVariant: 'bg-[#00ed64] text-[#001e2b] hover:bg-[#00c853] font-black shadow-md',
       icon: CreditCard,
     },
     ONBOARDING: {
-      badgeBg: 'bg-amber-50 text-amber-800 border-amber-300',
+      badgeBg: 'bg-amber-100 dark:bg-amber-950/60 text-amber-900 dark:text-amber-200 border-amber-300 dark:border-amber-700',
       badgeText: t('paymentSettlementCard.onboardingBadge', { defaultValue: 'Payment account setup in progress' }),
       headline: t('paymentSettlementCard.onboardingHeadline', { defaultValue: 'Settlement Verification Underway' }),
       description: t('paymentSettlementCard.onboardingDescription', { defaultValue: 'Razorpay is reviewing your submitted seller account details and banking information.' }),
       buttonText: t('paymentSettlementCard.continueSetup', { defaultValue: 'Continue Setup' }),
-      buttonVariant: 'bg-amber-600 text-white hover:bg-amber-700',
+      buttonVariant: 'bg-amber-600 text-white hover:bg-amber-700 font-bold',
       icon: Clock,
     },
     PENDING: {
-      badgeBg: 'bg-amber-50 text-amber-800 border-amber-300',
+      badgeBg: 'bg-amber-100 dark:bg-amber-950/60 text-amber-900 dark:text-amber-200 border-amber-300 dark:border-amber-700',
       badgeText: t('paymentSettlementCard.pendingBadge', { defaultValue: 'Razorpay verification pending' }),
       headline: t('paymentSettlementCard.pendingHeadline', { defaultValue: 'Razorpay Verification In Progress' }),
       description: t('paymentSettlementCard.pendingDescription', { defaultValue: 'Account information has been submitted. Verification is pending Razorpay compliance approval.' }),
       buttonText: t('paymentSettlementCard.checkStatus', { defaultValue: 'Refresh Status' }),
-      buttonVariant: 'bg-amber-600 text-white hover:bg-amber-700',
+      buttonVariant: 'bg-amber-600 text-white hover:bg-amber-700 font-bold',
       icon: Clock,
     },
     ACTIVE: {
-      badgeBg: 'bg-emerald-50 text-emerald-800 border-emerald-300',
+      badgeBg: 'bg-emerald-100 dark:bg-emerald-950/60 text-emerald-900 dark:text-emerald-200 border-emerald-300 dark:border-emerald-700',
       badgeText: t('paymentSettlementCard.activeBadge', { defaultValue: '✓ Payment account connected' }),
       headline: t('paymentSettlementCard.activeHeadline', { defaultValue: 'Settlement Account Active' }),
       description: t('paymentSettlementCard.activeDescription', { defaultValue: 'Your Razorpay linked account is active. Marketplace sales payouts will settle automatically.' }),
       buttonText: t('paymentSettlementCard.accountConnected', { defaultValue: 'Payment Account Connected' }),
-      buttonVariant: 'bg-emerald-600 text-white cursor_default opacity-90',
+      buttonVariant: 'bg-emerald-600 text-white cursor-default opacity-90 font-bold',
       icon: CheckCircle2,
     },
     REJECTED: {
-      badgeBg: 'bg-red-50 text-red-800 border-red-300',
+      badgeBg: 'bg-red-100 dark:bg-red-950/60 text-red-900 dark:text-red-200 border-red-300 dark:border-red-700',
       badgeText: t('paymentSettlementCard.rejectedBadge', { defaultValue: 'Razorpay verification/review required' }),
       headline: t('paymentSettlementCard.rejectedHeadline', { defaultValue: 'Verification Review Required' }),
       description: accountData?.rejectionReason || t('paymentSettlementCard.rejectedDescription', { defaultValue: 'Additional documents or review required by Razorpay.' }),
       buttonText: t('paymentSettlementCard.resolveVerification', { defaultValue: 'Resolve Verification' }),
-      buttonVariant: 'bg-red-600 text-white hover:bg-red-700',
+      buttonVariant: 'bg-red-600 text-white hover:bg-red-700 font-bold',
       icon: AlertTriangle,
     },
     SUSPENDED: {
-      badgeBg: 'bg-red-50 text-red-800 border-red-300',
+      badgeBg: 'bg-red-100 dark:bg-red-950/60 text-red-900 dark:text-red-200 border-red-300 dark:border-red-700',
       badgeText: t('paymentSettlementCard.suspendedBadge', { defaultValue: 'Payment settlement temporarily unavailable' }),
       headline: t('paymentSettlementCard.suspendedHeadline', { defaultValue: 'Settlement Suspended' }),
       description: t('paymentSettlementCard.suspendedDescription', { defaultValue: 'Payment settlements are temporarily unavailable for this account. Please contact support.' }),
       buttonText: t('paymentSettlementCard.contactSupport', { defaultValue: 'Contact Support' }),
-      buttonVariant: 'bg-gray-800 text-white hover:bg-gray-900',
+      buttonVariant: 'bg-gray-800 text-white hover:bg-gray-900 font-bold',
       icon: HelpCircle,
     },
   };
@@ -132,11 +132,11 @@ export default function PaymentSettlementCard() {
   const StatusIcon = cfg.icon;
 
   return (
-    <div className="bg-white rounded-3xl border-2 border-[#e8eddb] p-6 shadow-sm hover:border-[#00684a] transition-all">
+    <div className="bg-white dark:bg-[#001e2b] rounded-3xl border-2 border-[#e8eddb] dark:border-[#00684a]/40 p-6 shadow-sm hover:border-[#00684a] transition-all">
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
         <div className="space-y-3 flex-1">
           <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-[#00684a] font-extrabold text-xs tracking-widest uppercase font-display bg-[#00ed64]/20 px-3 py-1 rounded-full">
+            <span className="text-[#00684a] dark:text-[#00ed64] font-extrabold text-xs tracking-widest uppercase font-display bg-[#00ed64]/20 dark:bg-[#00ed64]/10 border border-[#00ed64]/30 px-3 py-1 rounded-full">
               {t('paymentSettlementCard.governmentSettlementPortal', { defaultValue: 'Government Settlement Portal' })}
             </span>
             <span className={`inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-xs font-bold border ${cfg.badgeBg}`}>
@@ -145,36 +145,36 @@ export default function PaymentSettlementCard() {
             </span>
           </div>
 
-          <h2 className="text-xl font-black text-[#001e2b] font-display flex items-center gap-2">
+          <h2 className="text-xl font-black text-[#001e2b] dark:text-white font-display flex items-center gap-2">
             {t('paymentSettlementCard.paymentAndSettlement', { defaultValue: 'Payment & Settlement' })}
           </h2>
 
-          <p className="text-xs text-gray-600 font-sans leading-relaxed max-w-2xl">
+          <p className="text-xs text-gray-600 dark:text-gray-300 font-sans leading-relaxed max-w-2xl">
             {cfg.description}
           </p>
 
           {!routeEnabled && (
-            <p className="text-xs font-semibold text-amber-800 bg-amber-50 border border-amber-200 p-2.5 rounded-xl font-sans inline-block">
+            <p className="text-xs font-semibold text-amber-900 dark:text-amber-200 bg-amber-50 dark:bg-amber-950/60 border border-amber-200 dark:border-amber-700/50 p-2.5 rounded-xl font-sans inline-block">
               ℹ️ {t('paymentSettlementCard.settlementPendingNotice', { defaultValue: 'Marketplace settlement setup is pending Razorpay activation. Normal checkout payments continue working normally.' })}
             </p>
           )}
 
           {/* Masked Banking Metadata */}
           {bankInfo && (
-            <div className="flex flex-wrap items-center gap-4 text-xs text-gray-700 bg-[#fafcf8] border border-[#e8eddb] p-3 rounded-2xl font-sans mt-2">
-              <div><span className="font-bold text-[#001e2b]">{t('paymentSettlementCard.bank')}</span> {bankInfo.bankName}</div>
-              <div><span className="font-bold text-[#001e2b]">{t('paymentSettlementCard.account')}</span> {bankInfo.accountNumberMasked}</div>
-              <div><span className="font-bold text-[#001e2b]">{t('paymentSettlementCard.ifsc')}</span> {bankInfo.ifsc}</div>
+            <div className="flex flex-wrap items-center gap-4 text-xs text-gray-700 dark:text-gray-200 bg-[#fafcf8] dark:bg-white/5 border border-[#e8eddb] dark:border-white/10 p-3 rounded-2xl font-sans mt-2">
+              <div><span className="font-bold text-[#001e2b] dark:text-[#00ed64]">{t('paymentSettlementCard.bank')}</span> {bankInfo.bankName}</div>
+              <div><span className="font-bold text-[#001e2b] dark:text-[#00ed64]">{t('paymentSettlementCard.account')}</span> {bankInfo.accountNumberMasked}</div>
+              <div><span className="font-bold text-[#001e2b] dark:text-[#00ed64]">{t('paymentSettlementCard.ifsc')}</span> {bankInfo.ifsc}</div>
               {accountData?.linkedAccountId && (
-                <div><span className="font-bold text-[#001e2b]">{t('paymentSettlementCard.linkedAccount')}</span> {accountData.linkedAccountId}</div>
+                <div><span className="font-bold text-[#001e2b] dark:text-[#00ed64]">{t('paymentSettlementCard.linkedAccount')}</span> {accountData.linkedAccountId}</div>
               )}
             </div>
           )}
 
-          <div className="flex items-center gap-4 text-xs text-gray-500 font-sans pt-1">
-            <span>{t('paymentSettlementCard.settlement')}<strong className="text-[#001e2b]">{accountData?.settlementEnabled ? t('status.enabled', { defaultValue: 'Enabled' }) : t('status.pending', { defaultValue: 'Pending' })}</strong></span>
+          <div className="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400 font-sans pt-1">
+            <span>{t('paymentSettlementCard.settlement')}<strong className="text-[#001e2b] dark:text-white font-bold ml-1">{accountData?.settlementEnabled ? t('status.enabled', { defaultValue: 'Enabled' }) : t('status.pending', { defaultValue: 'Pending' })}</strong></span>
             <span>·</span>
-            <span>{t('paymentSettlementCard.lastSynced')}<strong className="text-[#001e2b]">{lastSynced}</strong></span>
+            <span>{t('paymentSettlementCard.lastSynced')}<strong className="text-[#001e2b] dark:text-white font-bold ml-1">{lastSynced}</strong></span>
           </div>
         </div>
 
@@ -193,7 +193,7 @@ export default function PaymentSettlementCard() {
             type="button"
             onClick={fetchStatus}
             disabled={loading}
-            className="px-4 py-2 bg-gray-100 text-gray-700 hover:bg-gray-200 rounded-2xl text-xs font-bold transition-all flex items-center justify-center gap-1.5"
+            className="px-4 py-2 bg-gray-100 dark:bg-white/10 text-gray-800 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-white/20 border border-gray-200 dark:border-white/10 rounded-2xl text-xs font-bold transition-all flex items-center justify-center gap-1.5"
           >
             <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin' : ''}`} /> {t('paymentSettlementCard.refreshStatus', { defaultValue: 'Refresh Status' })}
           </button>

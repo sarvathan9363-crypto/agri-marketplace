@@ -218,33 +218,33 @@ export default function MarketInsights() {
         </div>
 
         {/* Tab Buttons */}
-        <div className="flex items-center gap-1 bg-[#f0f4e8] p-1.5 rounded-2xl border border-[#e8eddb]">
+        <div className="flex items-center gap-1.5 bg-[#f0f4e8] dark:bg-[#001e2b]/80 p-1.5 rounded-2xl border border-[#e8eddb] dark:border-[#00684a]/30">
           <button
             onClick={() => setActiveTab('price')}
-            className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold font-display transition-all ${
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-extrabold font-display transition-all ${
               activeTab === 'price'
-                ? 'bg-[#001e2b] text-[#00ed64] shadow-sm'
-                : 'text-gray-600 hover:text-[#001e2b]'
+                ? 'bg-[#001e2b] text-[#00ed64] shadow-md'
+                : 'text-gray-800 dark:text-gray-200 hover:text-[#001e2b] dark:hover:text-white'
             }`}
           >
             <TrendingUp className="w-4 h-4" /> {t('marketInsights.pricePrediction', 'Price Prediction')}
           </button>
           <button
             onClick={() => setActiveTab('demand')}
-            className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold font-display transition-all ${
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-extrabold font-display transition-all ${
               activeTab === 'demand'
-                ? 'bg-[#001e2b] text-[#00ed64] shadow-sm'
-                : 'text-gray-600 hover:text-[#001e2b]'
+                ? 'bg-[#001e2b] text-[#00ed64] shadow-md'
+                : 'text-gray-800 dark:text-gray-200 hover:text-[#001e2b] dark:hover:text-white'
             }`}
           >
             <ShoppingBag className="w-4 h-4" /> {t('marketInsights.demandForecast', 'Demand Forecast')}
           </button>
           <button
             onClick={() => setActiveTab('metrics')}
-            className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold font-display transition-all ${
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-extrabold font-display transition-all ${
               activeTab === 'metrics'
-                ? 'bg-[#001e2b] text-[#00ed64] shadow-sm'
-                : 'text-gray-600 hover:text-[#001e2b]'
+                ? 'bg-[#001e2b] text-[#00ed64] shadow-md'
+                : 'text-gray-800 dark:text-gray-200 hover:text-[#001e2b] dark:hover:text-white'
             }`}
           >
             <ShieldCheck className="w-4 h-4" /> {t('marketInsights.modelValidation', 'Model Validation')}
@@ -262,21 +262,21 @@ export default function MarketInsights() {
                 label={t('marketInsights.cropCommodity', 'Crop / Commodity')}
                 value={priceForm.commodity}
                 onChange={(e) => setPriceForm({ ...priceForm, commodity: e.target.value })}
-                options={(options.commodities || []).map((c) => ({ value: c, label: c }))}
+                options={(options.commodities || []).map((c) => ({ value: c, label: t(`marketInsights.commodities.${c}`, t(`commodities.${c}`, c)) }))}
               />
 
               <Select
                 label={t('marketInsights.state', 'State')}
                 value={priceForm.state}
                 onChange={(e) => setPriceForm({ ...priceForm, state: e.target.value })}
-                options={(options.states || []).map((s) => ({ value: s, label: s }))}
+                options={(options.states || []).map((s) => ({ value: s, label: t(`marketInsights.states.${s}`, t(`states.${s}`, s)) }))}
               />
 
               <Select
                 label={t('marketInsights.targetMarketMandi', 'Target Market / Mandi')}
                 value={priceForm.market}
                 onChange={(e) => setPriceForm({ ...priceForm, market: e.target.value })}
-                options={(options.markets || []).map((m) => ({ value: m, label: m }))}
+                options={(options.markets || []).map((m) => ({ value: m, label: t(`marketInsights.markets.${m}`, t(`markets.${m}`, m)) }))}
               />
 
               <Select
@@ -406,14 +406,14 @@ export default function MarketInsights() {
                 label={t('marketInsights.productCrop', 'Product / Crop')}
                 value={demandForm.product}
                 onChange={(e) => setDemandForm({ ...demandForm, product: e.target.value })}
-                options={(options.products || options.commodities || []).map((p) => ({ value: p, label: p }))}
+                options={(options.products || options.commodities || []).map((p) => ({ value: p, label: t(`marketInsights.commodities.${p}`, t(`commodities.${p}`, p)) }))}
               />
 
               <Select
                 label={t('marketInsights.regionalHubLocation', 'Regional Hub / Location')}
                 value={demandForm.location}
                 onChange={(e) => setDemandForm({ ...demandForm, location: e.target.value })}
-                options={(options.locations || []).map((l) => ({ value: l, label: l }))}
+                options={(options.locations || []).map((l) => ({ value: l, label: t(`marketInsights.locations.${l}`, t(`locations.${l}`, l)) }))}
               />
 
               <Select
