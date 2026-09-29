@@ -1,4 +1,6 @@
 import { StatusBadge, LoadingState, EmptyState } from './Components';
+import { useTranslation } from 'react-i18next';
+import { translateCategory, translateRole, translateUnit } from '../../utils/enumTranslations';
 
 export default function DataTable({
   columns = [],
@@ -9,18 +11,19 @@ export default function DataTable({
   keyField = '_id',
   onRowClick,
 }) {
+  const { t } = useTranslation();
   if (loading) return <LoadingState />;
 
   if (!data || data.length === 0) {
-    return <EmptyState title={emptyTitle} description={emptyDescription} />;
+    return <EmptyState title={emptyTitle === 'No records found' ? t('ui.noRecords') : emptyTitle} description={emptyDescription === 'There are no items to display at this time.' ? t('ui.noItemsDescription') : emptyDescription} />;
   }
 
   return (
-    <div className="w-full bg-white rounded-3xl border border-[#e8eddb] overflow-hidden shadow-sm">
+    <div className="w-full bg-[var(--surface)] rounded-[var(--radius-lg)] border border-[var(--border)] overflow-hidden shadow-[var(--shadow-sm)]">
       <div className="overflow-x-auto w-full">
         <table className="w-full text-left border-collapse">
           <thead>
-            <tr className="bg-[#001e2b] text-white text-xs font-black uppercase tracking-wider font-display border-b border-emerald-900/40">
+            <tr className="bg-[var(--surface-elevated)] text-[var(--text-primary)] text-xs font-black uppercase tracking-wider font-display border-b border-[var(--border)]">
               {columns.map((col, idx) => (
                 <th key={col.key || idx} className={`py-4 px-5 ${col.headerClassName || ''}`}>
                   {col.header}
@@ -28,12 +31,12 @@ export default function DataTable({
               ))}
             </tr>
           </thead>
-          <tbody className="divide-y divide-[#f0f4e8] text-sm text-[#001e2b] font-sans">
+          <tbody className="divide-y divide-[var(--border)] text-sm text-[var(--text-primary)] font-sans">
             {data.map((row, rowIdx) => (
               <tr
                 key={row[keyField] || rowIdx}
                 onClick={() => onRowClick && onRowClick(row)}
-                className={`hover:bg-[#f9fbef] transition-colors ${onRowClick ? 'cursor-pointer' : ''}`}
+                className={`data-table-row transition-colors ${onRowClick ? 'cursor-pointer' : ''}`}
               >
                 {columns.map((col, colIdx) => (
                   <td key={col.key || colIdx} className={`py-4 px-5 ${col.cellClassName || ''}`}>
@@ -41,6 +44,12 @@ export default function DataTable({
                       col.render(row, rowIdx)
                     ) : col.type === 'status' ? (
                       <StatusBadge status={row[col.key]} />
+                    ) : col.type === 'category' || col.key === 'category' ? (
+                      <span className="font-semibold">{translateCategory(t, row[col.key])}</span>
+                    ) : col.type === 'role' || col.key === 'farmerType' || col.key === 'buyerType' || col.key === 'role' || col.key === 'sellerType' ? (
+                      <span className="font-semibold">{translateRole(t, row[col.key])}</span>
+                    ) : col.type === 'unit' ? (
+                      <span>{translateUnit(t, row[col.key])}</span>
                     ) : col.type === 'currency' ? (
                       <span className="font-extrabold font-display">
                         ₹{Number(row[col.key] || 0).toLocaleString()}

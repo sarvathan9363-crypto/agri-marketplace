@@ -1,0 +1,4267 @@
+[
+  {
+    "keyPath": "auth.agri",
+    "enVal": "Agri",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "auth.bazaar",
+    "enVal": "Bazaar",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "auth.placeholderEmail",
+    "enVal": "you@example.com",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "marketplace.product",
+    "enVal": "{{count}} product",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "marketplace.product_other",
+    "enVal": "{{count}} products",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "landing.heroEyebrow",
+    "enVal": "Fresher. Fairer. Together.",
+    "langs": [
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "landing.heroTitle",
+    "enVal": "Connecting farmers to",
+    "langs": [
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "landing.heroHighlight",
+    "enVal": "better markets.",
+    "langs": [
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "landing.heroDescription",
+    "enVal": "Empowering Indian agriculture with a direct digital marketplace. Buy and sell fresh produce with verified quality, zero commission markups, and transparent delivery tracking.",
+    "langs": [
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "landing.exploreMarketplace",
+    "enVal": "Explore Marketplace",
+    "langs": [
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "landing.joinFarmer",
+    "enVal": "Join as Farmer / FPO",
+    "langs": [
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "landing.heroImageAlt",
+    "enVal": "Indian farmer in a farm field",
+    "langs": [
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "landing.verifiedFresh",
+    "enVal": "Verified Fresh Produce",
+    "langs": [
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "landing.directSourcing",
+    "enVal": "Direct Farm Sourcing",
+    "langs": [
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "landing.zeroCommission",
+    "enVal": "0% Commission Markups",
+    "langs": [
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "landing.farmToMarket",
+    "enVal": "Farm to Market",
+    "langs": [
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "landing.fasterFairer",
+    "enVal": "Faster & Fairer",
+    "langs": [
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "cart.emptyDescription",
+    "enVal": "Browse the agricultural marketplace and add produce directly from verified farmers.",
+    "langs": [
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "cart.description",
+    "enVal": "Review your selected agricultural items before proceeding to payment.",
+    "langs": [
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "settings.sms",
+    "enVal": "SMS Notifications",
+    "langs": [
+      "ta",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "settings.smsDescription",
+    "enVal": "Get instant SMS alerts on dispatch and delivery.",
+    "langs": [
+      "ta",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "settings.systemVersionV104production",
+    "enVal": "System Version: v1.0.4-production",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "blockchain.testnet",
+    "enVal": "Kava Testnet",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "blockchain.noSellerSplitHashesRecordedFor",
+    "enVal": "No Seller Split Hashes recorded for this event.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "blockchain.amountInPaise",
+    "enVal": "Amount in Paise:",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "blockchain.recordedAt",
+    "enVal": "Recorded At",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "blockchain.lookupUserIdentityByAccountHash",
+    "enVal": "Lookup User Identity by Account Hash",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "blockchain.queryingKavaEvmTestnetSmartContract",
+    "enVal": "Querying Kava EVM Testnet Smart Contract...",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "blockchain.noPaymentEventsRecordedOnchainYet",
+    "enVal": "No payment events recorded on-chain yet",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "blockchain.newPaymentsProcessedThroughRazorpayWill",
+    "enVal": "New payments processed through Razorpay will be automatically audited here.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "blockchain.eventIdHash",
+    "enVal": "Event ID Hash",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "blockchain.sellerSplitHashes",
+    "enVal": "Seller Split Hashes",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "blockchain.onchainStatus",
+    "enVal": "On-Chain Status",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "blockchain.noSettlementEventsRecordedOnchainYet",
+    "enVal": "No settlement events recorded on-chain yet",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "blockchain.farmerMarketplaceSettlementsWillAppearHere",
+    "enVal": "Farmer marketplace settlements will appear here when recorded.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "blockchain.settlementHash",
+    "enVal": "Settlement Hash",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "blockchain.sellerIdentity",
+    "enVal": "Seller Identity",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "blockchain.sellerPayoutAmount",
+    "enVal": "Seller Payout Amount",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "blockchain.status",
+    "enVal": "Status",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "blockchain.accountIdentityLookup",
+    "enVal": "Account Identity Lookup",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "blockchain.verifiedDatabaseRecordMatchingOnchainCryptographic",
+    "enVal": "Verified database record matching On-Chain Cryptographic Hash.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "blockchain.searchingRegisteredUsersAndFarmers",
+    "enVal": "Searching registered users and farmers...",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "blockchain.onchainHash",
+    "enVal": "On-Chain Hash:",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "blockchain.accountType",
+    "enVal": "Account Type:",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "blockchain.fullName",
+    "enVal": "Full Name:",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "blockchain.farmBusiness",
+    "enVal": "Farm / Business:",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "blockchain.email",
+    "enVal": "Email:",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "blockchain.mobile",
+    "enVal": "Mobile:",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "blockchain.verificationStatus",
+    "enVal": "Verification Status:",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "blockchain.buyerType",
+    "enVal": "Buyer Type:",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "blockchain.noAccountFound",
+    "enVal": "No Account Found",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "ui.noItemsDescription",
+    "enVal": "There are no items to display at this time.",
+    "langs": [
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "home.trustDescription.0",
+    "enVal": "KYC-checked agricultural sellers with direct identity verification.",
+    "langs": [
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "home.trustDescription.1",
+    "enVal": "End-to-end real-time tracking from field dispatch to delivery.",
+    "langs": [
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "home.trustDescription.2",
+    "enVal": "Encrypted payment gateway supporting UPI, Net Banking & Cards.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "home.trustDescription.3",
+    "enVal": "Dedicated farm transport logistics for fresh produce preservation.",
+    "langs": [
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "home.farmerSteps.0",
+    "enVal": "Register your farm or FPO profile with KYC documents",
+    "langs": [
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "home.farmerSteps.1",
+    "enVal": "Get verified by platform administration within 24 hours",
+    "langs": [
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "home.farmerSteps.2",
+    "enVal": "Create produce listings with custom quantities and pricing",
+    "langs": [
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "home.farmerSteps.3",
+    "enVal": "Receive and manage purchase orders directly from buyers",
+    "langs": [
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "home.farmerSteps.4",
+    "enVal": "Track instant payouts and grow your direct agricultural sales",
+    "langs": [
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "home.buyerSteps.0",
+    "enVal": "Create a buyer account for personal or business purchasing",
+    "langs": [
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "home.buyerSteps.1",
+    "enVal": "Search verified produce by crop, region and price",
+    "langs": [
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "home.buyerSteps.2",
+    "enVal": "Add items to your cart and review transparent costs",
+    "langs": [
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "home.buyerSteps.3",
+    "enVal": "Make a secure payment using your preferred method",
+    "langs": [
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "home.buyerSteps.4",
+    "enVal": "Track live shipment and direct farm delivery status",
+    "langs": [
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "home.glanceDescription",
+    "enVal": "Empowering agricultural commerce with digital infrastructure",
+    "langs": [
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "home.testimonialsDescription",
+    "enVal": "Trusted by farmers, commercial buyers and FPOs across India",
+    "langs": [
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "home.finalDescription",
+    "enVal": "Join verified farmers, FPOs and buyers transforming direct agricultural commerce across India.",
+    "langs": [
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "home.marketplace.exchange",
+    "enVal": "Direct crop exchange",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "home.marketplace.description",
+    "enVal": "Source quality farm produce directly from verified Indian farmers and FPOs with zero middleman markup.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "home.marketplace.showing",
+    "enVal": "Showing {{count}} agricultural listings",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "home.marketplace.newest",
+    "enVal": "Newest first",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "home.marketplace.lowPrice",
+    "enVal": "Price: low to high",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "home.marketplace.highPrice",
+    "enVal": "Price: high to low",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "home.marketplace.popular",
+    "enVal": "Most popular",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "home.marketplace.available",
+    "enVal": "{{count}} {{unit}} available",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.farmer",
+    "enVal": "FARMER",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.failedToLoadVerificationStatus",
+    "enVal": "Failed to load verification status.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.pleaseEnterAValid12digitAadhaar",
+    "enVal": "Please enter a valid 12-digit Aadhaar number.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.otpSentToYourAadhaarMobile",
+    "enVal": "OTP sent to your Aadhaar mobile number!",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.pleaseEnter6digitOtp",
+    "enVal": "Please enter 6-digit OTP.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.verified_identityVerifiedViaUidaiSandbox",
+    "enVal": "✓ Identity Verified via UIDAI Sandbox!",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.pleaseEnterFarmerIdAndDistrict",
+    "enVal": "Please enter Farmer ID and District.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.verified_farmerRegistryVerified",
+    "enVal": "✓ Farmer Registry Verified!",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.pleaseFillAllRequiredLandRecord",
+    "enVal": "Please fill all required land record details.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.verified_landRecordVerified",
+    "enVal": "✓ Land Record Verified!",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.pleaseFillAccountHolderAccountNumber",
+    "enVal": "Please fill Account Holder, Account Number, and IFSC.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.accountNumbersDoNotMatch",
+    "enVal": "Account numbers do not match.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.verified_bankAccountVerified",
+    "enVal": "✓ Bank Account Verified!",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.pleaseEnterAValid10characterPan",
+    "enVal": "Please enter a valid 10-character PAN number (e.g. ABCDE1234F).",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.verified_panVerifiedSuccessfully",
+    "enVal": "✓ PAN Verified successfully!",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.pmkisanSkipped",
+    "enVal": "PM-KISAN skipped.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.verified_pmkisanVerified",
+    "enVal": "✓ PM-KISAN Verified!",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.pleaseFillRequiredOrganizationDetails",
+    "enVal": "Please fill required Organization details.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.verified_organizationIdentityVerified",
+    "enVal": "✓ Organization Identity Verified!",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.pleaseEnterAValid10characterOrganization",
+    "enVal": "Please enter a valid 10-character Organization PAN.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.verified_organizationPanVerified",
+    "enVal": "✓ Organization PAN Verified!",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.gstinMarkedAsNotApplicable",
+    "enVal": "GSTIN marked as Not Applicable.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.verified_gstinVerified",
+    "enVal": "✓ GSTIN Verified!",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.pleaseEnterAValid10digitMobile",
+    "enVal": "Please enter a valid 10-digit mobile number.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.otpSentToRepresentativeMobile",
+    "enVal": "OTP sent to Representative mobile!",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.pleaseEnterRepresentativeNameAndDesignation",
+    "enVal": "Please enter Representative Name and Designation.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.verified_authorizedRepresentativeVerified",
+    "enVal": "✓ Authorized Representative Verified!",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.verified_organizationBankAccountVerified",
+    "enVal": "✓ Organization Bank Account Verified!",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.pleaseUploadAtLeastRegistrationCertificate",
+    "enVal": "Please upload at least Registration Certificate, PAN document, and Bank proof.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.verified_organizationDocumentsVerified",
+    "enVal": "✓ Organization Documents Verified!",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.failedToSkipStep",
+    "enVal": "Failed to skip step.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.progressSavedReturningToDashboard",
+    "enVal": "Progress saved. Returning to dashboard.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.loadingConfigportaltitle",
+    "enVal": "Loading {config.portalTitle}...",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.verificationSummary",
+    "enVal": "Verification Summary",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.reviewYourOverallVerificationStatusAnd",
+    "enVal": "Review your overall verification status and finalized badge audit.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.verified",
+    "enVal": "Verified",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.pending",
+    "enVal": "PENDING",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.officialIdentityComplianceGateway",
+    "enVal": "Official Identity & Compliance Gateway",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.saveExitToDashboard",
+    "enVal": "Save & Exit to Dashboard",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.textslate900",
+    "enVal": "text-slate-900",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.textslate700",
+    "enVal": "text-slate-700",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.required",
+    "enVal": "(Required)",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.optional",
+    "enVal": "(Optional)",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.mandatoryVerification",
+    "enVal": "MANDATORY VERIFICATION",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.optionalVerification",
+    "enVal": "OPTIONAL VERIFICATION",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.aadhaarAuthenticationProtocol",
+    "enVal": "Aadhaar Authentication Protocol",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.enterYour12digitAadhaarNumberTo",
+    "enVal": "Enter your 12-digit Aadhaar number to receive a One-Time Password (OTP) via UIDAI authorized gateway.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.enter12digitAadhaarNumber",
+    "enVal": "Enter 12-digit Aadhaar number",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.sendAadhaarOtp",
+    "enVal": "Send Aadhaar OTP",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.enter6digitOtp_req",
+    "enVal": "Enter 6-Digit OTP *",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.verifyContinue",
+    "enVal": "Verify & Continue",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.saveExit",
+    "enVal": "Save & Exit",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.skipStep",
+    "enVal": "Skip Step",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.nextStep",
+    "enVal": "Next Step",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.farmerDatabaseProtocol",
+    "enVal": "Farmer Database Protocol",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.enterYourOfficialFarmerAgristackId",
+    "enVal": "Enter your official Farmer / Agristack ID along with state and district to verify active agricultural registry status.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.farmerId",
+    "enVal": "FARMER ID",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.location",
+    "enVal": "LOCATION",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.farmerIdAgristackId_req",
+    "enVal": "Farmer ID / Agristack ID *",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.egMhfarm20248849",
+    "enVal": "e.g. MH-FARM-2024-8849",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.state_req",
+    "enVal": "State *",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.district_req",
+    "enVal": "District *",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.egNashik",
+    "enVal": "e.g. Nashik",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.back",
+    "enVal": "Back",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.landHoldingProtocol",
+    "enVal": "Land Holding Protocol",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.enterStateDistrictTalukVillagePatta",
+    "enVal": "Enter state, district, taluk, village, Patta / 7-12 number, survey number, and total acreage.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.patta712No",
+    "enVal": "PATTA / 7-12 NO.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.surveyNo",
+    "enVal": "SURVEY NO.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.extent",
+    "enVal": "EXTENT",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.taluk_req",
+    "enVal": "Taluk *",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.egNiphad",
+    "enVal": "e.g. Niphad",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.village_req",
+    "enVal": "Village *",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.egLasalgaon",
+    "enVal": "e.g. Lasalgaon",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.pattaKhataNo_req",
+    "enVal": "Patta / Khata No. *",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.surveyNo_req",
+    "enVal": "Survey No. *",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.eg142b",
+    "enVal": "e.g. 142/B",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.landExtentAcres_req",
+    "enVal": "Land Extent (Acres) *",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.eg35Acres",
+    "enVal": "e.g. 3.5 Acres",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.landType",
+    "enVal": "Land Type",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.irrigatedWet",
+    "enVal": "Irrigated / Wet",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.dryRainfed",
+    "enVal": "Dry / Rainfed",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.horticulture",
+    "enVal": "Horticulture",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.uploadPattaLandRecordDocument_req",
+    "enVal": "Upload Patta / Land Record Document *",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.uploadPdfJpgOrPngCopy",
+    "enVal": "Upload PDF, JPG, or PNG copy of 7/12, Patta, or Chitta (Max 5MB)",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.bankSettlementProtocol",
+    "enVal": "Bank Settlement Protocol",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.linkYourActiveBankAccountFor",
+    "enVal": "Link your active bank account for direct payments and automated sales settlements.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.accountHolder",
+    "enVal": "ACCOUNT HOLDER",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.bankName",
+    "enVal": "BANK NAME",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.accountNo",
+    "enVal": "ACCOUNT NO.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.accountHolderName_req",
+    "enVal": "Account Holder Name *",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.asPerBankPassbook",
+    "enVal": "As per bank passbook",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.bankName_req",
+    "enVal": "Bank Name *",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.branchName",
+    "enVal": "Branch Name",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.egMainBranch",
+    "enVal": "e.g. Main Branch",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.accountNumber_req",
+    "enVal": "Account Number *",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.enterAccountNumber",
+    "enVal": "Enter account number",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.confirmAccountNumber_req",
+    "enVal": "Confirm Account Number *",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.reenterAccountNumber",
+    "enVal": "Re-enter account number",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.ifscCode_req",
+    "enVal": "IFSC Code *",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.egSbin0001234",
+    "enVal": "e.g. SBIN0001234",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.uploadBankPassbookCancelledCheque_req",
+    "enVal": "Upload Bank Passbook / Cancelled Cheque *",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.uploadFrontPageOfPassbookOr",
+    "enVal": "Upload front page of passbook or cancelled cheque (Max 5MB)",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.panVerificationProtocol",
+    "enVal": "PAN Verification Protocol",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.enterYour10characterPermanentAccountNumber",
+    "enVal": "Enter your 10-character Permanent Account Number for statutory tax compliance & payouts.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.panNumber",
+    "enVal": "PAN NUMBER",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.matchStatus",
+    "enVal": "MATCH STATUS",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.panNumber_req",
+    "enVal": "PAN Number *",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.egAbcde1234f",
+    "enVal": "e.g. ABCDE1234F",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.nameAsPerPanOptional",
+    "enVal": "Name as per PAN (Optional)",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.fullNameAsPrintedOnPan",
+    "enVal": "Full name as printed on PAN card",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.uploadPanCardCopy_req",
+    "enVal": "Upload PAN Card Copy *",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.clearFrontScanOrPhotoOf",
+    "enVal": "Clear front scan or photo of your PAN card (Max 5MB)",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.pmkisanSchemeProtocol",
+    "enVal": "PM-KISAN Scheme Protocol",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.optionallyLinkPmkisanBeneficiaryReferenceFor",
+    "enVal": "Optionally link PM-KISAN Beneficiary Reference for added seller credibility on the marketplace.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.pmkisanRegistrationBeneficiaryReference",
+    "enVal": "PM-KISAN Registration / Beneficiary Reference",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.egPmk987654321",
+    "enVal": "e.g. PMK-987654321",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.verifyPmkisanContinue",
+    "enVal": "Verify PM-KISAN & Continue",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.viewSummary",
+    "enVal": "View Summary",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.organizationRegistrationProtocol",
+    "enVal": "Organization Registration Protocol",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.verifyOfficialFpoFpcCooperativeEntity",
+    "enVal": "Verify official FPO / FPC / Cooperative entity registration details.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.legalName",
+    "enVal": "LEGAL NAME",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.registrationNo",
+    "enVal": "REGISTRATION NO.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.organizationLegalName_req",
+    "enVal": "Organization Legal Name *",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.egSahyadriFarmersProducerCoLtd",
+    "enVal": "e.g. Sahyadri Farmers Producer Co. Ltd.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.organizationType_req",
+    "enVal": "Organization Type *",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.fpoFpcProducerCompany",
+    "enVal": "FPO / FPC (Producer Company)",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.agriculturalCooperativeSociety",
+    "enVal": "Agricultural Cooperative Society",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.farmerShgPartnership",
+    "enVal": "Farmer SHG / Partnership",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.registrationCinNumber_req",
+    "enVal": "Registration / CIN Number *",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.egU01111mh2020ptc123456",
+    "enVal": "e.g. U01111MH2020PTC123456",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.pincode_req",
+    "enVal": "Pincode *",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.registeredOfficeAddress_req",
+    "enVal": "Registered Office Address *",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.fullAddressOfOrganizationOffice",
+    "enVal": "Full address of organization office",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.organizationPanProtocol",
+    "enVal": "Organization PAN Protocol",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.enterPermanentAccountNumberIssuedIn",
+    "enVal": "Enter Permanent Account Number issued in the legal name of the organization.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.orgPan",
+    "enVal": "ORG PAN",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.organizationPan_req",
+    "enVal": "Organization PAN *",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.egAaacf1234g",
+    "enVal": "e.g. AAACF1234G",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.gstinRegistrationProtocol",
+    "enVal": "GSTIN Registration Protocol",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.provide15characterGstinRegistrationIfRegistered",
+    "enVal": "Provide 15-character GSTIN registration if registered, or mark GSTIN Not Applicable.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.notApplicable",
+    "enVal": "Not Applicable",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.eg27aaacf1234g1z5",
+    "enVal": "e.g. 27AAACF1234G1Z5",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.verifyGstin",
+    "enVal": "Verify GSTIN",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.authorizedOfficialProtocol",
+    "enVal": "Authorized Official Protocol",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.verifyIdentityAndMobileAuthorizationOf",
+    "enVal": "Verify identity and mobile authorization of the official representing the organization.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.representativeName_req",
+    "enVal": "Representative Name *",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.egRameshKumar",
+    "enVal": "e.g. Ramesh Kumar",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.designation_req",
+    "enVal": "Designation *",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.egCeoManagingDirector",
+    "enVal": "e.g. CEO / Managing Director",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.representativeMobileNumber_req",
+    "enVal": "Representative Mobile Number *",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.enter10digitMobileNumber",
+    "enVal": "Enter 10-digit mobile number",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.sendRepresentativeOtp",
+    "enVal": "Send Representative OTP",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.verifyRepresentative",
+    "enVal": "Verify Representative",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.organizationSettlementAccountProtocol",
+    "enVal": "Organization Settlement Account Protocol",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.linkPrimarySettlementBankAccountOf",
+    "enVal": "Link primary settlement bank account of the FPO / FPC for marketplace direct credits.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.exactLegalNameAsPerBank",
+    "enVal": "Exact legal name as per bank statement",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.egCommercialBranch",
+    "enVal": "e.g. Commercial Branch",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.enterBankAccountNumber",
+    "enVal": "Enter bank account number",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.organizationDocumentDossier",
+    "enVal": "Organization Document Dossier",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.uploadMandatoryRegistrationTaxBankProof",
+    "enVal": "Upload mandatory registration, tax, bank proof, and authorization files.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.1OrganizationRegistrationCertificate_req",
+    "enVal": "1. Organization Registration Certificate *",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.2OrganizationPanCardCopy_req",
+    "enVal": "2. Organization PAN Card Copy *",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.3BankPassbookCancelledCheque_req",
+    "enVal": "3. Bank Passbook / Cancelled Cheque *",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.4AuthorizationLetterBoardResolution",
+    "enVal": "4. Authorization Letter / Board Resolution",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.5GstCertificateIfApplicable",
+    "enVal": "5. GST Certificate (If Applicable)",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.submitDocumentsProceed",
+    "enVal": "Submit Documents & Proceed",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.backToReview",
+    "enVal": "Back to Review",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.returnToDashboard",
+    "enVal": "Return to Dashboard",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerificationWizard.yourInformationIsSecurelyProcessedSensitive",
+    "enVal": "Your information is securely processed. Sensitive identity & financial information will be masked where applicable.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.pleaseEnterAValid10characterPan",
+    "enVal": "Please enter a valid 10-character PAN number (e.g. ABCDE1234F)",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.fssaiLicenseMarkedAsNotApplicable",
+    "enVal": "FSSAI / License marked as Not Applicable",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.pleaseEnterValidFssaiLicenseRegistration",
+    "enVal": "Please enter valid FSSAI / License registration number",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.fssaiLicenseVerified",
+    "enVal": "FSSAI / License verified",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.step",
+    "enVal": "Step ",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.failedToSkipStep",
+    "enVal": "Failed to skip step",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.loadingOfficialVerificationPortal",
+    "enVal": "Loading Official Verification Portal...",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.textslate900",
+    "enVal": "text-slate-900",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.textslate700",
+    "enVal": "text-slate-700",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.required",
+    "enVal": "(Required)",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.optional",
+    "enVal": "(Optional)",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.stepCurrentstepOfStepslength",
+    "enVal": "Step {currentStep} of {steps.length}",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.mobileAuthenticationProtocol",
+    "enVal": "Mobile Authentication Protocol",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.enterYour10digitMobileNumberTo",
+    "enVal": "Enter your 10-digit mobile number to receive a secure One-Time Password (OTP). OTP will not be stored permanently.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.otpSentTo91xxxxxmobileformmobilenumberslice4",
+    "enVal": "OTP sent to +91-XXXXX{mobileForm.mobileNumber.slice(-4)}",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.back",
+    "enVal": "Back",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.authorizedIdentityVerification",
+    "enVal": "Authorized Identity Verification",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.identityIsValidatedSecurelyViaAuthorized",
+    "enVal": "Identity is validated securely via authorized verification reference. Full raw identity document numbers are never permanently stored.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.aadhaarbasedAuthorizedVerification",
+    "enVal": "Aadhaar-based Authorized Verification",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.panbasedIdentityVerification",
+    "enVal": "PAN-based Identity Verification",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.voterIdNationalPortalVerification",
+    "enVal": "Voter ID / National Portal Verification",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.asRegisteredInMcaGstPan",
+    "enVal": "As registered in MCA / GST / PAN",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.retailerAgribusinessDealer",
+    "enVal": "Retailer / Agribusiness Dealer",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.wholesalerTrader",
+    "enVal": "Wholesaler / Trader",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.foodProcessorMill",
+    "enVal": "Food Processor / Mill",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.exporterInstitutionalBuyer",
+    "enVal": "Exporter / Institutional Buyer",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.proprietorshipFirm",
+    "enVal": "Proprietorship Firm",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.partnershipFirm",
+    "enVal": "Partnership Firm",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.privateLimitedCompany",
+    "enVal": "Private Limited Company",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.verifyBusinessIdentity",
+    "enVal": "Verify Business Identity",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.incomeTaxDepartmentPanVerification",
+    "enVal": "Income Tax Department PAN Verification",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.enterThe10characterPermanentAccountNumber",
+    "enVal": "Enter the 10-character Permanent Account Number issued in the legal name of the entity.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.egAbcde1234f",
+    "enVal": "e.g. ABCDE1234F",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.verifyBusinessPan",
+    "enVal": "Verify Business PAN",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.goodsAndServicesTaxIdentificationGstin",
+    "enVal": "Goods and Services Tax Identification (GSTIN)",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.gstinVerificationIsConditionalSmallTraders",
+    "enVal": "GSTIN verification is conditional. Small traders or exempt agricultural businesses can select \"GSTIN Not Applicable\".",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.eg27aaaaa0000a1z5",
+    "enVal": "e.g. 27AAAAA0000A1Z5",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.gstinNotApplicable",
+    "enVal": "GSTIN Not Applicable",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.privatePublicLimitedCompanyCin",
+    "enVal": "Private / Public Limited Company (CIN)",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.limitedLiabilityPartnershipLlpin",
+    "enVal": "Limited Liability Partnership (LLPIN)",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.registeredPartnershipFirm",
+    "enVal": "Registered Partnership Firm",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.registeredSoleProprietorship",
+    "enVal": "Registered Sole Proprietorship",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.cooperativeSocietyFarmerFederation",
+    "enVal": "Cooperative Society / Farmer Federation",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.egU01100mh2020ptc123456",
+    "enVal": "e.g. U01100MH2020PTC123456",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.verifyRegistration",
+    "enVal": "Verify Registration",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.ownerProprietor",
+    "enVal": "Owner / Proprietor",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.partner",
+    "enVal": "Partner",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.director",
+    "enVal": "Director",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.ceoManagingDirector",
+    "enVal": "CEO / Managing Director",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.managerProcurementOfficer",
+    "enVal": "Manager / Procurement Officer",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.authorizedSignatory",
+    "enVal": "Authorized Signatory",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.iConfirmIPossessOfficialBoard",
+    "enVal": "I confirm I possess official board authorization / power of attorney to act as authorized buyer representative.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.egSbin0001234",
+    "enVal": "e.g. SBIN0001234",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.verifyBankAccount",
+    "enVal": "Verify Bank Account",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.udyamMsmeRegistration",
+    "enVal": "Udyam MSME Registration",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.conditionalCheckEnterYourUdyamRegistration",
+    "enVal": "Conditional check. Enter your Udyam Registration Number if registered as MSME enterprise, or select \"Udyam Not Applicable\".",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.egUdyammh000000000",
+    "enVal": "e.g. UDYAM-MH-00-0000000",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.udyamNotApplicable",
+    "enVal": "Udyam Not Applicable",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.fssaiCommodityTradeLicense",
+    "enVal": "FSSAI / Commodity Trade License",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.showThisOnlyWhereBuyerActivity",
+    "enVal": "Show this only where buyer activity requires food safety/commodity trading permits. Select \"Not Applicable\" if non-food operations.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.fssaiRegistrationLicense",
+    "enVal": "FSSAI Registration / License",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.apmcMandiTradeLicense",
+    "enVal": "APMC / Mandi Trade License",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.agriculturalCommodityTradeLicense",
+    "enVal": "Agricultural Commodity Trade License",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.licenseNotApplicable",
+    "enVal": "License Not Applicable",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.uploadClearScanOrPdfCopies",
+    "enVal": "Upload clear scan or PDF copies of required business certificates. Max file size: 5MB.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.gstCertificateIfApplicable",
+    "enVal": "GST Certificate (if applicable)",
+    "langs": [
+      "te"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.fssaiMandiLicenseDocumentIfApplicable",
+    "enVal": "FSSAI / Mandi License Document (if applicable)",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.invalidDocumentFileFormatExtAllowed",
+    "enVal": "Invalid document file format (${ext}). Allowed formats: PDF, JPG, PNG, WEBP.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.uploadedDoctitle",
+    "enVal": "Uploaded ${doc.title}",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.backToReview",
+    "enVal": "Back to Review",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerificationWizard.finalizeBuyerVerification",
+    "enVal": "Finalize Buyer Verification",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerification.aadhaarDesc",
+    "enVal": "Authorized UIDAI identity verification",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerification.orgIdentityDesc",
+    "enVal": "Legal organization registration, CIN, and state address",
+    "langs": [
+      "ta",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerification.loadingVerificationDashboard",
+    "enVal": "Loading verification dashboard...",
+    "langs": [
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerification.all5RequiredChecksActive",
+    "enVal": "All 5 required checks active",
+    "langs": [
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerVerification.verificationChecksBreakdown",
+    "enVal": "Verification Checks Breakdown",
+    "langs": [
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "paymentSettlementCard.contactSupportToast",
+    "enVal": "Please contact AgriBazaar support at support@agribazaar.org",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "about.ourPurpose",
+    "enVal": "Our Purpose",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "about.aboutAgribazaar",
+    "enVal": "About AgriBazaar",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "about.corePillar",
+    "enVal": "Core Pillar",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "about.ourMission",
+    "enVal": "Our Mission",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "about.futureready",
+    "enVal": "Future-Ready",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "about.ourVision",
+    "enVal": "Our Vision",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "admin.noAnalyticsDataRecordedYet",
+    "enVal": "No analytics data recorded yet.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "admin.razorpayRouteCapabilityIsPendingActivation",
+    "enVal": "Razorpay Route Capability is Pending Activation (Test Mode)",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "admin.isActiveNormalBuyerCheckoutPayments",
+    "enVal": "is active. Normal buyer checkout payments function properly. Marketplace farmer settlements remain recorded as",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "admin.pending",
+    "enVal": "PENDING",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerDashboard.buyerPortal",
+    "enVal": "Buyer Portal",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerDashboard.buyerDashboard",
+    "enVal": "Buyer Dashboard",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerDashboard.trackYourOrdersSpendingAndFresh",
+    "enVal": "Track your orders, spending, and fresh produce recommendations.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerDashboard.buyerVerificationStatus",
+    "enVal": "Buyer Verification Status",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerDashboard.recentOrders",
+    "enVal": "Recent Orders",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerDashboard.noOrdersPlacedYet",
+    "enVal": "No orders placed yet.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerDashboard.browseMarketplace",
+    "enVal": "Browse Marketplace",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerDashboard.recommendedProduce",
+    "enVal": "Recommended Produce",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerOrders.viewCrop",
+    "enVal": "View Crop",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerOrders.orderTracking",
+    "enVal": "Order Tracking",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerOrders.myOrders",
+    "enVal": "My Orders",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerOrders.viewShipmentProgressAndPurchaseHistory",
+    "enVal": "View shipment progress and purchase history across all sellers.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerOrders.browseProduce",
+    "enVal": "Browse Produce",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerProfile.buyerAccount",
+    "enVal": "Buyer Account",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerProfile.buyerProfile",
+    "enVal": "Buyer Profile",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerProfile.manageYourPersonalDetailsAndDefault",
+    "enVal": "Manage your personal details and default shipping address.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerProfile.buyerAccountType",
+    "enVal": "Buyer Account Type",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerification.loadingBuyerVerificationStatus",
+    "enVal": "Loading Buyer Verification Status...",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerification.status",
+    "enVal": "Status",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerification.overallStatus",
+    "enVal": "Overall Status",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerification.progress",
+    "enVal": "Progress",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "buyerVerification.viewVerificationDetails",
+    "enVal": "View Verification Details",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerAddProduct.cropPreview",
+    "enVal": "Crop Preview",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerAddProduct.price",
+    "enVal": "Price:",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerAddProduct.stock",
+    "enVal": "Stock:",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerAddProduct.harvest",
+    "enVal": "Harvest:",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerAddProduct.newCropListing",
+    "enVal": "New Crop Listing",
+    "langs": [
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerAddProduct.addNewProduct",
+    "enVal": "Add New Product",
+    "langs": [
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerAddProduct.createAVerifiedProduceListingTo",
+    "enVal": "Create a verified produce listing to sell directly to buyers.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerAddProduct.pricePerUnitLabel",
+    "enVal": "PRICE PER {{unit}} (₹) *",
+    "langs": [
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerAddProduct.uploadImageDesc",
+    "enVal": "High quality JPG, PNG, or WEBP image of agricultural produce (PDF not allowed)",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerDashboard.checksCompletedCount",
+    "enVal": "{{count}} of 5 required checks completed",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerOrders.orderManagement",
+    "enVal": "Order Management",
+    "langs": [
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerOrders.incomingProduceOrders",
+    "enVal": "Incoming Produce Orders",
+    "langs": [
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerOrders.fulfillPurchaseOrdersReceivedFromRetail",
+    "enVal": "Fulfill purchase orders received from retail and wholesale buyers.",
+    "langs": [
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerOrders.statusUpdatedToast",
+    "enVal": "Order status updated to {{status}}.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerProfile.sellerIdentity",
+    "enVal": "Seller Identity",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerProfile.farmerProfile",
+    "enVal": "Farmer Profile",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerProfile.manageYourAgriculturalCredentialsFarmLocation",
+    "enVal": "Manage your agricultural credentials, farm location, and contact information.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerProfile.farmFpoName",
+    "enVal": "Farm / FPO Name",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerProfile.location",
+    "enVal": "Location",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerProfile.address",
+    "enVal": "Address",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerProfile.sellerType",
+    "enVal": "Seller Type",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerProfile.verificationStatus",
+    "enVal": "Verification Status",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerProfile.profileAvatarPhotoDesc",
+    "enVal": "Upload avatar photo (JPG, PNG, WEBP)",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerSales.salesAnalyticsComingSoon",
+    "enVal": "Sales analytics coming soon.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerSales.financialInsights",
+    "enVal": "Financial Insights",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerSales.salesAnalytics",
+    "enVal": "Sales Analytics",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "farmerSales.trackYourMonthlyRevenueGrowthAverage",
+    "enVal": "Track your monthly revenue growth, average order size, and crop sales performance.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "register.agri",
+    "enVal": "Agri",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "register.bazaar",
+    "enVal": "Bazaar",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "register.selectYourAccountTypeToGet",
+    "enVal": "Select your account type to get started",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "register.farmerFpo",
+    "enVal": "Farmer / FPO",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "register.sellYourProduceDirectlyToBuyers",
+    "enVal": "Sell your produce directly to buyers at fair market prices.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "register.buyer",
+    "enVal": "Buyer",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "register.sourceFreshAgriculturalProduceDirectlyFrom",
+    "enVal": "Source fresh agricultural produce directly from verified farmers.",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "register.createYourSellerProfileToList",
+    "enVal": "Create your seller profile to list produce",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "register.individualFarmer",
+    "enVal": "Individual Farmer",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "register.farmerProducerOrganizationFpo",
+    "enVal": "Farmer Producer Organization (FPO)",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "register.fullFarmAddress",
+    "enVal": "Full Farm Address",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "register.createYourAccountToPurchaseProduce",
+    "enVal": "Create your account to purchase produce",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "register.individualConsumer",
+    "enVal": "Individual Consumer",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "register.businessRetailer",
+    "enVal": "Business / Retailer",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  },
+  {
+    "keyPath": "register.wholesaleBulkBuyer",
+    "enVal": "Wholesale Bulk Buyer",
+    "langs": [
+      "ta",
+      "hi",
+      "te",
+      "kn",
+      "ml"
+    ]
+  }
+]

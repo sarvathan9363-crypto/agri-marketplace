@@ -4,8 +4,17 @@ const paymentSchema = new mongoose.Schema({
   orderId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Order',
-    required: true,
+    required: false,
   },
+  orderGroupId: {
+    type: String,
+    default: '',
+    index: true,
+  },
+  orderIds: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Order',
+  }],
   buyerId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
@@ -21,27 +30,35 @@ const paymentSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    enum: ['PENDING', 'SUCCESSFUL', 'FAILED', 'REFUNDED'],
-    default: 'PENDING',
+    enum: ['CREATED', 'PENDING', 'AUTHORIZED', 'CAPTURED', 'FAILED', 'CANCELLED', 'REFUNDED'],
+    default: 'CREATED',
   },
   paymentMethod: {
     type: String,
     default: '',
   },
-  gatewayOrderId: {
+  razorpayOrderId: {
     type: String,
     default: '',
   },
-  gatewayPaymentId: {
+  razorpayPaymentId: {
     type: String,
     default: '',
   },
-  gatewaySignature: {
+  verifiedAt: {
+    type: Date,
+  },
+  failureReason: {
     type: String,
     default: '',
   },
+  method: { type: String, default: '' },
+  sideEffectsApplied: { type: Boolean, default: false },
 }, {
   timestamps: true,
 });
+
+paymentSchema.index({ orderId: 1, status: 1 });
+paymentSchema.index({ orderGroupId: 1, status: 1 });
 
 module.exports = mongoose.model('Payment', paymentSchema);

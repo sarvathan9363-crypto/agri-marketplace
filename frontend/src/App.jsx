@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
+import { ThemeProvider } from './context/ThemeContext';
 
 // Layouts
 import PublicLayout from './layouts/PublicLayout';
@@ -26,6 +27,7 @@ import FarmerSales from './pages/farmer/Sales';
 import FarmerProfile from './pages/farmer/Profile';
 import FarmerVerification from './pages/farmer/Verification';
 import MarketInsights from './pages/farmer/MarketInsights';
+import VerificationWizard from './pages/farmer/VerificationWizard';
 
 // Buyer Pages
 import BuyerDashboard from './pages/buyer/Dashboard';
@@ -33,25 +35,38 @@ import BuyerOrders from './pages/buyer/Orders';
 import Cart from './pages/buyer/Cart';
 import Checkout from './pages/buyer/Checkout';
 import BuyerProfile from './pages/buyer/Profile';
+import BuyerVerification from './pages/buyer/Verification';
+import BuyerVerificationWizard from './pages/buyer/BuyerVerificationWizard';
 
 // Admin Pages
 import AdminDashboard from './pages/admin/Dashboard';
 import AdminUsers from './pages/admin/Users';
 import AdminFarmers from './pages/admin/Farmers';
+import AdminTransporters from './pages/admin/Transporters';
+import AdminSettlements from './pages/admin/Settlements';
 import AdminProducts from './pages/admin/Products';
 import AdminOrders from './pages/admin/Orders';
 import AdminPayments from './pages/admin/Payments';
+import AdminBlockchainAudit from './pages/admin/BlockchainAudit';
 import AdminDisputes from './pages/admin/Disputes';
 import AdminAnalytics from './pages/admin/Analytics';
 
 // Common
 import Settings from './pages/Settings';
 
+// Transporter Pages
+import TransporterLayout from './layouts/TransporterLayout';
+import TransporterDashboard from './pages/transporter/Dashboard';
+import TransporterVerification from './pages/transporter/TransporterVerification';
+import TransporterVerificationWizard from './pages/transporter/TransporterVerificationWizard';
+import TransporterProfile from './pages/transporter/Profile';
+
 export default function App() {
   return (
-    <AuthProvider>
-      <CartProvider>
-      <Router>
+    <ThemeProvider>
+      <AuthProvider>
+        <CartProvider>
+          <Router>
         <Toaster position="top-right" toastOptions={{ duration: 3000 }} />
         <Routes>
           {/* Public Routes */}
@@ -77,17 +92,39 @@ export default function App() {
             <Route path="sales" element={<FarmerSales />} />
             <Route path="profile" element={<FarmerProfile />} />
             <Route path="verification" element={<FarmerVerification />} />
+            <Route path="verification/wizard" element={<VerificationWizard />} />
+            <Route path="verification/onboarding" element={<VerificationWizard />} />
             <Route path="settings" element={<Settings />} />
+          </Route>
+
+          {/* FPO Protected Onboarding Routes */}
+          <Route path="/fpo" element={<FarmerLayout />}>
+            <Route path="verification/onboarding" element={<VerificationWizard accountType="fpo" />} />
+            <Route path="verification/wizard" element={<VerificationWizard accountType="fpo" />} />
           </Route>
 
           {/* Buyer Protected Routes */}
           <Route path="/buyer" element={<BuyerLayout />}>
             <Route index element={<Navigate to="/buyer/dashboard" replace />} />
             <Route path="dashboard" element={<BuyerDashboard />} />
+            <Route path="verification" element={<BuyerVerification />} />
+            <Route path="verification/wizard" element={<BuyerVerificationWizard />} />
+            <Route path="verification/onboarding" element={<BuyerVerificationWizard />} />
             <Route path="orders" element={<BuyerOrders />} />
             <Route path="cart" element={<Cart />} />
             <Route path="checkout" element={<Checkout />} />
             <Route path="profile" element={<BuyerProfile />} />
+            <Route path="settings" element={<Settings />} />
+          </Route>
+
+          {/* Transporter Routes */}
+          <Route path="/transporter" element={<TransporterLayout />}>
+            <Route index element={<Navigate to="/transporter/dashboard" replace />} />
+            <Route path="dashboard" element={<TransporterDashboard />} />
+            <Route path="profile" element={<TransporterProfile />} />
+            <Route path="verification" element={<TransporterVerification />} />
+            <Route path="verification/wizard" element={<TransporterVerificationWizard />} />
+            <Route path="verification/onboarding" element={<TransporterVerificationWizard />} />
             <Route path="settings" element={<Settings />} />
           </Route>
 
@@ -97,9 +134,12 @@ export default function App() {
             <Route path="dashboard" element={<AdminDashboard />} />
             <Route path="users" element={<AdminUsers />} />
             <Route path="farmers" element={<AdminFarmers />} />
+            <Route path="transporters" element={<AdminTransporters />} />
+            <Route path="settlements" element={<AdminSettlements />} />
             <Route path="products" element={<AdminProducts />} />
             <Route path="orders" element={<AdminOrders />} />
             <Route path="payments" element={<AdminPayments />} />
+            <Route path="blockchain" element={<AdminBlockchainAudit />} />
             <Route path="disputes" element={<AdminDisputes />} />
             <Route path="analytics" element={<AdminAnalytics />} />
             <Route path="settings" element={<Settings />} />
@@ -108,8 +148,9 @@ export default function App() {
           {/* Fallback */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
-      </Router>
-      </CartProvider>
-    </AuthProvider>
+          </Router>
+        </CartProvider>
+      </AuthProvider>
+    </ThemeProvider>
   );
 }

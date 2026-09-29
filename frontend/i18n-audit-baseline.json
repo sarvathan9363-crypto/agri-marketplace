@@ -1,0 +1,7206 @@
+{
+  "generatedAt": "2026-09-24T13:53:19.135Z",
+  "total": 900,
+  "findings": [
+    {
+      "file": "src\\components\\common\\BlockchainAuditBadge.jsx",
+      "line": 84,
+      "column": 84,
+      "kind": "JSXText",
+      "text": "(Chain ID:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\components\\common\\Footer.jsx",
+      "line": 18,
+      "column": 21,
+      "kind": "JSXAttribute:alt",
+      "text": "AgriBazaar Logo",
+      "interpolation": false
+    },
+    {
+      "file": "src\\components\\common\\Footer.jsx",
+      "line": 22,
+      "column": 90,
+      "kind": "JSXText",
+      "text": "Connecting farmers to better markets. Buy fresh agricultural produce directly from trusted farmers and FPOs with full transparency.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\components\\common\\Footer.jsx",
+      "line": 26,
+      "column": 101,
+      "kind": "JSXText",
+      "text": "support@agribazaar.com",
+      "interpolation": false
+    },
+    {
+      "file": "src\\components\\common\\Footer.jsx",
+      "line": 28,
+      "column": 103,
+      "kind": "JSXText",
+      "text": "Nashik & Mumbai, India",
+      "interpolation": false
+    },
+    {
+      "file": "src\\components\\common\\Footer.jsx",
+      "line": 68,
+      "column": 48,
+      "kind": "JSXText",
+      "text": "© 2026 AgriBazaar. All rights reserved.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\components\\common\\Navbar.jsx",
+      "line": 99,
+      "column": 19,
+      "kind": "JSXAttribute:alt",
+      "text": "AgriBazaar Logo",
+      "interpolation": false
+    },
+    {
+      "file": "src\\components\\common\\SecureFileUpload.jsx",
+      "line": 156,
+      "column": 21,
+      "kind": "Call:error",
+      "text": "File upload failed:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\components\\common\\SecureFileUpload.jsx",
+      "line": 194,
+      "column": 21,
+      "kind": "Call:error",
+      "text": "Remove file error:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\components\\common\\Sidebar.jsx",
+      "line": 86,
+      "column": 25,
+      "kind": "JSXAttribute:alt",
+      "text": "AgriBazaar Logo",
+      "interpolation": false
+    },
+    {
+      "file": "src\\components\\farmer\\PaymentSettlementCard.jsx",
+      "line": 21,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Failed to load payment settlement status.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\components\\farmer\\PaymentSettlementCard.jsx",
+      "line": 43,
+      "column": 28,
+      "kind": "Call:success",
+      "text": "Status updated!",
+      "interpolation": false
+    },
+    {
+      "file": "src\\components\\farmer\\PaymentSettlementCard.jsx",
+      "line": 45,
+      "column": 20,
+      "kind": "Call:info",
+      "text": "Please contact AgriBazaar support at support@agribazaar.org",
+      "interpolation": false
+    },
+    {
+      "file": "src\\components\\farmer\\PaymentSettlementCard.jsx",
+      "line": 137,
+      "column": 147,
+      "kind": "JSXText",
+      "text": "Government Settlement Portal",
+      "interpolation": false
+    },
+    {
+      "file": "src\\components\\farmer\\PaymentSettlementCard.jsx",
+      "line": 146,
+      "column": 98,
+      "kind": "JSXText",
+      "text": "Payment & Settlement",
+      "interpolation": false
+    },
+    {
+      "file": "src\\components\\farmer\\PaymentSettlementCard.jsx",
+      "line": 155,
+      "column": 141,
+      "kind": "JSXText",
+      "text": "ℹ️ Marketplace settlement setup is pending Razorpay activation. Normal checkout payments continue working normally.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\components\\farmer\\PaymentSettlementCard.jsx",
+      "line": 163,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "Bank:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\components\\farmer\\PaymentSettlementCard.jsx",
+      "line": 164,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "Account:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\components\\farmer\\PaymentSettlementCard.jsx",
+      "line": 165,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "IFSC:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\components\\farmer\\PaymentSettlementCard.jsx",
+      "line": 167,
+      "column": 65,
+      "kind": "JSXText",
+      "text": "Linked Account:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\components\\farmer\\PaymentSettlementCard.jsx",
+      "line": 173,
+      "column": 19,
+      "kind": "JSXText",
+      "text": "Settlement:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\components\\farmer\\PaymentSettlementCard.jsx",
+      "line": 175,
+      "column": 19,
+      "kind": "JSXText",
+      "text": "Last Synced:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\components\\farmer\\PaymentSettlementCard.jsx",
+      "line": 196,
+      "column": 85,
+      "kind": "JSXText",
+      "text": "Refresh Status",
+      "interpolation": false
+    },
+    {
+      "file": "src\\context\\CartContext.jsx",
+      "line": 24,
+      "column": 21,
+      "kind": "Call:error",
+      "text": "Error fetching cart:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\layouts\\DashboardLayout.jsx",
+      "line": 19,
+      "column": 115,
+      "kind": "JSXAttribute:aria-label",
+      "text": "Open navigation menu",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\About.jsx",
+      "line": 9,
+      "column": 145,
+      "kind": "JSXText",
+      "text": "Our Purpose",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\About.jsx",
+      "line": 10,
+      "column": 92,
+      "kind": "JSXText",
+      "text": "About AgriBazaar",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\About.jsx",
+      "line": 11,
+      "column": 92,
+      "kind": "JSXText",
+      "text": "India's digital agricultural commerce platform connecting Farmers and FPOs directly to Individual and Commercial Buyers with complete transparency.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\About.jsx",
+      "line": 18,
+      "column": 108,
+      "kind": "JSXText",
+      "text": "Core Pillar",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\About.jsx",
+      "line": 19,
+      "column": 87,
+      "kind": "JSXText",
+      "text": "Our Mission",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\About.jsx",
+      "line": 20,
+      "column": 89,
+      "kind": "JSXText",
+      "text": "AgriBazaar eliminates middleman markups in agricultural trade, ensuring farmers receive fair value for their hard work while buyers obtain verified, farm-fresh produce at competitive rates.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\About.jsx",
+      "line": 26,
+      "column": 108,
+      "kind": "JSXText",
+      "text": "Future-Ready",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\About.jsx",
+      "line": 27,
+      "column": 83,
+      "kind": "JSXText",
+      "text": "Our Vision",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\About.jsx",
+      "line": 28,
+      "column": 89,
+      "kind": "JSXText",
+      "text": "Building a technology-driven agricultural ecosystem prepared for direct settlement, digital quality verification, and transparent logistics across all agricultural zones of India.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Analytics.jsx",
+      "line": 17,
+      "column": 80,
+      "kind": "JSXText",
+      "text": "No analytics data recorded yet.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Analytics.jsx",
+      "line": 22,
+      "column": 143,
+      "kind": "JSXText",
+      "text": "Platform Intelligence",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Analytics.jsx",
+      "line": 23,
+      "column": 78,
+      "kind": "JSXText",
+      "text": "Platform Analytics",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Analytics.jsx",
+      "line": 24,
+      "column": 61,
+      "kind": "JSXText",
+      "text": "Deep dive into trade revenues, seller registration velocity, and category volume.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Analytics.jsx",
+      "line": 28,
+      "column": 21,
+      "kind": "JSXAttribute:title",
+      "text": "Monthly Revenue Trend",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Analytics.jsx",
+      "line": 40,
+      "column": 21,
+      "kind": "JSXAttribute:title",
+      "text": "Order Status Breakdown",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Analytics.jsx",
+      "line": 51,
+      "column": 21,
+      "kind": "JSXAttribute:title",
+      "text": "Farmer & FPO Registrations",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Analytics.jsx",
+      "line": 63,
+      "column": 21,
+      "kind": "JSXAttribute:title",
+      "text": "Category Listing Volume",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 30,
+      "column": 23,
+      "kind": "Call:success",
+      "text": "Fetched ${} payment and ${} settlement events from Kava EVM!",
+      "interpolation": true
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 32,
+      "column": 21,
+      "kind": "Call:error",
+      "text": "Failed to query smart contract audit events.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 63,
+      "column": 19,
+      "kind": "Call:success",
+      "text": "Copied to clipboard!",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 72,
+      "column": 67,
+      "kind": "JSXText",
+      "text": "Direct Smart Contract RPC Query",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 74,
+      "column": 104,
+      "kind": "JSXText",
+      "text": "Blockchain Audit Trail",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 77,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "Immutable, append-only payment & settlement audit records fetched directly from Kava EVM Testnet smart contract without database dependency.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 95,
+      "column": 90,
+      "kind": "JSXText",
+      "text": "Blockchain Network",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 98,
+      "column": 107,
+      "kind": "JSXText",
+      "text": "ID:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 103,
+      "column": 90,
+      "kind": "JSXText",
+      "text": "Smart Contract Address",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 113,
+      "column": 21,
+      "kind": "JSXAttribute:title",
+      "text": "Open in Kava Explorer",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 121,
+      "column": 90,
+      "kind": "JSXText",
+      "text": "On-Chain Payment Audits",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 129,
+      "column": 90,
+      "kind": "JSXText",
+      "text": "On-Chain Settlement Audits",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 140,
+      "column": 41,
+      "kind": "JSXText",
+      "text": "Live Cryptographic Verification Tool",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 142,
+      "column": 43,
+      "kind": "JSXText",
+      "text": "Verify Any Event ID Hash Live On-Chain",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 146,
+      "column": 25,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Paste Event ID Hash (e.g. 0xb1879069...)",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 170,
+      "column": 66,
+      "kind": "JSXText",
+      "text": "Status:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 175,
+      "column": 137,
+      "kind": "JSXText",
+      "text": "📦 Items Purchased:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 178,
+      "column": 32,
+      "kind": "JSXText",
+      "text": "Payment ID Hash:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 179,
+      "column": 32,
+      "kind": "JSXText",
+      "text": "Order ID Hash:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 180,
+      "column": 32,
+      "kind": "JSXText",
+      "text": "Buyer ID Hash:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 181,
+      "column": 32,
+      "kind": "JSXText",
+      "text": "Amount:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 181,
+      "column": 170,
+      "kind": "JSXText",
+      "text": "paise)",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 182,
+      "column": 32,
+      "kind": "JSXText",
+      "text": "Recorded At:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 204,
+      "column": 42,
+      "kind": "JSXText",
+      "text": "Payment Audits On-Chain",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 219,
+      "column": 43,
+      "kind": "JSXText",
+      "text": "Settlement Audits On-Chain",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 232,
+      "column": 50,
+      "kind": "JSXText",
+      "text": "Querying Kava EVM Testnet Smart Contract...",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 238,
+      "column": 56,
+      "kind": "JSXText",
+      "text": "No payment events recorded on-chain yet",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 239,
+      "column": 59,
+      "kind": "JSXText",
+      "text": "New payments processed through Razorpay will be automatically audited here.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 245,
+      "column": 47,
+      "kind": "JSXText",
+      "text": "Event ID Hash",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 246,
+      "column": 47,
+      "kind": "JSXText",
+      "text": "Items Purchased",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 247,
+      "column": 47,
+      "kind": "JSXText",
+      "text": "Payment ID Hash",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 248,
+      "column": 47,
+      "kind": "JSXText",
+      "text": "Order ID Hash",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 249,
+      "column": 47,
+      "kind": "JSXText",
+      "text": "Amount (₹)",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 250,
+      "column": 47,
+      "kind": "JSXText",
+      "text": "On-Chain Status",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 251,
+      "column": 47,
+      "kind": "JSXText",
+      "text": "Recorded At",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 263,
+      "column": 35,
+      "kind": "JSXAttribute:title",
+      "text": "Copy full hash",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 286,
+      "column": 115,
+      "kind": "JSXText",
+      "text": "paise)",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 314,
+      "column": 56,
+      "kind": "JSXText",
+      "text": "No settlement events recorded on-chain yet",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 315,
+      "column": 59,
+      "kind": "JSXText",
+      "text": "Farmer marketplace settlements will appear here when recorded.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 321,
+      "column": 47,
+      "kind": "JSXText",
+      "text": "Event ID Hash",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 322,
+      "column": 47,
+      "kind": "JSXText",
+      "text": "Settlement Hash",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 323,
+      "column": 47,
+      "kind": "JSXText",
+      "text": "Order Hash",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 324,
+      "column": 47,
+      "kind": "JSXText",
+      "text": "Seller Amount",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 325,
+      "column": 47,
+      "kind": "JSXText",
+      "text": "Status",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 326,
+      "column": 47,
+      "kind": "JSXText",
+      "text": "Recorded At",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\BlockchainAudit.jsx",
+      "line": 338,
+      "column": 35,
+      "kind": "JSXAttribute:title",
+      "text": "Copy full hash",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Dashboard.jsx",
+      "line": 16,
+      "column": 89,
+      "kind": "Call:error",
+      "text": "Failed to load dashboard.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Dashboard.jsx",
+      "line": 33,
+      "column": 143,
+      "kind": "JSXText",
+      "text": "Executive Controls",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Dashboard.jsx",
+      "line": 34,
+      "column": 78,
+      "kind": "JSXText",
+      "text": "Admin Dashboard",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Dashboard.jsx",
+      "line": 35,
+      "column": 61,
+      "kind": "JSXText",
+      "text": "AgriBazaar platform metrics, farmer verification pipeline, and trade volumes.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Dashboard.jsx",
+      "line": 39,
+      "column": 39,
+      "kind": "JSXAttribute:label",
+      "text": "Total Users",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Dashboard.jsx",
+      "line": 40,
+      "column": 41,
+      "kind": "JSXAttribute:label",
+      "text": "Farmers / FPOs",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Dashboard.jsx",
+      "line": 41,
+      "column": 39,
+      "kind": "JSXAttribute:label",
+      "text": "Pending Verifications",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Dashboard.jsx",
+      "line": 42,
+      "column": 41,
+      "kind": "JSXAttribute:label",
+      "text": "Active Products",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Dashboard.jsx",
+      "line": 43,
+      "column": 45,
+      "kind": "JSXAttribute:label",
+      "text": "Total Orders",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Dashboard.jsx",
+      "line": 44,
+      "column": 44,
+      "kind": "JSXAttribute:label",
+      "text": "Completed Orders",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Dashboard.jsx",
+      "line": 45,
+      "column": 44,
+      "kind": "JSXAttribute:label",
+      "text": "Total Revenue",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Dashboard.jsx",
+      "line": 46,
+      "column": 39,
+      "kind": "JSXAttribute:label",
+      "text": "Total Buyers",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Dashboard.jsx",
+      "line": 50,
+      "column": 21,
+      "kind": "JSXAttribute:title",
+      "text": "Monthly Order Volume",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Dashboard.jsx",
+      "line": 61,
+      "column": 70,
+      "kind": "JSXText",
+      "text": "No order volume data yet",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Dashboard.jsx",
+      "line": 64,
+      "column": 21,
+      "kind": "JSXAttribute:title",
+      "text": "Product Category Distribution",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Dashboard.jsx",
+      "line": 74,
+      "column": 70,
+      "kind": "JSXText",
+      "text": "No category distribution data yet",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Dashboard.jsx",
+      "line": 79,
+      "column": 76,
+      "kind": "JSXText",
+      "text": "Recent Platform Orders",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Disputes.jsx",
+      "line": 26,
+      "column": 21,
+      "kind": "Call:success",
+      "text": "Dispute status updated to ${}.",
+      "interpolation": true
+    },
+    {
+      "file": "src\\pages\\admin\\Disputes.jsx",
+      "line": 30,
+      "column": 27,
+      "kind": "Call:error",
+      "text": "Failed to update dispute.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Disputes.jsx",
+      "line": 49,
+      "column": 97,
+      "kind": "JSXText",
+      "text": "Review",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Disputes.jsx",
+      "line": 52,
+      "column": 79,
+      "kind": "JSXText",
+      "text": "Resolve",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Disputes.jsx",
+      "line": 58,
+      "column": 77,
+      "kind": "JSXText",
+      "text": "Resolve Issue",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Disputes.jsx",
+      "line": 70,
+      "column": 143,
+      "kind": "JSXText",
+      "text": "Conflict Oversight",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Disputes.jsx",
+      "line": 71,
+      "column": 78,
+      "kind": "JSXText",
+      "text": "Dispute Resolution",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Disputes.jsx",
+      "line": 72,
+      "column": 61,
+      "kind": "JSXText",
+      "text": "Arbitrate buyer and farmer claims, quality issues, or payment holds.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Disputes.jsx",
+      "line": 87,
+      "column": 80,
+      "kind": "JSXText",
+      "text": "Resolve Dispute",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Disputes.jsx",
+      "line": 88,
+      "column": 60,
+      "kind": "JSXText",
+      "text": "Issue:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Disputes.jsx",
+      "line": 91,
+      "column": 27,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Admin response details...",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Disputes.jsx",
+      "line": 96,
+      "column": 102,
+      "kind": "JSXText",
+      "text": "Cancel",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Disputes.jsx",
+      "line": 99,
+      "column": 96,
+      "kind": "JSXText",
+      "text": "Reject Claim",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Disputes.jsx",
+      "line": 102,
+      "column": 97,
+      "kind": "JSXText",
+      "text": "Resolve Claim",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Farmers.jsx",
+      "line": 32,
+      "column": 21,
+      "kind": "Call:success",
+      "text": "Farmer verification ${}.",
+      "interpolation": true
+    },
+    {
+      "file": "src\\pages\\admin\\Farmers.jsx",
+      "line": 36,
+      "column": 27,
+      "kind": "Call:error",
+      "text": "Failed to update verification.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Farmers.jsx",
+      "line": 78,
+      "column": 99,
+      "kind": "JSXText",
+      "text": "Verify",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Farmers.jsx",
+      "line": 81,
+      "column": 84,
+      "kind": "JSXText",
+      "text": "Reject",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Farmers.jsx",
+      "line": 87,
+      "column": 97,
+      "kind": "JSXText",
+      "text": "Approve Verification",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Farmers.jsx",
+      "line": 99,
+      "column": 143,
+      "kind": "JSXText",
+      "text": "KYC Verification Pipeline",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Farmers.jsx",
+      "line": 100,
+      "column": 78,
+      "kind": "JSXText",
+      "text": "Farmers & FPOs Approval",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Farmers.jsx",
+      "line": 101,
+      "column": 61,
+      "kind": "JSXText",
+      "text": "Review farm registrations, verify identity, and grant active seller privileges.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Farmers.jsx",
+      "line": 129,
+      "column": 80,
+      "kind": "JSXText",
+      "text": "Reject",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Farmers.jsx",
+      "line": 132,
+      "column": 27,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Provide reason for verification rejection...",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Farmers.jsx",
+      "line": 137,
+      "column": 105,
+      "kind": "JSXText",
+      "text": "Cancel",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Farmers.jsx",
+      "line": 140,
+      "column": 108,
+      "kind": "JSXText",
+      "text": "Reject Farmer",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Orders.jsx",
+      "line": 44,
+      "column": 143,
+      "kind": "JSXText",
+      "text": "Platform Fulfillment",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Orders.jsx",
+      "line": 45,
+      "column": 78,
+      "kind": "JSXText",
+      "text": "All Platform Orders",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Orders.jsx",
+      "line": 46,
+      "column": 61,
+      "kind": "JSXText",
+      "text": "Full oversight of orders, fulfillment statuses, and buyer/farmer transactions.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Payments.jsx",
+      "line": 42,
+      "column": 145,
+      "kind": "JSXText",
+      "text": "Financial Audit",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Payments.jsx",
+      "line": 43,
+      "column": 80,
+      "kind": "JSXText",
+      "text": "Payment Audit Logs",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Payments.jsx",
+      "line": 44,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "Audit platform transaction settlements and gateway status logs.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Payments.jsx",
+      "line": 51,
+      "column": 61,
+      "kind": "JSXText",
+      "text": "View On-Chain Blockchain Audit",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Products.jsx",
+      "line": 28,
+      "column": 21,
+      "kind": "Call:success",
+      "text": "Product listing status updated.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Products.jsx",
+      "line": 30,
+      "column": 27,
+      "kind": "Call:error",
+      "text": "Failed to update product status.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Products.jsx",
+      "line": 59,
+      "column": 96,
+      "kind": "JSXText",
+      "text": "Disable Listing",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Products.jsx",
+      "line": 63,
+      "column": 95,
+      "kind": "JSXText",
+      "text": "Enable Listing",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Products.jsx",
+      "line": 75,
+      "column": 143,
+      "kind": "JSXText",
+      "text": "Catalog Moderation",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Products.jsx",
+      "line": 76,
+      "column": 78,
+      "kind": "JSXText",
+      "text": "Product Moderation",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Products.jsx",
+      "line": 77,
+      "column": 61,
+      "kind": "JSXText",
+      "text": "Review active, draft, and paused crop listings published by farmers.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Settlements.jsx",
+      "line": 29,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Failed to load farmer settlements.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Settlements.jsx",
+      "line": 80,
+      "column": 57,
+      "kind": "JSXText",
+      "text": "Account:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Settlements.jsx",
+      "line": 81,
+      "column": 57,
+      "kind": "JSXText",
+      "text": "IFSC:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Settlements.jsx",
+      "line": 83,
+      "column": 72,
+      "kind": "JSXText",
+      "text": "Linked:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Settlements.jsx",
+      "line": 109,
+      "column": 145,
+      "kind": "JSXText",
+      "text": "Marketplace Financial Control",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Settlements.jsx",
+      "line": 112,
+      "column": 80,
+      "kind": "JSXText",
+      "text": "Payment & Settlement Overview",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Settlements.jsx",
+      "line": 115,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "Track Razorpay seller account onboarding, Route activation, and marketplace split settlements across farmers.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Settlements.jsx",
+      "line": 124,
+      "column": 83,
+      "kind": "JSXText",
+      "text": "Refresh Settlements",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Settlements.jsx",
+      "line": 132,
+      "column": 46,
+      "kind": "JSXText",
+      "text": "Razorpay Route Capability is Pending Activation (Test Mode)",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Settlements.jsx",
+      "line": 133,
+      "column": 16,
+      "kind": "JSXText",
+      "text": "Environment flag",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Settlements.jsx",
+      "line": 134,
+      "column": 98,
+      "kind": "JSXText",
+      "text": "RAZORPAY_ROUTE_ENABLED=false",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Settlements.jsx",
+      "line": 134,
+      "column": 133,
+      "kind": "JSXText",
+      "text": "is active. Normal buyer checkout payments function properly. Marketplace farmer settlements remain recorded as",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Settlements.jsx",
+      "line": 134,
+      "column": 269,
+      "kind": "JSXText",
+      "text": "until Razorpay Route is enabled on your merchant account.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Users.jsx",
+      "line": 28,
+      "column": 21,
+      "kind": "Call:success",
+      "text": "User status updated.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Users.jsx",
+      "line": 30,
+      "column": 27,
+      "kind": "Call:error",
+      "text": "Failed to update status.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Users.jsx",
+      "line": 50,
+      "column": 29,
+      "kind": "Call:success",
+      "text": "Account Hash copied!",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Users.jsx",
+      "line": 53,
+      "column": 19,
+      "kind": "JSXAttribute:title",
+      "text": "Copy full hash",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Users.jsx",
+      "line": 91,
+      "column": 143,
+      "kind": "JSXText",
+      "text": "User Directory",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Users.jsx",
+      "line": 92,
+      "column": 78,
+      "kind": "JSXText",
+      "text": "Platform User Management",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\admin\\Users.jsx",
+      "line": 93,
+      "column": 61,
+      "kind": "JSXText",
+      "text": "View user roles, access statuses, and activate or suspend accounts.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 201,
+      "column": 21,
+      "kind": "Call:error",
+      "text": "Error fetching buyer verification:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 202,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Could not load verification status",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 227,
+      "column": 21,
+      "kind": "Call:error",
+      "text": "Please enter a valid 10-digit mobile number",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 235,
+      "column": 25,
+      "kind": "Call:success",
+      "text": "OTP sent to your mobile number",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 244,
+      "column": 21,
+      "kind": "Call:error",
+      "text": "Please enter 6-digit OTP code",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 252,
+      "column": 25,
+      "kind": "Call:success",
+      "text": "Mobile number verified successfully",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 265,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Consent is required to proceed with identity verification",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 273,
+      "column": 23,
+      "kind": "Call:success",
+      "text": "OTP sent to your Aadhaar-linked mobile",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 277,
+      "column": 21,
+      "kind": "Call:error",
+      "text": "Please enter 6-digit OTP",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 289,
+      "column": 25,
+      "kind": "Call:success",
+      "text": "Identity verified via authorized gateway",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 302,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Please fill all required address fields",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 310,
+      "column": 23,
+      "kind": "Call:success",
+      "text": "Address details verified",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 322,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Please fill all required business identity fields",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 330,
+      "column": 23,
+      "kind": "Call:success",
+      "text": "Business identity verified",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 343,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Please enter a valid 10-character PAN number (e.g. ABCDE1234F)",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 351,
+      "column": 23,
+      "kind": "Call:success",
+      "text": "Business PAN verified successfully",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 368,
+      "column": 25,
+      "kind": "Call:success",
+      "text": "GSTIN marked as Not Applicable",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 372,
+      "column": 21,
+      "kind": "Call:error",
+      "text": "Failed to update GSTIN status",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 380,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Please enter a valid 15-character GSTIN number",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 388,
+      "column": 23,
+      "kind": "Call:success",
+      "text": "GSTIN verified successfully",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 400,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Please enter Registration Number / Identifier",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 409,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Please enter representative name and designation",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 414,
+      "column": 21,
+      "kind": "Call:error",
+      "text": "Please enter valid mobile number",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 422,
+      "column": 25,
+      "kind": "Call:success",
+      "text": "OTP sent to representative mobile",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 425,
+      "column": 21,
+      "kind": "Call:error",
+      "text": "Failed to send OTP",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 431,
+      "column": 21,
+      "kind": "Call:error",
+      "text": "Please enter 6-digit OTP",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 445,
+      "column": 25,
+      "kind": "Call:success",
+      "text": "Authorized Representative verified",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 458,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Please fill all required bank account fields",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 462,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Account numbers do not match",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 470,
+      "column": 23,
+      "kind": "Call:success",
+      "text": "Bank account verified successfully",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 487,
+      "column": 25,
+      "kind": "Call:success",
+      "text": "Udyam registration marked as Not Applicable",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 491,
+      "column": 21,
+      "kind": "Call:error",
+      "text": "Failed to update Udyam status",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 499,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Please enter valid Udyam Registration Number",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 507,
+      "column": 23,
+      "kind": "Call:success",
+      "text": "Udyam registration verified",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 524,
+      "column": 25,
+      "kind": "Call:success",
+      "text": "FSSAI / License marked as Not Applicable",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 528,
+      "column": 21,
+      "kind": "Call:error",
+      "text": "Failed to update License status",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 536,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Please enter valid FSSAI / License registration number",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 544,
+      "column": 23,
+      "kind": "Call:success",
+      "text": "FSSAI / License verified",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 560,
+      "column": 23,
+      "kind": "Call:success",
+      "text": "Documents recorded and verified",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 573,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "This step is required and cannot be skipped",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 581,
+      "column": 23,
+      "kind": "Call:success",
+      "text": "Step '${}' skipped",
+      "interpolation": true
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 585,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Failed to skip step",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 600,
+      "column": 25,
+      "kind": "Call:success",
+      "text": "Verification details saved!",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 605,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Could not complete verification",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 624,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "Loading Official Verification Portal...",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 640,
+      "column": 87,
+      "kind": "JSXText",
+      "text": "National Agricultural Buyer Verification Service",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 643,
+      "column": 55,
+      "kind": "JSXText",
+      "text": "Ministry of Agriculture & Farmers Welfare • AgriBazaar Portal",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 650,
+      "column": 19,
+      "kind": "JSXText",
+      "text": "Official Identity & Compliance Gateway",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 661,
+      "column": 154,
+      "kind": "JSXText",
+      "text": "Buyer Type:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 664,
+      "column": 70,
+      "kind": "JSXText",
+      "text": "Ref: ABV-BUYER-",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 672,
+      "column": 33,
+      "kind": "JSXText",
+      "text": "— Complete required verification steps to become a verified buyer.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 681,
+      "column": 19,
+      "kind": "JSXText",
+      "text": "Save & Exit to Dashboard",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 690,
+      "column": 88,
+      "kind": "JSXText",
+      "text": "Verification Steps",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 693,
+      "column": 70,
+      "kind": "JSXText",
+      "text": "Step",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 694,
+      "column": 35,
+      "kind": "JSXText",
+      "text": "of",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 775,
+      "column": 23,
+      "kind": "JSXText",
+      "text": "Step",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 775,
+      "column": 41,
+      "kind": "JSXText",
+      "text": "of",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 794,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "Mobile Authentication Protocol",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 795,
+      "column": 22,
+      "kind": "JSXText",
+      "text": "Enter your 10-digit mobile number to receive a secure One-Time Password (OTP). OTP will not be stored permanently.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 799,
+      "column": 92,
+      "kind": "JSXText",
+      "text": "Mobile Number",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 808,
+      "column": 33,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Enter 10-digit mobile number",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 815,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "Enter 6-Digit OTP",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 823,
+      "column": 35,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Enter 6-digit OTP",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 826,
+      "column": 68,
+      "kind": "JSXText",
+      "text": "OTP sent to +91-XXXXX",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 837,
+      "column": 27,
+      "kind": "JSXText",
+      "text": "Back",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 857,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "Authorized Identity Verification",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 858,
+      "column": 22,
+      "kind": "JSXText",
+      "text": "Identity is validated securely via authorized verification reference. Full raw identity document numbers are never permanently stored.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 862,
+      "column": 92,
+      "kind": "JSXText",
+      "text": "Identity Verification Method",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 870,
+      "column": 45,
+      "kind": "JSXText",
+      "text": "Aadhaar-based Authorized Verification",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 871,
+      "column": 41,
+      "kind": "JSXText",
+      "text": "PAN-based Identity Verification",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 872,
+      "column": 43,
+      "kind": "JSXText",
+      "text": "Voter ID / National Portal Verification",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 884,
+      "column": 27,
+      "kind": "JSXText",
+      "text": "I provide my explicit consent to AgriBazaar portal to verify my identity details with official identity registries for buyer authentication.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 892,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "Enter Identity Gateway OTP",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 900,
+      "column": 35,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Enter 6-digit OTP",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 912,
+      "column": 27,
+      "kind": "JSXText",
+      "text": "Back",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 933,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "Street Address / Premises",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 940,
+      "column": 35,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Flat, House no., Building, Street, Area",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 946,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "State",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 961,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "District",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 968,
+      "column": 35,
+      "kind": "JSXAttribute:placeholder",
+      "text": "District Name",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 974,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "City / Town",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 981,
+      "column": 35,
+      "kind": "JSXAttribute:placeholder",
+      "text": "City or Town",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 987,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "Pincode",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 995,
+      "column": 35,
+      "kind": "JSXAttribute:placeholder",
+      "text": "6-digit PIN Code",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1007,
+      "column": 27,
+      "kind": "JSXText",
+      "text": "Back",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1016,
+      "column": 27,
+      "kind": "JSXText",
+      "text": "Verify Address & Continue",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1028,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "Legal Business Name",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1035,
+      "column": 35,
+      "kind": "JSXAttribute:placeholder",
+      "text": "As registered in MCA / GST / PAN",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1041,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "Trade / Business Name",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1048,
+      "column": 35,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Brand or Trade Name (optional)",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1054,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "Business Type",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1062,
+      "column": 48,
+      "kind": "JSXText",
+      "text": "Retailer / Agribusiness Dealer",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1063,
+      "column": 50,
+      "kind": "JSXText",
+      "text": "Wholesaler / Trader",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1064,
+      "column": 49,
+      "kind": "JSXText",
+      "text": "Food Processor / Mill",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1065,
+      "column": 48,
+      "kind": "JSXText",
+      "text": "Exporter / Institutional Buyer",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1066,
+      "column": 54,
+      "kind": "JSXText",
+      "text": "Proprietorship Firm",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1067,
+      "column": 51,
+      "kind": "JSXText",
+      "text": "Partnership Firm",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1068,
+      "column": 46,
+      "kind": "JSXText",
+      "text": "Private Limited Company",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1073,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "Registered State",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1088,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "Business Address",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1095,
+      "column": 35,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Registered Office / Trade Premises Address",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1101,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "District",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1108,
+      "column": 35,
+      "kind": "JSXAttribute:placeholder",
+      "text": "District",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1114,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "City / Town",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1121,
+      "column": 35,
+      "kind": "JSXAttribute:placeholder",
+      "text": "City or Town",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1127,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "Pincode",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1135,
+      "column": 35,
+      "kind": "JSXAttribute:placeholder",
+      "text": "6-digit Pincode",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1147,
+      "column": 27,
+      "kind": "JSXText",
+      "text": "Back",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1156,
+      "column": 27,
+      "kind": "JSXText",
+      "text": "Verify Business Identity",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1167,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "Income Tax Department PAN Verification",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1168,
+      "column": 22,
+      "kind": "JSXText",
+      "text": "Enter the 10-character Permanent Account Number issued in the legal name of the entity.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1173,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "Business / Entity PAN",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1181,
+      "column": 35,
+      "kind": "JSXAttribute:placeholder",
+      "text": "e.g. ABCDE1234F",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1187,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "Legal Name as per PAN",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1194,
+      "column": 35,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Legal Entity Name",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1206,
+      "column": 27,
+      "kind": "JSXText",
+      "text": "Back",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1215,
+      "column": 27,
+      "kind": "JSXText",
+      "text": "Verify Business PAN",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1226,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "Goods and Services Tax Identification (GSTIN)",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1227,
+      "column": 22,
+      "kind": "JSXText",
+      "text": "GSTIN verification is conditional. Small traders or exempt agricultural businesses can select \"GSTIN Not Applicable\".",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1231,
+      "column": 92,
+      "kind": "JSXText",
+      "text": "15-Digit GSTIN Number",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1239,
+      "column": 33,
+      "kind": "JSXAttribute:placeholder",
+      "text": "e.g. 27AAAAA0000A1Z5",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1250,
+      "column": 27,
+      "kind": "JSXText",
+      "text": "Back",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1259,
+      "column": 29,
+      "kind": "JSXText",
+      "text": "GSTIN Not Applicable",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1268,
+      "column": 29,
+      "kind": "JSXText",
+      "text": "Verify GSTIN & Continue",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1281,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "Organization Structure Type",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1289,
+      "column": 47,
+      "kind": "JSXText",
+      "text": "Private / Public Limited Company (CIN)",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1290,
+      "column": 43,
+      "kind": "JSXText",
+      "text": "Limited Liability Partnership (LLPIN)",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1291,
+      "column": 51,
+      "kind": "JSXText",
+      "text": "Registered Partnership Firm",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1292,
+      "column": 54,
+      "kind": "JSXText",
+      "text": "Registered Sole Proprietorship",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1293,
+      "column": 51,
+      "kind": "JSXText",
+      "text": "Cooperative Society / Farmer Federation",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1298,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "Registration Number / Identifier",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1305,
+      "column": 35,
+      "kind": "JSXAttribute:placeholder",
+      "text": "e.g. U01100MH2020PTC123456",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1317,
+      "column": 27,
+      "kind": "JSXText",
+      "text": "Back",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1324,
+      "column": 27,
+      "kind": "JSXText",
+      "text": "Verify Registration",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1336,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "Representative Full Name",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1343,
+      "column": 35,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Full Name",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1349,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "Designation",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1357,
+      "column": 45,
+      "kind": "JSXText",
+      "text": "Owner / Proprietor",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1358,
+      "column": 47,
+      "kind": "JSXText",
+      "text": "Partner",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1359,
+      "column": 48,
+      "kind": "JSXText",
+      "text": "Director",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1360,
+      "column": 43,
+      "kind": "JSXText",
+      "text": "CEO / Managing Director",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1361,
+      "column": 47,
+      "kind": "JSXText",
+      "text": "Manager / Procurement Officer",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1362,
+      "column": 60,
+      "kind": "JSXText",
+      "text": "Authorized Signatory",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1367,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "Mobile Number",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1376,
+      "column": 35,
+      "kind": "JSXAttribute:placeholder",
+      "text": "10-digit mobile",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1383,
+      "column": 96,
+      "kind": "JSXText",
+      "text": "Representative OTP",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1391,
+      "column": 37,
+      "kind": "JSXAttribute:placeholder",
+      "text": "6-digit OTP",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1406,
+      "column": 27,
+      "kind": "JSXText",
+      "text": "I confirm I possess official board authorization / power of attorney to act as authorized buyer representative.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1416,
+      "column": 27,
+      "kind": "JSXText",
+      "text": "Back",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1437,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "Account Holder Name",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1444,
+      "column": 35,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Name as per Bank Passbook",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1450,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "Bank Name",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1465,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "Branch Name",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1472,
+      "column": 35,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Branch Name",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1478,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "IFSC Code",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1486,
+      "column": 35,
+      "kind": "JSXAttribute:placeholder",
+      "text": "e.g. SBIN0001234",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1492,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "Account Number",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1499,
+      "column": 35,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Account Number",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1505,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "Confirm Account Number",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1512,
+      "column": 35,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Re-enter Account Number",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1524,
+      "column": 27,
+      "kind": "JSXText",
+      "text": "Back",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1533,
+      "column": 27,
+      "kind": "JSXText",
+      "text": "Verify Bank Account",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1544,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "Udyam MSME Registration",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1545,
+      "column": 22,
+      "kind": "JSXText",
+      "text": "Conditional check. Enter your Udyam Registration Number if registered as MSME enterprise, or select \"Udyam Not Applicable\".",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1549,
+      "column": 92,
+      "kind": "JSXText",
+      "text": "Udyam Registration Number",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1556,
+      "column": 33,
+      "kind": "JSXAttribute:placeholder",
+      "text": "e.g. UDYAM-MH-00-0000000",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1567,
+      "column": 27,
+      "kind": "JSXText",
+      "text": "Back",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1576,
+      "column": 29,
+      "kind": "JSXText",
+      "text": "Udyam Not Applicable",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1585,
+      "column": 29,
+      "kind": "JSXText",
+      "text": "Verify Udyam & Continue",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1597,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "FSSAI / Commodity Trade License",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1598,
+      "column": 22,
+      "kind": "JSXText",
+      "text": "Show this only where buyer activity requires food safety/commodity trading permits. Select \"Not Applicable\" if non-food operations.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1603,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "License Type",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1611,
+      "column": 53,
+      "kind": "JSXText",
+      "text": "FSSAI Registration / License",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1612,
+      "column": 52,
+      "kind": "JSXText",
+      "text": "APMC / Mandi Trade License",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1613,
+      "column": 58,
+      "kind": "JSXText",
+      "text": "Agricultural Commodity Trade License",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1618,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "License / Registration Number",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1637,
+      "column": 27,
+      "kind": "JSXText",
+      "text": "Back",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1646,
+      "column": 29,
+      "kind": "JSXText",
+      "text": "License Not Applicable",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1655,
+      "column": 29,
+      "kind": "JSXText",
+      "text": "Verify License & Continue",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1667,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "Document Upload & Compliance Audit",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1668,
+      "column": 22,
+      "kind": "JSXText",
+      "text": "Upload clear scan or PDF copies of required business certificates. Max file size: 5MB.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1705,
+      "column": 45,
+      "kind": "Call:error",
+      "text": "Invalid document file format (${}). Allowed formats: PDF, JPG, PNG, WEBP.",
+      "interpolation": true
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1709,
+      "column": 45,
+      "kind": "Call:success",
+      "text": "Uploaded ${}",
+      "interpolation": true
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1724,
+      "column": 27,
+      "kind": "JSXText",
+      "text": "Back",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1733,
+      "column": 27,
+      "kind": "JSXText",
+      "text": "Submit Documents & Proceed",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1750,
+      "column": 81,
+      "kind": "JSXText",
+      "text": "All required verification checks have been audited and updated in the official buyer registry.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1757,
+      "column": 97,
+      "kind": "JSXText",
+      "text": "Verification Checklist Audit Status",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1797,
+      "column": 27,
+      "kind": "JSXText",
+      "text": "Back to Review",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1807,
+      "column": 27,
+      "kind": "JSXText",
+      "text": "Finalize Buyer Verification",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\BuyerVerificationWizard.jsx",
+      "line": 1817,
+      "column": 23,
+      "kind": "JSXText",
+      "text": "Your information is securely processed. Sensitive identity & financial information will be masked where applicable.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Cart.jsx",
+      "line": 95,
+      "column": 97,
+      "kind": "JSXText",
+      "text": "Items Subtotal",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Cart.jsx",
+      "line": 96,
+      "column": 97,
+      "kind": "JSXText",
+      "text": "Estimated Shipping",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Cart.jsx",
+      "line": 96,
+      "column": 203,
+      "kind": "JSXText",
+      "text": "Free Direct Delivery",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Cart.jsx",
+      "line": 97,
+      "column": 155,
+      "kind": "JSXText",
+      "text": "Total Amount",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Checkout.jsx",
+      "line": 248,
+      "column": 23,
+      "kind": "JSXAttribute:label",
+      "text": "Full Delivery Address *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Checkout.jsx",
+      "line": 251,
+      "column": 29,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Street address, building, village...",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Checkout.jsx",
+      "line": 258,
+      "column": 25,
+      "kind": "JSXAttribute:label",
+      "text": "City / District",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Checkout.jsx",
+      "line": 259,
+      "column": 31,
+      "kind": "JSXAttribute:placeholder",
+      "text": "e.g. Pune",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Checkout.jsx",
+      "line": 264,
+      "column": 25,
+      "kind": "JSXAttribute:label",
+      "text": "State",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Checkout.jsx",
+      "line": 265,
+      "column": 31,
+      "kind": "JSXAttribute:placeholder",
+      "text": "e.g. Maharashtra",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Checkout.jsx",
+      "line": 270,
+      "column": 25,
+      "kind": "JSXAttribute:label",
+      "text": "Pincode",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Checkout.jsx",
+      "line": 282,
+      "column": 76,
+      "kind": "Call:error",
+      "text": "Address required.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Checkout.jsx",
+      "line": 283,
+      "column": 14,
+      "kind": "JSXText",
+      "text": "Continue to Order Review →",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Checkout.jsx",
+      "line": 292,
+      "column": 113,
+      "kind": "JSXText",
+      "text": "Items Summary",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Checkout.jsx",
+      "line": 306,
+      "column": 75,
+      "kind": "JSXText",
+      "text": "Subtotal",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Checkout.jsx",
+      "line": 307,
+      "column": 75,
+      "kind": "JSXText",
+      "text": "Delivery",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Checkout.jsx",
+      "line": 307,
+      "column": 146,
+      "kind": "JSXText",
+      "text": "Free",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Checkout.jsx",
+      "line": 319,
+      "column": 66,
+      "kind": "JSXText",
+      "text": "Razorpay Test Mode",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Checkout.jsx",
+      "line": 323,
+      "column": 78,
+      "kind": "JSXText",
+      "text": "Your order is confirmed only after Razorpay payment verification succeeds.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Checkout.jsx",
+      "line": 330,
+      "column": 80,
+      "kind": "JSXText",
+      "text": "Back",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Checkout.jsx",
+      "line": 333,
+      "column": 103,
+      "kind": "JSXText",
+      "text": "Pay Securely · ₹",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Dashboard.jsx",
+      "line": 34,
+      "column": 32,
+      "kind": "Call:error",
+      "text": "Failed to load dashboard.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Dashboard.jsx",
+      "line": 52,
+      "column": 143,
+      "kind": "JSXText",
+      "text": "Buyer Portal",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Dashboard.jsx",
+      "line": 53,
+      "column": 78,
+      "kind": "JSXText",
+      "text": "Buyer Dashboard",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Dashboard.jsx",
+      "line": 54,
+      "column": 61,
+      "kind": "JSXText",
+      "text": "Track your orders, spending, and fresh produce recommendations.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Dashboard.jsx",
+      "line": 58,
+      "column": 45,
+      "kind": "JSXAttribute:label",
+      "text": "Total Orders",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Dashboard.jsx",
+      "line": 59,
+      "column": 41,
+      "kind": "JSXAttribute:label",
+      "text": "Active Orders",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Dashboard.jsx",
+      "line": 60,
+      "column": 44,
+      "kind": "JSXAttribute:label",
+      "text": "Completed",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Dashboard.jsx",
+      "line": 61,
+      "column": 44,
+      "kind": "JSXAttribute:label",
+      "text": "Total Spent",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Dashboard.jsx",
+      "line": 73,
+      "column": 84,
+      "kind": "JSXText",
+      "text": "Buyer Verification Status",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Dashboard.jsx",
+      "line": 85,
+      "column": 25,
+      "kind": "JSXText",
+      "text": "Progress:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Dashboard.jsx",
+      "line": 85,
+      "column": 51,
+      "kind": "JSXText",
+      "text": "of",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Dashboard.jsx",
+      "line": 85,
+      "column": 67,
+      "kind": "JSXText",
+      "text": "completed",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Dashboard.jsx",
+      "line": 100,
+      "column": 23,
+      "kind": "JSXText",
+      "text": "View Verification Details",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Dashboard.jsx",
+      "line": 119,
+      "column": 78,
+      "kind": "JSXText",
+      "text": "Recent Orders",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Dashboard.jsx",
+      "line": 120,
+      "column": 110,
+      "kind": "JSXText",
+      "text": "View All Orders →",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Dashboard.jsx",
+      "line": 139,
+      "column": 50,
+      "kind": "JSXText",
+      "text": "No orders placed yet.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Dashboard.jsx",
+      "line": 140,
+      "column": 105,
+      "kind": "JSXText",
+      "text": "Browse Marketplace",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Dashboard.jsx",
+      "line": 148,
+      "column": 83,
+      "kind": "JSXText",
+      "text": "Recommended Produce",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Orders.jsx",
+      "line": 26,
+      "column": 27,
+      "kind": "Call:error",
+      "text": "Failed to load orders.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Orders.jsx",
+      "line": 50,
+      "column": 23,
+      "kind": "Call:success",
+      "text": "Payment verified successfully!",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Orders.jsx",
+      "line": 66,
+      "column": 27,
+      "kind": "Call:success",
+      "text": "Payment verified successfully!",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Orders.jsx",
+      "line": 70,
+      "column": 47,
+      "kind": "Call:error",
+      "text": "Payment was cancelled.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Orders.jsx",
+      "line": 93,
+      "column": 60,
+      "kind": "JSXText",
+      "text": "ID: #",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Orders.jsx",
+      "line": 127,
+      "column": 14,
+      "kind": "JSXText",
+      "text": "Pay Now",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Orders.jsx",
+      "line": 132,
+      "column": 47,
+      "kind": "JSXText",
+      "text": "View Crop",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Orders.jsx",
+      "line": 143,
+      "column": 145,
+      "kind": "JSXText",
+      "text": "Order Tracking",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Orders.jsx",
+      "line": 144,
+      "column": 80,
+      "kind": "JSXText",
+      "text": "My Orders",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Orders.jsx",
+      "line": 145,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "View shipment progress and purchase history across all sellers.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Orders.jsx",
+      "line": 148,
+      "column": 47,
+      "kind": "JSXText",
+      "text": "Browse Produce",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Profile.jsx",
+      "line": 25,
+      "column": 21,
+      "kind": "Call:success",
+      "text": "Buyer profile updated!",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Profile.jsx",
+      "line": 26,
+      "column": 27,
+      "kind": "Call:error",
+      "text": "Failed to update.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Profile.jsx",
+      "line": 35,
+      "column": 145,
+      "kind": "JSXText",
+      "text": "Buyer Account",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Profile.jsx",
+      "line": 36,
+      "column": 80,
+      "kind": "JSXText",
+      "text": "Buyer Profile",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Profile.jsx",
+      "line": 37,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "Manage your personal details and default shipping address.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Profile.jsx",
+      "line": 40,
+      "column": 80,
+      "kind": "JSXText",
+      "text": "Edit Profile",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Profile.jsx",
+      "line": 45,
+      "column": 102,
+      "kind": "JSXText",
+      "text": "Cancel",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Profile.jsx",
+      "line": 48,
+      "column": 70,
+      "kind": "JSXText",
+      "text": "Save Changes",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Profile.jsx",
+      "line": 58,
+      "column": 138,
+      "kind": "JSXText",
+      "text": "🛡️ On-Chain Cryptographic Account Hash",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Profile.jsx",
+      "line": 64,
+      "column": 93,
+      "kind": "Call:success",
+      "text": "Account Hash copied!",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Profile.jsx",
+      "line": 66,
+      "column": 12,
+      "kind": "JSXText",
+      "text": "Copy Hash",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Profile.jsx",
+      "line": 75,
+      "column": 119,
+      "kind": "JSXText",
+      "text": "Full Name",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Profile.jsx",
+      "line": 85,
+      "column": 120,
+      "kind": "JSXText",
+      "text": "Email Address",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Profile.jsx",
+      "line": 89,
+      "column": 120,
+      "kind": "JSXText",
+      "text": "Mobile Number",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Profile.jsx",
+      "line": 95,
+      "column": 119,
+      "kind": "JSXText",
+      "text": "Delivery Address",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Profile.jsx",
+      "line": 105,
+      "column": 121,
+      "kind": "JSXText",
+      "text": "City",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Profile.jsx",
+      "line": 109,
+      "column": 121,
+      "kind": "JSXText",
+      "text": "State",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Profile.jsx",
+      "line": 113,
+      "column": 121,
+      "kind": "JSXText",
+      "text": "Pincode",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Profile.jsx",
+      "line": 119,
+      "column": 118,
+      "kind": "JSXText",
+      "text": "Buyer Account Type",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Verification.jsx",
+      "line": 63,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Failed to load verification status.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Verification.jsx",
+      "line": 83,
+      "column": 61,
+      "kind": "JSXText",
+      "text": "Loading Buyer Verification Status...",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Verification.jsx",
+      "line": 97,
+      "column": 68,
+      "kind": "JSXText",
+      "text": "• Official Verification Portal",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Verification.jsx",
+      "line": 99,
+      "column": 92,
+      "kind": "JSXText",
+      "text": "Buyer Verification Status",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Verification.jsx",
+      "line": 102,
+      "column": 64,
+      "kind": "JSXText",
+      "text": "Manage identity, business compliance, and regulatory credentials on AgriBazaar.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Verification.jsx",
+      "line": 111,
+      "column": 103,
+      "kind": "JSXText",
+      "text": "Status",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Verification.jsx",
+      "line": 130,
+      "column": 80,
+      "kind": "JSXText",
+      "text": "Overall Status",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Verification.jsx",
+      "line": 145,
+      "column": 21,
+      "kind": "JSXText",
+      "text": "Progress",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Verification.jsx",
+      "line": 147,
+      "column": 33,
+      "kind": "JSXText",
+      "text": "of",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Verification.jsx",
+      "line": 147,
+      "column": 49,
+      "kind": "JSXText",
+      "text": "completed",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Verification.jsx",
+      "line": 161,
+      "column": 85,
+      "kind": "JSXText",
+      "text": "Verification Checklist",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Verification.jsx",
+      "line": 224,
+      "column": 69,
+      "kind": "JSXText",
+      "text": "All required verification checks have been successfully completed and audited against Indian regulatory standards. You now enjoy priority buyer privileges and direct access to wholesale farmer listings.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Verification.jsx",
+      "line": 228,
+      "column": 83,
+      "kind": "JSXText",
+      "text": "Verified On:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Verification.jsx",
+      "line": 237,
+      "column": 23,
+      "kind": "JSXText",
+      "text": "View Verification Details",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Verification.jsx",
+      "line": 245,
+      "column": 82,
+      "kind": "JSXText",
+      "text": "Complete Your Verification Wizard",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\buyer\\Verification.jsx",
+      "line": 248,
+      "column": 77,
+      "kind": "JSXText",
+      "text": "Finish all required identity, tax, bank, and documentation checks to build trust with farmers and unlock verified buyer badges.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\AddProduct.jsx",
+      "line": 44,
+      "column": 42,
+      "kind": "Call:error",
+      "text": "Product name is required.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\AddProduct.jsx",
+      "line": 45,
+      "column": 39,
+      "kind": "Call:error",
+      "text": "Category is required.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\AddProduct.jsx",
+      "line": 46,
+      "column": 69,
+      "kind": "Call:error",
+      "text": "Quantity must be greater than 0.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\AddProduct.jsx",
+      "line": 47,
+      "column": 77,
+      "kind": "Call:error",
+      "text": "Price must be greater than 0.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\AddProduct.jsx",
+      "line": 48,
+      "column": 39,
+      "kind": "Call:error",
+      "text": "Location is required.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\AddProduct.jsx",
+      "line": 77,
+      "column": 75,
+      "kind": "JSXText",
+      "text": "Crop Preview",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\AddProduct.jsx",
+      "line": 78,
+      "column": 98,
+      "kind": "JSXText",
+      "text": "Back to Edit",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\AddProduct.jsx",
+      "line": 89,
+      "column": 50,
+      "kind": "JSXText",
+      "text": "Price:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\AddProduct.jsx",
+      "line": 90,
+      "column": 50,
+      "kind": "JSXText",
+      "text": "Stock:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\AddProduct.jsx",
+      "line": 91,
+      "column": 50,
+      "kind": "JSXText",
+      "text": "Location:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\AddProduct.jsx",
+      "line": 92,
+      "column": 50,
+      "kind": "JSXText",
+      "text": "Harvest:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\AddProduct.jsx",
+      "line": 96,
+      "column": 117,
+      "kind": "JSXText",
+      "text": "Save Draft",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\AddProduct.jsx",
+      "line": 99,
+      "column": 118,
+      "kind": "JSXText",
+      "text": "Publish Listing",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\AddProduct.jsx",
+      "line": 111,
+      "column": 143,
+      "kind": "JSXText",
+      "text": "New Crop Listing",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\AddProduct.jsx",
+      "line": 112,
+      "column": 78,
+      "kind": "JSXText",
+      "text": "Add New Product",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\AddProduct.jsx",
+      "line": 113,
+      "column": 61,
+      "kind": "JSXText",
+      "text": "Create a verified produce listing to sell directly to buyers.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\AddProduct.jsx",
+      "line": 119,
+      "column": 19,
+      "kind": "JSXAttribute:label",
+      "text": "Product / Crop Name *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\AddProduct.jsx",
+      "line": 121,
+      "column": 25,
+      "kind": "JSXAttribute:placeholder",
+      "text": "e.g. Organic Basmati Rice",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\AddProduct.jsx",
+      "line": 128,
+      "column": 21,
+      "kind": "JSXAttribute:label",
+      "text": "Crop Category *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\AddProduct.jsx",
+      "line": 136,
+      "column": 21,
+      "kind": "JSXAttribute:label",
+      "text": "Measurement Unit *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\AddProduct.jsx",
+      "line": 145,
+      "column": 19,
+      "kind": "JSXAttribute:label",
+      "text": "Produce Description",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\AddProduct.jsx",
+      "line": 147,
+      "column": 25,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Describe farming techniques, variety, or special packaging...",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\AddProduct.jsx",
+      "line": 155,
+      "column": 21,
+      "kind": "JSXAttribute:label",
+      "text": "Available Quantity *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\AddProduct.jsx",
+      "line": 175,
+      "column": 19,
+      "kind": "JSXAttribute:label",
+      "text": "Farm Location (City, State) *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\AddProduct.jsx",
+      "line": 177,
+      "column": 25,
+      "kind": "JSXAttribute:placeholder",
+      "text": "e.g. Nashik, Maharashtra",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\AddProduct.jsx",
+      "line": 185,
+      "column": 21,
+      "kind": "JSXAttribute:label",
+      "text": "Harvest Date",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\AddProduct.jsx",
+      "line": 192,
+      "column": 21,
+      "kind": "JSXAttribute:label",
+      "text": "Available From",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\AddProduct.jsx",
+      "line": 205,
+      "column": 21,
+      "kind": "JSXAttribute:label",
+      "text": "Upload Crop Product Image *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\AddProduct.jsx",
+      "line": 206,
+      "column": 27,
+      "kind": "JSXAttribute:description",
+      "text": "High quality JPG, PNG, or WEBP image of agricultural produce (PDF not allowed)",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\AddProduct.jsx",
+      "line": 217,
+      "column": 117,
+      "kind": "JSXText",
+      "text": "Save Draft",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\AddProduct.jsx",
+      "line": 220,
+      "column": 91,
+      "kind": "JSXText",
+      "text": "Preview Listing",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Dashboard.jsx",
+      "line": 28,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Failed to load dashboard data.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Dashboard.jsx",
+      "line": 58,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "Manage your agricultural products, incoming orders, and revenue.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Dashboard.jsx",
+      "line": 61,
+      "column": 45,
+      "kind": "JSXText",
+      "text": "Add New Listing",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Dashboard.jsx",
+      "line": 75,
+      "column": 111,
+      "kind": "JSXText",
+      "text": "Active Badge",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Dashboard.jsx",
+      "line": 82,
+      "column": 31,
+      "kind": "JSXText",
+      "text": "of 5 required checks completed",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Dashboard.jsx",
+      "line": 89,
+      "column": 55,
+      "kind": "JSXText",
+      "text": "All Required Verification Active",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Dashboard.jsx",
+      "line": 93,
+      "column": 69,
+      "kind": "JSXText",
+      "text": "Verification Incomplete",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Dashboard.jsx",
+      "line": 116,
+      "column": 41,
+      "kind": "JSXAttribute:label",
+      "text": "Total Products",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Dashboard.jsx",
+      "line": 117,
+      "column": 41,
+      "kind": "JSXAttribute:label",
+      "text": "Active Listings",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Dashboard.jsx",
+      "line": 118,
+      "column": 45,
+      "kind": "JSXAttribute:label",
+      "text": "Pending Orders",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Dashboard.jsx",
+      "line": 119,
+      "column": 44,
+      "kind": "JSXAttribute:label",
+      "text": "Total Sales",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Dashboard.jsx",
+      "line": 127,
+      "column": 80,
+      "kind": "JSXText",
+      "text": "Recent Orders",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Dashboard.jsx",
+      "line": 128,
+      "column": 113,
+      "kind": "JSXText",
+      "text": "View All →",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Dashboard.jsx",
+      "line": 146,
+      "column": 78,
+      "kind": "JSXText",
+      "text": "No orders received yet.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Dashboard.jsx",
+      "line": 153,
+      "column": 80,
+      "kind": "JSXText",
+      "text": "Active Listings",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Dashboard.jsx",
+      "line": 154,
+      "column": 115,
+      "kind": "JSXText",
+      "text": "View All →",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Dashboard.jsx",
+      "line": 171,
+      "column": 52,
+      "kind": "JSXText",
+      "text": "No active listings.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Dashboard.jsx",
+      "line": 172,
+      "column": 113,
+      "kind": "JSXText",
+      "text": "+ Add Product",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\MyProducts.jsx",
+      "line": 28,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Failed to load products.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\MyProducts.jsx",
+      "line": 38,
+      "column": 21,
+      "kind": "Call:success",
+      "text": "Product deleted.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\MyProducts.jsx",
+      "line": 40,
+      "column": 27,
+      "kind": "Call:error",
+      "text": "Failed to delete.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\MyProducts.jsx",
+      "line": 47,
+      "column": 21,
+      "kind": "Call:success",
+      "text": "Product ${}.",
+      "interpolation": true
+    },
+    {
+      "file": "src\\pages\\farmer\\MyProducts.jsx",
+      "line": 49,
+      "column": 27,
+      "kind": "Call:error",
+      "text": "Failed to update.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\MyProducts.jsx",
+      "line": 97,
+      "column": 145,
+      "kind": "JSXText",
+      "text": "Crop Inventory",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\MyProducts.jsx",
+      "line": 98,
+      "column": 80,
+      "kind": "JSXText",
+      "text": "My Products",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\MyProducts.jsx",
+      "line": 99,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "Manage your active, draft, and out of stock produce listings (",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\MyProducts.jsx",
+      "line": 99,
+      "column": 142,
+      "kind": "JSXText",
+      "text": "total).",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\MyProducts.jsx",
+      "line": 102,
+      "column": 59,
+      "kind": "JSXText",
+      "text": "Add New Product",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\MyProducts.jsx",
+      "line": 113,
+      "column": 25,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Search crop listings...",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Orders.jsx",
+      "line": 23,
+      "column": 27,
+      "kind": "Call:error",
+      "text": "Failed to load orders.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Orders.jsx",
+      "line": 30,
+      "column": 21,
+      "kind": "Call:success",
+      "text": "Order status updated to ${}.",
+      "interpolation": true
+    },
+    {
+      "file": "src\\pages\\farmer\\Orders.jsx",
+      "line": 44,
+      "column": 60,
+      "kind": "JSXText",
+      "text": "ID: #",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Orders.jsx",
+      "line": 87,
+      "column": 100,
+      "kind": "JSXText",
+      "text": "Confirm",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Orders.jsx",
+      "line": 90,
+      "column": 99,
+      "kind": "JSXText",
+      "text": "Cancel",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Orders.jsx",
+      "line": 96,
+      "column": 101,
+      "kind": "JSXText",
+      "text": "Dispatch",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Orders.jsx",
+      "line": 101,
+      "column": 98,
+      "kind": "JSXText",
+      "text": "Mark Delivered",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Orders.jsx",
+      "line": 113,
+      "column": 143,
+      "kind": "JSXText",
+      "text": "Order Management",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Orders.jsx",
+      "line": 114,
+      "column": 78,
+      "kind": "JSXText",
+      "text": "Incoming Produce Orders",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Orders.jsx",
+      "line": 115,
+      "column": 61,
+      "kind": "JSXText",
+      "text": "Fulfill purchase orders received from retail and wholesale buyers.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Profile.jsx",
+      "line": 32,
+      "column": 21,
+      "kind": "Call:success",
+      "text": "Farmer profile updated!",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Profile.jsx",
+      "line": 33,
+      "column": 27,
+      "kind": "Call:error",
+      "text": "Failed to update profile.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Profile.jsx",
+      "line": 42,
+      "column": 145,
+      "kind": "JSXText",
+      "text": "Seller Identity",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Profile.jsx",
+      "line": 43,
+      "column": 80,
+      "kind": "JSXText",
+      "text": "Farmer Profile",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Profile.jsx",
+      "line": 44,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "Manage your agricultural credentials, farm location, and contact information.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Profile.jsx",
+      "line": 47,
+      "column": 80,
+      "kind": "JSXText",
+      "text": "Edit Profile",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Profile.jsx",
+      "line": 52,
+      "column": 103,
+      "kind": "JSXText",
+      "text": "Cancel",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Profile.jsx",
+      "line": 55,
+      "column": 70,
+      "kind": "JSXText",
+      "text": "Save Changes",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Profile.jsx",
+      "line": 65,
+      "column": 138,
+      "kind": "JSXText",
+      "text": "🛡️ On-Chain Cryptographic Account Hash",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Profile.jsx",
+      "line": 71,
+      "column": 93,
+      "kind": "Call:success",
+      "text": "Account Hash copied!",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Profile.jsx",
+      "line": 73,
+      "column": 12,
+      "kind": "JSXText",
+      "text": "Copy Hash",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Profile.jsx",
+      "line": 88,
+      "column": 21,
+      "kind": "JSXAttribute:label",
+      "text": "Profile Avatar Photo",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Profile.jsx",
+      "line": 89,
+      "column": 27,
+      "kind": "JSXAttribute:description",
+      "text": "Upload avatar photo (JPG, PNG, WEBP)",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Profile.jsx",
+      "line": 97,
+      "column": 119,
+      "kind": "JSXText",
+      "text": "Full Name",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Profile.jsx",
+      "line": 106,
+      "column": 119,
+      "kind": "JSXText",
+      "text": "Farm / FPO Name",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Profile.jsx",
+      "line": 116,
+      "column": 120,
+      "kind": "JSXText",
+      "text": "Email Address",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Profile.jsx",
+      "line": 120,
+      "column": 120,
+      "kind": "JSXText",
+      "text": "Mobile Number",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Profile.jsx",
+      "line": 126,
+      "column": 119,
+      "kind": "JSXText",
+      "text": "Location",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Profile.jsx",
+      "line": 135,
+      "column": 119,
+      "kind": "JSXText",
+      "text": "Address",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Profile.jsx",
+      "line": 145,
+      "column": 120,
+      "kind": "JSXText",
+      "text": "Seller Type",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Profile.jsx",
+      "line": 149,
+      "column": 120,
+      "kind": "JSXText",
+      "text": "Verification Status",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Sales.jsx",
+      "line": 16,
+      "column": 70,
+      "kind": "JSXText",
+      "text": "Sales analytics coming soon.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Sales.jsx",
+      "line": 21,
+      "column": 143,
+      "kind": "JSXText",
+      "text": "Financial Insights",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Sales.jsx",
+      "line": 22,
+      "column": 78,
+      "kind": "JSXText",
+      "text": "Sales Analytics",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Sales.jsx",
+      "line": 23,
+      "column": 61,
+      "kind": "JSXText",
+      "text": "Track your monthly revenue growth, average order size, and crop sales performance.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Sales.jsx",
+      "line": 27,
+      "column": 44,
+      "kind": "JSXAttribute:label",
+      "text": "Total Revenue",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Sales.jsx",
+      "line": 28,
+      "column": 45,
+      "kind": "JSXAttribute:label",
+      "text": "Total Orders",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Sales.jsx",
+      "line": 29,
+      "column": 44,
+      "kind": "JSXAttribute:label",
+      "text": "Avg Order Value",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Sales.jsx",
+      "line": 30,
+      "column": 41,
+      "kind": "JSXAttribute:label",
+      "text": "Products Sold",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Sales.jsx",
+      "line": 34,
+      "column": 21,
+      "kind": "JSXAttribute:title",
+      "text": "Monthly Revenue Growth",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Verification.jsx",
+      "line": 62,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Failed to load verification status.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Verification.jsx",
+      "line": 108,
+      "column": 70,
+      "kind": "JSXText",
+      "text": "Loading verification dashboard...",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Verification.jsx",
+      "line": 143,
+      "column": 107,
+      "kind": "JSXText",
+      "text": "Verification Status & Credentials",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Verification.jsx",
+      "line": 146,
+      "column": 84,
+      "kind": "JSXText",
+      "text": "Central dashboard to view your",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Verification.jsx",
+      "line": 147,
+      "column": 85,
+      "kind": "JSXText",
+      "text": "credentials, progress, and official status.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Verification.jsx",
+      "line": 156,
+      "column": 71,
+      "kind": "JSXText",
+      "text": "All 5 required checks active",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Verification.jsx",
+      "line": 175,
+      "column": 76,
+      "kind": "JSXText",
+      "text": "Overall Progress",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Verification.jsx",
+      "line": 177,
+      "column": 39,
+      "kind": "JSXText",
+      "text": "of 5 required checks completed",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Verification.jsx",
+      "line": 197,
+      "column": 41,
+      "kind": "JSXText",
+      "text": "Verified",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Verification.jsx",
+      "line": 198,
+      "column": 31,
+      "kind": "JSXText",
+      "text": "Skipped",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Verification.jsx",
+      "line": 199,
+      "column": 45,
+      "kind": "JSXText",
+      "text": "Pending Required",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Verification.jsx",
+      "line": 205,
+      "column": 74,
+      "kind": "JSXText",
+      "text": "Verification Incomplete — Complete remaining steps to earn your",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Verification.jsx",
+      "line": 206,
+      "column": 91,
+      "kind": "JSXText",
+      "text": "badge.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Verification.jsx",
+      "line": 212,
+      "column": 14,
+      "kind": "JSXText",
+      "text": "Continue Verification",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Verification.jsx",
+      "line": 228,
+      "column": 86,
+      "kind": "JSXText",
+      "text": "Congratulations! All required identity and organization credentials are fully verified. Your produce listings now show the official verified badge.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Verification.jsx",
+      "line": 236,
+      "column": 50,
+      "kind": "JSXText",
+      "text": "Review / Update Credentials",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Verification.jsx",
+      "line": 243,
+      "column": 72,
+      "kind": "JSXText",
+      "text": "Verification Checks Breakdown",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Verification.jsx",
+      "line": 285,
+      "column": 122,
+      "kind": "JSXText",
+      "text": "✓ Verified",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Verification.jsx",
+      "line": 293,
+      "column": 119,
+      "kind": "JSXText",
+      "text": "○ Skipped",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\Verification.jsx",
+      "line": 297,
+      "column": 117,
+      "kind": "JSXText",
+      "text": "○ Pending",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 153,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Failed to load verification status.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 184,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Please enter a valid 12-digit Aadhaar number.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 190,
+      "column": 21,
+      "kind": "Call:success",
+      "text": "OTP sent to your Aadhaar mobile number!",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 199,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Please enter 6-digit OTP.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 205,
+      "column": 21,
+      "kind": "Call:success",
+      "text": "✓ Identity Verified via UIDAI Sandbox!",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 215,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Please enter Farmer ID and District.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 221,
+      "column": 21,
+      "kind": "Call:success",
+      "text": "✓ Farmer Registry Verified!",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 231,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Please fill all required land record details.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 237,
+      "column": 21,
+      "kind": "Call:success",
+      "text": "✓ Land Record Verified!",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 247,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Please fill Account Holder, Account Number, and IFSC.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 250,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Account numbers do not match.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 256,
+      "column": 21,
+      "kind": "Call:success",
+      "text": "✓ Bank Account Verified!",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 267,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Please enter a valid 10-character PAN number (e.g. ABCDE1234F).",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 273,
+      "column": 21,
+      "kind": "Call:success",
+      "text": "✓ PAN Verified successfully!",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 302,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Please fill required Organization details.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 308,
+      "column": 21,
+      "kind": "Call:success",
+      "text": "✓ Organization Identity Verified!",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 319,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Please enter a valid 10-character Organization PAN.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 325,
+      "column": 21,
+      "kind": "Call:success",
+      "text": "✓ Organization PAN Verified!",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 352,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Please enter a valid 10-digit mobile number.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 358,
+      "column": 21,
+      "kind": "Call:success",
+      "text": "OTP sent to Representative mobile!",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 367,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Please enter Representative Name and Designation.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 370,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Please enter 6-digit OTP.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 376,
+      "column": 21,
+      "kind": "Call:success",
+      "text": "✓ Authorized Representative Verified!",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 386,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Please fill Account Holder, Account Number, and IFSC.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 389,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Account numbers do not match.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 395,
+      "column": 21,
+      "kind": "Call:success",
+      "text": "✓ Organization Bank Account Verified!",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 405,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Please upload at least Registration Certificate, PAN document, and Bank proof.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 411,
+      "column": 21,
+      "kind": "Call:success",
+      "text": "✓ Organization Documents Verified!",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 427,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Failed to skip step.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 434,
+      "column": 19,
+      "kind": "Call:success",
+      "text": "Progress saved. Returning to dashboard.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 443,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "Loading",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 496,
+      "column": 55,
+      "kind": "JSXText",
+      "text": "Ministry of Agriculture & Farmers Welfare • AgriBazaar Portal",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 503,
+      "column": 19,
+      "kind": "JSXText",
+      "text": "Official Identity & Compliance Gateway",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 517,
+      "column": 70,
+      "kind": "JSXText",
+      "text": "Ref: ABV-",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 525,
+      "column": 33,
+      "kind": "JSXText",
+      "text": "— Complete required verification steps to become a verified seller.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 534,
+      "column": 19,
+      "kind": "JSXText",
+      "text": "Save & Exit to Dashboard",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 543,
+      "column": 88,
+      "kind": "JSXText",
+      "text": "Verification Steps",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 546,
+      "column": 70,
+      "kind": "JSXText",
+      "text": "Step",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 547,
+      "column": 35,
+      "kind": "JSXText",
+      "text": "of",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 649,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "Aadhaar Authentication Protocol",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 650,
+      "column": 53,
+      "kind": "JSXText",
+      "text": "Enter your 12-digit Aadhaar number to receive a One-Time Password (OTP) via UIDAI authorized gateway.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 657,
+      "column": 82,
+      "kind": "JSXText",
+      "text": "Identity Verified",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 659,
+      "column": 157,
+      "kind": "JSXText",
+      "text": "Status: Verified",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 663,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "Name on Record:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 666,
+      "column": 67,
+      "kind": "JSXText",
+      "text": "🔒 Aadhaar details are encrypted and masked under UIDAI regulations.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 671,
+      "column": 114,
+      "kind": "JSXText",
+      "text": "Aadhaar Number *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 678,
+      "column": 41,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Enter 12-digit Aadhaar number",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 692,
+      "column": 35,
+      "kind": "JSXText",
+      "text": "Send Aadhaar OTP",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 697,
+      "column": 137,
+      "kind": "JSXText",
+      "text": "✓ OTP sent to mobile linked with Aadhaar reference",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 701,
+      "column": 118,
+      "kind": "JSXText",
+      "text": "Enter 6-Digit OTP *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 716,
+      "column": 32,
+      "kind": "JSXText",
+      "text": "Change Number",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 725,
+      "column": 39,
+      "kind": "JSXText",
+      "text": "Verify & Continue",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 741,
+      "column": 31,
+      "kind": "JSXText",
+      "text": "Save & Exit",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 751,
+      "column": 33,
+      "kind": "JSXText",
+      "text": "Skip Step",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 759,
+      "column": 35,
+      "kind": "JSXText",
+      "text": "Next Step",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 772,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "Farmer Database Protocol",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 773,
+      "column": 53,
+      "kind": "JSXText",
+      "text": "Enter your official Farmer / Agristack ID along with state and district to verify active agricultural registry status.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 780,
+      "column": 82,
+      "kind": "JSXText",
+      "text": "Farmer Registry Verified",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 782,
+      "column": 157,
+      "kind": "JSXText",
+      "text": "Status: Verified",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 787,
+      "column": 85,
+      "kind": "JSXText",
+      "text": "FARMER ID",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 794,
+      "column": 114,
+      "kind": "JSXText",
+      "text": "Farmer ID / Agristack ID *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 798,
+      "column": 41,
+      "kind": "JSXAttribute:placeholder",
+      "text": "e.g. MH-FARM-2024-8849",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 806,
+      "column": 116,
+      "kind": "JSXText",
+      "text": "State *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 816,
+      "column": 116,
+      "kind": "JSXText",
+      "text": "District *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 820,
+      "column": 43,
+      "kind": "JSXAttribute:placeholder",
+      "text": "e.g. Nashik",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 833,
+      "column": 33,
+      "kind": "JSXText",
+      "text": "Verify & Continue",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 846,
+      "column": 31,
+      "kind": "JSXText",
+      "text": "Back",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 856,
+      "column": 33,
+      "kind": "JSXText",
+      "text": "Skip Step",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 864,
+      "column": 35,
+      "kind": "JSXText",
+      "text": "Next Step",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 877,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "Land Holding Protocol",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 878,
+      "column": 53,
+      "kind": "JSXText",
+      "text": "Enter state, district, taluk, village, Patta / 7-12 number, survey number, and total acreage.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 885,
+      "column": 82,
+      "kind": "JSXText",
+      "text": "Land Record Verified",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 887,
+      "column": 157,
+      "kind": "JSXText",
+      "text": "Status: Verified",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 892,
+      "column": 85,
+      "kind": "JSXText",
+      "text": "PATTA / 7-12 NO.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 893,
+      "column": 85,
+      "kind": "JSXText",
+      "text": "SURVEY NO.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 901,
+      "column": 116,
+      "kind": "JSXText",
+      "text": "State *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 911,
+      "column": 116,
+      "kind": "JSXText",
+      "text": "District *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 915,
+      "column": 43,
+      "kind": "JSXAttribute:placeholder",
+      "text": "e.g. Nashik",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 922,
+      "column": 116,
+      "kind": "JSXText",
+      "text": "Taluk *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 926,
+      "column": 43,
+      "kind": "JSXAttribute:placeholder",
+      "text": "e.g. Niphad",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 936,
+      "column": 116,
+      "kind": "JSXText",
+      "text": "Village *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 940,
+      "column": 43,
+      "kind": "JSXAttribute:placeholder",
+      "text": "e.g. Lasalgaon",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 947,
+      "column": 116,
+      "kind": "JSXText",
+      "text": "Patta / Khata No. *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 958,
+      "column": 116,
+      "kind": "JSXText",
+      "text": "Survey No. *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 972,
+      "column": 116,
+      "kind": "JSXText",
+      "text": "Land Extent (Acres) *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 976,
+      "column": 43,
+      "kind": "JSXAttribute:placeholder",
+      "text": "e.g. 3.5 Acres",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 983,
+      "column": 116,
+      "kind": "JSXText",
+      "text": "Land Type",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 989,
+      "column": 51,
+      "kind": "JSXText",
+      "text": "Irrigated / Wet",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 990,
+      "column": 51,
+      "kind": "JSXText",
+      "text": "Dry / Rainfed",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 991,
+      "column": 60,
+      "kind": "JSXText",
+      "text": "Horticulture",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1004,
+      "column": 115,
+      "kind": "JSXText",
+      "text": "I am a registered Cultivator / Tenant Farmer on this land",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1015,
+      "column": 35,
+      "kind": "JSXAttribute:label",
+      "text": "Upload Patta / Land Record Document *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1016,
+      "column": 41,
+      "kind": "JSXAttribute:description",
+      "text": "Upload PDF, JPG, or PNG copy of 7/12, Patta, or Chitta (Max 5MB)",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1026,
+      "column": 33,
+      "kind": "JSXText",
+      "text": "Verify & Continue",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1039,
+      "column": 31,
+      "kind": "JSXText",
+      "text": "Back",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1049,
+      "column": 33,
+      "kind": "JSXText",
+      "text": "Skip Step",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1057,
+      "column": 35,
+      "kind": "JSXText",
+      "text": "Next Step",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1070,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "Bank Settlement Protocol",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1071,
+      "column": 53,
+      "kind": "JSXText",
+      "text": "Link your active bank account for direct payments and automated sales settlements.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1078,
+      "column": 82,
+      "kind": "JSXText",
+      "text": "Bank Account Verified",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1080,
+      "column": 157,
+      "kind": "JSXText",
+      "text": "Status: Verified",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1085,
+      "column": 85,
+      "kind": "JSXText",
+      "text": "ACCOUNT HOLDER",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1086,
+      "column": 85,
+      "kind": "JSXText",
+      "text": "BANK NAME",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1087,
+      "column": 85,
+      "kind": "JSXText",
+      "text": "ACCOUNT NO.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1093,
+      "column": 114,
+      "kind": "JSXText",
+      "text": "Account Holder Name *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1097,
+      "column": 41,
+      "kind": "JSXAttribute:placeholder",
+      "text": "As per bank passbook",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1105,
+      "column": 116,
+      "kind": "JSXText",
+      "text": "Bank Name *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1115,
+      "column": 116,
+      "kind": "JSXText",
+      "text": "Branch Name",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1118,
+      "column": 43,
+      "kind": "JSXAttribute:placeholder",
+      "text": "e.g. Main Branch",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1127,
+      "column": 116,
+      "kind": "JSXText",
+      "text": "Account Number *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1131,
+      "column": 43,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Enter account number",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1138,
+      "column": 116,
+      "kind": "JSXText",
+      "text": "Confirm Account Number *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1142,
+      "column": 43,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Re-enter account number",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1150,
+      "column": 114,
+      "kind": "JSXText",
+      "text": "IFSC Code *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1155,
+      "column": 41,
+      "kind": "JSXAttribute:placeholder",
+      "text": "e.g. SBIN0001234",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1168,
+      "column": 35,
+      "kind": "JSXAttribute:label",
+      "text": "Upload Bank Passbook / Cancelled Cheque *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1169,
+      "column": 41,
+      "kind": "JSXAttribute:description",
+      "text": "Upload front page of passbook or cancelled cheque (Max 5MB)",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1179,
+      "column": 33,
+      "kind": "JSXText",
+      "text": "Verify & Continue",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1192,
+      "column": 31,
+      "kind": "JSXText",
+      "text": "Back",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1202,
+      "column": 33,
+      "kind": "JSXText",
+      "text": "Skip Step",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1210,
+      "column": 35,
+      "kind": "JSXText",
+      "text": "Next Step",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1223,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "PAN Verification Protocol",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1224,
+      "column": 53,
+      "kind": "JSXText",
+      "text": "Enter your 10-character Permanent Account Number for statutory tax compliance & payouts.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1231,
+      "column": 82,
+      "kind": "JSXText",
+      "text": "PAN Verified",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1233,
+      "column": 157,
+      "kind": "JSXText",
+      "text": "Status: Verified",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1238,
+      "column": 85,
+      "kind": "JSXText",
+      "text": "PAN NUMBER",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1239,
+      "column": 85,
+      "kind": "JSXText",
+      "text": "MATCH STATUS",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1239,
+      "column": 141,
+      "kind": "JSXText",
+      "text": "Confirmed Match ✓",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1245,
+      "column": 114,
+      "kind": "JSXText",
+      "text": "PAN Number *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1250,
+      "column": 41,
+      "kind": "JSXAttribute:placeholder",
+      "text": "e.g. ABCDE1234F",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1257,
+      "column": 114,
+      "kind": "JSXText",
+      "text": "Name as per PAN (Optional)",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1260,
+      "column": 41,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Full name as printed on PAN card",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1273,
+      "column": 35,
+      "kind": "JSXAttribute:label",
+      "text": "Upload PAN Card Copy *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1274,
+      "column": 41,
+      "kind": "JSXAttribute:description",
+      "text": "Clear front scan or photo of your PAN card (Max 5MB)",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1284,
+      "column": 33,
+      "kind": "JSXText",
+      "text": "Verify & Continue",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1297,
+      "column": 31,
+      "kind": "JSXText",
+      "text": "Back",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1307,
+      "column": 33,
+      "kind": "JSXText",
+      "text": "Skip Step",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1315,
+      "column": 35,
+      "kind": "JSXText",
+      "text": "Next Step",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1328,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "PM-KISAN Scheme Protocol",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1329,
+      "column": 53,
+      "kind": "JSXText",
+      "text": "Optionally link PM-KISAN Beneficiary Reference for added seller credibility on the marketplace.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1335,
+      "column": 80,
+      "kind": "JSXText",
+      "text": "PM-KISAN Record Verified",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1341,
+      "column": 114,
+      "kind": "JSXText",
+      "text": "PM-KISAN Registration / Beneficiary Reference",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1344,
+      "column": 41,
+      "kind": "JSXAttribute:placeholder",
+      "text": "e.g. PMK-987654321",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1356,
+      "column": 28,
+      "kind": "JSXText",
+      "text": "Skip PM-KISAN",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1366,
+      "column": 35,
+      "kind": "JSXText",
+      "text": "Verify PM-KISAN & Continue",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1380,
+      "column": 31,
+      "kind": "JSXText",
+      "text": "Back",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1387,
+      "column": 31,
+      "kind": "JSXText",
+      "text": "View Summary",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1405,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "Organization Registration Protocol",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1406,
+      "column": 53,
+      "kind": "JSXText",
+      "text": "Verify official FPO / FPC / Cooperative entity registration details.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1413,
+      "column": 82,
+      "kind": "JSXText",
+      "text": "Organization Verified",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1415,
+      "column": 157,
+      "kind": "JSXText",
+      "text": "Status: Verified",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1420,
+      "column": 85,
+      "kind": "JSXText",
+      "text": "LEGAL NAME",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1421,
+      "column": 85,
+      "kind": "JSXText",
+      "text": "REGISTRATION NO.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1428,
+      "column": 116,
+      "kind": "JSXText",
+      "text": "Organization Legal Name *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1432,
+      "column": 43,
+      "kind": "JSXAttribute:placeholder",
+      "text": "e.g. Sahyadri Farmers Producer Co. Ltd.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1439,
+      "column": 116,
+      "kind": "JSXText",
+      "text": "Organization Type *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1445,
+      "column": 57,
+      "kind": "JSXText",
+      "text": "FPO / FPC (Producer Company)",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1446,
+      "column": 67,
+      "kind": "JSXText",
+      "text": "Agricultural Cooperative Society",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1447,
+      "column": 65,
+      "kind": "JSXText",
+      "text": "Farmer SHG / Partnership",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1454,
+      "column": 116,
+      "kind": "JSXText",
+      "text": "Registration / CIN Number *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1458,
+      "column": 43,
+      "kind": "JSXAttribute:placeholder",
+      "text": "e.g. U01111MH2020PTC123456",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1465,
+      "column": 116,
+      "kind": "JSXText",
+      "text": "State *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1478,
+      "column": 116,
+      "kind": "JSXText",
+      "text": "District *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1482,
+      "column": 43,
+      "kind": "JSXAttribute:placeholder",
+      "text": "e.g. Nashik",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1489,
+      "column": 116,
+      "kind": "JSXText",
+      "text": "Pincode *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1502,
+      "column": 114,
+      "kind": "JSXText",
+      "text": "Registered Office Address *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1506,
+      "column": 41,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Full address of organization office",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1519,
+      "column": 33,
+      "kind": "JSXText",
+      "text": "Verify & Continue",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1532,
+      "column": 31,
+      "kind": "JSXText",
+      "text": "Save & Exit",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1541,
+      "column": 33,
+      "kind": "JSXText",
+      "text": "Next Step",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1553,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "Organization PAN Protocol",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1554,
+      "column": 53,
+      "kind": "JSXText",
+      "text": "Enter Permanent Account Number issued in the legal name of the organization.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1561,
+      "column": 82,
+      "kind": "JSXText",
+      "text": "Organization PAN Verified",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1563,
+      "column": 157,
+      "kind": "JSXText",
+      "text": "Status: Verified",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1568,
+      "column": 85,
+      "kind": "JSXText",
+      "text": "ORG PAN",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1569,
+      "column": 85,
+      "kind": "JSXText",
+      "text": "LEGAL NAME",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1575,
+      "column": 114,
+      "kind": "JSXText",
+      "text": "Organization PAN *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1580,
+      "column": 41,
+      "kind": "JSXAttribute:placeholder",
+      "text": "e.g. AAACF1234G",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1592,
+      "column": 33,
+      "kind": "JSXText",
+      "text": "Verify & Continue",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1605,
+      "column": 31,
+      "kind": "JSXText",
+      "text": "Back",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1614,
+      "column": 33,
+      "kind": "JSXText",
+      "text": "Next Step",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1626,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "GSTIN Registration Protocol",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1627,
+      "column": 53,
+      "kind": "JSXText",
+      "text": "Provide 15-character GSTIN registration if registered, or mark GSTIN Not Applicable.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1634,
+      "column": 82,
+      "kind": "JSXText",
+      "text": "GSTIN Status Confirmed",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1644,
+      "column": 114,
+      "kind": "JSXText",
+      "text": "15-Digit GSTIN Number",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1648,
+      "column": 41,
+      "kind": "JSXAttribute:placeholder",
+      "text": "e.g. 27AAACF1234G1Z5",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1660,
+      "column": 28,
+      "kind": "JSXText",
+      "text": "Mark Not Applicable",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1670,
+      "column": 35,
+      "kind": "JSXText",
+      "text": "Verify GSTIN",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1684,
+      "column": 31,
+      "kind": "JSXText",
+      "text": "Back",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1691,
+      "column": 31,
+      "kind": "JSXText",
+      "text": "Next Step",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1702,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "Authorized Official Protocol",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1703,
+      "column": 53,
+      "kind": "JSXText",
+      "text": "Verify identity and mobile authorization of the official representing the organization.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1710,
+      "column": 82,
+      "kind": "JSXText",
+      "text": "Representative Verified",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1712,
+      "column": 157,
+      "kind": "JSXText",
+      "text": "Status: Verified",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1721,
+      "column": 116,
+      "kind": "JSXText",
+      "text": "Representative Name *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1725,
+      "column": 43,
+      "kind": "JSXAttribute:placeholder",
+      "text": "e.g. Ramesh Kumar",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1732,
+      "column": 116,
+      "kind": "JSXText",
+      "text": "Designation *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1736,
+      "column": 43,
+      "kind": "JSXAttribute:placeholder",
+      "text": "e.g. CEO / Managing Director",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1745,
+      "column": 114,
+      "kind": "JSXText",
+      "text": "Representative Mobile Number *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1750,
+      "column": 41,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Enter 10-digit mobile number",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1764,
+      "column": 35,
+      "kind": "JSXText",
+      "text": "Send Representative OTP",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1770,
+      "column": 118,
+      "kind": "JSXText",
+      "text": "Enter 6-Digit OTP *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1786,
+      "column": 37,
+      "kind": "JSXText",
+      "text": "Verify Representative",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1801,
+      "column": 31,
+      "kind": "JSXText",
+      "text": "Back",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1810,
+      "column": 33,
+      "kind": "JSXText",
+      "text": "Next Step",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1822,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "Organization Settlement Account Protocol",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1823,
+      "column": 53,
+      "kind": "JSXText",
+      "text": "Link primary settlement bank account of the FPO / FPC for marketplace direct credits.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1830,
+      "column": 82,
+      "kind": "JSXText",
+      "text": "Organization Bank Account Verified",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1832,
+      "column": 157,
+      "kind": "JSXText",
+      "text": "Status: Verified",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1840,
+      "column": 114,
+      "kind": "JSXText",
+      "text": "Account Holder Name *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1844,
+      "column": 41,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Exact legal name as per bank statement",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1852,
+      "column": 116,
+      "kind": "JSXText",
+      "text": "Bank Name *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1862,
+      "column": 116,
+      "kind": "JSXText",
+      "text": "Branch Name",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1865,
+      "column": 43,
+      "kind": "JSXAttribute:placeholder",
+      "text": "e.g. Commercial Branch",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1874,
+      "column": 116,
+      "kind": "JSXText",
+      "text": "Account Number *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1878,
+      "column": 43,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Enter bank account number",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1885,
+      "column": 116,
+      "kind": "JSXText",
+      "text": "Confirm Account Number *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1889,
+      "column": 43,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Re-enter account number",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1897,
+      "column": 114,
+      "kind": "JSXText",
+      "text": "IFSC Code *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1902,
+      "column": 41,
+      "kind": "JSXAttribute:placeholder",
+      "text": "e.g. SBIN0001234",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1915,
+      "column": 33,
+      "kind": "JSXText",
+      "text": "Verify & Continue",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1928,
+      "column": 31,
+      "kind": "JSXText",
+      "text": "Back",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1937,
+      "column": 33,
+      "kind": "JSXText",
+      "text": "Next Step",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1949,
+      "column": 63,
+      "kind": "JSXText",
+      "text": "Organization Document Dossier",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1950,
+      "column": 53,
+      "kind": "JSXText",
+      "text": "Upload mandatory registration, tax, bank proof, and authorization files.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1957,
+      "column": 82,
+      "kind": "JSXText",
+      "text": "Documents Verified",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1959,
+      "column": 157,
+      "kind": "JSXText",
+      "text": "Status: Verified",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1971,
+      "column": 33,
+      "kind": "JSXAttribute:label",
+      "text": "1. Organization Registration Certificate *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1980,
+      "column": 33,
+      "kind": "JSXAttribute:label",
+      "text": "2. Organization PAN Card Copy *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1989,
+      "column": 33,
+      "kind": "JSXAttribute:label",
+      "text": "3. Bank Passbook / Cancelled Cheque *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 1998,
+      "column": 33,
+      "kind": "JSXAttribute:label",
+      "text": "4. Authorization Letter / Board Resolution",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 2007,
+      "column": 33,
+      "kind": "JSXAttribute:label",
+      "text": "5. GST Certificate (If Applicable)",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 2017,
+      "column": 33,
+      "kind": "JSXText",
+      "text": "Submit Documents & Proceed",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 2030,
+      "column": 31,
+      "kind": "JSXText",
+      "text": "Back",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 2037,
+      "column": 31,
+      "kind": "JSXText",
+      "text": "View Summary",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 2059,
+      "column": 83,
+      "kind": "JSXText",
+      "text": "All required verification checks have been audited and updated in the official seller registry.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 2071,
+      "column": 81,
+      "kind": "JSXText",
+      "text": "You can return anytime to complete pending checks and unlock your verified seller badge.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 2079,
+      "column": 97,
+      "kind": "JSXText",
+      "text": "Verification Checklist Audit Status",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 2122,
+      "column": 27,
+      "kind": "JSXText",
+      "text": "Back to Review",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 2131,
+      "column": 27,
+      "kind": "JSXText",
+      "text": "Return to Dashboard",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\farmer\\VerificationWizard.jsx",
+      "line": 2141,
+      "column": 23,
+      "kind": "JSXText",
+      "text": "Your information is securely processed. Sensitive identity & financial information will be masked where applicable.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Login.jsx",
+      "line": 45,
+      "column": 66,
+      "kind": "JSXText",
+      "text": "Agri",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Login.jsx",
+      "line": 45,
+      "column": 103,
+      "kind": "JSXText",
+      "text": "Bazaar",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Login.jsx",
+      "line": 60,
+      "column": 31,
+      "kind": "JSXAttribute:placeholder",
+      "text": "you@example.com",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Login.jsx",
+      "line": 75,
+      "column": 31,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Enter your password",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Login.jsx",
+      "line": 92,
+      "column": 115,
+      "kind": "JSXText",
+      "text": "Remember me",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Login.jsx",
+      "line": 108,
+      "column": 51,
+      "kind": "JSXText",
+      "text": "Don't have an account?",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Login.jsx",
+      "line": 116,
+      "column": 89,
+      "kind": "JSXText",
+      "text": "Demo Credentials",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Login.jsx",
+      "line": 117,
+      "column": 65,
+      "kind": "JSXText",
+      "text": "Admin:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Login.jsx",
+      "line": 118,
+      "column": 53,
+      "kind": "JSXText",
+      "text": "admin@agribazaar.com",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Login.jsx",
+      "line": 118,
+      "column": 97,
+      "kind": "JSXText",
+      "text": "Farmer:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Login.jsx",
+      "line": 119,
+      "column": 54,
+      "kind": "JSXText",
+      "text": "farmer@agribazaar.com",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Login.jsx",
+      "line": 119,
+      "column": 100,
+      "kind": "JSXText",
+      "text": "Buyer:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Login.jsx",
+      "line": 120,
+      "column": 53,
+      "kind": "JSXText",
+      "text": "buyer@agribazaar.com",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\ProductDetails.jsx",
+      "line": 124,
+      "column": 68,
+      "kind": "JSXText",
+      "text": "per",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\ProductDetails.jsx",
+      "line": 126,
+      "column": 105,
+      "kind": "JSXText",
+      "text": "available in stock",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\ProductDetails.jsx",
+      "line": 139,
+      "column": 66,
+      "kind": "JSXText",
+      "text": "Harvest:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\ProductDetails.jsx",
+      "line": 144,
+      "column": 65,
+      "kind": "JSXText",
+      "text": "Available:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\ProductDetails.jsx",
+      "line": 153,
+      "column": 100,
+      "kind": "JSXText",
+      "text": "Quantity (",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\ProductDetails.jsx",
+      "line": 176,
+      "column": 47,
+      "kind": "JSXText",
+      "text": "About the Farmer / Producer",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\ProductDetails.jsx",
+      "line": 179,
+      "column": 55,
+      "kind": "JSXText",
+      "text": "Producer Name:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\ProductDetails.jsx",
+      "line": 180,
+      "column": 55,
+      "kind": "JSXText",
+      "text": "Farm / FPO Name:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\ProductDetails.jsx",
+      "line": 181,
+      "column": 55,
+      "kind": "JSXText",
+      "text": "Type:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\ProductDetails.jsx",
+      "line": 182,
+      "column": 55,
+      "kind": "JSXText",
+      "text": "Location:",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 29,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Please fill all required fields.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 32,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Passwords do not match.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 35,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Password must be at least 6 characters.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 40,
+      "column": 21,
+      "kind": "Call:success",
+      "text": "Farmer account created successfully!",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 53,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Please fill all required fields.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 56,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Passwords do not match.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 59,
+      "column": 19,
+      "kind": "Call:error",
+      "text": "Password must be at least 6 characters.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 64,
+      "column": 21,
+      "kind": "Call:success",
+      "text": "Account Created Successfully!",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 89,
+      "column": 157,
+      "kind": "JSXText",
+      "text": "Registration Successful",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 95,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "Verify your credentials and bank account to unlock your",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 96,
+      "column": 128,
+      "kind": "JSXText",
+      "text": "badge and sell produce on AgriBazaar.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 106,
+      "column": 58,
+      "kind": "JSXText",
+      "text": "Start Verification",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 113,
+      "column": 16,
+      "kind": "JSXText",
+      "text": "Skip for Now",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 118,
+      "column": 54,
+      "kind": "JSXText",
+      "text": "You can complete verification anytime later from your Seller Dashboard.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 141,
+      "column": 157,
+      "kind": "JSXText",
+      "text": "Account Created Successfully",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 144,
+      "column": 96,
+      "kind": "JSXText",
+      "text": "Complete Buyer Verification",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 147,
+      "column": 94,
+      "kind": "JSXText",
+      "text": "Verify your details to unlock verified buyer features, build trust on AgriBazaar, and earn your",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 148,
+      "column": 168,
+      "kind": "JSXText",
+      "text": "badge.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 158,
+      "column": 58,
+      "kind": "JSXText",
+      "text": "Start Verification",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 165,
+      "column": 16,
+      "kind": "JSXText",
+      "text": "Skip for Now",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 170,
+      "column": 54,
+      "kind": "JSXText",
+      "text": "Skipping verification does NOT mean verified. Status will remain PENDING_VERIFICATION until completed.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 189,
+      "column": 81,
+      "kind": "JSXText",
+      "text": "Agri",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 189,
+      "column": 118,
+      "kind": "JSXText",
+      "text": "Bazaar",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 191,
+      "column": 77,
+      "kind": "JSXText",
+      "text": "Join AgriBazaar",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 192,
+      "column": 67,
+      "kind": "JSXText",
+      "text": "Select your account type to get started",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 200,
+      "column": 82,
+      "kind": "JSXText",
+      "text": "Farmer / FPO",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 201,
+      "column": 87,
+      "kind": "JSXText",
+      "text": "Sell your produce directly to buyers at fair market prices.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 202,
+      "column": 106,
+      "kind": "JSXText",
+      "text": "Register as Farmer →",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 209,
+      "column": 82,
+      "kind": "JSXText",
+      "text": "Buyer",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 210,
+      "column": 87,
+      "kind": "JSXText",
+      "text": "Source fresh agricultural produce directly from verified farmers.",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 211,
+      "column": 106,
+      "kind": "JSXText",
+      "text": "Register as Buyer →",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 215,
+      "column": 65,
+      "kind": "JSXText",
+      "text": "Already have an account?",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 216,
+      "column": 109,
+      "kind": "JSXText",
+      "text": "Sign In",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 229,
+      "column": 77,
+      "kind": "JSXText",
+      "text": "Farmer Registration",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 230,
+      "column": 55,
+      "kind": "JSXText",
+      "text": "Create your seller profile to list produce",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 236,
+      "column": 123,
+      "kind": "JSXText",
+      "text": "Full Name *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 242,
+      "column": 33,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Enter full name",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 252,
+      "column": 125,
+      "kind": "JSXText",
+      "text": "Email Address *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 258,
+      "column": 35,
+      "kind": "JSXAttribute:placeholder",
+      "text": "farmer@example.com",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 267,
+      "column": 125,
+      "kind": "JSXText",
+      "text": "Mobile Number *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 284,
+      "column": 125,
+      "kind": "JSXText",
+      "text": "Password *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 290,
+      "column": 35,
+      "kind": "JSXAttribute:placeholder",
+      "text": "At least 6 chars",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 302,
+      "column": 125,
+      "kind": "JSXText",
+      "text": "Confirm Password *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 308,
+      "column": 35,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Re-enter password",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 319,
+      "column": 125,
+      "kind": "JSXText",
+      "text": "Farm / Organization Name *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 325,
+      "column": 35,
+      "kind": "JSXAttribute:placeholder",
+      "text": "e.g. Krishna Organic Farm",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 334,
+      "column": 125,
+      "kind": "JSXText",
+      "text": "Seller Type *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 340,
+      "column": 44,
+      "kind": "JSXText",
+      "text": "Individual Farmer",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 341,
+      "column": 41,
+      "kind": "JSXText",
+      "text": "Farmer Producer Organization (FPO)",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 347,
+      "column": 123,
+      "kind": "JSXText",
+      "text": "Location (City/District, State) *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 353,
+      "column": 33,
+      "kind": "JSXAttribute:placeholder",
+      "text": "e.g. Nashik, Maharashtra",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 362,
+      "column": 123,
+      "kind": "JSXText",
+      "text": "Full Farm Address",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 365,
+      "column": 31,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Street, Village, Pincode",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 384,
+      "column": 14,
+      "kind": "JSXText",
+      "text": "← Back to role selection",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 398,
+      "column": 75,
+      "kind": "JSXText",
+      "text": "Buyer Registration",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 399,
+      "column": 53,
+      "kind": "JSXText",
+      "text": "Create your account to purchase produce",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 405,
+      "column": 121,
+      "kind": "JSXText",
+      "text": "Full Name *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 411,
+      "column": 31,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Enter full name",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 421,
+      "column": 123,
+      "kind": "JSXText",
+      "text": "Email Address *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 427,
+      "column": 33,
+      "kind": "JSXAttribute:placeholder",
+      "text": "buyer@example.com",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 436,
+      "column": 123,
+      "kind": "JSXText",
+      "text": "Mobile Number *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 453,
+      "column": 123,
+      "kind": "JSXText",
+      "text": "Password *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 459,
+      "column": 33,
+      "kind": "JSXAttribute:placeholder",
+      "text": "At least 6 chars",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 468,
+      "column": 123,
+      "kind": "JSXText",
+      "text": "Confirm Password *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 474,
+      "column": 33,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Re-enter password",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 484,
+      "column": 121,
+      "kind": "JSXText",
+      "text": "Buyer Type *",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 490,
+      "column": 44,
+      "kind": "JSXText",
+      "text": "Individual Consumer",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 491,
+      "column": 42,
+      "kind": "JSXText",
+      "text": "Business / Retailer",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 492,
+      "column": 44,
+      "kind": "JSXText",
+      "text": "Wholesale Bulk Buyer",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 497,
+      "column": 121,
+      "kind": "JSXText",
+      "text": "Delivery Address",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 502,
+      "column": 31,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Street address",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 512,
+      "column": 29,
+      "kind": "JSXAttribute:placeholder",
+      "text": "City",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 518,
+      "column": 29,
+      "kind": "JSXAttribute:placeholder",
+      "text": "State",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 524,
+      "column": 29,
+      "kind": "JSXAttribute:placeholder",
+      "text": "Pincode",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Register.jsx",
+      "line": 543,
+      "column": 12,
+      "kind": "JSXText",
+      "text": "← Back to role selection",
+      "interpolation": false
+    },
+    {
+      "file": "src\\pages\\Settings.jsx",
+      "line": 128,
+      "column": 60,
+      "kind": "JSXText",
+      "text": "System Version: v1.0.4-production",
+      "interpolation": false
+    }
+  ]
+}

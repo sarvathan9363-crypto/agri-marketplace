@@ -57,6 +57,15 @@ export function AuthProvider({ children }) {
     return data;
   };
 
+  const registerTransporter = async (formData) => {
+    const data = await authService.registerTransporter(formData);
+    localStorage.setItem('agribazaar_token', data.token);
+    localStorage.setItem('agribazaar_user', JSON.stringify(data.user));
+    setUser(data.user);
+    setProfile(data.transporter);
+    return data;
+  };
+
   const logout = () => {
     authService.logout();
     setUser(null);
@@ -70,10 +79,12 @@ export function AuthProvider({ children }) {
     login,
     registerFarmer,
     registerBuyer,
+    registerTransporter,
     logout,
     isAuthenticated: !!user,
     isFarmer: user?.role === 'FARMER',
     isBuyer: user?.role === 'BUYER',
+    isTransporter: user?.role === 'TRANSPORTER',
     isAdmin: user?.role === 'ADMIN',
   };
 

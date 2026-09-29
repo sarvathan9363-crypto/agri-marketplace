@@ -16,6 +16,11 @@ const authService = {
     return res.data;
   },
 
+  registerTransporter: async (data) => {
+    const res = await api.post('/auth/register/transporter', data);
+    return res.data;
+  },
+
   getMe: async () => {
     const res = await api.get('/auth/me');
     return res.data;

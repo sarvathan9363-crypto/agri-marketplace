@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+import { translateStatus } from '../../utils/enumTranslations';
 import { useState, useEffect } from 'react';
 import DataTable from '../../components/ui/DataTable';
 import Button from '../../components/ui/Button';
@@ -6,6 +8,7 @@ import adminService from '../../services/adminService';
 import toast from 'react-hot-toast';
 
 export default function AdminProducts() {
+  const { t } = useTranslation();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('');
@@ -32,7 +35,7 @@ export default function AdminProducts() {
 
   const columns = [
     {
-      header: 'Crop Listing',
+      header: t('adminProducts.colCropListing', { defaultValue: 'CROP LISTING' }),
       key: 'productName',
       render: (p) => (
         <div className="flex items-center gap-3">
@@ -41,27 +44,27 @@ export default function AdminProducts() {
         </div>
       )
     },
-    { header: 'Farmer / FPO', key: 'farmerName' },
-    { header: 'Category', key: 'category' },
+    { header: t('adminProducts.colFarmerFpo', { defaultValue: 'FARMER / FPO' }), key: 'farmerName' },
+    { header: t('adminProducts.colCategory', { defaultValue: 'CATEGORY' }), key: 'category' },
     {
-      header: 'Price / Unit',
+      header: t('adminProducts.colPriceUnit', { defaultValue: 'PRICE / UNIT' }),
       key: 'pricePerUnit',
       render: (p) => <span className="font-black text-[#001e2b] font-display">₹{p.pricePerUnit} / {p.unit}</span>
     },
-    { header: 'Listing Status', key: 'status', type: 'status' },
+    { header: t('adminProducts.colListingStatus', { defaultValue: 'LISTING STATUS' }), key: 'status', type: 'status' },
     {
-      header: 'Actions',
+      header: t('adminProducts.colActions', { defaultValue: 'ACTIONS' }),
       key: 'actions',
       headerClassName: 'text-right',
       render: (p) => (
         <div className="text-right">
           {p.status === 'ACTIVE' ? (
             <Button variant="danger" size="sm" onClick={() => updateStatus(p._id, 'INACTIVE')}>
-              Disable Listing
+              {t('adminProducts.disableListing', { defaultValue: 'Disable Listing' })}
             </Button>
           ) : (
             <Button variant="primary" size="sm" onClick={() => updateStatus(p._id, 'ACTIVE')}>
-              Enable Listing
+              {t('adminProducts.enableListing', { defaultValue: 'Enable Listing' })}
             </Button>
           )}
         </div>
@@ -72,9 +75,9 @@ export default function AdminProducts() {
   return (
     <div className="space-y-6">
       <div>
-        <span className="text-[#00684a] font-extrabold text-xs tracking-widest uppercase font-display bg-[#00ed64]/20 px-3 py-1 rounded-full">Catalog Moderation</span>
-        <h1 className="text-3xl font-black text-[#001e2b] font-display mt-2">Product Moderation</h1>
-        <p className="text-sm text-gray-600 mt-1 font-sans">Review active, draft, and paused crop listings published by farmers.</p>
+        <span className="text-[#00684a] font-extrabold text-xs tracking-widest uppercase font-display bg-[#00ed64]/20 px-3 py-1 rounded-full">{t('common.catalogModeration')}</span>
+        <h1 className="text-3xl font-black text-[#001e2b] font-display mt-2">{t('common.productModeration')}</h1>
+        <p className="text-sm text-gray-600 mt-1 font-sans">{t('common.reviewActiveDraftAndPausedCrop')}</p>
       </div>
 
       <div className="flex gap-2 flex-wrap bg-white p-3 rounded-3xl border border-[#e8eddb] shadow-sm">
@@ -86,7 +89,7 @@ export default function AdminProducts() {
               filter === s ? 'bg-[#001e2b] text-[#00ed64]' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
             }`}
           >
-            {s ? s.replace(/_/g, ' ') : 'All Listings'}
+            {s ? translateStatus(t, s) : t('adminProducts.allListings', { defaultValue: 'All Listings' })}
           </button>
         ))}
       </div>
@@ -95,7 +98,7 @@ export default function AdminProducts() {
         columns={columns}
         data={products}
         loading={loading}
-        emptyTitle="No produce listings found"
+        emptyTitle={t('adminProducts.noProduceListingsFound', { defaultValue: 'No produce listings found' })}
       />
     </div>
   );

@@ -1,13 +1,16 @@
 import api from './api';
+import i18n from '../i18n';
+
+const withLocale = (params = {}) => ({ ...params, language: i18n.resolvedLanguage || 'en-IN' });
 
 const productService = {
   getProducts: async (params = {}) => {
-    const res = await api.get('/products', { params });
+    const res = await api.get('/products', { params: withLocale(params) });
     return res.data;
   },
 
   getProduct: async (id) => {
-    const res = await api.get(`/products/${id}`);
+    const res = await api.get(`/products/${id}`, { params: withLocale() });
     return res.data;
   },
 

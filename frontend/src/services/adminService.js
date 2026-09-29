@@ -21,6 +21,14 @@ const adminService = {
     const res = await api.put(`/admin/farmers/${id}/verify`, data);
     return res.data;
   },
+  getTransporters: async (params = {}) => {
+    const res = await api.get('/admin/transporters', { params });
+    return res.data;
+  },
+  verifyTransporter: async (id, data) => {
+    const res = await api.put(`/admin/transporters/${id}/verify`, data);
+    return res.data;
+  },
   getProducts: async (params = {}) => {
     const res = await api.get('/admin/products', { params });
     return res.data;
@@ -48,6 +56,27 @@ const adminService = {
   updateDispute: async (id, data) => {
     const res = await api.put(`/admin/disputes/${id}`, data);
     return res.data;
+  },
+  getFarmerSettlements: async (params = {}) => {
+    const res = await api.get('/admin/farmers/settlements', { params });
+    return res.data;
+  },
+  getBlockchainAuditEvents: async () => {
+    const res = await api.get('/admin/blockchain/events');
+    return res.data;
+  },
+  verifyBlockchainHash: async (eventIdHash) => {
+    const res = await api.get(`/blockchain/audit/${eventIdHash}`);
+    return res.data;
+  },
+  lookupAccountByHash: async (accountHash) => {
+    try {
+      const res = await api.get(`/admin/account-lookup/${accountHash}`);
+      return res.data;
+    } catch {
+      const res = await api.get(`/blockchain/account-lookup/${accountHash}`);
+      return res.data;
+    }
   },
 };
 

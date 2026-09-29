@@ -4,12 +4,15 @@ import { motion } from 'motion/react';
 import { ArrowLeft, MapPin, BadgeCheck, ShoppingCart, Zap, Minus, Plus, Package, Calendar, Leaf } from 'lucide-react';
 import { LoadingState, StatusBadge } from '../components/ui/Components';
 import ProductCard from '../components/common/ProductCard';
+import BlockchainAuditBadge from '../components/common/BlockchainAuditBadge';
 import PageContainer from '../components/ui/PageContainer';
 import Button from '../components/ui/Button';
 import productService from '../services/productService';
-import cartService from '../services/cartService';
 import { useAuth } from '../context/AuthContext';
+import { useCart } from '../context/CartContext';
 import toast from 'react-hot-toast';
+import { useTranslation } from 'react-i18next';
+import { translateCategory, translateRole } from '../utils/enumTranslations';
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -20,11 +23,13 @@ export default function ProductDetails() {
   const [qty, setQty] = useState(1);
   const [adding, setAdding] = useState(false);
   const { isAuthenticated, isBuyer } = useAuth();
+  const { addToCart } = useCart();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
 
   useEffect(() => {
     fetchProduct();
-  }, [id]);
+  }, [id, i18n.resolvedLanguage]);
 
   const fetchProduct = async () => {
     setLoading(true);
@@ -36,7 +41,7 @@ export default function ProductDetails() {
       const rel = await productService.getProducts({ category: data.product.category, limit: 4 });
       setRelated((rel.products || []).filter(p => p._id !== id).slice(0, 4));
     } catch {
-      toast.error('Product not found.');
+      toast.error(t('errors.PRODUCT_NOT_FOUND'));
       navigate('/marketplace');
     } finally {
       setLoading(false);
@@ -44,14 +49,14 @@ export default function ProductDetails() {
   };
 
   const handleAddToCart = async () => {
-    if (!isAuthenticated) { toast.error('Please login first.'); navigate('/login'); return; }
-    if (!isBuyer) { toast.error('Only buyers can purchase products.'); return; }
+    if (!isAuthenticated) { toast.error(t('productDetails.loginFirst')); navigate('/login'); return; }
+    if (!isBuyer) { toast.error(t('productDetails.buyersOnly')); return; }
     setAdding(true);
     try {
-      await cartService.addToCart(product._id, qty);
-      toast.success(`${product.productName} added to cart!`);
+      await addToCart(product._id, qty);
+      toast.success(t('productDetails.addedToCart', { name: product.productName }));
     } catch (err) {
-      toast.error(err.response?.data?.message || 'Failed to add to cart.');
+      toast.error(err.response?.data?.message || t('productDetails.addToCartFailed'));
     } finally {
       setAdding(false);
     }
@@ -68,7 +73,7 @@ export default function ProductDetails() {
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-xs font-bold text-slate-500 mb-8 uppercase tracking-wider">
           <Link to="/marketplace" className="hover:text-[#00C853] flex items-center gap-1">
-            <ArrowLeft className="w-4 h-4" /> Marketplace
+            <ArrowLeft className="w-4 h-4" /> {t('marketplace.title')}
           </Link>
           <span>/</span>
           <span className="text-[#082B36]">{product.productName}</span>
@@ -91,7 +96,7 @@ export default function ProductDetails() {
           <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="lg:col-span-6 space-y-6">
             <div className="flex items-center gap-2">
               <span className="px-3 py-1 bg-[#002B36] text-[#00E676] text-xs font-bold uppercase tracking-wider rounded-full">
-                {product.category}
+                {translateCategory(t, product.category)}
               </span>
               <StatusBadge status={product.status} />
             </div>
@@ -102,7 +107,7 @@ export default function ProductDetails() {
               <span className="text-sm font-bold text-slate-700">{product.farmerName}</span>
               {product.farmerVerificationStatus === 'VERIFIED' && (
                 <span className="flex items-center gap-1 text-xs font-bold text-[#00C853] bg-[#00E676]/15 border border-[#00E676]/30 px-2.5 py-0.5 rounded-full">
-                  <BadgeCheck className="w-4 h-4 text-[#00C853]" /> Verified Producer
+                  <BadgeCheck className="w-4 h-4 text-[#00C853]" /> {t('productDetails.verifiedProducer')}
                 </span>
               )}
             </div>
@@ -111,18 +116,21 @@ export default function ProductDetails() {
               <MapPin className="w-4 h-4 text-[#00C853]" /> {product.location}
             </div>
 
+            {/* Blockchain Audit Badge */}
+            <BlockchainAuditBadge entityType="LISTING" entityId={product._id} />
+
             {/* Price Box */}
             <div className="p-6 bg-white border border-[#E2E8E5] rounded-3xl shadow-sm">
               <div className="flex items-baseline gap-2">
                 <span className="text-4xl font-black text-[#082B36]">₹{product.pricePerUnit}</span>
-                <span className="text-sm font-bold text-slate-500">per {product.unit}</span>
+                <span className="text-sm font-bold text-slate-500">/{product.unit}</span>
               </div>
-              <p className="text-xs font-semibold text-slate-500 mt-1">{product.quantity} {product.unit} available in stock</p>
+              <p className="text-xs font-semibold text-slate-500 mt-1">{t('productDetails.availableInStock', { count: product.quantity, unit: product.unit, defaultValue: `${product.quantity} ${product.unit} available in stock` })}</p>
             </div>
 
             {product.description && (
               <div className="bg-white rounded-3xl border border-[#E2E8E5] p-6 shadow-sm">
-                <h3 className="font-extrabold text-[#082B36] text-base mb-2">Produce Specifications</h3>
+                <h3 className="font-extrabold text-[#082B36] text-base mb-2">{t('productDetails.specifications')}</h3>
                 <p className="text-sm text-slate-600 leading-relaxed">{product.description}</p>
               </div>
             )}
@@ -130,12 +138,12 @@ export default function ProductDetails() {
             <div className="grid grid-cols-2 gap-4">
               {product.harvestDate && (
                 <div className="flex items-center gap-2.5 p-3.5 bg-white border border-[#E2E8E5] rounded-2xl text-xs font-bold text-slate-700">
-                  <Calendar className="w-4 h-4 text-[#00C853]" /> Harvest: {product.harvestDate}
+                  <Calendar className="w-4 h-4 text-[#00C853]" /> {t('productDetails.harvestDateLabel', { date: product.harvestDate, defaultValue: `Harvest: ${product.harvestDate}` })}
                 </div>
               )}
               {product.availableFrom && (
                 <div className="flex items-center gap-2.5 p-3.5 bg-white border border-[#E2E8E5] rounded-2xl text-xs font-bold text-slate-700">
-                  <Package className="w-4 h-4 text-[#00C853]" /> Available: {product.availableFrom}
+                  <Package className="w-4 h-4 text-[#00C853]" /> {t('productDetails.availableFromLabel', { date: product.availableFrom, defaultValue: `Available: ${product.availableFrom}` })}
                 </div>
               )}
             </div>
@@ -144,7 +152,7 @@ export default function ProductDetails() {
             {product.status === 'ACTIVE' && (
               <div className="space-y-4 pt-2">
                 <div className="flex items-center gap-4">
-                  <span className="text-xs font-extrabold uppercase tracking-wider text-[#082B36]">Quantity ({product.unit}):</span>
+                  <span className="text-xs font-extrabold uppercase tracking-wider text-[#082B36]">{t('productDetails.quantityLabel', { unit: product.unit, defaultValue: `Quantity (${product.unit}):` })}</span>
                   <div className="flex items-center border border-[#E2E8E5] rounded-xl overflow-hidden bg-white">
                     <button onClick={() => setQty(Math.max(1, qty - 1))} className="px-3.5 py-2 hover:bg-slate-100 font-bold"><Minus className="w-4 h-4 text-[#082B36]" /></button>
                     <span className="px-4 py-2 font-black text-[#082B36] min-w-[3rem] text-center">{qty}</span>
@@ -154,10 +162,10 @@ export default function ProductDetails() {
 
                 <div className="flex gap-4">
                   <Button variant="primary" size="lg" icon={ShoppingCart} fullWidth onClick={handleAddToCart} loading={adding}>
-                    Add to Cart
+                    {t('marketplace.addToCart')}
                   </Button>
                   <Button variant="secondary" size="lg" icon={Zap} fullWidth onClick={() => handleAddToCart().then(() => navigate('/buyer/cart'))}>
-                    Buy Now
+                    {t('marketplace.buyNow')}
                   </Button>
                 </div>
               </div>
@@ -167,13 +175,13 @@ export default function ProductDetails() {
             {farmer && (
               <div className="p-6 bg-[#002B36] text-white rounded-3xl border border-[#E2E8E5]/20 shadow-md">
                 <h3 className="font-extrabold text-base mb-3 flex items-center gap-2 text-[#00E676]">
-                  <Leaf className="w-5 h-5" /> About the Farmer / Producer
+                  <Leaf className="w-5 h-5" /> {t('productDetails.aboutFarmerTitle', { defaultValue: 'About the Farmer / Producer' })}
                 </h3>
                 <div className="space-y-2 text-xs">
-                  <p><span className="text-slate-400">Producer Name:</span> <span className="text-white font-bold">{farmer.fullName}</span></p>
-                  <p><span className="text-slate-400">Farm / FPO Name:</span> <span className="text-white font-bold">{farmer.farmName}</span></p>
-                  <p><span className="text-slate-400">Type:</span> <span className="text-white font-bold">{farmer.farmerType}</span></p>
-                  <p><span className="text-slate-400">Location:</span> <span className="text-white font-bold">{farmer.location}</span></p>
+                  <p><span className="text-slate-400">{t('marketplace.producerName')}</span> <span className="text-white font-bold">{farmer.fullName}</span></p>
+                  <p><span className="text-slate-400">{t('marketplace.farmFpoName')}</span> <span className="text-white font-bold">{farmer.farmName}</span></p>
+                  <p><span className="text-slate-400">{t('marketplace.type')}</span> <span className="text-white font-bold">{translateRole(t, farmer.farmerType)}</span></p>
+                  <p><span className="text-slate-400">{t('marketplace.location')}</span> <span className="text-white font-bold">{farmer.location}</span></p>
                 </div>
               </div>
             )}
@@ -183,7 +191,7 @@ export default function ProductDetails() {
         {/* Related Products */}
         {related.length > 0 && (
           <div className="mt-20 border-t border-[#E2E8E5] pt-12">
-            <h2 className="text-2xl font-black text-[#082B36] mb-8">Related Crops & Produce</h2>
+            <h2 className="text-2xl font-black text-[#082B36] mb-8">{t('productDetails.related')}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {related.map(p => <ProductCard key={p._id} product={p} />)}
             </div>

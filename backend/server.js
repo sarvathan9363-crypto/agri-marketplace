@@ -4,6 +4,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const connectDB = require('./config/db');
 const errorHandler = require('./middleware/errorHandler');
+const { handleWebhook } = require('./controllers/paymentController');
 
 // Connect to MongoDB
 connectDB();
@@ -15,6 +16,9 @@ app.use(cors({
   origin: process.env.CORS_ORIGIN || 'http://localhost:5173',
   credentials: true,
 }));
+// Razorpay requires the exact raw request body for HMAC verification. This
+// route must be registered before express.json().
+app.post('/api/payments/webhook', express.raw({ type: 'application/json' }), handleWebhook);
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
@@ -30,6 +34,7 @@ app.get('/api/health', (req, res) => {
 // Routes
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/products', require('./routes/products'));
+app.use('/api/translations', require('./routes/translations'));
 app.use('/api/orders', require('./routes/orders'));
 app.use('/api/cart', require('./routes/cart'));
 app.use('/api/farmers', require('./routes/farmers'));
@@ -45,6 +50,9 @@ app.use('/api/voice/test', require('./routes/voiceTest'));
 
 // Machine Learning routes (Price Prediction & Demand Forecasting)
 app.use('/api/ml', require('./routes/ml'));
+app.use('/api/transport', require('./routes/transport'));
+app.use('/api/files', require('./routes/files'));
+app.use('/api/blockchain', require('./routes/blockchain'));
 
 // 404 handler
 app.use((req, res) => {

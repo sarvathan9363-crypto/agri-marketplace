@@ -14,14 +14,17 @@
     "test:voice:pipeline": "node scripts/testFullPipeline.js",
     "test:voice:exotel": "node scripts/testExotelLoopback.js",
     "test:voice:all": "node scripts/testConfig.js && node scripts/testSTT.js && node scripts/testTTS.js && node scripts/testFullPipeline.js && node scripts/testExotelLoopback.js"
+    "blockchain:check": "node scripts/blockchainCheck.js"
   },
   "dependencies": {
     "@google-cloud/speech": "^8.1.0",
     "@google-cloud/text-to-speech": "^7.1.0",
     "@google/genai": "^2.23.0",
     "bcryptjs": "^2.4.3",
+    "cloudinary": "^2.11.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
+    "ethers": "^6.17.0",
     "express": "^4.21.0",
     "express-validator": "^7.0.1",
     "jsonwebtoken": "^9.0.2",
@@ -30,6 +33,7 @@
     "multer": "^1.4.5-lts.1",
     "twilio": "^6.1.1",
     "ws": "^8.21.3"
+    "multer": "^1.4.5-lts.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.4"
