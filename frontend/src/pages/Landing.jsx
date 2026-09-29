@@ -255,11 +255,11 @@ export default function Landing() {
               </div>
 
               {/* Bottom Left Badge Pill: 0% Commission Markups */}
-              <div className="absolute bottom-4 left-3 z-20 flex items-center gap-2.5 rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-3.5 py-2.5 shadow-lg backdrop-blur">
+              <div className="absolute bottom-[4.75rem] left-3 right-3 z-20 flex items-center gap-2.5 rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-3.5 py-2.5 shadow-lg backdrop-blur sm:bottom-4 sm:right-auto">
                 <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--surface-elevated)] text-[var(--primary)]">
                   <ShieldCheck className="h-5 w-5" />
                 </span>
-                <div>
+                <div className="min-w-0">
                   <p className="text-xs font-black text-[var(--text-primary)]">
                     {t('landing.zeroCommission', { defaultValue: '0% Commission' })}
                   </p>
@@ -270,11 +270,11 @@ export default function Landing() {
               </div>
 
               {/* Bottom Right Badge Pill: Farm to Market Faster & Fairer */}
-              <div className="absolute bottom-4 right-3 z-20 flex items-center gap-2.5 rounded-2xl border border-[var(--border)] bg-[#06251E] dark:bg-[#002B22] px-3.5 py-2.5 text-white shadow-xl">
+              <div className="absolute bottom-3 left-3 right-3 z-20 flex items-center gap-2.5 rounded-2xl border border-[var(--border)] bg-[#06251E] dark:bg-[#002B22] px-3.5 py-2.5 text-white shadow-xl sm:bottom-4 sm:left-auto">
                 <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--primary)] text-[var(--primary-contrast)]">
                   <Truck className="h-5 w-5" />
                 </span>
-                <div>
+                <div className="min-w-0">
                   <p className="text-xs font-black leading-tight text-white">
                     {t('landing.farmToMarket', { defaultValue: 'Farm to Market' })}
                   </p>

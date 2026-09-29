@@ -207,13 +207,13 @@ export default function MarketInsights() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <span className="text-[#00684a] font-extrabold text-xs tracking-widest uppercase font-display bg-[#00ed64]/20 px-3 py-1 rounded-full">
-            AI & Machine Learning Engine
+            {t('marketInsights.aiEngineTag', 'AI & Machine Learning Engine')}
           </span>
           <h1 className="text-3xl font-black text-[#001e2b] font-display mt-2">
-            Market Price & Demand Intelligence
+            {t('marketInsights.title', 'Market Price & Demand Intelligence')}
           </h1>
           <p className="text-sm text-gray-600 mt-1 font-sans">
-            Data-driven price prediction and regional demand forecasting trained with XGBoost on Indian agricultural markets.
+            {t('marketInsights.subtitle', 'Data-driven price prediction and regional demand forecasting trained with XGBoost on Indian agricultural markets.')}
           </p>
         </div>
 
@@ -227,7 +227,7 @@ export default function MarketInsights() {
                 : 'text-gray-600 hover:text-[#001e2b]'
             }`}
           >
-            <TrendingUp className="w-4 h-4" /> Price Prediction
+            <TrendingUp className="w-4 h-4" /> {t('marketInsights.pricePrediction', 'Price Prediction')}
           </button>
           <button
             onClick={() => setActiveTab('demand')}
@@ -237,7 +237,7 @@ export default function MarketInsights() {
                 : 'text-gray-600 hover:text-[#001e2b]'
             }`}
           >
-            <ShoppingBag className="w-4 h-4" /> Demand Forecast
+            <ShoppingBag className="w-4 h-4" /> {t('marketInsights.demandForecast', 'Demand Forecast')}
           </button>
           <button
             onClick={() => setActiveTab('metrics')}
@@ -247,7 +247,7 @@ export default function MarketInsights() {
                 : 'text-gray-600 hover:text-[#001e2b]'
             }`}
           >
-            <ShieldCheck className="w-4 h-4" /> Model Validation
+            <ShieldCheck className="w-4 h-4" /> {t('marketInsights.modelValidation', 'Model Validation')}
           </button>
         </div>
       </div>
@@ -256,37 +256,37 @@ export default function MarketInsights() {
       {activeTab === 'price' && (
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
           {/* Controls Card */}
-          <Card title="Price Forecast Configuration" subtitle="Select your crop, target mandi market, and time horizon.">
+          <Card title={t('marketInsights.priceConfigTitle', 'Price Forecast Configuration')} subtitle={t('marketInsights.priceConfigSubtitle', 'Select your crop, target mandi market, and time horizon.')}>
             <form onSubmit={handlePredictPrice} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-end">
               <Select
-                label="Crop / Commodity"
+                label={t('marketInsights.cropCommodity', 'Crop / Commodity')}
                 value={priceForm.commodity}
                 onChange={(e) => setPriceForm({ ...priceForm, commodity: e.target.value })}
                 options={(options.commodities || []).map((c) => ({ value: c, label: c }))}
               />
 
               <Select
-                label="State"
+                label={t('marketInsights.state', 'State')}
                 value={priceForm.state}
                 onChange={(e) => setPriceForm({ ...priceForm, state: e.target.value })}
                 options={(options.states || []).map((s) => ({ value: s, label: s }))}
               />
 
               <Select
-                label="Target Market / Mandi"
+                label={t('marketInsights.targetMarketMandi', 'Target Market / Mandi')}
                 value={priceForm.market}
                 onChange={(e) => setPriceForm({ ...priceForm, market: e.target.value })}
                 options={(options.markets || []).map((m) => ({ value: m, label: m }))}
               />
 
               <Select
-                label="Forecast Horizon"
+                label={t('marketInsights.forecastHorizon', 'Forecast Horizon')}
                 value={priceForm.horizonDays}
                 onChange={(e) => setPriceForm({ ...priceForm, horizonDays: Number(e.target.value) })}
                 options={[
-                  { value: 7, label: '7-Day Ahead (Recommended)' },
-                  { value: 14, label: '14-Day Ahead' },
-                  { value: 21, label: '21-Day Ahead' },
+                  { value: 7, label: t('marketInsights.sevenDayRecommended', '7-Day Ahead (Recommended)') },
+                  { value: 14, label: t('marketInsights.fourteenDayAhead', '14-Day Ahead') },
+                  { value: 21, label: t('marketInsights.twentyOneDayAhead', '21-Day Ahead') },
                 ]}
               />
 
@@ -298,7 +298,7 @@ export default function MarketInsights() {
                 type="submit"
                 className="w-full"
               >
-                Predict Price
+                {t('marketInsights.predictPriceBtn', 'Predict Price')}
               </Button>
             </form>
           </Card>
@@ -308,33 +308,33 @@ export default function MarketInsights() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               <StatsCard
                 icon={TrendingUp}
-                label="Current Reference Price"
+                label={t('marketInsights.currentReferencePrice', 'Current Reference Price')}
                 value={`₹${priceResult.currentPrice.toLocaleString()}`}
-                trend={`Per ${priceResult.unit}`}
+                trend={`${t('marketInsights.perLabel', 'Per')} ${priceResult.unit}`}
                 color="blue"
               />
 
               <StatsCard
                 icon={Sparkles}
-                label={`${priceResult.horizonDays}-Day Predicted Price`}
+                label={t('marketInsights.predictedPriceLabel', '{{days}}-Day Predicted Price', { days: priceResult.horizonDays })}
                 value={`₹${priceResult.predictedPrice.toLocaleString()}`}
-                trend="Predicted Modal Value"
+                trend={t('marketInsights.predictedModalValue', 'Predicted Modal Value')}
                 color="primary"
               />
 
               <StatsCard
                 icon={priceDiff >= 0 ? ArrowUpRight : ArrowDownRight}
-                label="Expected Trend"
+                label={t('marketInsights.expectedTrend', 'Expected Trend')}
                 value={`${priceDiff >= 0 ? '+' : ''}${pricePct}%`}
-                trend={priceDiff >= 0 ? 'Favorable Price Shift' : 'Expected Market Softening'}
+                trend={priceDiff >= 0 ? t('marketInsights.favorablePriceShift', 'Favorable Price Shift') : t('marketInsights.expectedMarketSoftening', 'Expected Market Softening')}
                 color={priceDiff >= 0 ? 'emerald' : 'amber'}
               />
 
               <StatsCard
                 icon={Calendar}
-                label="Forecast Target Date"
+                label={t('marketInsights.forecastTargetDate', 'Forecast Target Date')}
                 value={priceResult.forecastDate}
-                trend="XGBoost Regression"
+                trend={t('marketInsights.xgboostRegression', 'XGBoost Regression')}
                 color="purple"
               />
             </div>
@@ -343,8 +343,8 @@ export default function MarketInsights() {
           {/* Price Chart Card */}
           {priceResult && (
             <Card
-              title={`${priceResult.commodity} Price Trajectory (${priceResult.market || priceResult.location})`}
-              subtitle="Solid line indicates historical mandi prices. Dashed vibrant line displays the 7-day predicted modal price path."
+              title={`${priceResult.commodity} ${t('marketInsights.priceTrajectoryTitle', 'Price Trajectory')} (${priceResult.market || priceResult.location})`}
+              subtitle={t('marketInsights.priceTrajectorySubtitle', 'Solid line indicates historical mandi prices. Dashed vibrant line displays the 7-day predicted modal price path.')}
             >
               <div className="h-80 w-full pt-4">
                 <ResponsiveContainer width="100%" height="100%">
@@ -363,6 +363,7 @@ export default function MarketInsights() {
                     <Legend />
                     <Line
                       type="monotone"
+                      name={t('marketInsights.historicalMandiPrice', 'Historical Mandi Price')}
                       dataKey="Historical Mandi Price"
                       stroke="#00684a"
                       strokeWidth={3}
@@ -371,6 +372,7 @@ export default function MarketInsights() {
                     />
                     <Line
                       type="monotone"
+                      name={t('marketInsights.predictedPriceChart', 'Predicted Price')}
                       dataKey="Predicted Price"
                       stroke="#00ed64"
                       strokeWidth={3}
@@ -398,29 +400,29 @@ export default function MarketInsights() {
       {activeTab === 'demand' && (
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
           {/* Controls Card */}
-          <Card title="Demand Forecast Configuration" subtitle="Select product and distribution hub to forecast buying demand.">
+          <Card title={t('marketInsights.demandConfigTitle', 'Demand Forecast Configuration')} subtitle={t('marketInsights.demandConfigSubtitle', 'Select product and distribution hub to forecast buying demand.')}>
             <form onSubmit={handleForecastDemand} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-end">
               <Select
-                label="Product / Crop"
+                label={t('marketInsights.productCrop', 'Product / Crop')}
                 value={demandForm.product}
                 onChange={(e) => setDemandForm({ ...demandForm, product: e.target.value })}
                 options={(options.products || options.commodities || []).map((p) => ({ value: p, label: p }))}
               />
 
               <Select
-                label="Regional Hub / Location"
+                label={t('marketInsights.regionalHubLocation', 'Regional Hub / Location')}
                 value={demandForm.location}
                 onChange={(e) => setDemandForm({ ...demandForm, location: e.target.value })}
                 options={(options.locations || []).map((l) => ({ value: l, label: l }))}
               />
 
               <Select
-                label="Forecast Horizon"
+                label={t('marketInsights.forecastHorizon', 'Forecast Horizon')}
                 value={demandForm.horizonDays}
                 onChange={(e) => setDemandForm({ ...demandForm, horizonDays: Number(e.target.value) })}
                 options={[
-                  { value: 7, label: '7-Day Ahead (Standard)' },
-                  { value: 14, label: '14-Day Ahead' },
+                  { value: 7, label: t('marketInsights.sevenDayStandard', '7-Day Ahead (Standard)') },
+                  { value: 14, label: t('marketInsights.fourteenDayAhead', '14-Day Ahead') },
                 ]}
               />
 
@@ -432,7 +434,7 @@ export default function MarketInsights() {
                 type="submit"
                 className="w-full"
               >
-                Forecast Demand
+                {t('marketInsights.forecastDemandBtn', 'Forecast Demand')}
               </Button>
             </form>
           </Card>
@@ -442,25 +444,25 @@ export default function MarketInsights() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               <StatsCard
                 icon={ShoppingBag}
-                label="Current Daily Demand"
+                label={t('marketInsights.currentDailyDemand', 'Current Daily Demand')}
                 value={`${demandResult.currentDemand} ${demandResult.unit}`}
-                trend="Estimated Volume"
+                trend={t('marketInsights.estimatedVolume', 'Estimated Volume')}
                 color="blue"
               />
 
               <StatsCard
                 icon={Sparkles}
-                label={`${demandResult.horizonDays}-Day Forecast Demand`}
+                label={t('marketInsights.forecastDemandLabel', '{{days}}-Day Forecast Demand', { days: demandResult.horizonDays })}
                 value={`${demandResult.predictedDemand} ${demandResult.unit}`}
-                trend="Predicted Quantity"
+                trend={t('marketInsights.predictedQuantity', 'Predicted Quantity')}
                 color="primary"
               />
 
               <StatsCard
                 icon={TrendingUp}
-                label="Demand Category"
-                value={demandResult.demandLevel}
-                trend="Empirical Distribution Quantile"
+                label={t('marketInsights.demandCategory', 'Demand Category')}
+                value={demandResult.demandLevel === 'High' ? t('marketInsights.highDemand', 'High') : demandResult.demandLevel === 'Medium' ? t('marketInsights.mediumDemand', 'Medium') : t('marketInsights.lowDemand', 'Low')}
+                trend={t('marketInsights.empiricalDistributionQuantile', 'Empirical Distribution Quantile')}
                 color={
                   demandResult.demandLevel === 'High'
                     ? 'emerald'
@@ -472,9 +474,9 @@ export default function MarketInsights() {
 
               <StatsCard
                 icon={ShieldCheck}
-                label="Data Source"
+                label={t('marketInsights.dataSource', 'Data Source')}
                 value={demandResult.dataSource}
-                trend={demandResult.isBootstrap ? 'Bootstrap Demo Mode' : 'Production Verified'}
+                trend={demandResult.isBootstrap ? t('marketInsights.bootstrapDemoMode', 'Bootstrap Demo Mode') : t('marketInsights.productionVerified', 'Production Verified')}
                 color={demandResult.isBootstrap ? 'amber' : 'emerald'}
               />
             </div>
@@ -483,8 +485,8 @@ export default function MarketInsights() {
           {/* Demand Chart Card */}
           {demandResult && (
             <Card
-              title={`${demandResult.product} Demand Volume Trajectory (${demandResult.location})`}
-              subtitle="Solid line indicates historical demand. Dashed line projects predicted purchasing volume for the next 7 days."
+              title={`${demandResult.product} ${t('marketInsights.demandTrajectoryTitle', 'Demand Volume Trajectory')} (${demandResult.location})`}
+              subtitle={t('marketInsights.demandTrajectorySubtitle', 'Solid line indicates historical demand. Dashed line projects predicted purchasing volume for the next 7 days.')}
             >
               <div className="h-80 w-full pt-4">
                 <ResponsiveContainer width="100%" height="100%">
@@ -503,6 +505,7 @@ export default function MarketInsights() {
                     <Legend />
                     <Line
                       type="monotone"
+                      name={t('marketInsights.historicalDailyDemand', 'Historical Daily Demand')}
                       dataKey="Historical Daily Demand"
                       stroke="#00684a"
                       strokeWidth={3}
@@ -511,6 +514,7 @@ export default function MarketInsights() {
                     />
                     <Line
                       type="monotone"
+                      name={t('marketInsights.forecastDemandChart', 'Forecast Demand')}
                       dataKey="Forecast Demand"
                       stroke="#00ed64"
                       strokeWidth={3}
@@ -543,7 +547,7 @@ export default function MarketInsights() {
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Price Model Card */}
-            <Card title="Agricultural Price Prediction Model" subtitle="XGBoost Regressor evaluated chronologically on out-of-time test data.">
+            <Card title={t('marketInsights.priceModelTitle', 'Agricultural Price Prediction Model')} subtitle={t('marketInsights.priceModelSubtitle', 'XGBoost Regressor evaluated chronologically on out-of-time test data.')}>
               <div className="space-y-4 text-sm font-sans">
                 <div className="flex items-center justify-between pb-3 border-b border-[#f0f4e8]">
                   <span className="text-gray-600">{t('marketInsights.modelArchitecture', 'Model Architecture')}</span>
@@ -555,7 +559,7 @@ export default function MarketInsights() {
                 </div>
                 <div className="flex items-center justify-between pb-3 border-b border-[#f0f4e8]">
                   <span className="text-gray-600">{t('marketInsights.forecastHorizon', 'Forecast Horizon')}</span>
-                  <span className="font-bold text-[#001e2b] font-display">7-Day Ahead Modal Price</span>
+                  <span className="font-bold text-[#001e2b] font-display">{t('marketInsights.sevenDayModalPrice', '7-Day Ahead Modal Price')}</span>
                 </div>
                 <div className="flex items-center justify-between pb-3 border-b border-[#f0f4e8]">
                   <span className="text-gray-600">{t('marketInsights.mae', 'Mean Absolute Error (MAE)')}</span>
@@ -564,7 +568,7 @@ export default function MarketInsights() {
                   </span>
                 </div>
                 <div className="flex items-center justify-between pb-3 border-b border-[#f0f4e8]">
-                  <span className="text-gray-600">Mean Absolute % Error (MAPE)</span>
+                  <span className="text-gray-600">{t('marketInsights.mape', 'Mean Absolute % Error (MAPE)')}</span>
                   <span className="font-extrabold text-[#00684a] font-display">
                     {options.priceMetrics?.mape ?? '5.73'}%
                   </span>
@@ -576,7 +580,7 @@ export default function MarketInsights() {
                   </span>
                 </div>
                 <div className="flex items-center justify-between pb-3 border-b border-[#f0f4e8]">
-                  <span className="text-gray-600">Coefficient of Determination (R²)</span>
+                  <span className="text-gray-600">{t('marketInsights.r2', 'Coefficient of Determination (R²)')}</span>
                   <span className="font-extrabold text-[#00684a] font-display">
                     {options.priceMetrics?.r2 ?? '0.9862'}
                   </span>
@@ -591,7 +595,7 @@ export default function MarketInsights() {
             </Card>
 
             {/* Demand Model Card */}
-            <Card title="Agricultural Demand Forecasting Model" subtitle="XGBoost Regressor evaluated chronologically on out-of-time test data.">
+            <Card title={t('marketInsights.demandModelTitle', 'Agricultural Demand Forecasting Model')} subtitle={t('marketInsights.demandModelSubtitle', 'XGBoost Regressor evaluated chronologically on out-of-time test data.')}>
               <div className="space-y-4 text-sm font-sans">
                 <div className="flex items-center justify-between pb-3 border-b border-[#f0f4e8]">
                   <span className="text-gray-600">{t('marketInsights.modelArchitecture', 'Model Architecture')}</span>
@@ -603,7 +607,7 @@ export default function MarketInsights() {
                 </div>
                 <div className="flex items-center justify-between pb-3 border-b border-[#f0f4e8]">
                   <span className="text-gray-600">{t('marketInsights.forecastHorizon', 'Forecast Horizon')}</span>
-                  <span className="font-bold text-[#001e2b] font-display">7-Day Ahead Demand (KG)</span>
+                  <span className="font-bold text-[#001e2b] font-display">{t('marketInsights.sevenDayDemandKg', '7-Day Ahead Demand (KG)')}</span>
                 </div>
                 <div className="flex items-center justify-between pb-3 border-b border-[#f0f4e8]">
                   <span className="text-gray-600">{t('marketInsights.mae', 'Mean Absolute Error (MAE)')}</span>
@@ -612,7 +616,7 @@ export default function MarketInsights() {
                   </span>
                 </div>
                 <div className="flex items-center justify-between pb-3 border-b border-[#f0f4e8]">
-                  <span className="text-gray-600">Mean Absolute % Error (MAPE)</span>
+                  <span className="text-gray-600">{t('marketInsights.mape', 'Mean Absolute % Error (MAPE)')}</span>
                   <span className="font-extrabold text-[#00684a] font-display">
                     {options.demandMetrics?.mape ?? '11.79'}%
                   </span>
@@ -624,7 +628,7 @@ export default function MarketInsights() {
                   </span>
                 </div>
                 <div className="flex items-center justify-between pb-3 border-b border-[#f0f4e8]">
-                  <span className="text-gray-600">Coefficient of Determination (R²)</span>
+                  <span className="text-gray-600">{t('marketInsights.r2', 'Coefficient of Determination (R²)')}</span>
                   <span className="font-extrabold text-[#00684a] font-display">
                     {options.demandMetrics?.r2 ?? '0.9529'}
                   </span>
