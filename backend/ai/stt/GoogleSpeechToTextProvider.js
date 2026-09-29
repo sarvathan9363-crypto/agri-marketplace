@@ -1,4 +1,4 @@
-const speech = require('@google-cloud/speech');
+let speech = null;
 const SpeechToTextProvider = require('./SpeechToTextProvider');
 
 class GoogleSpeechToTextProvider extends SpeechToTextProvider {
@@ -8,6 +8,9 @@ class GoogleSpeechToTextProvider extends SpeechToTextProvider {
    */
   constructor(options = {}) {
     super();
+    if (!speech) {
+      speech = require('@google-cloud/speech');
+    }
     this.keyFilename = options.keyFilename;
     const clientConfig = {};
     if (this.keyFilename) {

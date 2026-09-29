@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'motion/react';
 import {
   TrendingUp,
@@ -29,6 +30,7 @@ import mlService from '../../services/mlService';
 import toast from 'react-hot-toast';
 
 export default function MarketInsights() {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState('price'); // 'price' | 'demand' | 'metrics'
   const [loading, setLoading] = useState(false);
   const [initialLoading, setInitialLoading] = useState(true);
@@ -384,7 +386,7 @@ export default function MarketInsights() {
               <div className="mt-6 p-4 bg-[#fafcf8] border border-[#e8eddb] rounded-2xl flex items-start gap-3">
                 <Info className="w-5 h-5 text-[#00684a] shrink-0 mt-0.5" />
                 <p className="text-xs text-gray-600 font-sans leading-relaxed">
-                  <span className="font-bold text-[#001e2b]">Predictive Guidance Notice:</span> Mandi price forecasts are computed using an XGBoost Regressor trained on chronological market arrival data with time-series lags and rolling statistics. Predictions provide advisory support and do not guarantee market settlement values.
+                  <span className="font-bold text-[#001e2b]">{t('marketInsights.predictiveGuidanceNotice', 'Predictive Guidance Notice:')}</span> {t('marketInsights.predictiveGuidanceText', 'Mandi price forecasts are computed using an XGBoost Regressor trained on chronological market arrival data with time-series lags and rolling statistics. Predictions provide advisory support and do not guarantee market settlement values.')}
                 </p>
               </div>
             </Card>
@@ -524,9 +526,9 @@ export default function MarketInsights() {
                 <div className="mt-6 p-4 bg-[#fffbeb] border border-amber-300 rounded-2xl flex items-start gap-3 shadow-sm">
                   <AlertTriangle className="w-5 h-5 text-amber-700 shrink-0 mt-0.5" />
                   <div>
-                    <p className="text-sm font-bold text-amber-900 font-display">Bootstrap Mode Active</p>
+                    <p className="text-sm font-bold text-amber-900 font-display">{t('marketInsights.bootstrapModeActive', 'Bootstrap Mode Active')}</p>
                     <p className="text-xs text-amber-700 mt-0.5 font-sans leading-relaxed">
-                      AgriBazaar currently has insufficient completed order volume in MongoDB (minimum 30 days required). This pipeline is operating in clearly labelled Demo/Bootstrap mode and will automatically transition to live AgriBazaar Order data as buyer orders are completed.
+                      {t('marketInsights.bootstrapModeText', 'AgriBazaar currently has insufficient completed order volume in MongoDB (minimum 30 days required). This pipeline is operating in clearly labelled Demo/Bootstrap mode and will automatically transition to live AgriBazaar Order data as buyer orders are completed.')}
                     </p>
                   </div>
                 </div>
@@ -544,19 +546,19 @@ export default function MarketInsights() {
             <Card title="Agricultural Price Prediction Model" subtitle="XGBoost Regressor evaluated chronologically on out-of-time test data.">
               <div className="space-y-4 text-sm font-sans">
                 <div className="flex items-center justify-between pb-3 border-b border-[#f0f4e8]">
-                  <span className="text-gray-600">Model Architecture</span>
-                  <span className="font-bold text-[#001e2b] font-display">XGBoost Regressor</span>
+                  <span className="text-gray-600">{t('marketInsights.modelArchitecture', 'Model Architecture')}</span>
+                  <span className="font-bold text-[#001e2b] font-display">{t('marketInsights.xgboostRegressor', 'XGBoost Regressor')}</span>
                 </div>
                 <div className="flex items-center justify-between pb-3 border-b border-[#f0f4e8]">
-                  <span className="text-gray-600">Evaluation Strategy</span>
-                  <span className="font-bold text-[#001e2b] font-display">Chronological Split (70/15/15)</span>
+                  <span className="text-gray-600">{t('marketInsights.evaluationStrategy', 'Evaluation Strategy')}</span>
+                  <span className="font-bold text-[#001e2b] font-display">{t('marketInsights.chronologicalSplit', 'Chronological Split (70/15/15)')}</span>
                 </div>
                 <div className="flex items-center justify-between pb-3 border-b border-[#f0f4e8]">
-                  <span className="text-gray-600">Forecast Horizon</span>
+                  <span className="text-gray-600">{t('marketInsights.forecastHorizon', 'Forecast Horizon')}</span>
                   <span className="font-bold text-[#001e2b] font-display">7-Day Ahead Modal Price</span>
                 </div>
                 <div className="flex items-center justify-between pb-3 border-b border-[#f0f4e8]">
-                  <span className="text-gray-600">Mean Absolute Error (MAE)</span>
+                  <span className="text-gray-600">{t('marketInsights.mae', 'Mean Absolute Error (MAE)')}</span>
                   <span className="font-extrabold text-[#00684a] font-display">
                     ₹{options.priceMetrics?.mae ?? '191.90'} / Quintal
                   </span>
@@ -568,7 +570,7 @@ export default function MarketInsights() {
                   </span>
                 </div>
                 <div className="flex items-center justify-between pb-3 border-b border-[#f0f4e8]">
-                  <span className="text-gray-600">Root Mean Squared Error (RMSE)</span>
+                  <span className="text-gray-600">{t('marketInsights.rmse', 'Root Mean Squared Error (RMSE)')}</span>
                   <span className="font-bold text-[#001e2b] font-display">
                     ₹{options.priceMetrics?.rmse ?? '471.38'}
                   </span>
@@ -580,7 +582,7 @@ export default function MarketInsights() {
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-600">Baseline MAE (7-Day Rolling)</span>
+                  <span className="text-gray-600">{t('marketInsights.baselineMaePrice', 'Baseline MAE (7-Day Rolling)')}</span>
                   <span className="font-bold text-gray-500 font-display">
                     ₹{options.priceBaseline?.mae ?? '238.28'}
                   </span>
@@ -592,19 +594,19 @@ export default function MarketInsights() {
             <Card title="Agricultural Demand Forecasting Model" subtitle="XGBoost Regressor evaluated chronologically on out-of-time test data.">
               <div className="space-y-4 text-sm font-sans">
                 <div className="flex items-center justify-between pb-3 border-b border-[#f0f4e8]">
-                  <span className="text-gray-600">Model Architecture</span>
-                  <span className="font-bold text-[#001e2b] font-display">XGBoost Regressor</span>
+                  <span className="text-gray-600">{t('marketInsights.modelArchitecture', 'Model Architecture')}</span>
+                  <span className="font-bold text-[#001e2b] font-display">{t('marketInsights.xgboostRegressor', 'XGBoost Regressor')}</span>
                 </div>
                 <div className="flex items-center justify-between pb-3 border-b border-[#f0f4e8]">
-                  <span className="text-gray-600">Evaluation Strategy</span>
-                  <span className="font-bold text-[#001e2b] font-display">Chronological Split (70/15/15)</span>
+                  <span className="text-gray-600">{t('marketInsights.evaluationStrategy', 'Evaluation Strategy')}</span>
+                  <span className="font-bold text-[#001e2b] font-display">{t('marketInsights.chronologicalSplit', 'Chronological Split (70/15/15)')}</span>
                 </div>
                 <div className="flex items-center justify-between pb-3 border-b border-[#f0f4e8]">
-                  <span className="text-gray-600">Forecast Horizon</span>
+                  <span className="text-gray-600">{t('marketInsights.forecastHorizon', 'Forecast Horizon')}</span>
                   <span className="font-bold text-[#001e2b] font-display">7-Day Ahead Demand (KG)</span>
                 </div>
                 <div className="flex items-center justify-between pb-3 border-b border-[#f0f4e8]">
-                  <span className="text-gray-600">Mean Absolute Error (MAE)</span>
+                  <span className="text-gray-600">{t('marketInsights.mae', 'Mean Absolute Error (MAE)')}</span>
                   <span className="font-extrabold text-[#00684a] font-display">
                     {options.demandMetrics?.mae ?? '66.90'} KG
                   </span>
@@ -616,7 +618,7 @@ export default function MarketInsights() {
                   </span>
                 </div>
                 <div className="flex items-center justify-between pb-3 border-b border-[#f0f4e8]">
-                  <span className="text-gray-600">Root Mean Squared Error (RMSE)</span>
+                  <span className="text-gray-600">{t('marketInsights.rmse', 'Root Mean Squared Error (RMSE)')}</span>
                   <span className="font-bold text-[#001e2b] font-display">
                     {options.demandMetrics?.rmse ?? '107.86'} KG
                   </span>
@@ -628,7 +630,7 @@ export default function MarketInsights() {
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-600">Baseline MAE (Prev Week / 7-Day Rolling)</span>
+                  <span className="text-gray-600">{t('marketInsights.baselineMaeDemand', 'Baseline MAE (Prev Week / 7-Day Rolling)')}</span>
                   <span className="font-bold text-gray-500 font-display">
                     {options.demandBaseline?.mae ?? '96.04'} KG
                   </span>
