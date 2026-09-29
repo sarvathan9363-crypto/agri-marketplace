@@ -1896,5 +1896,35 @@
     "Trichy": "Trichy",
     "Salem": "Salem",
     "Mettupalayam": "Mettupalayam"
+  },
+  "login": {
+    "welcomeBack": "Welcome back",
+    "signInSubtitle": "Sign in AgriBazaar",
+    "heroTitle": "Empowering Farmers, Transforming",
+    "heroHighlight": "Agricultural Trade",
+    "benefit1": "Fair Prices for Farmers",
+    "benefit2": "Fresh & Quality Products",
+    "benefit3": "Direct from Farm to You",
+    "email": "EMAIL",
+    "emailPlaceholder": "you@example.com",
+    "password": "PASSWORD",
+    "passwordPlaceholder": "Enter your password",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "signIn": "Sign In",
+    "signingIn": "Signing in...",
+    "dontHaveAccount": "Don't have an account?",
+    "createAccount": "Create your account",
+    "requiredFields": "Please fill in all fields.",
+    "loginSuccess": "Logged in successfully",
+    "loginFailed": "Login failed. Please try again."
+  },
+  "registerHero": {
+    "heroTitle": "Join India's Most Trusted Digital",
+    "heroHighlight": "Agri Marketplace",
+    "benefit1": "Direct Farm Sourcing",
+    "benefit2": "100% Verified Quality",
+    "benefit3": "Transparent Settlement",
+    "backToRoles": "Back to role selection"
   }
 }

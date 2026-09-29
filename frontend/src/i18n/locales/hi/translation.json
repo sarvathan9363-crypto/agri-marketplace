@@ -2123,5 +2123,35 @@
     "Trichy": "तिरुचिरापल्ली (Trichy)",
     "Salem": "सेलम (Salem)",
     "Mettupalayam": "मेट्टुपलायम (Mettupalayam)"
+  },
+  "login": {
+    "welcomeBack": "वापसी पर स्वागत है",
+    "signInSubtitle": "एग्रीबाजार में साइन इन करें",
+    "heroTitle": "किसानों को सशक्त बनाना और",
+    "heroHighlight": "कृषि व्यापार को बदलना",
+    "benefit1": "किसानों के लिए उचित मूल्य",
+    "benefit2": "ताजा और गुणवत्ता वाले उत्पाद",
+    "benefit3": "खेत से सीधे आप तक",
+    "email": "ईमेल",
+    "emailPlaceholder": "you@example.com",
+    "password": "पासवर्ड",
+    "passwordPlaceholder": "अपना पासवर्ड दर्ज करें",
+    "rememberMe": "मुझे याद रखें",
+    "forgotPassword": "पासवर्ड भूल गए?",
+    "signIn": "साइन इन करें",
+    "signingIn": "साइन इन हो रहा है...",
+    "dontHaveAccount": "खाता नहीं है?",
+    "createAccount": "अपना खाता बनाएं",
+    "requiredFields": "कृपया सभी फ़ील्ड भरें।",
+    "loginSuccess": "सफलतापूर्वक लॉगिन हुआ",
+    "loginFailed": "लॉगिन विफल रहा। कृपया पुन: प्रयास करें।"
+  },
+  "registerHero": {
+    "heroTitle": "भारत के सबसे विश्वसनीय डिजिटल",
+    "heroHighlight": "कृषि बाजार से जुड़ें",
+    "benefit1": "सीधी खेत खरीद",
+    "benefit2": "100% सत्यापित गुणवत्ता",
+    "benefit3": "पारदर्शी निपटान",
+    "backToRoles": "भूमिका चयन पर वापस जाएं"
   }
 }

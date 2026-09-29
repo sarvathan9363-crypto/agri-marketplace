@@ -2123,5 +2123,35 @@
     "Trichy": "తిరుచిరాపల్లి (Trichy)",
     "Salem": "సేలం (Salem)",
     "Mettupalayam": "మెట్టుపాళయం (Mettupalayam)"
+  },
+  "login": {
+    "welcomeBack": "తిరిగి సుస్వాగతం",
+    "signInSubtitle": "అగ్రిబజార్‌లో సైన్ ఇన్ చేయండి",
+    "heroTitle": "రైతులను సాధికారపరచడం,",
+    "heroHighlight": "వ్యవసాయ వాణిజ్యాన్ని మార్చడం",
+    "benefit1": "రైతులకు న్యాయమైన ధరలు",
+    "benefit2": "తాజా మరియు నాణ్యమైన ఉత్పత్తులు",
+    "benefit3": "పొలం నుండి నేరుగా మీకు",
+    "email": "ఈమెయిల్",
+    "emailPlaceholder": "you@example.com",
+    "password": "పాస్‌వర్డ్",
+    "passwordPlaceholder": "మీ పాస్‌వర్డ్‌ను ఎంటర్ చేయండి",
+    "rememberMe": "నన్ను గుర్తుంచుకో",
+    "forgotPassword": "పాస్‌వర్డ్ మర్చిపోయారా?",
+    "signIn": "సైన్ ఇన్ చేయండి",
+    "signingIn": "సైన్ ఇన్ అవుతోంది...",
+    "dontHaveAccount": "ఖాతా లేదా?",
+    "createAccount": "మీ ఖాతాను సృష్టించండి",
+    "requiredFields": "దయచేసి అన్ని వివరాలను భర్తీ చేయండి.",
+    "loginSuccess": "విజయవంతంగా లాగిన్ అయ్యారు",
+    "loginFailed": "లాగిన్ విఫలమైంది. దయచేసి మళ్లీ ప్రయత్నించండి."
+  },
+  "registerHero": {
+    "heroTitle": "భారతదేశపు అత్యంత విశ్వసనీయ డిజిటల్",
+    "heroHighlight": "వ్యవసాయ మార్కెట్‌లో చేరండి",
+    "benefit1": "నేరుగా పొలం కొనుగోలు",
+    "benefit2": "100% ప్రామాణీకరించబడిన నాణ్యత",
+    "benefit3": "పారదర్శక చెల్లింపులు",
+    "backToRoles": "పాత్రల ఎంపికకు తిరిగి వెళ్లండి"
   }
 }
