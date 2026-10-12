@@ -133,116 +133,13 @@ export default function FarmerVerification() {
   const badgeTitle = isFpo ? t('farmerVerification.verifiedFpoBadge', { defaultValue: '✓ VERIFIED FPO' }) : t('farmerVerification.verifiedFarmerBadge', { defaultValue: '✓ VERIFIED FARMER' });
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8 py-4 px-2 sm:px-4">
-      {/* Dashboard Page Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E2E8E5] pb-6">
-        <div>
-          <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-[#00E676]/15 text-[#00C853] border border-[#00E676]/30">
-            <UserCheck className="w-4 h-4" /> {isFpo ? t('farmerVerification.fpoVerificationDashboard', { defaultValue: 'FPO / FPC VERIFICATION DASHBOARD' }) : t('farmerVerification.farmerVerificationDashboard', { defaultValue: 'FARMER VERIFICATION DASHBOARD' })}
-          </span>
-          <h1 className="text-2xl sm:text-3xl font-black text-[#082B36] font-display mt-2 tracking-tight">
-            {t('farmerVerification.verificationStatusHeading', { defaultValue: 'Verification Status & Credentials' })}
-          </h1>
-          <p className="text-xs sm:text-sm text-[#52636A] mt-1 font-sans max-w-xl">
-            {isFpo ? t('farmerVerification.centralDashboardOrg', { defaultValue: 'Central dashboard to view your organization credentials, progress, and official status.' }) : t('farmerVerification.centralDashboardAgri', { defaultValue: 'Central dashboard to view your agricultural credentials, progress, and official status.' })}
-          </p>
-        </div>
+    <div className="min-h-screen bg-[#021b29] px-4 py-6 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-5xl">
+        <h2 className="mb-6 text-center text-3xl font-black text-white sm:text-4xl">
+          {t('farmerVerification.verificationChecksBreakdown', { defaultValue: 'Verification Checks Breakdown' })}
+        </h2>
 
-        {isFullyVerified ? (
-          <div className="flex items-center gap-2 bg-[#E8F5E9] border border-[#00E676] px-4 py-2.5 rounded-2xl shrink-0">
-            <CheckCircle2 className="w-6 h-6 text-[#00C853]" />
-            <div>
-              <p className="text-xs font-black text-[#002B36] tracking-wide">{badgeTitle}</p>
-              <p className="text-[11px] text-emerald-700 font-medium">{t('farmerVerification.all5RequiredChecksActive', { defaultValue: 'All 5 required checks active' })}</p>
-            </div>
-          </div>
-        ) : (
-          <button
-            type="button"
-            onClick={() => navigate(wizardPath)}
-            className="btn-agri-primary text-sm px-6 py-3.5 flex items-center gap-2 font-bold shrink-0"
-          >
-            <Play className="w-4 h-4 fill-current" />
-            {completedRequiredCount === 0 ? t('farmerVerification.startVerification', { defaultValue: 'Start Verification' }) : t('farmerVerification.continueVerification', { defaultValue: 'Continue Verification' })}
-          </button>
-        )}
-      </div>
-
-      {/* OVERALL PROGRESS SUMMARY CARD */}
-      <div className="bg-white rounded-3xl border border-[#E2E8E5] p-6 sm:p-8 shadow-sm space-y-4">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div>
-            <h2 className="text-xl font-black text-[#082B36] font-display">{t('farmerVerification.overallProgress', { defaultValue: 'Overall Progress' })}</h2>
-            <p className="text-xs text-[#52636A] font-sans mt-0.5">
-              {t('farmerVerification.checksCompletedSummary', { count: completedRequiredCount, defaultValue: `${completedRequiredCount} of 5 required checks completed` })}
-            </p>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <span className="text-2xl font-black font-display text-[#00C853]">
-              {Math.round((completedRequiredCount / 5) * 100)}%
-            </span>
-          </div>
-        </div>
-
-        {/* Progress Bar */}
-        <div className="w-full h-3 bg-gray-100 rounded-full overflow-hidden">
-          <div
-            className="h-full bg-gradient-to-r from-[#00C853] to-[#00E676] transition-all duration-500 rounded-full"
-            style={{ width: `${(completedRequiredCount / 5) * 100}%` }}
-          />
-        </div>
-
-        <div className="flex flex-wrap items-center justify-between text-xs font-medium text-gray-500 pt-1">
-          <span>{t('farmerVerification.verifiedStat', { count: completedRequiredCount, defaultValue: `${completedRequiredCount} Verified` })}</span>
-          <span>{t('farmerVerification.skippedStat', { count: skippedCount, defaultValue: `${skippedCount} Skipped` })}</span>
-          <span>{t('farmerVerification.pendingStat', { count: 5 - completedRequiredCount, defaultValue: `${5 - completedRequiredCount} Pending Required` })}</span>
-        </div>
-
-        {!isFullyVerified && (
-          <div className="pt-3 border-t border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-            <p className="text-xs font-semibold text-amber-800 flex items-center gap-1.5">
-              <AlertCircle className="w-4 h-4 text-amber-600 shrink-0" />
-              {t('farmerVerification.verificationIncompleteNotice', { badgeTitle, defaultValue: `Verification Incomplete — Complete remaining steps to earn your ${badgeTitle} badge.` })}
-            </p>
-            <button
-              type="button"
-              onClick={() => navigate(wizardPath)}
-              className="btn-agri-primary text-xs px-5 py-2.5 font-bold flex items-center justify-center gap-1.5 shrink-0"
-            >
-              {t('farmerVerification.continueVerification', { defaultValue: 'Continue Verification' })} <ArrowRight className="w-3.5 h-3.5" />
-            </button>
-          </div>
-        )}
-      </div>
-
-      {/* VERIFIED BADGE BOX (IF FULLY VERIFIED) */}
-      {isFullyVerified && (
-        <div className="bg-gradient-to-r from-[#002B36] to-[#004D5A] text-white p-8 rounded-3xl text-center space-y-3 shadow-xl relative overflow-hidden">
-          <div className="w-16 h-16 bg-[#00E676] text-[#002B36] rounded-full flex items-center justify-center mx-auto shadow-lg">
-            <Sparkles className="w-8 h-8" />
-          </div>
-          <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-[#00E676] font-display">
-            {badgeTitle}
-          </h3>
-          <p className="text-xs sm:text-sm text-gray-200 max-w-md mx-auto font-sans">
-            {t('farmerVerification.congratulationsVerifiedMsg', { defaultValue: 'Congratulations! All required identity and organization credentials are fully verified. Your produce listings now show the official verified badge.' })}
-          </p>
-          <button
-            type="button"
-            onClick={() => navigate(wizardPath)}
-            className="mt-2 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-xs font-bold text-white border border-white/20"
-          >
-            <RotateCcw className="w-3.5 h-3.5" /> {t('farmerVerification.reviewUpdateCredentials', { defaultValue: 'Review / Update Credentials' })}
-          </button>
-        </div>
-      )}
-
-      {/* STATUS CARDS GRID FOR CHECKS */}
-      <div className="space-y-4">
-        <h2 className="text-lg font-black text-[#082B36] font-display">{t('farmerVerification.verificationChecksBreakdown', { defaultValue: 'Verification Checks Breakdown' })}</h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {checkCards.map((item) => {
             const IconComponent = item.icon;
             const status = verification?.[item.key]?.status || 'pending';
@@ -253,72 +150,78 @@ export default function FarmerVerification() {
             return (
               <div
                 key={item.key}
-                className={`p-5 rounded-3xl border transition-all flex flex-col justify-between ${
-                  isVerified
-                    ? 'bg-[#FBFCF9] border-[#00E676]'
+                className={`flex min-h-[230px] flex-col justify-between rounded-[24px] border p-4 shadow-[0_10px_30px_rgba(0,0,0,0.15)] ${isVerified
+                    ? 'border-[#7ee6b4] bg-[#e9f8ef]'
                     : isNotApp
-                    ? 'bg-blue-50/50 border-blue-200'
-                    : isSkipped
-                    ? 'bg-amber-50/50 border-amber-200'
-                    : 'bg-white border-gray-200'
-                }`}
+                      ? 'border-blue-200 bg-blue-50/60'
+                      : isSkipped
+                        ? 'border-amber-200 bg-amber-50/60'
+                        : 'border-[#dbe7e3] bg-[#f3f5f4]'
+                  }`}
               >
                 <div className="space-y-3">
                   <div className="flex items-start justify-between gap-3">
                     <div className="flex items-center gap-3">
-                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${
-                        isVerified ? 'bg-emerald-100 text-[#00C853]' : isNotApp ? 'bg-blue-100 text-blue-700' : isSkipped ? 'bg-amber-100 text-amber-700' : 'bg-gray-100 text-gray-500'
-                      }`}>
-                        <IconComponent className="w-5 h-5" />
+                      <div
+                        className={`flex h-10 w-10 items-center justify-center rounded-xl ${isVerified
+                            ? 'bg-[#dff6e9] text-[#00C853]'
+                            : isNotApp
+                              ? 'bg-blue-100 text-blue-700'
+                              : isSkipped
+                                ? 'bg-amber-100 text-amber-700'
+                                : 'bg-[#edf1ef] text-[#52636A]'
+                          }`}
+                      >
+                        <IconComponent className="h-5 w-5" />
                       </div>
+
                       <div>
-                        <div className="flex items-center gap-1.5">
-                          <h3 className="text-sm font-extrabold text-[#082B36] font-display">{item.title}</h3>
-                        </div>
-                        <span className="text-[10px] font-bold text-gray-400 uppercase">
+                        <div className="mb-1 text-[10px] font-bold uppercase tracking-[0.12em] text-slate-500">
                           {item.req ? t('farmerVerification.requiredCheck', { defaultValue: 'Required Check' }) : t('farmerVerification.optionalCheck', { defaultValue: 'Optional Check' })}
-                        </span>
+                        </div>
+                        <h3 className="text-[15px] font-bold text-[#082B36]">{item.title}</h3>
                       </div>
                     </div>
 
                     {isVerified ? (
-                      <span className="text-xs font-black text-[#00C853] bg-emerald-100 px-3 py-1 rounded-full shrink-0">
+                      <span className="rounded-full bg-[#dff6e9] px-3 py-1 text-[11px] font-black text-[#00C853]">
                         {t('status.verifiedBadge', { defaultValue: '✓ Verified' })}
                       </span>
                     ) : isNotApp ? (
-                      <span className="text-xs font-bold text-blue-700 bg-blue-100 px-3 py-1 rounded-full shrink-0">
+                      <span className="rounded-full bg-blue-100 px-3 py-1 text-[11px] font-bold text-blue-700">
                         {t('status.notApplicable', { defaultValue: 'N/A' })}
                       </span>
                     ) : isSkipped ? (
-                      <span className="text-xs font-bold text-amber-700 bg-amber-100 px-3 py-1 rounded-full shrink-0">
+                      <span className="rounded-full bg-amber-100 px-3 py-1 text-[11px] font-bold text-amber-700">
                         {t('status.skippedBadge', { defaultValue: '○ Skipped' })}
                       </span>
                     ) : (
-                      <span className="text-xs font-bold text-gray-500 bg-gray-100 px-3 py-1 rounded-full shrink-0">
+                      <span className="rounded-full bg-[#edf1ef] px-3 py-1 text-[11px] font-bold text-slate-500">
                         {t('status.pendingBadge', { defaultValue: '○ Pending' })}
                       </span>
                     )}
                   </div>
 
-                  <p className="text-xs text-gray-600 font-sans leading-relaxed">{item.description}</p>
+                  <p className="text-sm leading-relaxed text-slate-600">{item.description}</p>
 
                   {item.details && (
-                    <div className="p-2.5 bg-gray-50 rounded-xl text-xs font-mono text-gray-700">
+                    <div className="rounded-xl bg-[#0d2f38] px-3 py-2 text-sm font-mono text-white">
                       {item.details}
                     </div>
                   )}
                 </div>
 
-                <div className="pt-4 mt-2 border-t border-gray-100 flex items-center justify-between">
-                  <span className="text-[11px] font-medium text-gray-400">
+                <div className="mt-4 flex items-center justify-between border-t border-[#dfe7e6] pt-3">
+                  <span className="text-[11px] font-medium text-slate-500">
                     {isVerified ? t('farmerVerification.statusActive', { defaultValue: 'Status: Active' }) : isNotApp ? t('farmerVerification.statusNotApplicable', { defaultValue: 'Status: Not Applicable' }) : isSkipped ? t('farmerVerification.statusSkipped', { defaultValue: 'Status: Skipped' }) : t('farmerVerification.statusNotStarted', { defaultValue: 'Status: Not Started' })}
                   </span>
                   <button
                     type="button"
                     onClick={() => navigate(wizardPath)}
-                    className="text-xs font-bold text-[#00C853] hover:underline flex items-center gap-1"
+                    className="flex items-center gap-1 text-[11px] font-bold text-[#00C853] hover:underline"
                   >
-                    {isVerified ? t('farmerVerification.viewEdit', { defaultValue: 'View / Edit' }) : t('farmerVerification.completeInWizard', { defaultValue: 'Complete in Wizard' })} →
+                    {isVerified ? t('farmerVerification.viewEdit', { defaultValue: 'View / Edit' }) : t('farmerVerification.completeInWizard', { defaultValue: 'Complete in Wizard' })}
+                    <ArrowRight className="h-3.5 w-3.5" />
                   </button>
                 </div>
               </div>

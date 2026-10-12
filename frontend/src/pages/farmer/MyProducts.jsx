@@ -125,9 +125,8 @@ export default function MyProducts() {
             <button
               key={s}
               onClick={() => setStatusFilter(s)}
-              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all font-display ${
-                statusFilter === s ? 'bg-[#001e2b] text-[#00ed64]' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-              }`}
+              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all font-display ${statusFilter === s ? 'bg-[#001e2b] text-[#00ed64]' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
             >
               {s === 'ALL' ? t('status.allStatus', { defaultValue: 'All Status' }) : translateStatus(t, s)}
             </button>

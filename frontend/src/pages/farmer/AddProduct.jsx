@@ -97,7 +97,7 @@ export default function AddProduct() {
           <h2 className="text-2xl font-black text-[#001e2b] font-display">{form.productName || t('farmerAddProduct.productTitlePlaceholder', { defaultValue: 'Product Title' })}</h2>
           <span className="inline-block mt-2 px-3 py-1 bg-[#001e2b] text-[#00ed64] text-xs font-bold uppercase rounded-full font-display">{translateCategory(t, form.category)}</span>
           <p className="mt-4 text-sm text-gray-600 font-sans leading-relaxed">{form.description || t('farmerAddProduct.noDescriptionProvided', { defaultValue: 'No description provided.' })}</p>
-          
+
           <div className="mt-6 p-4 bg-[#fafcf8] border border-[#e8eddb] rounded-2xl grid grid-cols-2 gap-4 text-xs font-sans">
             <div><span className="text-gray-500">{t('farmerAddProduct.price')}</span> <span className="font-extrabold text-[#001e2b] font-display">₹{form.pricePerUnit || 0} / {translateUnit(t, form.unit)}</span></div>
             <div><span className="text-gray-500">{t('farmerAddProduct.stock')}</span> <span className="font-bold text-[#001e2b]">{form.quantity || 0} {translateUnit(t, form.unit)}</span></div>

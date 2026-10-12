@@ -24,7 +24,7 @@ export default function FarmerProfile() {
       const res = await farmerService.getProfile();
       setFarmer(res.farmer);
       setForm(res.farmer);
-    } catch {} finally { setLoading(false); }
+    } catch { } finally { setLoading(false); }
   };
 
   const handleSave = async () => {

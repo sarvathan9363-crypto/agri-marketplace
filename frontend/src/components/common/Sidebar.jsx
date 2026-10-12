@@ -23,7 +23,7 @@ export default function Sidebar({ links, isOpen, onClose }) {
           <div className="px-3 py-1.5 mb-4 flex items-center justify-between">
             <p className="text-[11px] font-bold text-[#00E676] uppercase tracking-widest">{t('navigation.dashboard')}</p>
           </div>
-          
+
           <nav className="space-y-1.5">
             {links.map(link => (
               <NavLink
@@ -31,10 +31,9 @@ export default function Sidebar({ links, isOpen, onClose }) {
                 to={link.to}
                 end={link.end}
                 className={({ isActive }) =>
-                  `flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-medium transition-all ${
-                    isActive
-                      ? 'bg-[#00E676] text-[#002B36] font-bold shadow-sm'
-                      : 'text-slate-300 hover:bg-[#003947] hover:text-white'
+                  `flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-medium transition-all ${isActive
+                    ? 'bg-[#00E676] text-[#002B36] font-bold shadow-sm'
+                    : 'text-slate-300 hover:bg-[#003947] hover:text-white'
                   }`
                 }
               >
@@ -100,10 +99,9 @@ export default function Sidebar({ links, isOpen, onClose }) {
                         end={link.end}
                         onClick={onClose}
                         className={({ isActive }) =>
-                          `flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-medium transition-all ${
-                            isActive
-                              ? 'bg-[#00E676] text-[#002B36] font-bold'
-                              : 'text-slate-300 hover:bg-[#003947] hover:text-white'
+                          `flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-medium transition-all ${isActive
+                            ? 'bg-[#00E676] text-[#002B36] font-bold'
+                            : 'text-slate-300 hover:bg-[#003947] hover:text-white'
                           }`
                         }
                       >

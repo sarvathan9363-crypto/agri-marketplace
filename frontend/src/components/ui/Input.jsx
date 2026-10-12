@@ -76,10 +76,10 @@ export const Select = forwardRef(({
     >
       {options.length > 0
         ? options.map((opt) => (
-            <option key={opt.value} value={opt.value}>
-              {opt.label}
-            </option>
-          ))
+          <option key={opt.value} value={opt.value}>
+            {opt.label}
+          </option>
+        ))
         : children}
     </select>
   );

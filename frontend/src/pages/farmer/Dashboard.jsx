@@ -97,11 +97,11 @@ export default function FarmerDashboard() {
 
   const badgeTitle = isFpo
     ? t('farmerDashboard.verifiedFpoBadge', {
-        defaultValue: '✓ VERIFIED FPO',
-      })
+      defaultValue: '✓ VERIFIED FPO',
+    })
     : t('farmerDashboard.verifiedFarmerBadge', {
-        defaultValue: '✓ VERIFIED FARMER',
-      });
+      defaultValue: '✓ VERIFIED FARMER',
+    });
 
   return (
     <div className="space-y-8">
@@ -111,21 +111,21 @@ export default function FarmerDashboard() {
           <span className="text-[#00684a] font-extrabold text-xs tracking-widest uppercase font-display bg-[#00ed64]/20 px-3 py-1 rounded-full">
             {isFpo
               ? t('farmerDashboard.fpoSellerDashboard', {
-                  defaultValue: 'FPO / FPC Seller Dashboard',
-                })
+                defaultValue: 'FPO / FPC Seller Dashboard',
+              })
               : t('farmerDashboard.sellerDashboard', {
-                  defaultValue: 'Seller Dashboard',
-                })}
+                defaultValue: 'Seller Dashboard',
+              })}
           </span>
 
           <h1 className="text-3xl font-black text-[#001e2b] font-display mt-2">
             {isFpo
               ? t('farmerDashboard.fpoOverview', {
-                  defaultValue: 'FPO Overview',
-                })
+                defaultValue: 'FPO Overview',
+              })
               : t('farmerDashboard.farmerOverview', {
-                  defaultValue: 'Farmer Overview',
-                })}
+                defaultValue: 'Farmer Overview',
+              })}
           </h1>
 
           <p className="text-sm text-gray-600 mt-1 font-sans">
@@ -191,19 +191,18 @@ export default function FarmerDashboard() {
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <ShieldCheck
-                className={`w-6 h-6 ${
-                  isFullyVerified
+                className={`w-6 h-6 ${isFullyVerified
                     ? 'text-[#00C853]'
                     : 'text-amber-600'
-                }`}
+                  }`}
               />
 
               <h2 className="text-xl font-black text-[#001e2b] font-display">
                 {isFullyVerified
                   ? badgeTitle
                   : t('farmerDashboard.completeYourVerification', {
-                      defaultValue: 'Complete Your Verification',
-                    })}
+                    defaultValue: 'Complete Your Verification',
+                  })}
               </h2>
 
               {isFullyVerified && (
@@ -255,11 +254,11 @@ export default function FarmerDashboard() {
             >
               {isFullyVerified
                 ? t('farmerDashboard.updateVerification', {
-                    defaultValue: 'Update Verification',
-                  })
+                  defaultValue: 'Update Verification',
+                })
                 : t('farmerDashboard.continueVerification', {
-                    defaultValue: 'Continue Verification',
-                  })}
+                  defaultValue: 'Continue Verification',
+                })}
 
               <ArrowRight className="w-4 h-4" />
             </button>

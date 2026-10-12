@@ -221,31 +221,28 @@ export default function MarketInsights() {
         <div className="flex items-center gap-1.5 bg-[#f0f4e8] dark:bg-[#001e2b]/80 p-1.5 rounded-2xl border border-[#e8eddb] dark:border-[#00684a]/30">
           <button
             onClick={() => setActiveTab('price')}
-            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-extrabold font-display transition-all ${
-              activeTab === 'price'
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-extrabold font-display transition-all ${activeTab === 'price'
                 ? 'bg-[#001e2b] text-[#00ed64] shadow-md'
                 : 'text-gray-800 dark:text-gray-200 hover:text-[#001e2b] dark:hover:text-white'
-            }`}
+              }`}
           >
             <TrendingUp className="w-4 h-4" /> {t('marketInsights.pricePrediction', 'Price Prediction')}
           </button>
           <button
             onClick={() => setActiveTab('demand')}
-            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-extrabold font-display transition-all ${
-              activeTab === 'demand'
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-extrabold font-display transition-all ${activeTab === 'demand'
                 ? 'bg-[#001e2b] text-[#00ed64] shadow-md'
                 : 'text-gray-800 dark:text-gray-200 hover:text-[#001e2b] dark:hover:text-white'
-            }`}
+              }`}
           >
             <ShoppingBag className="w-4 h-4" /> {t('marketInsights.demandForecast', 'Demand Forecast')}
           </button>
           <button
             onClick={() => setActiveTab('metrics')}
-            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-extrabold font-display transition-all ${
-              activeTab === 'metrics'
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-extrabold font-display transition-all ${activeTab === 'metrics'
                 ? 'bg-[#001e2b] text-[#00ed64] shadow-md'
                 : 'text-gray-800 dark:text-gray-200 hover:text-[#001e2b] dark:hover:text-white'
-            }`}
+              }`}
           >
             <ShieldCheck className="w-4 h-4" /> {t('marketInsights.modelValidation', 'Model Validation')}
           </button>
@@ -467,8 +464,8 @@ export default function MarketInsights() {
                   demandResult.demandLevel === 'High'
                     ? 'emerald'
                     : demandResult.demandLevel === 'Medium'
-                    ? 'blue'
-                    : 'amber'
+                      ? 'blue'
+                      : 'amber'
                 }
               />
 

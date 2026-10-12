@@ -11,7 +11,7 @@ export default function FarmerSales() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    farmerService.getSalesStats().then(r => setData(r.sales)).catch(() => {}).finally(() => setLoading(false));
+    farmerService.getSalesStats().then(r => setData(r.sales)).catch(() => { }).finally(() => setLoading(false));
   }, []);
 
   if (loading) return <LoadingState />;

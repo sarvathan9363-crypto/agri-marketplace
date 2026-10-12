@@ -129,9 +129,8 @@ export default function FarmerOrders() {
           <button
             key={tKey}
             onClick={() => setTab(tKey)}
-            className={`px-4 py-2 rounded-2xl text-xs font-black transition-all font-display ${
-              tab === tKey ? 'bg-[#001e2b] text-[#00ed64]' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-            }`}
+            className={`px-4 py-2 rounded-2xl text-xs font-black transition-all font-display ${tab === tKey ? 'bg-[#001e2b] text-[#00ed64]' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+              }`}
           >
             {tKey === 'ALL' ? t('farmerOrders.allOrdersTab', { defaultValue: 'All Orders' }) : translateStatus(t, tKey)}
           </button>
